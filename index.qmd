@@ -1,0 +1,26 @@
+# Introduction {.unnumbered}
+
+Welcome to the website for TECH3 Applied Statistics. We will use this website as a supplement to lectures. The website is an ongoing development, so not all subjects will have content yet. Below you will find a detailed (preliminary) lecture plan, link to the textbook and curriculum.
+
+## Lecture plan
+
+```{r lecturePlan,eval=FALSE, echo = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+options(knitr.kable.NA = '')
+library(dplyr)
+library(kableExtra)
+readxl::read_excel("lecturePlan.xlsx", sheet = "Sheet3",
+                           col_types= rep("text",3))[,-1] %>% 
+  kbl() %>%
+  kable_styling(bootstrap_options = c("condensed", "hover"),
+                fixed_thead = T) %>%
+    row_spec(seq(1,25,2) , background = "#2E8B5750") %>% 
+    row_spec(28, bold = T, background = "DarkRed", color = "white")
+
+```
+
+## Literature
+
+## Curriculum
+
+All the material on this website.

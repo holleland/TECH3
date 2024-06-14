@@ -1,0 +1,52 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "TECH3 Applied statistics"
+  image: bilder/nhh.png
+  page-navigation: true
+  navbar:
+    logo: bilder/nhh.png
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+  sidebar:
+    title: "Whatever"
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - href: index.qmd
+        text: Course overview
+      - section: "Python repetition"
+        contents:
+          - href: 0_python.qmd
+            text: "Python"
+      - section: "1 Summarize and vizualize data"
+        contents:
+          - 1_summarizeandvisualizedata.qmd
+      - section: "2 Probability, random variables, probability distributions and simulations"
+        href: 2_probability_random_variables_probability_distributions_and_simulations.qmd 
+        contents:
+          - 2_1_probability.qmd
+          - 2_2_random_variables.qmd
+          - 2_3_probability_distributions.qmd
+          - 2_4_simulations.qmd
+      - href: references.qmd
+        text: "References"
+
+editor: visual
+
+
+          
+format:
+  html:
+    theme: 
+        - cosmo
+        - custom.scss
+    css: style.css
+    fontsize: 1.1em
+    linestretch: 1.7
+    html-math-method: katex

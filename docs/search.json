@@ -1,0 +1,125 @@
+[
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "References",
+    "crumbs": [
+      "Home",
+      "References"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Sondre Hølleland,  Assistant professor\n\n\n\n\n\nGeir Drage Berentsen,  Associate professor\n\n\n\nThis course and website has been developed by Sondre Hølleland, assistant professor, and Geir Drage Berentsen, associate professor, both at Norwegian School of Economics, Department of Business and Management Science. More about us will be added."
+  },
+  {
+    "objectID": "2_4_simulations.html",
+    "href": "2_4_simulations.html",
+    "title": "Simulations",
+    "section": "",
+    "text": "Simulations",
+    "crumbs": [
+      "Home",
+      "2 Probability, random variables, probability distributions and simulations",
+      "Simulations"
+    ]
+  },
+  {
+    "objectID": "2_2_random_variables.html",
+    "href": "2_2_random_variables.html",
+    "title": "Random Variables",
+    "section": "",
+    "text": "Random Variables",
+    "crumbs": [
+      "Home",
+      "2 Probability, random variables, probability distributions and simulations",
+      "Random Variables"
+    ]
+  },
+  {
+    "objectID": "1_summarizeandvisualizedata.html",
+    "href": "1_summarizeandvisualizedata.html",
+    "title": "Summarize and Vizualize data",
+    "section": "",
+    "text": "Summarize and Vizualize data",
+    "crumbs": [
+      "Home",
+      "1 Summarize and vizualize data",
+      "Summarize and Vizualize data"
+    ]
+  },
+  {
+    "objectID": "0_python.html",
+    "href": "0_python.html",
+    "title": "Python",
+    "section": "",
+    "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis",
+    "crumbs": [
+      "Home",
+      "Python repetition",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "2_1_probability.html",
+    "href": "2_1_probability.html",
+    "title": "Probability",
+    "section": "",
+    "text": "Probability",
+    "crumbs": [
+      "Home",
+      "2 Probability, random variables, probability distributions and simulations",
+      "Probability"
+    ]
+  },
+  {
+    "objectID": "2_3_probability_distributions.html",
+    "href": "2_3_probability_distributions.html",
+    "title": "Probability distributions",
+    "section": "",
+    "text": "Probability distributions",
+    "crumbs": [
+      "Home",
+      "2 Probability, random variables, probability distributions and simulations",
+      "Probability distributions"
+    ]
+  },
+  {
+    "objectID": "2_probability_random_variables_probability_distributions_and_simulations.html",
+    "href": "2_probability_random_variables_probability_distributions_and_simulations.html",
+    "title": "Probability, random variables, probability distributions and simulations",
+    "section": "",
+    "text": "Probability, random variables, probability distributions and simulations",
+    "crumbs": [
+      "Home",
+      "2 Probability, random variables, probability distributions and simulations"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Welcome to the website for TECH3 Applied Statistics. We will use this website as a supplement to lectures. The website is an ongoing development, so not all subjects will have content yet. Below you will find a detailed (preliminary) lecture plan, link to the textbook and curriculum.\n\n\n\n\n\n\n\n\nAll the material on this website.",
+    "crumbs": [
+      "Home",
+      "Course overview"
+    ]
+  },
+  {
+    "objectID": "index.html#curriculum",
+    "href": "index.html#curriculum",
+    "title": "Introduction",
+    "section": "",
+    "text": "All the material on this website.",
+    "crumbs": [
+      "Home",
+      "Course overview"
+    ]
+  }
+]
