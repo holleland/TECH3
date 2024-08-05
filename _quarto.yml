@@ -2,40 +2,79 @@ project:
   type: website
   output-dir: docs
 
+
 website:
   title: "TECH3 Applied statistics"
-  image: bilder/nhh.png
+  image: images/nhh.png
   page-navigation: true
   navbar:
-    logo: bilder/nhh.png
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-  sidebar:
-    title: "Whatever"
-    style: "docked"
+    background: primary
+    logo: images/nhh.png
     search: true
-    collapse-level: 1
-    contents:
-      - href: index.qmd
-        text: Course overview
-      - section: "Python repetition"
-        contents:
-          - href: 0_python.qmd
-            text: "Python"
-      - section: "1 Summarize and vizualize data"
-        contents:
-          - 1_summarizeandvisualizedata.qmd
-      - section: "2 Probability, random variables, probability distributions and simulations"
-        href: 2_probability_random_variables_probability_distributions_and_simulations.qmd 
-        contents:
-          - 2_1_probability.qmd
-          - 2_2_random_variables.qmd
-          - 2_3_probability_distributions.qmd
-          - 2_4_simulations.qmd
-      - href: references.qmd
-        text: "References"
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Calender"
+        href: calender.qmd
+      - text: "Modules"
+        href: module-1.qmd
+      - text: "Datalabs"
+        href: datalab-1.qmd
+      - text: "Python basics"
+        href: pythonbasics.qmd
+      - text: "Old exams"
+        href: oldexams.qmd
+      - text: "Reference"
+        href: reference.qmd
+
+  sidebar:
+    - title: "Datalabs"
+      style: "docked"
+      collapse-level: 1
+      search: true
+      background: light
+      contents:
+        - datalab-1.qmd
+        - datalab-2.qmd
+        
+    - title: "Modules"
+      contents: 
+         - section: "Module 1: Summarizing and visualizing data"
+           contents:
+             - href: module-1.qmd
+               text: "Textbook"
+             - 01-videos.qmd
+             - 01-exercises.qmd
+             - 01-python.qmd
+         - section: "Module 2: Probability"
+           contents: 
+             - module-2.qmd
+             - 2_1_probability.qmd
+             - 2_2_random_variables.qmd
+         - section: "Module 3: Estimation and sampling"
+           contents: 
+             - module-3.qmd
+         - section: "Module 4: Hypothesis testing"
+           contents: 
+             - module-4.qmd
+         - section: "Module 5: Measuring relationships and fitting models"
+           contents: 
+             - module-5.qmd
+             
+    - title: "Python basics"
+      contents:
+        - pythonbasics.qmd
+        # navigation items
+
+    - title: "Old exams"
+      contents:
+        - oldexams.qmd
+        # navigation items
+
+    - title: "Reference"
+      contents:
+        - reference.qmd
+        # navigation items
 
 editor: visual
 
@@ -47,6 +86,10 @@ format:
         - cosmo
         - custom.scss
     css: style.css
-    fontsize: 1.1em
-    linestretch: 1.7
-    html-math-method: katex
+    toc: true
+    # toc-depth: 1
+    # fontsize: 1.1em
+    # linestretch: 1.7
+    # number-sections: true
+    # number-debth: 2
+    # html-math-method: katex
