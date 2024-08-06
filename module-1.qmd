@@ -1,3 +1,5 @@
+The following is a redistribution of chapters [3](https://statsthinking21.github.io/statsthinking21-core-site/summarizing-data.html)-[4](https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html) of [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/index.html) by Russell A. Poldrack, 2019, under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licence.
+
 # Summarizing data
 
 I mentioned in the Introduction that one of the big discoveries of statistics is the idea that we can better understand the world by throwing away information, and that's exactly what we are doing when we summarize a dataset.
