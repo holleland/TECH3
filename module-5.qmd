@@ -1,18 +1,25 @@
 The following is a redistribution of chapters [12](https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html), [13](https://statsthinking21.github.io/statsthinking21-core-site/modeling-continuous-relationships.html), [14](https://statsthinking21.github.io/statsthinking21-core-site/the-general-linear-model.html), and [17](https://statsthinking21.github.io/statsthinking21-core-site/practical-example.html) of [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/index.html) by Russell A. Poldrack, 2019, under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licence.
 
-
 ## Modeling categorical relationships
-<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html" name="Modeling categorical relationships" title="Modeling categorical relationships"  height="600px" width="100%"></iframe>
 
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/modeling-categorical-relationships.html" name="Modeling categorical relationships" title="Modeling categorical relationships" height="600px" width="100%">
+
+</iframe>
 
 ## Modeling continuous relationships
-<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/modeling-continuous-relationships.html" name="Modeling continuous relationships" title="Modeling continuous relationships"  height="600px" width="100%"></iframe>
 
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/modeling-continuous-relationships.html" name="Modeling continuous relationships" title="Modeling continuous relationships" height="600px" width="100%">
+
+</iframe>
 
 ## The General Linear Model
-<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/the-general-linear-model.html" name="The General Linear Model" title="The General Linear Model"  height="800px" width="100%"></iframe>
 
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/the-general-linear-model.html" name="The General Linear Model" title="The General Linear Model" height="700px" width="100%">
+
+</iframe>
 
 ## Practical statistical modeling
-<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/practical-example.html" name="Practical statistical modeling" title="Practical statistical modeling"  height="800px" width="100%"></iframe>
 
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/practical-example.html" name="Practical statistical modeling" title="Practical statistical modeling" height="700px" width="100%">
+
+</iframe>
