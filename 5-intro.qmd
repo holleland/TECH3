@@ -1,0 +1,1 @@
+What should you do if your response variable is categorical?

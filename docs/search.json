@@ -29,8 +29,69 @@
     ]
   },
   {
-    "objectID": "module-4.html",
-    "href": "module-4.html",
+    "objectID": "datalab-3.html",
+    "href": "datalab-3.html",
+    "title": "Datalab 3",
+    "section": "",
+    "text": "Datalab 3"
+  },
+  {
+    "objectID": "datalab-1.html",
+    "href": "datalab-1.html",
+    "title": "Datalab 1",
+    "section": "",
+    "text": "Datalab 1",
+    "crumbs": [
+      "Datalabs",
+      "Datalab 1"
+    ]
+  },
+  {
+    "objectID": "calender.html",
+    "href": "calender.html",
+    "title": "Calender",
+    "section": "",
+    "text": "Calender"
+  },
+  {
+    "objectID": "5-videos.html",
+    "href": "5-videos.html",
+    "title": "Videos",
+    "section": "",
+    "text": "Videos",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Videos"
+    ]
+  },
+  {
+    "objectID": "5-python.html",
+    "href": "5-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "5-exercises.html",
+    "href": "5-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "4-textbook.html",
+    "href": "4-textbook.html",
     "title": "TECH3 Applied statistics",
     "section": "",
     "text": "The following is a redistribution of chapters 9, 10 and 15 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
@@ -41,8 +102,8 @@
     ]
   },
   {
-    "objectID": "module-4.html#hypothesis-testing",
-    "href": "module-4.html#hypothesis-testing",
+    "objectID": "4-textbook.html#hypothesis-testing",
+    "href": "4-textbook.html#hypothesis-testing",
     "title": "TECH3 Applied statistics",
     "section": "Hypothesis testing",
     "text": "Hypothesis testing",
@@ -53,8 +114,8 @@
     ]
   },
   {
-    "objectID": "module-4.html#quantifying-effects-and-designing-studies",
-    "href": "module-4.html#quantifying-effects-and-designing-studies",
+    "objectID": "4-textbook.html#quantifying-effects-and-designing-studies",
+    "href": "4-textbook.html#quantifying-effects-and-designing-studies",
     "title": "TECH3 Applied statistics",
     "section": "Quantifying effects and designing studies",
     "text": "Quantifying effects and designing studies",
@@ -65,8 +126,8 @@
     ]
   },
   {
-    "objectID": "module-4.html#comparing-means",
-    "href": "module-4.html#comparing-means",
+    "objectID": "4-textbook.html#comparing-means",
+    "href": "4-textbook.html#comparing-means",
     "title": "TECH3 Applied statistics",
     "section": "Comparing means",
     "text": "Comparing means",
@@ -77,8 +138,56 @@
     ]
   },
   {
-    "objectID": "module-2.html",
-    "href": "module-2.html",
+    "objectID": "4-intro.html",
+    "href": "4-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "Hypothesis testing.",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "3-videos.html",
+    "href": "3-videos.html",
+    "title": "Videos",
+    "section": "",
+    "text": "Videos",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Videos"
+    ]
+  },
+  {
+    "objectID": "3-python.html",
+    "href": "3-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "3-exercises.html",
+    "href": "3-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-textbook.html",
+    "href": "2-textbook.html",
     "title": "TECH3 Applied statistics",
     "section": "",
     "text": "The following is a redistribution of chapters 6 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
@@ -89,8 +198,8 @@
     ]
   },
   {
-    "objectID": "module-2.html#probability",
-    "href": "module-2.html#probability",
+    "objectID": "2-textbook.html#probability",
+    "href": "2-textbook.html#probability",
     "title": "TECH3 Applied statistics",
     "section": "Probability",
     "text": "Probability",
@@ -98,6 +207,439 @@
       "Modules",
       "Module 2: Probability, random variables, probability distributions and simulations.",
       "Textbook"
+    ]
+  },
+  {
+    "objectID": "2-intro.html",
+    "href": "2-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "This module is about probability, random variables, etc..",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "1-videos.html",
+    "href": "1-videos.html",
+    "title": "Video lectures",
+    "section": "",
+    "text": "Video lectures",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Video lectures"
+    ]
+  },
+  {
+    "objectID": "1-python.html",
+    "href": "1-python.html",
+    "title": "Useful python commands",
+    "section": "",
+    "text": "Useful python commands",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Useful python commands"
+    ]
+  },
+  {
+    "objectID": "1-exercises.html",
+    "href": "1-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "1-intro.html",
+    "href": "1-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "In this module, you will learn about summarizing and visualizing data. All (almost) applied statistical analysis starts with some data, and beeing able to summarizing visualize data is an important tool for any user of statistics.",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "1-textbook.html",
+    "href": "1-textbook.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "The following is a redistribution of chapters 3-4 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "1-textbook.html#summarizing-data",
+    "href": "1-textbook.html#summarizing-data",
+    "title": "TECH3 Applied statistics",
+    "section": "Summarizing data",
+    "text": "Summarizing data",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "1-textbook.html#data-visualization",
+    "href": "1-textbook.html#data-visualization",
+    "title": "TECH3 Applied statistics",
+    "section": "Data visualization",
+    "text": "Data visualization",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html",
+    "href": "2-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "A probability distribution is a function defined on the sample space which is non-negative and such that the sum of all function values is \\(1=100\\ \\%\\).\n\n\nAn experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.\n\nWhy is this a probability distribution?\nHow large is the probability that we get the outcome A in the first experiment?\nHow large is the probability that we get A as an outcome of the second experiment?\nDoes the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?\n\n\n\n\nAn experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.\n\n\n\n\nAA\nAB\nAC\nBA\nBB\nBC\nCA\nCB\nCC\n\n\n\n\nProbability (%)\n16\n12\n12\n12\n9\n9\n12\n9\n9\n\n\n\n\nWhy is this a probability distribution?\nHow large is the probability that we get the outcome A in the first experiment?\nHow large is the probability that we get A as an outcome of the second experiment?\nDoes the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?\n\n\n\n\nRecall the general addition rule: \\[P(A\\cup B)=P(A)+P(B)-P(A\\cap B).\\]\n\nAssume that \\(P(A)=0.2,P(B)=0.3, P(A\\cap B)=0.1\\). What is \\(P(A\\cup B)\\)?\nAssume that \\(P(A)=0.3,P(B)=0.4, P(A\\cup B)=0.5\\). What is \\(P(A\\cap B)\\)?\nAssume that \\(P(B)=0.4, P(A\\cap B)=0.1,P(A\\cup B)=0.6\\). What is \\(P(A)\\)?\nAssume that \\(P(A)=0.5, P(A\\cap B)=0.2,P(A\\cup B)=0.7\\). What is \\(P(B)\\)?\n\n\n\n\n\nHow do we compute a conditional probability? \\[P(A|B)={{P(A\\cap B)}\\over{P(B)}}\\] We must find the probability of the intersection and divide the answer by the probability of the conditioning event.\n\nAssume that \\(P(A)=0.5,P(B)=0.3, P(A\\cap B)=0.15\\). What is \\(P(A|B)\\)?\nIs it always true that \\(P(A|B)=P(B|A)\\)?\nAssume that \\(P(B)=0.3,P(A|B)=0.7\\). What is \\(P(A\\cap B)\\)?\nAssume that \\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\\). Find \\(P(A\\cap B)\\) and use the answer to compute \\(P(B|A)\\).\n\n\n\n\nBayes law says: \\[P(B|A)=P(A|B)\\cdot {{P(B)}\\over{P(A)}}.\\]\nAssume that \\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\\) (as in 1(d)). Use Bayes’ law to compute \\(P(B|A)\\).\n\n\n\nIf we split the sample space into \\(n\\) non-overlapping parts \\(B_1,\\dots,B_n\\), then \\[P(A)=P(A|B_1)\\cdot P(B_1)+P(A|B_2)\\cdot P(B_2)+\\cdots+P(A|B_n)\\cdot P(B_n).\\] The most common application uses \\(n=2\\). In that case there are only two terms.\n\nAssume that \\(P(B)=0.3, P(A|B)=0.5, P(A|B^c)=0.4\\). Find \\(P(A)\\).\nAssume that \\(P(A)=0.6, P(B)=0.4,P(A|B^c)=0.5\\). Find \\(P(A|B)\\).\n\n\n\n\nA financial analyst have considered the future development of several differnt stocks. One year later 20% of these stocks did better than the index, 30% performed approximately as the index, while the rest, 50%, performed considerably worse. 60% of the companies that were performing better than the index were rated A by the analyst, 5% of the companies at level with the index had the same rating, while only 3% of the stocks with bad performance were rated A.\n\nHow many % of the stocks rated by the analyst, was rated A?\nWhat was that probablity of performing better than the index, given that the stock was rated A by the analyst?\n\n\n\n\nUnder a trial concerning alleged women’s discrimination (Berkeley, 1973) the following evidence were presented:\n\nThe students had applied for admission to 6 different institutes, and the numbers for the woman applicants were as follows:\n\n\n\n\nInstitute\nA\nB\nC\nD\nE\nF\n\n\nFraction admitted (%)\n82\n68\n34\n35\n24\n7\n\n\nFraction of female applicants (%)\n6\n1\n32\n20\n22\n19\n\n\n\nThe applicants only applied for admission to one institute. Find the fraction of female applicants that were admitted.\n\nThe corresponding results for men were as follows:\n\n\n\n\nInstitute\nA\nB\nC\nD\nE\nF\n\n\nFraction admitted (%)\n62\n63\n37\n33\n28\n6\n\n\nFraction of male applicants (%)\n32\n22\n12\n16\n7\n11\n\n\n\nFind the fraction of male applicants that were admitted.\n\nThe results from (a) and (b) imply that men had approximately 50% higher chance of being admitted. Was the women discriminated? What is the cause that so few women were admitted?\n\n\n\n\nHow do we find the absolute probabilities in a tree with conditional probabilities? We find the unconditional probabilities multiplying along each branch.\nThe results from a poll is summarized in the tree below.\n\n\n\nProbability Tree\n\n\n\nHow many percent of young men answered no on the question? How many percent of older women answered yes?\nConvert the tree to a tree with absolute probabilities.\nHow many percent answered yes on the question in this poll? How many percent of the women answered yes?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-1",
+    "href": "2-exercises.html#problem-1",
+    "title": "Exercises",
+    "section": "",
+    "text": "An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.\n\nWhy is this a probability distribution?\nHow large is the probability that we get the outcome A in the first experiment?\nHow large is the probability that we get A as an outcome of the second experiment?\nDoes the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-2",
+    "href": "2-exercises.html#problem-2",
+    "title": "Exercises",
+    "section": "",
+    "text": "An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.\n\n\n\n\nAA\nAB\nAC\nBA\nBB\nBC\nCA\nCB\nCC\n\n\n\n\nProbability (%)\n16\n12\n12\n12\n9\n9\n12\n9\n9\n\n\n\n\nWhy is this a probability distribution?\nHow large is the probability that we get the outcome A in the first experiment?\nHow large is the probability that we get A as an outcome of the second experiment?\nDoes the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-3",
+    "href": "2-exercises.html#problem-3",
+    "title": "Exercises",
+    "section": "",
+    "text": "Recall the general addition rule: \\[P(A\\cup B)=P(A)+P(B)-P(A\\cap B).\\]\n\nAssume that \\(P(A)=0.2,P(B)=0.3, P(A\\cap B)=0.1\\). What is \\(P(A\\cup B)\\)?\nAssume that \\(P(A)=0.3,P(B)=0.4, P(A\\cup B)=0.5\\). What is \\(P(A\\cap B)\\)?\nAssume that \\(P(B)=0.4, P(A\\cap B)=0.1,P(A\\cup B)=0.6\\). What is \\(P(A)\\)?\nAssume that \\(P(A)=0.5, P(A\\cap B)=0.2,P(A\\cup B)=0.7\\). What is \\(P(B)\\)?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-4",
+    "href": "2-exercises.html#problem-4",
+    "title": "Exercises",
+    "section": "",
+    "text": "How do we compute a conditional probability? \\[P(A|B)={{P(A\\cap B)}\\over{P(B)}}\\] We must find the probability of the intersection and divide the answer by the probability of the conditioning event.\n\nAssume that \\(P(A)=0.5,P(B)=0.3, P(A\\cap B)=0.15\\). What is \\(P(A|B)\\)?\nIs it always true that \\(P(A|B)=P(B|A)\\)?\nAssume that \\(P(B)=0.3,P(A|B)=0.7\\). What is \\(P(A\\cap B)\\)?\nAssume that \\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\\). Find \\(P(A\\cap B)\\) and use the answer to compute \\(P(B|A)\\).",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-5",
+    "href": "2-exercises.html#problem-5",
+    "title": "Exercises",
+    "section": "",
+    "text": "Bayes law says: \\[P(B|A)=P(A|B)\\cdot {{P(B)}\\over{P(A)}}.\\]\nAssume that \\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\\) (as in 1(d)). Use Bayes’ law to compute \\(P(B|A)\\).",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-6",
+    "href": "2-exercises.html#problem-6",
+    "title": "Exercises",
+    "section": "",
+    "text": "If we split the sample space into \\(n\\) non-overlapping parts \\(B_1,\\dots,B_n\\), then \\[P(A)=P(A|B_1)\\cdot P(B_1)+P(A|B_2)\\cdot P(B_2)+\\cdots+P(A|B_n)\\cdot P(B_n).\\] The most common application uses \\(n=2\\). In that case there are only two terms.\n\nAssume that \\(P(B)=0.3, P(A|B)=0.5, P(A|B^c)=0.4\\). Find \\(P(A)\\).\nAssume that \\(P(A)=0.6, P(B)=0.4,P(A|B^c)=0.5\\). Find \\(P(A|B)\\).",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-7",
+    "href": "2-exercises.html#problem-7",
+    "title": "Exercises",
+    "section": "",
+    "text": "A financial analyst have considered the future development of several differnt stocks. One year later 20% of these stocks did better than the index, 30% performed approximately as the index, while the rest, 50%, performed considerably worse. 60% of the companies that were performing better than the index were rated A by the analyst, 5% of the companies at level with the index had the same rating, while only 3% of the stocks with bad performance were rated A.\n\nHow many % of the stocks rated by the analyst, was rated A?\nWhat was that probablity of performing better than the index, given that the stock was rated A by the analyst?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-8",
+    "href": "2-exercises.html#problem-8",
+    "title": "Exercises",
+    "section": "",
+    "text": "Under a trial concerning alleged women’s discrimination (Berkeley, 1973) the following evidence were presented:\n\nThe students had applied for admission to 6 different institutes, and the numbers for the woman applicants were as follows:\n\n\n\n\nInstitute\nA\nB\nC\nD\nE\nF\n\n\nFraction admitted (%)\n82\n68\n34\n35\n24\n7\n\n\nFraction of female applicants (%)\n6\n1\n32\n20\n22\n19\n\n\n\nThe applicants only applied for admission to one institute. Find the fraction of female applicants that were admitted.\n\nThe corresponding results for men were as follows:\n\n\n\n\nInstitute\nA\nB\nC\nD\nE\nF\n\n\nFraction admitted (%)\n62\n63\n37\n33\n28\n6\n\n\nFraction of male applicants (%)\n32\n22\n12\n16\n7\n11\n\n\n\nFind the fraction of male applicants that were admitted.\n\nThe results from (a) and (b) imply that men had approximately 50% higher chance of being admitted. Was the women discriminated? What is the cause that so few women were admitted?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html#problem-9",
+    "href": "2-exercises.html#problem-9",
+    "title": "Exercises",
+    "section": "",
+    "text": "How do we find the absolute probabilities in a tree with conditional probabilities? We find the unconditional probabilities multiplying along each branch.\nThe results from a poll is summarized in the tree below.\n\n\n\nProbability Tree\n\n\n\nHow many percent of young men answered no on the question? How many percent of older women answered yes?\nConvert the tree to a tree with absolute probabilities.\nHow many percent answered yes on the question in this poll? How many percent of the women answered yes?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-python.html",
+    "href": "2-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "2-videos.html",
+    "href": "2-videos.html",
+    "title": "Videos",
+    "section": "",
+    "text": "Videos",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Videos"
+    ]
+  },
+  {
+    "objectID": "3-intro.html",
+    "href": "3-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "Fitting models to data.",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "3-textbook.html",
+    "href": "3-textbook.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "The following is a redistribution of chapters 5, 7 and 8 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "3-textbook.html#fitting-models-to-data",
+    "href": "3-textbook.html#fitting-models-to-data",
+    "title": "TECH3 Applied statistics",
+    "section": "Fitting models to data",
+    "text": "Fitting models to data",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "3-textbook.html#sampling",
+    "href": "3-textbook.html#sampling",
+    "title": "TECH3 Applied statistics",
+    "section": "Sampling",
+    "text": "Sampling",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "3-textbook.html#resampling-and-simulation",
+    "href": "3-textbook.html#resampling-and-simulation",
+    "title": "TECH3 Applied statistics",
+    "section": "Resampling and Simulation",
+    "text": "Resampling and Simulation",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "4-exercises.html",
+    "href": "4-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "4-python.html",
+    "href": "4-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "4-videos.html",
+    "href": "4-videos.html",
+    "title": "Videos",
+    "section": "",
+    "text": "Videos",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Videos"
+    ]
+  },
+  {
+    "objectID": "5-intro.html",
+    "href": "5-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "What should you do if your response variable is categorical?",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "5-textbook.html",
+    "href": "5-textbook.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "The following is a redistribution of chapters 12, 13, 14, and 17 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "5-textbook.html#modeling-categorical-relationships",
+    "href": "5-textbook.html#modeling-categorical-relationships",
+    "title": "TECH3 Applied statistics",
+    "section": "Modeling categorical relationships",
+    "text": "Modeling categorical relationships",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "5-textbook.html#modeling-continuous-relationships",
+    "href": "5-textbook.html#modeling-continuous-relationships",
+    "title": "TECH3 Applied statistics",
+    "section": "Modeling continuous relationships",
+    "text": "Modeling continuous relationships",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "5-textbook.html#the-general-linear-model",
+    "href": "5-textbook.html#the-general-linear-model",
+    "title": "TECH3 Applied statistics",
+    "section": "The General Linear Model",
+    "text": "The General Linear Model",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "5-textbook.html#practical-statistical-modeling",
+    "href": "5-textbook.html#practical-statistical-modeling",
+    "title": "TECH3 Applied statistics",
+    "section": "Practical statistical modeling",
+    "text": "Practical statistical modeling",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Sondre Hølleland,  Assistant professor\n\n\n\n\n\nGeir Drage Berentsen,  Associate professor\n\n\n\nThis course and website has been developed by Sondre Hølleland, assistant professor, and Geir Drage Berentsen, associate professor, both at Norwegian School of Economics, Department of Business and Management Science. More about us will be added."
+  },
+  {
+    "objectID": "data/countries/country_data_wrangling.html",
+    "href": "data/countries/country_data_wrangling.html",
+    "title": "Country data - wrangling",
+    "section": "",
+    "text": "Wrangling of countries data into a single dataset\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\ncountry codes with continent from https://datahub.io/core/country-codes\n\n# north america is coded as NA so need to exclude it from NA list\ncountry_codes &lt;- read_delim('country_codes.csv', na=c('')) %&gt;%\n    rename(CountryCode = `ISO3166-1-Alpha-3`, \n           Name = `UNTERM English Formal`) %&gt;%\n    select(Continent, CountryCode)\n\nRows: 250 Columns: 56\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (48): FIFA, Dial, ISO3166-1-Alpha-3, MARC, is_independent, ISO3166-1-num...\ndbl  (5): Intermediate Region Code, M49, Sub-region Code, Region Code, Geona...\nnum  (2): GAUL, ISO4217-currency_minor_unit\nlgl  (1): Global Code\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nfrom google, this contains latitude/longitude\n\ncountries &lt;- read_delim('countries/countries.csv') %&gt;%\n  rename(CountryName = name)\n\nRows: 245 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, name\ndbl (2): latitude, longitude\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nfrom worldbank, this contains population over time\n\n\nyears are in columns\n\npopulation &lt;- read_csv('worldbank/API_SP.POP.TOTL_DS2_en_csv_v2_3469297.csv', show_col_types = FALSE, skip=4) %&gt;% \n  select(-`...66`) %&gt;%\n  rename(CountryName = `Country Name`,\n         CountryCode = `Country Code`,\n         Population2020 = `2020`) %&gt;%\n  select(CountryName, CountryCode, Population2020)\n\nNew names:\n• `` -&gt; `...66`\n\n\n\ncountry_metadata &lt;- read_csv('worldbank/Metadata_Country_API_SP.POP.TOTL_DS2_en_csv_v2_3469297.csv', show_col_types = FALSE) %&gt;% \n  select(-`...6`) %&gt;%\n  rename(CountryCode = `Country Code`) %&gt;%\n  select(-SpecialNotes, -TableName)\n\nNew names:\n• `` -&gt; `...6`\n\n\n\npopdata &lt;- merge(population, country_metadata, by='CountryCode') %&gt;%\n  drop_na(Region)  # remove regional summaries\n\npopdata &lt;- merge(popdata, country_codes, by='CountryCode') %&gt;%\n  drop_na(Continent)\n\n\npopdata_with_geodata &lt;- merge(popdata, countries, by=\"CountryName\")\n\n\ngdp &lt;- read_csv('worldbank_gdp/API_NY.GDP.MKTP.CD_DS2_en_csv_v2_3469429.csv', show_col_types = FALSE, skip=4) %&gt;% \n  select(-`...66`) %&gt;%\n  rename(CountryName = `Country Name`,\n         CountryCode = `Country Code`,\n         GDP2020 = `2020`)  %&gt;%\n  select(CountryCode, GDP2020) %&gt;%\n  drop_na(GDP2020)\n\nNew names:\n• `` -&gt; `...66`\n\npopdata_with_geodata_and_gdp &lt;- merge(popdata_with_geodata, gdp)\n\n\nwrite_csv(popdata_with_geodata_and_gdp, 'country_data.csv')"
+  },
+  {
+    "objectID": "datalab-2.html",
+    "href": "datalab-2.html",
+    "title": "Datalab 2",
+    "section": "",
+    "text": "Datalab 2",
+    "crumbs": [
+      "Datalabs",
+      "Datalab 2"
     ]
   },
   {
@@ -120,363 +662,6 @@
     "title": "Introduction",
     "section": "",
     "text": "All the material on this website, including chapters 1-10, 12-15, and 17 of Statistical Thinking in the 21st Century and Python Companion to Statistical Thinking in the 21st Century."
-  },
-  {
-    "objectID": "datalab-2.html",
-    "href": "datalab-2.html",
-    "title": "Datalab 2",
-    "section": "",
-    "text": "Datalab 2",
-    "crumbs": [
-      "Datalabs",
-      "Datalab 2"
-    ]
-  },
-  {
-    "objectID": "data/countries/country_data_wrangling.html",
-    "href": "data/countries/country_data_wrangling.html",
-    "title": "Country data - wrangling",
-    "section": "",
-    "text": "Wrangling of countries data into a single dataset\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\ncountry codes with continent from https://datahub.io/core/country-codes\n\n# north america is coded as NA so need to exclude it from NA list\ncountry_codes &lt;- read_delim('country_codes.csv', na=c('')) %&gt;%\n    rename(CountryCode = `ISO3166-1-Alpha-3`, \n           Name = `UNTERM English Formal`) %&gt;%\n    select(Continent, CountryCode)\n\nRows: 250 Columns: 56\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (48): FIFA, Dial, ISO3166-1-Alpha-3, MARC, is_independent, ISO3166-1-num...\ndbl  (5): Intermediate Region Code, M49, Sub-region Code, Region Code, Geona...\nnum  (2): GAUL, ISO4217-currency_minor_unit\nlgl  (1): Global Code\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nfrom google, this contains latitude/longitude\n\ncountries &lt;- read_delim('countries/countries.csv') %&gt;%\n  rename(CountryName = name)\n\nRows: 245 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, name\ndbl (2): latitude, longitude\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nfrom worldbank, this contains population over time\n\n\nyears are in columns\n\npopulation &lt;- read_csv('worldbank/API_SP.POP.TOTL_DS2_en_csv_v2_3469297.csv', show_col_types = FALSE, skip=4) %&gt;% \n  select(-`...66`) %&gt;%\n  rename(CountryName = `Country Name`,\n         CountryCode = `Country Code`,\n         Population2020 = `2020`) %&gt;%\n  select(CountryName, CountryCode, Population2020)\n\nNew names:\n• `` -&gt; `...66`\n\n\n\ncountry_metadata &lt;- read_csv('worldbank/Metadata_Country_API_SP.POP.TOTL_DS2_en_csv_v2_3469297.csv', show_col_types = FALSE) %&gt;% \n  select(-`...6`) %&gt;%\n  rename(CountryCode = `Country Code`) %&gt;%\n  select(-SpecialNotes, -TableName)\n\nNew names:\n• `` -&gt; `...6`\n\n\n\npopdata &lt;- merge(population, country_metadata, by='CountryCode') %&gt;%\n  drop_na(Region)  # remove regional summaries\n\npopdata &lt;- merge(popdata, country_codes, by='CountryCode') %&gt;%\n  drop_na(Continent)\n\n\npopdata_with_geodata &lt;- merge(popdata, countries, by=\"CountryName\")\n\n\ngdp &lt;- read_csv('worldbank_gdp/API_NY.GDP.MKTP.CD_DS2_en_csv_v2_3469429.csv', show_col_types = FALSE, skip=4) %&gt;% \n  select(-`...66`) %&gt;%\n  rename(CountryName = `Country Name`,\n         CountryCode = `Country Code`,\n         GDP2020 = `2020`)  %&gt;%\n  select(CountryCode, GDP2020) %&gt;%\n  drop_na(GDP2020)\n\nNew names:\n• `` -&gt; `...66`\n\npopdata_with_geodata_and_gdp &lt;- merge(popdata_with_geodata, gdp)\n\n\nwrite_csv(popdata_with_geodata_and_gdp, 'country_data.csv')"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Sondre Hølleland,  Assistant professor\n\n\n\n\n\nGeir Drage Berentsen,  Associate professor\n\n\n\nThis course and website has been developed by Sondre Hølleland, assistant professor, and Geir Drage Berentsen, associate professor, both at Norwegian School of Economics, Department of Business and Management Science. More about us will be added."
-  },
-  {
-    "objectID": "2_2_random_variables.html",
-    "href": "2_2_random_variables.html",
-    "title": "Random Variables",
-    "section": "",
-    "text": "Random Variables"
-  },
-  {
-    "objectID": "01-videos.html",
-    "href": "01-videos.html",
-    "title": "Video lectures",
-    "section": "",
-    "text": "Video lectures",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Video lectures"
-    ]
-  },
-  {
-    "objectID": "01-exercises.html",
-    "href": "01-exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercises",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "01-python.html",
-    "href": "01-python.html",
-    "title": "Useful python commands",
-    "section": "",
-    "text": "Useful python commands",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Useful python commands"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html",
-    "href": "2_exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "A probability distribution is a function defined on the sample space which is non-negative and such that the sum of all function values is \\(1=100\\ \\%\\).\n\n\nAn experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.\n\nWhy is this a probability distribution?\nHow large is the probability that we get the outcome A in the first experiment?\nHow large is the probability that we get A as an outcome of the second experiment?\nDoes the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?\n\n\n\n\nAn experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.\n\n\n\n\nAA\nAB\nAC\nBA\nBB\nBC\nCA\nCB\nCC\n\n\n\n\nProbability (%)\n16\n12\n12\n12\n9\n9\n12\n9\n9\n\n\n\n\nWhy is this a probability distribution?\nHow large is the probability that we get the outcome A in the first experiment?\nHow large is the probability that we get A as an outcome of the second experiment?\nDoes the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?\n\n\n\n\nRecall the general addition rule: \\[P(A\\cup B)=P(A)+P(B)-P(A\\cap B).\\]\n\nAssume that \\(P(A)=0.2,P(B)=0.3, P(A\\cap B)=0.1\\). What is \\(P(A\\cup B)\\)?\nAssume that \\(P(A)=0.3,P(B)=0.4, P(A\\cup B)=0.5\\). What is \\(P(A\\cap B)\\)?\nAssume that \\(P(B)=0.4, P(A\\cap B)=0.1,P(A\\cup B)=0.6\\). What is \\(P(A)\\)?\nAssume that \\(P(A)=0.5, P(A\\cap B)=0.2,P(A\\cup B)=0.7\\). What is \\(P(B)\\)?\n\n\n\n\n\nHow do we compute a conditional probability? \\[P(A|B)={{P(A\\cap B)}\\over{P(B)}}\\] We must find the probability of the intersection and divide the answer by the probability of the conditioning event.\n\nAssume that \\(P(A)=0.5,P(B)=0.3, P(A\\cap B)=0.15\\). What is \\(P(A|B)\\)?\nIs it always true that \\(P(A|B)=P(B|A)\\)?\nAssume that \\(P(B)=0.3,P(A|B)=0.7\\). What is \\(P(A\\cap B)\\)?\nAssume that \\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\\). Find \\(P(A\\cap B)\\) and use the answer to compute \\(P(B|A)\\).\n\n\n\n\nBayes law says: \\[P(B|A)=P(A|B)\\cdot {{P(B)}\\over{P(A)}}.\\]\nAssume that \\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\\) (as in 1(d)). Use Bayes’ law to compute \\(P(B|A)\\).\n\n\n\nIf we split the sample space into \\(n\\) non-overlapping parts \\(B_1,\\dots,B_n\\), then \\[P(A)=P(A|B_1)\\cdot P(B_1)+P(A|B_2)\\cdot P(B_2)+\\cdots+P(A|B_n)\\cdot P(B_n).\\] The most common application uses \\(n=2\\). In that case there are only two terms.\n\nAssume that \\(P(B)=0.3, P(A|B)=0.5, P(A|B^c)=0.4\\). Find \\(P(A)\\).\nAssume that \\(P(A)=0.6, P(B)=0.4,P(A|B^c)=0.5\\). Find \\(P(A|B)\\).\n\n\n\n\nA financial analyst have considered the future development of several differnt stocks. One year later 20% of these stocks did better than the index, 30% performed approximately as the index, while the rest, 50%, performed considerably worse. 60% of the companies that were performing better than the index were rated A by the analyst, 5% of the companies at level with the index had the same rating, while only 3% of the stocks with bad performance were rated A.\n\nHow many % of the stocks rated by the analyst, was rated A?\nWhat was that probablity of performing better than the index, given that the stock was rated A by the analyst?\n\n\n\n\nUnder a trial concerning alleged women’s discrimination (Berkeley, 1973) the following evidence were presented:\n\nThe students had applied for admission to 6 different institutes, and the numbers for the woman applicants were as follows:\n\n\n\n\nInstitute\nA\nB\nC\nD\nE\nF\n\n\nFraction admitted (%)\n82\n68\n34\n35\n24\n7\n\n\nFraction of female applicants (%)\n6\n1\n32\n20\n22\n19\n\n\n\nThe applicants only applied for admission to one institute. Find the fraction of female applicants that were admitted.\n\nThe corresponding results for men were as follows:\n\n\n\n\nInstitute\nA\nB\nC\nD\nE\nF\n\n\nFraction admitted (%)\n62\n63\n37\n33\n28\n6\n\n\nFraction of male applicants (%)\n32\n22\n12\n16\n7\n11\n\n\n\nFind the fraction of male applicants that were admitted.\n\nThe results from (a) and (b) imply that men had approximately 50% higher chance of being admitted. Was the women discriminated? What is the cause that so few women were admitted?\n\n\n\n\nHow do we find the absolute probabilities in a tree with conditional probabilities? We find the unconditional probabilities multiplying along each branch.\nThe results from a poll is summarized in the tree below.\n\n\n\nProbability Tree\n\n\n\nHow many percent of young men answered no on the question? How many percent of older women answered yes?\nConvert the tree to a tree with absolute probabilities.\nHow many percent answered yes on the question in this poll? How many percent of the women answered yes?",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-1",
-    "href": "2_exercises.html#problem-1",
-    "title": "Exercises",
-    "section": "",
-    "text": "An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.\n\nWhy is this a probability distribution?\nHow large is the probability that we get the outcome A in the first experiment?\nHow large is the probability that we get A as an outcome of the second experiment?\nDoes the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-2",
-    "href": "2_exercises.html#problem-2",
-    "title": "Exercises",
-    "section": "",
-    "text": "An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.\n\n\n\n\nAA\nAB\nAC\nBA\nBB\nBC\nCA\nCB\nCC\n\n\n\n\nProbability (%)\n16\n12\n12\n12\n9\n9\n12\n9\n9\n\n\n\n\nWhy is this a probability distribution?\nHow large is the probability that we get the outcome A in the first experiment?\nHow large is the probability that we get A as an outcome of the second experiment?\nDoes the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-3",
-    "href": "2_exercises.html#problem-3",
-    "title": "Exercises",
-    "section": "",
-    "text": "Recall the general addition rule: \\[P(A\\cup B)=P(A)+P(B)-P(A\\cap B).\\]\n\nAssume that \\(P(A)=0.2,P(B)=0.3, P(A\\cap B)=0.1\\). What is \\(P(A\\cup B)\\)?\nAssume that \\(P(A)=0.3,P(B)=0.4, P(A\\cup B)=0.5\\). What is \\(P(A\\cap B)\\)?\nAssume that \\(P(B)=0.4, P(A\\cap B)=0.1,P(A\\cup B)=0.6\\). What is \\(P(A)\\)?\nAssume that \\(P(A)=0.5, P(A\\cap B)=0.2,P(A\\cup B)=0.7\\). What is \\(P(B)\\)?",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-4",
-    "href": "2_exercises.html#problem-4",
-    "title": "Exercises",
-    "section": "",
-    "text": "How do we compute a conditional probability? \\[P(A|B)={{P(A\\cap B)}\\over{P(B)}}\\] We must find the probability of the intersection and divide the answer by the probability of the conditioning event.\n\nAssume that \\(P(A)=0.5,P(B)=0.3, P(A\\cap B)=0.15\\). What is \\(P(A|B)\\)?\nIs it always true that \\(P(A|B)=P(B|A)\\)?\nAssume that \\(P(B)=0.3,P(A|B)=0.7\\). What is \\(P(A\\cap B)\\)?\nAssume that \\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\\). Find \\(P(A\\cap B)\\) and use the answer to compute \\(P(B|A)\\).",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-5",
-    "href": "2_exercises.html#problem-5",
-    "title": "Exercises",
-    "section": "",
-    "text": "Bayes law says: \\[P(B|A)=P(A|B)\\cdot {{P(B)}\\over{P(A)}}.\\]\nAssume that \\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\\) (as in 1(d)). Use Bayes’ law to compute \\(P(B|A)\\).",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-6",
-    "href": "2_exercises.html#problem-6",
-    "title": "Exercises",
-    "section": "",
-    "text": "If we split the sample space into \\(n\\) non-overlapping parts \\(B_1,\\dots,B_n\\), then \\[P(A)=P(A|B_1)\\cdot P(B_1)+P(A|B_2)\\cdot P(B_2)+\\cdots+P(A|B_n)\\cdot P(B_n).\\] The most common application uses \\(n=2\\). In that case there are only two terms.\n\nAssume that \\(P(B)=0.3, P(A|B)=0.5, P(A|B^c)=0.4\\). Find \\(P(A)\\).\nAssume that \\(P(A)=0.6, P(B)=0.4,P(A|B^c)=0.5\\). Find \\(P(A|B)\\).",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-7",
-    "href": "2_exercises.html#problem-7",
-    "title": "Exercises",
-    "section": "",
-    "text": "A financial analyst have considered the future development of several differnt stocks. One year later 20% of these stocks did better than the index, 30% performed approximately as the index, while the rest, 50%, performed considerably worse. 60% of the companies that were performing better than the index were rated A by the analyst, 5% of the companies at level with the index had the same rating, while only 3% of the stocks with bad performance were rated A.\n\nHow many % of the stocks rated by the analyst, was rated A?\nWhat was that probablity of performing better than the index, given that the stock was rated A by the analyst?",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-8",
-    "href": "2_exercises.html#problem-8",
-    "title": "Exercises",
-    "section": "",
-    "text": "Under a trial concerning alleged women’s discrimination (Berkeley, 1973) the following evidence were presented:\n\nThe students had applied for admission to 6 different institutes, and the numbers for the woman applicants were as follows:\n\n\n\n\nInstitute\nA\nB\nC\nD\nE\nF\n\n\nFraction admitted (%)\n82\n68\n34\n35\n24\n7\n\n\nFraction of female applicants (%)\n6\n1\n32\n20\n22\n19\n\n\n\nThe applicants only applied for admission to one institute. Find the fraction of female applicants that were admitted.\n\nThe corresponding results for men were as follows:\n\n\n\n\nInstitute\nA\nB\nC\nD\nE\nF\n\n\nFraction admitted (%)\n62\n63\n37\n33\n28\n6\n\n\nFraction of male applicants (%)\n32\n22\n12\n16\n7\n11\n\n\n\nFind the fraction of male applicants that were admitted.\n\nThe results from (a) and (b) imply that men had approximately 50% higher chance of being admitted. Was the women discriminated? What is the cause that so few women were admitted?",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "2_exercises.html#problem-9",
-    "href": "2_exercises.html#problem-9",
-    "title": "Exercises",
-    "section": "",
-    "text": "How do we find the absolute probabilities in a tree with conditional probabilities? We find the unconditional probabilities multiplying along each branch.\nThe results from a poll is summarized in the tree below.\n\n\n\nProbability Tree\n\n\n\nHow many percent of young men answered no on the question? How many percent of older women answered yes?\nConvert the tree to a tree with absolute probabilities.\nHow many percent answered yes on the question in this poll? How many percent of the women answered yes?",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "calender.html",
-    "href": "calender.html",
-    "title": "Calender",
-    "section": "",
-    "text": "Calender"
-  },
-  {
-    "objectID": "datalab-1.html",
-    "href": "datalab-1.html",
-    "title": "Datalab 1",
-    "section": "",
-    "text": "Datalab 1",
-    "crumbs": [
-      "Datalabs",
-      "Datalab 1"
-    ]
-  },
-  {
-    "objectID": "datalab-3.html",
-    "href": "datalab-3.html",
-    "title": "Datalab 3",
-    "section": "",
-    "text": "Datalab 3"
-  },
-  {
-    "objectID": "module-1.html",
-    "href": "module-1.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "The following is a redistribution of chapters 3-4 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-1.html#summarizing-data",
-    "href": "module-1.html#summarizing-data",
-    "title": "TECH3 Applied statistics",
-    "section": "Summarizing data",
-    "text": "Summarizing data",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-1.html#data-visualization",
-    "href": "module-1.html#data-visualization",
-    "title": "TECH3 Applied statistics",
-    "section": "Data visualization",
-    "text": "Data visualization",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-3.html",
-    "href": "module-3.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "The following is a redistribution of chapters 5, 7 and 8 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-3.html#fitting-models-to-data",
-    "href": "module-3.html#fitting-models-to-data",
-    "title": "TECH3 Applied statistics",
-    "section": "Fitting models to data",
-    "text": "Fitting models to data",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-3.html#sampling",
-    "href": "module-3.html#sampling",
-    "title": "TECH3 Applied statistics",
-    "section": "Sampling",
-    "text": "Sampling",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-3.html#resampling-and-simulation",
-    "href": "module-3.html#resampling-and-simulation",
-    "title": "TECH3 Applied statistics",
-    "section": "Resampling and Simulation",
-    "text": "Resampling and Simulation",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-5.html",
-    "href": "module-5.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "The following is a redistribution of chapters 12, 13, 14, and 17 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-5.html#modeling-categorical-relationships",
-    "href": "module-5.html#modeling-categorical-relationships",
-    "title": "TECH3 Applied statistics",
-    "section": "Modeling categorical relationships",
-    "text": "Modeling categorical relationships",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-5.html#modeling-continuous-relationships",
-    "href": "module-5.html#modeling-continuous-relationships",
-    "title": "TECH3 Applied statistics",
-    "section": "Modeling continuous relationships",
-    "text": "Modeling continuous relationships",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-5.html#the-general-linear-model",
-    "href": "module-5.html#the-general-linear-model",
-    "title": "TECH3 Applied statistics",
-    "section": "The General Linear Model",
-    "text": "The General Linear Model",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "module-5.html#practical-statistical-modeling",
-    "href": "module-5.html#practical-statistical-modeling",
-    "title": "TECH3 Applied statistics",
-    "section": "Practical statistical modeling",
-    "text": "Practical statistical modeling",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Textbook"
-    ]
   },
   {
     "objectID": "pythonbasics.html",

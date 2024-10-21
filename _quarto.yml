@@ -17,7 +17,7 @@ website:
       - text: "Calender"
         href: calender.qmd
       - text: "Modules"
-        href: module-1.qmd
+        href: 1-intro.qmd
       - text: "Datalabs"
         href: datalab-1.qmd
       - text: "Python basics"
@@ -41,30 +41,49 @@ website:
       contents: 
          - section: "Module 1: Summarizing and visualizing data"
            contents:
-             - href: module-1.qmd
+             - href: 1-intro.qmd
+               text: "Introduction"
+             - href: 1-textbook.qmd
                text: "Textbook"
-             - 01-videos.qmd
-             - 01-exercises.qmd
-             - 01-python.qmd
+             - 1-videos.qmd
+             - 1-exercises.qmd
+             - 1-python.qmd
          - section: "Module 2: Probability, random variables, probability distributions and simulations."
            contents: 
-             - href: module-2.qmd
+             - href: 2-intro.qmd
+               text: "Introduction"
+             - href: 2-textbook.qmd
                text: "Textbook"
-             - href: 2_exercises.qmd
-               text: "Exercises"
+             - 2-videos.qmd
+             - 2-exercises.qmd
+             - 2-python.qmd
          - section: "Module 3: Estimation, sampling distributions and resampling"
            contents: 
-             - href: module-3.qmd
+             - href: 3-intro.qmd
+               text: "Introduction"
+             - href: 3-textbook.qmd
                text: "Textbook"
+             - 3-videos.qmd
+             - 3-exercises.qmd
+             - 3-python.qmd
          - section: "Module 4: Designing studies, hypothesis testing, and quantifying effects"
            contents: 
-             - href: module-4.qmd
+             - href: 4-intro.qmd
+               text: "Introduction"
+             - href: 4-textbook.qmd
                text: "Textbook"
+             - 4-videos.qmd
+             - 4-exercises.qmd
+             - 4-python.qmd
          - section: "Module 5: Measuring relationships and fitting models"
            contents: 
-             - href: module-5.qmd
+             - href: 5-intro.qmd
+               text: "Introduction"
+             - href: 5-textbook.qmd
                text: "Textbook"
-             
+             - 5-videos.qmd
+             - 5-exercises.qmd
+             - 5-python.qmd
     - title: "Python basics"
       contents:
         - pythonbasics.qmd

@@ -1,0 +1,1 @@
+In this module, you will learn about summarizing and visualizing data. All (almost) applied statistical analysis starts with some data, and beeing able to summarizing visualize data is an important tool for any user of statistics.
