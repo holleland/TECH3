@@ -8,7 +8,7 @@ A probability distribution is a function defined on the sample space which is no
 
 An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.
 
-```{r, echo = FALSE, output = "asis", message = FALSE, warning = FALSE}
+```{r, echo = FALSE, output = "asis", message = FALSE, warning = FALSE, include = FALSE}
 library(knitr)
 knitr::opts_chunk$set(
   warning=FALSE, message=FALSE
@@ -18,12 +18,12 @@ library(xtable)
 Outcomes <- c("AA", "AB", "AC","BA","BB", "BC", "CA","CB","CC")
 Probability <- c(30,5,5,5,20,5,5,5,20)
 prob.table <- tibble(Outcomes, 
-                     Probability= c(30,5,5,5,20,5,5,5,20)) %>% 
+                     "Probability"= c(30,5,5,5,20,5,5,5,20)) %>% 
   pivot_wider(names_from = Outcomes, 
               values_from = Probability) %>% 
-  mutate(.row = "Probability") %>%
+  mutate(.row = "Probability (%)") %>%
   column_to_rownames(".row")
-xtable::xtable(prob.table,digits = 0) %>% print(include.rownames=TRUE, type="html")
+knitr::kable(prob.table,format = "markdown")
 ```
 
 (a) Why is this a probability distribution?
@@ -43,10 +43,9 @@ prob.table <- tibble(Outcomes,
                      Probability=c(16, 12, 12, 12, 9, 9, 12, 9, 9)) %>% 
   pivot_wider(names_from = Outcomes,
               values_from = Probability) %>% 
-  mutate(.row = "Probability") %>%
+  mutate(.row = "Probability (%)") %>%
   column_to_rownames(".row")
-xtable::xtable(prob.table,digits = 0) %>% 
-  print(include.rownames=TRUE, type="html", hline.after = 1)
+knitr::kable(prob.table,format = "markdown")
 ```
 
 (a) Why is this a probability distribution?
@@ -108,10 +107,10 @@ Under a trial concerning alleged women's discrimination (Berkeley, 1973) the fol
 
 ```{r, echo = FALSE, output = "asis"}
 tibble("Institute" =  c("A", "B", "C", "D", "E", "F"),
-       "Fraction admitted" = c(82, 68, 34, 35, 24, 7),
-       "Fraction of female applicants" =  c(6, 1, 32, 20, 22, 19)) %>% 
+       "Fraction admitted (%)" = c(82, 68, 34, 35, 24, 7),
+       "Fraction of female applicants (%)" =  c(6, 1, 32, 20, 22, 19)) %>% 
   t() %>% 
-  xtable() %>% print(include.colnames = F, hline.after = 1, type="html")
+  knitr::kable(type = "markdown")
 ```
 
 The applicants only applied for admission to one institute. Find the fraction of female applicants that were admitted.
@@ -121,10 +120,10 @@ The applicants only applied for admission to one institute. Find the fraction of
 ```{r, echo = FALSE, output = "asis"}
 
 tibble("Institute" =  c("A", "B", "C", "D", "E", "F"),
-       "Fraction admitted" = c(62, 63, 37, 33, 28, 6),
-       "Fraction of male applicants" =  c(32, 22, 12, 16, 7, 11)) %>% 
+       "Fraction admitted (%)" = c(62, 63, 37, 33, 28, 6),
+       "Fraction of male applicants (%)" =  c(32, 22, 12, 16, 7, 11)) %>% 
   t() %>% 
-  xtable() %>% print(include.colnames = F, hline.after = 1, type="html")
+  knitr::kable(format = "markdown")
 ```
 
 Find the fraction of male applicants that were admitted.
