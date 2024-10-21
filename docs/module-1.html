@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TECH3 Applied statistics</title>
+<title>module-1 – TECH3 Applied statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -116,7 +87,7 @@ window.Quarto = {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -151,19 +122,19 @@ window.Quarto = {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./module-1.html">Module 1: Summarizing and visualizing data</a></li><li class="breadcrumb-item"><a href="./module-1.html">Textbook</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -182,9 +153,9 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Module 1: Summarizing and visualizing data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -217,9 +188,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Module 2: Probability</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 2: Probability, random variables, probability distributions and simulations.</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -227,28 +198,22 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module-2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Module 2</span></a>
+ <span class="menu-text">Textbook</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2_1_probability.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./2_2_random_variables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Random Variables</span></a>
+  <a href="./2_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">Module 3: Estimation and sampling</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 3: Estimation, sampling distributions and resampling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -256,16 +221,16 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module-3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Module 3</span></a>
+ <span class="menu-text">Textbook</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Module 4: Hypothesis testing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 4: Designing studies, hypothesis testing, and quantifying effects</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -273,16 +238,16 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module-4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Module 4</span></a>
+ <span class="menu-text">Textbook</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Module 5: Measuring relationships and fitting models</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -290,7 +255,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./module-5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Module 5</span></a>
+ <span class="menu-text">Textbook</span></a>
   </div>
 </li>
       </ul>
@@ -305,42 +270,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link active" data-scroll-target="#summarizing-data">Summarizing data</a>
-  <ul class="collapse">
-  <li><a href="#why-summarize-data" id="toc-why-summarize-data" class="nav-link" data-scroll-target="#why-summarize-data">Why summarize data?</a></li>
-  <li><a href="#summarizing-data-using-tables" id="toc-summarizing-data-using-tables" class="nav-link" data-scroll-target="#summarizing-data-using-tables">Summarizing data using tables</a>
-  <ul class="collapse">
-  <li><a href="#frequency-distributions" id="toc-frequency-distributions" class="nav-link" data-scroll-target="#frequency-distributions">Frequency distributions</a></li>
-  <li><a href="#cumulative-distributions" id="toc-cumulative-distributions" class="nav-link" data-scroll-target="#cumulative-distributions">Cumulative distributions</a></li>
-  <li><a href="#plotting-histograms" id="toc-plotting-histograms" class="nav-link" data-scroll-target="#plotting-histograms">Plotting histograms</a></li>
-  <li><a href="#histogram-bins" id="toc-histogram-bins" class="nav-link" data-scroll-target="#histogram-bins">Histogram bins</a></li>
-  </ul></li>
-  <li><a href="#idealized-representations-of-distributions" id="toc-idealized-representations-of-distributions" class="nav-link" data-scroll-target="#idealized-representations-of-distributions">Idealized representations of distributions</a>
-  <ul class="collapse">
-  <li><a href="#skewness" id="toc-skewness" class="nav-link" data-scroll-target="#skewness">Skewness</a></li>
-  <li><a href="#long-tailed-distributions" id="toc-long-tailed-distributions" class="nav-link" data-scroll-target="#long-tailed-distributions">Long-tailed distributions</a></li>
-  </ul></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#suggested-readings" id="toc-suggested-readings" class="nav-link" data-scroll-target="#suggested-readings">Suggested readings</a></li>
-  </ul></li>
-  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a>
-  <ul class="collapse">
-  <li><a href="#anatomy-of-a-plot" id="toc-anatomy-of-a-plot" class="nav-link" data-scroll-target="#anatomy-of-a-plot">Anatomy of a plot</a></li>
-  <li><a href="#principles-of-good-visualization" id="toc-principles-of-good-visualization" class="nav-link" data-scroll-target="#principles-of-good-visualization">Principles of good visualization</a>
-  <ul class="collapse">
-  <li><a href="#show-the-data-and-make-them-stand-out" id="toc-show-the-data-and-make-them-stand-out" class="nav-link" data-scroll-target="#show-the-data-and-make-them-stand-out">Show the data and make them stand out</a></li>
-  <li><a href="#maximize-the-dataink-ratio" id="toc-maximize-the-dataink-ratio" class="nav-link" data-scroll-target="#maximize-the-dataink-ratio">Maximize the data/ink ratio</a></li>
-  <li><a href="#avoid-chartjunk" id="toc-avoid-chartjunk" class="nav-link" data-scroll-target="#avoid-chartjunk">Avoid chartjunk</a></li>
-  <li><a href="#avoid-distorting-the-data" id="toc-avoid-distorting-the-data" class="nav-link" data-scroll-target="#avoid-distorting-the-data">Avoid distorting the data</a></li>
-  </ul></li>
-  <li><a href="#accommodating-human-limitations" id="toc-accommodating-human-limitations" class="nav-link" data-scroll-target="#accommodating-human-limitations">Accommodating human limitations</a>
-  <ul class="collapse">
-  <li><a href="#perceptual-limitations" id="toc-perceptual-limitations" class="nav-link" data-scroll-target="#perceptual-limitations">Perceptual limitations</a></li>
-  </ul></li>
-  <li><a href="#correcting-for-other-factors" id="toc-correcting-for-other-factors" class="nav-link" data-scroll-target="#correcting-for-other-factors">Correcting for other factors</a></li>
-  <li><a href="#learning-objectives-1" id="toc-learning-objectives-1" class="nav-link" data-scroll-target="#learning-objectives-1">Learning objectives</a></li>
-  <li><a href="#suggested-readings-and-videos" id="toc-suggested-readings-and-videos" class="nav-link" data-scroll-target="#suggested-readings-and-videos">Suggested readings and videos</a></li>
-  </ul></li>
+  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link active" data-scroll-target="#summarizing-data">Summarizing data</a></li>
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data visualization</a></li>
   </ul>
 </nav>
     </div>
@@ -351,698 +282,17 @@ window.Quarto = {
 
 
 <p>The following is a redistribution of chapters <a href="https://statsthinking21.github.io/statsthinking21-core-site/summarizing-data.html">3</a>-<a href="https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html">4</a> of <a href="https://statsthinking21.github.io/statsthinking21-core-site/index.html">Statistical Thinking for the 21st Century</a> by Russell A. Poldrack, 2019, under the <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> licence.</p>
-<section id="summarizing-data" class="level1">
-<h1>Summarizing data</h1>
-<p>I mentioned in the Introduction that one of the big discoveries of statistics is the idea that we can better understand the world by throwing away information, and that’s exactly what we are doing when we summarize a dataset. In this Chapter we will discuss why and how to summarize data.</p>
-<section id="why-summarize-data" class="level2">
-<h2 class="anchored" data-anchor-id="why-summarize-data">Why summarize data?</h2>
-<p>When we summarize data, we are necessarily throwing away information, and one might plausibly object to this. As an example, let’s go back to the PURE study that we discussed in Chapter 1. Are we not supposed to believe that all of the details about each individual matter, beyond those that are summarized in the dataset? What about the specific details of how the data were collected, such as the time of day or the mood of the participant? All of these details are lost when we summarize the data.</p>
-<p>One reason that we summarize data is that it provides us with a way to <em>generalize</em> - that is, to make general statements that extend beyond specific observations. The importance of generalization was highlighted by the writer Jorge Luis Borges in his short story “Funes the Memorious”, which describes an individual who loses the ability to forget. Borges focuses in on the relation between generalization (i.e.&nbsp;throwing away data) and thinking: “To think is to forget a difference, to generalize, to abstract. In the overly replete world of Funes, there were nothing but details.”</p>
-<p>Psychologists have long studied all of the ways in which generalization is central to thinking. One example is categorization: We are able to easily recognize different examples of the category of “birds” even though the individual examples may be very different in their surface features (such as an ostrich, a robin, and a chicken). Importantly, generalization lets us make predictions about these individuals – in the case of birds, we can predict that they can fly and eat seeds, and that they probably can’t drive a car or speak English. These predictions won’t always be right, but they are often good enough to be useful in the world.</p>
+<section id="summarizing-data" class="level2">
+<h2 class="anchored" data-anchor-id="summarizing-data">Summarizing data</h2>
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/summarizing-data.html" name="Summarizing data" title="Summarizing data" height="800px" width="100%">
+</iframe>
 </section>
-<section id="summarizing-data-using-tables" class="level2">
-<h2 class="anchored" data-anchor-id="summarizing-data-using-tables">Summarizing data using tables</h2>
-<p>A simple way to summarize data is to generate a table representing counts of various types of observations. This type of table has been used for thousands of years (see Figure @ref(fig:salesContract)).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Sales_contract_Shuruppak_Louvre_AO3760.jpg" style="height:30.0%" width="288" class="figure-img"></p>
-<figcaption>A Sumerian tablet from the Louvre, showing a sales contract for a house and field. Public domain, via Wikimedia Commons.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Let’s look at some examples of the use of tables, using a more realistic dataset. Throughout this book we will use the <a href="https://www.cdc.gov/nchs/nhanes/index.htm">National Health and Nutrition Examination Survey (NHANES)</a> dataset. This is an ongoing study that assesses the health and nutrition status of a sample of individuals from the United States on many different variables. We will use a version of the dataset that is available for the R statistical software package. For this example, we will look at a simple variable, called <em>PhysActive</em> in the dataset. This variable contains one of three different values: “Yes” or “No” (indicating whether or not the person reports doing “moderate or vigorous-intensity sports, fitness or recreational activities”), or “NA” if the data are missing for that individual. There are different reasons that the data might be missing; for example, this question was not asked of children younger than 12 years of age, while in other cases an adult may have declined to answer the question during the interview, or the interviewer’s recording of the answer on their form might be unreadable.</p>
-<section id="frequency-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="frequency-distributions">Frequency distributions</h3>
-<p>A <em>distribution</em> describes how data are divided between different possible values. For this example, let’s look at how many people fall into each of the physical activity categories.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Frequency distribution for PhysActive variable</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">PhysActive</th>
-<th style="text-align: right;">AbsoluteFrequency</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">No</td>
-<td style="text-align: right;">2473</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Yes</td>
-<td style="text-align: right;">2972</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NA</td>
-<td style="text-align: right;">1334</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Table @ref(tab:PhysActiveTable) shows the frequencies of each of the different values; there were 2473 individuals who responded “No” to the question, 2972 who responded “Yes”, and 1334 for whom no response was given. We call this a <em>frequency distribution</em> because it tells us how frequent each of the possible values is within our sample.</p>
-<p>This shows us the absolute frequency of the two responses, for everyone who actually gave a response. We can see from this that there are more people saying “Yes” than “No”, but it can be hard to tell from absolute numbers how big the difference is in relative terms. For this reason, we often would rather present the data using <em>relative frequency</em>, which is obtained by dividing each frequency by the sum of all frequencies:</p>
-<p><span class="math display">\[
-relative\ frequency_i = \frac{absolute\ frequency_i}{\sum_{j=1}^N absolute\ frequency_j}
-\]</span> The relative frequency provides a much easier way to see how big the imbalance is. We can also interpret the relative frequencies as percentages by multiplying them by 100. In this example, we will drop the NA values as well, since we would like to be able to interpret the relative frequencies of active versus inactive people. However, for this to make sense we have to assume that the NA values are missing “at random”, meaning that their presence or absence is not related to the true value of the variable for that person. For example, if inactive participants were more likely to refuse to answer the question than active participants, then that would <em>bias</em> our estimate of the frequency of physical activity, meaning that our estimate would be different from the true value.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Absolute and relative frequencies and percentages for PhysActive variable</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">PhysActive</th>
-<th style="text-align: right;">AbsoluteFrequency</th>
-<th style="text-align: right;">RelativeFrequency</th>
-<th style="text-align: right;">Percentage</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">No</td>
-<td style="text-align: right;">2473</td>
-<td style="text-align: right;">0.45</td>
-<td style="text-align: right;">45</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Yes</td>
-<td style="text-align: right;">2972</td>
-<td style="text-align: right;">0.55</td>
-<td style="text-align: right;">55</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Table @ref(tab:PhysActiveTableFiltered) lets us see that 45.4 percent of the individuals in the NHANES sample said “No” and 54.6 percent said “Yes”.</p>
-</section>
-<section id="cumulative-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="cumulative-distributions">Cumulative distributions</h3>
-<p>The <em>PhysActive</em> variable that we examined above only had two possible values, but often we wish to summarize data that can have many more possible values. When those values are quantitative, then one useful way to summarize them is via what we call a <em>cumulative</em> frequency representation: rather than asking how many observations take on a specific value, we ask how many have a value some specific value <em>or less</em>.</p>
-<p>Let’s look at another variable in the NHANES dataset, called <em>SleepHrsNight</em> which records how many hours the participant reports sleeping on usual weekdays. Table @ref(tab:sleepTable) shows a frequency table created as we did above, after removing anyone with missing data for this question. We can already begin to summarize the dataset just by looking at the table; for example, we can see that most people report sleeping between 6 and 8 hours. To see this even more clearly, we can plot a <em>histogram</em> which shows the number of cases having each of the different values; see left panel of Figure @ref(fig:sleepHist). We can also plot the relative frequencies, which we will often refer to as <em>densities</em> - see the right panel of Figure @ref(fig:sleepHist).</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Frequency distribution for number of hours of sleep per night in the NHANES dataset</caption>
-<thead>
-<tr class="header">
-<th style="text-align: right;">SleepHrsNight</th>
-<th style="text-align: right;">AbsoluteFrequency</th>
-<th style="text-align: right;">RelativeFrequency</th>
-<th style="text-align: right;">Percentage</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.18</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">49</td>
-<td style="text-align: right;">0.01</td>
-<td style="text-align: right;">0.97</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: right;">0.04</td>
-<td style="text-align: right;">3.97</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">406</td>
-<td style="text-align: right;">0.08</td>
-<td style="text-align: right;">8.06</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">1172</td>
-<td style="text-align: right;">0.23</td>
-<td style="text-align: right;">23.28</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">1394</td>
-<td style="text-align: right;">0.28</td>
-<td style="text-align: right;">27.69</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">1405</td>
-<td style="text-align: right;">0.28</td>
-<td style="text-align: right;">27.90</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">271</td>
-<td style="text-align: right;">0.05</td>
-<td style="text-align: right;">5.38</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">97</td>
-<td style="text-align: right;">0.02</td>
-<td style="text-align: right;">1.93</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.30</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">0.00</td>
-<td style="text-align: right;">0.34</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
-ℹ Please use `after_stat(density)` instead.</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/sleepHist-1.png" style="height:33.0%" width="768" class="figure-img"></p>
-<figcaption>Left: Histogram showing the number (left) and proportion (right) of people reporting each possible value of the SleepHrsNight variable.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>What if we want to know how many people report sleeping 5 hours or less? To find this, we can compute a <em>cumulative distribution</em>. To compute the cumulative frequency for some value j, we add up the frequencies for all of the values up to and including j:</p>
-<p><span class="math display">\[
-cumulative\ frequency_j = \sum_{i=1}^{j}{absolute\ frequency_i}
-\]</span></p>
-<div style="page-break-after: always;"></div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>Absolute and cumulative frequency distributions for SleepHrsNight variable</caption>
-<thead>
-<tr class="header">
-<th style="text-align: right;">SleepHrsNight</th>
-<th style="text-align: right;">AbsoluteFrequency</th>
-<th style="text-align: right;">CumulativeFrequency</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">9</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">49</td>
-<td style="text-align: right;">58</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: right;">258</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">406</td>
-<td style="text-align: right;">664</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">1172</td>
-<td style="text-align: right;">1836</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">1394</td>
-<td style="text-align: right;">3230</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">1405</td>
-<td style="text-align: right;">4635</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">271</td>
-<td style="text-align: right;">4906</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">97</td>
-<td style="text-align: right;">5003</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">5018</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">5035</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Let’s do this for our sleep variable, computing the absolute and cumulative frequency. In the left panel of Figure @ref(fig:sleepAbsCumulRelFreq) we plot the data to see what these representations look like; the absolute frequency values are plotted in solid lines, and the cumulative frequencies are plotted in dashed lines We see that the cumulative frequency is <em>monotonically increasing</em> – that is, it can only go up or stay constant, but it can never decrease. Again, we usually find the relative frequencies to be more useful than the absolute; those are plotted in the right panel of Figure @ref(fig:sleepAbsCumulRelFreq). Importantly, the shape of the relative frequency plot is exactly the same as the absolute frequency plot – only the size of the values has changed.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/sleepAbsCumulRelFreq-1.png" style="height:33.0%" width="768" class="figure-img"></p>
-<figcaption>A plot of the relative (solid) and cumulative relative (dashed) values for frequency (left) and proportion (right) for the possible values of SleepHrsNight.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="plotting-histograms" class="level3">
-<h3 class="anchored" data-anchor-id="plotting-histograms">Plotting histograms</h3>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/ageHist-1.png" style="height:33.0%" width="768" class="figure-img"></p>
-<figcaption>A histogram of the Age (left) and Height (right) variables in NHANES.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The variables that we examined above were fairly simple, having only a few possible values. Now let’s look at a more complex variable: Age. First let’s plot the <em>Age</em> variable for all of the individuals in the NHANES dataset (see left panel of Figure @ref(fig:ageHist)). What do you see there? First, you should notice that the number of individuals in each age group is declining over time. This makes sense because the population is being randomly sampled, and thus death over time leads to fewer people in the older age ranges. Second, you probably notice a large spike in the graph at age 80. What do you think that’s about?</p>
-<p>If were were to look up the information about the NHANES dataset, we would see the following definition for the <em>Age</em> variable: “Age in years at screening of study participant. Note: Subjects 80 years or older were recorded as 80.” The reason for this is that the relatively small number of individuals with very high ages would make it potentially easier to identify the specific person in the dataset if you knew their exact age; researchers generally promise their participants to keep their identity confidential, and this is one of the things they can do to help protect their research subjects. This also highlights the fact that it’s always important to know where one’s data have come from and how they have been processed; otherwise we might interpret them improperly, thinking that 80-year-olds had been somehow overrepresented in the sample.</p>
-<p>Let’s look at another more complex variable in the NHANES dataset: Height. The histogram of height values is plotted in the right panel of Figure @ref(fig:ageHist). The first thing you should notice about this distribution is that most of its density is centered around about 170 cm, but the distribution has a “tail” on the left; there are a small number of individuals with much smaller heights. What do you think is going on here?</p>
-<p>You may have intuited that the small heights are coming from the children in the dataset. One way to examine this is to plot the histogram with separate colors for children and adults (left panel of Figure @ref(fig:heightHistSep)). This shows that all of the very short heights were indeed coming from children in the sample. Let’s create a new version of NHANES that only includes adults, and then plot the histogram just for them (right panel of Figure @ref(fig:heightHistSep)). In that plot the distribution looks much more symmetric. As we will see later, this is a nice example of a <em>normal</em> (or <em>Gaussian</em>) distribution.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2
-3.5.0.
-ℹ Please use the `legend.position.inside` argument of `theme()` instead.</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/heightHistSep-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>Histogram of heights for NHANES. A: values plotted separately for children (gray) and adults (black). B: values for adults only. C: Same as B, but with bin width = 0.1</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="histogram-bins" class="level3">
-<h3 class="anchored" data-anchor-id="histogram-bins">Histogram bins</h3>
-<p>In our earlier example with the sleep variable, the data were reported in whole numbers, and we simply counted the number of people who reported each possible value. However, if you look at a few values of the Height variable in NHANES (as shown in Table @ref(tab:heightVals)), you will see that it was measured in centimeters down to the first decimal place.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>A few values of Height from the NHANES data frame.</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Height</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">169.6</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">169.8</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">167.5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">155.2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">173.8</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">174.5</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Panel C of Figure @ref(fig:heightHistSep) shows a histogram that counts the density of each possible value down the first decimal place. That histogram looks really jagged, which is because of the variability in specific decimal place values. For example, the value 173.2 occurs 32 times, while the value 173.3 only occurs 15 times. We probably don’t think that there is really such a big difference between the prevalence of these two heights; more likely this is just due to random variability in our sample of people.</p>
-<p>In general, when we create a histogram of data that are continuous or where there are many possible values, we will <em>bin</em> the values so that instead of counting and plotting the frequency of every specific value, we count and plot the frequency of values falling within specific ranges. That’s why the plot looked less jagged above in Panel B of @ref(fig:heightHistSep); in this panel we set the bin width to 1, which means that the histogram is computed by combining values within bins with a width of one; thus, the values 1.3, 1.5, and 1.6 would all count toward the frequency of the same bin, which would span from values equal to one up through values less than 2.</p>
-<p>Note that once the bin size has been selected, then the number of bins is determined by the data:</p>
-<p><span class="math display">\[
-number\, of\, bins  = \frac{range\, of\, scores}{bin\, width}
-\]</span></p>
-<p>There is no hard and fast rule for how to choose the optimal bin width. Occasionally it will be obvious (as when there are only a few possible values), but in many cases it would require trial and error. There are methods that try to find an optimal bin size automatically, such as the Freedman-Diaconis method that we will use in some later examples.</p>
-</section>
-</section>
-<section id="idealized-representations-of-distributions" class="level2">
-<h2 class="anchored" data-anchor-id="idealized-representations-of-distributions">Idealized representations of distributions</h2>
-<p>Datasets are like snowflakes, in that every one is different, but nonetheless there are patterns that one often sees in different types of data. This allows us to use idealized representations of the data to further summarize them. Let’s take the adult height data plotted in @ref(fig:heightHistSep), and plot them alongside a very different variable: pulse rate (heartbeats per minute), also measured in NHANES (see Figure @ref(fig:NormalDistPlotsWithDist)).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/NormalDistPlotsWithDist-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>Histograms for height (left) and pulse (right) in the NHANES dataset, with the normal distribution overlaid for each dataset.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>While these plots certainly don’t look exactly the same, both have the general characteristic of being relatively symmetric around a rounded peak in the middle. This shape is in fact one of the commonly observed shapes of distributions when we collect data, which we call the <em>normal</em> (or <em>Gaussian</em>) distribution. This distribution is defined in terms of two values (which we call <em>parameters</em> of the distribution): the location of the center peak (which we call the <em>mean</em>) and the width of the distribution (which is described in terms of a parameter called the <em>standard deviation</em>). Figure @ref(fig:NormalDistPlotsWithDist) shows the appropriate normal distribution plotted on top of each of the histrograms.You can see that although the curves don’t fit the data exactly, they do a pretty good job of characterizing the distribution – with just two numbers!</p>
-<p>As we will see later when we discuss the central limit theorem, there is a deep mathematical reason why many variables in the world exhibit the form of a normal distribution.</p>
-<section id="skewness" class="level3">
-<h3 class="anchored" data-anchor-id="skewness">Skewness</h3>
-<p>The examples in Figure @ref(fig:NormalDistPlotsWithDist) followed the normal distribution fairly well, but in many cases the data will deviate in a systematic way from the normal distribution. One way in which the data can deviate is when they are asymmetric, such that one tail of the distribution is more dense than the other. We refer to this as “skewness”. Skewness commonly occurs when the measurement is constrained to be non-negative, such as when we are counting things or measuring elapsed times (and thus the variable can’t take on negative values).</p>
-<p>An example of relatively mild skewness can be seen in the average waiting times at the airport security lines at San Francisco International Airport, plotted in the left panel of Figure @ref(fig:SFOWaitTimes). You can see that while most wait times are less than 20 minutes, there are a number of cases where they are much longer, over 60 minutes! This is an example of a “right-skewed” distribution, where the right tail is longer than the left; these are common when looking at counts or measured times, which can’t be less than zero. It’s less common to see “left-skewed” distributions, but they can occur, for example when looking at fractional values that can’t take a value greater than one.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/SFOWaitTimes-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>Examples of right-skewed and long-tailed distributions. Left: Average wait times for security at SFO Terminal A (Jan-Oct 2017), obtained from https://awt.cbp.gov/ . Right: A histogram of the number of Facebook friends amongst 3,663 individuals, obtained from the Stanford Large Network Database. The person with the maximum number of friends is indicated by the diamond.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="long-tailed-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="long-tailed-distributions">Long-tailed distributions</h3>
-<p>Historically, statistics has focused heavily on data that are normally distributed, but there are many data types that look nothing like the normal distribution. In particular, many real-world distributions are “long-tailed”, meaning that the right tail extends far beyond the most typical members of the distribution; that is, they are extremely skewed. One of the most interesting types of data where long-tailed distributions occur arises from the analysis of social networks. For an example, let’s look at the Facebook friend data from the <a href="https://snap.stanford.edu/data/egonets-Facebook.html">Stanford Large Network Database</a> and plot the histogram of number of friends across the 3,663 people in the database (see right panel of Figure @ref(fig:SFOWaitTimes)). As we can see, this distribution has a very long right tail – the average person has 24.09 friends, while the person with the most friends (denoted by the blue dot) has 1043!</p>
-<p>Long-tailed distributions are increasingly being recognized in the real world. In particular, many features of complex systems are characterized by these distributions, from the frequency of words in text, to the number of flights in and out of different airports, to the connectivity of brain networks. There are a number of different ways that long-tailed distributions can come about, but a common one occurs in cases of the so-called “Matthew effect” from the Christian Bible:</p>
-<blockquote class="blockquote">
-<p>For to every one who has will more be given, and he will have abundance; but from him who has not, even what he has will be taken away. — Matthew 25:29, Revised Standard Version</p>
-</blockquote>
-<p>This is often paraphrased as “the rich get richer”. In these situations, advantages compound, such that those with more friends have access to even more new friends, and those with more money have the ability to do things that increase their riches even more.</p>
-<p>As the course progresses we will see several examples of long-tailed distributions, and we should keep in mind that many of the tools in statistics can fail when faced with long-tailed data. As Nassim Nicholas Taleb pointed out in his book “The Black Swan”, such long-tailed distributions played a critical role in the 2008 financial crisis, because many of the financial models used by traders assumed that financial systems would follow the normal distribution, which they clearly did not.</p>
-</section>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>Having read this chapter, you should be able to:</p>
-<ul>
-<li>Compute absolute, relative, and cumulative frequency distributions for a given dataset</li>
-<li>Generate a graphical representation of a frequency distribution</li>
-<li>Describe the difference between a normal and a long-tailed distribution, and describe the situations that commonly give rise to each</li>
-</ul>
-</section>
-<section id="suggested-readings" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-readings">Suggested readings</h2>
-<ul>
-<li><em>The Black Swan: The Impact of the Highly Improbable</em>, by Nassim Nicholas Taleb</li>
-</ul>
-</section>
-</section>
-<section id="data-visualization" class="level1">
-<h1>Data Visualization</h1>
-<p>On January 28, 1986, the Space Shuttle Challenger exploded 73 seconds after takeoff, killing all 7 of the astronauts on board. As when any such disaster occurs, there was an official investigation into the cause of the accident, which found that an O-ring connecting two sections of the solid rocket booster leaked, resulting in failure of the joint and explosion of the large liquid fuel tank (see figure @ref(fig:srbLeak)).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/Booster_Rocket_Breach_-_GPN-2000-001425.jpg" style="height:20.0%" width="180" class="figure-img"></p>
-<figcaption>An image of the solid rocket booster leaking fuel, seconds before the explosion. The small flame visible on the side of the rocket is the site of the O-ring failure. By NASA (Great Images in NASA Description) [Public domain], via Wikimedia Commons</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>The investigation found that many aspects of the NASA decision making process were flawed, and focused in particular on a meeting between NASA staff and engineers from Morton Thiokol, a contractor who built the solid rocket boosters. These engineers were particularly concerned because the temperatures were forecast to be very cold on the morning of the launch, and they had data from previous launches showing that performance of the O-rings was compromised at lower temperatures. In a meeting on the evening before the launch, the engineers presented their data to the NASA managers, but were unable to convince them to postpone the launch. Their evidence was a set of hand-written slides showing numbers from various past launches.</p>
-<p>The visualization expert Edward Tufte has argued that with a proper presentation of all of the data, the engineers could have been much more persuasive. In particular, they could have shown a figure like the one in Figure @ref(fig:challengerTemps), which highlights two important facts. First, it shows that the amount of O-ring damage (defined by the amount of erosion and soot found outside the rings after the solid rocket boosters were retrieved from the ocean in previous flights) was closely related to the temperature at takeoff. Second, it shows that the range of forecasted temperatures for the morning of January 28 (shown in the shaded area) was well outside of the range of all previous launches. While we can’t know for sure, it seems at least plausible that this could have been more persuasive.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/challengerTemps-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>A replotting of Tufte’s damage index data. The line shows the trend in the data, and the shaded patch shows the projected temperatures for the morning of the launch.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<section id="anatomy-of-a-plot" class="level2">
-<h2 class="anchored" data-anchor-id="anatomy-of-a-plot">Anatomy of a plot</h2>
-<p>The goal of plotting data is to present a summary of a dataset in a two-dimensional (or occasionally three-dimensional) presentation. We refer to the dimensions as <em>axes</em> – the horizontal axis is called the <em>X-axis</em> and the vertical axis is called the <em>Y-axis</em>. We can arrange the data along the axes in a way that highlights the data values. These values may be either continuous or categorical.</p>
-<p>There are many different types of plots that we can use, which have different advantages and disadvantages. Let’s say that we are interested in characterizing the difference in height between men and women in the NHANES dataset. Figure @ref(fig:plotHeight) shows four different ways to plot these data.</p>
-<ol type="1">
-<li>The bar graph in panel A shows the difference in means, but doesn’t show us how much spread there is in the data around these means – and as we will see later, knowing this is essential to determine whether we think the difference between the groups is large enough to be important.<br>
-</li>
-<li>The second plot shows the bars with all of the data points overlaid - this makes it a bit clearer that the distributions of height for men and women are overlapping, but it’s still hard to see due to the large number of data points.</li>
-</ol>
-<p>In general we prefer using a plotting technique that provides a clearer view of the distribution of the data points.</p>
-<ol start="3" type="1">
-<li>In panel C, we see one example of a <em>violin plot</em>, which plots the distribution of data in each condition (after smoothing it out a bit).<br>
-</li>
-<li>Another option is the <em>box plot</em> shown in panel D, which shows the median (central line), a measure of variability (the width of the box, which is based on a measure called the interquartile range), and any outliers (noted by the points at the ends of the lines). These are both effective ways to show data that provide a good feel for the distribution of the data.</li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/plotHeight-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Four different ways of plotting the difference in height between men and women in the NHANES dataset. Panel A plots the means of the two groups, which gives no way to assess the relative overlap of the two distributions. Panel B shows the same bars, but also overlays the data points, jittering them so that we can see their overall distribution. Panel C shows a violin plot, which shows the distribution of the datasets for each group. Panel D shows a box plot, which highlights the spread of the distribution along with any outliers (which are shown as individual points).</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="principles-of-good-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="principles-of-good-visualization">Principles of good visualization</h2>
-<p>Many books have been written on effective visualization of data. There are some principles that most of these authors agree on, while others are more contentious. Here we summarize some of the major principles; if you want to learn more, then some good resources are listed in the <em>Suggested Readings</em> section at the end of this chapter.</p>
-<section id="show-the-data-and-make-them-stand-out" class="level3">
-<h3 class="anchored" data-anchor-id="show-the-data-and-make-them-stand-out">Show the data and make them stand out</h3>
-<p>Let’s say that I performed a study that examined the relationship between dental health and time spent flossing, and I would like to visualize my data. Figure @ref(fig:dentalFigs) shows four possible presentations of these data.</p>
-<ol type="1">
-<li>In panel A, we don’t actually show the data, just a line expressing the relationship between the data. This is clearly not optimal, because we can’t actually see what the underlying data look like.</li>
-</ol>
-<p>Panels B-D show three possible outcomes from plotting the actual data, where each plot shows a different way that the data might have looked.</p>
-<ol start="2" type="1">
-<li>If we saw the plot in Panel B, we would probably be suspicious – rarely would real data follow such a precise pattern.<br>
-</li>
-<li>The data in Panel C, on the other hand, look like real data – they show a general trend, but they are messy, as data in the world usually are.<br>
-</li>
-<li>The data in Panel D show us that the apparent relationship between the two variables is solely caused by one individual, who we would refer to as an <em>outlier</em> because they fall so far outside of the pattern of the rest of the group. It should be clear that we probably don’t want to conclude very much from an effect that is driven by one data point. This figure highlights why it is <em>always</em> important to look at the raw data before putting too much faith in any summary of the data.</li>
-</ol>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
-(`stat_smooth()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/dentalFigs-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Four different possible presentations of data for the dental health example. Each point in the scatter plot represents one data point in the dataset, and the line in each plot represents the linear trend in the data.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="maximize-the-dataink-ratio" class="level3">
-<h3 class="anchored" data-anchor-id="maximize-the-dataink-ratio">Maximize the data/ink ratio</h3>
-<p>Edward Tufte has proposed an idea called the data/ink ratio:</p>
-<p><span class="math display">\[
-data/ink\ ratio = \frac{amount\, of\, ink\, used\, on\, data}{total\, amount\, of\, ink}
-\]</span> The point of this is to minimize visual clutter and let the data show through. For example, take the two presentations of the dental health data in Figure @ref(fig:dataInkExample). Both panels show the same data, but panel A is much easier to apprehend, because of its relatively higher data/ink ratio.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
-ℹ Please use the `linewidth` argument instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
-(`stat_smooth()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1 row containing non-finite outside the scale range (`stat_smooth()`).
-Removed 1 row containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/dataInkExample-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>An example of the same data plotted with two different data/ink ratios.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="avoid-chartjunk" class="level3">
-<h3 class="anchored" data-anchor-id="avoid-chartjunk">Avoid chartjunk</h3>
-<p>It’s especially common to see presentations of data in the popular media that are adorned with lots of visual elements that are thematically related to the content but unrelated to the actual data. This is known as <em>chartjunk</em>, and should be avoided at all costs.</p>
-<p>One good way to avoid chartjunk is to avoid using popular spreadsheet programs to plot one’s data. For example, the chart in Figure @ref(fig:chartJunk) (created using Microsoft Excel) plots the relative popularity of different religions in the United States. There are at least three things wrong with this figure:</p>
-<ul>
-<li>it has graphics overlaid on each of the bars that have nothing to do with the actual data</li>
-<li>it has a distracting background texture</li>
-<li>it uses three-dimensional bars, which distort the data</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/excel_chartjunk.png" style="width:80.0%;height:50.0%" class="figure-img"></p>
-<figcaption>An example of chart junk.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="avoid-distorting-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="avoid-distorting-the-data">Avoid distorting the data</h3>
-<p>It’s often possible to use visualization to distort the message of a dataset. A very common one is use of different axis scaling to either exaggerate or hide a pattern of data. For example, let’s say that we are interested in seeing whether rates of violent crime have changed in the US. In Figure @ref(fig:crimePlotAxes), we can see these data plotted in ways that either make it look like crime has remained constant, or that it has plummeted. The same data can tell two very different stories!</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/crimePlotAxes-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>Crime data from 1990 to 2014 plotted over time. Panels A and B show the same data, but with different ranges of values along the Y axis. Data obtained from https://www.ucrdatatool.gov/Search/Crime/State/RunCrimeStatebyState.cfm</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>One of the major controversies in statistical data visualization is how to choose the Y axis, and in particular whether it should always include zero. In his famous book “How to lie with statistics”, Darrell Huff argued strongly that one should always include the zero point in the Y axis. On the other hand, Edward Tufte has argued against this:</p>
-<blockquote class="blockquote">
-<p>“In general, in a time-series, use a baseline that shows the data not the zero point; don’t spend a lot of empty vertical space trying to reach down to the zero point at the cost of hiding what is going on in the data line itself.” (from https://qz.com/418083/its-ok-not-to-start-your-y-axis-at-zero/)</p>
-</blockquote>
-<p>There are certainly cases where using the zero point makes no sense at all. Let’s say that we are interested in plotting body temperature for an individual over time. In Figure @ref(fig:bodyTempAxis) we plot the same (simulated) data with or without zero in the Y axis. It should be obvious that by plotting these data with zero in the Y axis (Panel A) we are wasting a lot of space in the figure, given that body temperature of a living person could never go to zero! By including zero, we are also making the apparent jump in temperature during days 21-30 much less evident. In general, my inclination for line plots and scatterplots is to use all of the space in the graph, unless the zero point is truly important to highlight.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/bodyTempAxis-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>Body temperature over time, plotted with or without the zero point in the Y axis.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Edward Tufte introduced the concept of the <em>lie factor</em> to describe the degree to which physical differences in a visualization correspond to the magnitude of the differences in the data. If a graphic has a lie factor near 1, then it is appropriately representing the data, whereas lie factors far from one reflect a distortion of the underlying data.</p>
-<p>The lie factor supports the argument that one should always include the zero point in a bar chart in many cases. In Figure @ref(fig:barCharLieFactor) we plot the same data with and without zero in the Y axis. In panel A, the proportional difference in area between the two bars is exactly the same as the proportional difference between the values (i.e.&nbsp;lie factor = 1), whereas in Panel B (where zero is not included) the proportional difference in area between the two bars is roughly 2.8 times bigger than the proportional difference in the values, and thus it visually exaggerates the size of the difference.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/barCharLieFactor-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>Two bar charts with associated lie factors.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="accommodating-human-limitations" class="level2">
-<h2 class="anchored" data-anchor-id="accommodating-human-limitations">Accommodating human limitations</h2>
-<p>Humans have both perceptual and cognitive limitations that can make some visualizations very difficult to understand. It’s always important to keep these in mind when building a visualization.</p>
-<section id="perceptual-limitations" class="level3">
-<h3 class="anchored" data-anchor-id="perceptual-limitations">Perceptual limitations</h3>
-<p>One important perceptual limitation that many people (including myself) suffer from is color blindness. This can make it very difficult to perceive the information in a figure (like the one in Figure @ref(fig:badColors)) where there is only color contrast between the elements but no brightness contrast. It is always helpful to use graph elements that differ substantially in brightness and/or texture, in addition to color. There are also <a href="http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette">“colorblind-friendly” palettes</a> available for use with many visualization tools.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/badColors-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>Example of a bad figure that relies solely on color contrast.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Even for people with perfect color vision, there are perceptual limitations that can make some plots ineffective. This is one reason why statisticians <em>never</em> use pie charts: It can be very difficult for humans to accurately perceive differences in the volume of shapes. The pie chart in Figure @ref(fig:pieChart) (presenting the same data on religious affiliation that we showed above) shows how tricky this can be.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/religion_piechart.png" style="height:50.0%" width="508" class="figure-img"></p>
-<figcaption>An example of a pie chart, highlighting the difficulty in apprehending the relative volume of the different pie slices.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>This plot is terrible for several reasons. First, it requires distinguishing a large number of colors from very small patches at the bottom of the figure. Second, the visual perspective distorts the relative numbers, such that the pie wedge for Catholic appears much larger than the pie wedge for None, when in fact the number for None is slightly larger (22.8 vs 20.8 percent), as was evident in Figure @ref(fig:chartJunk). Third, by separating the legend from the graphic, it requires the viewer to hold information in their working memory in order to map between the graphic and legend and to conduct many “table look-ups” in order to continuously match the legend labels to the visualization. And finally, it uses text that is far too small, making it impossible to read without zooming in.</p>
-<p>Plotting the data using a more reasonable approach (Figure @ref(fig:religionBars)), we can see the pattern much more clearly. This plot may not look as flashy as the pie chart generated using Excel, but it’s a much more effective and accurate representation of the data.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/religionBars-1.png" style="height:50.0%" width="768" class="figure-img"></p>
-<figcaption>A clearer presentation of the religious affiliation data (obtained from http://www.pewforum.org/religious-landscape-study/).</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>This plot allows the viewer to make comparisons based on the the length of the bars along a common scale (the y-axis). Humans tend to be more accurate when decoding differences based on these perceptual elements than based on area or color.</p>
-</section>
-</section>
-<section id="correcting-for-other-factors" class="level2">
-<h2 class="anchored" data-anchor-id="correcting-for-other-factors">Correcting for other factors</h2>
-<p>Often we are interested in plotting data where the variable of interest is affected by other factors than the one we are interested in. For example, let’s say that we want to understand how the price of gasoline has changed over time. Figure @ref(fig:gasPrices) shows historical gas price data, plotted either with or without adjustment for inflation. Whereas the unadjusted data show a huge increase, the adjusted data show that this is mostly just reflective of inflation. Other examples where one needs to adjust data for other factors include population size and data collected across different seasons.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="module-1_files/figure-html/gasPrices-1.png" style="height:50.0%" width="384" class="figure-img"></p>
-<figcaption>The price of gasoline in the US from 1930 to 2013 (obtained from http://www.thepeoplehistory.com/70yearsofpricechange.html) with or without correction for inflation (based on Consumer Price Index).</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="learning-objectives-1" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives-1">Learning objectives</h2>
-<p>Having read this chapter, you should be able to:</p>
-<ul>
-<li>Describe the principles that distinguish between good and bad graphs, and use them to identify good versus bad graphs.</li>
-<li>Understand the human limitations that must be accommodated in order to make effective graphs.</li>
-<li>Promise to never create a pie chart. <em>Ever</em>.</li>
-</ul>
-</section>
-<section id="suggested-readings-and-videos" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-readings-and-videos">Suggested readings and videos</h2>
-<ul>
-<li><a href="https://serialmentor.com/dataviz/"><em>Fundamentals of Data Visualization</em></a>, by Claus Wilke</li>
-<li><em>Visual Explanations</em>, by Edward Tufte</li>
-<li><em>Visualizing Data</em>, by William S. Cleveland</li>
-<li><em>Graph Design for the Eye and Mind</em>, by Stephen M. Kosslyn</li>
-<li><a href="https://www.youtube.com/watch?v=fSgEeI2Xpdc&amp;feature=youtu.be"><em>How Humans See Data</em></a>, by John Rauser</li>
-</ul>
+<section id="data-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="data-visualization">Data visualization</h2>
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html" name="Data visualization" title="Data visualization" height="800px" width="100%">
+</iframe>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -1081,18 +331,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1124,7 +363,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1132,7 +393,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

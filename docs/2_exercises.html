@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – TECH3 Applied statistics</title>
+<title>exercises – TECH3 Applied statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,6 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./module-3.html" rel="next">
+<link href="./module-2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -101,6 +69,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -134,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Calender</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./module-1.html"> 
+    <a class="nav-link active" href="./module-1.html" aria-current="page"> 
 <span class="menu-text">Modules</span></a>
   </li>  
   <li class="nav-item">
@@ -146,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Python basics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./oldexams.html" aria-current="page"> 
+    <a class="nav-link" href="./oldexams.html"> 
 <span class="menu-text">Old exams</span></a>
   </li>  
   <li class="nav-item">
@@ -164,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oldexams.html">About</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./module-2.html">Module 2: Probability, random variables, probability distributions and simulations.</a></li><li class="breadcrumb-item"><a href="./2_exercises.html">Exercises</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -184,51 +181,536 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 1: Summarizing and visualizing data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./oldexams.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">About</span></a>
+  <a href="./module-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-videos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Video lectures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful python commands</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 2: Probability, random variables, probability distributions and simulations.</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./module-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2_exercises.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 3: Estimation, sampling distributions and resampling</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./module-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 4: Designing studies, hypothesis testing, and quantifying effects</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./module-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Module 5: Measuring relationships and fitting models</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./module-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
+  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
+  <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
+  <li><a href="#problem-9" id="toc-problem-9" class="nav-link" data-scroll-target="#problem-9">Problem 9</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
+
+
+
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<!-- Chapter 2 fra Jan Uboe -->
+<p>A probability distribution is a function defined on the sample space which is non-negative and such that the sum of all function values is <span class="math inline">\(1=100\ \%\)</span>.</p>
+<section id="problem-1" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1">Problem 1</h2>
+<p>An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.</p>
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<!-- html table generated in R 4.4.1 by xtable 1.8-4 package -->
+<!-- Mon Oct 21 12:05:47 2024 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+AA
+</th>
+<th>
+AB
+</th>
+<th>
+AC
+</th>
+<th>
+BA
+</th>
+<th>
+BB
+</th>
+<th>
+BC
+</th>
+<th>
+CA
+</th>
+<th>
+CB
+</th>
+<th>
+CC
+</th>
+</tr>
+<tr>
+<td align="right">
+Probability
+</td>
+<td align="right">
+30
+</td>
+<td align="right">
+5
+</td>
+<td align="right">
+5
+</td>
+<td align="right">
+5
+</td>
+<td align="right">
+20
+</td>
+<td align="right">
+5
+</td>
+<td align="right">
+5
+</td>
+<td align="right">
+5
+</td>
+<td align="right">
+20
+</td>
+</tr>
+</tbody></table>
+<ol type="a">
+<li><p>Why is this a probability distribution?</p></li>
+<li><p>How large is the probability that we get the outcome A in the first experiment?</p></li>
+<li><p>How large is the probability that we get A as an outcome of the second experiment?</p></li>
+<li><p>Does the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?</p></li>
+</ol>
+</section>
+<section id="problem-2" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2">Problem 2</h2>
+<p>An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.</p>
+<!-- html table generated in R 4.4.1 by xtable 1.8-4 package -->
+<!-- Mon Oct 21 12:05:47 2024 -->
+<table border="1">
+<tbody><tr>
+<th>
+</th>
+<th>
+AA
+</th>
+<th>
+AB
+</th>
+<th>
+AC
+</th>
+<th>
+BA
+</th>
+<th>
+BB
+</th>
+<th>
+BC
+</th>
+<th>
+CA
+</th>
+<th>
+CB
+</th>
+<th>
+CC
+</th>
+</tr>
+<tr>
+<td align="right">
+Probability
+</td>
+<td align="right">
+16
+</td>
+<td align="right">
+12
+</td>
+<td align="right">
+12
+</td>
+<td align="right">
+12
+</td>
+<td align="right">
+9
+</td>
+<td align="right">
+9
+</td>
+<td align="right">
+12
+</td>
+<td align="right">
+9
+</td>
+<td align="right">
+9
+</td>
+</tr>
+</tbody></table>
+<ol type="a">
+<li><p>Why is this a probability distribution?</p></li>
+<li><p>How large is the probability that we get the outcome A in the first experiment?</p></li>
+<li><p>How large is the probability that we get A as an outcome of the second experiment?</p></li>
+<li><p>Does the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?</p></li>
+</ol>
+</section>
+<section id="problem-3" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3">Problem 3</h2>
+<p>Recall the general addition rule: <span class="math display">\[P(A\cup B)=P(A)+P(B)-P(A\cap B).\]</span></p>
+<ol type="a">
+<li><p>Assume that <span class="math inline">\(P(A)=0.2,P(B)=0.3, P(A\cap B)=0.1\)</span>. What is <span class="math inline">\(P(A\cup B)\)</span>?</p></li>
+<li><p>Assume that <span class="math inline">\(P(A)=0.3,P(B)=0.4, P(A\cup B)=0.5\)</span>. What is <span class="math inline">\(P(A\cap B)\)</span>?</p></li>
+<li><p>Assume that <span class="math inline">\(P(B)=0.4, P(A\cap B)=0.1,P(A\cup B)=0.6\)</span>. What is <span class="math inline">\(P(A)\)</span>?</p></li>
+<li><p>Assume that <span class="math inline">\(P(A)=0.5, P(A\cap B)=0.2,P(A\cup B)=0.7\)</span>. What is <span class="math inline">\(P(B)\)</span>?</p></li>
+</ol>
+</section>
+<section id="problem-4" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4">Problem 4</h2>
+<!-- Chapter 4 fra Jan Uboe -->
+<p>How do we compute a conditional probability? <span class="math display">\[P(A|B)={{P(A\cap B)}\over{P(B)}}\]</span> We must find the probability of the intersection and divide the answer by the probability of the conditioning event.</p>
+<ol type="a">
+<li>Assume that <span class="math inline">\(P(A)=0.5,P(B)=0.3, P(A\cap B)=0.15\)</span>. What is <span class="math inline">\(P(A|B)\)</span>?</li>
+<li>Is it always true that <span class="math inline">\(P(A|B)=P(B|A)\)</span>?</li>
+<li>Assume that <span class="math inline">\(P(B)=0.3,P(A|B)=0.7\)</span>. What is <span class="math inline">\(P(A\cap B)\)</span>?</li>
+<li>Assume that <span class="math inline">\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\)</span>. Find <span class="math inline">\(P(A\cap B)\)</span> and use the answer to compute <span class="math inline">\(P(B|A)\)</span>.</li>
+</ol>
+</section>
+<section id="problem-5" class="level2">
+<h2 class="anchored" data-anchor-id="problem-5">Problem 5</h2>
+<p>Bayes law says: <span class="math display">\[P(B|A)=P(A|B)\cdot {{P(B)}\over{P(A)}}.\]</span></p>
+<p>Assume that <span class="math inline">\(P(A)=0.3,P(B)=0.6, P(A|B)=0.4\)</span> (as in 1(d)). Use Bayes’ law to compute <span class="math inline">\(P(B|A)\)</span>.</p>
+</section>
+<section id="problem-6" class="level2">
+<h2 class="anchored" data-anchor-id="problem-6">Problem 6</h2>
+<p>If we split the sample space into <span class="math inline">\(n\)</span> non-overlapping parts <span class="math inline">\(B_1,\dots,B_n\)</span>, then <span class="math display">\[P(A)=P(A|B_1)\cdot P(B_1)+P(A|B_2)\cdot P(B_2)+\cdots+P(A|B_n)\cdot P(B_n).\]</span> The most common application uses <span class="math inline">\(n=2\)</span>. In that case there are only two terms.</p>
+<ol type="a">
+<li>Assume that <span class="math inline">\(P(B)=0.3, P(A|B)=0.5, P(A|B^c)=0.4\)</span>. Find <span class="math inline">\(P(A)\)</span>.</li>
+<li>Assume that <span class="math inline">\(P(A)=0.6, P(B)=0.4,P(A|B^c)=0.5\)</span>. Find <span class="math inline">\(P(A|B)\)</span>.</li>
+</ol>
+</section>
+<section id="problem-7" class="level2">
+<h2 class="anchored" data-anchor-id="problem-7">Problem 7</h2>
+<p>A financial analyst have considered the future development of several differnt stocks. One year later 20% of these stocks did better than the index, 30% performed approximately as the index, while the rest, 50%, performed considerably worse. 60% of the companies that were performing better than the index were rated A by the analyst, 5% of the companies at level with the index had the same rating, while only 3% of the stocks with bad performance were rated A.</p>
+<ol type="a">
+<li>How many % of the stocks rated by the analyst, was rated A?</li>
+<li>What was that probablity of performing better than the index, given that the stock was rated A by the analyst?</li>
+</ol>
+</section>
+<section id="problem-8" class="level2">
+<h2 class="anchored" data-anchor-id="problem-8">Problem 8</h2>
+<p>Under a trial concerning alleged women’s discrimination (Berkeley, 1973) the following evidence were presented:</p>
+<ol type="a">
+<li>The students had applied for admission to 6 different institutes, and the numbers for the woman applicants were as follows:</li>
+</ol>
+<!-- html table generated in R 4.4.1 by xtable 1.8-4 package -->
+<!-- Mon Oct 21 12:05:48 2024 -->
+<table border="1">
+<tbody><tr>
+<td align="right">
+Institute
+</td>
+<td>
+A
+</td>
+<td>
+B
+</td>
+<td>
+C
+</td>
+<td>
+D
+</td>
+<td>
+E
+</td>
+<td>
+F
+</td>
+</tr>
+<tr>
+<td align="right">
+Fraction admitted
+</td>
+<td>
+82
+</td>
+<td>
+68
+</td>
+<td>
+34
+</td>
+<td>
+35
+</td>
+<td>
+24
+</td>
+<td>
+7
+</td>
+</tr>
+<tr>
+<td align="right">
+Fraction of female applicants
+</td>
+<td>
+6
+</td>
+<td>
+1
+</td>
+<td>
+32
+</td>
+<td>
+20
+</td>
+<td>
+22
+</td>
+<td>
+19
+</td>
+</tr>
+</tbody></table>
+<p>The applicants only applied for admission to one institute. Find the fraction of female applicants that were admitted.</p>
+<ol start="2" type="a">
+<li>The corresponding results for men were as follows:</li>
+</ol>
+<!-- html table generated in R 4.4.1 by xtable 1.8-4 package -->
+<!-- Mon Oct 21 12:05:48 2024 -->
+<table border="1">
+<tbody><tr>
+<td align="right">
+Institute
+</td>
+<td>
+A
+</td>
+<td>
+B
+</td>
+<td>
+C
+</td>
+<td>
+D
+</td>
+<td>
+E
+</td>
+<td>
+F
+</td>
+</tr>
+<tr>
+<td align="right">
+Fraction admitted
+</td>
+<td>
+62
+</td>
+<td>
+63
+</td>
+<td>
+37
+</td>
+<td>
+33
+</td>
+<td>
+28
+</td>
+<td>
+6
+</td>
+</tr>
+<tr>
+<td align="right">
+Fraction of male applicants
+</td>
+<td>
+32
+</td>
+<td>
+22
+</td>
+<td>
+12
+</td>
+<td>
+16
+</td>
+<td>
+7
+</td>
+<td>
+11
+</td>
+</tr>
+</tbody></table>
+<p>Find the fraction of male applicants that were admitted.</p>
+<ol start="3" type="a">
+<li>The results from (a) and (b) imply that men had approximately 50% higher chance of being admitted. Was the women discriminated? What is the cause that so few women were admitted?</li>
+</ol>
+</section>
+<section id="problem-9" class="level2">
+<h2 class="anchored" data-anchor-id="problem-9">Problem 9</h2>
+<p>How do we find the absolute probabilities in a tree with conditional probabilities? We find the unconditional probabilities multiplying along each branch.</p>
+<p>The results from a poll is summarized in the tree below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/FigurTree.png" class="img-fluid figure-img"></p>
+<figcaption>Probability Tree</figcaption>
+</figure>
 </div>
+<ol type="a">
+<li>How many percent of young men answered no on the question? How many percent of older women answered yes?</li>
+<li>Convert the tree to a tree with absolute probabilities.</li>
+<li>How many percent answered yes on the question in this poll? How many percent of the women answered yes?</li>
+</ol>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>About this site</p>
-<div id="399e0ed4" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>2</code></pre>
-</div>
-</div>
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -651,6 +1133,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./module-2.html" class="pagination-link" aria-label="Textbook">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Textbook</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./module-3.html" class="pagination-link" aria-label="Textbook">
+        <span class="nav-page-text">Textbook</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

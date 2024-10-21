@@ -1,1 +1,11 @@
-# Module 3
+The following is a redistribution of chapters [5](https://statsthinking21.github.io/statsthinking21-core-site/fitting-models.html), [7](https://statsthinking21.github.io/statsthinking21-core-site/sampling.html) and [8](https://statsthinking21.github.io/statsthinking21-core-site/resampling-and-simulation.html) of [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/index.html) by Russell A. Poldrack, 2019, under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licence.
+
+## Fitting models to data
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/fitting-models.html" name="Fitting models to data" title="Fitting models to data"  height="800px" width="100%"></iframe>
+
+
+## Sampling
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/sampling.html" name="Sampling" title="Sampling"  height="800px" width="100%"></iframe>
+
+## Resampling and Simulation
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/resampling-and-simulation.html" name="Resampling and Simulation" title="Resampling and Simulation"  height="800px" width="100%"></iframe>

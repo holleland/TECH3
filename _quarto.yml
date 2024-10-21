@@ -46,20 +46,24 @@ website:
              - 01-videos.qmd
              - 01-exercises.qmd
              - 01-python.qmd
-         - section: "Module 2: Probability"
+         - section: "Module 2: Probability, random variables, probability distributions and simulations."
            contents: 
-             - module-2.qmd
-             - 2_1_probability.qmd
-             - 2_2_random_variables.qmd
-         - section: "Module 3: Estimation and sampling"
+             - href: module-2.qmd
+               text: "Textbook"
+             - href: 2_exercises.qmd
+               text: "Exercises"
+         - section: "Module 3: Estimation, sampling distributions and resampling"
            contents: 
-             - module-3.qmd
-         - section: "Module 4: Hypothesis testing"
+             - href: module-3.qmd
+               text: "Textbook"
+         - section: "Module 4: Designing studies, hypothesis testing, and quantifying effects"
            contents: 
-             - module-4.qmd
+             - href: module-4.qmd
+               text: "Textbook"
          - section: "Module 5: Measuring relationships and fitting models"
            contents: 
-             - module-5.qmd
+             - href: module-5.qmd
+               text: "Textbook"
              
     - title: "Python basics"
       contents:

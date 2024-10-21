@@ -1,1 +1,5 @@
-# Module 2
+The following is a redistribution of chapters [6](https://statsthinking21.github.io/statsthinking21-core-site/probability.html) of [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/index.html) by Russell A. Poldrack, 2019, under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licence.
+
+
+## Probability
+<iframe src="https://statsthinking21.github.io/statsthinking21-core-site/probability.html" name="Summarizing data" title="Summarizing data"  height="800px" width="100%"></iframe>

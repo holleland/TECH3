@@ -21,10 +21,9 @@ readxl::read_excel("lecturePlan.xlsx", sheet = "Sheet3",
 
 ## Literature
 
-[Python Companion to Statistical Thinking in the 21st Century](https://statsthinking21.github.io/statsthinking21-python/index.html)
-
+- [Statistical Thinking in the 21st Century](https://statsthinking21.github.io/statsthinking21-core/index.html)
+- [Python Companion to Statistical Thinking in the 21st Century](https://statsthinking21.github.io/statsthinking21-python/index.html)
 
 ## Curriculum
 
-All the material on this website.
-
+All the material on this website, including chapters 1-10, 12-15, and 17 of [Statistical Thinking in the 21st Century](https://statsthinking21.github.io/statsthinking21-core/index.html) and [Python Companion to Statistical Thinking in the 21st Century](https://statsthinking21.github.io/statsthinking21-python/index.html).
