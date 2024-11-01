@@ -1,1 +1,22 @@
 # Exercises
+
+1. You are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?
+
+```{r, echo = FALSE}
+data("Titanic")
+titanic_data <- as.data.frame(Titanic)
+knitr::kable(head(titanic_data,10))
+```
+
+<details>
+
+<summary>Show suggested solutions</summary>
+
+-   Class: Categorical, although could be treated as ordinal (1st \> 2nd \> 3rd \> Crew)
+-   Sex: Binary (Male/female)
+-   Age: Binary (Child/adult)
+-   Survived: Binary (no/yes)
+-   Freq: Numerical, integer.
+
+</details>
+

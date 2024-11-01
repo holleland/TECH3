@@ -45,7 +45,9 @@ website:
                text: "Introduction"
              - href: 1-textbook.qmd
                text: "Textbook"
-             - 1-videos.qmd
+             - 1-working-with-data.qmd
+             - 1-summarizing-data.qmd
+             - 1-data-visualization.qmd
              - 1-exercises.qmd
              - 1-python.qmd
          - section: "Module 2: Probability, random variables, probability distributions and simulations."

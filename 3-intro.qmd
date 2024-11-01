@@ -1,1 +1,5 @@
-Fitting models to data.
+Estimation, sampling distributions and resampling
+
+- Focus: Modern inference using Monte Carlo methods. 
+- Key topics: Central limit theorem, sampling error of various statistics, Monte Carlo simulation.
+- Special Emphasis: Distinguish between a population and a sample and between population parameters and sample statistics.

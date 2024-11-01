@@ -1,1 +1,5 @@
-This module is about probability, random variables, etc..
+Probability, random variables, probability distributions and simulations
+
+- Focus: Random variables, distributions and the link to simulations.
+- Key topics: Probability distributions, conditional probability, independence, the law of large numbers, pseudo-random numbers.
+- Special Emphasis: Estimating the probability of complex outcomes through simulations. 

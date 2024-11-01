@@ -1,1 +1,7 @@
-Hypothesis testing.
+Designing studies, hypothesis testing, and quantifying effects
+
+- Focus: Modern hypothesis testing using bootstrap methods.
+
+- Key topics: classical test statistics, confidence intervals, effect size, power analysis, AB-testing.
+
+- Special Emphasis: Statistical significance versus practical significance. Describe the proper interpretations of a p-value and common misinterpretations

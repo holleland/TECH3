@@ -1,0 +1,13 @@
+# Working with data
+
+Here comes a video
+
+## Controll questions
+
+- What is a categorical variable?
+- What is a numerical variable?
+- Is precipitation in millimeters a real number or an integer?
+- Is a binary variable numeric or categorical?
+- What is a good measurement?
+- Can measurement error arise due to typos?
+

@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./1-python.html" rel="next">
-<link href="./1-videos.html" rel="prev">
+<link href="./1-data-visualization.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -175,8 +175,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-videos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Video lectures</span></a>
+  <a href="./1-working-with-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-summarizing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summarizing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-data-visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -379,6 +391,108 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
+<ol type="1">
+<li>You are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Class</th>
+<th style="text-align: left;">Sex</th>
+<th style="text-align: left;">Age</th>
+<th style="text-align: left;">Survived</th>
+<th style="text-align: right;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1st</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Child</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2nd</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Child</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3rd</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Child</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Crew</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Child</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1st</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Child</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2nd</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Child</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3rd</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Child</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Crew</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Child</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1st</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Adult</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">118</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2nd</td>
+<td style="text-align: left;">Male</td>
+<td style="text-align: left;">Adult</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">154</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<details>
+<summary>
+Show suggested solutions
+</summary>
+<ul>
+<li>Class: Categorical, although could be treated as ordinal (1st &gt; 2nd &gt; 3rd &gt; Crew)</li>
+<li>Sex: Binary (Male/female)</li>
+<li>Age: Binary (Child/adult)</li>
+<li>Survived: Binary (no/yes)</li>
+<li>Freq: Numerical, integer.</li>
+</ul>
+</details>
 
 
 </section>
@@ -806,8 +920,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./1-videos.html" class="pagination-link" aria-label="Video lectures">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Video lectures</span>
+      <a href="./1-data-visualization.html" class="pagination-link" aria-label="Data visualization">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data visualization</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

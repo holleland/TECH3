@@ -4,7 +4,7 @@
 
 A probability distribution is a function defined on the sample space which is non-negative and such that the sum of all function values is $1=100\ \%$.
 
-## Problem 1
+### Problem 1
 
 An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.
 
@@ -34,7 +34,7 @@ knitr::kable(prob.table,format = "markdown")
 
 (d) Does the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?
 
-## Problem 2
+### Problem 2
 
 An experiment can have three different outcomes, A, B, or C. The experiment is repeated twice, and the probabilities for the different outcomes are given in the table below.
 
@@ -56,7 +56,7 @@ knitr::kable(prob.table,format = "markdown")
 
 (d) Does the outcome of the first experiment affect the probabilities of the outcomes of the second experiment?
 
-## Problem 3
+### Problem 3
 
 Recall the general addition rule: $$P(A\cup B)=P(A)+P(B)-P(A\cap B).$$
 
@@ -68,7 +68,7 @@ Recall the general addition rule: $$P(A\cup B)=P(A)+P(B)-P(A\cap B).$$
 
 (d) Assume that $P(A)=0.5, P(A\cap B)=0.2,P(A\cup B)=0.7$. What is $P(B)$?
 
-## Problem 4
+### Problem 4
 
 <!-- Chapter 4 fra Jan Uboe -->
 
@@ -79,27 +79,27 @@ How do we compute a conditional probability? $$P(A|B)={{P(A\cap B)}\over{P(B)}}$
 (c) Assume that $P(B)=0.3,P(A|B)=0.7$. What is $P(A\cap B)$?
 (d) Assume that $P(A)=0.3,P(B)=0.6, P(A|B)=0.4$. Find $P(A\cap B)$ and use the answer to compute $P(B|A)$.
 
-## Problem 5
+### Problem 5
 
 Bayes law says: $$P(B|A)=P(A|B)\cdot {{P(B)}\over{P(A)}}.$$
 
 Assume that $P(A)=0.3,P(B)=0.6, P(A|B)=0.4$ (as in 1(d)). Use Bayes' law to compute $P(B|A)$.
 
-## Problem 6
+### Problem 6
 
 If we split the sample space into $n$ non-overlapping parts $B_1,\dots,B_n$, then $$P(A)=P(A|B_1)\cdot P(B_1)+P(A|B_2)\cdot P(B_2)+\cdots+P(A|B_n)\cdot P(B_n).$$ The most common application uses $n=2$. In that case there are only two terms.
 
 (a) Assume that $P(B)=0.3, P(A|B)=0.5, P(A|B^c)=0.4$. Find $P(A)$.
 (b) Assume that $P(A)=0.6, P(B)=0.4,P(A|B^c)=0.5$. Find $P(A|B)$.
 
-## Problem 7
+### Problem 7
 
 A financial analyst have considered the future development of several differnt stocks. One year later 20% of these stocks did better than the index, 30% performed approximately as the index, while the rest, 50%, performed considerably worse. 60% of the companies that were performing better than the index were rated A by the analyst, 5% of the companies at level with the index had the same rating, while only 3% of the stocks with bad performance were rated A.
 
 (a) How many % of the stocks rated by the analyst, was rated A?
 (b) What was that probablity of performing better than the index, given that the stock was rated A by the analyst?
 
-## Problem 8
+### Problem 8
 
 Under a trial concerning alleged women's discrimination (Berkeley, 1973) the following evidence were presented:
 
@@ -130,13 +130,13 @@ Find the fraction of male applicants that were admitted.
 
 (c) The results from (a) and (b) imply that men had approximately 50% higher chance of being admitted. Was the women discriminated? What is the cause that so few women were admitted?
 
-## Problem 9
+### Problem 9
 
 How do we find the absolute probabilities in a tree with conditional probabilities? We find the unconditional probabilities multiplying along each branch.
 
 The results from a poll is summarized in the tree below.
 
-![Probability Tree](images/FigurTree.png)
+![](images/FigurTree.png)
 
 (a) How many percent of young men answered no on the question? How many percent of older women answered yes?
 (b) Convert the tree to a tree with absolute probabilities.

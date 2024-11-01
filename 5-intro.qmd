@@ -1,1 +1,5 @@
-What should you do if your response variable is categorical?
+Measuring relationships and fitting models
+
+- Focus: The difference between modelling continuous and categorical relationships.
+- Key topics: Correlation, causation, linear regression, predictions, odds ratio, binary regression, chi-squared tests.  
+- Special Emphasis: Address overfitting using cross-validation.
