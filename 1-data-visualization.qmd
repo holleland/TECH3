@@ -1,23 +1,23 @@
-# Data visualization
+# Data visualization principles
 
-Here comes a video
+<div style='padding:75% 0 0 0;position:relative;'>
+<iframe src='https://vimeo.com/showcase/11484032/embed?portrait=0&byline=0' allowfullscreen frameborder='0' style='position:absolute;top:0;left:0;width:100%;height:100%;'>
+</iframe>
+</div>
+
 
 ## Controll questions
 
-```{python}
-#| label: line-plot
-#| fig-cap: "A line plot on a polar axis"
+- Why should you always show the data?
+- What does it mean to maximize the data/ink ratio?
+- You may think that bar plots in 3D looks cool. Why should we not use that?
+- What is distorting the data?
+- If you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?
+- What does it mean to be "kind to the colorblind"?
+- Why should you never use a pie chart? Ever.
+- What would be a good alternative to a pie chart?
 
-import numpy as np
-import matplotlib.pyplot as plt
 
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
-```
+
+
+

@@ -282,15 +282,39 @@
     "text": "Here comes a video"
   },
   {
-    "objectID": "1-summarizing-data.html",
-    "href": "1-summarizing-data.html",
-    "title": "Summarizing data",
+    "objectID": "1-summary-statistics.html",
+    "href": "1-summary-statistics.html",
+    "title": "Summary statistics",
     "section": "",
-    "text": "Here comes a video",
+    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
-      "Summarizing data"
+      "Summary statistics"
+    ]
+  },
+  {
+    "objectID": "1-summary-statistics.html#controll-questions",
+    "href": "1-summary-statistics.html#controll-questions",
+    "title": "Summary statistics",
+    "section": "",
+    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summary statistics"
+    ]
+  },
+  {
+    "objectID": "1-python.html",
+    "href": "1-python.html",
+    "title": "Useful python commands",
+    "section": "",
+    "text": "Useful python commands",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Useful python commands"
     ]
   },
   {
@@ -308,25 +332,25 @@
   {
     "objectID": "1-data-visualization.html",
     "href": "1-data-visualization.html",
-    "title": "Data visualization",
+    "title": "Data visualization principles",
     "section": "",
-    "text": "Here comes a video",
+    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
-      "Data visualization"
+      "Data visualization principles"
     ]
   },
   {
     "objectID": "1-data-visualization.html#controll-questions",
     "href": "1-data-visualization.html#controll-questions",
-    "title": "Data visualization",
-    "section": "Controll questions",
-    "text": "Controll questions\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\nA line plot on a polar axis",
+    "title": "Data visualization principles",
+    "section": "",
+    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
-      "Data visualization"
+      "Data visualization principles"
     ]
   },
   {
@@ -342,15 +366,51 @@
     ]
   },
   {
-    "objectID": "1-python.html",
-    "href": "1-python.html",
-    "title": "Useful python commands",
+    "objectID": "1-plotting-tools.html",
+    "href": "1-plotting-tools.html",
+    "title": "Plotting tools",
     "section": "",
-    "text": "Useful python commands",
+    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
-      "Useful python commands"
+      "Plotting tools"
+    ]
+  },
+  {
+    "objectID": "1-plotting-tools.html#controll-questions",
+    "href": "1-plotting-tools.html#controll-questions",
+    "title": "Plotting tools",
+    "section": "",
+    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Plotting tools"
+    ]
+  },
+  {
+    "objectID": "1-summarizing-data.html",
+    "href": "1-summarizing-data.html",
+    "title": "Summarizing data",
+    "section": "",
+    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summarizing data"
+    ]
+  },
+  {
+    "objectID": "1-summarizing-data.html#controll-questions",
+    "href": "1-summarizing-data.html#controll-questions",
+    "title": "Summarizing data",
+    "section": "",
+    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summarizing data"
     ]
   },
   {
@@ -418,7 +478,7 @@
     "href": "1-working-with-data.html",
     "title": "Working with data",
     "section": "",
-    "text": "Here comes a video\n\n\n\nWhat is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
+    "text": "What is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
