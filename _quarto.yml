@@ -18,24 +18,24 @@ website:
         href: calender.qmd
       - text: "Modules"
         href: 1-intro.qmd
-      - text: "Datalabs"
-        href: datalab-1.qmd
-      - text: "Python basics"
-        href: pythonbasics.qmd
+      # - text: "Cases"
+      #   href: case-1.qmd
+      # - text: "Python basics"
+      #   href: pythonbasics.qmd
       - text: "Old exams"
         href: oldexams.qmd
       - text: "Reference"
         href: reference.qmd
 
   sidebar:
-    - title: "Datalabs"
-      style: "docked"
-      collapse-level: 1
-      search: true
-      background: light
-      contents:
-        - datalab-1.qmd
-        - datalab-2.qmd
+    # - title: "Cases"
+    #   style: "docked"
+    #   collapse-level: 1
+    #   search: true
+    #   background: light
+    #   contents:
+    #     - case-1.qmd
+    #     - case-2.qmd
         
     - title: "Modules"
       contents: 
@@ -45,11 +45,14 @@ website:
                text: "Introduction"
              - href: 1-textbook.qmd
                text: "Textbook"
+             - 1-statistical-thinking.qmd
              - 1-working-with-data.qmd
              - 1-summarizing-data.qmd
              - 1-summary-statistics.qmd
              - 1-data-visualization.qmd
              - 1-plotting-tools.qmd
+             - 1-idealised_representations.qmd
+             - 1-gapminder.qmd
              - 1-exercises.qmd
              - 1-python.qmd
          - section: "Module 2: Probability, random variables, probability distributions and simulations."
@@ -98,10 +101,10 @@ website:
         - oldexams.qmd
         # navigation items
 
-    - title: "Reference"
-      contents:
-        - reference.qmd
-        # navigation items
+    # - title: "Reference"
+    #   contents:
+    #     - reference.qmd
+        
 
 editor: visual
 

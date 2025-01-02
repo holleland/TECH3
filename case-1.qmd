@@ -1,11 +1,11 @@
-# Datalab 1
+# Case 1
 
 ![Poster by Hege Landsvik ©](Images/ACR Poster.png){width=80%}
 
 Source: 
 [Landsvik, H., Martuza, J., Skard, S., Pedersen, L. J. T., & Jørgensen, S. Group Identity and Pro-Environmental Behavior in Public Settings: Using Identity-based Nudges to Enhance Recycling in the Field. Preprint.](https://doi.org/10.31234/osf.io/uwqag)
 
-In this datalab, you will be making a descriptive analysis of a dataset from a field experiment on Brann Stadium, the home of Bergen's local soccer team. 
+In this case session, you will be making a descriptive analysis of a dataset from a field experiment on Brann Stadium, the home of Bergen's local soccer team. 
 
 The researchers gathered data on the number of cups sold on the away stand at Brann Stadium. After each match, they went through the garbage, at counted how many cups was correctly recycled, that is, put in the bin for soda- and coffee cups. The experiment was constructed using two treatments. Firstly, they used a nudge, by putting a sign over the bins asking "Who is the most environmental away supporters in Eliteserien (Norway's highest soccer league)?" Sort you garbage here." The sign would also have the logo of the away team. This is called an ingroup appeal. The other treatment is gamification. Here they would set up a table showing the sorting rate of the other away teams. The intent of the researchers is to make it a sorting competition against the other teams. 
 
@@ -32,6 +32,8 @@ Each observation is a cup sold. If the cup was put in the correct bin, sortedCup
 5. Now, the different teams were exposed to different treatments, both for the in- or out-group message on the banner and whether they were exposed to gamification or not. If we disregard the individual teams and only consider these treatments marginally (marginally means one treatment at a time). 
 
 a) Use suitable summary statistics to summarize the effect of different treatments.
-b) Make suitable figures to visualize the effects. Suggestion: Use boxplots. 
+b) Make suitable figures to visualize the effects. One suggestion: Use boxplots. 
+
+Discuss your summary statistics and visuals within the group. 
 
 

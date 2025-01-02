@@ -13,7 +13,6 @@
     "section": "",
     "text": "import numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis",
     "crumbs": [
-      "Python basics",
       "Python"
     ]
   },
@@ -53,29 +52,625 @@
     "text": "Upon completing the course, the students can:\n\n\n\nUnderstand basic statistical theory and corresponding methods, and how to apply this knowledge in practical situations.\n\n\n\n\n\nExplore data using software that can summarize and visualize data.\nMaster basic probability theory.\nMake inferences about an entire population based on a sample of individuals from that population using both classical statistical methods and modern resampling techniques.\nDesign basic experiments, perform hypothesis testing, and quantify effects.\nMeasure relationships between both categorical and continuous variables.\nFit and evaluate regression models for both inference and prediction.\n\n\n\n\n\nIdentify and solve statistical problems.\nPerform basic data analysis using modern computer tools.\nPerform data-driven decision-making for a sustainable future."
   },
   {
-    "objectID": "datalab-2.html",
-    "href": "datalab-2.html",
-    "title": "Datalab 2",
+    "objectID": "case-2.html",
+    "href": "case-2.html",
+    "title": "Case 2",
     "section": "",
-    "text": "Datalab 2",
+    "text": "Case 2"
+  },
+  {
+    "objectID": "calender.html",
+    "href": "calender.html",
+    "title": "Calender",
+    "section": "",
+    "text": "Calender\n\n\n\n\n\nWeek\nModule\nMonday 14:15 - 16:00\nThursday 14:15 - 16:00\n\n\n\n\n2\nModule 1\n06.01: Introduction to TECH3/Overview lecture in Aud D\n09.01: Collaborative learning session in Aud J\n\n\n3\nModule 1\n13.01: Practical session in Aud C.\n16.01: Case session in Aud J\n\n\n4\nModule 2\n20.01: Overview lecture in Aud C\n23.01: Collaborative learning session in Aud J\n\n\n5\nModule 2\n27.01: Overview lecture in Aud C\n30.01: Practical session in Aud J\n\n\n6\nModule 2\n03.02: No lecture\n06.02: Case session in Aud J\n\n\n7\nModule 3\n10.02: Overview lecture in Aud C\n13.02: Collaborative learning session in Aud J\n\n\n8\nModule 3\n17.02: Overview lecture in Aud C\n20.02: Practical session in Aud J.\n\n\n9\nModule 3\n24.02: No lecture\n27.02: Case session in Aud J\n\n\n10\nModule 4\n03:03: Overview lecture in Aud C\n06.03: No lecture\n\n\n11\nModule 4\n10:03: Overview lecture in Aud C\n13.03: Collaborative learning session in Aud J.\n\n\n12\nModule 4\n17.03: Practical session i Aud C\n20.03: No lecture (Symposium)\n\n\n13\nModule 5\n24.03: Overview lecture in Aud C\n26.03: Case session in Aud J\n\n\n14\nModule 5\n31.03: Practical session in Aud C\n03.04: Collaborative learning session in Aud J\n\n\n15\nModule 5\n07.04: Overview lecture in Aud C\n10.04: Case session in Aud J\n\n\n16\nExam preparations\n14.04: No lecture (Easter)\n17.04: No lecture (Easter)\n\n\n17\nExam preparations\n21.04: No lecture (Easter)\n24.04: Exam prepartion session? in Aud J"
+  },
+  {
+    "objectID": "5-videos.html",
+    "href": "5-videos.html",
+    "title": "Videos",
+    "section": "",
+    "text": "Videos",
     "crumbs": [
-      "Datalabs",
-      "Datalab 2"
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Videos"
     ]
   },
   {
-    "objectID": "data/countries/country_data_wrangling.html",
-    "href": "data/countries/country_data_wrangling.html",
-    "title": "Country data - wrangling",
+    "objectID": "5-python.html",
+    "href": "5-python.html",
+    "title": "Python",
     "section": "",
-    "text": "Wrangling of countries data into a single dataset\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\ncountry codes with continent from https://datahub.io/core/country-codes\n\n# north america is coded as NA so need to exclude it from NA list\ncountry_codes &lt;- read_delim('country_codes.csv', na=c('')) %&gt;%\n    rename(CountryCode = `ISO3166-1-Alpha-3`, \n           Name = `UNTERM English Formal`) %&gt;%\n    select(Continent, CountryCode)\n\nRows: 250 Columns: 56\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (48): FIFA, Dial, ISO3166-1-Alpha-3, MARC, is_independent, ISO3166-1-num...\ndbl  (5): Intermediate Region Code, M49, Sub-region Code, Region Code, Geona...\nnum  (2): GAUL, ISO4217-currency_minor_unit\nlgl  (1): Global Code\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nfrom google, this contains latitude/longitude\n\ncountries &lt;- read_delim('countries/countries.csv') %&gt;%\n  rename(CountryName = name)\n\nRows: 245 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, name\ndbl (2): latitude, longitude\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nfrom worldbank, this contains population over time\n\n\nyears are in columns\n\npopulation &lt;- read_csv('worldbank/API_SP.POP.TOTL_DS2_en_csv_v2_3469297.csv', show_col_types = FALSE, skip=4) %&gt;% \n  select(-`...66`) %&gt;%\n  rename(CountryName = `Country Name`,\n         CountryCode = `Country Code`,\n         Population2020 = `2020`) %&gt;%\n  select(CountryName, CountryCode, Population2020)\n\nNew names:\n• `` -&gt; `...66`\n\n\n\ncountry_metadata &lt;- read_csv('worldbank/Metadata_Country_API_SP.POP.TOTL_DS2_en_csv_v2_3469297.csv', show_col_types = FALSE) %&gt;% \n  select(-`...6`) %&gt;%\n  rename(CountryCode = `Country Code`) %&gt;%\n  select(-SpecialNotes, -TableName)\n\nNew names:\n• `` -&gt; `...6`\n\n\n\npopdata &lt;- merge(population, country_metadata, by='CountryCode') %&gt;%\n  drop_na(Region)  # remove regional summaries\n\npopdata &lt;- merge(popdata, country_codes, by='CountryCode') %&gt;%\n  drop_na(Continent)\n\n\npopdata_with_geodata &lt;- merge(popdata, countries, by=\"CountryName\")\n\n\ngdp &lt;- read_csv('worldbank_gdp/API_NY.GDP.MKTP.CD_DS2_en_csv_v2_3469429.csv', show_col_types = FALSE, skip=4) %&gt;% \n  select(-`...66`) %&gt;%\n  rename(CountryName = `Country Name`,\n         CountryCode = `Country Code`,\n         GDP2020 = `2020`)  %&gt;%\n  select(CountryCode, GDP2020) %&gt;%\n  drop_na(GDP2020)\n\nNew names:\n• `` -&gt; `...66`\n\npopdata_with_geodata_and_gdp &lt;- merge(popdata_with_geodata, gdp)\n\n\nwrite_csv(popdata_with_geodata_and_gdp, 'country_data.csv')"
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Python"
+    ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "5-exercises.html",
+    "href": "5-exercises.html",
+    "title": "Exercises",
     "section": "",
-    "text": "Sondre Hølleland,  Assistant professor\n\n\n\n\n\nGeir Drage Berentsen,  Associate professor\n\n\n\nThis course and website has been developed by Sondre Hølleland, assistant professor, and Geir Drage Berentsen, associate professor, both at Norwegian School of Economics, Department of Business and Management Science. More about us will be added."
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "4-textbook.html",
+    "href": "4-textbook.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "The following is a redistribution of chapters 9, 10 and 15 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "4-textbook.html#hypothesis-testing",
+    "href": "4-textbook.html#hypothesis-testing",
+    "title": "TECH3 Applied statistics",
+    "section": "Hypothesis testing",
+    "text": "Hypothesis testing",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "4-textbook.html#quantifying-effects-and-designing-studies",
+    "href": "4-textbook.html#quantifying-effects-and-designing-studies",
+    "title": "TECH3 Applied statistics",
+    "section": "Quantifying effects and designing studies",
+    "text": "Quantifying effects and designing studies",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "4-textbook.html#comparing-means",
+    "href": "4-textbook.html#comparing-means",
+    "title": "TECH3 Applied statistics",
+    "section": "Comparing means",
+    "text": "Comparing means",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "4-intro.html",
+    "href": "4-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "Designing studies, hypothesis testing, and quantifying effects\n\nFocus: Modern hypothesis testing using bootstrap methods.\nKey topics: classical test statistics, confidence intervals, effect size, power analysis, AB-testing.\nSpecial Emphasis: Statistical significance versus practical significance. Describe the proper interpretations of a p-value and common misinterpretations",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "3-videos.html",
+    "href": "3-videos.html",
+    "title": "Videos",
+    "section": "",
+    "text": "Videos",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Videos"
+    ]
+  },
+  {
+    "objectID": "3-python.html",
+    "href": "3-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "3-exercises.html",
+    "href": "3-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-textbook.html",
+    "href": "2-textbook.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "The following is a redistribution of chapters 6 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "2-textbook.html#probability",
+    "href": "2-textbook.html#probability",
+    "title": "TECH3 Applied statistics",
+    "section": "Probability",
+    "text": "Probability",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "2-intro.html",
+    "href": "2-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "Probability, random variables, probability distributions and simulations\n\nFocus: Random variables, distributions and the link to simulations.\nKey topics: Probability distributions, conditional probability, independence, the law of large numbers, pseudo-random numbers.\nSpecial Emphasis: Estimating the probability of complex outcomes through simulations.",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "1-working-with-data.html",
+    "href": "1-working-with-data.html",
+    "title": "Working with data",
+    "section": "",
+    "text": "What is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Working with data"
+    ]
+  },
+  {
+    "objectID": "1-working-with-data.html#controll-questions",
+    "href": "1-working-with-data.html#controll-questions",
+    "title": "Working with data",
+    "section": "",
+    "text": "What is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Working with data"
+    ]
+  },
+  {
+    "objectID": "1-textbook.html",
+    "href": "1-textbook.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "The following is a redistribution of chapters 1-4 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence. Chapters 2-4 are of main interest for this module, but chapter 1 is also part of the curriculum and gives an introduction to statistical thinking.",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "1-textbook.html#introduction",
+    "href": "1-textbook.html#introduction",
+    "title": "TECH3 Applied statistics",
+    "section": "Introduction",
+    "text": "Introduction",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "1-textbook.html#working-with-data",
+    "href": "1-textbook.html#working-with-data",
+    "title": "TECH3 Applied statistics",
+    "section": "Working with data",
+    "text": "Working with data",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "1-textbook.html#summarizing-data",
+    "href": "1-textbook.html#summarizing-data",
+    "title": "TECH3 Applied statistics",
+    "section": "Summarizing data",
+    "text": "Summarizing data",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "1-textbook.html#data-visualization",
+    "href": "1-textbook.html#data-visualization",
+    "title": "TECH3 Applied statistics",
+    "section": "Data visualization",
+    "text": "Data visualization",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "1-summarizing-data.html",
+    "href": "1-summarizing-data.html",
+    "title": "Summarizing data",
+    "section": "",
+    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summarizing data"
+    ]
+  },
+  {
+    "objectID": "1-summarizing-data.html#controll-questions",
+    "href": "1-summarizing-data.html#controll-questions",
+    "title": "Summarizing data",
+    "section": "",
+    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summarizing data"
+    ]
+  },
+  {
+    "objectID": "1-python.html",
+    "href": "1-python.html",
+    "title": "Useful python commands",
+    "section": "",
+    "text": "Useful python commands",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Useful python commands"
+    ]
+  },
+  {
+    "objectID": "1-intro.html",
+    "href": "1-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "In this module, you will learn about summarizing and visualizing data. All (almost) applied statistical analysis starts with some data, and beeing able to summarizing visualize data is an important tool for any user of statistics.\n\nFocus: Making the data more accessible.\nKey topics: Central statistics summarizing data, histograms, scatterplots, boxplots, human perceptional limitations.\nSpecial Emphasis: What is statistical thinking? Never create a pie chart.",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "1-gapminder.html",
+    "href": "1-gapminder.html",
+    "title": "Gapminder example of good visualization",
+    "section": "",
+    "text": "Hans Rosling (deceased) is a legend when it comes data visualization. He was a professor of International Health at Karolinska Insitute and well-known for his visualizations of global data related to international heath. The youtube video below is made by BBC in collaboration with Hans Rosling and can (hopefully) be inspirational for your own visualizatios. The data in the video is up to 2010, but for updated data, see gapminder.org.\n\n\n\n\n\nWhat do we call the kind of plots that Rosling uses here?\nHow many variables is visualized at the same time in Rosling’s plot?\nHow many data points did Rosling visualize in the video (according to himself)?\nWhich country had the highest life expectancy and income per person in 2010?\nWhich country had the lowest life expectancy and income per person in 2010?\nCan you see a dip in life expectancy due to Covid-19 in the updated data?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Gapminder example of good visualization"
+    ]
+  },
+  {
+    "objectID": "1-gapminder.html#controll-questions",
+    "href": "1-gapminder.html#controll-questions",
+    "title": "Gapminder example of good visualization",
+    "section": "",
+    "text": "What do we call the kind of plots that Rosling uses here?\nHow many variables is visualized at the same time in Rosling’s plot?\nHow many data points did Rosling visualize in the video (according to himself)?\nWhich country had the highest life expectancy and income per person in 2010?\nWhich country had the lowest life expectancy and income per person in 2010?\nCan you see a dip in life expectancy due to Covid-19 in the updated data?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Gapminder example of good visualization"
+    ]
+  },
+  {
+    "objectID": "1-data-visualization.html",
+    "href": "1-data-visualization.html",
+    "title": "Data visualization principles",
+    "section": "",
+    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Data visualization principles"
+    ]
+  },
+  {
+    "objectID": "1-data-visualization.html#controll-questions",
+    "href": "1-data-visualization.html#controll-questions",
+    "title": "Data visualization principles",
+    "section": "",
+    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Data visualization principles"
+    ]
+  },
+  {
+    "objectID": "1-exercises.html",
+    "href": "1-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises\n\nYou are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?\n\n\n\n\n\n\nClass\nSex\nAge\nSurvived\nFreq\n\n\n\n\n1st\nMale\nChild\nNo\n0\n\n\n2nd\nMale\nChild\nNo\n0\n\n\n3rd\nMale\nChild\nNo\n35\n\n\nCrew\nMale\nChild\nNo\n0\n\n\n1st\nFemale\nChild\nNo\n0\n\n\n2nd\nFemale\nChild\nNo\n0\n\n\n3rd\nFemale\nChild\nNo\n17\n\n\nCrew\nFemale\nChild\nNo\n0\n\n\n1st\nMale\nAdult\nNo\n118\n\n\n2nd\nMale\nAdult\nNo\n154\n\n\n\n\n\n\n\nShow suggested solutions\n\n\nClass: Categorical, although could be treated as ordinal (1st &gt; 2nd &gt; 3rd &gt; Crew)\nSex: Binary (Male/female)\nAge: Binary (Child/adult)\nSurvived: Binary (no/yes)\nFreq: Numerical, integer.",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "1-idealised_representations.html",
+    "href": "1-idealised_representations.html",
+    "title": "Idealised representations",
+    "section": "",
+    "text": "How many parameters in a Gaussian distribution?\nWhat are the characteristics of a Gaussian distribution?\nWhat does it mean that a distribution is right-skewed?\nIn the context of distributions, what is the tail?\nWhat does it mean that a distribution has a long-tail?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Idealised representations"
+    ]
+  },
+  {
+    "objectID": "1-idealised_representations.html#controll-questions",
+    "href": "1-idealised_representations.html#controll-questions",
+    "title": "Idealised representations",
+    "section": "",
+    "text": "How many parameters in a Gaussian distribution?\nWhat are the characteristics of a Gaussian distribution?\nWhat does it mean that a distribution is right-skewed?\nIn the context of distributions, what is the tail?\nWhat does it mean that a distribution has a long-tail?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Idealised representations"
+    ]
+  },
+  {
+    "objectID": "1-plotting-tools.html",
+    "href": "1-plotting-tools.html",
+    "title": "Plotting tools",
+    "section": "",
+    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Plotting tools"
+    ]
+  },
+  {
+    "objectID": "1-plotting-tools.html#controll-questions",
+    "href": "1-plotting-tools.html#controll-questions",
+    "title": "Plotting tools",
+    "section": "",
+    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Plotting tools"
+    ]
+  },
+  {
+    "objectID": "1-statistical-thinking.html",
+    "href": "1-statistical-thinking.html",
+    "title": "Statistical Thinking",
+    "section": "",
+    "text": "What are the three things statistics can help us with?\nWhich word is not a part of statistical thinking definitions?\n\nData\nUncertainty\nIntuition\nReasoning\n\nWhat is the “big idea” of aggregation in statistics?\nDoes more data generally imply higher uncertainty?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Statistical Thinking"
+    ]
+  },
+  {
+    "objectID": "1-statistical-thinking.html#controll-questions",
+    "href": "1-statistical-thinking.html#controll-questions",
+    "title": "Statistical Thinking",
+    "section": "",
+    "text": "What are the three things statistics can help us with?\nWhich word is not a part of statistical thinking definitions?\n\nData\nUncertainty\nIntuition\nReasoning\n\nWhat is the “big idea” of aggregation in statistics?\nDoes more data generally imply higher uncertainty?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Statistical Thinking"
+    ]
+  },
+  {
+    "objectID": "1-summary-statistics.html",
+    "href": "1-summary-statistics.html",
+    "title": "Summary statistics",
+    "section": "",
+    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summary statistics"
+    ]
+  },
+  {
+    "objectID": "1-summary-statistics.html#controll-questions",
+    "href": "1-summary-statistics.html#controll-questions",
+    "title": "Summary statistics",
+    "section": "",
+    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summary statistics"
+    ]
+  },
+  {
+    "objectID": "1-videos.html",
+    "href": "1-videos.html",
+    "title": "Working with data",
+    "section": "",
+    "text": "Here comes a video"
+  },
+  {
+    "objectID": "2-exercises.html",
+    "href": "2-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "2-python.html",
+    "href": "2-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "2-videos.html",
+    "href": "2-videos.html",
+    "title": "Videos",
+    "section": "",
+    "text": "Videos",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Videos"
+    ]
+  },
+  {
+    "objectID": "3-intro.html",
+    "href": "3-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "Estimation, sampling distributions and resampling\n\nFocus: Modern inference using Monte Carlo methods.\nKey topics: Central limit theorem, sampling error of various statistics, Monte Carlo simulation.\nSpecial Emphasis: Distinguish between a population and a sample and between population parameters and sample statistics.",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "3-textbook.html",
+    "href": "3-textbook.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "The following is a redistribution of chapters 5, 7 and 8 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "3-textbook.html#fitting-models-to-data",
+    "href": "3-textbook.html#fitting-models-to-data",
+    "title": "TECH3 Applied statistics",
+    "section": "Fitting models to data",
+    "text": "Fitting models to data",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "3-textbook.html#sampling",
+    "href": "3-textbook.html#sampling",
+    "title": "TECH3 Applied statistics",
+    "section": "Sampling",
+    "text": "Sampling",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "3-textbook.html#resampling-and-simulation",
+    "href": "3-textbook.html#resampling-and-simulation",
+    "title": "TECH3 Applied statistics",
+    "section": "Resampling and Simulation",
+    "text": "Resampling and Simulation",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Textbook"
+    ]
+  },
+  {
+    "objectID": "4-exercises.html",
+    "href": "4-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "4-python.html",
+    "href": "4-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "4-videos.html",
+    "href": "4-videos.html",
+    "title": "Videos",
+    "section": "",
+    "text": "Videos",
+    "crumbs": [
+      "Modules",
+      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
+      "Videos"
+    ]
+  },
+  {
+    "objectID": "5-intro.html",
+    "href": "5-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "Measuring relationships and fitting models\n\nFocus: The difference between modelling continuous and categorical relationships.\nKey topics: Correlation, causation, linear regression, predictions, odds ratio, binary regression, chi-squared tests.\n\nSpecial Emphasis: Address overfitting using cross-validation.",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Introduction"
+    ]
   },
   {
     "objectID": "5-textbook.html",
@@ -138,585 +733,41 @@
     ]
   },
   {
-    "objectID": "5-intro.html",
-    "href": "5-intro.html",
-    "title": "TECH3 Applied statistics",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Measuring relationships and fitting models\n\nFocus: The difference between modelling continuous and categorical relationships.\nKey topics: Correlation, causation, linear regression, predictions, odds ratio, binary regression, chi-squared tests.\n\nSpecial Emphasis: Address overfitting using cross-validation.",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Introduction"
-    ]
+    "text": "Sondre Hølleland,  Assistant professor\n\n\n\n\n\nGeir Drage Berentsen,  Associate professor\n\n\n\nThis course and website has been developed by Sondre Hølleland, assistant professor, and Geir Drage Berentsen, associate professor, both at Norwegian School of Economics, Department of Business and Management Science. More about us will be added."
   },
   {
-    "objectID": "4-videos.html",
-    "href": "4-videos.html",
-    "title": "Videos",
+    "objectID": "case-1.html",
+    "href": "case-1.html",
+    "title": "Case 1",
     "section": "",
-    "text": "Videos",
-    "crumbs": [
-      "Modules",
-      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
-      "Videos"
-    ]
+    "text": "Case 1\n\n\n\nPoster by Hege Landsvik ©\n\n\nSource: Landsvik, H., Martuza, J., Skard, S., Pedersen, L. J. T., & Jørgensen, S. Group Identity and Pro-Environmental Behavior in Public Settings: Using Identity-based Nudges to Enhance Recycling in the Field. Preprint.\nIn this case session, you will be making a descriptive analysis of a dataset from a field experiment on Brann Stadium, the home of Bergen’s local soccer team.\nThe researchers gathered data on the number of cups sold on the away stand at Brann Stadium. After each match, they went through the garbage, at counted how many cups was correctly recycled, that is, put in the bin for soda- and coffee cups. The experiment was constructed using two treatments. Firstly, they used a nudge, by putting a sign over the bins asking “Who is the most environmental away supporters in Eliteserien (Norway’s highest soccer league)?” Sort you garbage here.” The sign would also have the logo of the away team. This is called an ingroup appeal. The other treatment is gamification. Here they would set up a table showing the sorting rate of the other away teams. The intent of the researchers is to make it a sorting competition against the other teams.\nThe dataset has the following variables:\n\nMatch_Number: Match ID. Starting from the second home match of the 2023 season.\nOpponent: Name of the away team - adjusted for æøå.\nAway_Conditon: Baseline, Ingroup or Outgroup\nGamification_Days: Baseline, No, Yes.\nWinner: Who won the match? Home, tie or Away.\nSortedCup: Was the cup sorted? 0: No, 1: Yes.\n\nEach observation is a cup sold. If the cup was put in the correct bin, sortedCup column is 1, otherwise it is zero.\n\nCreate a frequency table for each match counting how many cups was sold and how many was correctly sorted. Which away team supporters are the largest consumers of coffee?\nAdd a relative frequency (sorting rate) column to your table. What team is the best recyclers?\nSummarize the sorting rates across teams and treatments, using mean, median, standard deviation, 1st and 3rd quartile.\nCreate a good visualization of the sorting rate for the various teams.\nNow, the different teams were exposed to different treatments, both for the in- or out-group message on the banner and whether they were exposed to gamification or not. If we disregard the individual teams and only consider these treatments marginally (marginally means one treatment at a time).\n\n\nUse suitable summary statistics to summarize the effect of different treatments.\nMake suitable figures to visualize the effects. One suggestion: Use boxplots.\n\nDiscuss your summary statistics and visuals within the group."
   },
   {
-    "objectID": "4-python.html",
-    "href": "4-python.html",
-    "title": "Python",
+    "objectID": "data/countries/country_data_wrangling.html",
+    "href": "data/countries/country_data_wrangling.html",
+    "title": "Country data - wrangling",
     "section": "",
-    "text": "Python",
-    "crumbs": [
-      "Modules",
-      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "4-exercises.html",
-    "href": "4-exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercises",
-    "crumbs": [
-      "Modules",
-      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "3-textbook.html",
-    "href": "3-textbook.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "The following is a redistribution of chapters 5, 7 and 8 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "3-textbook.html#fitting-models-to-data",
-    "href": "3-textbook.html#fitting-models-to-data",
-    "title": "TECH3 Applied statistics",
-    "section": "Fitting models to data",
-    "text": "Fitting models to data",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "3-textbook.html#sampling",
-    "href": "3-textbook.html#sampling",
-    "title": "TECH3 Applied statistics",
-    "section": "Sampling",
-    "text": "Sampling",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "3-textbook.html#resampling-and-simulation",
-    "href": "3-textbook.html#resampling-and-simulation",
-    "title": "TECH3 Applied statistics",
-    "section": "Resampling and Simulation",
-    "text": "Resampling and Simulation",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "3-intro.html",
-    "href": "3-intro.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "Estimation, sampling distributions and resampling\n\nFocus: Modern inference using Monte Carlo methods.\nKey topics: Central limit theorem, sampling error of various statistics, Monte Carlo simulation.\nSpecial Emphasis: Distinguish between a population and a sample and between population parameters and sample statistics.",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "2-videos.html",
-    "href": "2-videos.html",
-    "title": "Videos",
-    "section": "",
-    "text": "Videos",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Videos"
-    ]
-  },
-  {
-    "objectID": "2-python.html",
-    "href": "2-python.html",
-    "title": "Python",
-    "section": "",
-    "text": "Python",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "2-exercises.html",
-    "href": "2-exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercises",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "1-videos.html",
-    "href": "1-videos.html",
-    "title": "Working with data",
-    "section": "",
-    "text": "Here comes a video"
-  },
-  {
-    "objectID": "1-summary-statistics.html",
-    "href": "1-summary-statistics.html",
-    "title": "Summary statistics",
-    "section": "",
-    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Summary statistics"
-    ]
-  },
-  {
-    "objectID": "1-summary-statistics.html#controll-questions",
-    "href": "1-summary-statistics.html#controll-questions",
-    "title": "Summary statistics",
-    "section": "",
-    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Summary statistics"
-    ]
-  },
-  {
-    "objectID": "1-python.html",
-    "href": "1-python.html",
-    "title": "Useful python commands",
-    "section": "",
-    "text": "Useful python commands",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Useful python commands"
-    ]
-  },
-  {
-    "objectID": "1-intro.html",
-    "href": "1-intro.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "In this module, you will learn about summarizing and visualizing data. All (almost) applied statistical analysis starts with some data, and beeing able to summarizing visualize data is an important tool for any user of statistics.\n\nFocus: Making the data more accessible.\nKey topics: Central statistics summarizing data, histograms, scatterplots, boxplots, human perceptional limitations.\nSpecial Emphasis: What is statistical thinking? Never create a pie chart.",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "1-data-visualization.html",
-    "href": "1-data-visualization.html",
-    "title": "Data visualization principles",
-    "section": "",
-    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Data visualization principles"
-    ]
-  },
-  {
-    "objectID": "1-data-visualization.html#controll-questions",
-    "href": "1-data-visualization.html#controll-questions",
-    "title": "Data visualization principles",
-    "section": "",
-    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Data visualization principles"
-    ]
-  },
-  {
-    "objectID": "1-exercises.html",
-    "href": "1-exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercises\n\nYou are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?\n\n\n\n\n\n\nClass\nSex\nAge\nSurvived\nFreq\n\n\n\n\n1st\nMale\nChild\nNo\n0\n\n\n2nd\nMale\nChild\nNo\n0\n\n\n3rd\nMale\nChild\nNo\n35\n\n\nCrew\nMale\nChild\nNo\n0\n\n\n1st\nFemale\nChild\nNo\n0\n\n\n2nd\nFemale\nChild\nNo\n0\n\n\n3rd\nFemale\nChild\nNo\n17\n\n\nCrew\nFemale\nChild\nNo\n0\n\n\n1st\nMale\nAdult\nNo\n118\n\n\n2nd\nMale\nAdult\nNo\n154\n\n\n\n\n\n\n\nShow suggested solutions\n\n\nClass: Categorical, although could be treated as ordinal (1st &gt; 2nd &gt; 3rd &gt; Crew)\nSex: Binary (Male/female)\nAge: Binary (Child/adult)\nSurvived: Binary (no/yes)\nFreq: Numerical, integer.",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "1-plotting-tools.html",
-    "href": "1-plotting-tools.html",
-    "title": "Plotting tools",
-    "section": "",
-    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Plotting tools"
-    ]
-  },
-  {
-    "objectID": "1-plotting-tools.html#controll-questions",
-    "href": "1-plotting-tools.html#controll-questions",
-    "title": "Plotting tools",
-    "section": "",
-    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Plotting tools"
-    ]
-  },
-  {
-    "objectID": "1-summarizing-data.html",
-    "href": "1-summarizing-data.html",
-    "title": "Summarizing data",
-    "section": "",
-    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Summarizing data"
-    ]
-  },
-  {
-    "objectID": "1-summarizing-data.html#controll-questions",
-    "href": "1-summarizing-data.html#controll-questions",
-    "title": "Summarizing data",
-    "section": "",
-    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Summarizing data"
-    ]
-  },
-  {
-    "objectID": "1-textbook.html",
-    "href": "1-textbook.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "The following is a redistribution of chapters 3-4 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "1-textbook.html#introduction",
-    "href": "1-textbook.html#introduction",
-    "title": "TECH3 Applied statistics",
-    "section": "Introduction",
-    "text": "Introduction",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "1-textbook.html#working-with-data",
-    "href": "1-textbook.html#working-with-data",
-    "title": "TECH3 Applied statistics",
-    "section": "Working with data",
-    "text": "Working with data",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "1-textbook.html#summarizing-data",
-    "href": "1-textbook.html#summarizing-data",
-    "title": "TECH3 Applied statistics",
-    "section": "Summarizing data",
-    "text": "Summarizing data",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "1-textbook.html#data-visualization",
-    "href": "1-textbook.html#data-visualization",
-    "title": "TECH3 Applied statistics",
-    "section": "Data visualization",
-    "text": "Data visualization",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "1-working-with-data.html",
-    "href": "1-working-with-data.html",
-    "title": "Working with data",
-    "section": "",
-    "text": "What is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Working with data"
-    ]
-  },
-  {
-    "objectID": "1-working-with-data.html#controll-questions",
-    "href": "1-working-with-data.html#controll-questions",
-    "title": "Working with data",
-    "section": "",
-    "text": "What is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Working with data"
-    ]
-  },
-  {
-    "objectID": "2-intro.html",
-    "href": "2-intro.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "Probability, random variables, probability distributions and simulations\n\nFocus: Random variables, distributions and the link to simulations.\nKey topics: Probability distributions, conditional probability, independence, the law of large numbers, pseudo-random numbers.\nSpecial Emphasis: Estimating the probability of complex outcomes through simulations.",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "2-textbook.html",
-    "href": "2-textbook.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "The following is a redistribution of chapters 6 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "2-textbook.html#probability",
-    "href": "2-textbook.html#probability",
-    "title": "TECH3 Applied statistics",
-    "section": "Probability",
-    "text": "Probability",
-    "crumbs": [
-      "Modules",
-      "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "3-exercises.html",
-    "href": "3-exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercises",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "3-python.html",
-    "href": "3-python.html",
-    "title": "Python",
-    "section": "",
-    "text": "Python",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "3-videos.html",
-    "href": "3-videos.html",
-    "title": "Videos",
-    "section": "",
-    "text": "Videos",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Videos"
-    ]
-  },
-  {
-    "objectID": "4-intro.html",
-    "href": "4-intro.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "Designing studies, hypothesis testing, and quantifying effects\n\nFocus: Modern hypothesis testing using bootstrap methods.\nKey topics: classical test statistics, confidence intervals, effect size, power analysis, AB-testing.\nSpecial Emphasis: Statistical significance versus practical significance. Describe the proper interpretations of a p-value and common misinterpretations",
-    "crumbs": [
-      "Modules",
-      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "4-textbook.html",
-    "href": "4-textbook.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "The following is a redistribution of chapters 9, 10 and 15 of Statistical Thinking for the 21st Century by Russell A. Poldrack, 2019, under the CC BY-NC 4.0 licence.",
-    "crumbs": [
-      "Modules",
-      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "4-textbook.html#hypothesis-testing",
-    "href": "4-textbook.html#hypothesis-testing",
-    "title": "TECH3 Applied statistics",
-    "section": "Hypothesis testing",
-    "text": "Hypothesis testing",
-    "crumbs": [
-      "Modules",
-      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "4-textbook.html#quantifying-effects-and-designing-studies",
-    "href": "4-textbook.html#quantifying-effects-and-designing-studies",
-    "title": "TECH3 Applied statistics",
-    "section": "Quantifying effects and designing studies",
-    "text": "Quantifying effects and designing studies",
-    "crumbs": [
-      "Modules",
-      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "4-textbook.html#comparing-means",
-    "href": "4-textbook.html#comparing-means",
-    "title": "TECH3 Applied statistics",
-    "section": "Comparing means",
-    "text": "Comparing means",
-    "crumbs": [
-      "Modules",
-      "Module 4: Designing studies, hypothesis testing, and quantifying effects",
-      "Textbook"
-    ]
-  },
-  {
-    "objectID": "5-exercises.html",
-    "href": "5-exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercises",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "5-python.html",
-    "href": "5-python.html",
-    "title": "Python",
-    "section": "",
-    "text": "Python",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "5-videos.html",
-    "href": "5-videos.html",
-    "title": "Videos",
-    "section": "",
-    "text": "Videos",
-    "crumbs": [
-      "Modules",
-      "Module 5: Measuring relationships and fitting models",
-      "Videos"
-    ]
-  },
-  {
-    "objectID": "calender.html",
-    "href": "calender.html",
-    "title": "Calender",
-    "section": "",
-    "text": "Calender"
-  },
-  {
-    "objectID": "datalab-1.html",
-    "href": "datalab-1.html",
-    "title": "Datalab 1",
-    "section": "",
-    "text": "Datalab 1\n\n\n\nPoster by Hege Landsvik ©\n\n\nSource: Landsvik, H., Martuza, J., Skard, S., Pedersen, L. J. T., & Jørgensen, S. Group Identity and Pro-Environmental Behavior in Public Settings: Using Identity-based Nudges to Enhance Recycling in the Field. Preprint.\nIn this datalab, you will be making a descriptive analysis of a dataset from a field experiment on Brann Stadium, the home of Bergen’s local soccer team.\nThe researchers gathered data on the number of cups sold on the away stand at Brann Stadium. After each match, they went through the garbage, at counted how many cups was correctly recycled, that is, put in the bin for soda- and coffee cups. The experiment was constructed using two treatments. Firstly, they used a nudge, by putting a sign over the bins asking “Who is the most environmental away supporters in Eliteserien (Norway’s highest soccer league)?” Sort you garbage here.” The sign would also have the logo of the away team. This is called an ingroup appeal. The other treatment is gamification. Here they would set up a table showing the sorting rate of the other away teams. The intent of the researchers is to make it a sorting competition against the other teams.\nThe dataset has the following variables:\n\nMatch_Number: Match ID. Starting from the second home match of the 2023 season.\nOpponent: Name of the away team - adjusted for æøå.\nAway_Conditon: Baseline, Ingroup or Outgroup\nGamification_Days: Baseline, No, Yes.\nWinner: Who won the match? Home, tie or Away.\nSortedCup: Was the cup sorted? 0: No, 1: Yes.\n\nEach observation is a cup sold. If the cup was put in the correct bin, sortedCup column is 1, otherwise it is zero.\n\nCreate a frequency table for each match counting how many cups was sold and how many was correctly sorted. Which away team supporters are the largest consumers of coffee?\nAdd a relative frequency (sorting rate) column to your table. What team is the best recyclers?\nSummarize the sorting rates across teams and treatments, using mean, median, standard deviation, 1st and 3rd quartile.\nCreate a good visualization of the sorting rate for the various teams.\nNow, the different teams were exposed to different treatments, both for the in- or out-group message on the banner and whether they were exposed to gamification or not. If we disregard the individual teams and only consider these treatments marginally (marginally means one treatment at a time).\n\n\nUse suitable summary statistics to summarize the effect of different treatments.\nMake suitable figures to visualize the effects. Suggestion: Use boxplots.",
-    "crumbs": [
-      "Datalabs",
-      "Datalab 1"
-    ]
-  },
-  {
-    "objectID": "datalab-3.html",
-    "href": "datalab-3.html",
-    "title": "Datalab 3",
-    "section": "",
-    "text": "Datalab 3"
+    "text": "Wrangling of countries data into a single dataset\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\ncountry codes with continent from https://datahub.io/core/country-codes\n\n# north america is coded as NA so need to exclude it from NA list\ncountry_codes &lt;- read_delim('country_codes.csv', na=c('')) %&gt;%\n    rename(CountryCode = `ISO3166-1-Alpha-3`, \n           Name = `UNTERM English Formal`) %&gt;%\n    select(Continent, CountryCode)\n\nRows: 250 Columns: 56\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (48): FIFA, Dial, ISO3166-1-Alpha-3, MARC, is_independent, ISO3166-1-num...\ndbl  (5): Intermediate Region Code, M49, Sub-region Code, Region Code, Geona...\nnum  (2): GAUL, ISO4217-currency_minor_unit\nlgl  (1): Global Code\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nfrom google, this contains latitude/longitude\n\ncountries &lt;- read_delim('countries/countries.csv') %&gt;%\n  rename(CountryName = name)\n\nRows: 245 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): country, name\ndbl (2): latitude, longitude\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\nfrom worldbank, this contains population over time\n\n\nyears are in columns\n\npopulation &lt;- read_csv('worldbank/API_SP.POP.TOTL_DS2_en_csv_v2_3469297.csv', show_col_types = FALSE, skip=4) %&gt;% \n  select(-`...66`) %&gt;%\n  rename(CountryName = `Country Name`,\n         CountryCode = `Country Code`,\n         Population2020 = `2020`) %&gt;%\n  select(CountryName, CountryCode, Population2020)\n\nNew names:\n• `` -&gt; `...66`\n\n\n\ncountry_metadata &lt;- read_csv('worldbank/Metadata_Country_API_SP.POP.TOTL_DS2_en_csv_v2_3469297.csv', show_col_types = FALSE) %&gt;% \n  select(-`...6`) %&gt;%\n  rename(CountryCode = `Country Code`) %&gt;%\n  select(-SpecialNotes, -TableName)\n\nNew names:\n• `` -&gt; `...6`\n\n\n\npopdata &lt;- merge(population, country_metadata, by='CountryCode') %&gt;%\n  drop_na(Region)  # remove regional summaries\n\npopdata &lt;- merge(popdata, country_codes, by='CountryCode') %&gt;%\n  drop_na(Continent)\n\n\npopdata_with_geodata &lt;- merge(popdata, countries, by=\"CountryName\")\n\n\ngdp &lt;- read_csv('worldbank_gdp/API_NY.GDP.MKTP.CD_DS2_en_csv_v2_3469429.csv', show_col_types = FALSE, skip=4) %&gt;% \n  select(-`...66`) %&gt;%\n  rename(CountryName = `Country Name`,\n         CountryCode = `Country Code`,\n         GDP2020 = `2020`)  %&gt;%\n  select(CountryCode, GDP2020) %&gt;%\n  drop_na(GDP2020)\n\nNew names:\n• `` -&gt; `...66`\n\npopdata_with_geodata_and_gdp &lt;- merge(popdata_with_geodata, gdp)\n\n\nwrite_csv(popdata_with_geodata_and_gdp, 'country_data.csv')"
   },
   {
     "objectID": "oldexams.html",
     "href": "oldexams.html",
-    "title": "About",
+    "title": "Old exams",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n2",
+    "text": "Old exams\nOld exams will be made avaiable here.",
     "crumbs": [
-      "Old exams",
-      "About"
+      "Old exams"
     ]
   },
   {
     "objectID": "reference.html",
     "href": "reference.html",
-    "title": "About",
+    "title": "References",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n2",
-    "crumbs": [
-      "Reference",
-      "About"
-    ]
+    "text": "References"
   }
 ]

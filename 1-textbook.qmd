@@ -1,4 +1,4 @@
-The following is a redistribution of chapters [3](https://statsthinking21.github.io/statsthinking21-core-site/summarizing-data.html)-[4](https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html) of [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/index.html) by Russell A. Poldrack, 2019, under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licence.
+The following is a redistribution of chapters [1](https://statsthinking21.github.io/statsthinking21-core-site/introduction.html)-[4](https://statsthinking21.github.io/statsthinking21-core-site/data-visualization.html) of [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/index.html) by Russell A. Poldrack, 2019, under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) licence. Chapters 2-4 are of main interest for this module, but chapter 1 is also part of the curriculum and gives an introduction to statistical thinking. 
 
 ## Introduction
 

@@ -1,0 +1,16 @@
+# Gapminder example of good visualization
+
+Hans Rosling (deceased) is a legend when it comes data visualization. He was a professor of International Health at Karolinska Insitute and well-known for his visualizations of global data related to international heath. The youtube video below is made by BBC in collaboration with Hans Rosling and can (hopefully) be inspirational for your own visualizatios. The data in the video is up to 2010, but for updated data, see [gapminder.org](https://www.gapminder.org/tools/#\$chart-type=bubbles&url=v2).
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jbkSRLYSojo?si=7h2iaA9NzdQFqzn_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
+
+## Controll questions
+
+-   What do we call the kind of plots that Rosling uses here?
+-   How many variables is visualized at the same time in Rosling's plot?
+-   How many data points did Rosling visualize in the video (according to himself)?
+-   Which country had the highest life expectancy and income per person in 2010?
+-   Which country had the lowest life expectancy and income per person in 2010?
+-   Can you see a dip in life expectancy due to Covid-19 in the updated data?
