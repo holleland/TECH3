@@ -4,18 +4,20 @@ Welcome to the website for TECH3 Applied Statistics. We will use this website as
 
 ## Lecture plan
 
-```{r lecturePlan,eval=FALSE, echo = FALSE, message = FALSE, warning = FALSE}
+```{r lecturePlan,eval=TRUE, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 options(knitr.kable.NA = '')
 library(dplyr)
 library(kableExtra)
-readxl::read_excel("lecturePlan.xlsx", sheet = "Sheet3",
-                           col_types= rep("text",3))[,-1] %>% 
-  kbl() %>%
+readxl::read_excel("div/lectureplan-V25.xlsx", sheet = "Sheet1",
+                           col_types= rep("text",4)) %>% 
+  kbl(escape = FALSE) %>%
   kable_styling(bootstrap_options = c("condensed", "hover"),
                 fixed_thead = T) %>%
-    row_spec(seq(1,25,2) , background = "#2E8B5750") %>% 
-    row_spec(28, bold = T, background = "DarkRed", color = "white")
+    row_spec(row = c(1:2,6:8,12:14), background = "#B5983B", color = "white") %>%
+  row_spec(row = c(3:5, 9:11, 15:16), 
+           background = "black", color ="white" )
+    #row_spec(28, bold = T, background = "DarkRed", color = "white")
 
 ```
 
@@ -29,24 +31,24 @@ readxl::read_excel("lecturePlan.xlsx", sheet = "Sheet3",
 All the material on this website, including chapters 1-10, 12-15, and 17 of [Statistical Thinking in the 21st Century](https://statsthinking21.github.io/statsthinking21-core/index.html) and [Python Companion to Statistical Thinking in the 21st Century](https://statsthinking21.github.io/statsthinking21-python/index.html).
 
 ## Learning outcomes
+
 Upon completing the course, the students can:
 
 #### Knowledge
 
-- Understand basic statistical theory and corresponding methods,  and how to apply this knowledge in practical situations.
+-   Understand basic statistical theory and corresponding methods, and how to apply this knowledge in practical situations.
 
 #### Skills
 
-- Explore data using software that can summarize and visualize data.
-- Master basic probability theory.
-- Make inferences about an entire population based on a sample of individuals from that population using both classical statistical methods and modern resampling techniques.
-- Design basic experiments, perform hypothesis testing, and quantify effects.
-- Measure relationships between both categorical and continuous variables. 
-- Fit and evaluate regression models for both inference and prediction.
+-   Explore data using software that can summarize and visualize data.
+-   Master basic probability theory.
+-   Make inferences about an entire population based on a sample of individuals from that population using both classical statistical methods and modern resampling techniques.
+-   Design basic experiments, perform hypothesis testing, and quantify effects.
+-   Measure relationships between both categorical and continuous variables.
+-   Fit and evaluate regression models for both inference and prediction.
 
 #### General Competence
 
-- Identify and solve statistical problems.
-- Perform basic data analysis using modern computer tools.
-- Perform data-driven decision-making for a sustainable future.
-
+-   Identify and solve statistical problems.
+-   Perform basic data analysis using modern computer tools.
+-   Perform data-driven decision-making for a sustainable future.

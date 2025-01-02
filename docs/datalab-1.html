@@ -185,6 +185,36 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="datalab-1" class="level1">
 <h1>Datalab 1</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/ACR Poster.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Poster by Hege Landsvik ©</figcaption>
+</figure>
+</div>
+<p>Source: <a href="https://doi.org/10.31234/osf.io/uwqag">Landsvik, H., Martuza, J., Skard, S., Pedersen, L. J. T., &amp; Jørgensen, S. Group Identity and Pro-Environmental Behavior in Public Settings: Using Identity-based Nudges to Enhance Recycling in the Field. Preprint.</a></p>
+<p>In this datalab, you will be making a descriptive analysis of a dataset from a field experiment on Brann Stadium, the home of Bergen’s local soccer team.</p>
+<p>The researchers gathered data on the number of cups sold on the away stand at Brann Stadium. After each match, they went through the garbage, at counted how many cups was correctly recycled, that is, put in the bin for soda- and coffee cups. The experiment was constructed using two treatments. Firstly, they used a nudge, by putting a sign over the bins asking “Who is the most environmental away supporters in Eliteserien (Norway’s highest soccer league)?” Sort you garbage here.” The sign would also have the logo of the away team. This is called an ingroup appeal. The other treatment is gamification. Here they would set up a table showing the sorting rate of the other away teams. The intent of the researchers is to make it a sorting competition against the other teams.</p>
+<p>The dataset has the following variables:</p>
+<ul>
+<li>Match_Number: Match ID. Starting from the second home match of the 2023 season.</li>
+<li>Opponent: Name of the away team - adjusted for æøå.</li>
+<li>Away_Conditon: Baseline, Ingroup or Outgroup</li>
+<li>Gamification_Days: Baseline, No, Yes.</li>
+<li>Winner: Who won the match? Home, tie or Away.</li>
+<li>SortedCup: Was the cup sorted? 0: No, 1: Yes.</li>
+</ul>
+<p>Each observation is a cup sold. If the cup was put in the correct bin, sortedCup column is 1, otherwise it is zero.</p>
+<ol type="1">
+<li><p>Create a frequency table for each match counting how many cups was sold and how many was correctly sorted. Which away team supporters are the largest consumers of coffee?</p></li>
+<li><p>Add a relative frequency (sorting rate) column to your table. What team is the best recyclers?</p></li>
+<li><p>Summarize the sorting rates across teams and treatments, using mean, median, standard deviation, 1st and 3rd quartile.</p></li>
+<li><p>Create a good visualization of the sorting rate for the various teams.</p></li>
+<li><p>Now, the different teams were exposed to different treatments, both for the in- or out-group message on the banner and whether they were exposed to gamification or not. If we disregard the individual teams and only consider these treatments marginally (marginally means one treatment at a time).</p></li>
+</ol>
+<ol type="a">
+<li>Use suitable summary statistics to summarize the effect of different treatments.</li>
+<li>Make suitable figures to visualize the effects. Suggestion: Use boxplots.</li>
+</ol>
 
 
 </section>
