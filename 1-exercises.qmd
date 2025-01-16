@@ -27,17 +27,14 @@ a)  The most common grade is C with 163 instances, and the least common grade is
 
 b)  The table can be organised like this for instance:
 
-\begin{table}[]
-\begin{tabular}{ll}
-\textbf{Grade} & \textbf{Number} \\
-A              & 20              \\
-B              & 97              \\
-C              & 163             \\
-D              & 76              \\
-E              & 31              \\
-F              & 13             
-\end{tabular}
-\end{table}
+| **Grade**     | **Number**      |
+|---------------|-----------------|
+|A              | 20              |
+|B              | 97              |
+|C              | 163             |
+|D              | 76              |
+|E              | 31              |
+|F              | 13              |
 
 c)  By summing the amount of respective registered grades we find that there are 400 total. We can now divide the number of instances for each grade by the total of 400 to find the relative frequency. For example, we have 20 instances of A's out of 400 total grades.
 
@@ -45,19 +42,17 @@ $$\frac{20}{400}=0.05$$
 
 We can repeat this for all grades and add to the existing table:
 
-```{tex}
-\begin{table}[]
-\begin{tabular}{lll}
-\textbf{Grade} & \textbf{Number} & \textbf{Frequency} \\
-A              & 20              & 0.05               \\
-B              & 97              & 0.2425             \\
-C              & 163             & 0.4075             \\
-D              & 76              & 0.19               \\
-E              & 31              & 0.0775             \\
-F              & 13              & 0.0325            
-\end{tabular}
-\end{table}
-```
+|**Grade**      | **Number**      | **Frequency**      |
+|---------------|-----------------|--------------------|
+|A              | 20              | 0.05               |
+|B              | 97              | 0.2425             |
+|C              | 163             | 0.4075             |
+|D              | 76              | 0.19               |
+|E              | 31              | 0.0775             |
+|F              | 13              | 0.0325             |
+
+
+
 
 d)  The only failing grade is F. We can read from the new table that this we have 0.0325 or 3.25% of students that failed this course.
 
@@ -127,7 +122,10 @@ $$\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_i$$
 
 In our case we can just sum each obvservation and divide by the number of observations, which is 13.
 
-$$\overline{X}=\frac{1}{13}(1+1+2+2+3+3+4+5+5+6+6+6+6)=\frac{50}{13}\approx3.846$$
+\begin{align*}
+\overline{X}&=\frac{1}{13}(1+1+2+2+3+3+4+5+5+6+6+6+6)\\
+&=\frac{50}{13}\approx3.846
+\end{align*}
 
 </details>
 
@@ -188,7 +186,10 @@ By taking the average of the two middlemost values we will find the median. Both
 
 We can find the mean by taking the average of the data.
 
-$$\overline{X}=\frac{1}{16}(1+1+1+1+1+3+3+3+3+7+7+7+7+9+9+9)=\frac{72}{16}=4.5$$
+\begin{align*}
+\overline{X}&=\frac{1}{16}(1+1+1+1+1+3+3+3+3+7+7+7+7+9+9+9)\\
+&=\frac{72}{16}=4.5
+\end{align*}
 
 b)  The first quartile indicates that 25% of observations should be below this threshold. In our case we see that the first quartile would fall between the 4th and 5th observation, which are both 1, telling us the 1st qaurtile is 1.
 
@@ -228,7 +229,9 @@ f)  What would be the effect of adding another person to the group that's 140cm 
 
 a)We sum our observations, and divide by 11, which is the number of observations.\
 
-$$\overline{X}=\frac{1}{11}(184+157+168+172+198+154+192+161 \\ +186+177+165)=\frac{1914}{11}=174$$
+\begin{align*}
+\overline{X}=\frac{1}{11}(&184+157+168+172+198+154+192+161 \\ &+186+177+165)=\frac{1914}{11}=174
+\end{align*}
 
 b)  Here we need to first recall the formula for variance.
 
@@ -236,7 +239,11 @@ $$S_X^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2$$
 
 We recall that the mean we found in a is 174 and that we have 11 total observations. Now we have everything we need to plug in our data and find the variance.
 
-$$S_X^2=\frac{1}{11-1}\left((184-174)^2+(157-174)^2+(168-174)^2 \\ +(172-174)^2+(198-174)^2+(154-174)^2+(192-174)^2+(161-174)^2+ \\(186-174)^2+(177-174)^2+(165-174)^2\right)=\frac{2132}{10}=213.2$$
+
+\begin{align*}
+S_X^2&=\frac{1}{11-1}\bigg((184-174)^2+(157-174)^2+(168-174)^2 \\ &+(172-174)^2+(198-174)^2+(154-174)^2+(192-174)^2+(161-174)^2+ \\&(186-174)^2+(177-174)^2+(165-174)^2\bigg)=\frac{2132}{10}=213.2
+\end{align*}
+
 
 Now we only need to find standard deviation.Recall that the standard deviation is the square root of the variance.
 
@@ -254,16 +261,20 @@ $$(\overline{X}-\overline{X})^2=(174-174)^2=0^2=0$$
 
 Let's now add this to our equation for variance. Since we have one more observation we will be dividing by (n-1)+1=n, instead of n-1.
 
-$$S_{X1}^2=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2+(\overline{X}-\overline{X})^2\right)
+\begin{align*}
+S_{X1}^2&=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2+(\overline{X}-\overline{X})^2\right)
     =\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2+0\right)
-    \\=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)
-    <\frac{1}{n-1} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)=S_X^2$$
+    \\&=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)
+    <\frac{1}{n-1} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)=S_X^2
+\end{align*}
 
 **For those that don't find it intuitive that the mean stays the same when you add more observations the equal the mean:**
 
 Underneath I have shown algebraically what happens to the mean when you add **one** more observation in the sample that equals the mean. This can easily be extended to adding any number, **m**, more observations (try for yourself!).
 
-$$\overline{X}_1=\frac{1}{n+1} \left( \sum_{i=1}^{n}X_i+\overline{X} \right)=\frac{1}{n+1}\left( \frac{n}{n}\sum_{i=1}^nX_i+\overline{X} \right) \\ =\frac{1}{n+1}\left(n\overline{X}+\overline{X}\right) = \frac{n+1}{n+1}\overline{X}=\overline{X}$$
+\begin{align*}
+\overline{X}_1&=\frac{1}{n+1} \left( \sum_{i=1}^{n}X_i+\overline{X} \right)=\frac{1}{n+1}\left( \frac{n}{n}\sum_{i=1}^nX_i+\overline{X} \right) \\ &=\frac{1}{n+1}\left(n\overline{X}+\overline{X}\right) = \frac{n+1}{n+1}\overline{X}=\overline{X}
+\end{align*}
 
 Now, let's see what happens to the variance, when we add another observation that equals the mean.
 
@@ -315,14 +326,14 @@ In what scenario would we get a Variance of 0?
 
 For the variance to be 0, our observations simply can't vary. This means that all observations have to have the same value.
 
-This can be shown algebraically.
-
-$$ Let \ all \ observations \ X_i=X \ be \ equal \\
-\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i=\frac{1}{n}\sum_{i=1}^nX=\frac{n}{n}X=X $$
+This can be shown algebraically. Let all observations $X_i=X$ be equal. Then
+$$\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i=\frac{1}{n}\sum_{i=1}^nX=\frac{n}{n}X=X $$
 
 It's clear that all observations here are equal to the mean, which gives us.
 
-$$S_X^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2=\frac{1}{n-1}\sum_{i=1}^n(\overline{X}-\overline{X})^2 \\ =\frac{1}{n-1}\sum_{i=1}^n0=\frac{0}{n-1}=0$$
+\begin{align*}
+S_X^2&=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2=\frac{1}{n-1}\sum_{i=1}^n(\overline{X}-\overline{X})^2 \\ &=\frac{1}{n-1}\sum_{i=1}^n0=\frac{0}{n-1}=0
+\end{align*}
 
 By looking at the equation for the variance, we can tell that if **any** one or more observations were to deviate from the mean, there would be variance in our data.
 
@@ -346,17 +357,22 @@ $$\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
 
 Since we know that the average we're looking for is 50, **one** observation is 55 and the last 5 observations are equal, we get an equation with one variable.
 
-$$ 50=\frac{1}{6}(5X+55) \\
-\Rightarrow 6*50=5X+55 \\
-\Rightarrow 300=5X+55 \\
-\Rightarrow 300-55=5X \\
-\Rightarrow 245=5X \\
-\Rightarrow X=49$$
+\begin{align*}
+50&=\frac{1}{6}(5X+55) \\
+\Rightarrow 6\cdot 50&=5X+55 \\
+\Rightarrow 300&=5X+55 \\
+\Rightarrow 300-55&=5X \\
+\Rightarrow 245&=5X \\
+\Rightarrow X&=49
+\end{align*}
 
 Now we have a clear view of the data that would give the minimum variance. {49,49,49,49,49,55} Finally, we can compute the variance.
 
-$$S_X^2=\frac{1}{6-1}\left(5(49-50)^2+(55-50)^2 \right) \\
-=\frac{1}{5}(5*(-1)^2+5^2)=\frac{1}{5}(5+25) \\ =\frac{30}{5}=6>5$$
+\begin{align*}
+S_X^2&=\frac{1}{6-1}\left(5(49-50)^2+(55-50)^2 \right) \\
+&=\frac{1}{5}(5\cdot(-1)^2+5^2)=\frac{1}{5}(5+25) \\ 
+&=\frac{30}{5}=6>5
+\end{align*}
 
 </details>
 

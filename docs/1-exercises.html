@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -305,8 +271,26 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-videos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Videos</span></a>
+  <a href="./2-whatisprobability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is probability?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-probability-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability rules</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-basic-concepts-in-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic concepts in probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-conditional-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conditional probability</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -505,24 +489,86 @@ Show solutions
 <li><p>The most common grade is C with 163 instances, and the least common grade is F with only 13 instances.</p></li>
 <li><p>The table can be organised like this for instance:</p></li>
 </ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Grade</strong></th>
+<th><strong>Number</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>97</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>163</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>76</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>31</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
 <ol start="3" type="a">
 <li>By summing the amount of respective registered grades we find that there are 400 total. We can now divide the number of instances for each grade by the total of 400 to find the relative frequency. For example, we have 20 instances of A’s out of 400 total grades.</li>
 </ol>
 <p><span class="math display">\[\frac{20}{400}=0.05\]</span></p>
 <p>We can repeat this for all grades and add to the existing table:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}[]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{lll}</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\textbf</span>{Grade} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Number} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Frequency} <span class="fu">\\</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>A              <span class="op">&amp;</span> 20              <span class="op">&amp;</span> 0.05               <span class="fu">\\</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>B              <span class="op">&amp;</span> 97              <span class="op">&amp;</span> 0.2425             <span class="fu">\\</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>C              <span class="op">&amp;</span> 163             <span class="op">&amp;</span> 0.4075             <span class="fu">\\</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>D              <span class="op">&amp;</span> 76              <span class="op">&amp;</span> 0.19               <span class="fu">\\</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>E              <span class="op">&amp;</span> 31              <span class="op">&amp;</span> 0.0775             <span class="fu">\\</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>F              <span class="op">&amp;</span> 13              <span class="op">&amp;</span> 0.0325            </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Grade</strong></th>
+<th><strong>Number</strong></th>
+<th><strong>Frequency</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>20</td>
+<td>0.05</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>97</td>
+<td>0.2425</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>163</td>
+<td>0.4075</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>76</td>
+<td>0.19</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>31</td>
+<td>0.0775</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>13</td>
+<td>0.0325</td>
+</tr>
+</tbody>
+</table>
 <ol start="4" type="a">
 <li><p>The only failing grade is F. We can read from the new table that this we have 0.0325 or 3.25% of students that failed this course.</p></li>
 <li><p>To find out what proportion of students got a B or above we need the cumulative frequency. We find this cumulative frequency by summing thge relative frequency of all the relevant cases. In this case “B or above” is the same as achieving a B or an A. The relative frequency of B’s is 0.2425 and for A’s it’s 0.05.</p></li>
@@ -573,7 +619,10 @@ Show solutions
 <p>Recall the formula for averages is</p>
 <p><span class="math display">\[\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_i\]</span></p>
 <p>In our case we can just sum each obvservation and divide by the number of observations, which is 13.</p>
-<p><span class="math display">\[\overline{X}=\frac{1}{13}(1+1+2+2+3+3+4+5+5+6+6+6+6)=\frac{50}{13}\approx3.846\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\overline{X}&amp;=\frac{1}{13}(1+1+2+2+3+3+4+5+5+6+6+6+6)\\
+&amp;=\frac{50}{13}\approx3.846
+\end{align*}\]</span></p>
 </details>
 </section>
 <section id="problem-5" class="level3">
@@ -619,7 +668,10 @@ Show solutions
 </ol>
 <p>By taking the average of the two middlemost values we will find the median. Both the 8th and 9th value in the set are 3, and thus the median of the set is 3.</p>
 <p>We can find the mean by taking the average of the data.</p>
-<p><span class="math display">\[\overline{X}=\frac{1}{16}(1+1+1+1+1+3+3+3+3+7+7+7+7+9+9+9)=\frac{72}{16}=4.5\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\overline{X}&amp;=\frac{1}{16}(1+1+1+1+1+3+3+3+3+7+7+7+7+9+9+9)\\
+&amp;=\frac{72}{16}=4.5
+\end{align*}\]</span></p>
 <ol start="2" type="a">
 <li>The first quartile indicates that 25% of observations should be below this threshold. In our case we see that the first quartile would fall between the 4th and 5th observation, which are both 1, telling us the 1st qaurtile is 1.</li>
 </ol>
@@ -650,13 +702,17 @@ Show solutions
 </summary>
 <p>a)We sum our observations, and divide by 11, which is the number of observations.<br>
 </p>
-<p><span class="math display">\[\overline{X}=\frac{1}{11}(184+157+168+172+198+154+192+161 \\ +186+177+165)=\frac{1914}{11}=174\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\overline{X}=\frac{1}{11}(&amp;184+157+168+172+198+154+192+161 \\ &amp;+186+177+165)=\frac{1914}{11}=174
+\end{align*}\]</span></p>
 <ol start="2" type="a">
 <li>Here we need to first recall the formula for variance.</li>
 </ol>
 <p><span class="math display">\[S_X^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2\]</span></p>
 <p>We recall that the mean we found in a is 174 and that we have 11 total observations. Now we have everything we need to plug in our data and find the variance.</p>
-<p><span class="math display">\[S_X^2=\frac{1}{11-1}\left((184-174)^2+(157-174)^2+(168-174)^2 \\ +(172-174)^2+(198-174)^2+(154-174)^2+(192-174)^2+(161-174)^2+ \\(186-174)^2+(177-174)^2+(165-174)^2\right)=\frac{2132}{10}=213.2\]</span></p>
+<p><span class="math display">\[\begin{align*}
+S_X^2&amp;=\frac{1}{11-1}\bigg((184-174)^2+(157-174)^2+(168-174)^2 \\ &amp;+(172-174)^2+(198-174)^2+(154-174)^2+(192-174)^2+(161-174)^2+ \\&amp;(186-174)^2+(177-174)^2+(165-174)^2\bigg)=\frac{2132}{10}=213.2
+\end{align*}\]</span></p>
 <p>Now we only need to find standard deviation.Recall that the standard deviation is the square root of the variance.</p>
 <p><span class="math display">\[S_X=\sqrt{S_X^2}=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2}\]</span></p>
 <p>In our case we need only plug in the variance we have already found.</p>
@@ -667,13 +723,17 @@ Show solutions
 </ol>
 <p><span class="math display">\[(\overline{X}-\overline{X})^2=(174-174)^2=0^2=0\]</span></p>
 <p>Let’s now add this to our equation for variance. Since we have one more observation we will be dividing by (n-1)+1=n, instead of n-1.</p>
-<p><span class="math display">\[S_{X1}^2=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2+(\overline{X}-\overline{X})^2\right)
+<p><span class="math display">\[\begin{align*}
+S_{X1}^2&amp;=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2+(\overline{X}-\overline{X})^2\right)
     =\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2+0\right)
-    \\=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)
-    &lt;\frac{1}{n-1} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)=S_X^2\]</span></p>
+    \\&amp;=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)
+    &lt;\frac{1}{n-1} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)=S_X^2
+\end{align*}\]</span></p>
 <p><strong>For those that don’t find it intuitive that the mean stays the same when you add more observations the equal the mean:</strong></p>
 <p>Underneath I have shown algebraically what happens to the mean when you add <strong>one</strong> more observation in the sample that equals the mean. This can easily be extended to adding any number, <strong>m</strong>, more observations (try for yourself!).</p>
-<p><span class="math display">\[\overline{X}_1=\frac{1}{n+1} \left( \sum_{i=1}^{n}X_i+\overline{X} \right)=\frac{1}{n+1}\left( \frac{n}{n}\sum_{i=1}^nX_i+\overline{X} \right) \\ =\frac{1}{n+1}\left(n\overline{X}+\overline{X}\right) = \frac{n+1}{n+1}\overline{X}=\overline{X}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\overline{X}_1&amp;=\frac{1}{n+1} \left( \sum_{i=1}^{n}X_i+\overline{X} \right)=\frac{1}{n+1}\left( \frac{n}{n}\sum_{i=1}^nX_i+\overline{X} \right) \\ &amp;=\frac{1}{n+1}\left(n\overline{X}+\overline{X}\right) = \frac{n+1}{n+1}\overline{X}=\overline{X}
+\end{align*}\]</span></p>
 <p>Now, let’s see what happens to the variance, when we add another observation that equals the mean.</p>
 <p><span class="math display">\[S_{X1}^2= \frac{1}{n-1+1}\left(\sum_{i=1}^n(X_i-\overline{X})^2+(\overline{X}-\overline{X})^2\right)\]</span></p>
 <ol start="5" type="a">
@@ -711,11 +771,11 @@ Show solutions
 Show solutions
 </summary>
 <p>For the variance to be 0, our observations simply can’t vary. This means that all observations have to have the same value.</p>
-<p>This can be shown algebraically.</p>
-<p><span class="math display">\[ Let \ all \ observations \ X_i=X \ be \ equal \\
-\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i=\frac{1}{n}\sum_{i=1}^nX=\frac{n}{n}X=X \]</span></p>
+<p>This can be shown algebraically. Let all observations <span class="math inline">\(X_i=X\)</span> be equal. Then <span class="math display">\[\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i=\frac{1}{n}\sum_{i=1}^nX=\frac{n}{n}X=X \]</span></p>
 <p>It’s clear that all observations here are equal to the mean, which gives us.</p>
-<p><span class="math display">\[S_X^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2=\frac{1}{n-1}\sum_{i=1}^n(\overline{X}-\overline{X})^2 \\ =\frac{1}{n-1}\sum_{i=1}^n0=\frac{0}{n-1}=0\]</span></p>
+<p><span class="math display">\[\begin{align*}
+S_X^2&amp;=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2=\frac{1}{n-1}\sum_{i=1}^n(\overline{X}-\overline{X})^2 \\ &amp;=\frac{1}{n-1}\sum_{i=1}^n0=\frac{0}{n-1}=0
+\end{align*}\]</span></p>
 <p>By looking at the equation for the variance, we can tell that if <strong>any</strong> one or more observations were to deviate from the mean, there would be variance in our data.</p>
 </details>
 </section>
@@ -731,15 +791,20 @@ Show solutions
 <p>To show that that our variance will always be greater than 5 when we have an observation <strong>outside</strong> of the given interval, let’s consider the situation that would create the <strong>least</strong> variance. Consider a situation where only <strong>one</strong> observation is 55, and the rest of the observations have to make up for this by all of them being a bit less than 50. Since we use squared sums when we compute the variance, we would get the least variance from the 5 last observations being equally close to to the mean. We can use an equation to find out what each of these 5 observations have to equal. For this we use the formula to calculate an average.</p>
 <p><span class="math display">\[\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
 <p>Since we know that the average we’re looking for is 50, <strong>one</strong> observation is 55 and the last 5 observations are equal, we get an equation with one variable.</p>
-<p><span class="math display">\[ 50=\frac{1}{6}(5X+55) \\
-\Rightarrow 6*50=5X+55 \\
-\Rightarrow 300=5X+55 \\
-\Rightarrow 300-55=5X \\
-\Rightarrow 245=5X \\
-\Rightarrow X=49\]</span></p>
+<p><span class="math display">\[\begin{align*}
+50&amp;=\frac{1}{6}(5X+55) \\
+\Rightarrow 6\cdot 50&amp;=5X+55 \\
+\Rightarrow 300&amp;=5X+55 \\
+\Rightarrow 300-55&amp;=5X \\
+\Rightarrow 245&amp;=5X \\
+\Rightarrow X&amp;=49
+\end{align*}\]</span></p>
 <p>Now we have a clear view of the data that would give the minimum variance. {49,49,49,49,49,55} Finally, we can compute the variance.</p>
-<p><span class="math display">\[S_X^2=\frac{1}{6-1}\left(5(49-50)^2+(55-50)^2 \right) \\
-=\frac{1}{5}(5*(-1)^2+5^2)=\frac{1}{5}(5+25) \\ =\frac{30}{5}=6&gt;5\]</span></p>
+<p><span class="math display">\[\begin{align*}
+S_X^2&amp;=\frac{1}{6-1}\left(5(49-50)^2+(55-50)^2 \right) \\
+&amp;=\frac{1}{5}(5\cdot(-1)^2+5^2)=\frac{1}{5}(5+25) \\
+&amp;=\frac{30}{5}=6&gt;5
+\end{align*}\]</span></p>
 </details>
 </section>
 <section id="problem-12" class="level3">

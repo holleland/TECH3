@@ -61,7 +61,10 @@ website:
                text: "Introduction"
              - href: 2-textbook.qmd
                text: "Textbook"
-             - 2-videos.qmd
+             - 2-whatisprobability.qmd
+             - 2-probability-rules.qmd
+             - 2-basic-concepts-in-probability.qmd
+             - 2-conditional-probability.qmd
              - 2-exercises.qmd
              - 2-python.qmd
          - section: "Module 3: Estimation, sampling distributions and resampling"
