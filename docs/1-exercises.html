@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -69,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -394,6 +457,21 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#module-1" id="toc-module-1" class="nav-link" data-scroll-target="#module-1">Module 1</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
+  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
+  <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
+  <li><a href="#problem-9." id="toc-problem-9." class="nav-link" data-scroll-target="#problem-9.">Problem 9.</a></li>
+  <li><a href="#problem-10" id="toc-problem-10" class="nav-link" data-scroll-target="#problem-10">Problem 10</a></li>
+  <li><a href="#problem-11" id="toc-problem-11" class="nav-link" data-scroll-target="#problem-11">Problem 11</a></li>
+  <li><a href="#problem-12" id="toc-problem-12" class="nav-link" data-scroll-target="#problem-12">Problem 12</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -405,9 +483,268 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
-<ol type="1">
-<li>You are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?</li>
+</section>
+<section id="module-1" class="level1">
+<h1>Module 1</h1>
+<section id="problem-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
+<p>You are given the following data describing final grades in a tricky statistics course. There were 20 A’s, 97 B’s, 163 C’s, 76 D’s, 31 E’s and 13 F’s.</p>
+<ol type="a">
+<li><p>What are the most and least common grades?</p></li>
+<li><p>Organize this data in a frequency table</p></li>
+<li><p>Find the relative frequency of each grade</p></li>
+<li><p>What proportion of students failed the course?</p></li>
+<li><p>What proportion of students got a B or above?</p></li>
+<li><p>What proportion of students got between a C and an E?</p></li>
 </ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>The most common grade is C with 163 instances, and the least common grade is F with only 13 instances.</p></li>
+<li><p>The table can be organised like this for instance:</p></li>
+</ol>
+<ol start="3" type="a">
+<li>By summing the amount of respective registered grades we find that there are 400 total. We can now divide the number of instances for each grade by the total of 400 to find the relative frequency. For example, we have 20 instances of A’s out of 400 total grades.</li>
+</ol>
+<p><span class="math display">\[\frac{20}{400}=0.05\]</span></p>
+<p>We can repeat this for all grades and add to the existing table:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">table</span>}[]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{lll}</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\textbf</span>{Grade} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Number} <span class="op">&amp;</span> <span class="fu">\textbf</span>{Frequency} <span class="fu">\\</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>A              <span class="op">&amp;</span> 20              <span class="op">&amp;</span> 0.05               <span class="fu">\\</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>B              <span class="op">&amp;</span> 97              <span class="op">&amp;</span> 0.2425             <span class="fu">\\</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>C              <span class="op">&amp;</span> 163             <span class="op">&amp;</span> 0.4075             <span class="fu">\\</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>D              <span class="op">&amp;</span> 76              <span class="op">&amp;</span> 0.19               <span class="fu">\\</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>E              <span class="op">&amp;</span> 31              <span class="op">&amp;</span> 0.0775             <span class="fu">\\</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>F              <span class="op">&amp;</span> 13              <span class="op">&amp;</span> 0.0325            </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">table</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="a">
+<li><p>The only failing grade is F. We can read from the new table that this we have 0.0325 or 3.25% of students that failed this course.</p></li>
+<li><p>To find out what proportion of students got a B or above we need the cumulative frequency. We find this cumulative frequency by summing thge relative frequency of all the relevant cases. In this case “B or above” is the same as achieving a B or an A. The relative frequency of B’s is 0.2425 and for A’s it’s 0.05.</p></li>
+</ol>
+<p><span class="math display">\[ 0.2425+0.05=0.2925=29.25\%\]</span></p>
+<ol start="6" type="a">
+<li>To find out what proportion of students got grades between C and E we also need to find the cumulative frequency. Like in e this requires summing the appropriate relative frequencies. From the table in b we can see that the respective relative frequencies are 0.4075 for C, 0.19 for D and 0.0775 for E.</li>
+</ol>
+<p><span class="math display">\[ 0.4075+0.19+0.0775=0.675=67.5\%\]</span></p>
+<p>Alternatively we can take note of the fact that we already know the proportion of students that were below this grade range (the proportion of F’s), as well as the proportion of students that scored above this range (the proportion that scored B or above). By subtracting the proportion of students that scored outside this range from 1 (100%), we should arrive at the same answer.</p>
+<p><span class="math display">\[1-0.0325-0.2925=0.675=67.5\%\]</span></p>
+</details>
+</section>
+<section id="problem-2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<p>You hear that the average starting salary after finishing a master’s degree at NHH is NOK 550 000, the median salary is NOK 525 000, and the mode is NOK 500 000. What can you infer from this?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Though they might seem similar on a surface level, the mode, median and mean give slightly different information.</p>
+<p>The mode tells us what the most common observation in the data is. In our case this means that the <strong>most common</strong> starting salary after graduating with a master’s degree from NHH is NOK 500 000.</p>
+<p>The median is the “middle value” in the dataset, meaning that 50 percent of the observations should be below this value, whilst the other 50 percent should be above this value. In our case it means that half of graduates will have a starting salary that’s NOK 525 000 or below whilst the other half get a starting salary of NOK 525 000 or above.</p>
+<p>Finally, the mean reflects the <strong>average</strong> of the dataset. We can tell here that the average is NOK 550 000. Additionally, by looking at everything in context we can also make some minor inferences. We see that the mean is higher than the median, indicating that some datapoints are skewing the average upwards, i.e.&nbsp;some graduates are earning really well compared to their peers from the get go. Additionally we see that the mode is 500 000, compared to the mean of 550 000. As the mode is the most common observation and is below the median, this seems to suggest that those who end up with a higher starting salary start with a substantially higher one compared to their peers, for the average to skew above the median.</p>
+</details>
+</section>
+<section id="problem-3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
+<p>At a retail chain Floormart the Median pay by hour is $25, but the average is $33 per hour. What does this suggest?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Similar to in Problem 2, the indication here seems to be that some employees may be earning significantly more than others. Exactly how many employees are earning more and by how much is impossible to tell given our available information, but it seems likely that the executives or managers and above may have significantly higher pay than most employees in Floormart. These few employees having a much higher pay than for instance new hires or other low level workers could explain this disparity.</p>
+</details>
+</section>
+<section id="problem-4" class="level3">
+<h3 class="anchored" data-anchor-id="problem-4">Problem 4</h3>
+<p>If possible, find the mode, median and mean of the following set of dice rolls</p>
+<p><span class="math display">\[4,6,5,5,6,2,1,6,3,6,2,1,3\]</span></p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>The mode is the most common observation. As 6 appears 4 times here, more than any other roll, 6 is the mode.</p>
+<p>To clearly find the median we can sort the data from lowest to highest observation. We then end up with {1,1,2,2,3,3,4,5,5,6,6,6,6}. We have 13 observations here, so the median will be given by the 7th observation from the bottom. In our case we find that 4 is the median.</p>
+<p>Finally we can find the mean by taking the average of the observed rolls.</p>
+<p>Recall the formula for averages is</p>
+<p><span class="math display">\[\overline{X}=\frac{1}{n}\sum_{i=1}^{n}X_i\]</span></p>
+<p>In our case we can just sum each obvservation and divide by the number of observations, which is 13.</p>
+<p><span class="math display">\[\overline{X}=\frac{1}{13}(1+1+2+2+3+3+4+5+5+6+6+6+6)=\frac{50}{13}\approx3.846\]</span></p>
+</details>
+</section>
+<section id="problem-5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-5">Problem 5</h3>
+<p>If possible, find the mode, median and mean of the following set of favorite colors</p>
+<p>red,blue,blue,green,yellow,green,green,blue,red,red,pink,purple,blue</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>The mode is found by finding the most common observation. Here “blue” is the most common favourite color, with 4 instances, and thus “blue” is our mode.</p>
+<p>It is not possible to find a median within this data, as we need to be able to logically sort the data to be able to have a meaningful median. I.e. as the data is not ordinal, we can’t find a median.</p>
+<p>It is not possible to find a mean from this data. We need numerical data to be able to give a meaningful mean.</p>
+</details>
+</section>
+<section id="problem-6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-6">Problem 6</h3>
+<p>What level of data is required to find modes, means, and medians? (Categorical, ordinal, etc.)</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>To find a mode we need at least categorical data.</p>
+<p>To find a median we need data that is ordinal.</p>
+<p>To find a mean we need data that is numerical.</p>
+</details>
+</section>
+<section id="problem-7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-7">Problem 7</h3>
+<p>You get the dataset <span class="math display">\[1,1,1,1,1,3,3,3,3,7,7,7,7,9,9,9.\]</span></p>
+<ol type="a">
+<li><p>Find the mode, median and mean of the above set.</p></li>
+<li><p>Find the the first and third quartile of the set.</p></li>
+<li><p>What are the 0th and 100th percentiles of the set?</p></li>
+<li><p>Would the median change if you were to add a single datapoint of 11 to the set? What would the median of the new set be? What if we were to add two datapoints of 11?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li>The most common observation is 1, thus the mode is 1. We have an even number of observations in this set, 16.</li>
+</ol>
+<p>By taking the average of the two middlemost values we will find the median. Both the 8th and 9th value in the set are 3, and thus the median of the set is 3.</p>
+<p>We can find the mean by taking the average of the data.</p>
+<p><span class="math display">\[\overline{X}=\frac{1}{16}(1+1+1+1+1+3+3+3+3+7+7+7+7+9+9+9)=\frac{72}{16}=4.5\]</span></p>
+<ol start="2" type="a">
+<li>The first quartile indicates that 25% of observations should be below this threshold. In our case we see that the first quartile would fall between the 4th and 5th observation, which are both 1, telling us the 1st qaurtile is 1.</li>
+</ol>
+<p>The 3rd quartile indicates that 75% of observations should be below it. The 12th and 13th observations are both 7, letting us know that the third quartile is 7.</p>
+<ol start="3" type="a">
+<li><p>The 0th percentile indicates the minimum value of the set while the 100th percentile indicates the maximium value. We can then say that the 0th percentile is 1 and the 100th percentile is 9.</p></li>
+<li><p>If we add a datapoint of 11 to the set, we would now have 17 observations, meaning that the 9th observation from the bottom would indicate the median. The 9th observation from the bottom is 3, which is the same median as in the previous case, so the median would not change. If we were to add two datapoints of 11 to the set, we would have 18 observations. With 18 observations we have to take the average of the two middlemost observations after sorting. The two middlemost observations are the 9th and 10th ones from the bottom, meaning 3 and 7. The average would then be:</p></li>
+</ol>
+<p><span class="math display">\[\frac{1}{2}(3+7)=\frac{10}{2}=5\]</span></p>
+<p>The median in this case would be 5, so it would indeed change from the previous case.</p>
+</details>
+</section>
+<section id="problem-8" class="level3">
+<h3 class="anchored" data-anchor-id="problem-8">Problem 8</h3>
+<p>You get this dataset of a group of 11 people and their respective heights in centimetres.</p>
+<p><span class="math display">\[184,157,168,172,198,154,192,161,186,177,165.\]</span></p>
+<ol type="a">
+<li><p>Find the mean/average height of this group.</p></li>
+<li><p>Find the variance in height in this group and the standard deviation.</p></li>
+<li><p>Does the variance and standard deviation seem big, small or somewhere in between in this context?</p></li>
+<li><p>What would be the effect on the variance of adding another person to the sample that is of the average height we found in a. Would the variance increase, decrease or stay the same?</p></li>
+<li><p>What would be the effect of adding another person to the group that’s 200cm tall. Would the variance increase, decrease or stay the same? Why is the change intuitive?</p></li>
+<li><p>What would be the effect of adding another person to the group that’s 140cm tall. Would the variance increase, decrease or stay the same? Why is the change intuitive? Why is the change in variance here greater than the one in e.?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>a)We sum our observations, and divide by 11, which is the number of observations.<br>
+</p>
+<p><span class="math display">\[\overline{X}=\frac{1}{11}(184+157+168+172+198+154+192+161 \\ +186+177+165)=\frac{1914}{11}=174\]</span></p>
+<ol start="2" type="a">
+<li>Here we need to first recall the formula for variance.</li>
+</ol>
+<p><span class="math display">\[S_X^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2\]</span></p>
+<p>We recall that the mean we found in a is 174 and that we have 11 total observations. Now we have everything we need to plug in our data and find the variance.</p>
+<p><span class="math display">\[S_X^2=\frac{1}{11-1}\left((184-174)^2+(157-174)^2+(168-174)^2 \\ +(172-174)^2+(198-174)^2+(154-174)^2+(192-174)^2+(161-174)^2+ \\(186-174)^2+(177-174)^2+(165-174)^2\right)=\frac{2132}{10}=213.2\]</span></p>
+<p>Now we only need to find standard deviation.Recall that the standard deviation is the square root of the variance.</p>
+<p><span class="math display">\[S_X=\sqrt{S_X^2}=\sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2}\]</span></p>
+<p>In our case we need only plug in the variance we have already found.</p>
+<p><span class="math display">\[S_X=\sqrt{213.2}\approx14.6\]</span></p>
+<ol start="3" type="a">
+<li><p>Variance is hard to interpret directly, but the standard deviation is very simple. The standard deviation tells us that the average absolute difference from the mean in our data. Here we see that the standard deviation is 14.6cm, so on average the people in this group are 14.6 away from the the mean in terms of height. This means the we would expect a random person from this group to be either about 159cm tall or 188cm tall. It’s not all that simple to say if this is a lot or not, that depends on the data collected. If this is a sample from a group of Norwegian men age 20, this could seem like a very big standard deviation and variance. However, if this is a group of men and women with an age range from 14 to 35, this might not seem like such a big variance.</p></li>
+<li><p>If we were to only add more people of the average height we found (174cm) the variance would decrease. There are two effects in play here. The when we add more observations our n gets bigger, and thus we divide by a larger number, but we also have to add another squared difference from the mean. In this case we add another observation that’s exactly equal to the mean. Firstly what effect will this have on the mean itself? Intuitively, the mean will <strong>not</strong> change in this case. Notice that the squared difference between the mean and itself is 0.</p></li>
+</ol>
+<p><span class="math display">\[(\overline{X}-\overline{X})^2=(174-174)^2=0^2=0\]</span></p>
+<p>Let’s now add this to our equation for variance. Since we have one more observation we will be dividing by (n-1)+1=n, instead of n-1.</p>
+<p><span class="math display">\[S_{X1}^2=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2+(\overline{X}-\overline{X})^2\right)
+    =\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2+0\right)
+    \\=\frac{1}{n} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)
+    &lt;\frac{1}{n-1} \left(\sum_{i=1}^n(X_i-\overline{X})^2\right)=S_X^2\]</span></p>
+<p><strong>For those that don’t find it intuitive that the mean stays the same when you add more observations the equal the mean:</strong></p>
+<p>Underneath I have shown algebraically what happens to the mean when you add <strong>one</strong> more observation in the sample that equals the mean. This can easily be extended to adding any number, <strong>m</strong>, more observations (try for yourself!).</p>
+<p><span class="math display">\[\overline{X}_1=\frac{1}{n+1} \left( \sum_{i=1}^{n}X_i+\overline{X} \right)=\frac{1}{n+1}\left( \frac{n}{n}\sum_{i=1}^nX_i+\overline{X} \right) \\ =\frac{1}{n+1}\left(n\overline{X}+\overline{X}\right) = \frac{n+1}{n+1}\overline{X}=\overline{X}\]</span></p>
+<p>Now, let’s see what happens to the variance, when we add another observation that equals the mean.</p>
+<p><span class="math display">\[S_{X1}^2= \frac{1}{n-1+1}\left(\sum_{i=1}^n(X_i-\overline{X})^2+(\overline{X}-\overline{X})^2\right)\]</span></p>
+<ol start="5" type="a">
+<li>We can amend our data by adding the new observation of 200cm, and with this we can compute the new mean and variance. We will notice that since we add an observation that is higher than the average, the mean will increase, and we will also find that the variance (and consequently the standard deviation) will both increase. The new values will be:</li>
+</ol>
+<p><span class="math display">\[ \overline{X}\approx176.17 \\ S_X^2\approx250.15\]</span></p>
+<p>The intuition is simply that since our new observation is very different from our mean, the variance will increase. Adding the new squared difference has a greater effect than dividing by a higher number. Recall that our original mean was 174 and our original standard deviation was approximately 14.6. This means that the average absolute difference between an observation and the mean is about 14.6.</p>
+<p><span class="math display">\[|200-174|=26&gt;14.6\]</span></p>
+<p>This means that by adding this new observation, since it’s difference from the mean is so clearly much greater than the standard deviation, the standard deviation should increase by adding this observation. When the standard deviation increases, so will the variance. (Note that we can only intuit in this way when the absolute difference between the new observation and the mean is quite a bit greater than the standard deviation. The intuition you should build from this is that new observations that are <strong>very different</strong> from the mean will <strong>increase</strong> the variance, and consequently, observations that are <strong>close</strong> to the mean will <strong>decrease</strong> the variance.)</p>
+<ol start="6" type="a">
+<li>This case is very similar to the one in e. The only notable difference is that we add an observation that is much <strong>lower</strong> than the mean, rather than one which is much <strong>higher</strong>. Computing the the new mean and variance we get:</li>
+</ol>
+<p><span class="math display">\[\overline{X}\approx171.17 \\ S_X^2\approx290.15 \]</span></p>
+<p>The intuition here is exactly the same as in e. Since the new observation is very different from the mean, the variance should increase. Let’s compare the absolute difference between the mean and the new observation to the standard deviation.</p>
+<p><span class="math display">\[|140-174|=|-34|=34&gt;14.6\]</span></p>
+<p>From this it should also be clear why the change in variance here is greater than the one in e. Since 140 is an observation that is <strong>farther away</strong> from the mean (174), than 200, the increase in variance will be greater.</p>
+<p>(<strong>Extra challenge for those that can’t get enough</strong>: Can you intuit what would happen in an opposite case? Would the variance change more if we added if we added a new observation of someone that was 177cm tall or with someone that was 172cm tall?)</p>
+</details>
+</section>
+<section id="problem-9." class="level3">
+<h3 class="anchored" data-anchor-id="problem-9.">Problem 9.</h3>
+<p>Recall the variance and standard deviation found in Problem 8b. Imagine that instead of the height of people, the variance and standard deviation was instead found from data on height of trees (Note: the collected data is not necessarily the same even though the variance is the same). Does the variance and standard deviation feel big, small or somewhere in between in this context?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>This problem is mainly about interpretation, but let’s consider the standard deviation. We have a standard deviation of 14.6cm. A height difference of 14.6cm between two <strong>people</strong> is quite large, and very noticeable. When it comes to trees, however, that is not necessarily the case. Short trees can be as short as just a few centimeters, where as the tallest trees can reach upwards of 100 meters(!). Even without considering the shortest and tallest trees, we find that there can easily be several meters of difference between completely ordinary trees. Since we only know that we are working with trees in this case, it’s hard to assume anything about the data, but looking at the standard deviation we can tell that these trees must be <strong>very similar</strong> in stature as far as trees are considered. If anything, this variance, that seems quite reasonable (or even very large), when we consider the heights of people, seems completely minuscule when we consider trees instead. It’s impossible to say whether variance and standard deviation is large or small with no context, as is illustrated with this comparison.</p>
+</details>
+</section>
+<section id="problem-10" class="level3">
+<h3 class="anchored" data-anchor-id="problem-10">Problem 10</h3>
+<p>In what scenario would we get a Variance of 0?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>For the variance to be 0, our observations simply can’t vary. This means that all observations have to have the same value.</p>
+<p>This can be shown algebraically.</p>
+<p><span class="math display">\[ Let \ all \ observations \ X_i=X \ be \ equal \\
+\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i=\frac{1}{n}\sum_{i=1}^nX=\frac{n}{n}X=X \]</span></p>
+<p>It’s clear that all observations here are equal to the mean, which gives us.</p>
+<p><span class="math display">\[S_X^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\overline{X})^2=\frac{1}{n-1}\sum_{i=1}^n(\overline{X}-\overline{X})^2 \\ =\frac{1}{n-1}\sum_{i=1}^n0=\frac{0}{n-1}=0\]</span></p>
+<p>By looking at the equation for the variance, we can tell that if <strong>any</strong> one or more observations were to deviate from the mean, there would be variance in our data.</p>
+</details>
+</section>
+<section id="problem-11" class="level3">
+<h3 class="anchored" data-anchor-id="problem-11">Problem 11</h3>
+<p>You have a dataset with six observations and a mean of 50. Show that when you have any observations outside of the interval [45;55] the variance will always be greater than 5.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>We have received this information:</p>
+<p><span class="math display">\[n=6, \ \overline{X}=50\]</span></p>
+<p>To show that that our variance will always be greater than 5 when we have an observation <strong>outside</strong> of the given interval, let’s consider the situation that would create the <strong>least</strong> variance. Consider a situation where only <strong>one</strong> observation is 55, and the rest of the observations have to make up for this by all of them being a bit less than 50. Since we use squared sums when we compute the variance, we would get the least variance from the 5 last observations being equally close to to the mean. We can use an equation to find out what each of these 5 observations have to equal. For this we use the formula to calculate an average.</p>
+<p><span class="math display">\[\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
+<p>Since we know that the average we’re looking for is 50, <strong>one</strong> observation is 55 and the last 5 observations are equal, we get an equation with one variable.</p>
+<p><span class="math display">\[ 50=\frac{1}{6}(5X+55) \\
+\Rightarrow 6*50=5X+55 \\
+\Rightarrow 300=5X+55 \\
+\Rightarrow 300-55=5X \\
+\Rightarrow 245=5X \\
+\Rightarrow X=49\]</span></p>
+<p>Now we have a clear view of the data that would give the minimum variance. {49,49,49,49,49,55} Finally, we can compute the variance.</p>
+<p><span class="math display">\[S_X^2=\frac{1}{6-1}\left(5(49-50)^2+(55-50)^2 \right) \\
+=\frac{1}{5}(5*(-1)^2+5^2)=\frac{1}{5}(5+25) \\ =\frac{30}{5}=6&gt;5\]</span></p>
+</details>
+</section>
+<section id="problem-12" class="level3">
+<h3 class="anchored" data-anchor-id="problem-12">Problem 12</h3>
+<p>You are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -509,6 +846,7 @@ Show suggested solutions
 </details>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
