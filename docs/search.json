@@ -254,7 +254,7 @@
     "href": "2-conditional-probability.html",
     "title": "Conditional probability",
     "section": "",
-    "text": "Slides for “Conditional probability”\n\n\n\nHow is conditional probability \\(P(A|B)\\) defined, and what assumption must hold for it to be valid?\nWhen we condition on an event \\(B\\), how does the sample space change? Use the dice example to explain.\nExplain why the formula for conditional probability divides the probability of \\(A\\cup B\\) by the probability of \\(B\\).\nIf a die roll is known to be odd, what is the probability of rolling a 5?\nHow does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.",
+    "text": "Slides for “Conditional probability”\n\n\n\nHow is conditional probability \\(P(A|B)\\) defined, and what assumption must hold for it to be valid?\nWhen we condition on an event \\(B\\), how does the sample space change? Use the dice example to explain.\nExplain why the formula for conditional probability divides the probability of \\(A\\cap B\\) by the probability of \\(B\\).\nIf a die roll is known to be odd, what is the probability of rolling a 5?\nHow does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.",
     "crumbs": [
       "Modules",
       "Module 2: Probability, random variables, probability distributions and simulations.",
@@ -266,7 +266,7 @@
     "href": "2-conditional-probability.html#controll-questions",
     "title": "Conditional probability",
     "section": "",
-    "text": "How is conditional probability \\(P(A|B)\\) defined, and what assumption must hold for it to be valid?\nWhen we condition on an event \\(B\\), how does the sample space change? Use the dice example to explain.\nExplain why the formula for conditional probability divides the probability of \\(A\\cup B\\) by the probability of \\(B\\).\nIf a die roll is known to be odd, what is the probability of rolling a 5?\nHow does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.",
+    "text": "How is conditional probability \\(P(A|B)\\) defined, and what assumption must hold for it to be valid?\nWhen we condition on an event \\(B\\), how does the sample space change? Use the dice example to explain.\nExplain why the formula for conditional probability divides the probability of \\(A\\cap B\\) by the probability of \\(B\\).\nIf a die roll is known to be odd, what is the probability of rolling a 5?\nHow does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.",
     "crumbs": [
       "Modules",
       "Module 2: Probability, random variables, probability distributions and simulations.",

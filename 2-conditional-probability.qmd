@@ -18,6 +18,6 @@ Slides for ["Conditional probability"](video-pdfs/2/conditional_probability.pdf)
 
 1.  How is conditional probability $P(A|B)$ defined, and what assumption must hold for it to be valid?
 2.  When we condition on an event $B$, how does the sample space change? Use the dice example to explain.
-3.  Explain why the formula for conditional probability divides the probability of $A\cup B$ by the probability of $B$.
+3.  Explain why the formula for conditional probability divides the probability of $A\cap B$ by the probability of $B$.
 4.  If a die roll is known to be odd, what is the probability of rolling a 5?
 5.  How does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.
