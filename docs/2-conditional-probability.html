@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2-exercises.html" rel="next">
-<link href="./2-basic-concepts-in-probability.html" rel="prev">
+<link href="./2-independent-events.html" rel="next">
+<link href="./2-basic-probability-rules.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -242,14 +271,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-whatisprobability.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-what-is-probability.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">What is probability?</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./2-probability-rules.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Probability rules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -260,8 +283,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./2-basic-probability-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic probability rules</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./2-conditional-probability.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Conditional probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-independent-events.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Independent events</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -297,12 +332,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./3-textbook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Textbook</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3-videos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Videos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -426,12 +455,22 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="conditional-probability" class="level1">
 <h1>Conditional probability</h1>
+<div style="padding:56.25% 0 0 0;position:relative;">
+<iframe src="https://player.vimeo.com/video/1047458933?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Conditional probability">
+</iframe>
+</div>
 <script src="https://player.vimeo.com/api/player.js"></script>
+<p><br></p>
+<p>Slides for <a href="video-pdfs/2/conditional_probability.pdf">“Conditional probability”</a></p>
 <section id="controll-questions" class="level2">
 <h2 class="anchored" data-anchor-id="controll-questions">Controll questions</h2>
-<ul>
-<li></li>
-</ul>
+<ol type="1">
+<li>How is conditional probability <span class="math inline">\(P(A|B)\)</span> defined, and what assumption must hold for it to be valid?</li>
+<li>When we condition on an event <span class="math inline">\(B\)</span>, how does the sample space change? Use the dice example to explain.</li>
+<li>Explain why the formula for conditional probability divides the probability of <span class="math inline">\(A\cup B\)</span> by the probability of <span class="math inline">\(B\)</span>.</li>
+<li>If a die roll is known to be odd, what is the probability of rolling a 5?</li>
+<li>How does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.</li>
+</ol>
 
 
 </section>
@@ -860,13 +899,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./2-basic-concepts-in-probability.html" class="pagination-link" aria-label="Basic concepts in probability">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basic concepts in probability</span>
+      <a href="./2-basic-probability-rules.html" class="pagination-link" aria-label="Basic probability rules">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basic probability rules</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2-exercises.html" class="pagination-link" aria-label="Exercises">
-        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2-independent-events.html" class="pagination-link" aria-label="Independent events">
+        <span class="nav-page-text">Independent events</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

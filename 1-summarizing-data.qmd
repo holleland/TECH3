@@ -1,18 +1,19 @@
 # Summarizing data
 
+::: {style="padding:75% 0 0 0;position:relative;"}
+<iframe src="https://vimeo.com/showcase/11483988/embed?portrait=0&amp;byline=0" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
 
+</iframe>
+:::
 
-<div style='padding:75% 0 0 0;position:relative;'><iframe src='https://vimeo.com/showcase/11483988/embed?portrait=0&byline=0' allowfullscreen frameborder='0' style='position:absolute;top:0;left:0;width:100%;height:100%;'></iframe>
-</div>
+<br>
 
+Slides for ["Summarizing data"](video-pdfs/1/summarizing_data.pdf)
 
+Slides for ["Summarizing data using tables"](video-pdfs/1/summarizing_data_using_tables.pdf)
 
 ## Controll questions
 
-- Why do we need to summarize data?
-- What is the difference between a frequency and a relative frequency?
-- What is a cumulative frequency?
-
-
-
-
+-   Why do we need to summarize data?
+-   What is the difference between a frequency and a relative frequency?
+-   What is a cumulative frequency?

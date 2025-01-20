@@ -61,10 +61,11 @@ website:
                text: "Introduction"
              - href: 2-textbook.qmd
                text: "Textbook"
-             - 2-whatisprobability.qmd
-             - 2-probability-rules.qmd
+             - 2-what-is-probability.qmd
              - 2-basic-concepts-in-probability.qmd
+             - 2-basic-probability-rules.qmd
              - 2-conditional-probability.qmd
+             - 2-independent-events.qmd
              - 2-exercises.qmd
              - 2-python.qmd
          - section: "Module 3: Estimation, sampling distributions and resampling"
@@ -73,7 +74,11 @@ website:
                text: "Introduction"
              - href: 3-textbook.qmd
                text: "Textbook"
-             - 3-videos.qmd
+             # - 3-what-is-a-model.qmd
+             # - 3-population-vs-sample.qmd
+             # - 3-sampling-error.qmd
+             # - 3-monte-carlo-simulation.qmd
+             # - 3-bootstrap.qmd
              - 3-exercises.qmd
              - 3-python.qmd
          - section: "Module 4: Designing studies, hypothesis testing, and quantifying effects"

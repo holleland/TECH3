@@ -1,10 +1,23 @@
 # Conditional probability
 
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1047458933?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Conditional probability">
+
+</iframe>
+:::
 
 ```{=html}
 <script src="https://player.vimeo.com/api/player.js"></script>
 ```
 
+<br>
+
+Slides for ["Conditional probability"](video-pdfs/2/conditional_probability.pdf)
+
 ## Controll questions
 
--   
+1.  How is conditional probability $P(A|B)$ defined, and what assumption must hold for it to be valid?
+2.  When we condition on an event $B$, how does the sample space change? Use the dice example to explain.
+3.  Explain why the formula for conditional probability divides the probability of $A\cup B$ by the probability of $B$.
+4.  If a die roll is known to be odd, what is the probability of rolling a 5?
+5.  How does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.

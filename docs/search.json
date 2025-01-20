@@ -162,40 +162,44 @@
     ]
   },
   {
-    "objectID": "3-videos.html",
-    "href": "3-videos.html",
-    "title": "Videos",
+    "objectID": "3-what-is-a-model.html",
+    "href": "3-what-is-a-model.html",
+    "title": "What is a model?",
     "section": "",
-    "text": "Videos",
+    "text": "What is a model?"
+  },
+  {
+    "objectID": "3-sampling-error.html",
+    "href": "3-sampling-error.html",
+    "title": "Sampling error",
+    "section": "",
+    "text": "Sampling error"
+  },
+  {
+    "objectID": "3-population-vs-sample.html",
+    "href": "3-population-vs-sample.html",
+    "title": "Population vs sample",
+    "section": "",
+    "text": "Population vs sample"
+  },
+  {
+    "objectID": "3-intro.html",
+    "href": "3-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "Estimation, sampling distributions and resampling\n\nFocus: Modern inference using Monte Carlo methods.\nKey topics: Central limit theorem, sampling error of various statistics, Monte Carlo simulation.\nSpecial Emphasis: Distinguish between a population and a sample and between population parameters and sample statistics.",
     "crumbs": [
       "Modules",
       "Module 3: Estimation, sampling distributions and resampling",
-      "Videos"
+      "Introduction"
     ]
   },
   {
-    "objectID": "3-python.html",
-    "href": "3-python.html",
-    "title": "Python",
+    "objectID": "3-bootstrap.html",
+    "href": "3-bootstrap.html",
+    "title": "Bootstrap",
     "section": "",
-    "text": "Python",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Python"
-    ]
-  },
-  {
-    "objectID": "3-exercises.html",
-    "href": "3-exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercises",
-    "crumbs": [
-      "Modules",
-      "Module 3: Estimation, sampling distributions and resampling",
-      "Exercises"
-    ]
+    "text": "Bootstrap"
   },
   {
     "objectID": "2-textbook.html",
@@ -222,226 +226,99 @@
     ]
   },
   {
-    "objectID": "2-exercises.html",
-    "href": "2-exercises.html",
-    "title": "Exercises",
+    "objectID": "2-independent-events.html",
+    "href": "2-independent-events.html",
+    "title": "Independent events",
     "section": "",
-    "text": "Exercises",
+    "text": "Slides for “Independent events”\n\n\n\nWhat is the definition of two independent events?\nExplain how conditional probabilities can be used to check for independence between two events.\nExplain independence with words.",
     "crumbs": [
       "Modules",
       "Module 2: Probability, random variables, probability distributions and simulations.",
-      "Exercises"
+      "Independent events"
     ]
   },
   {
-    "objectID": "1-videos.html",
-    "href": "1-videos.html",
+    "objectID": "2-independent-events.html#controll-questions",
+    "href": "2-independent-events.html#controll-questions",
+    "title": "Independent events",
+    "section": "",
+    "text": "What is the definition of two independent events?\nExplain how conditional probabilities can be used to check for independence between two events.\nExplain independence with words.",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Independent events"
+    ]
+  },
+  {
+    "objectID": "2-conditional-probability.html",
+    "href": "2-conditional-probability.html",
+    "title": "Conditional probability",
+    "section": "",
+    "text": "Slides for “Conditional probability”\n\n\n\nHow is conditional probability \\(P(A|B)\\) defined, and what assumption must hold for it to be valid?\nWhen we condition on an event \\(B\\), how does the sample space change? Use the dice example to explain.\nExplain why the formula for conditional probability divides the probability of \\(A\\cup B\\) by the probability of \\(B\\).\nIf a die roll is known to be odd, what is the probability of rolling a 5?\nHow does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Conditional probability"
+    ]
+  },
+  {
+    "objectID": "2-conditional-probability.html#controll-questions",
+    "href": "2-conditional-probability.html#controll-questions",
+    "title": "Conditional probability",
+    "section": "",
+    "text": "How is conditional probability \\(P(A|B)\\) defined, and what assumption must hold for it to be valid?\nWhen we condition on an event \\(B\\), how does the sample space change? Use the dice example to explain.\nExplain why the formula for conditional probability divides the probability of \\(A\\cup B\\) by the probability of \\(B\\).\nIf a die roll is known to be odd, what is the probability of rolling a 5?\nHow does the concept of conditional probability apply to real-world scenarios, such as predicting outcomes based on partial information? Provide an example.",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Conditional probability"
+    ]
+  },
+  {
+    "objectID": "2-basic-probability-rules.html",
+    "href": "2-basic-probability-rules.html",
+    "title": "Basic probability rules",
+    "section": "",
+    "text": "Slides for “Basic probability rules”\n\n\n\nWhat are the three axioms of probability?\nWhat does it mean for two events to be disjoint, and how does the third axiom apply to such events?\nExplain the complement rule in your own words.\nWhen calculating the probability of the union of two events, why do we need to subtract the probability of their intersection?\nDescribe the Law of Total Probability.",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Basic probability rules"
+    ]
+  },
+  {
+    "objectID": "2-basic-probability-rules.html#controll-questions",
+    "href": "2-basic-probability-rules.html#controll-questions",
+    "title": "Basic probability rules",
+    "section": "",
+    "text": "What are the three axioms of probability?\nWhat does it mean for two events to be disjoint, and how does the third axiom apply to such events?\nExplain the complement rule in your own words.\nWhen calculating the probability of the union of two events, why do we need to subtract the probability of their intersection?\nDescribe the Law of Total Probability.",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Basic probability rules"
+    ]
+  },
+  {
+    "objectID": "1-working-with-data.html",
+    "href": "1-working-with-data.html",
     "title": "Working with data",
     "section": "",
-    "text": "Here comes a video"
-  },
-  {
-    "objectID": "1-summary-statistics.html",
-    "href": "1-summary-statistics.html",
-    "title": "Summary statistics",
-    "section": "",
-    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
+    "text": "Slides for “Working with data”\n\n\n\nWhat is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
-      "Summary statistics"
+      "Working with data"
     ]
   },
   {
-    "objectID": "1-summary-statistics.html#controll-questions",
-    "href": "1-summary-statistics.html#controll-questions",
-    "title": "Summary statistics",
+    "objectID": "1-working-with-data.html#controll-questions",
+    "href": "1-working-with-data.html#controll-questions",
+    "title": "Working with data",
     "section": "",
-    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
+    "text": "What is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
-      "Summary statistics"
-    ]
-  },
-  {
-    "objectID": "1-statistical-thinking.html",
-    "href": "1-statistical-thinking.html",
-    "title": "Statistical Thinking",
-    "section": "",
-    "text": "What are the three things statistics can help us with?\nWhich word is not a part of statistical thinking definitions?\n\nData\nUncertainty\nIntuition\nReasoning\n\nWhat is the “big idea” of aggregation in statistics?\nDoes more data generally imply higher uncertainty?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Statistical Thinking"
-    ]
-  },
-  {
-    "objectID": "1-statistical-thinking.html#controll-questions",
-    "href": "1-statistical-thinking.html#controll-questions",
-    "title": "Statistical Thinking",
-    "section": "",
-    "text": "What are the three things statistics can help us with?\nWhich word is not a part of statistical thinking definitions?\n\nData\nUncertainty\nIntuition\nReasoning\n\nWhat is the “big idea” of aggregation in statistics?\nDoes more data generally imply higher uncertainty?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Statistical Thinking"
-    ]
-  },
-  {
-    "objectID": "1-plotting-tools.html",
-    "href": "1-plotting-tools.html",
-    "title": "Plotting tools",
-    "section": "",
-    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Plotting tools"
-    ]
-  },
-  {
-    "objectID": "1-plotting-tools.html#controll-questions",
-    "href": "1-plotting-tools.html#controll-questions",
-    "title": "Plotting tools",
-    "section": "",
-    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Plotting tools"
-    ]
-  },
-  {
-    "objectID": "1-idealised_representations.html",
-    "href": "1-idealised_representations.html",
-    "title": "Idealised representations",
-    "section": "",
-    "text": "How many parameters in a Gaussian distribution?\nWhat are the characteristics of a Gaussian distribution?\nWhat does it mean that a distribution is right-skewed?\nIn the context of distributions, what is the tail?\nWhat does it mean that a distribution has a long-tail?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Idealised representations"
-    ]
-  },
-  {
-    "objectID": "1-idealised_representations.html#controll-questions",
-    "href": "1-idealised_representations.html#controll-questions",
-    "title": "Idealised representations",
-    "section": "",
-    "text": "How many parameters in a Gaussian distribution?\nWhat are the characteristics of a Gaussian distribution?\nWhat does it mean that a distribution is right-skewed?\nIn the context of distributions, what is the tail?\nWhat does it mean that a distribution has a long-tail?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Idealised representations"
-    ]
-  },
-  {
-    "objectID": "1-exercises.html",
-    "href": "1-exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Exercises\n\n\nModule 1\n\nProblem 1\nYou are given the following data describing final grades in a tricky statistics course. There were 20 A’s, 97 B’s, 163 C’s, 76 D’s, 31 E’s and 13 F’s.\n\nWhat are the most and least common grades?\nOrganize this data in a frequency table\nFind the relative frequency of each grade\nWhat proportion of students failed the course?\nWhat proportion of students got a B or above?\nWhat proportion of students got between a C and an E?\n\n\n\nShow solutions\n\n\nThe most common grade is C with 163 instances, and the least common grade is F with only 13 instances.\nThe table can be organised like this for instance:\n\n\n\n\nGrade\nNumber\n\n\n\n\nA\n20\n\n\nB\n97\n\n\nC\n163\n\n\nD\n76\n\n\nE\n31\n\n\nF\n13\n\n\n\n\nBy summing the amount of respective registered grades we find that there are 400 total. We can now divide the number of instances for each grade by the total of 400 to find the relative frequency. For example, we have 20 instances of A’s out of 400 total grades.\n\n\\[\\frac{20}{400}=0.05\\]\nWe can repeat this for all grades and add to the existing table:\n\n\n\nGrade\nNumber\nFrequency\n\n\n\n\nA\n20\n0.05\n\n\nB\n97\n0.2425\n\n\nC\n163\n0.4075\n\n\nD\n76\n0.19\n\n\nE\n31\n0.0775\n\n\nF\n13\n0.0325\n\n\n\n\nThe only failing grade is F. We can read from the new table that this we have 0.0325 or 3.25% of students that failed this course.\nTo find out what proportion of students got a B or above we need the cumulative frequency. We find this cumulative frequency by summing thge relative frequency of all the relevant cases. In this case “B or above” is the same as achieving a B or an A. The relative frequency of B’s is 0.2425 and for A’s it’s 0.05.\n\n\\[ 0.2425+0.05=0.2925=29.25\\%\\]\n\nTo find out what proportion of students got grades between C and E we also need to find the cumulative frequency. Like in e this requires summing the appropriate relative frequencies. From the table in b we can see that the respective relative frequencies are 0.4075 for C, 0.19 for D and 0.0775 for E.\n\n\\[ 0.4075+0.19+0.0775=0.675=67.5\\%\\]\nAlternatively we can take note of the fact that we already know the proportion of students that were below this grade range (the proportion of F’s), as well as the proportion of students that scored above this range (the proportion that scored B or above). By subtracting the proportion of students that scored outside this range from 1 (100%), we should arrive at the same answer.\n\\[1-0.0325-0.2925=0.675=67.5\\%\\]\n\n\n\nProblem 2\nYou hear that the average starting salary after finishing a master’s degree at NHH is NOK 550 000, the median salary is NOK 525 000, and the mode is NOK 500 000. What can you infer from this?\n\n\nShow solutions\n\nThough they might seem similar on a surface level, the mode, median and mean give slightly different information.\nThe mode tells us what the most common observation in the data is. In our case this means that the most common starting salary after graduating with a master’s degree from NHH is NOK 500 000.\nThe median is the “middle value” in the dataset, meaning that 50 percent of the observations should be below this value, whilst the other 50 percent should be above this value. In our case it means that half of graduates will have a starting salary that’s NOK 525 000 or below whilst the other half get a starting salary of NOK 525 000 or above.\nFinally, the mean reflects the average of the dataset. We can tell here that the average is NOK 550 000. Additionally, by looking at everything in context we can also make some minor inferences. We see that the mean is higher than the median, indicating that some datapoints are skewing the average upwards, i.e. some graduates are earning really well compared to their peers from the get go. Additionally we see that the mode is 500 000, compared to the mean of 550 000. As the mode is the most common observation and is below the median, this seems to suggest that those who end up with a higher starting salary start with a substantially higher one compared to their peers, for the average to skew above the median.\n\n\n\nProblem 3\nAt a retail chain Floormart the Median pay by hour is $25, but the average is $33 per hour. What does this suggest?\n\n\nShow solutions\n\nSimilar to in Problem 2, the indication here seems to be that some employees may be earning significantly more than others. Exactly how many employees are earning more and by how much is impossible to tell given our available information, but it seems likely that the executives or managers and above may have significantly higher pay than most employees in Floormart. These few employees having a much higher pay than for instance new hires or other low level workers could explain this disparity.\n\n\n\nProblem 4\nIf possible, find the mode, median and mean of the following set of dice rolls\n\\[4,6,5,5,6,2,1,6,3,6,2,1,3\\]\n\n\nShow solutions\n\nThe mode is the most common observation. As 6 appears 4 times here, more than any other roll, 6 is the mode.\nTo clearly find the median we can sort the data from lowest to highest observation. We then end up with {1,1,2,2,3,3,4,5,5,6,6,6,6}. We have 13 observations here, so the median will be given by the 7th observation from the bottom. In our case we find that 4 is the median.\nFinally we can find the mean by taking the average of the observed rolls.\nRecall the formula for averages is\n\\[\\overline{X}=\\frac{1}{n}\\sum_{i=1}^{n}X_i\\]\nIn our case we can just sum each obvservation and divide by the number of observations, which is 13.\n\\[\\begin{align*}\n\\overline{X}&=\\frac{1}{13}(1+1+2+2+3+3+4+5+5+6+6+6+6)\\\\\n&=\\frac{50}{13}\\approx3.846\n\\end{align*}\\]\n\n\n\nProblem 5\nIf possible, find the mode, median and mean of the following set of favorite colors\nred,blue,blue,green,yellow,green,green,blue,red,red,pink,purple,blue\n\n\nShow solutions\n\nThe mode is found by finding the most common observation. Here “blue” is the most common favourite color, with 4 instances, and thus “blue” is our mode.\nIt is not possible to find a median within this data, as we need to be able to logically sort the data to be able to have a meaningful median. I.e. as the data is not ordinal, we can’t find a median.\nIt is not possible to find a mean from this data. We need numerical data to be able to give a meaningful mean.\n\n\n\nProblem 6\nWhat level of data is required to find modes, means, and medians? (Categorical, ordinal, etc.)\n\n\nShow solutions\n\nTo find a mode we need at least categorical data.\nTo find a median we need data that is ordinal.\nTo find a mean we need data that is numerical.\n\n\n\nProblem 7\nYou get the dataset \\[1,1,1,1,1,3,3,3,3,7,7,7,7,9,9,9.\\]\n\nFind the mode, median and mean of the above set.\nFind the the first and third quartile of the set.\nWhat are the 0th and 100th percentiles of the set?\nWould the median change if you were to add a single datapoint of 11 to the set? What would the median of the new set be? What if we were to add two datapoints of 11?\n\n\n\nShow solutions\n\n\nThe most common observation is 1, thus the mode is 1. We have an even number of observations in this set, 16.\n\nBy taking the average of the two middlemost values we will find the median. Both the 8th and 9th value in the set are 3, and thus the median of the set is 3.\nWe can find the mean by taking the average of the data.\n\\[\\begin{align*}\n\\overline{X}&=\\frac{1}{16}(1+1+1+1+1+3+3+3+3+7+7+7+7+9+9+9)\\\\\n&=\\frac{72}{16}=4.5\n\\end{align*}\\]\n\nThe first quartile indicates that 25% of observations should be below this threshold. In our case we see that the first quartile would fall between the 4th and 5th observation, which are both 1, telling us the 1st qaurtile is 1.\n\nThe 3rd quartile indicates that 75% of observations should be below it. The 12th and 13th observations are both 7, letting us know that the third quartile is 7.\n\nThe 0th percentile indicates the minimum value of the set while the 100th percentile indicates the maximium value. We can then say that the 0th percentile is 1 and the 100th percentile is 9.\nIf we add a datapoint of 11 to the set, we would now have 17 observations, meaning that the 9th observation from the bottom would indicate the median. The 9th observation from the bottom is 3, which is the same median as in the previous case, so the median would not change. If we were to add two datapoints of 11 to the set, we would have 18 observations. With 18 observations we have to take the average of the two middlemost observations after sorting. The two middlemost observations are the 9th and 10th ones from the bottom, meaning 3 and 7. The average would then be:\n\n\\[\\frac{1}{2}(3+7)=\\frac{10}{2}=5\\]\nThe median in this case would be 5, so it would indeed change from the previous case.\n\n\n\nProblem 8\nYou get this dataset of a group of 11 people and their respective heights in centimetres.\n\\[184,157,168,172,198,154,192,161,186,177,165.\\]\n\nFind the mean/average height of this group.\nFind the variance in height in this group and the standard deviation.\nDoes the variance and standard deviation seem big, small or somewhere in between in this context?\nWhat would be the effect on the variance of adding another person to the sample that is of the average height we found in a. Would the variance increase, decrease or stay the same?\nWhat would be the effect of adding another person to the group that’s 200cm tall. Would the variance increase, decrease or stay the same? Why is the change intuitive?\nWhat would be the effect of adding another person to the group that’s 140cm tall. Would the variance increase, decrease or stay the same? Why is the change intuitive? Why is the change in variance here greater than the one in e.?\n\n\n\nShow solutions\n\na)We sum our observations, and divide by 11, which is the number of observations.\n\n\\[\\begin{align*}\n\\overline{X}=\\frac{1}{11}(&184+157+168+172+198+154+192+161 \\\\ &+186+177+165)=\\frac{1914}{11}=174\n\\end{align*}\\]\n\nHere we need to first recall the formula for variance.\n\n\\[S_X^2=\\frac{1}{n-1}\\sum_{i=1}^{n}(X_i-\\overline{X})^2\\]\nWe recall that the mean we found in a is 174 and that we have 11 total observations. Now we have everything we need to plug in our data and find the variance.\n\\[\\begin{align*}\nS_X^2&=\\frac{1}{11-1}\\bigg((184-174)^2+(157-174)^2+(168-174)^2 \\\\ &+(172-174)^2+(198-174)^2+(154-174)^2+(192-174)^2+(161-174)^2+ \\\\&(186-174)^2+(177-174)^2+(165-174)^2\\bigg)=\\frac{2132}{10}=213.2\n\\end{align*}\\]\nNow we only need to find standard deviation.Recall that the standard deviation is the square root of the variance.\n\\[S_X=\\sqrt{S_X^2}=\\sqrt{\\frac{1}{n-1}\\sum_{i=1}^{n}(X_i-\\overline{X})^2}\\]\nIn our case we need only plug in the variance we have already found.\n\\[S_X=\\sqrt{213.2}\\approx14.6\\]\n\nVariance is hard to interpret directly, but the standard deviation is very simple. The standard deviation tells us that the average absolute difference from the mean in our data. Here we see that the standard deviation is 14.6cm, so on average the people in this group are 14.6 away from the the mean in terms of height. This means the we would expect a random person from this group to be either about 159cm tall or 188cm tall. It’s not all that simple to say if this is a lot or not, that depends on the data collected. If this is a sample from a group of Norwegian men age 20, this could seem like a very big standard deviation and variance. However, if this is a group of men and women with an age range from 14 to 35, this might not seem like such a big variance.\nIf we were to only add more people of the average height we found (174cm) the variance would decrease. There are two effects in play here. The when we add more observations our n gets bigger, and thus we divide by a larger number, but we also have to add another squared difference from the mean. In this case we add another observation that’s exactly equal to the mean. Firstly what effect will this have on the mean itself? Intuitively, the mean will not change in this case. Notice that the squared difference between the mean and itself is 0.\n\n\\[(\\overline{X}-\\overline{X})^2=(174-174)^2=0^2=0\\]\nLet’s now add this to our equation for variance. Since we have one more observation we will be dividing by (n-1)+1=n, instead of n-1.\n\\[\\begin{align*}\nS_{X1}^2&=\\frac{1}{n} \\left(\\sum_{i=1}^n(X_i-\\overline{X})^2+(\\overline{X}-\\overline{X})^2\\right)\n    =\\frac{1}{n} \\left(\\sum_{i=1}^n(X_i-\\overline{X})^2+0\\right)\n    \\\\&=\\frac{1}{n} \\left(\\sum_{i=1}^n(X_i-\\overline{X})^2\\right)\n    &lt;\\frac{1}{n-1} \\left(\\sum_{i=1}^n(X_i-\\overline{X})^2\\right)=S_X^2\n\\end{align*}\\]\nFor those that don’t find it intuitive that the mean stays the same when you add more observations the equal the mean:\nUnderneath I have shown algebraically what happens to the mean when you add one more observation in the sample that equals the mean. This can easily be extended to adding any number, m, more observations (try for yourself!).\n\\[\\begin{align*}\n\\overline{X}_1&=\\frac{1}{n+1} \\left( \\sum_{i=1}^{n}X_i+\\overline{X} \\right)=\\frac{1}{n+1}\\left( \\frac{n}{n}\\sum_{i=1}^nX_i+\\overline{X} \\right) \\\\ &=\\frac{1}{n+1}\\left(n\\overline{X}+\\overline{X}\\right) = \\frac{n+1}{n+1}\\overline{X}=\\overline{X}\n\\end{align*}\\]\nNow, let’s see what happens to the variance, when we add another observation that equals the mean.\n\\[S_{X1}^2= \\frac{1}{n-1+1}\\left(\\sum_{i=1}^n(X_i-\\overline{X})^2+(\\overline{X}-\\overline{X})^2\\right)\\]\n\nWe can amend our data by adding the new observation of 200cm, and with this we can compute the new mean and variance. We will notice that since we add an observation that is higher than the average, the mean will increase, and we will also find that the variance (and consequently the standard deviation) will both increase. The new values will be:\n\n\\[ \\overline{X}\\approx176.17 \\\\ S_X^2\\approx250.15\\]\nThe intuition is simply that since our new observation is very different from our mean, the variance will increase. Adding the new squared difference has a greater effect than dividing by a higher number. Recall that our original mean was 174 and our original standard deviation was approximately 14.6. This means that the average absolute difference between an observation and the mean is about 14.6.\n\\[|200-174|=26&gt;14.6\\]\nThis means that by adding this new observation, since it’s difference from the mean is so clearly much greater than the standard deviation, the standard deviation should increase by adding this observation. When the standard deviation increases, so will the variance. (Note that we can only intuit in this way when the absolute difference between the new observation and the mean is quite a bit greater than the standard deviation. The intuition you should build from this is that new observations that are very different from the mean will increase the variance, and consequently, observations that are close to the mean will decrease the variance.)\n\nThis case is very similar to the one in e. The only notable difference is that we add an observation that is much lower than the mean, rather than one which is much higher. Computing the the new mean and variance we get:\n\n\\[\\overline{X}\\approx171.17 \\\\ S_X^2\\approx290.15 \\]\nThe intuition here is exactly the same as in e. Since the new observation is very different from the mean, the variance should increase. Let’s compare the absolute difference between the mean and the new observation to the standard deviation.\n\\[|140-174|=|-34|=34&gt;14.6\\]\nFrom this it should also be clear why the change in variance here is greater than the one in e. Since 140 is an observation that is farther away from the mean (174), than 200, the increase in variance will be greater.\n(Extra challenge for those that can’t get enough: Can you intuit what would happen in an opposite case? Would the variance change more if we added if we added a new observation of someone that was 177cm tall or with someone that was 172cm tall?)\n\n\n\nProblem 9.\nRecall the variance and standard deviation found in Problem 8b. Imagine that instead of the height of people, the variance and standard deviation was instead found from data on height of trees (Note: the collected data is not necessarily the same even though the variance is the same). Does the variance and standard deviation feel big, small or somewhere in between in this context?\n\n\nShow solutions\n\nThis problem is mainly about interpretation, but let’s consider the standard deviation. We have a standard deviation of 14.6cm. A height difference of 14.6cm between two people is quite large, and very noticeable. When it comes to trees, however, that is not necessarily the case. Short trees can be as short as just a few centimeters, where as the tallest trees can reach upwards of 100 meters(!). Even without considering the shortest and tallest trees, we find that there can easily be several meters of difference between completely ordinary trees. Since we only know that we are working with trees in this case, it’s hard to assume anything about the data, but looking at the standard deviation we can tell that these trees must be very similar in stature as far as trees are considered. If anything, this variance, that seems quite reasonable (or even very large), when we consider the heights of people, seems completely minuscule when we consider trees instead. It’s impossible to say whether variance and standard deviation is large or small with no context, as is illustrated with this comparison.\n\n\n\nProblem 10\nIn what scenario would we get a Variance of 0?\n\n\nShow solutions\n\nFor the variance to be 0, our observations simply can’t vary. This means that all observations have to have the same value.\nThis can be shown algebraically. Let all observations \\(X_i=X\\) be equal. Then \\[\\overline{X}=\\frac{1}{n}\\sum_{i=1}^nX_i=\\frac{1}{n}\\sum_{i=1}^nX=\\frac{n}{n}X=X \\]\nIt’s clear that all observations here are equal to the mean, which gives us.\n\\[\\begin{align*}\nS_X^2&=\\frac{1}{n-1}\\sum_{i=1}^n(X_i-\\overline{X})^2=\\frac{1}{n-1}\\sum_{i=1}^n(\\overline{X}-\\overline{X})^2 \\\\ &=\\frac{1}{n-1}\\sum_{i=1}^n0=\\frac{0}{n-1}=0\n\\end{align*}\\]\nBy looking at the equation for the variance, we can tell that if any one or more observations were to deviate from the mean, there would be variance in our data.\n\n\n\nProblem 11\nYou have a dataset with six observations and a mean of 50. Show that when you have any observations outside of the interval [45;55] the variance will always be greater than 5.\n\n\nShow solutions\n\nWe have received this information:\n\\[n=6, \\ \\overline{X}=50\\]\nTo show that that our variance will always be greater than 5 when we have an observation outside of the given interval, let’s consider the situation that would create the least variance. Consider a situation where only one observation is 55, and the rest of the observations have to make up for this by all of them being a bit less than 50. Since we use squared sums when we compute the variance, we would get the least variance from the 5 last observations being equally close to to the mean. We can use an equation to find out what each of these 5 observations have to equal. For this we use the formula to calculate an average.\n\\[\\overline{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\\]\nSince we know that the average we’re looking for is 50, one observation is 55 and the last 5 observations are equal, we get an equation with one variable.\n\\[\\begin{align*}\n50&=\\frac{1}{6}(5X+55) \\\\\n\\Rightarrow 6\\cdot 50&=5X+55 \\\\\n\\Rightarrow 300&=5X+55 \\\\\n\\Rightarrow 300-55&=5X \\\\\n\\Rightarrow 245&=5X \\\\\n\\Rightarrow X&=49\n\\end{align*}\\]\nNow we have a clear view of the data that would give the minimum variance. {49,49,49,49,49,55} Finally, we can compute the variance.\n\\[\\begin{align*}\nS_X^2&=\\frac{1}{6-1}\\left(5(49-50)^2+(55-50)^2 \\right) \\\\\n&=\\frac{1}{5}(5\\cdot(-1)^2+5^2)=\\frac{1}{5}(5+25) \\\\\n&=\\frac{30}{5}=6&gt;5\n\\end{align*}\\]\n\n\n\nProblem 12\nYou are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?\n\n\n\n\n\nClass\nSex\nAge\nSurvived\nFreq\n\n\n\n\n1st\nMale\nChild\nNo\n0\n\n\n2nd\nMale\nChild\nNo\n0\n\n\n3rd\nMale\nChild\nNo\n35\n\n\nCrew\nMale\nChild\nNo\n0\n\n\n1st\nFemale\nChild\nNo\n0\n\n\n2nd\nFemale\nChild\nNo\n0\n\n\n3rd\nFemale\nChild\nNo\n17\n\n\nCrew\nFemale\nChild\nNo\n0\n\n\n1st\nMale\nAdult\nNo\n118\n\n\n2nd\nMale\nAdult\nNo\n154\n\n\n\n\n\n\n\nShow suggested solutions\n\n\nClass: Categorical, although could be treated as ordinal (1st &gt; 2nd &gt; 3rd &gt; Crew)\nSex: Binary (Male/female)\nAge: Binary (Child/adult)\nSurvived: Binary (no/yes)\nFreq: Numerical, integer.",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Exercises"
-    ]
-  },
-  {
-    "objectID": "1-data-visualization.html",
-    "href": "1-data-visualization.html",
-    "title": "Data visualization principles",
-    "section": "",
-    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Data visualization principles"
-    ]
-  },
-  {
-    "objectID": "1-data-visualization.html#controll-questions",
-    "href": "1-data-visualization.html#controll-questions",
-    "title": "Data visualization principles",
-    "section": "",
-    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Data visualization principles"
-    ]
-  },
-  {
-    "objectID": "1-gapminder.html",
-    "href": "1-gapminder.html",
-    "title": "Gapminder example of good visualization",
-    "section": "",
-    "text": "Hans Rosling (deceased) is a legend when it comes data visualization. He was a professor of International Health at Karolinska Insitute and well-known for his visualizations of global data related to international heath. The youtube video below is made by BBC in collaboration with Hans Rosling and can (hopefully) be inspirational for your own visualizatios. The data in the video is up to 2010, but for updated data, see gapminder.org.\n\n\n\n\n\nWhat do we call the kind of plots that Rosling uses here?\nHow many variables is visualized at the same time in Rosling’s plot?\nHow many data points did Rosling visualize in the video (according to himself)?\nWhich country had the highest life expectancy and income per person in 2010?\nWhich country had the lowest life expectancy and income per person in 2010?\nCan you see a dip in life expectancy due to Covid-19 in the updated data?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Gapminder example of good visualization"
-    ]
-  },
-  {
-    "objectID": "1-gapminder.html#controll-questions",
-    "href": "1-gapminder.html#controll-questions",
-    "title": "Gapminder example of good visualization",
-    "section": "",
-    "text": "What do we call the kind of plots that Rosling uses here?\nHow many variables is visualized at the same time in Rosling’s plot?\nHow many data points did Rosling visualize in the video (according to himself)?\nWhich country had the highest life expectancy and income per person in 2010?\nWhich country had the lowest life expectancy and income per person in 2010?\nCan you see a dip in life expectancy due to Covid-19 in the updated data?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Gapminder example of good visualization"
-    ]
-  },
-  {
-    "objectID": "1-intro.html",
-    "href": "1-intro.html",
-    "title": "TECH3 Applied statistics",
-    "section": "",
-    "text": "In this module, you will learn about summarizing and visualizing data. All (almost) applied statistical analysis starts with some data, and beeing able to summarizing visualize data is an important tool for any user of statistics.\n\nFocus: Making the data more accessible.\nKey topics: Central statistics summarizing data, histograms, scatterplots, boxplots, human perceptional limitations.\nSpecial Emphasis: What is statistical thinking? Never create a pie chart.",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "1-python.html",
-    "href": "1-python.html",
-    "title": "Useful python commands",
-    "section": "",
-    "text": "Useful python commands",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Useful python commands"
-    ]
-  },
-  {
-    "objectID": "1-summarizing-data.html",
-    "href": "1-summarizing-data.html",
-    "title": "Summarizing data",
-    "section": "",
-    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Summarizing data"
-    ]
-  },
-  {
-    "objectID": "1-summarizing-data.html#controll-questions",
-    "href": "1-summarizing-data.html#controll-questions",
-    "title": "Summarizing data",
-    "section": "",
-    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
-    "crumbs": [
-      "Modules",
-      "Module 1: Summarizing and visualizing data",
-      "Summarizing data"
+      "Working with data"
     ]
   },
   {
@@ -505,27 +382,250 @@
     ]
   },
   {
-    "objectID": "1-working-with-data.html",
-    "href": "1-working-with-data.html",
-    "title": "Working with data",
+    "objectID": "1-summarizing-data.html",
+    "href": "1-summarizing-data.html",
+    "title": "Summarizing data",
     "section": "",
-    "text": "What is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
+    "text": "Slides for “Summarizing data”\nSlides for “Summarizing data using tables”\n\n\n\nWhy do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
-      "Working with data"
+      "Summarizing data"
     ]
   },
   {
-    "objectID": "1-working-with-data.html#controll-questions",
-    "href": "1-working-with-data.html#controll-questions",
-    "title": "Working with data",
+    "objectID": "1-summarizing-data.html#controll-questions",
+    "href": "1-summarizing-data.html#controll-questions",
+    "title": "Summarizing data",
     "section": "",
-    "text": "What is a categorical variable?\nWhat is a numerical variable?\nIs precipitation in millimeters a real number or an integer?\nIs a binary variable numeric or categorical?\nWhat is a good measurement?\nCan measurement error arise due to typos?",
+    "text": "Why do we need to summarize data?\nWhat is the difference between a frequency and a relative frequency?\nWhat is a cumulative frequency?",
     "crumbs": [
       "Modules",
       "Module 1: Summarizing and visualizing data",
-      "Working with data"
+      "Summarizing data"
+    ]
+  },
+  {
+    "objectID": "1-python.html",
+    "href": "1-python.html",
+    "title": "Useful python commands",
+    "section": "",
+    "text": "Useful python commands",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Useful python commands"
+    ]
+  },
+  {
+    "objectID": "1-intro.html",
+    "href": "1-intro.html",
+    "title": "TECH3 Applied statistics",
+    "section": "",
+    "text": "In this module, you will learn about summarizing and visualizing data. All (almost) applied statistical analysis starts with some data, and beeing able to summarizing visualize data is an important tool for any user of statistics.\n\nFocus: Making the data more accessible.\nKey topics: Central statistics summarizing data, histograms, scatterplots, boxplots, human perceptional limitations.\nSpecial Emphasis: What is statistical thinking? Never create a pie chart.",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "1-gapminder.html",
+    "href": "1-gapminder.html",
+    "title": "Gapminder example of good visualization",
+    "section": "",
+    "text": "Hans Rosling (deceased) is a legend when it comes data visualization. He was a professor of International Health at Karolinska Insitute and well-known for his visualizations of global data related to international heath. The youtube video below is made by BBC in collaboration with Hans Rosling and can (hopefully) be inspirational for your own visualizatios. The data in the video is up to 2010, but for updated data, see gapminder.org.\n\n\n\n\n\nWhat do we call the kind of plots that Rosling uses here?\nHow many variables is visualized at the same time in Rosling’s plot?\nHow many data points did Rosling visualize in the video (according to himself)?\nWhich country had the highest life expectancy and income per person in 2010?\nWhich country had the lowest life expectancy and income per person in 2010?\nCan you see a dip in life expectancy due to Covid-19 in the updated data?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Gapminder example of good visualization"
+    ]
+  },
+  {
+    "objectID": "1-gapminder.html#controll-questions",
+    "href": "1-gapminder.html#controll-questions",
+    "title": "Gapminder example of good visualization",
+    "section": "",
+    "text": "What do we call the kind of plots that Rosling uses here?\nHow many variables is visualized at the same time in Rosling’s plot?\nHow many data points did Rosling visualize in the video (according to himself)?\nWhich country had the highest life expectancy and income per person in 2010?\nWhich country had the lowest life expectancy and income per person in 2010?\nCan you see a dip in life expectancy due to Covid-19 in the updated data?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Gapminder example of good visualization"
+    ]
+  },
+  {
+    "objectID": "1-data-visualization.html",
+    "href": "1-data-visualization.html",
+    "title": "Data visualization principles",
+    "section": "",
+    "text": "Slides for “Principles of good visualization”\nSlides for “Accommodating human limitations”\n\n\n\nWhy should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Data visualization principles"
+    ]
+  },
+  {
+    "objectID": "1-data-visualization.html#controll-questions",
+    "href": "1-data-visualization.html#controll-questions",
+    "title": "Data visualization principles",
+    "section": "",
+    "text": "Why should you always show the data?\nWhat does it mean to maximize the data/ink ratio?\nYou may think that bar plots in 3D looks cool. Why should we not use that?\nWhat is distorting the data?\nIf you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?\nWhat does it mean to be “kind to the colorblind”?\nWhy should you never use a pie chart? Ever.\nWhat would be a good alternative to a pie chart?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Data visualization principles"
+    ]
+  },
+  {
+    "objectID": "1-exercises.html",
+    "href": "1-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises\n\n\nModule 1\n\nProblem 1\nYou are given the following data describing final grades in a tricky statistics course. There were 20 A’s, 97 B’s, 163 C’s, 76 D’s, 31 E’s and 13 F’s.\n\nWhat are the most and least common grades?\nOrganize this data in a frequency table\nFind the relative frequency of each grade\nWhat proportion of students failed the course?\nWhat proportion of students got a B or above?\nWhat proportion of students got between a C and an E?\n\n\n\nShow solutions\n\n\nThe most common grade is C with 163 instances, and the least common grade is F with only 13 instances.\nThe table can be organised like this for instance:\n\n\n\n\nGrade\nNumber\n\n\n\n\nA\n20\n\n\nB\n97\n\n\nC\n163\n\n\nD\n76\n\n\nE\n31\n\n\nF\n13\n\n\n\n\nBy summing the amount of respective registered grades we find that there are 400 total. We can now divide the number of instances for each grade by the total of 400 to find the relative frequency. For example, we have 20 instances of A’s out of 400 total grades.\n\n\\[\\frac{20}{400}=0.05\\]\nWe can repeat this for all grades and add to the existing table:\n\n\n\nGrade\nNumber\nFrequency\n\n\n\n\nA\n20\n0.05\n\n\nB\n97\n0.2425\n\n\nC\n163\n0.4075\n\n\nD\n76\n0.19\n\n\nE\n31\n0.0775\n\n\nF\n13\n0.0325\n\n\n\n\nThe only failing grade is F. We can read from the new table that this we have 0.0325 or 3.25% of students that failed this course.\nTo find out what proportion of students got a B or above we need the cumulative frequency. We find this cumulative frequency by summing thge relative frequency of all the relevant cases. In this case “B or above” is the same as achieving a B or an A. The relative frequency of B’s is 0.2425 and for A’s it’s 0.05.\n\n\\[ 0.2425+0.05=0.2925=29.25\\%\\]\n\nTo find out what proportion of students got grades between C and E we also need to find the cumulative frequency. Like in e this requires summing the appropriate relative frequencies. From the table in b we can see that the respective relative frequencies are 0.4075 for C, 0.19 for D and 0.0775 for E.\n\n\\[ 0.4075+0.19+0.0775=0.675=67.5\\%\\]\nAlternatively we can take note of the fact that we already know the proportion of students that were below this grade range (the proportion of F’s), as well as the proportion of students that scored above this range (the proportion that scored B or above). By subtracting the proportion of students that scored outside this range from 1 (100%), we should arrive at the same answer.\n\\[1-0.0325-0.2925=0.675=67.5\\%\\]\n\n\n\nProblem 2\nYou hear that the average starting salary after finishing a master’s degree at NHH is NOK 550 000, the median salary is NOK 525 000, and the mode is NOK 500 000. What can you infer from this?\n\n\nShow solutions\n\nThough they might seem similar on a surface level, the mode, median and mean give slightly different information.\nThe mode tells us what the most common observation in the data is. In our case this means that the most common starting salary after graduating with a master’s degree from NHH is NOK 500 000.\nThe median is the “middle value” in the dataset, meaning that 50 percent of the observations should be below this value, whilst the other 50 percent should be above this value. In our case it means that half of graduates will have a starting salary that’s NOK 525 000 or below whilst the other half get a starting salary of NOK 525 000 or above.\nFinally, the mean reflects the average of the dataset. We can tell here that the average is NOK 550 000. Additionally, by looking at everything in context we can also make some minor inferences. We see that the mean is higher than the median, indicating that some datapoints are skewing the average upwards, i.e. some graduates are earning really well compared to their peers from the get go. Additionally we see that the mode is 500 000, compared to the mean of 550 000. As the mode is the most common observation and is below the median, this seems to suggest that those who end up with a higher starting salary start with a substantially higher one compared to their peers, for the average to skew above the median.\n\n\n\nProblem 3\nAt a retail chain Floormart the Median pay by hour is $25, but the average is $33 per hour. What does this suggest?\n\n\nShow solutions\n\nSimilar to in Problem 2, the indication here seems to be that some employees may be earning significantly more than others. Exactly how many employees are earning more and by how much is impossible to tell given our available information, but it seems likely that the executives or managers and above may have significantly higher pay than most employees in Floormart. These few employees having a much higher pay than for instance new hires or other low level workers could explain this disparity.\n\n\n\nProblem 4\nIf possible, find the mode, median and mean of the following set of dice rolls\n\\[4,6,5,5,6,2,1,6,3,6,2,1,3\\]\n\n\nShow solutions\n\nThe mode is the most common observation. As 6 appears 4 times here, more than any other roll, 6 is the mode.\nTo clearly find the median we can sort the data from lowest to highest observation. We then end up with {1,1,2,2,3,3,4,5,5,6,6,6,6}. We have 13 observations here, so the median will be given by the 7th observation from the bottom. In our case we find that 4 is the median.\nFinally we can find the mean by taking the average of the observed rolls.\nRecall the formula for averages is\n\\[\\overline{X}=\\frac{1}{n}\\sum_{i=1}^{n}X_i\\]\nIn our case we can just sum each obvservation and divide by the number of observations, which is 13.\n\\[\\begin{align*}\n\\overline{X}&=\\frac{1}{13}(1+1+2+2+3+3+4+5+5+6+6+6+6)\\\\\n&=\\frac{50}{13}\\approx3.846\n\\end{align*}\\]\n\n\n\nProblem 5\nIf possible, find the mode, median and mean of the following set of favorite colors\nred,blue,blue,green,yellow,green,green,blue,red,red,pink,purple,blue\n\n\nShow solutions\n\nThe mode is found by finding the most common observation. Here “blue” is the most common favourite color, with 4 instances, and thus “blue” is our mode.\nIt is not possible to find a median within this data, as we need to be able to logically sort the data to be able to have a meaningful median. I.e. as the data is not ordinal, we can’t find a median.\nIt is not possible to find a mean from this data. We need numerical data to be able to give a meaningful mean.\n\n\n\nProblem 6\nWhat level of data is required to find modes, means, and medians? (Categorical, ordinal, etc.)\n\n\nShow solutions\n\nTo find a mode we need at least categorical data.\nTo find a median we need data that is ordinal.\nTo find a mean we need data that is numerical.\n\n\n\nProblem 7\nYou get the dataset \\[1,1,1,1,1,3,3,3,3,7,7,7,7,9,9,9.\\]\n\nFind the mode, median and mean of the above set.\nFind the the first and third quartile of the set.\nWhat are the 0th and 100th percentiles of the set?\nWould the median change if you were to add a single datapoint of 11 to the set? What would the median of the new set be? What if we were to add two datapoints of 11?\n\n\n\nShow solutions\n\n\nThe most common observation is 1, thus the mode is 1. We have an even number of observations in this set, 16.\n\nBy taking the average of the two middlemost values we will find the median. Both the 8th and 9th value in the set are 3, and thus the median of the set is 3.\nWe can find the mean by taking the average of the data.\n\\[\\begin{align*}\n\\overline{X}&=\\frac{1}{16}(1+1+1+1+1+3+3+3+3+7+7+7+7+9+9+9)\\\\\n&=\\frac{72}{16}=4.5\n\\end{align*}\\]\n\nThe first quartile indicates that 25% of observations should be below this threshold. In our case we see that the first quartile would fall between the 4th and 5th observation, which are both 1, telling us the 1st qaurtile is 1.\n\nThe 3rd quartile indicates that 75% of observations should be below it. The 12th and 13th observations are both 7, letting us know that the third quartile is 7.\n\nThe 0th percentile indicates the minimum value of the set while the 100th percentile indicates the maximium value. We can then say that the 0th percentile is 1 and the 100th percentile is 9.\nIf we add a datapoint of 11 to the set, we would now have 17 observations, meaning that the 9th observation from the bottom would indicate the median. The 9th observation from the bottom is 3, which is the same median as in the previous case, so the median would not change. If we were to add two datapoints of 11 to the set, we would have 18 observations. With 18 observations we have to take the average of the two middlemost observations after sorting. The two middlemost observations are the 9th and 10th ones from the bottom, meaning 3 and 7. The average would then be:\n\n\\[\\frac{1}{2}(3+7)=\\frac{10}{2}=5\\]\nThe median in this case would be 5, so it would indeed change from the previous case.\n\n\n\nProblem 8\nYou get this dataset of a group of 11 people and their respective heights in centimetres.\n\\[184,157,168,172,198,154,192,161,186,177,165.\\]\n\nFind the mean/average height of this group.\nFind the variance in height in this group and the standard deviation.\nDoes the variance and standard deviation seem big, small or somewhere in between in this context?\nWhat would be the effect on the variance of adding another person to the sample that is of the average height we found in a. Would the variance increase, decrease or stay the same?\nWhat would be the effect of adding another person to the group that’s 200cm tall. Would the variance increase, decrease or stay the same? Why is the change intuitive?\nWhat would be the effect of adding another person to the group that’s 140cm tall. Would the variance increase, decrease or stay the same? Why is the change intuitive? Why is the change in variance here greater than the one in e.?\n\n\n\nShow solutions\n\na)We sum our observations, and divide by 11, which is the number of observations.\n\n\\[\\begin{align*}\n\\overline{X}=\\frac{1}{11}(&184+157+168+172+198+154+192+161 \\\\ &+186+177+165)=\\frac{1914}{11}=174\n\\end{align*}\\]\n\nHere we need to first recall the formula for variance.\n\n\\[S_X^2=\\frac{1}{n-1}\\sum_{i=1}^{n}(X_i-\\overline{X})^2\\]\nWe recall that the mean we found in a is 174 and that we have 11 total observations. Now we have everything we need to plug in our data and find the variance.\n\\[\\begin{align*}\nS_X^2&=\\frac{1}{11-1}\\bigg((184-174)^2+(157-174)^2+(168-174)^2 \\\\ &+(172-174)^2+(198-174)^2+(154-174)^2+(192-174)^2+(161-174)^2+ \\\\&(186-174)^2+(177-174)^2+(165-174)^2\\bigg)=\\frac{2132}{10}=213.2\n\\end{align*}\\]\nNow we only need to find standard deviation.Recall that the standard deviation is the square root of the variance.\n\\[S_X=\\sqrt{S_X^2}=\\sqrt{\\frac{1}{n-1}\\sum_{i=1}^{n}(X_i-\\overline{X})^2}\\]\nIn our case we need only plug in the variance we have already found.\n\\[S_X=\\sqrt{213.2}\\approx14.6\\]\n\nVariance is hard to interpret directly, but the standard deviation is very simple. The standard deviation tells us that the average absolute difference from the mean in our data. Here we see that the standard deviation is 14.6cm, so on average the people in this group are 14.6 away from the the mean in terms of height. This means the we would expect a random person from this group to be either about 159cm tall or 188cm tall. It’s not all that simple to say if this is a lot or not, that depends on the data collected. If this is a sample from a group of Norwegian men age 20, this could seem like a very big standard deviation and variance. However, if this is a group of men and women with an age range from 14 to 35, this might not seem like such a big variance.\nIf we were to only add more people of the average height we found (174cm) the variance would decrease. There are two effects in play here. The when we add more observations our n gets bigger, and thus we divide by a larger number, but we also have to add another squared difference from the mean. In this case we add another observation that’s exactly equal to the mean. Firstly what effect will this have on the mean itself? Intuitively, the mean will not change in this case. Notice that the squared difference between the mean and itself is 0.\n\n\\[(\\overline{X}-\\overline{X})^2=(174-174)^2=0^2=0\\]\nLet’s now add this to our equation for variance. Since we have one more observation we will be dividing by (n-1)+1=n, instead of n-1.\n\\[\\begin{align*}\nS_{X1}^2&=\\frac{1}{n} \\left(\\sum_{i=1}^n(X_i-\\overline{X})^2+(\\overline{X}-\\overline{X})^2\\right)\n    =\\frac{1}{n} \\left(\\sum_{i=1}^n(X_i-\\overline{X})^2+0\\right)\n    \\\\&=\\frac{1}{n} \\left(\\sum_{i=1}^n(X_i-\\overline{X})^2\\right)\n    &lt;\\frac{1}{n-1} \\left(\\sum_{i=1}^n(X_i-\\overline{X})^2\\right)=S_X^2\n\\end{align*}\\]\nFor those that don’t find it intuitive that the mean stays the same when you add more observations the equal the mean:\nUnderneath I have shown algebraically what happens to the mean when you add one more observation in the sample that equals the mean. This can easily be extended to adding any number, m, more observations (try for yourself!).\n\\[\\begin{align*}\n\\overline{X}_1&=\\frac{1}{n+1} \\left( \\sum_{i=1}^{n}X_i+\\overline{X} \\right)=\\frac{1}{n+1}\\left( \\frac{n}{n}\\sum_{i=1}^nX_i+\\overline{X} \\right) \\\\ &=\\frac{1}{n+1}\\left(n\\overline{X}+\\overline{X}\\right) = \\frac{n+1}{n+1}\\overline{X}=\\overline{X}\n\\end{align*}\\]\nNow, let’s see what happens to the variance, when we add another observation that equals the mean.\n\\[S_{X1}^2= \\frac{1}{n-1+1}\\left(\\sum_{i=1}^n(X_i-\\overline{X})^2+(\\overline{X}-\\overline{X})^2\\right)\\]\n\nWe can amend our data by adding the new observation of 200cm, and with this we can compute the new mean and variance. We will notice that since we add an observation that is higher than the average, the mean will increase, and we will also find that the variance (and consequently the standard deviation) will both increase. The new values will be:\n\n\\[ \\overline{X}\\approx176.17 \\\\ S_X^2\\approx250.15\\]\nThe intuition is simply that since our new observation is very different from our mean, the variance will increase. Adding the new squared difference has a greater effect than dividing by a higher number. Recall that our original mean was 174 and our original standard deviation was approximately 14.6. This means that the average absolute difference between an observation and the mean is about 14.6.\n\\[|200-174|=26&gt;14.6\\]\nThis means that by adding this new observation, since it’s difference from the mean is so clearly much greater than the standard deviation, the standard deviation should increase by adding this observation. When the standard deviation increases, so will the variance. (Note that we can only intuit in this way when the absolute difference between the new observation and the mean is quite a bit greater than the standard deviation. The intuition you should build from this is that new observations that are very different from the mean will increase the variance, and consequently, observations that are close to the mean will decrease the variance.)\n\nThis case is very similar to the one in e. The only notable difference is that we add an observation that is much lower than the mean, rather than one which is much higher. Computing the the new mean and variance we get:\n\n\\[\\overline{X}\\approx171.17 \\\\ S_X^2\\approx290.15 \\]\nThe intuition here is exactly the same as in e. Since the new observation is very different from the mean, the variance should increase. Let’s compare the absolute difference between the mean and the new observation to the standard deviation.\n\\[|140-174|=|-34|=34&gt;14.6\\]\nFrom this it should also be clear why the change in variance here is greater than the one in e. Since 140 is an observation that is farther away from the mean (174), than 200, the increase in variance will be greater.\n(Extra challenge for those that can’t get enough: Can you intuit what would happen in an opposite case? Would the variance change more if we added if we added a new observation of someone that was 177cm tall or with someone that was 172cm tall?)\n\n\n\nProblem 9.\nRecall the variance and standard deviation found in Problem 8b. Imagine that instead of the height of people, the variance and standard deviation was instead found from data on height of trees (Note: the collected data is not necessarily the same even though the variance is the same). Does the variance and standard deviation feel big, small or somewhere in between in this context?\n\n\nShow solutions\n\nThis problem is mainly about interpretation, but let’s consider the standard deviation. We have a standard deviation of 14.6cm. A height difference of 14.6cm between two people is quite large, and very noticeable. When it comes to trees, however, that is not necessarily the case. Short trees can be as short as just a few centimeters, where as the tallest trees can reach upwards of 100 meters(!). Even without considering the shortest and tallest trees, we find that there can easily be several meters of difference between completely ordinary trees. Since we only know that we are working with trees in this case, it’s hard to assume anything about the data, but looking at the standard deviation we can tell that these trees must be very similar in stature as far as trees are considered. If anything, this variance, that seems quite reasonable (or even very large), when we consider the heights of people, seems completely minuscule when we consider trees instead. It’s impossible to say whether variance and standard deviation is large or small with no context, as is illustrated with this comparison.\n\n\n\nProblem 10\nIn what scenario would we get a Variance of 0?\n\n\nShow solutions\n\nFor the variance to be 0, our observations simply can’t vary. This means that all observations have to have the same value.\nThis can be shown algebraically. Let all observations \\(X_i=X\\) be equal. Then \\[\\overline{X}=\\frac{1}{n}\\sum_{i=1}^nX_i=\\frac{1}{n}\\sum_{i=1}^nX=\\frac{n}{n}X=X \\]\nIt’s clear that all observations here are equal to the mean, which gives us.\n\\[\\begin{align*}\nS_X^2&=\\frac{1}{n-1}\\sum_{i=1}^n(X_i-\\overline{X})^2=\\frac{1}{n-1}\\sum_{i=1}^n(\\overline{X}-\\overline{X})^2 \\\\ &=\\frac{1}{n-1}\\sum_{i=1}^n0=\\frac{0}{n-1}=0\n\\end{align*}\\]\nBy looking at the equation for the variance, we can tell that if any one or more observations were to deviate from the mean, there would be variance in our data.\n\n\n\nProblem 11\nYou have a dataset with six observations and a mean of 50. Show that when you have any observations outside of the interval [45;55] the variance will always be greater than 5.\n\n\nShow solutions\n\nWe have received this information:\n\\[n=6, \\ \\overline{X}=50\\]\nTo show that that our variance will always be greater than 5 when we have an observation outside of the given interval, let’s consider the situation that would create the least variance. Consider a situation where only one observation is 55, and the rest of the observations have to make up for this by all of them being a bit less than 50. Since we use squared sums when we compute the variance, we would get the least variance from the 5 last observations being equally close to to the mean. We can use an equation to find out what each of these 5 observations have to equal. For this we use the formula to calculate an average.\n\\[\\overline{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\\]\nSince we know that the average we’re looking for is 50, one observation is 55 and the last 5 observations are equal, we get an equation with one variable.\n\\[\\begin{align*}\n50&=\\frac{1}{6}(5X+55) \\\\\n\\Rightarrow 6\\cdot 50&=5X+55 \\\\\n\\Rightarrow 300&=5X+55 \\\\\n\\Rightarrow 300-55&=5X \\\\\n\\Rightarrow 245&=5X \\\\\n\\Rightarrow X&=49\n\\end{align*}\\]\nNow we have a clear view of the data that would give the minimum variance. {49,49,49,49,49,55} Finally, we can compute the variance.\n\\[\\begin{align*}\nS_X^2&=\\frac{1}{6-1}\\left(5(49-50)^2+(55-50)^2 \\right) \\\\\n&=\\frac{1}{5}(5\\cdot(-1)^2+5^2)=\\frac{1}{5}(5+25) \\\\\n&=\\frac{30}{5}=6&gt;5\n\\end{align*}\\]\n\n\n\nProblem 12\nYou are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?\n\n\n\n\n\nClass\nSex\nAge\nSurvived\nFreq\n\n\n\n\n1st\nMale\nChild\nNo\n0\n\n\n2nd\nMale\nChild\nNo\n0\n\n\n3rd\nMale\nChild\nNo\n35\n\n\nCrew\nMale\nChild\nNo\n0\n\n\n1st\nFemale\nChild\nNo\n0\n\n\n2nd\nFemale\nChild\nNo\n0\n\n\n3rd\nFemale\nChild\nNo\n17\n\n\nCrew\nFemale\nChild\nNo\n0\n\n\n1st\nMale\nAdult\nNo\n118\n\n\n2nd\nMale\nAdult\nNo\n154\n\n\n\n\n\n\n\nShow suggested solutions\n\n\nClass: Categorical, although could be treated as ordinal (1st &gt; 2nd &gt; 3rd &gt; Crew)\nSex: Binary (Male/female)\nAge: Binary (Child/adult)\nSurvived: Binary (no/yes)\nFreq: Numerical, integer.",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "1-idealised_representations.html",
+    "href": "1-idealised_representations.html",
+    "title": "Idealised representations",
+    "section": "",
+    "text": "Slides for “Idealised representations”\n\n\n\nHow many parameters in a Gaussian distribution?\nWhat are the characteristics of a Gaussian distribution?\nWhat does it mean that a distribution is right-skewed?\nIn the context of distributions, what is the tail?\nWhat does it mean that a distribution has a long-tail?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Idealised representations"
+    ]
+  },
+  {
+    "objectID": "1-idealised_representations.html#controll-questions",
+    "href": "1-idealised_representations.html#controll-questions",
+    "title": "Idealised representations",
+    "section": "",
+    "text": "How many parameters in a Gaussian distribution?\nWhat are the characteristics of a Gaussian distribution?\nWhat does it mean that a distribution is right-skewed?\nIn the context of distributions, what is the tail?\nWhat does it mean that a distribution has a long-tail?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Idealised representations"
+    ]
+  },
+  {
+    "objectID": "1-plotting-tools.html",
+    "href": "1-plotting-tools.html",
+    "title": "Plotting tools",
+    "section": "",
+    "text": "Slides for “Plotting tools”\n\n\n\nWhat is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Plotting tools"
+    ]
+  },
+  {
+    "objectID": "1-plotting-tools.html#controll-questions",
+    "href": "1-plotting-tools.html#controll-questions",
+    "title": "Plotting tools",
+    "section": "",
+    "text": "What is the difference between a bar plot and a histogram?\nWhat is the horizontal line inside the box of a boxplot?\nWhat do we call the height of the box in a boxplot?\nWhat plot would you use for illustrating dependence between two continuous (numeric) variables?\nWhat is a time plot?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Plotting tools"
+    ]
+  },
+  {
+    "objectID": "1-statistical-thinking.html",
+    "href": "1-statistical-thinking.html",
+    "title": "Statistical Thinking",
+    "section": "",
+    "text": "Slides for “Statistical Thinking”\n\n\n\nWhat are the three things statistics can help us with?\nWhich word is not a part of statistical thinking definitions?\n\nData\nUncertainty\nIntuition\nReasoning\n\nWhat is the “big idea” of aggregation in statistics?\nDoes more data generally imply higher uncertainty?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Statistical Thinking"
+    ]
+  },
+  {
+    "objectID": "1-statistical-thinking.html#controll-questions",
+    "href": "1-statistical-thinking.html#controll-questions",
+    "title": "Statistical Thinking",
+    "section": "",
+    "text": "What are the three things statistics can help us with?\nWhich word is not a part of statistical thinking definitions?\n\nData\nUncertainty\nIntuition\nReasoning\n\nWhat is the “big idea” of aggregation in statistics?\nDoes more data generally imply higher uncertainty?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Statistical Thinking"
+    ]
+  },
+  {
+    "objectID": "1-summary-statistics.html",
+    "href": "1-summary-statistics.html",
+    "title": "Summary statistics",
+    "section": "",
+    "text": "Slides for “Summary statistics”\n\n\n\nWhat does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summary statistics"
+    ]
+  },
+  {
+    "objectID": "1-summary-statistics.html#controll-questions",
+    "href": "1-summary-statistics.html#controll-questions",
+    "title": "Summary statistics",
+    "section": "",
+    "text": "What does the mean, median and mode aim to describe?\nHow would you find the median if you had an even number of observations?\nWhich percentile is the median?\nWhat is the 100-percentile usually called?\nWhat is the relationship between variance and standard deviation?\nWhy prefer the standard deviation instead of the variance?",
+    "crumbs": [
+      "Modules",
+      "Module 1: Summarizing and visualizing data",
+      "Summary statistics"
+    ]
+  },
+  {
+    "objectID": "1-videos.html",
+    "href": "1-videos.html",
+    "title": "Working with data",
+    "section": "",
+    "text": "Here comes a video"
+  },
+  {
+    "objectID": "2-basic-concepts-in-probability.html",
+    "href": "2-basic-concepts-in-probability.html",
+    "title": "Basic concepts in probability",
+    "section": "",
+    "text": "Slides for “Basic concepts in probability”\n\n\n\nWhat is an experiment?\nWhat is an outcome?\nWhat is the sample space?\nWhat is an event?\nIn a dice-throwing experiment, if event 𝐴 is “rolling a 1, 2, or 3,” what is the complement of 𝐴?\nFor events 𝐴 (rolling a 1 or 2) and 𝐵 (rolling a 2, 3, or 4), describe their intersection and how it would appear in a Venn diagram.\nUsing the same events 𝐴 and 𝐵 as above, describe their union. What does it represent, and how would you illustrate it in a Venn diagram?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Basic concepts in probability"
+    ]
+  },
+  {
+    "objectID": "2-basic-concepts-in-probability.html#controll-questions",
+    "href": "2-basic-concepts-in-probability.html#controll-questions",
+    "title": "Basic concepts in probability",
+    "section": "",
+    "text": "What is an experiment?\nWhat is an outcome?\nWhat is the sample space?\nWhat is an event?\nIn a dice-throwing experiment, if event 𝐴 is “rolling a 1, 2, or 3,” what is the complement of 𝐴?\nFor events 𝐴 (rolling a 1 or 2) and 𝐵 (rolling a 2, 3, or 4), describe their intersection and how it would appear in a Venn diagram.\nUsing the same events 𝐴 and 𝐵 as above, describe their union. What does it represent, and how would you illustrate it in a Venn diagram?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Basic concepts in probability"
+    ]
+  },
+  {
+    "objectID": "2-exercises.html",
+    "href": "2-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "Exercises"
     ]
   },
   {
@@ -553,15 +653,58 @@
     ]
   },
   {
-    "objectID": "3-intro.html",
-    "href": "3-intro.html",
-    "title": "TECH3 Applied statistics",
+    "objectID": "2-what-is-probability.html",
+    "href": "2-what-is-probability.html",
+    "title": "What is probability?",
     "section": "",
-    "text": "Estimation, sampling distributions and resampling\n\nFocus: Modern inference using Monte Carlo methods.\nKey topics: Central limit theorem, sampling error of various statistics, Monte Carlo simulation.\nSpecial Emphasis: Distinguish between a population and a sample and between population parameters and sample statistics.",
+    "text": "Slides for “What is probability?”\n\n\n\nHow would you interpret an event with probability 0?\nHow would you interpret an event with probability 1?\nWhat is the key assumption behind the assigning probability using the classical method?\nHow would a frequentist interpret a probability?\nWhat is a subjective probability?\nWhat is a Bayesian probability?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "What is probability?"
+    ]
+  },
+  {
+    "objectID": "2-what-is-probability.html#controll-questions",
+    "href": "2-what-is-probability.html#controll-questions",
+    "title": "What is probability?",
+    "section": "",
+    "text": "How would you interpret an event with probability 0?\nHow would you interpret an event with probability 1?\nWhat is the key assumption behind the assigning probability using the classical method?\nHow would a frequentist interpret a probability?\nWhat is a subjective probability?\nWhat is a Bayesian probability?",
+    "crumbs": [
+      "Modules",
+      "Module 2: Probability, random variables, probability distributions and simulations.",
+      "What is probability?"
+    ]
+  },
+  {
+    "objectID": "3-exercises.html",
+    "href": "3-exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "Exercises",
     "crumbs": [
       "Modules",
       "Module 3: Estimation, sampling distributions and resampling",
-      "Introduction"
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "3-monte-carlo-simulation.html",
+    "href": "3-monte-carlo-simulation.html",
+    "title": "Monte Carlo simulation",
+    "section": "",
+    "text": "Monte Carlo simulation"
+  },
+  {
+    "objectID": "3-python.html",
+    "href": "3-python.html",
+    "title": "Python",
+    "section": "",
+    "text": "Python",
+    "crumbs": [
+      "Modules",
+      "Module 3: Estimation, sampling distributions and resampling",
+      "Python"
     ]
   },
   {

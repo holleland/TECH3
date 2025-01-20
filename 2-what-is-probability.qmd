@@ -1,0 +1,24 @@
+# What is probability?
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1047459025?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="What is probability?">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["What is probability?"](video-pdfs/2/What_is_probability.pdf)
+
+## Controll questions
+
+1.  How would you interpret an event with probability 0?
+2.  How would you interpret an event with probability 1?
+3.  What is the key assumption behind the assigning probability using the classical method?
+4.  How would a frequentist interpret a probability?
+5.  What is a subjective probability?
+6.  What is a Bayesian probability?

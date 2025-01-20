@@ -1,23 +1,24 @@
 # Data visualization principles
 
-<div style='padding:75% 0 0 0;position:relative;'>
-<iframe src='https://vimeo.com/showcase/11484032/embed?portrait=0&byline=0' allowfullscreen frameborder='0' style='position:absolute;top:0;left:0;width:100%;height:100%;'>
-</iframe>
-</div>
+::: {style="padding:75% 0 0 0;position:relative;"}
+<iframe src="https://vimeo.com/showcase/11484032/embed?portrait=0&amp;byline=0" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
 
+</iframe>
+:::
+
+<br>
+
+Slides for ["Principles of good visualization"](video-pdf/1/principles_of_good_visualization.pdf)
+
+Slides for ["Accommodating human limitations"](video-pdf/1/accommodating_human_limitations.pdf)
 
 ## Controll questions
 
-- Why should you always show the data?
-- What does it mean to maximize the data/ink ratio?
-- You may think that bar plots in 3D looks cool. Why should we not use that?
-- What is distorting the data?
-- If you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?
-- What does it mean to be "kind to the colorblind"?
-- Why should you never use a pie chart? Ever.
-- What would be a good alternative to a pie chart?
-
-
-
-
-
+-   Why should you always show the data?
+-   What does it mean to maximize the data/ink ratio?
+-   You may think that bar plots in 3D looks cool. Why should we not use that?
+-   What is distorting the data?
+-   If you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?
+-   What does it mean to be "kind to the colorblind"?
+-   Why should you never use a pie chart? Ever.
+-   What would be a good alternative to a pie chart?

@@ -1,10 +1,23 @@
 # Plotting tools
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1036273203?badge=0&amp;autopause=0&amp;player_id=0&portrait=0&byline=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TECH3: Plotting tools"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1036273203?badge=0&amp;autopause=0&amp;player_id=0&amp;portrait=0&amp;byline=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TECH3: Plotting tools">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["Plotting tools"](video-pdfs/1/plotting_tools.pdf)
 
 ## Controll questions
-  - What is the difference between a bar plot and a histogram?
-  - What is the horizontal line inside the box of a boxplot?
-  - What do we call the height of the box in a boxplot?
-  - What plot would you use for illustrating dependence between two continuous (numeric) variables?
-  - What is a time plot?
+
+-   What is the difference between a bar plot and a histogram?
+-   What is the horizontal line inside the box of a boxplot?
+-   What do we call the height of the box in a boxplot?
+-   What plot would you use for illustrating dependence between two continuous (numeric) variables?
+-   What is a time plot?

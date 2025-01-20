@@ -1,0 +1,21 @@
+# Independent events
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1048502241?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="independent_events">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["Independent events"](video-pdfs/2/Independence.pdf)
+
+## Controll questions
+
+1.  What is the definition of two independent events?
+2.  Explain how conditional probabilities can be used to check for independence between two events.
+3.  Explain independence with words.

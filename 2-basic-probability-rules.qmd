@@ -1,0 +1,23 @@
+# Basic probability rules
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1047458986?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Basic probability rules">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["Basic probability rules"](video-pdfs/2//Basic_probability_rules.pdf)
+
+## Controll questions
+
+1.  What are the three axioms of probability?
+2.  What does it mean for two events to be disjoint, and how does the third axiom apply to such events?
+3.  Explain the complement rule in your own words.
+4.  When calculating the probability of the union of two events, why do we need to subtract the probability of their intersection?
+5.  Describe the Law of Total Probability.

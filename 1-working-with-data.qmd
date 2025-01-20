@@ -1,15 +1,24 @@
 # Working with data
 
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1035528367?badge=0&amp;autopause=0&amp;player_id=0&amp;portrait=0&amp;byline=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TECH3: Working with data">
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1035528367?badge=0&amp;autopause=0&amp;player_id=0&portrait=0&byline=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TECH3: Working with data"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</iframe>
+:::
 
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["Working with data"](video-pdfs/1/working_with_data.pdf)
 
 ## Controll questions
 
-- What is a categorical variable?
-- What is a numerical variable?
-- Is precipitation in millimeters a real number or an integer?
-- Is a binary variable numeric or categorical?
-- What is a good measurement?
-- Can measurement error arise due to typos?
-
+-   What is a categorical variable?
+-   What is a numerical variable?
+-   Is precipitation in millimeters a real number or an integer?
+-   Is a binary variable numeric or categorical?
+-   What is a good measurement?
+-   Can measurement error arise due to typos?
