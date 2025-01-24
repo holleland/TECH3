@@ -66,6 +66,7 @@ website:
              - 2-basic-probability-rules.qmd
              - 2-conditional-probability.qmd
              - 2-independent-events.qmd
+             - 2-bayes-rule.qmd
              - 2-exercises.qmd
              - 2-python.qmd
          - section: "Module 3: Estimation, sampling distributions and resampling"
