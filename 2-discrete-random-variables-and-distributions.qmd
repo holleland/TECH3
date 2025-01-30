@@ -1,0 +1,15 @@
+# Discrete random variables and distributions
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1051849415?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="discrete_random_variables_and_distributions"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+<br>
+
+Slides for ["Discrete random variables and distributions?"](video-pdf/2/discrete_probability.pdf)
+
+## Controll questions
+
+1. What is a random variable?
+2. What is a discrete random variable?
+3. What is the probability distribution of a discrete random variable?
+4. How do you visualize a discrete probability distribution?
+5. Can you name one discrete probability distribution?
