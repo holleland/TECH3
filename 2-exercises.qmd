@@ -1,1 +1,100 @@
 # Exercises
+
+
+### Problem 1
+
+You have an event your interested in studying, $A$. What are the lower and upper bounds for the probability that $A$ occurs? I.e.what are the lower and upper bounds of $P(A)$?
+
+<details>
+
+<summary>Show solutions</summary>
+
+By the definition of the probability of an event we know that it's bounded both from above and below. The upper bound being that $A$ is guaranteed, and the lower bound being that it is impossible. We represent this on the interval $[0,1]$. I.e. we know that the probability of even t $A$ occurring is between $0$ and $1$. More compact $P(A)\in[0,1]$
+
+</details>
+
+### Problem 2
+
+One day you walk outside and overhear a person talking about the probability of an event. You hear little of what they have to say, but you *do* hear this person say "...this won't have to be enough, we will have to redo this experiment many more times to be certain I am approaching the right probability." Amazingly, some time later you hear another person mumbling to them selves about probability. "Wow, now this is a surprise. This result did not coincide with my previous beliefs at all. I will have to rethink the probability of such an event occurring", they say.
+
+You get the feeling that these two people have very different way of interpreting probability? Identify who the frequentist and who the bayesian statistician is.
+
+<details>
+
+<summary>Show solutions</summary>
+
+Here, person 1 is using frequentistic methods. Person 1's focus is entirely on getting in as many independent trials as possible to get a clear image of the probability of an event. Person 2 on the other hand has a completely different view. Person 2 obviously had an *initial belief* about the probability of an event, but after seeing a surprising result they were determined to *update* their beliefs about the probability of this event.
+
+</details>
+
+### Problem 3
+
+Vegard is very interested in the quality of watermelons. He has decided that he wants to find out the probability of watermelons being overripe at REMA 1000. He feels he has two feasible tests he can do to find this probability, one is Bayesian in nature and one is frequentist. Vegard can either go in with an initial belief, buy a single watermelon, then update his beliefs. He can keep doing this until he is quite certain of the probability of the population. On the other hand, Vegard can buy 40 watermelons at once, check them all, and then argue for that sample being representative of the population.
+
+Which method is Bayesian and which is frequentist?
+
+<details>
+
+<summary>Show solutions</summary>
+
+The first option here is Bayesian. Vegard has an initial belief on the probability of the watermelons being overripe, and then he iterates and tries to make that more exact by checking one watermelon at the time.
+
+The second option is a very typical frequentist test. From the whole population, a decent chunk is tested at once, in hope that it's a representative sample. In the representative sample overripe watermelons should have the same relative frequency as in the entire population.
+
+</details>
+
+### Problem 4
+
+You have a sample space, $S$, and in that sample space you have two identifiable events, $A$ and $B$. Can you determine a case where the probability of the intersection of $A$ and $B$ ($P(A\cap B)$) occurring, equals the probability of $A$ ($P(A)$) occurring? Draw a Venn diagram!
+
+<details>
+
+<summary>Show solutions</summary>
+
+Recall that the intersection of two events is when **they both** occur. I.e. for us to be in the intersection in a Venn diagram, both shapes have to cover the same area. There are infinitely variations here, but the important part is that $A$ must be **contained** within $B$. When this is the case, all of A will be intersected by $B$ (we say that $A$ is a *subset* of $B$, and the notation is $A\subseteq B$). In this case we get: $$P(A\cap B)=P(A)$$
+
+</details>
+
+### Problem 5
+
+You have a sample space, $S$, and in that sample space you have two identifiable events, $A$ and $B$. Can you determine a case where the probability of the union of $A$ and $B$ ($P(A\cup B)$) occurring, equals the probability of $B$ ($P(B)$) occurring? Draw a Venn diagram!
+
+<details>
+
+<summary>Show solutions</summary>
+
+Recall that the union of two events is when **either one or both** events occur. This means that all area covered by either $A$ or $B$ will be part of the union. We now want the probability of the union occurring to equal the probability of $B$ occurring. Since all area covered by either $A$ or $B$ is part of the union, we can have no excess are beyond $B$, i.e. $A$ should once again be a subset of $B$ ($A\subseteq B$). If this is the case we get: $$P(A\cup B)=P(B).$$
+
+</details>
+
+### Problem 6
+
+Consider a situation where you have $0<P(A)<P(B)<1$.
+
+a)  What are the lower and upper bounds of $P(A\cap B)$?
+
+b)  What are the lower and upper bounds of $P(A\cup B)$?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  The intersection tells us that both $A$ and $B$ have to occur, and as such, we the *lower* one of the two gives us an upper bound, as the one event cant intersect with more than the cases where it itself occurs (draw a Venn diagram to confirm). We know nothing as to whether or not $A$ and $B$ are disjoint, and as this is still a possibility we may not have an intersection, this makes $0$ our lower bound. I.e.
+$$P(A\cap B)\in[0, P(A)]$$ 
+
+b) The union tells us that either $A$ or $B$ or both occurs. As all events where either one or both occurs, the unions lower bound is given by the *higher* of the two probabilities. We could also be in a situation where $A\cup B$ cover the whole sample space $S$, and in such a case we would have an upper bound of 1. I.e:
+$$P(A\cup B)\in[P(B),1]$$
+
+</details>
+
+### Problem 7
+
+What is $A\cap B$ when events $A$ and $B$ are disjoint.
+
+<details>
+
+<summary>Show solutions</summary>
+
+When the two events $A$ and $B$ are disjoint, there are no possible situation that would fit into the intersection $A \cap B$. In set notation we would write: $$A\cap B=\emptyset$$ where $\emptyset$ is called the empty set and denotes a set with no elements.
+
+</details>

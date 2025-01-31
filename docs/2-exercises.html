@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -393,7 +422,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
+  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -405,8 +443,88 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
+<section id="problem-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
+<p>You have an event your interested in studying, <span class="math inline">\(A\)</span>. What are the lower and upper bounds for the probability that <span class="math inline">\(A\)</span> occurs? I.e.what are the lower and upper bounds of <span class="math inline">\(P(A)\)</span>?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>By the definition of the probability of an event we know that it’s bounded both from above and below. The upper bound being that <span class="math inline">\(A\)</span> is guaranteed, and the lower bound being that it is impossible. We represent this on the interval <span class="math inline">\([0,1]\)</span>. I.e. we know that the probability of even t <span class="math inline">\(A\)</span> occurring is between <span class="math inline">\(0\)</span> and <span class="math inline">\(1\)</span>. More compact <span class="math inline">\(P(A)\in[0,1]\)</span></p>
+</details>
+</section>
+<section id="problem-2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<p>One day you walk outside and overhear a person talking about the probability of an event. You hear little of what they have to say, but you <em>do</em> hear this person say “…this won’t have to be enough, we will have to redo this experiment many more times to be certain I am approaching the right probability.” Amazingly, some time later you hear another person mumbling to them selves about probability. “Wow, now this is a surprise. This result did not coincide with my previous beliefs at all. I will have to rethink the probability of such an event occurring”, they say.</p>
+<p>You get the feeling that these two people have very different way of interpreting probability? Identify who the frequentist and who the bayesian statistician is.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Here, person 1 is using frequentistic methods. Person 1’s focus is entirely on getting in as many independent trials as possible to get a clear image of the probability of an event. Person 2 on the other hand has a completely different view. Person 2 obviously had an <em>initial belief</em> about the probability of an event, but after seeing a surprising result they were determined to <em>update</em> their beliefs about the probability of this event.</p>
+</details>
+</section>
+<section id="problem-3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
+<p>Vegard is very interested in the quality of watermelons. He has decided that he wants to find out the probability of watermelons being overripe at REMA 1000. He feels he has two feasible tests he can do to find this probability, one is Bayesian in nature and one is frequentist. Vegard can either go in with an initial belief, buy a single watermelon, then update his beliefs. He can keep doing this until he is quite certain of the probability of the population. On the other hand, Vegard can buy 40 watermelons at once, check them all, and then argue for that sample being representative of the population.</p>
+<p>Which method is Bayesian and which is frequentist?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>The first option here is Bayesian. Vegard has an initial belief on the probability of the watermelons being overripe, and then he iterates and tries to make that more exact by checking one watermelon at the time.</p>
+<p>The second option is a very typical frequentist test. From the whole population, a decent chunk is tested at once, in hope that it’s a representative sample. In the representative sample overripe watermelons should have the same relative frequency as in the entire population.</p>
+</details>
+</section>
+<section id="problem-4" class="level3">
+<h3 class="anchored" data-anchor-id="problem-4">Problem 4</h3>
+<p>You have a sample space, <span class="math inline">\(S\)</span>, and in that sample space you have two identifiable events, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. Can you determine a case where the probability of the intersection of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> (<span class="math inline">\(P(A\cap B)\)</span>) occurring, equals the probability of <span class="math inline">\(A\)</span> (<span class="math inline">\(P(A)\)</span>) occurring? Draw a Venn diagram!</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Recall that the intersection of two events is when <strong>they both</strong> occur. I.e. for us to be in the intersection in a Venn diagram, both shapes have to cover the same area. There are infinitely variations here, but the important part is that <span class="math inline">\(A\)</span> must be <strong>contained</strong> within <span class="math inline">\(B\)</span>. When this is the case, all of A will be intersected by <span class="math inline">\(B\)</span> (we say that <span class="math inline">\(A\)</span> is a <em>subset</em> of <span class="math inline">\(B\)</span>, and the notation is <span class="math inline">\(A\subseteq B\)</span>). In this case we get: <span class="math display">\[P(A\cap B)=P(A)\]</span></p>
+</details>
+</section>
+<section id="problem-5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-5">Problem 5</h3>
+<p>You have a sample space, <span class="math inline">\(S\)</span>, and in that sample space you have two identifiable events, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. Can you determine a case where the probability of the union of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> (<span class="math inline">\(P(A\cup B)\)</span>) occurring, equals the probability of <span class="math inline">\(B\)</span> (<span class="math inline">\(P(B)\)</span>) occurring? Draw a Venn diagram!</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Recall that the union of two events is when <strong>either one or both</strong> events occur. This means that all area covered by either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> will be part of the union. We now want the probability of the union occurring to equal the probability of <span class="math inline">\(B\)</span> occurring. Since all area covered by either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> is part of the union, we can have no excess are beyond <span class="math inline">\(B\)</span>, i.e.&nbsp;<span class="math inline">\(A\)</span> should once again be a subset of <span class="math inline">\(B\)</span> (<span class="math inline">\(A\subseteq B\)</span>). If this is the case we get: <span class="math display">\[P(A\cup B)=P(B).\]</span></p>
+</details>
+</section>
+<section id="problem-6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-6">Problem 6</h3>
+<p>Consider a situation where you have <span class="math inline">\(0&lt;P(A)&lt;P(B)&lt;1\)</span>.</p>
+<ol type="a">
+<li><p>What are the lower and upper bounds of <span class="math inline">\(P(A\cap B)\)</span>?</p></li>
+<li><p>What are the lower and upper bounds of <span class="math inline">\(P(A\cup B)\)</span>?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>The intersection tells us that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have to occur, and as such, we the <em>lower</em> one of the two gives us an upper bound, as the one event cant intersect with more than the cases where it itself occurs (draw a Venn diagram to confirm). We know nothing as to whether or not <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, and as this is still a possibility we may not have an intersection, this makes <span class="math inline">\(0\)</span> our lower bound. I.e. <span class="math display">\[P(A\cap B)\in[0, P(A)]\]</span></p></li>
+<li><p>The union tells us that either <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> or both occurs. As all events where either one or both occurs, the unions lower bound is given by the <em>higher</em> of the two probabilities. We could also be in a situation where <span class="math inline">\(A\cup B\)</span> cover the whole sample space <span class="math inline">\(S\)</span>, and in such a case we would have an upper bound of 1. I.e: <span class="math display">\[P(A\cup B)\in[P(B),1]\]</span></p></li>
+</ol>
+</details>
+</section>
+<section id="problem-7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-7">Problem 7</h3>
+<p>What is <span class="math inline">\(A\cap B\)</span> when events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>When the two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, there are no possible situation that would fit into the intersection <span class="math inline">\(A \cap B\)</span>. In set notation we would write: <span class="math display">\[A\cap B=\emptyset\]</span> where <span class="math inline">\(\emptyset\)</span> is called the empty set and denotes a set with no elements.</p>
+</details>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
