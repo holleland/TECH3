@@ -1,1 +1,21 @@
-# Sampling error
+# Sampling error and distribution
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1051869124?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Sampling error and distribution">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["Sampling error and distribution"](video-pdf/3/sampling_error.pdf)
+
+## Control questions
+
+1. What is a sampling error?
+2. What is a sampling distribution?
+3. How does the sample mean standard deviation depend on the sample size?

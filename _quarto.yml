@@ -54,7 +54,6 @@ website:
              - 1-idealised_representations.qmd
              - 1-gapminder.qmd
              - 1-exercises.qmd
-             - 1-python.qmd
          - section: "Module 2: Probability, random variables, probability distributions and simulations."
            contents: 
              - href: 2-intro.qmd
@@ -69,20 +68,20 @@ website:
              - 2-bayes-rule.qmd
              - 2-discrete-random-variables-and-distributions.qmd
              - 2-exercises.qmd
-             - 2-python.qmd
          - section: "Module 3: Estimation, sampling distributions and resampling"
            contents: 
              - href: 3-intro.qmd
                text: "Introduction"
              - href: 3-textbook.qmd
                text: "Textbook"
-             # - 3-what-is-a-model.qmd
              # - 3-population-vs-sample.qmd
+             # - 3-what-is-a-model.qmd
              # - 3-sampling-error.qmd
+             # - 3-what-is-an-estimator.qmd
              # - 3-monte-carlo-simulation.qmd
              # - 3-bootstrap.qmd
              - 3-exercises.qmd
-             - 3-python.qmd
+             # - 3-python.qmd
          - section: "Module 4: Designing studies, hypothesis testing, and quantifying effects"
            contents: 
              - href: 4-intro.qmd
@@ -91,7 +90,6 @@ website:
                text: "Textbook"
              - 4-videos.qmd
              - 4-exercises.qmd
-             - 4-python.qmd
          - section: "Module 5: Measuring relationships and fitting models"
            contents: 
              - href: 5-intro.qmd
@@ -100,12 +98,11 @@ website:
                text: "Textbook"
              - 5-videos.qmd
              - 5-exercises.qmd
-             - 5-python.qmd
-    - title: "Python basics"
-      contents:
-        - pythonbasics.qmd
+    # - title: "Python basics"
+    #   contents:
+    #     - pythonbasics.qmd
         # navigation items
-
+  
     - title: "Old exams"
       contents:
         - oldexams.qmd

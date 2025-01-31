@@ -1,8 +1,5 @@
 # Exercises
 
-
-# Module 1
-
 ### Problem 1
 
 You are given the following data describing final grades in a tricky statistics course. There were 20 A's, 97 B's, 163 C's, 76 D's, 31 E's and 13 F's.
@@ -27,14 +24,14 @@ a)  The most common grade is C with 163 instances, and the least common grade is
 
 b)  The table can be organised like this for instance:
 
-| **Grade**     | **Number**      |
-|---------------|-----------------|
-|A              | 20              |
-|B              | 97              |
-|C              | 163             |
-|D              | 76              |
-|E              | 31              |
-|F              | 13              |
+| **Grade** | **Number** |
+|-----------|------------|
+| A         | 20         |
+| B         | 97         |
+| C         | 163        |
+| D         | 76         |
+| E         | 31         |
+| F         | 13         |
 
 c)  By summing the amount of respective registered grades we find that there are 400 total. We can now divide the number of instances for each grade by the total of 400 to find the relative frequency. For example, we have 20 instances of A's out of 400 total grades.
 
@@ -42,17 +39,14 @@ $$\frac{20}{400}=0.05$$
 
 We can repeat this for all grades and add to the existing table:
 
-|**Grade**      | **Number**      | **Frequency**      |
-|---------------|-----------------|--------------------|
-|A              | 20              | 0.05               |
-|B              | 97              | 0.2425             |
-|C              | 163             | 0.4075             |
-|D              | 76              | 0.19               |
-|E              | 31              | 0.0775             |
-|F              | 13              | 0.0325             |
-
-
-
+| **Grade** | **Number** | **Frequency** |
+|-----------|------------|---------------|
+| A         | 20         | 0.05          |
+| B         | 97         | 0.2425        |
+| C         | 163        | 0.4075        |
+| D         | 76         | 0.19          |
+| E         | 31         | 0.0775        |
+| F         | 13         | 0.0325        |
 
 d)  The only failing grade is F. We can read from the new table that this we have 0.0325 or 3.25% of students that failed this course.
 
@@ -102,7 +96,7 @@ Similar to in Problem 2, the indication here seems to be that some employees may
 
 ### Problem 4
 
-If possible, find the mode, median and mean of the following set of dice rolls 
+If possible, find the mode, median and mean of the following set of dice rolls
 
 $$4,6,5,5,6,2,1,6,3,6,2,1,3$$
 
@@ -131,7 +125,7 @@ In our case we can just sum each obvservation and divide by the number of observ
 
 ### Problem 5
 
-If possible, find the mode, median and mean of the following set of favorite colors 
+If possible, find the mode, median and mean of the following set of favorite colors
 
 red,blue,blue,green,yellow,green,green,blue,red,red,pink,purple,blue
 
@@ -165,8 +159,7 @@ To find a mean we need data that is numerical.
 
 ### Problem 7
 
-You get the dataset 
-$$1,1,1,1,1,3,3,3,3,7,7,7,7,9,9,9.$$
+You get the dataset $$1,1,1,1,1,3,3,3,3,7,7,7,7,9,9,9.$$
 
 a)  Find the mode, median and mean of the above set.
 
@@ -207,7 +200,7 @@ The median in this case would be 5, so it would indeed change from the previous 
 
 ### Problem 8
 
-You get this dataset of a group of 11 people and their respective heights in centimetres. 
+You get this dataset of a group of 11 people and their respective heights in centimetres.
 
 $$184,157,168,172,198,154,192,161,186,177,165.$$
 
@@ -239,11 +232,9 @@ $$S_X^2=\frac{1}{n-1}\sum_{i=1}^{n}(X_i-\overline{X})^2$$
 
 We recall that the mean we found in a is 174 and that we have 11 total observations. Now we have everything we need to plug in our data and find the variance.
 
-
 \begin{align*}
 S_X^2&=\frac{1}{11-1}\bigg((184-174)^2+(157-174)^2+(168-174)^2 \\ &+(172-174)^2+(198-174)^2+(154-174)^2+(192-174)^2+(161-174)^2+ \\&(186-174)^2+(177-174)^2+(165-174)^2\bigg)=\frac{2132}{10}=213.2
 \end{align*}
-
 
 Now we only need to find standard deviation.Recall that the standard deviation is the square root of the variance.
 
@@ -326,8 +317,7 @@ In what scenario would we get a Variance of 0?
 
 For the variance to be 0, our observations simply can't vary. This means that all observations have to have the same value.
 
-This can be shown algebraically. Let all observations $X_i=X$ be equal. Then
-$$\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i=\frac{1}{n}\sum_{i=1}^nX=\frac{n}{n}X=X $$
+This can be shown algebraically. Let all observations $X_i=X$ be equal. Then $$\overline{X}=\frac{1}{n}\sum_{i=1}^nX_i=\frac{1}{n}\sum_{i=1}^nX=\frac{n}{n}X=X $$
 
 It's clear that all observations here are equal to the mean, which gives us.
 
@@ -378,9 +368,916 @@ S_X^2&=\frac{1}{6-1}\left(5(49-50)^2+(55-50)^2 \right) \\
 
 
 ### Problem 12
+
+Consider the two following data sets, A and B. $$A=\{52, 49, 53,57,48,48,57,53\}$$ and $$B=\{29,56,31,21, 79, 45, 51, 21\}$$
+
+a)  Find the interquartile ranges of both A and B. Based on the ranges, which one seems to indicate a higher standard deviation?
+
+b)  Find the variance and standard deviation of both data sets. Do the results fit with your guess from a).
+
+c)  What intuition can interquartile ranges give when comparing variances? Can you always trust this intuition fully?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  To find the interquartile ranges we have to first find the quartiles in each data set, and to find the quartiles we need to order the sets as well. We now end up with
+
+\begin{align*}
+A=\{48, 48, 49, 52, 53, 53, 57, 57\} \\
+B=\{21, 21, 29, 31, 45, 51, 56, 79\}
+\end{align*}
+
+Now that both sets are ordered we can find the frst and third quartile in each of them by considering the 25th and 75th percentiles. In both sets the 25th percentile will fall between the second and third observations, whereas the 75th will fall between the 6th and 7th. Thus we take the average between these observations to fin the respective quatiles.
+
+\begin{align*}
+q_{1A}=\frac{1}{2}(48+49)=48.5, \ q_{3A}=\frac{1}{2}(53+57)=55 \\
+q_{1B}=\frac{1}{2}(21+29)=25, \ q_{3B}=\frac{1}{2}(51+56)=53.5
+\end{align*}
+
+Finally, we can find the interquartile ranges and compare them. Recall the formula for an interquartile range is given by the difference in quartiles.
+
+$IQR=q_3-q_1$ Now, let's compute the IQR for both A and B. \begin{align*}
+IQR_A=55-48.5=6.5 \\
+IQR_B=53.5-25=28.5
+\end{align*} Here we can see that the interquartile range for B is much larger than for A, which indicates a larger spread of data in B, which should give us a higher standard deviation.
+
+b)  Let's compute the variances and standard deviations. By using the formulas familiar to us we will end up with.
+
+\begin{align*}
+\overline{X}_A=52.125, \ S^2_A\approx13.27, \ S_A\approx3.64 \\
+\overline{X}_B=41.625, \ S^2_B\approx403.70, \ S_B\approx20.09
+\end{align*} We can easily see that the indication from the IQR told us which data set had more variance.
+
+c)  The reason interquartile ranges can help give an indication of what data has more variance, is cause the interquartile range also gives an indication of how spread out the data is. The interquartile range tells us how far the 75th percentile is from the 25th percentile, i.e. a range for the middle 50% of the data. Keep in mind, however that a higher IQR does not necessarily mean a data set has a higher variance, even though it might seem that way at a first glance. When computing variance and standard deviation extreme values are very highly weighted even though they may not have any effect on the IQR.
+
+Let's finish up by giving a quick example. We can amend A such that we change one of the data points that reads 57 to 1000 instead. We will call the amended set A'. We then get: \begin{align*}
+A=\{48, 48, 49, 52, 53, 53, 57, 57\}\rightarrow A'=\{48, 48, 49, 52, 53, 53, 57, 1000\}
+\end{align*} Note here that the first and third quartile have **not** changed, and thus the IQR stays the same. However, when computing mean, variance and standard deviation we are going to see huge shifts.
+
+\begin{align*}
+\overline{X}_{A'}=170, \ S^2_{A'}=112482.86, \ S_{A'}\approx335.38
+\end{align*}
+
+The 1000 observation is clearly an outlier here, but the point is that we always have to be careful when saying the IQR implies the variance, or anything similar. In many cases it may be true, but we should always consider the data we're working with.
+
+</details>
+
+### Problem 13
+
+Consider the Boxplot below.
+
+a)  Which of the two groups has the higher median?
+
+b)  Which of the two groups seems to have the higher variance?
+
+c)  Which of the two groups has the higher IQR? Does this coincide with the one that has the higher variance?
+
+d)  Would you think there are any outliers in the data? Why? Why not?
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Create dataset with two groups that have similar distributions but key differences
+data <- data.frame(
+  Category = rep(c("Group 1", "Group 2"), each = 30),
+  Value = c(rnorm(30, mean = 15, sd = 3),  # Group 1: Mean 15, SD 3
+            rnorm(30, mean = 17, sd = 4))  # Group 2: Mean 17, SD 4 (slightly higher mean, more spread)
+)
+
+# Generate the boxplot
+plot <- ggplot(data, aes(x = Category, y = Value, fill = Category)) +
+  geom_boxplot() +
+  ggtitle("Comparison of Two Similar but Different Groups") +
+  theme_minimal() +
+  theme(legend.position = "none")  # Remove legend since we already have x-axis labels
+
+# Display the plot
+print(plot)
+
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  The bold, black, horizontal line in each box represents the median for the data. We note that for group 1 the median is a little less than 15, and for group 2 it seems to be about 17. As such, group 2 has the higher median.
+
+b)  We note that the whiskers for group 2's plot stretch out far wider than the ones for group 1. There are no points beyond the whiskers for either group, and as such we can conclude that group 2 probably has the higher variance. This coincides with the code used to generate the data.
+
+c)  We note that the box for group 2 is far taller than the one for group 1, which clearly shows that group 2 has a higher IQR. The lower line of the box indicates the the 1st quartile and the upper line gives the 3rd quartile. As such, the height of a box represents the IQR for the data used to generate the boxplot. This indeed coincides with the data we believe to hav the higher variance.
+
+d)  We see no points beyond the whiskers of the boxes, and as such we treat none of the data as outliers. The whiskers here represent 1.5 times the IQR of the data, beyond either the 1st or 3rd quartiles. in many cases this covers all the whole range of data in a sample, however that is not always the case. In the below boxplot I have used the same data, however I added as single, clear outlier to group 1. This ouitlier is now the new maximum value and is indicated as a red dot. In general, when we consider outliers using boxplots, it's most common to start by considering everything beyond teh whiskers of the plot.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Create dataset with an outlier added to Group 1
+data <- data.frame(
+  Category = rep(c("Group 1", "Group 2"), each = 30),
+  Value = c(rnorm(29, mean = 15, sd = 3),  # 29 normal values for Group 1
+            30,  # Outlier for Group 1 (far from the main distribution)
+            rnorm(30, mean = 17, sd = 4))  # Group 2 remains similar
+)
+
+# Generate the boxplot
+plot <- ggplot(data, aes(x = Category, y = Value, fill = Category)) +
+  geom_boxplot(outlier.shape = 16, outlier.size = 3, outlier.color = "red") + # Custom outlier style
+  ggtitle("Boxplot with an Outlier in Group 1") +
+  theme_minimal() +
+  theme(legend.position = "none")  # Remove legend since x-axis labels are clear
+
+# Display the plot
+print(plot)
+
+```
+
+</details>
+
+### Problem 14
+
+Consider the two viloinplots below.
+
+a)  In what ranges in each of the groups is data most dense?
+
+b)  Which group has the highest maximum, which one has the lowest minimum?
+
+c)  Is it clear which group would have a higher median? Do you think this group also has a higher mean? Argue why or why not?
+
+d)  What are some key differences to consider between a violin plot and a boxplot?
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(999)
+
+# Create a new dataset with two groups, ensuring no extreme outliers
+data <- data.frame(
+  Category = rep(c("Group A", "Group B"), each = 40),  # 40 observations per group
+  Value = c(rnorm(40, mean = 12, sd = 2),  # Group A: Mean 12, SD 2
+            rnorm(40, mean = 14, sd = 2.5)) # Group B: Mean 14, SD 2.5 (slightly higher mean, more spread)
+)
+
+# Generate the violin plot
+plot <- ggplot(data, aes(x = Category, y = Value, fill = Category)) +
+  geom_violin(trim = FALSE, alpha = 0.8) +  # Violin plot to show distribution without trimming
+  ggtitle("Violin Plot of Two Groups (No Outliers)") +
+  theme_minimal() +
+  theme(legend.position = "none")  # Remove legend since x-axis labels are clear
+
+# Display the plot
+print(plot)
+
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  From a visually inspections it's not 100% clear what the exact ranges are, but it does seem like for group 1 data is most dense in the intervals (12, 13), whereas for group 2 it's around (13, 15). We see this as this is where the "violins" are the widest.
+
+b)  A key aspect of violin plots is that they chow the distribution of the data in its entirety. This means that the top and bottom ends of the violins indicate the range of the data. Here it??s clear rthat group n2 has the higher maximum and group 1 has the lower minimum.
+
+c)  The median is the middle observation. Though we can't see the exact point on a violin plot, we can see that the group 1 is comparatively "bottom-heavy" next to group 2, which indicates that the median should be higher in 2. We can also infer that the higher density of high numbers in group 2 indicate a higher mean as well. We can't be 100% certain though, as we have no direct way of telling. (In an obvious case such as this though we can be at least 99% certain).
+
+d)  The key distinctions between violin and box plots are what attributes of the data they show. Whereas box plots show summary statistics such as the median, 1st and 3rd quartile and IQR, the violin plot shows how the data is distributed (i.e. the density of the data). As you should have noticed from the exdercises above, we can't make many direct statements based on the violin plot, other than to draw semi-certain conclusions based on where we see the data is more and less dense. The boc plot also isolates ourtliers in a more clear way compared to the violin. Take a look at the below figure to see boc plots in the same data as the violins. Were the inferences from the above exercises correct?
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(999)
+
+# Create a new dataset with two groups, ensuring no extreme outliers
+data <- data.frame(
+  Category = rep(c("Group A", "Group B"), each = 40),  # 40 observations per group
+  Value = c(rnorm(40, mean = 12, sd = 2),  # Group A: Mean 12, SD 2
+            rnorm(40, mean = 14, sd = 2.5)) # Group B: Mean 14, SD 2.5 (slightly higher mean, more spread)
+)
+
+# Generate the violin plot
+plot <- ggplot(data, aes(x = Category, y = Value, fill = Category)) +
+  geom_violin(trim = FALSE, alpha = 0.5) +  # Violin plot to show distribution without trimming
+  geom_boxplot(width=0.1, outlier.color = "blue") + # boxplot
+  ggtitle("Violin Plot of Two Groups (No Outliers)") +
+  theme_minimal() +
+  theme(legend.position = "none")  # Remove legend since x-axis labels are clear
+
+# Display the plot
+print(plot)
+```
+
+</details>
+
+### Problem 15
+
+You receive data about voting intention in a Norwegian community. Each bar represents the percentage of people in this community that wants to vote for a given party. Only people who intend to vote have been counted.
+
+a)  Which parties are most and least popular in this community?
+
+b)  What is the approximate percentage point difference between the most and least popular parties?
+
+c)  What problems could have been run into by using a pie chart instead of a bar plot?
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Create a dataset for voter distribution
+data <- data.frame(
+  Party = c("AP", "H", "FrP", 
+            "SP", "SV", "V", 
+            "Krf", "MDG", "R"),
+  Voters = c(450, 380, 320, 290, 200, 180, 150, 130, 120)  # Hypothetical voter counts
+)
+
+# Calculate percentage of total voters
+data$Percentage <- (data$Voters / sum(data$Voters)) * 100
+
+# Custom colors for each party
+party_colors <- c(
+  "AP" = "#E2001A",
+  "H" = "#42A3E6",
+  "FrP" = "#002770",
+  "SP" = "#1E4D2B",
+  "SV" = "#D91990",
+  "V" = "#79E3A0",
+  "Krf" = "#FDB913",
+  "MDG" = "#4F7942",
+  "R" = "#D90900"
+)
+
+# Generate the bar plot with percentage y-axis
+plot <- ggplot(data, aes(x = reorder(Party, -Percentage), y = Percentage, fill = Party)) +
+  geom_bar(stat = "identity") +  # Use identity to plot exact values
+  ggtitle("Voter Distribution in a Norwegian Community (Percentage)") +
+  xlab("Political Party") +
+  ylab("Percentage of Voters") +
+  scale_fill_manual(values = party_colors) +  # Apply custom colors
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels for readability
+        legend.position = "none")  # Hide legend since x-axis labels are clear
+
+# Display the plot
+print(plot)
+
+
+```
+
+Exercises about interpreting plots
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  It clear that AP (Labour party) is the most popular and R (Red party) is the least popular in this community.
+
+b)  AP has a voter turnout of about 20 percent wheres R has a turnout of about 5 percent. We thus get a difference of about 15 percentage points between the most and least popular parties.
+
+c)  For one, the pie chart would not clearly indicate the relative popularities of each party. It could for instance be very hard to tell which party was more popular between MDG and R, as they are very close in size here. Secondly, this pie chart would be very distracting top look at and hard to read, as you would not be able to read the information directly from the chart. Underneath there is an example. You could for instance add percentage labels to the chart below, but that would be visually much busier tha nthe bar plot as well as would work poorly when slices get very small.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Create a dataset for voter distribution
+data <- data.frame(
+  Party = c("AP", "H", "FrP", 
+            "SP", "SV", "V", 
+            "Krf", "MDG", "R"),
+  Voters = c(450, 380, 320, 290, 200, 180, 150, 130, 120)  # Hypothetical voter counts
+)
+
+# Calculate percentage of total voters
+data$Percentage <- (data$Voters / sum(data$Voters)) * 100
+
+# Custom colors for each party
+party_colors <- c(
+  "AP" = "#E2001A",
+  "H" = "#42A3E6",
+  "FrP" = "#002770",
+  "SP" = "#1E4D2B",
+  "SV" = "#D91990",
+  "V" = "#79E3A0",
+  "Krf" = "#FDB913",
+  "MDG" = "#4F7942",
+  "R" = "#D90900"
+)
+
+# Generate the pie chart
+pie_chart <- ggplot(data, aes(x = "", y = Percentage, fill = Party)) +
+  geom_bar(stat = "identity", width = 1) +  # Create a bar chart to transform into a pie chart
+  coord_polar(theta = "y") +  # Convert to a pie chart
+  scale_fill_manual(values = party_colors) +  # Apply custom colors
+  ggtitle("Voter Distribution in a Norwegian Community (Pie Chart)") +
+  theme_void() +  # Remove background elements for a clean look
+  theme(plot.title = element_text(size = 16, face = "bold"))
+
+# Display the pie chart
+print(pie_chart)
+
+```
+
+</details>
+
+### Problem 16
+
+Consider the histogram below. The y-axis can be interpreted as percentages. The histogram shows the distributions of yearly salaries of a population in an area.
+
+a)  What percentage of people in this population have salaries in the most common interval?
+
+b)  What are key differences between histograms and bar plots.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(101)
+
+# Generate a synthetic dataset of yearly salaries (in NOK)
+data <- data.frame(
+  Salary = c(rnorm(100, mean = 600, sd = 150))  # 100 salaries with normal distribution
+)
+
+# Generate the histogram
+histogram <- ggplot(data, aes(x = Salary)) +
+  geom_histogram(binwidth = 50, fill = "steelblue", color = "black", alpha = 0.7) +  # Histogram settings
+  ggtitle("Distribution of Yearly Salaries") +
+  xlab("Yearly Salary  in 1000's (NOK)") +
+  ylab("Frequency") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 16, face = "bold"),
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 14, face = "bold"))
+
+# Display the histogram
+print(histogram)
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  The tallest bin indicates the most common interval for salaries and it seems to include about 15 percent of the people in the population. The tallest bin seems to be somewhere between 600k and 700k NOK.
+
+b)  In a histogram each bin represents an interval of values, and any data point which falls within that interval will contribute to the height of that bin. A histogram will also necessarily represent the distribution of numerical sample data. A bar plot, however, represents the relative frequency of categorical data.
+
+</details>
+
+### Problem 17
+
+Comment on the below scatterplot, focus on whether or not you believe the X and Y variables are dependent or not.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate dataset where the two variables are independent (no correlation)
+data_independent <- data.frame(
+  X = rnorm(100, mean = 50, sd = 10),  # Random X values
+  Y = rnorm(100, mean = 50, sd = 10)   # Random Y values, independent of X
+)
+
+
+# Scatterplot of independent variables
+scatter_independent <- ggplot(data_independent, aes(x = X, y = Y)) +
+  geom_point(color = "blue", alpha = 0.7) +
+  ggtitle("Scatterplot") +
+  xlab("X Variable") +
+  ylab("Y Variable") +
+  theme_minimal()
+
+# Display the plots
+print(scatter_independent)
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+In this scatterplot there are no clear signs of correlation between X and Y. The closest thing one might get is that there seem to be fewer X and Y observations of more extreme values, however, that still doesn't imply dependence. Each point seems randomly scattered out and there is no pattern to see here.
+
+</details>
+
+### Problem 18
+
+Comment on the below scatterplot, focus on whether or not you believe the X and Y variables are dependent or not.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate dataset where the two variables have a strong positive correlation
+data_correlated <- data.frame(
+  X = rnorm(100, mean = 50, sd = 10)
+)
+data_correlated$Y <- data_correlated$X * 2 + rnorm(100, mean = 0, sd = 5)  # Strong linear relationship
+
+# Scatterplot of correlated variables
+scatter_correlated <- ggplot(data_correlated, aes(x = X, y = Y)) +
+  geom_point(color = "red", alpha = 0.7) +
+
+  ggtitle("Scatterplot") +
+  xlab("X Variable") +
+  ylab("Y Variable") +
+  theme_minimal()
+
+# Display the plot
+print(scatter_correlated)
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+Here there is a clear linear dependence between the X and Y variables. There correlation seems to be almost a perfect positive correlation of 1. This can very easily be illustrated by drawing a best fit line through the point. The image below illustrates the strong linear relationship.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required package
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate dataset where the two variables have a strong positive correlation
+data_correlated <- data.frame(
+  X = rnorm(100, mean = 50, sd = 10)
+)
+data_correlated$Y <- data_correlated$X * 2 + rnorm(100, mean = 0, sd = 5)  # Strong linear relationship
+
+# Scatterplot of correlated variables
+scatter_correlated <- ggplot(data_correlated, aes(x = X, y = Y)) +
+  geom_point(color = "red", alpha = 0.7) +
+  geom_smooth(method = "lm", color = "black", se = FALSE) +  # Add a trend line
+  ggtitle("Scatterplot of Strongly Correlated Variables") +
+  xlab("X Variable") +
+  ylab("Y Variable") +
+  theme_minimal()
+
+# Display the plot
+print(scatter_correlated)
+
+```
+
+</details>
+
+### Problem 19
+
+Which of the following histograms are closer to a normal (Gaussian) distribution?
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required packages
+library(ggplot2)
+library(gridExtra)  # For arranging multiple plots
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate data that follows a Gaussian (Normal) distribution
+data_gaussian <- data.frame(
+  Value = rnorm(1000, mean = 50, sd = 10)  # Normally distributed data
+)
+
+# Generate data that does NOT follow a Gaussian distribution (e.g., Exponential distribution)
+data_skewed <- data.frame(
+  Value = rexp(1000, rate = 0.1)  # Exponentially distributed data (right-skewed)
+)
+
+# Histogram of Gaussian-like data
+hist_gaussian <- ggplot(data_gaussian, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "steelblue", color = "black", alpha = 0.7) +
+  ggtitle("Histogram 1") +
+  xlab("Value") +
+  ylab("Frequency") +
+  theme_minimal()
+
+# Histogram of non-Gaussian data
+hist_skewed <- ggplot(data_skewed, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "darkred", color = "black", alpha = 0.7) +
+  ggtitle("Histogram 2") +
+  xlab("Value") +
+  ylab("Frequency") +
+  theme_minimal()
+
+# Arrange the two plots side by side
+grid.arrange(hist_gaussian, hist_skewed, ncol = 2)
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+Obviously 1 is far closer to a normal distribution than 2 is. We can clearly see that 1 is very close to the characteristic bell shape and a very symmetric distribution of points around the mean. Histogram 2 on the other hand is not at all symmetric around its mean and does not have the iconic shape, so it can easily be identified as non-normally distributed.
+
+</details>
+
+### Problem 20
+
+Determine whether the below histograms display distributions that are right skewed, left skewed or neither.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+
+# Load required packages
+library(ggplot2)
+library(gridExtra)  # For arranging multiple plots
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate datasets with different distributions
+data_1 <- data.frame(Value = rexp(1000, rate = 0.2))  # Mild right skew
+data_2 <- data.frame(Value = rexp(1000, rate = 0.5))  # Strong right skew
+data_3 <- data.frame(Value = -rlnorm(1000, meanlog = 3, sdlog = 0.5) + 50)  # Left skewed (negative log-normal)
+data_4 <- data.frame(Value = rnorm(1000, mean = 50, sd = 10))  # Symmetric (Normal distribution)
+
+# Create the histograms
+hist_1 <- ggplot(data_1, aes(x = Value)) +
+  geom_histogram(binwidth = 2, fill = "blue", color = "black", alpha = 0.7) +
+  ggtitle("1") +
+  theme_minimal()
+
+hist_2 <- ggplot(data_2, aes(x = Value)) +
+  geom_histogram(binwidth = 1, fill = "red", color = "black", alpha = 0.7) +
+  ggtitle("2") +
+  theme_minimal()
+
+hist_3 <- ggplot(data_3, aes(x = Value)) +
+  geom_histogram(binwidth = 2, fill = "green", color = "black", alpha = 0.7) +
+  ggtitle("3") +
+  theme_minimal()
+
+hist_4 <- ggplot(data_4, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "purple", color = "black", alpha = 0.7) +
+  ggtitle("4") +
+  theme_minimal()
+
+# Arrange the four plots in a 2x2 grid
+grid.arrange(hist_1, hist_2, hist_3, hist_4, ncol = 2, nrow = 2)
+
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+Historgam nr 1 is clearly extremely right skewed, which we can tell from the comparative length of the right tail and that the mass is concentrated on the left side of the plot. Number 2 is also very right skewed, but not quite to the extreme of 1.
+
+Histogram 3 on teh other hand is very left skewed, which should be obvious as its almost the complete opposite of the number 1.
+
+Histogram 4 doesn't seem to have any particular skewness, in actuality it seems remarkably symmetric.
+
+</details>
+
+### Problem 21
+
+Consider the 4 following histograms. Rank them from 1 to 4, where 1 indicates the "lightest tails" and 4 indicates "the heaviest tails"
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required packages
+library(ggplot2)
+library(gridExtra)  # For arranging multiple plots
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate datasets with different tail heaviness
+data_1 <- data.frame(Value = rnorm(1000, mean = 50, sd = 10))  # Normal distribution (standard tails)
+data_2 <- data.frame(Value = rt(1000, df = 8) * 10 + 50)  # t-distribution with df = 10 (moderately heavy tails)
+data_3 <- data.frame(Value = rt(1000, df = 3) * 10 + 50)  # t-distribution with df = 3 (heavier tails)
+data_4 <- data.frame(Value = runif(1000, min = 30, max = 70))  # Uniform distribution (lightest tails)
+
+# Create the histograms
+hist_1 <- ggplot(data_1, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "blue", color = "black", alpha = 0.7) +
+  ggtitle("A") +
+  theme_minimal()
+
+hist_2 <- ggplot(data_2, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "red", color = "black", alpha = 0.7) +
+  ggtitle("B") +
+  theme_minimal()
+
+hist_3 <- ggplot(data_3, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "green", color = "black", alpha = 0.7) +
+  ggtitle("C") +
+  theme_minimal()
+
+hist_4 <- ggplot(data_4, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "purple", color = "black", alpha = 0.7) +
+  ggtitle("D") +
+  theme_minimal()
+
+# Arrange the four plots in a 2x2 grid
+grid.arrange(hist_1, hist_2, hist_3, hist_4, ncol = 2, nrow = 2)
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+The correct ranking is 1-D, 2-A, 3-B, 4-C
+
+Recall that heavier tails implies that more mass will be farther away from the mean. Once one realises this fact it should be simple to order the histograms based on weights of tails. No points reach very far away from the mean of D, a few more for A, as one can tell by the longer interval on the x axis, even more are far away from the mean in B, and a very large amount in C.
+
+</details>
+
+### Problem 22
+
+Rank these histograms created from normally (gaussian) distributed data in 3 different ways, from 1-6. In the first ranking, 1 should be the lowest mode and 6 should be the highest mode. In the second ranking do the same with the median and in the third with the mean. As there are a lot of data points in each of these histograms, you can treat them as perfect normal distributions.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required packages
+library(ggplot2)
+library(gridExtra)  # For arranging multiple plots
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate datasets with normal distributions of different means
+data_A <- data.frame(Value = rnorm(1000, mean = 30, sd = 10))  # Mean = 30
+data_B <- data.frame(Value = rnorm(1000, mean = 40, sd = 10))  # Mean = 40
+data_C <- data.frame(Value = rnorm(1000, mean = 50, sd = 10))  # Mean = 50
+data_D <- data.frame(Value = rnorm(1000, mean = 60, sd = 10))  # Mean = 60
+data_E <- data.frame(Value = rnorm(1000, mean = 70, sd = 10))  # Mean = 70
+data_F <- data.frame(Value = rnorm(1000, mean = 80, sd = 10))  # Mean = 80
+
+# Create the histograms
+hist_A <- ggplot(data_A, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "blue", color = "black", alpha = 0.7) +
+  ggtitle("D") +
+  theme_minimal()
+
+hist_B <- ggplot(data_B, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "red", color = "black", alpha = 0.7) +
+  ggtitle("F") +
+  theme_minimal()
+
+hist_C <- ggplot(data_C, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "green", color = "black", alpha = 0.7) +
+  ggtitle("C") +
+  theme_minimal()
+
+hist_D <- ggplot(data_D, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "purple", color = "black", alpha = 0.7) +
+  ggtitle("B") +
+  theme_minimal()
+
+hist_E <- ggplot(data_E, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "orange", color = "black", alpha = 0.7) +
+  ggtitle("E") +
+  theme_minimal()
+
+hist_F <- ggplot(data_F, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "cyan", color = "black", alpha = 0.7) +
+  ggtitle("A") +
+  theme_minimal()
+
+# Arrange the six plots in a 3x2 grid
+grid.arrange(hist_F, hist_D, hist_C, hist_A, hist_E, hist_B, ncol = 2, nrow = 3)
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+The twist here is that since the data is all normally distributed the mode, mean and median is equal. I.e., if you've found one ranking you've found them all.
+
+The correct ranking is 1-D, 2-F, 3-C, 4-B, 5-E, 6-A
+
+The mode should be obvious in each one at it is indicated by the tallest bin. Furthermore, since all the histograms are so symmetric both the medians and mean should also be well within the middle bins as well. As such we end up with the same ranking in all three cases.
+
+</details>
+
+### Problem 23
+
+Rank the following three histograms from lowest to highest variance. Consider the data in each case to eb normally distributed.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
+# Load required packages
+library(ggplot2)
+library(gridExtra)  # For arranging multiple plots
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Generate datasets with different variances (standard deviations)
+data_low_var <- data.frame(Value = rnorm(1000, mean = 50, sd = 10))   # Low variance (SD = 5)
+data_medium_var <- data.frame(Value = rnorm(1000, mean = 50, sd = 20)) # Medium variance (SD = 15)
+data_high_var <- data.frame(Value = rnorm(1000, mean = 50, sd = 40))  # High variance (SD = 40)
+
+# Create the histograms
+hist_low_var <- ggplot(data_low_var, aes(x = Value)) +
+  geom_histogram(binwidth = 2, fill = "blue", color = "black", alpha = 0.7) +
+  ggtitle("B") +
+  xlab("Value") + ylab("Frequency") +
+  xlim(-50, 150) +
+  theme_minimal()
+
+hist_medium_var <- ggplot(data_medium_var, aes(x = Value)) +
+  geom_histogram(binwidth = 5, fill = "red", color = "black", alpha = 0.7) +
+  ggtitle("A") +
+  xlab("Value") + ylab("Frequency") +
+  xlim(-50, 150) +
+  theme_minimal()
+
+hist_high_var <- ggplot(data_high_var, aes(x = Value)) +
+  geom_histogram(binwidth = 10, fill = "green", color = "black", alpha = 0.7) +
+  ggtitle("C") +
+  xlab("Value") + ylab("Frequency") +
+  xlim(-50, 150) +
+  theme_minimal()
+
+# Arrange the three plots in a 1x3 grid
+grid.arrange(hist_medium_var, hist_low_var, hist_high_var, ncol = 3, nrow = 1)
+
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+The correct ranking is
+
+1-B, 2-A, 3-C
+
+Recall that variance increases as spread of data increases. It's clear that the data in B all fits within a pretty narrow interval, whereas the data in C needs a much larger interval to fit all of its observatrions. It's not even entirely clear that we see all observations of C in the given interval. A seems relatively average, it at least does not stand out in any direction like B and C do.
+
+</details>
+
+### Problem 24
+
+For this and the next problem you will need to recall how you compute means an variances.
+
+$$ \overline{X}=\frac{1}{n}\sum^{n}_{i=1}X_i, \ 
+S^2_X=\frac{1}{n-1}\sum^n_{i=1}\left(X_i-\overline{X}\right)^2$$
+
+Consider the data $$A=\{a_1, a_2, ..., a_n\}$$. Now add 5 to every observation such that you get $$A'=\{(a_1+5),...,(a_n+5)\}$$. What would happen to the mean and the variance?
+
+<details>
+
+<summary>Show solutions</summary>
+
+We now have the situation
+
+$$ A=\{a_1,...,a_n\}\rightarrow A'=\{(a_1+5),...,(a_n+5)\} $$ Let's the old and new means and variances have the following names.
+
+\begin{align*}
+\overline{X}_{A} \rightarrow \overline{X}_{A'} \\
+S^2_{A} \rightarrow S^2_{A'} \end{align*}
+
+We will first consider what happens to the mean. Let's try to compute the mean for $A'$ 
+\begin{align*}
+\overline{X}_{A'}=\frac{1}{n}\sum^n_{i=1}(a_i+5)=\frac{1}{n}\sum^n_{i=1}5+\sum^n_{i=1}a_i \\
+=\frac{1}{n}5n+\sum^n_{i=1}a_i=5+\overline{X}_{A}=\overline{X}_{A}+5 \end{align*} 
+From this argument it should be clear that the 5 greater for $A'$ than for $A$, just like the case is for each of our observations.
+
+We can now move on to considering what will happen to the variance. \begin{align*}
+S_{A'}=\frac{1}{n-1}\sum^n_{i=1}\left((a_i+5)-\overline{X}_{A'}\right)^2
+=\frac{1}{n-1}\sum^n_{i=1}\left((a_i+5)-(\overline{X}_{A}+5)\right)^2 \\
+=\frac{1}{n-1}\sum^n_{i=1}\left(a_i+5-\overline{X}_{A}-5\right)^2 =\frac{1}{n-1}\sum^n_{i=1}\left(a_i+5-\overline{X}_{A}-5\right)^2 \\
+=\frac{1}{n-1}\sum^n_{i=1}\left(a_i-\overline{X}_{A}\right)^2
+=S_{A}^2 
+\end{align*}
+Alas, the variance has not changed at all! The reasoning here is actually quite simple. All our observations may have increased by 5, but so has the mean. This means that the absolute difference between each individual point and the mean is the same for both data sets. So even though the data is different, it doesn't vary any more or less in one case or the other.
+
+**Extra challenge**: There is only one key difference that would come to be if you were to *subtract* 5 to every data point instead of *adding* 5. What is that difference?
+
+</details>
+
+### Problem 25
+
+Consider the data $B=\{b_1, b_2, ..., b_n\}$. Now double every observation such that you get $B'=\{2b_1,...,2b_n\}$. What would happen to the mean and the variance?
+
+<details>
+
+<summary>Show solutions</summary>
+
+We now have the situation
+
+$$ B=\{b_1,...,b_n\}\rightarrow B'=\{2b_1,...,2b_n\} $$
+Let's the old and new means and variances have the following names.
+
+\begin{align*}
+\overline{X}_{B} \rightarrow \overline{X}_{B'} \\
+S^2_{B} \rightarrow S^2_{B'} \end{align*}
+
+We will first consider what happens to the mean. Let's try to compute the mean for $B'$
+\begin{align*}
+\overline{X}_{B'}=\frac{1}{n}\sum^n_{i=1}2b_i=
+2\frac{1}{n}\sum^n_{i=1}b_i=2\overline{X}_B \end{align*} It's very clear that if every data point was to double, so would the mean.
+
+Now we compute the new variance. 
+\begin{align*}
+S_{B'}=\frac{1}{n-1}\sum^n_{i=1}\left(2b_i-\overline{X}_{B'}\right)^2
+=\frac{1}{n-1}\sum^n_{i=1}\left(2b_i-2\overline{X}_{B}\right)^2 \\
+=\frac{1}{n-1}\sum^n_{i=1}\left(2(b_i-\overline{X}_B)\right)^2 =\frac{1}{n-1}\sum^n_{i=1}2^2\left(b_i-\overline{X}_B\right)^2 \\
+=\frac{1}{n-1}\sum^n_{i=1}4\left(b_i-\overline{X}_B\right)^2 
+=4\frac{1}{n-1}\sum^n_{i=1}\left(b_i-\overline{X}_B\right)^2 
+=4S_{B}^2 
+\end{align*}
+So, by multiplying each data point by 2, we end up multiplying the variance by 4 (2 squared!!). This also makes surprisingly intuitive sense. When we double each data point, we are also going to double the distance between that point and the mean. When computing for the variance we find the *squared* difference between the data points and the mean, and thus, we end up multiplying our variance with 2 squared.
+
+**Extra challenge**: What would happen to the variance if we were to *halve* the value of each data point instead of *doubling* them?
+
+</details>
+
+### Problem 26
+
+Consider the data $$C=\{c_1, c_2, ..., c_n\}$$. Now consider what would happen if you were to amend the data by adding more and more of a single observation, $d$ until you've added an endless amount of it. What would happen to the mode, median, 1st quartile, 3rd quartile, IQR, max, min, mean, variance and standard deviation? (Note: this exercise should be solved by reasoning rather than with rigorous mathematical arguments!!)
+
+<details>
+
+<summary>Show solutions</summary>
+
+To make every point clear, let's go summary statistic by summary statistic.
+
+**Mode**: The consequence on the mode is probably the most obvious one. Recall that the mode is the *most common* observation, i.e. the observation that occurs most often in the data. If the observation we are adding, $d$, is not already the mode, then by adding an endless amount of it, and only it, at some point it will become the mode. It is inevitable that when we have limited data, adding an endless amount of a singular observartion will eventually result in it becoming the mode. Consider a quick example $$C=\{1,2,1,1,1,3\}, \ d=5$$ If we were to add $d=5$ once or twice, the mode would still be 1. However, if we keep adding $d=5$, then eventually 5 *will* become the mode. Once $d$ has become the mode, the mode will not change if we keep adding to the data.
+
+**Median**: The consequence on the median is similar to the one on the mode, in that eventually, the median *will* end up equaling $d$. Eventually, by adding $d$ more and more to the data, more than half of the observartions will be $d$, and as such, no matter what $d$ equals, it will be the median. Let's consider the an example. $$C=\{1,1,1,1,2,3\}$$ If we consider $d=5$, as above, we see what by adding it once, it won't be the median. However if we were to add it 10 times for instance such that we get, more than half of the data would consist of $d$, which means that the middlemost values of the data would also *have to be* $d$. (The exact same case would play out if $d$ was a much higher maximum or the minimum value of the data). The cases where it would take the most for $d$ to become the median are the ones where it's either the maximum or the minimum, in all other cases it will take less for it to become the median.
+
+**1st and 3rd quartile**: The argument for the 1st and 3rd quartiles is exactly the same as for the median. The more iterations you add, the more of the data will be $d$. After a while close to all data in would equal $d$, and at that point it would also cover both the 1st and 3rd quartile.
+
+**IQR**: Recall that IQR is the difference between quartiles. From the argument above we know that at some point both the 1st and 3rd quartiles will be equal to $d$, and at that point the IQR will obviously be 0. Depending on the data the IQR could increase for a bit at first, but after either the 1st or 3rd quartile becomes $d$, it will start approaching 0.
+
+**Min and max**: The min and max will change *only* if $d$ is either the minimum or maximum value in the set, and only if $d$ is not part of the original data. However, if there are values that are larger and smaller than $d$ in the original data, they will *not* change, no matter how many iterations we add. Consider for example: $C=\{1,2,1,1,1,3\}, \ d=2$ We would then end up with $ C'=\{1,1,1,1,2,2,2,2,...,2,2,2,3\}$ No matte how many times 2 is added, the max and min will *not* change.
+
+**Mean**: In problem 8 we considered what would happen if we were to add a new observation with the same value as the mean, and we concluded there would be no change. So if $\overline{X}_{C}=d$, the mean would not change no matter how many times we were to iterate on the data by adding another observation, $d$. Now consider what would happen if $d$ is *different* from the. Let $m$ be the number of observations in the original data, and $n$ be the number we get when we add more observations. Computing the mean would then give us. 
+\begin{align*}
+\overline{X}_{C'}=\frac{1}{n}\left((n-m)d+\sum^m_{i=1}c_i\right)
+=\frac{1}{n}\left((n-m)d+m\overline{X}_C\right)\\
+=\frac{n-m}{n}d+\frac{m}{n}\overline{X}_C
+\end{align*}
+
+Now we let $n$ approach infinity.
+
+\begin{align*}
+\lim_{n\rightarrow\infty}\overline{X}_{C'}
+=\lim_{n\rightarrow\infty}\left(\frac{n-m}{n}d+\frac{m}{n}\overline{X}_C\right)\\
+=\lim_{n\rightarrow\infty}\frac{n-m}{n}d+\lim_{n\rightarrow\infty}\frac{m}{n}\overline{X}_C\\
+=1*d+0*\overline{X}_{C}=d
+\end{align*}
+
+This essentially means, that after a while the mean will end up very close to $d$, and it will keep approaching until it reaches $d$. The nature of a limit like this means that it will end up infinitesimally close as long as we iterate a finite amount of data points, but the limit still holds true. Summed up, we can think that when a single observation makes up a vast vast majority of the data, other single observations will have basically no effect on the mean.
+
+**Variance and standard deviation**: In problem 8 we also concluded that the variance would *decrease* when adding more observations close or equal to the mean. Since we know the limit of the mean is $d$ from above let's argue based on that. When almost all of the data is centered around one point, and every other observation is negligible in comparison, they will contribute almost nothing until the variance reaches 0. Directly following from this, we get that the standard deviation will also approach 0, as it is the positive square root of the variance.
+
+(Note: the algebraic argument below is very abridged, it's more to get the point across)
+
+\begin{align*}
+\lim_{n\rightarrow\infty}S_{C'}^2
+=\lim_{n\rightarrow\infty}\frac{1}{n-1}\left(\sum_{i=m+1}^n(d-\overline{X}_{C'})^2
++\sum^m_{i=1}(c_i-\overline{X}_{C'})^2\right) \\
+=\lim_{n\rightarrow\infty}\frac{1}{n-1}\sum_{i=m+1}^n(d-\overline{X}_{C'})^2+
+\lim_{n\rightarrow\infty}\frac{1}{n-1}\sum^m_{i=1}(c_i-\overline{X}_{C'})^2=\cdots
+\end{align*}
+
+We know that the first of these two sums will approach 0, as the difference between the mean and $d$ will approach 0. As such we will treat this first sum as 0. 
+
+\begin{align*}
+\cdots=0+\lim_{n\rightarrow\infty}\frac{1}{n-1}\sum^m_{i=1}(c_i-\overline{X}_{C'})^2\\
+=\lim_{n\rightarrow\infty}\frac{1}{n-1}\sum^m_{i=1}(c_i^2-2c_i\overline{X}_{C'}+\overline{X}_{C'}^2)\\
+=\lim_{n\rightarrow\infty}\frac{1}{n-1}*
+\lim_{n\rightarrow\infty}\sum^m_{i=1}(c_i^2-2c_i\overline{X}_{C'}+\overline{X}_{C'}^2)\\
+=\lim_{n\rightarrow\infty}\frac{1}{n-1}*
+\left(c_i^2-2c_id+d^2\right)=0*\left(c_i^2-2c_id+d^2\right)=0
+\end{align*}
+
+</details>
+
+
+### Problem 27
+
 You are given the following dataset containing information about survival of people travelling on the Titanic in 1912. The data contains counts of how many who survived or not of groups by ticket class, sex, age (child/adult). Can you categorize the columns based on whether they are categorical, numeric, binary, integer or real?
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE}
 data("Titanic")
 titanic_data <- as.data.frame(Titanic)
 knitr::kable(head(titanic_data,10))

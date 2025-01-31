@@ -1,1 +1,22 @@
 # What is a model?
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1051869156?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="What is a model?">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["What is a model?"](video-pdf/3/what_is_a_model.pdf)
+
+## Control questions
+
+1. What is a statistical model modelling?
+2. What is a residual?
+3. What does it mean to be identically distributed?
+4. What does it mean to be independently distributed?
