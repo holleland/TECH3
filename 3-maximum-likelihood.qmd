@@ -1,0 +1,19 @@
+# Maximum likelihood
+
+
+::: {style="padding:75% 0 0 0;position:relative;"}
+<iframe src='https://vimeo.com/showcase/11569380/embed?portrait=0&amp;byline=0' allowfullscreen frameborder='0' style='position:absolute;top:0;left:0;width:100%;height:100%;'>
+</iframe>
+:::
+
+Slides for ["Maximum Likelihood Estimation"](video-pdf/3/ML_estimation.pdf)
+
+Slides for ["Maximum Likelihood Estimator of mu"](video-pdf/3/MLE_mu.pdf)
+
+## Control questions
+
+1. What is the likelihood?
+2. Why do we use the log-likelihood?
+3. What are the assumptions for MLE?
+4. What is the Maximum Likelihood Estimator of the mean in a normal distribution?
+

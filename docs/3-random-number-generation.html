@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>discrete-random-variables-and-distributions – TECH3 Applied statistics</title>
+<title>random-number-generation – TECH3 Applied statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2-exercises.html" rel="next">
-<link href="./2-bayes-rule.html" rel="prev">
+<link href="./3-monte-carlo-simulation.html" rel="next">
+<link href="./3-maximum-likelihood.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-intro.html">Module 2: Probability, random variables, probability distributions and simulations.</a></li><li class="breadcrumb-item"><a href="./2-discrete-random-variables-and-distributions.html">Discrete random variables and distributions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-intro.html">Module 3: Estimation, sampling distributions and resampling</a></li><li class="breadcrumb-item"><a href="./3-random-number-generation.html">Random number generation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -272,7 +272,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-discrete-random-variables-and-distributions.html" class="sidebar-item-text sidebar-link active">
+  <a href="./2-discrete-random-variables-and-distributions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Discrete random variables and distributions</span></a>
   </div>
 </li>
@@ -343,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-random-number-generation.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-random-number-generation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Random number generation</span></a>
   </div>
 </li>
@@ -447,9 +447,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#discrete-random-variables-and-distributions" id="toc-discrete-random-variables-and-distributions" class="nav-link active" data-scroll-target="#discrete-random-variables-and-distributions">Discrete random variables and distributions</a>
+  <li><a href="#random-number-generation" id="toc-random-number-generation" class="nav-link active" data-scroll-target="#random-number-generation">Random number generation</a>
   <ul class="collapse">
-  <li><a href="#controll-questions" id="toc-controll-questions" class="nav-link" data-scroll-target="#controll-questions">Controll questions</a></li>
+  <li><a href="#control-questions" id="toc-control-questions" class="nav-link" data-scroll-target="#control-questions">Control questions</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -460,23 +460,23 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="discrete-random-variables-and-distributions" class="level1">
-<h1>Discrete random variables and distributions</h1>
+<section id="random-number-generation" class="level1">
+<h1>Random number generation</h1>
 <div style="padding:56.25% 0 0 0;position:relative;">
-<iframe src="https://player.vimeo.com/video/1051849415?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="discrete_random_variables_and_distributions">
+<iframe src="https://player.vimeo.com/video/1054272069?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Random Number Generation">
 </iframe>
 </div>
 <script src="https://player.vimeo.com/api/player.js"></script>
-<p><br></p>
-<p>Slides for <a href="video-pdf/2/discrete_probability.pdf">“Discrete random variables and distributions?”</a></p>
-<section id="controll-questions" class="level2">
-<h2 class="anchored" data-anchor-id="controll-questions">Controll questions</h2>
+<p>Slides for <a href="video-pdf/3/random_number_generation.pdf">“Random number generation”</a></p>
+<section id="control-questions" class="level2">
+<h2 class="anchored" data-anchor-id="control-questions">Control questions</h2>
 <ol type="1">
-<li>What is a random variable?</li>
-<li>What is a discrete random variable?</li>
-<li>What is the probability distribution of a discrete random variable?</li>
-<li>How do you visualize a discrete probability distribution?</li>
-<li>Can you name one discrete probability distribution?</li>
+<li>What is random?</li>
+<li>What do we call random numbers generated from an algorithm?</li>
+<li>Are these numbers truly random?</li>
+<li>What do mean when we say that numbers generated by the algorithms are deterministic?</li>
+<li>What does a setting a seed do?</li>
+<li>Can you explain the inverse transform sampling procedure?</li>
 </ol>
 
 
@@ -906,13 +906,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./2-bayes-rule.html" class="pagination-link" aria-label="Bayes rule">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bayes rule</span>
+      <a href="./3-maximum-likelihood.html" class="pagination-link" aria-label="Maximum likelihood">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Maximum likelihood</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2-exercises.html" class="pagination-link" aria-label="Exercises">
-        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./3-monte-carlo-simulation.html" class="pagination-link" aria-label="Monte Carlo simulation">
+        <span class="nav-page-text">Monte Carlo simulation</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

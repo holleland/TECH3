@@ -1,15 +1,24 @@
 # Bootstrap
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1051869027?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Bootstrap"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+::: {style="padding:75% 0 0 0;position:relative;"}
+<iframe src="https://vimeo.com/showcase/11567553/embed?portrait=0&amp;byline=0" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+
+</iframe>
+:::
+
 
 <br>
 
 Slides for ["Bootstrap"](video-pdf/3/bootstrap.pdf)
 
+Slides for ["Parametric Bootstrap"](video-pdf/3/parametric_bootstrap.pdf)
 
 ## Control questions
+
 1. What is the difference between sampling with and without replacement?
 2. What is a bootstrap sample?
 3. What is the purpose of the bootstrap?
-4. What does bootstraps have to do with the bootstrap method?
-<!-- 5. Is there a hidden reference to Bootstrap-Bill Turner in the Pirates of the Caribbean? -->
+4. What does bootstraps have to do with the bootstrap method? 
+5. What is the difference between bootstrap and parametric bootstrap?
+6. What are the main purposes of parametric bootstrap?
+
