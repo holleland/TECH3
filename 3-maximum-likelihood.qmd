@@ -6,9 +6,9 @@
 </iframe>
 :::
 
-Slides for ["Maximum Likelihood Estimation"](video-pdf/3/ML_estimation.pdf)
+Slides for ["Maximum Likelihood Estimation"](video-pdfs/3/ML_estimation.pdf)
 
-Slides for ["Maximum Likelihood Estimator of mu"](video-pdf/3/MLE_mu.pdf)
+Slides for ["Maximum Likelihood Estimator of mu"](video-pdfs/3/MLE_mu.pdf)
 
 ## Control questions
 

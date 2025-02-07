@@ -246,8 +246,7 @@ $$S_X=\sqrt{213.2}\approx14.6$$
 
 c)  Variance is hard to interpret directly, but the standard deviation is very simple. The standard deviation tells us that the average absolute difference from the mean in our data. Here we see that the standard deviation is 14.6cm, so on average the people in this group are 14.6 away from the the mean in terms of height. This means the we would expect a random person from this group to be either about 159cm tall or 188cm tall. It's not all that simple to say if this is a lot or not, that depends on the data collected. If this is a sample from a group of Norwegian men age 20, this could seem like a very big standard deviation and variance. However, if this is a group of men and women with an age range from 14 to 35, this might not seem like such a big variance.
 
-d)  If we were to only add more people of the average height we found (174cm) the variance would decrease. There are two effects in play here. The when we add more observations our n gets bigger, and thus we divide by a larger number, but we also have to add another squared difference from the mean. In this case we add another observation that's exactly equal to the mean. Firstly what effect will this have on the mean itself? Intuitively, the mean will **not** change in this case. Notice that the squared difference between the mean and itself is 0.
-$$(\overline{X}-\overline{X})^2=(174-174)^2=0^2=0.$$
+d)  If we were to only add more people of the average height we found (174cm) the variance would decrease. There are two effects in play here. The when we add more observations our n gets bigger, and thus we divide by a larger number, but we also have to add another squared difference from the mean. In this case we add another observation that's exactly equal to the mean. Firstly what effect will this have on the mean itself? Intuitively, the mean will **not** change in this case. Notice that the squared difference between the mean and itself is 0. $$(\overline{X}-\overline{X})^2=(174-174)^2=0^2=0.$$
 
 Let's now add this to our equation for variance. Since we have one more observation we will be dividing by (n-1)+1=n, instead of n-1.
 
@@ -364,7 +363,6 @@ S_X^2&=\frac{1}{6-1}\left(5(49-50)^2+(55-50)^2 \right) \\
 \end{align*}
 
 </details>
-
 
 ### Problem 12
 
@@ -1152,11 +1150,9 @@ $$ A=\{a_1,...,a_n\}\rightarrow A'=\{(a_1+5),...,(a_n+5)\} $$ Let's the old and 
 \overline{X}_{A} \rightarrow \overline{X}_{A'} \\
 S^2_{A} \rightarrow S^2_{A'} \end{align*}
 
-We will first consider what happens to the mean. Let's try to compute the mean for $A'$ 
-\begin{align*}
+We will first consider what happens to the mean. Let's try to compute the mean for $A'$ \begin{align*}
 \overline{X}_{A'}=\frac{1}{n}\sum^n_{i=1}(a_i+5)=\frac{1}{n}\sum^n_{i=1}5+\sum^n_{i=1}a_i \\
-=\frac{1}{n}5n+\sum^n_{i=1}a_i=5+\overline{X}_{A}=\overline{X}_{A}+5 \end{align*} 
-From this argument it should be clear that the 5 greater for $A'$ than for $A$, just like the case is for each of our observations.
+=\frac{1}{n}5n+\sum^n_{i=1}a_i=5+\overline{X}_{A}=\overline{X}_{A}+5 \end{align*} From this argument it should be clear that the 5 greater for $A'$ than for $A$, just like the case is for each of our observations.
 
 We can now move on to considering what will happen to the variance. \begin{align*}
 S_{A'}=\frac{1}{n-1}\sum^n_{i=1}\left((a_i+5)-\overline{X}_{A'}\right)^2
@@ -1164,8 +1160,7 @@ S_{A'}=\frac{1}{n-1}\sum^n_{i=1}\left((a_i+5)-\overline{X}_{A'}\right)^2
 =\frac{1}{n-1}\sum^n_{i=1}\left(a_i+5-\overline{X}_{A}-5\right)^2 =\frac{1}{n-1}\sum^n_{i=1}\left(a_i+5-\overline{X}_{A}-5\right)^2 \\
 =\frac{1}{n-1}\sum^n_{i=1}\left(a_i-\overline{X}_{A}\right)^2
 =S_{A}^2 
-\end{align*}
-Alas, the variance has not changed at all! The reasoning here is actually quite simple. All our observations may have increased by 5, but so has the mean. This means that the absolute difference between each individual point and the mean is the same for both data sets. So even though the data is different, it doesn't vary any more or less in one case or the other.
+\end{align*} Alas, the variance has not changed at all! The reasoning here is actually quite simple. All our observations may have increased by 5, but so has the mean. This means that the absolute difference between each individual point and the mean is the same for both data sets. So even though the data is different, it doesn't vary any more or less in one case or the other.
 
 **Extra challenge**: There is only one key difference that would come to be if you were to *subtract* 5 to every datapoint instead of *adding* 5. What is that difference?
 
@@ -1181,28 +1176,24 @@ Consider the data $B=\{b_1, b_2, ..., b_n\}$. Now double every observation such 
 
 We now have the situation
 
-$$ B=\{b_1,...,b_n\}\rightarrow B'=\{2b_1,...,2b_n\} $$
-Let's the old and new means and variances have the following names.
+$$ B=\{b_1,...,b_n\}\rightarrow B'=\{2b_1,...,2b_n\} $$ Let's the old and new means and variances have the following names.
 
 \begin{align*}
 \overline{X}_{B} \rightarrow \overline{X}_{B'} \\
 S^2_{B} \rightarrow S^2_{B'} \end{align*}
 
-We will first consider what happens to the mean. Let's try to compute the mean for $B'$
-\begin{align*}
+We will first consider what happens to the mean. Let's try to compute the mean for $B'$ \begin{align*}
 \overline{X}_{B'}=\frac{1}{n}\sum^n_{i=1}2b_i=
 2\frac{1}{n}\sum^n_{i=1}b_i=2\overline{X}_B \end{align*} It's very clear that if every datapoint was to double, so would the mean.
 
-Now we compute the new variance. 
-\begin{align*}
+Now we compute the new variance. \begin{align*}
 S_{B'}=\frac{1}{n-1}\sum^n_{i=1}\left(2b_i-\overline{X}_{B'}\right)^2
 =\frac{1}{n-1}\sum^n_{i=1}\left(2b_i-2\overline{X}_{B}\right)^2 \\
 =\frac{1}{n-1}\sum^n_{i=1}\left(2(b_i-\overline{X}_B)\right)^2 =\frac{1}{n-1}\sum^n_{i=1}2^2\left(b_i-\overline{X}_B\right)^2 \\
 =\frac{1}{n-1}\sum^n_{i=1}4\left(b_i-\overline{X}_B\right)^2 
 =4\frac{1}{n-1}\sum^n_{i=1}\left(b_i-\overline{X}_B\right)^2 
 =4S_{B}^2 
-\end{align*}
-So, by multiplying each datapoint by 2, we end up multiplying the variance by 4 (2 squared!!). This also makes surprisingly intuitive sense. When we double each datapoint, we are also going to double the distance between that point and the mean. When computing for the variance we find the *squared* difference between the data points and the mean, and thus, we end up multiplying our variance with 2 squared.
+\end{align*} So, by multiplying each datapoint by 2, we end up multiplying the variance by 4 (2 squared!!). This also makes surprisingly intuitive sense. When we double each datapoint, we are also going to double the distance between that point and the mean. When computing for the variance we find the *squared* difference between the data points and the mean, and thus, we end up multiplying our variance with 2 squared.
 
 **Extra challenge**: What would happen to the variance if we were to *halve* the value of each datapoint instead of *doubling* them?
 
@@ -1226,10 +1217,9 @@ To make every point clear, let's go summary statistic by summary statistic.
 
 **IQR**: Recall that IQR is the difference between quartiles. From the argument above we know that at some point both the 1st and 3rd quartiles will be equal to $d$, and at that point the IQR will obviously be 0. Depending on the data the IQR could increase for a bit at first, but after either the 1st or 3rd quartile becomes $d$, it will start approaching 0.
 
-**Min and max**: The min and max will change *only* if $d$ is either the minimum or maximum value in the set, and only if $d$ is not part of the original data. However, if there are values that are larger and smaller than $d$ in the original data, they will *not* change, no matter how many iterations we add. Consider for example: $C=\{1,2,1,1,1,3\}, \ d=2$ We would then end up with $ C'=\{1,1,1,1,2,2,2,2,...,2,2,2,3\}$ No matte how many times 2 is added, the max and min will *not* change.
+**Min and max**: The min and max will change *only* if $d$ is either the minimum or maximum value in the set, and only if $d$ is not part of the original data. However, if there are values that are larger and smaller than $d$ in the original data, they will *not* change, no matter how many iterations we add. Consider for example: $C=\{1,2,1,1,1,3\}, \ d=2$ We would then end up with \$ C'={1,1,1,1,2,2,2,2,...,2,2,2,3}\$ No matte how many times 2 is added, the max and min will *not* change.
 
-**Mean**: In problem 8 we considered what would happen if we were to add a new observation with the same value as the mean, and we concluded there would be no change. So if $\overline{X}_{C}=d$, the mean would not change no matter how many times we were to iterate on the data by adding another observation, $d$. Now consider what would happen if $d$ is *different* from the. Let $m$ be the number of observations in the original data, and $n$ be the number we get when we add more observations. Computing the mean would then give us. 
-\begin{align*}
+**Mean**: In problem 8 we considered what would happen if we were to add a new observation with the same value as the mean, and we concluded there would be no change. So if $\overline{X}_{C}=d$, the mean would not change no matter how many times we were to iterate on the data by adding another observation, $d$. Now consider what would happen if $d$ is *different* from the. Let $m$ be the number of observations in the original data, and $n$ be the number we get when we add more observations. Computing the mean would then give us. \begin{align*}
 \overline{X}_{C'}=\frac{1}{n}\left((n-m)d+\sum^m_{i=1}c_i\right)
 =\frac{1}{n}\left((n-m)d+m\overline{X}_C\right)\\
 =\frac{n-m}{n}d+\frac{m}{n}\overline{X}_C
@@ -1258,7 +1248,7 @@ This essentially means, that after a while the mean will end up very close to $d
 \lim_{n\rightarrow\infty}\frac{1}{n-1}\sum^m_{i=1}(c_i-\overline{X}_{C'})^2=\cdots
 \end{align*}
 
-We know that the first of these two sums will approach 0, as the difference between the mean and $d$ will approach 0. As such we will treat this first sum as 0. 
+We know that the first of these two sums will approach 0, as the difference between the mean and $d$ will approach 0. As such we will treat this first sum as 0.
 
 \begin{align*}
 \cdots=0+\lim_{n\rightarrow\infty}\frac{1}{n-1}\sum^m_{i=1}(c_i-\overline{X}_{C'})^2\\
@@ -1270,7 +1260,6 @@ We know that the first of these two sums will approach 0, as the difference betw
 \end{align*}
 
 </details>
-
 
 ### Problem 27
 

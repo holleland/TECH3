@@ -12,7 +12,7 @@
 
 <br>
 
-Slides for ["Basic probability rules"](video-pdfs/2//Basic_probability_rules.pdf)
+Slides for ["Basic probability rules"](video-pdfs/2/Basic_probability_rules.pdf)
 
 ## Controll questions
 

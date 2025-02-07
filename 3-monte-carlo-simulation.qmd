@@ -1,17 +1,22 @@
 # Monte Carlo simulation
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1051869049?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Monte Carlo simulation"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1051869049?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Monte Carlo simulation">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
 
 <br>
 
-Slides for ["Monte Carlo simulation"](video-pdf/3/montecarlo.pdf)
-
+Slides for ["Monte Carlo simulation"](video-pdfs/3/montecarlo.pdf)
 
 ## Control questions
 
-1. What is the purpose of using Monte Carlo simulations?
-2. What does the law of large numbers have to do with Monte Carlo simulations?
-3. What is the expected total score after the 6th round in Yatzi?
-4. What is the probabilty of achieving the bonus in Yatzi?
-
-
+1.  What is the purpose of using Monte Carlo simulations?
+2.  What does the law of large numbers have to do with Monte Carlo simulations?
+3.  What is the expected total score after the 6th round in Yatzi?
+4.  What is the probabilty of achieving the bonus in Yatzi?

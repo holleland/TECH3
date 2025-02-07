@@ -12,10 +12,10 @@
 
 <br>
 
-Slides for ["Sampling error and distribution"](video-pdf/3/sampling_error.pdf)
+Slides for ["Sampling error and distribution"](video-pdfs/3/sampling_error.pdf)
 
 ## Control questions
 
-1. What is a sampling error?
-2. What is a sampling distribution?
-3. How does the sample mean standard deviation depend on the sample size?
+1.  What is a sampling error?
+2.  What is a sampling distribution?
+3.  How does the sample mean standard deviation depend on the sample size?

@@ -12,11 +12,11 @@
 
 <br>
 
-Slides for ["What is a model?"](video-pdf/3/what_is_a_model.pdf)
+Slides for ["What is a model?"](video-pdfs/3/what_is_a_model.pdf)
 
 ## Control questions
 
-1. What is a statistical model modelling?
-2. What is a residual?
-3. What does it mean to be identically distributed?
-4. What does it mean to be independently distributed?
+1.  What is a statistical model modelling?
+2.  What is a residual?
+3.  What does it mean to be identically distributed?
+4.  What does it mean to be independently distributed?

@@ -6,19 +6,17 @@
 </iframe>
 :::
 
-
 <br>
 
-Slides for ["Bootstrap"](video-pdf/3/bootstrap.pdf)
+Slides for ["Bootstrap"](video-pdfs/3/bootstrap.pdf)
 
-Slides for ["Parametric Bootstrap"](video-pdf/3/parametric_bootstrap.pdf)
+Slides for ["Parametric Bootstrap"](video-pdfs/3/parametric_bootstrap.pdf)
 
 ## Control questions
 
-1. What is the difference between sampling with and without replacement?
-2. What is a bootstrap sample?
-3. What is the purpose of the bootstrap?
-4. What does bootstraps have to do with the bootstrap method? 
-5. What is the difference between bootstrap and parametric bootstrap?
-6. What are the main purposes of parametric bootstrap?
-
+1.  What is the difference between sampling with and without replacement?
+2.  What is a bootstrap sample?
+3.  What is the purpose of the bootstrap?
+4.  What does bootstraps have to do with the bootstrap method?
+5.  What is the difference between bootstrap and parametric bootstrap?
+6.  What are the main purposes of parametric bootstrap?

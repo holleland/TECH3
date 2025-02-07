@@ -8,9 +8,9 @@
 
 <br>
 
-Slides for ["Principles of good visualization"](video-pdf/1/principles_of_good_visualization.pdf)
+Slides for ["Principles of good visualization"](video-pdfs/1/principles_of_good_visualization.pdf)
 
-Slides for ["Accommodating human limitations"](video-pdf/1/accommodating_human_limitations.pdf)
+Slides for ["Accommodating human limitations"](video-pdfs/1/accommodating_human_limitations.pdf)
 
 ## Controll questions
 

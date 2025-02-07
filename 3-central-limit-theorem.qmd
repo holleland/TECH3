@@ -1,15 +1,24 @@
 # Central Limit Theorem
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1054272095?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Central Limit Theorem"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1054272095?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Central Limit Theorem">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
 
 <br>
 
-Slides for ["Central limit theorem"](video-pdf/3/central_limit_theorem.pdf)
+Slides for ["Central limit theorem"](video-pdfs/3/central_limit_theorem.pdf)
 
 ## Control questions
 
-1. What does the central limit theorem tell us?
-2. What are the assumptions for the central limit theorem?
-3. What is the asymptotic variance of the mean?
-4. What is becoming large in the central limit theorem?
-5. Will a sum also be normally distributed when the sample size is large?
-6. Does the sampled data have to be generated from a normal distribution for the central limit theorem to hold?
+1.  What does the central limit theorem tell us?
+2.  What are the assumptions for the central limit theorem?
+3.  What is the asymptotic variance of the mean?
+4.  What is becoming large in the central limit theorem?
+5.  Will a sum also be normally distributed when the sample size is large?
+6.  Does the sampled data have to be generated from a normal distribution for the central limit theorem to hold?
