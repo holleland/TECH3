@@ -8,6 +8,7 @@ Slides for ["Expectation and variance of discrete random variables"](video-pdfs/
 
 ## Controll questions
 
+- How do you compute the expected value of discrete random variables?
 - How do you interpret an expected value?
 - How do you compute the variance of a discrete random variable?
 - How do you interpret the variance?
