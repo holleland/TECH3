@@ -67,6 +67,7 @@ website:
              - 2-independent-events.qmd
              - 2-bayes-rule.qmd
              - 2-discrete-random-variables-and-distributions.qmd
+             - 2-exp-var-discrete.qmd
              - 2-exercises.qmd
          - section: "Module 3: Estimation, sampling distributions and resampling"
            contents: 
