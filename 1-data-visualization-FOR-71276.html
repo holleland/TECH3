@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TECH3 Applied statistics</title>
+<title>data-visualization – TECH3 Applied statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
+<script src="docs/site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="docs/site_libs/quarto-nav/headroom.min.js"></script>
+<script src="docs/site_libs/clipboard/clipboard.min.js"></script>
+<script src="docs/site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="docs/site_libs/quarto-search/fuse.min.js"></script>
+<script src="docs/site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="1-plotting-tools.html" rel="next">
+<link href="1-summary-statistics.html" rel="prev">
+<script src="docs/site_libs/quarto-html/quarto.js"></script>
+<script src="docs/site_libs/quarto-html/popper.min.js"></script>
+<script src="docs/site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="docs/site_libs/quarto-html/anchor.min.js"></script>
+<link href="docs/site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="docs/site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="docs/site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="docs/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="docs/site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,26 +68,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-
 
 
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/nhh.png" alt="" class="navbar-logo">
+    <a href="index.html" class="navbar-brand navbar-brand-logo">
+    <img src="images/nhh.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="index.html">
     <span class="navbar-title">TECH3 Applied statistics</span>
     </a>
   </div>
@@ -96,23 +94,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./calender.html"> 
+    <a class="nav-link" href="calender.html"> 
 <span class="menu-text">Calender</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./1-intro.html"> 
+    <a class="nav-link active" href="1-intro.html" aria-current="page"> 
 <span class="menu-text">Modules</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./oldexams.html"> 
+    <a class="nav-link" href="oldexams.html"> 
 <span class="menu-text">Old exams</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reference.html"> 
+    <a class="nav-link" href="reference.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
 </ul>
@@ -121,22 +119,343 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="1-intro.html">Module 1: Summarizing and visualizing data</a></li><li class="breadcrumb-item"><a href="docs/1-data-visualization.html">Data visualization principles</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 1: Summarizing and visualizing data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-textbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-statistical-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Thinking</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-working-with-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-summarizing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summarizing data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-summary-statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary statistics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="docs/1-data-visualization.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Data visualization principles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-plotting-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plotting tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-idealised_representations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Idealised representations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-gapminder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gapminder example of good visualization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="1-exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 2: Probability, random variables, probability distributions and simulations.</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-textbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-what-is-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is probability?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-basic-concepts-in-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic concepts in probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-basic-probability-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic probability rules</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-conditional-probability.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conditional probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-independent-events.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Independent events</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-bayes-rule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bayes rule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-discrete-random-variables-and-distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discrete random variables and distributions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-exp-var-discrete.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Expectation and variance of discrete random variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="2-exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 3: Estimation, sampling distributions and resampling</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-textbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-population-vs-sample.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Population vs sample</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-what-is-a-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is a model?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-sampling-error.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sampling error and distribution</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-central-limit-theorem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Central Limit Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-what-is-an-estimator.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">What is an estimator?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-maximum-likelihood.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximum likelihood</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-random-number-generation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Random number generation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-monte-carlo-simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monte Carlo simulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-bootstrap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bootstrap</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="3-exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 4: Designing studies, hypothesis testing, and quantifying effects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="4-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="4-textbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="4-videos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Videos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="4-exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Module 5: Measuring relationships and fitting models</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="5-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="5-textbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Textbook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="5-videos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Videos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="5-exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#data-visualization-principles" id="toc-data-visualization-principles" class="nav-link active" data-scroll-target="#data-visualization-principles">Data visualization principles</a>
   <ul class="collapse">
-  <li><a href="#lecture-plan" id="toc-lecture-plan" class="nav-link" data-scroll-target="#lecture-plan">Lecture plan</a></li>
-  <li><a href="#literature" id="toc-literature" class="nav-link" data-scroll-target="#literature">Literature</a></li>
-  <li><a href="#curriculum" id="toc-curriculum" class="nav-link" data-scroll-target="#curriculum">Curriculum</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
+  <li><a href="#controll-questions" id="toc-controll-questions" class="nav-link" data-scroll-target="#controll-questions">Controll questions</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -147,167 +466,29 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="introduction" class="level1 unnumbered">
-<h1 class="unnumbered">Introduction</h1>
-<p>Welcome to the website for TECH3 Applied Statistics. We will use this website as a supplement to lectures. The website is ongoing development, so not all subjects will have content yet. Below you will find a detailed (preliminary) lecture plan, link to the textbook and curriculum. The course description can be found <a href="https://www.nhh.no/en/courses/applied-statistics/">here</a>.</p>
-<section id="lecture-plan" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-plan">Lecture plan</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-condensed table-hover caption-top table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Week</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Module</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Monday 14:15 - 16:00</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Thursday 14:15 - 16:00</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">2</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">Module 1</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">06.01: <strong>Introduction to TECH3/Overview lecture</strong> in Aud D</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">09.01: <strong>Collaborative learning session</strong> in Aud J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">3</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">Module 1</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">13.01: <strong>Practical session</strong> in Aud C.</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">16.01: <strong>Case session</strong> in Aud J</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; color: white !important; background-color: black !important;">4</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">Module 2</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">20.01: <strong>Overview lecture</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">23.01: <strong>Collaborative learning session</strong> in Aud J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; color: white !important; background-color: black !important;">5</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">Module 2</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">27.01: <strong>Overview lecture</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">30.01: <strong>Exercise session</strong> in Aud J</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; color: white !important; background-color: black !important;">6</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">Module 2</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">03.02: No lecture</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">06.02: <strong>Case session</strong> in Aud J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">7</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">Module 3</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">10.02: <strong>Overview lecture</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">13.02: <strong>Collaborative learning session</strong> in Aud J</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">8</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">Module 3</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">17.02: <strong>Overview lecture</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">20.02: No lecture.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">9</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">Module 3</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">24.02: <strong>Practical session</strong> in Aud C.</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">27.02: <strong>Case session</strong> in Aud J</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; color: white !important; background-color: black !important;">10</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">Module 4</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">03:03: <strong>Overview lecture</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">06.03: <strong>Oracle session</strong> in Aud J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; color: white !important; background-color: black !important;">11</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">Module 4</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">10:03: <strong>Overview lecture</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">13.03: <strong>Collaborative learning session</strong> in Aud J.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; color: white !important; background-color: black !important;">12</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">Module 4</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">17.03: <strong>Practical session</strong> i Aud C</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">20.03: No lecture (Symposium)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">13</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">Module 5</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">24.03: <strong>Overview lecture</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">26.03: <strong>Case session</strong> in Aud J</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">14</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">Module 5</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">31.03: <strong>Practical session</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">03.04: <strong>Collaborative learning session</strong> in Aud J</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">15</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">Module 5</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">07.04: <strong>Overview lecture</strong> in Aud C</td>
-<td style="text-align: left; color: white !important; background-color: rgba(181, 152, 59, 255) !important;">10.04: <strong>Case session</strong> in Aud J</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; color: white !important; background-color: black !important;">16</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">Exam preparations</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">14.04: No lecture (Easter)</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">17.04: No lecture (Easter)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; color: white !important; background-color: black !important;">17</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">Exam preparations</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">21.04: No lecture (Easter)</td>
-<td style="text-align: left; color: white !important; background-color: black !important;">24.04: <strong>Exam prepartion session?</strong> in Aud J</td>
-</tr>
-</tbody>
-</table>
-
-
+<section id="data-visualization-principles" class="level1">
+<h1>Data visualization principles</h1>
+<div style="padding:75% 0 0 0;position:relative;">
+<iframe src="https://vimeo.com/showcase/11484032/embed?portrait=0&amp;byline=0" allowfullscreen="" frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+</iframe>
 </div>
-</div>
-</section>
-<section id="literature" class="level2">
-<h2 class="anchored" data-anchor-id="literature">Literature</h2>
+<p><br></p>
+<p>Slides for <a href="video-pdfs/1/principles_of_good_visualization.pdf">“Principles of good visualization”</a></p>
+<p>Slides for <a href="video-pdfs/1/accommodating_human_limitations.pdf">“Accommodating human limitations”</a></p>
+<section id="controll-questions" class="level2">
+<h2 class="anchored" data-anchor-id="controll-questions">Controll questions</h2>
 <ul>
-<li><a href="https://statsthinking21.github.io/statsthinking21-core/index.html">Statistical Thinking in the 21st Century</a></li>
-<li><a href="https://statsthinking21.github.io/statsthinking21-python/index.html">Python Companion to Statistical Thinking in the 21st Century</a></li>
-</ul>
-</section>
-<section id="curriculum" class="level2">
-<h2 class="anchored" data-anchor-id="curriculum">Curriculum</h2>
-<p>All the material on this website, including chapters 1-10, 12-15, and 17 of <a href="https://statsthinking21.github.io/statsthinking21-core/index.html">Statistical Thinking in the 21st Century</a> and <a href="https://statsthinking21.github.io/statsthinking21-python/index.html">Python Companion to Statistical Thinking in the 21st Century</a>.</p>
-</section>
-<section id="learning-outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h2>
-<p>Upon completing the course, the students can:</p>
-<section id="knowledge" class="level4">
-<h4 class="anchored" data-anchor-id="knowledge">Knowledge</h4>
-<ul>
-<li>Understand basic statistical theory and corresponding methods, and how to apply this knowledge in practical situations.</li>
-</ul>
-</section>
-<section id="skills" class="level4">
-<h4 class="anchored" data-anchor-id="skills">Skills</h4>
-<ul>
-<li>Explore data using software that can summarize and visualize data.</li>
-<li>Master basic probability theory.</li>
-<li>Make inferences about an entire population based on a sample of individuals from that population using both classical statistical methods and modern resampling techniques.</li>
-<li>Design basic experiments, perform hypothesis testing, and quantify effects.</li>
-<li>Measure relationships between both categorical and continuous variables.</li>
-<li>Fit and evaluate regression models for both inference and prediction.</li>
-</ul>
-</section>
-<section id="general-competence" class="level4">
-<h4 class="anchored" data-anchor-id="general-competence">General Competence</h4>
-<ul>
-<li>Identify and solve statistical problems.</li>
-<li>Perform basic data analysis using modern computer tools.</li>
-<li>Perform data-driven decision-making for a sustainable future.</li>
+<li>Why should you always show the data?</li>
+<li>What does it mean to maximize the data/ink ratio?</li>
+<li>You may think that bar plots in 3D looks cool. Why should we not use that?</li>
+<li>What is distorting the data?</li>
+<li>If you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?</li>
+<li>What does it mean to be “kind to the colorblind”?</li>
+<li>Why should you never use a pie chart? Ever.</li>
+<li>What would be a good alternative to a pie chart?</li>
 </ul>
 
 
-</section>
 </section>
 </section>
 
@@ -732,6 +913,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="1-summary-statistics.html" class="pagination-link" aria-label="Summary statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Summary statistics</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="1-plotting-tools.html" class="pagination-link" aria-label="Plotting tools">
+        <span class="nav-page-text">Plotting tools</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
