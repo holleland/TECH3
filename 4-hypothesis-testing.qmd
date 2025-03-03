@@ -1,0 +1,10 @@
+# Hypothesis testing
+
+*… no scientific worker has a fixed level of significance at which from year to year, and in all circumstances, he rejects hypotheses; he rather gives his mind to each particular case in the light of his evidence and his ideas.*
+
+Sir Ronald A. Fisher (1956)
+
+
+### Recommended reading
+
+- [Mindless statistics by Gerd Gigerenzer, Journal of Socio-Economics](https://doi.org/10.1016/j.socec.2004.09.033)
