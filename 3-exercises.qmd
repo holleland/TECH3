@@ -231,6 +231,6 @@ Find the MLE of $\theta$.
 $$L(\theta)=f(x_1,\ldots, x_n|\theta) = \theta^n \prod_{i=1}^nx_i^{\theta -1}$$
 $$\log L = n\log \theta + (\theta-1)\sum_{i=1}^n\log x_i$$
 $$\frac{\partial \log L}{\partial \theta} = \frac{n}{\theta} + \sum_{i=1}^n\log x_i=0$$
-$$\widehat \theta = \frac{-1}{n}\sum_{i=1}^n \log x_i.$$
+$$\widehat \theta = \frac{-n}{\sum_{i=1}^n \log x_i}.$$
 </details>
 
