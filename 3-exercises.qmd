@@ -220,4 +220,17 @@ c) In the end, there are only two outcomes of the experiment. Either the gambler
 
 </details>
 
+### Problem 10
+Let $X_1,\ldots, X_n$ be a random sample from the probability density function
+$$f(x|\theta) = \theta x^{\theta -1},\quad 0<\theta<\infty,\quad 0\le x\le1.$$
+Find the MLE of $\theta$. 
+
+
+<details>
+<summary>Show solutions</summary>
+$$L(\theta)=f(x_1,\ldots, x_n|\theta) = \theta^n \prod_{i=1}^nx_i^{\theta -1}$$
+$$\log L = n\log \theta + (\theta-1)\sum_{i=1}^n\log x_i$$
+$$\frac{\partial \log L}{\partial \theta} = \frac{n}{\theta} + \sum_{i=1}^n\log x_i=0$$
+$$\widehat \theta = \frac{-1}{n}\sum_{i=1}^n \log x_i.$$
+</details>
 
