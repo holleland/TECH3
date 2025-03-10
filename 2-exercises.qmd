@@ -96,7 +96,6 @@ When the two events $A$ and $B$ are disjoint, there are no possible situation th
 
 </details>
 
-
 ### Problem 8
 
 You throw a fair six-sided dice, compute the probabilities of the following events.
@@ -645,6 +644,3 @@ $$A\cap B=\emptyset \Rightarrow P(A\cap B)=0$$
 Let's plug this into the definition of a conditional probability.
 
 $$ P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{0}{P(B)}=0 $$
-
-
-

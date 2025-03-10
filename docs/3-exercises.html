@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -69,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -459,18 +522,219 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link active" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
+  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
+  <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
+  <li><a href="#problem-9" id="toc-problem-9" class="nav-link" data-scroll-target="#problem-9">Problem 9</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3-intro.html">Module 3: Estimation, sampling distributions and resampling</a></li><li class="breadcrumb-item"><a href="./3-exercises.html">Exercises</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Exercises</h1>
+</div>
 
 
 
-<section id="exercises" class="level1">
-<h1>Exercises</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="problem-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
+<p>The diameter of a randomly selected mechanical nut is a random variable with mean 10 mm and standard deviation 0.04 mm.</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(\bar X\)</span> is the sample mean diameter of a random sample of <span class="math inline">\(n=16\)</span> nuts, where is the sampling distribution of <span class="math inline">\(\bar X\)</span> centered, and what is the standard deviation of the <span class="math inline">\(\bar X\)</span> distribution?</p></li>
+<li><p>Answer the question in (a) for a sample size of <span class="math inline">\(n=64\)</span> nuts.</p></li>
+<li><p>For which of the two random samples from (a) or (b), is <span class="math inline">\(\bar X\)</span> more likely to be within 0.01 mm from 10 mm? Explain your reasoning.</p></li>
+</ol>
+<p>Suppose the distrution of the diameter is normal.</p>
+<ol start="5" type="a">
+<li><p>Calculate <span class="math inline">\(P(9.99\le \bar X \le 10.01)\)</span> when <span class="math inline">\(n=16\)</span>.</p></li>
+<li><p>How likely is it that the sample mean diameter exceeds 12.01 when <span class="math inline">\(n=25\)</span>.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>10 and 0.01.</p></li>
+<li><p>10 and 0.005</p></li>
+<li><p>With less variability, the second sample is more closely centered near 10.</p></li>
+<li><p><span class="math inline">\(P(9.99\le \bar X \le 10.01)=P(\bar X \le 10.01)-P(\bar X \le 9.99) = 0.84-0.16= 0.68\)</span>, getting the numbers from the code below:</p></li>
+</ol>
+<div id="89b4ae9e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  stats.norm.cdf(<span class="fl">10.01</span>, loc <span class="op">=</span> <span class="dv">10</span>, scale <span class="op">=</span> <span class="fl">0.04</span><span class="op">/</span>np.sqrt(<span class="dv">16</span>))<span class="op">-</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  stats.norm.cdf(<span class="fl">9.99</span>, loc <span class="op">=</span> <span class="dv">10</span>, scale <span class="op">=</span> <span class="fl">0.04</span><span class="op">/</span>np.sqrt(<span class="dv">16</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.6826894921370756</code></pre>
+</div>
+</div>
+<ol start="5" type="a">
+<li><span class="math inline">\(P(\bar X_{25}&gt;10.01)=0.106\)</span>.</li>
+</ol>
+<div id="46c38a8e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span><span class="op">-</span>stats.norm.cdf(<span class="fl">10.01</span>, loc <span class="op">=</span> <span class="dv">10</span>, scale <span class="op">=</span> <span class="fl">0.04</span><span class="op">/</span>np.sqrt(<span class="dv">25</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.10564977366686001</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="problem-2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<p>The tip percentage at a restaurant has a mean value of 18% and standard deviation of 6%.</p>
+<ol type="a">
+<li><p>What is the apporixmate probability that the sample mean tip percentage for a random sample of 40 bills is between 16% and 19%?</p></li>
+<li><p>If the sample size had been rather 15 than 40, could the probability requrested in part (a) be caculated from the given information?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li>0.8366</li>
+<li>No.</li>
+</ol>
+</details>
+</section>
+<section id="problem-3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
+<p>Suppose the sugar content (g per cm³) of a randomly selected fruit from a certain orchard is normally distributed with a mean of 2.65 and a standard deviation of 0.85.</p>
+<ol type="a">
+<li><p>If a random sample of 25 fruits is selected, what is the probability that the sample average sugar content is at most 3.00? Between 2.65 and 3.00?</p></li>
+<li><p>How large a sample size would be required to ensure that the first probability in part (a) is at least 0.99?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li>0.9802 and 0.4802</li>
+<li><ol start="32" type="1">
+<li></li>
+</ol></li>
+</ol>
+</details>
+</section>
+<section id="problem-4" class="level3">
+<h3 class="anchored" data-anchor-id="problem-4">Problem 4</h3>
+<p>The Central Limit Theorem states that the sample mean <span class="math inline">\(\bar X\)</span> follows an approximately normal distribution when the sample size is sufficiently large. More precisely, the theorem asserts that the standardized version of <span class="math inline">\(\bar X\)</span> given by <span class="math display">\[\frac{\bar X-\mu}{\sigma/\sqrt{n}},\]</span> converges in distribution to the standard normal distribution as <span class="math inline">\(n\)</span> increases.</p>
+<p>How does this relate to the Law of Large Numbers? If the standardized <span class="math inline">\(\bar X\)</span> follows an approximate standard normal distribution, what does this imply about the distribution of <span class="math inline">\(\bar X\)</span> itself?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+The Law of Large numbers states that <span class="math inline">\(\bar X\)</span> will approach <span class="math inline">\(\mu\)</span> when <span class="math inline">\(n\)</span> becomes large. The central limit theorem implies that <span class="math inline">\(\bar X\)</span> will follow a <span class="math inline">\(N(\mu, \sigma^2/n)\)</span> distribution asymptotically.
+</details>
+</section>
+<section id="problem-5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-5">Problem 5</h3>
+<p>Suppose <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> are independent and identically distributed (i.i.d.) random variables from an exponential distribution with parameter <span class="math inline">\(\lambda &gt; 0\)</span>, i.e.,</p>
+<p><span class="math display">\[f(x \mid \lambda) = \lambda e^{-\lambda x}, \quad x &gt; 0.\]</span></p>
+<p>Find the Maximum Likelihood Estimator (MLE) for <span class="math inline">\(\lambda\)</span>.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>The likelihood function is: <span class="math display">\[L(\lambda) = \prod_{i=1}^{n} \lambda e^{-\lambda X_i} = \lambda^n e^{-\lambda \sum X_i}.\]</span></p>
+<p>The log-likelihood function is: <span class="math display">\[\ell(\lambda) = n \log \lambda - \lambda \sum X_i.\]</span></p>
+<p>Differentiating with respect to <span class="math inline">\(\lambda\)</span>: <span class="math display">\[\frac{d\ell}{d\lambda} = \frac{n}{\lambda} - \sum X_i.\]</span></p>
+<p>Setting it equal to zero: <span class="math display">\[\frac{n}{\lambda} = \sum X_i.\]</span></p>
+Solving for <span class="math inline">\(\lambda\)</span>: <span class="math display">\[\hat{\lambda} = \frac{n}{\sum X_i}.\]</span>
+</details>
+</section>
+<section id="problem-6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-6">Problem 6</h3>
+<p>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be i.i.d. random variables from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and known variance <span class="math inline">\(\sigma^2\)</span>. That is, <span class="math display">\[X_i \sim N(\mu, \sigma^2).\]</span> Find the MLE of <span class="math inline">\(\mu\)</span>.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>The likelihood function is: <span class="math display">\[L(\mu) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( -\frac{(X_i - \mu)^2}{2\sigma^2} \right).\]</span></p>
+<p>The log-likelihood function is: <span class="math display">\[\ell(\mu) = -\frac{n}{2} \log (2\pi\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^{n} (X_i - \mu)^2.\]</span></p>
+<p>Differentiating with respect to <span class="math inline">\(\mu\)</span>: <span class="math display">\[\frac{d\ell}{d\mu} = \frac{1}{\sigma^2} \sum_{i=1}^{n} (X_i - \mu).\]</span></p>
+<p>Setting it equal to zero: <span class="math display">\[\sum_{i=1}^{n} (X_i - \mu) = 0.\]</span></p>
+<p>Solving for <span class="math inline">\(\mu\)</span>: <span class="math display">\[\hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} X_i.\]</span></p>
+</details>
+</section>
+<section id="problem-7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-7">Problem 7</h3>
+<p>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be i.i.d. random variables from a Bernoulli distribution with unknown parameter <span class="math inline">\(p\)</span>. That is, <span class="math display">\[P(X_i = 1) = p, \quad P(X_i = 0) = 1 - p.\]</span> Find the MLE for <span class="math inline">\(p\)</span>.</p>
+<p>Hint: We can also write the Bernoulli distribution as <span class="math inline">\(P(X=x) =p^x(1-p)^{1-x}\)</span>, where <span class="math inline">\(x\in \{0,1\}\)</span>.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>The likelihood function is: <span class="math display">\[L(p) = \prod_{i=1}^{n} p^{X_i} (1 - p)^{1 - X_i}.\]</span></p>
+<p>The log-likelihood function is: <span class="math display">\[\ell(p) = \sum_{i=1}^{n} X_i \log p + (1 - X_i) \log (1 - p).\]</span></p>
+<p>Differentiating with respect to <span class="math inline">\(p\)</span>: <span class="math display">\[\frac{d\ell}{dp} = \sum_{i=1}^{n} \frac{X_i}{p} - \sum_{i=1}^{n} \frac{1 - X_i}{1 - p}.\]</span></p>
+<p>Setting it equal to zero: <span class="math display">\[\sum X_i \frac{1}{p} - \sum (1 - X_i) \frac{1}{1 - p} = 0.\]</span> Rearranging: <span class="math display">\[\sum X_i (1 - p) = (n - \sum X_i) p.\]</span></p>
+Solving for <span class="math inline">\(p\)</span>: <span class="math display">\[\hat{p} = \frac{1}{n} \sum X_i.\]</span>
+</details>
+</section>
+<section id="problem-8" class="level3">
+<h3 class="anchored" data-anchor-id="problem-8">Problem 8</h3>
+<p>Let <span class="math inline">\(\hat{\theta}\)</span> be an estimator of a parameter <span class="math inline">\(\theta\)</span>. The bootstrap estimate of the bias is given by:</p>
+<p><span class="math display">\[\hat{\text{Bias}} = \frac{1}{B} \sum_{b=1}^{B} \hat{\theta}^*_b - \hat{\theta},\]</span></p>
+<p>where <span class="math inline">\(\hat{\theta}^*_b\)</span> is the estimate from bootstrap sample <span class="math inline">\(b\)</span>.</p>
+<p>Use bootstrap resampling to estimate the bias of the maximum likelihood estimator of the variance;<span class="math display">\[s^2=\frac1n \sum_{i}(x_i-\bar x)^2,\]</span> for the dataset:</p>
+<p><span class="math display">\[X = \{4.2, 3.9, 5.1, 4.8, 4.3, 5.0, 3.7, 4.5, 4.9, 4.6\}.\]</span> Describe the procedure and discuss the sign of the bias.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="1">
+<li>Compute the sample variance <span class="math inline">\(s^2\)</span> from the original dataset.</li>
+<li>Generate 1000 bootstrap samples and compute <span class="math inline">\(s^2\)</span> for each.</li>
+<li>Compute the bootstrap estimate of bias using the formula above.</li>
+<li>Interpret the result: If the bias is positive, <span class="math inline">\(s^2\)</span> is underestimating the true variance; if negative, it is overestimating.</li>
+</ol>
+</details>
+</section>
+<section id="problem-9" class="level3">
+<h3 class="anchored" data-anchor-id="problem-9">Problem 9</h3>
+<p>When playing the casino game american roulette, there are 38 possible outcomes: 0,00, and 1-36. The 0 and 00 are colored green, while odd numbers from 1-35 are black and even numbers from 2-36 are red.</p>
+<ol type="a">
+<li>What is the probability of winning if you bet on a black outcome?</li>
+</ol>
+<p>A gambler has $100 and bets $1 each time he plays. He plays until he is either out of money or has doubled his money.</p>
+<ol start="2" type="a">
+<li><p>How would you construct a Monte Carlo simulation of a situation where you always bet on black, and want to find the probability of going bankrupt.</p></li>
+<li><p>What would the probability of the gambler doubling his money?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>The probability of winning when betting on black is <span class="math inline">\(18/38=0.474\)</span></p></li>
+<li><p>It would make sense to use a while loop and continue to simulate unless the gambler is bankrupt or has $200. For simulate the game, use a Bernoulli distribution for each game with success probability <span class="math inline">\(18/38=0.474\)</span>. If the Bernoulli variable is 1, increase the “bank” of the gambler by 1 dollar. If it is 0, decrease it by 1 dollar. Repeat the game 10 000 times and calculate the relative frequency of going bankrupt.</p></li>
+<li><p>In the end, there are only two outcomes of the experiment. Either the gambler goes bankrupt or he doubles his money. The probability of doubling the money, would therefore be 1-the probability of going bankrupt.</p></li>
+</ol>
+</details>
 
 
 </section>
