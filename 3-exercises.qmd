@@ -181,10 +181,11 @@ $$\hat{\text{Bias}} = \frac{1}{B} \sum_{b=1}^{B} \hat{\theta}^*_b - \hat{\theta}
 
 where $\hat{\theta}^*_b$ is the estimate from bootstrap sample $b$.
 
-Use bootstrap resampling to estimate the bias of the maximum likelihood estimator of the variance;$$s^2=\frac1n \sum_{i}(x_i-\bar x)^2,$$ for the dataset:
+Use bootstrap resampling to estimate the bias of the maximum likelihood estimator of the variance;$$s^2=\frac1n \sum_{i}(x_i-\bar x)^2,$$ for a set of data $x_1,\ldots, x_n$.
+
+Describe the procedure and discuss the sign of the bias. If you want to implement the code, use the following data set:
 
 $$X = \{4.2, 3.9, 5.1, 4.8, 4.3, 5.0, 3.7, 4.5, 4.9, 4.6\}.$$
-Describe the procedure and discuss the sign of the bias.
 
 <details>
 <summary>Show solutions</summary>
