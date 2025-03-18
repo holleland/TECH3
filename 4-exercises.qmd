@@ -5,7 +5,7 @@ For the following exercises, we will use the test statistic for one-sample t-tes
 $$T=\frac{\bar x-\mu_0}{s/\sqrt{n}},$$
 where $n$ is the sample size, $\bar x$ is the sample mean, $s$ is the sample standard deviation and $\mu_0$ is the expected value under the null hypothesis. 
 
-### Problem 1
+### Problem 1.1
 A company selling premium coffee beans wants to determine whether reducing the price of its product leads to a significant increase in the average number of bags sold per day. The marketing team conducted a test by lowering the price for a month in select stores and measuring the sales volume. They want to analyze whether the mean daily sales after the price reduction are significantly higher than before.
 
 a) Set up the null- and alternative hypothesis, and decide on a suitable significance level. 
@@ -31,7 +31,7 @@ print(1-stats.t.cdf(3.29, 29))
 
 </details>
 
-### Problem 2
+### Problem 1.2
 A large company is trying to encourage employees to save more for retirement. Previously, employees had to actively sign up for the company's pension savings plan (opt-in system). Recently, the company changed its policy so that employees are automatically enrolled in the plan but can opt out if they wish (opt-out system). Behavioral economists suggest that default options strongly influence decision-making, leading to higher participation rates in savings plans.
 
 The HR department wants to test with a significance level of 5\% whether the average monthly contribution to the retirement plan has increased significantly after implementing the opt-out system.
@@ -60,6 +60,58 @@ print(1-stats.t.cdf(2.94, 49))
 ```
 </details>
 
+### Problem 1.3
+A nutritionist wants to test whether a new diet plan leads to a significant reduction in average daily calorie intake. A sample of 40 individuals followed the diet for one month, and their average daily calorie intake was recorded. 
+
+The recommended daily intake before the diet was 2200 kcal. After one month, the sample had a mean intake of 2100 kcal with a standard deviation of 250 kcal.
+
+a) Set up the null- and alternative hypotheses.
+
+b) Calculate the test statistic.
+
+c) Find the p-value and interpret the result.
+
+<details>
+<summary>Show solutions</summary>
+a) $H_0: \mu\geq 2200$ vs $H_1: \mu<2200$.
+
+b) $$T=\frac{2100-2200}{250/\sqrt{40}}=-2.53$$
+
+c) $$\text{p-value}=P(T_{39}<-2.53)=0.0079$$
+
+Since the p-value is lower than the conventional 5% significance level, we reject the null hypothesis, suggesting that the new diet plan significantly reduces daily calorie intake.
+
+```{python}
+from scipy import stats
+print(stats.t.cdf(-2.53, 39))
+```
+</details>
+
+### Problem 1.4
+A smartphone manufacturer wants to determine whether the battery life of their new model is significantly different from the advertised 24 hours. A sample of 50 devices was tested, showing a mean battery life of 23.5 hours with a standard deviation of 1.2 hours.
+
+a) Formulate the hypotheses.
+
+b) Compute the test statistic.
+
+c) Determine the p-value and state your conclusion.
+
+<details>
+<summary>Show solutions</summary>
+
+a) $H_0: \mu=24$ vs $H_1: \mu\neq 24$.
+
+b) $$T=\frac{23.5-24}{1.2/\sqrt{50}}=-2.946$$
+
+c) $$\text{p-value}=2 \times P(T_{49}<-2.94)=0.0049$$
+
+Since the p-value is very small, we reject the null hypothesis, indicating that the battery life is significantly different from 24 hours.
+
+```{python}
+print(2*stats.t.cdf(-2.946, 49))
+```
+</details>
+
 
 ## Two-sample t-test
 For the following exercises, we will use the test statistic for two-sample t-test with null hypothesis $H_0:\mu_1=\mu_2+d_0$:
@@ -67,7 +119,7 @@ $$T=\frac{\bar x_1-\bar x_2-d_0}{\sqrt{s_1^2/n_1+s_2^2/n_2}},$$
 where $n_1$ and $n_2$ are the sample sizes of the two samples, $\bar x_1$ and $\bar x_2$ are the sample means, $s_1$ and $s_2$ are the sample standard deviations and $d_0$ is the difference in expected value under the null hypothesis (often $d_0=0$). The test statistic follows a t-distribution with degrees of freedom (df): 
 $$\text{df}=\frac{\big(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\big)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_1^2/n_2)^2}{n_2-1}}$$
 
-### Problem 3
+### Problem 2.1
 An e-commerce company wants to test whether showing customer reviews on product pages increases the average number of purchases. Behavioral economics suggests that social proof (i.e., seeing others' positive experiences) influences decision-making and can lead to higher sales.
 
 To test this, the company randomly selected two groups of products: one group displayed customer reviews, and the other did not. They then compared the average daily sales per product between the two groups.
@@ -118,7 +170,7 @@ print(1-stats.t.cdf(t, df))
 ```
 </details>
 
-### Problem 4
+### Problem 2.2
 A company is testing whether offering a performance-based bonus increases employee productivity. They implement a new bonus system in one office location (Group A), while another office continues without bonuses (Group B). After three months, they measure the average number of completed sales calls per week in both offices. The company wants you to determine if the bonus system leads to higher productivity (mean number of sales calls).
 
 a) Formulate the hypothesis problem including $H_0$, $H_A$ and setting a suitable significance level. 
@@ -156,14 +208,45 @@ stats.ttest_ind_from_stats(m1,s1,n1,m2,s2,n2,alternative="greater")
 
 </details>
 
+### Problem 2.3
+A university wants to determine if students who attend tutoring sessions perform better on exams than those who do not. Two independent samples of students were taken:
 
+- *Tutoring group*: Mean score = 78, Standard deviation = 10, Sample size = 30
+- *Non-tutoring group*: Mean score = 72, Standard deviation = 12, Sample size = 35
+
+a) State the hypotheses.
+
+b) Calculate the test statistic and degrees of freedom.
+
+c) Find the p-value and interpret the result.
+
+<details>
+<summary>Show solutions</summary>
+a) $H_0: \mu_1 = \mu_2$ vs $H_A: \mu_1 > \mu_2$.
+
+b) 
+```{python}
+s1 = 10; s2 = 12; n1 = 30; n2 = 35
+m1 = 78; m2 = 72;
+df = (s1**2/n1 + s2**2/n2)**2 / ((s1**2/n1)**2/(n1-1) + (s2**2/n2)**2/(n2-1))
+t = (m1-m2) / ((s1**2/n1 + s2**2/n2)**0.5)
+print("df=", df)
+print("T=", t)
+```
+
+c) The computed p-value is $P(T_{63}>t)=0.0158$. The evidence thus points towards the conclusion that attending tutoring improves performance, due to a low p-value. 
+
+```{python}
+print(1-stats.t.cdf(t, df))
+```
+</details>
 
 
 ## Tests of proportions: One sample
 Let $p$ denote a proportion and $p_0$ be the proportion under the null hypothesis. We can then test the null hypothesis $H_0: p=p_0$ against an alternative hypothesis using the test statistic
 $$Z = \frac{\hat p-p_0}{\sqrt{p_0(1-p_0)/n}},$$ which is approximately normally distributed when $n$ is sufficiently large and the probabilies are not too small (often $np>5$ is used as a rule of thumb). 
 
-### Problem 5
+### Problem 3.1
 A retail chain is considering phasing out cash payments in favor of digital transactions. Management wants to determine whether at least 60% of customers are already using mobile payment apps (such as Apple Pay or Google Pay) when shopping. If the proportion is significantly higher than 60%, they may move forward with reducing cash payment options.
 
 
@@ -196,7 +279,7 @@ c) The p-value is low, which indicates evidence against $H_0$. It indicates that
 </details>
 
 
-### Problem 6
+### Problem 3.2
 A sustainable fashion brand wants to know whether at least 30% of consumers are willing to pay a premium for eco-friendly clothing. If the proportion is significantly higher than 30% with significance level 10\%, they will launch a new premium-priced, eco-friendly clothing line.
 
 They conduct a market survey where respondents indicate whether they would be willing to pay 10% more for sustainably produced clothing.
@@ -228,6 +311,34 @@ print("Pvalue: ", 1-stats.norm.cdf(z))
 
 </details>
 
+### Problem 3.3
+A public transportation agency wants to determine whether at least 70% of residents support a new subway line expansion. A survey of 600 residents finds that 435 support the expansion.
+
+a) Formulate the hypotheses.
+
+b) Compute the test statistic and p-value.
+
+c) What is the conclusion?
+
+<details>
+<summary>Show solutions</summary>
+a) $H_0: p = 0.7$ vs $H_A: p > 0.7$.
+
+b) $$Z=\frac{0.725-0.7}{\sqrt{0.7\cdot 0.3/600}}=1.63$$
+
+p-value $=P(Z>1.63)=0.0907$
+
+```{python}
+p_hat = 435/600
+z = (p_hat-0.7) / ( (0.7*0.3/600)**0.5 )
+print("Z=", z)
+print("p-value=", 1-stats.norm.cdf(z))
+```
+
+c) A p-value of 9\% indicates that the evidence against the null hypothesis is not very strong, and at a 5\% significance level, we would not reject the null hypothesis. 
+
+</details>
+
 
 ## Tests of proportions: Two samples
 Let $p_1$ and $p_2$ denote two proportions. We can then test the null hypothesis $H_0: p_1=p_2$ against an alternative hypothesis using the test statistic
@@ -235,7 +346,7 @@ $$Z = \frac{\hat p_1-\hat p_2}{\sqrt{p_\text{pool}(1-p_\text{pool})(1/n_1+1/n_2)
 where $$p_\text{pool}=\frac{n_1\widehat p_1+n_2\widehat p_2}{n_1+n_2}.$$
 The test statistic Z is approximately normally distributed. 
 
-### Problem 7
+### Problem 4.1
 
 An insurance company is testing how the way they frame their sales pitch affects customers' willingness to buy a travel insurance policy. They randomly assign potential customers into two groups:
 
@@ -283,7 +394,7 @@ d) The p-value is low (around 2\%). This indicates that the probability of makin
 </details>
 
 
-### Problem 8
+### Problem 4.2
 An online retailer wants to determine whether offering free shipping increases the proportion of customers who complete their purchases. They run an A/B test, where one group of customers sees free shipping on all orders (Group A), while another group sees the standard shipping fees (Group B). After a week, they compare the proportion of customers who completed a purchase in each group. The retailer asks you to use 5\% significance level. 
 
 
@@ -331,3 +442,33 @@ d) Here the effect size $|\widehat p_A-\widehat p_B| = 7\%$, that is 7 percentag
 
 </details>
 
+### Problem 4.3
+A company is testing whether a new website layout increases the proportion of users who complete a purchase. They conduct an A/B test with the following results:
+
+- *New layout*: 500 users, 210 completed a purchase
+- *Old layout*: 500 users, 180 completed a purchase
+
+a) Formulate the hypotheses.
+
+b) Compute the test statistic and p-value.
+
+c) Interpret the result.
+
+<details>
+<summary>Show solutions</summary>
+a) $H_0: p_1 = p_2$ vs $H_A: p_1 > p_2$. 
+
+b) 
+```{python}
+from scipy import stats
+n1, n2 = 500, 500
+p1, p2 = 210/n1, 180/n2
+p_pool = (210 + 180) / (n1 + n2)
+z = (p1 - p2) / ((p_pool * (1 - p_pool) * (1/n1 + 1/n2)) ** 0.5)
+print("Z=", z)
+print("p-value=", 1-stats.norm.cdf(z))
+```
+
+c) Since the p-value is low, this gives reason to doubt the null hypothesis and indicates that the new layout do increase the proportion of customers placing an order. 
+
+</details>
