@@ -510,6 +510,12 @@ window.Quarto = {
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5-simpsons-paradox.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simpson’s paradox</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -568,7 +574,7 @@ window.Quarto = {
 <p>Suppose the distrution of the diameter is normal.</p>
 <ol start="5" type="a">
 <li><p>Calculate <span class="math inline">\(P(9.99\le \bar X \le 10.01)\)</span> when <span class="math inline">\(n=16\)</span>.</p></li>
-<li><p>How likely is it that the sample mean diameter exceeds 12.01 when <span class="math inline">\(n=25\)</span>.</p></li>
+<li><p>How likely is it that the sample mean diameter exceeds 10.01 when <span class="math inline">\(n=25\)</span>.</p></li>
 </ol>
 <details>
 <summary>
@@ -580,7 +586,7 @@ Show solutions
 <li><p>With less variability, the second sample is more closely centered near 10.</p></li>
 <li><p><span class="math inline">\(P(9.99\le \bar X \le 10.01)=P(\bar X \le 10.01)-P(\bar X \le 9.99) = 0.84-0.16= 0.68\)</span>, getting the numbers from the code below:</p></li>
 </ol>
-<div id="19937d16" class="cell" data-execution_count="1">
+<div id="ae503961" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
@@ -594,7 +600,7 @@ Show solutions
 <ol start="5" type="a">
 <li><span class="math inline">\(P(\bar X_{25}&gt;10.01)=0.106\)</span>.</li>
 </ol>
-<div id="f87d96c9" class="cell" data-execution_count="2">
+<div id="7320d8cb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span><span class="op">-</span>stats.norm.cdf(<span class="fl">10.01</span>, loc <span class="op">=</span> <span class="dv">10</span>, scale <span class="op">=</span> <span class="fl">0.04</span><span class="op">/</span>np.sqrt(<span class="dv">25</span>))</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -609,16 +615,35 @@ Show solutions
 <p>The tip percentage at a restaurant has a mean value of 18% and standard deviation of 6%.</p>
 <ol type="a">
 <li><p>What is the apporixmate probability that the sample mean tip percentage for a random sample of 40 bills is between 16% and 19%?</p></li>
-<li><p>If the sample size had been rather 15 than 40, could the probability requrested in part (a) be caculated from the given information?</p></li>
+<li><p>If the sample size had been rather 15 than 40, could the probability requested in part (a) be calculated from the given information?</p></li>
 </ol>
 <details>
 <summary>
 Show solutions
 </summary>
 <ol type="a">
-<li>0.8366</li>
-<li>No.</li>
+<li>With <span class="math inline">\(n=40\)</span> observations, we can approximate the probability using the central limit theorem (CLT). That is <span class="math inline">\(\bar X_{40}\sim N(0.18, 0.06/\sqrt{40})\)</span>: <span class="math display">\[P(16\%\le \bar X_{40}\le 19\%)=P(\bar X_{40}\le 19\%)-P(\bar X_{40}\le 16\%)=0.8366\]</span></li>
 </ol>
+<div id="04cbc15c" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> <span class="fl">0.18</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sd <span class="op">=</span> <span class="fl">0.06</span><span class="op">/</span>np.sqrt(<span class="dv">40</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.norm.cdf(<span class="fl">0.19</span>, loc<span class="op">=</span>mean, scale <span class="op">=</span>sd)<span class="op">-</span>stats.norm.cdf(<span class="fl">0.16</span>, loc<span class="op">=</span>mean, scale <span class="op">=</span> sd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.8365722369182748</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>In (a) we used the Central Limit Theorem (CLT) to approximate the probability using a normal distribution. This relies on a large enough sample size. With only <span class="math inline">\(n=15\)</span> observations, the sample size is likely too low for the CLT. If we use it anyway, we get 0.6423 for the probability.</li>
+</ol>
+<div id="b25c91b6" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> <span class="fl">0.18</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sd <span class="op">=</span> <span class="fl">0.06</span><span class="op">/</span>np.sqrt(<span class="dv">15</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.norm.cdf(<span class="fl">0.19</span>, loc<span class="op">=</span>mean, scale <span class="op">=</span>sd)<span class="op">-</span>stats.norm.cdf(<span class="fl">0.16</span>, loc<span class="op">=</span>mean, scale <span class="op">=</span> sd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.6423446905561638</code></pre>
+</div>
+</div>
 </details>
 </section>
 <section id="problem-3" class="level3">
@@ -669,7 +694,8 @@ Solving for <span class="math inline">\(\lambda\)</span>: <span class="math disp
 </section>
 <section id="problem-6" class="level3">
 <h3 class="anchored" data-anchor-id="problem-6">Problem 6</h3>
-<p>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be i.i.d. random variables from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and known variance <span class="math inline">\(\sigma^2\)</span>. That is, <span class="math display">\[X_i \sim N(\mu, \sigma^2).\]</span> Find the MLE of <span class="math inline">\(\mu\)</span>.</p>
+<p>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be i.i.d. random variables from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and known variance <span class="math inline">\(\sigma^2\)</span>. That is, <span class="math display">\[X_i \sim N(\mu, \sigma^2),\]</span> such that the density of the X’s is <span class="math display">\[f(x,\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( -\frac{(x - \mu)^2}{2\sigma^2}.\]</span></p>
+<p>Find the MLE of <span class="math inline">\(\mu\)</span>.</p>
 <details>
 <summary>
 Show solutions
@@ -712,7 +738,7 @@ Show solutions
 <li>Compute the sample variance <span class="math inline">\(s^2\)</span> from the original dataset.</li>
 <li>Generate 1000 bootstrap samples and compute <span class="math inline">\(s^2\)</span> for each.</li>
 <li>Compute the bootstrap estimate of bias using the formula above.</li>
-<li>Interpret the result: If the bias is positive, <span class="math inline">\(s^2\)</span> is underestimating the true variance; if negative, it is overestimating.</li>
+<li>Interpret the result: If the bias is positive, <span class="math inline">\(s^2\)</span> is overestimating the true variance; if negative, it is underestimating.</li>
 </ol>
 </details>
 </section>

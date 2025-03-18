@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -69,6 +103,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -447,6 +510,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Exercises</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5-simpsons-paradox.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simpson’s paradox</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -459,20 +528,389 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#one-sample-t-test" id="toc-one-sample-t-test" class="nav-link active" data-scroll-target="#one-sample-t-test">One-sample t-test</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  </ul></li>
+  <li><a href="#two-sample-t-test" id="toc-two-sample-t-test" class="nav-link" data-scroll-target="#two-sample-t-test">Two-sample t-test</a>
+  <ul class="collapse">
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  </ul></li>
+  <li><a href="#tests-of-proportions-one-sample" id="toc-tests-of-proportions-one-sample" class="nav-link" data-scroll-target="#tests-of-proportions-one-sample">Tests of proportions: One sample</a>
+  <ul class="collapse">
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
+  </ul></li>
+  <li><a href="#tests-of-proportions-two-samples" id="toc-tests-of-proportions-two-samples" class="nav-link" data-scroll-target="#tests-of-proportions-two-samples">Tests of proportions: Two samples</a>
+  <ul class="collapse">
+  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
+  <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4-intro.html">Module 4: Designing studies, hypothesis testing, and quantifying effects</a></li><li class="breadcrumb-item"><a href="./4-exercises.html">Exercises</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Exercises</h1>
+</div>
 
 
 
-<section id="exercises" class="level1">
-<h1>Exercises</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="one-sample-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="one-sample-t-test">One-sample t-test</h2>
+<p>For the following exercises, we will use the test statistic for one-sample t-test with null hypothesis <span class="math inline">\(H_0:\mu=\mu_0\)</span>: <span class="math display">\[T=\frac{\bar x-\mu_0}{s/\sqrt{n}},\]</span> where <span class="math inline">\(n\)</span> is the sample size, <span class="math inline">\(\bar x\)</span> is the sample mean, <span class="math inline">\(s\)</span> is the sample standard deviation and <span class="math inline">\(\mu_0\)</span> is the expected value under the null hypothesis.</p>
+<section id="problem-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
+<p>A company selling premium coffee beans wants to determine whether reducing the price of its product leads to a significant increase in the average number of bags sold per day. The marketing team conducted a test by lowering the price for a month in select stores and measuring the sales volume. They want to analyze whether the mean daily sales after the price reduction are significantly higher than before.</p>
+<ol type="a">
+<li>Set up the null- and alternative hypothesis, and decide on a suitable significance level.</li>
+</ol>
+<p>Before the price reduction, the mean daily sales were 200 bags. After the price reduction, a sample of 30 days of sales data showed a sample mean of 215 bags, with standard deviation 25 bags.</p>
+<ol start="2" type="a">
+<li><p>Calculate the test statistic.</p></li>
+<li><p>Find the p-value. What is the conclusion?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0: \mu\le 200\)</span> vs <span class="math inline">\(H_1: \mu&gt;200\)</span>. We could allow for a relatively high significance level in this context, because rejecting a true null hypothesis (Type I error) will most likely not have large consequences, e.g.&nbsp;<span class="math inline">\(\alpha =0.1\)</span>.</p></li>
+<li><p><span class="math inline">\(T=(215-200)/(25/\sqrt{30})=3.29\)</span></p></li>
+<li><p><span class="math inline">\(\text{p-value}=P(T_{29}&gt;3.29)=0.00132\)</span>. The p-value is very low, indicating that we may reject the null hypothesis at (almost) any significance level in (a). The company should continue with the reduced price.</p></li>
+</ol>
+<div id="5c0dafa7" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">-</span>stats.t.cdf(<span class="fl">3.29</span>, <span class="dv">29</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.0013169979736814552</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="problem-2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<p>A large company is trying to encourage employees to save more for retirement. Previously, employees had to actively sign up for the company’s pension savings plan (opt-in system). Recently, the company changed its policy so that employees are automatically enrolled in the plan but can opt out if they wish (opt-out system). Behavioral economists suggest that default options strongly influence decision-making, leading to higher participation rates in savings plans.</p>
+<p>The HR department wants to test with a significance level of 5% whether the average monthly contribution to the retirement plan has increased significantly after implementing the opt-out system.</p>
+<ol type="a">
+<li>Set up the null- and alternative hypothesis.</li>
+</ol>
+<p>Before the change, the average monthly contribution was $250 per employee. After the policy change, a random sample of 50 employees showed: Sample mean of $270 and standard deviation of $90.</p>
+<ol start="2" type="a">
+<li><p>Calculate the test statistic.</p></li>
+<li><p>Find the p-value. What is the conclusion?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0: \mu\le 250\)</span> vs <span class="math inline">\(H_1: \mu&gt;250\)</span>.</p></li>
+<li><p><span class="math inline">\(T=(270-250)/(90/\sqrt{50})=1.57\)</span></p></li>
+<li><p><span class="math inline">\(\text{p-value}=P(T_{29}&gt;3.29)=0.0613\)</span>. The p-value is higher than 5%, indicating that we may reject not the null hypothesis. The pension payments have not increased due to the change from opting in to opting out.</p></li>
+</ol>
+<div id="a14d0565" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">-</span>stats.t.cdf(<span class="fl">2.94</span>, <span class="dv">49</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.002498152330066006</code></pre>
+</div>
+</div>
+</details>
+</section>
+</section>
+<section id="two-sample-t-test" class="level2">
+<h2 class="anchored" data-anchor-id="two-sample-t-test">Two-sample t-test</h2>
+<p>For the following exercises, we will use the test statistic for two-sample t-test with null hypothesis <span class="math inline">\(H_0:\mu_1=\mu_2+d_0\)</span>: <span class="math display">\[T=\frac{\bar x_1-\bar x_2-d_0}{\sqrt{s_1^2/n_1+s_2^2/n_2}},\]</span> where <span class="math inline">\(n_1\)</span> and <span class="math inline">\(n_2\)</span> are the sample sizes of the two samples, <span class="math inline">\(\bar x_1\)</span> and <span class="math inline">\(\bar x_2\)</span> are the sample means, <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> are the sample standard deviations and <span class="math inline">\(d_0\)</span> is the difference in expected value under the null hypothesis (often <span class="math inline">\(d_0=0\)</span>). The test statistic follows a t-distribution with degrees of freedom (df): <span class="math display">\[\text{df}=\frac{\big(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\big)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_1^2/n_2)^2}{n_2-1}}\]</span></p>
+<section id="problem-3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
+<p>An e-commerce company wants to test whether showing customer reviews on product pages increases the average number of purchases. Behavioral economics suggests that social proof (i.e., seeing others’ positive experiences) influences decision-making and can lead to higher sales.</p>
+<p>To test this, the company randomly selected two groups of products: one group displayed customer reviews, and the other did not. They then compared the average daily sales per product between the two groups.</p>
+<ol type="a">
+<li><p>Set up the null- and alternative hypothesis. Use 10% significance level.</p></li>
+<li><p>Discuss how the test statistic will behave under the various hypothesis.</p></li>
+</ol>
+<p>The experiment result in the following data:</p>
+<ul>
+<li><em>Products with reviews</em>: Sample mean daily sales = 120 units, Sample standard deviation = 30, Sample size = 40</li>
+<li><em>Products without reviews</em>: Sample mean daily sales = 105 units, Sample standard deviation = 28, Sample size = 40</li>
+</ul>
+<ol start="3" type="a">
+<li><p>Calculate the test statistic and the degrees of freedom.</p></li>
+<li><p>Find the p-value. What is the conclusion?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Let <span class="math inline">\(\mu_1\)</span> be the expected daily sales with reviews and <span class="math inline">\(\mu_2\)</span> without reviewes.</p>
+<ol type="a">
+<li><p><span class="math inline">\(H_0: \mu_1\le \mu_2\)</span> vs <span class="math inline">\(H_A: \mu_1&gt;\mu_2\)</span>.</p></li>
+<li><p>Under the null hypothesis, we expect the numerator of the test statistic to be close to zero, making the test statistic close to zero. Under the alternative hypothesis, we expect <span class="math inline">\(\bar x_1&gt;\bar x_2\)</span> such that the numerator of <span class="math inline">\(T\)</span> will be positive. Higher values will therefore favor the alternative hypothesis.</p></li>
+<li></li>
+</ol>
+<div id="3c6ed52e" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> <span class="dv">30</span><span class="op">;</span>  s2 <span class="op">=</span> <span class="dv">28</span><span class="op">;</span> n1 <span class="op">=</span> <span class="dv">40</span><span class="op">;</span> n2 <span class="op">=</span> <span class="dv">40</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="dv">120</span><span class="op">;</span> m2 <span class="op">=</span> <span class="dv">105</span><span class="op">;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (s1<span class="op">**</span><span class="dv">2</span><span class="op">/</span>n1 <span class="op">+</span> s2<span class="op">**</span><span class="dv">2</span><span class="op">/</span>n2)<span class="op">**</span><span class="dv">2</span><span class="op">/</span>((s1<span class="op">**</span><span class="dv">2</span><span class="op">/</span>n1)<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(n1<span class="op">-</span><span class="dv">1</span>)<span class="op">+</span>(s2<span class="op">**</span><span class="dv">2</span><span class="op">/</span>n2)<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(n2<span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (m1<span class="op">-</span>m2)<span class="op">/</span>np.sqrt(s1<span class="op">*</span>s1<span class="op">/</span>n1<span class="op">+</span>s2<span class="op">*</span>s2<span class="op">/</span>n2)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"df="</span>,df)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"T="</span>,t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>df= 77.63164160330635
+T= 2.311799743112827</code></pre>
+</div>
+</div>
+<p><span class="math inline">\(T=(102-105)/\sqrt{30^2/40+28^2/40}=-0.462\)</span> <span class="math display">\[\text{df}=\frac{\big(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\big)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_1^2/n_2)^2}{n_2-1}}\]</span></p>
+<ol start="4" type="a">
+<li><span class="math inline">\(\text{p-value}=P(T_{29}&gt;0.462)=0.32\)</span>. The p-value is lower than 10%, indicating that we may reject the null hypothesis. There is enough evidence to suggest that the reviews increase the sales at a 10% significance level. The company should show reviews of their products to increase sales.</li>
+</ol>
+<div id="61fd356c" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">-</span>stats.t.cdf(t, df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.011720746167147467</code></pre>
+</div>
+</div>
+</details>
+</section>
+<section id="problem-4" class="level3">
+<h3 class="anchored" data-anchor-id="problem-4">Problem 4</h3>
+<p>A company is testing whether offering a performance-based bonus increases employee productivity. They implement a new bonus system in one office location (Group A), while another office continues without bonuses (Group B). After three months, they measure the average number of completed sales calls per week in both offices. The company wants you to determine if the bonus system leads to higher productivity (mean number of sales calls).</p>
+<ol type="a">
+<li>Formulate the hypothesis problem including <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_A\)</span> and setting a suitable significance level.</li>
+</ol>
+<p>Group A (Bonus group):</p>
+<ul>
+<li>Sample mean: 52 sales calls per week</li>
+<li>Sample standard deviation: 8</li>
+<li>Sample size: n = 35</li>
+</ul>
+<p>Group B (No bonus group):</p>
+<ul>
+<li>Sample mean: 48 sales calls per week</li>
+<li>Sample standard deviation: 9</li>
+<li>Sample size: n = 35</li>
+</ul>
+<ol start="2" type="a">
+<li><p>Calculate the test statistic based on this information. Find the p-value.</p></li>
+<li><p>What is your conclusion and your recommendation to the company?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0: \mu_A =\mu_B\)</span> vs <span class="math inline">\(H_A: \mu_A&gt;\mu_B\)</span>. In this case, the bonus scheme might be expensive, so we want to avoid type I errors (rejecting the null, when it is truly no difference in productivity). We use <span class="math inline">\(\alpha = 1\%\)</span>.</p></li>
+<li><p><span class="math inline">\(T=1.96\)</span> and p-value <span class="math inline">\(=0.0267\)</span>.</p></li>
+<li><p>The p-value is low, indicating evidence for the alternative hypothesis, but we have set a significance level of 1%, for which the p-value exceeds. This would lead us to not recommend implementing the bonus, because it does not improve productivity to a high enough degree at this significance level.</p></li>
+</ol>
+<div id="a8d4cf76" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="dv">52</span><span class="op">;</span> s1 <span class="op">=</span> <span class="dv">8</span><span class="op">;</span> n1 <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>m2 <span class="op">=</span> <span class="dv">48</span><span class="op">;</span> s2 <span class="op">=</span> <span class="dv">9</span><span class="op">;</span> n2 <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>stats.ttest_ind_from_stats(m1,s1,n1,m2,s2,n2,alternative<span class="op">=</span><span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>Ttest_indResult(statistic=np.float64(1.9652147377620703), pvalue=np.float64(0.026737892346682984))</code></pre>
+</div>
+</div>
+</details>
+</section>
+</section>
+<section id="tests-of-proportions-one-sample" class="level2">
+<h2 class="anchored" data-anchor-id="tests-of-proportions-one-sample">Tests of proportions: One sample</h2>
+<p>Let <span class="math inline">\(p\)</span> denote a proportion and <span class="math inline">\(p_0\)</span> be the proportion under the null hypothesis. We can then test the null hypothesis <span class="math inline">\(H_0: p=p_0\)</span> against an alternative hypothesis using the test statistic <span class="math display">\[Z = \frac{\hat p-p_0}{\sqrt{p_0(1-p_0)/n}},\]</span> which is approximately normally distributed when <span class="math inline">\(n\)</span> is sufficiently large and the probabilies are not too small (often <span class="math inline">\(np&gt;5\)</span> is used as a rule of thumb).</p>
+<section id="problem-5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-5">Problem 5</h3>
+<p>A retail chain is considering phasing out cash payments in favor of digital transactions. Management wants to determine whether at least 60% of customers are already using mobile payment apps (such as Apple Pay or Google Pay) when shopping. If the proportion is significantly higher than 60%, they may move forward with reducing cash payment options.</p>
+<ol type="a">
+<li>Set up the null hypothesis and alternative hypothesis. Discuss how the test statistic will behave under the various hypotheses.</li>
+</ol>
+<p>The retail chain conducts a survey where they ask customers whether they used a mobile payment app for their most recent purchase. Out of the 400 customers asked, 260 used mobile payment apps.</p>
+<ol start="2" type="a">
+<li><p>Calculate <span class="math inline">\(Z\)</span> based on this information. What is the p-value?</p></li>
+<li><p>What does the p-value tell you about people’s payment preferences?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0: p=0.6\)</span> vs <span class="math inline">\(H_A: \mu&gt;0.6\)</span>. The numerator of <span class="math inline">\(Z\)</span> will be expected close to 0 if the null is zero, making Z close to zero. If <span class="math inline">\(H_A\)</span> is true, <span class="math inline">\(\widehat p\)</span> will be expected larger than 0.6, making Z positive. Large values of <span class="math inline">\(Z\)</span> will favor <span class="math inline">\(H_A\)</span>.</p></li>
+<li><p><span class="math inline">\(Z = (0.65-0.6)/\sqrt{0.6\cdot 0.4/400}=2.04\)</span> and p-value<span class="math inline">\(=P(Z&gt;2.04)=0.0206\)</span>.</p></li>
+</ol>
+<div id="2a5d6400" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>phat <span class="op">=</span> <span class="dv">260</span><span class="op">/</span><span class="dv">400</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (phat<span class="op">-</span><span class="fl">0.6</span>)<span class="op">/</span>np.sqrt(<span class="fl">0.6</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.6</span>)<span class="op">/</span><span class="dv">400</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Z="</span>, z)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pvalue: "</span>, <span class="dv">1</span><span class="op">-</span>stats.norm.cdf(z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Z= 2.041241452319317
+Pvalue:  0.02061341666858174</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li>The p-value is low, which indicates evidence against <span class="math inline">\(H_0\)</span>. It indicates that the proportion of mobile app payments is above 60%.</li>
+</ol>
+</details>
+</section>
+<section id="problem-6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-6">Problem 6</h3>
+<p>A sustainable fashion brand wants to know whether at least 30% of consumers are willing to pay a premium for eco-friendly clothing. If the proportion is significantly higher than 30% with significance level 10%, they will launch a new premium-priced, eco-friendly clothing line.</p>
+<p>They conduct a market survey where respondents indicate whether they would be willing to pay 10% more for sustainably produced clothing.</p>
+<ol type="a">
+<li>Set up the null- and alternative hypothesis.</li>
+</ol>
+<p>The market survey got 500 respondents, and out of those, 166 were willing to pay 10% more for sustainable clothing.</p>
+<ol start="2" type="a">
+<li><p>Calculate <span class="math inline">\(Z\)</span> based on this information. What is the p-value?</p></li>
+<li><p>What would your recommendation to the fashion brand be?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0: p\le 30\%\)</span> vs <span class="math inline">\(H_A: p&gt;30\%\)</span>.</p></li>
+<li><p><span class="math inline">\(\hat p=166/500= 33.2\%\)</span>, <span class="math inline">\(z=(0.332-0.3)/\sqrt{0.3*0.7/500}=1.56\)</span> and <span class="math inline">\(P(Z&gt;z)=P(Z&gt;1.56)=1-\Phi(1.56)=0.0592\)</span>.</p></li>
+<li><p>At a 10% signifance level, we would reject the null hypothesis, since the p-value of 0.06 is smaller than 0.1. At this significance level, we would recommend the brand to go ahead with the launch of their eco-friendly clothing.</p></li>
+</ol>
+<div id="f4c6475e" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>phat <span class="op">=</span> <span class="dv">166</span><span class="op">/</span><span class="dv">500</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (phat<span class="op">-</span><span class="fl">0.3</span>)<span class="op">/</span>np.sqrt(<span class="fl">0.3</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.3</span>)<span class="op">/</span><span class="dv">500</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Z="</span>, z)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Pvalue: "</span>, <span class="dv">1</span><span class="op">-</span>stats.norm.cdf(z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Z= 1.5614401167176546
+Pvalue:  0.05920997135406203</code></pre>
+</div>
+</div>
+</details>
+</section>
+</section>
+<section id="tests-of-proportions-two-samples" class="level2">
+<h2 class="anchored" data-anchor-id="tests-of-proportions-two-samples">Tests of proportions: Two samples</h2>
+<p>Let <span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span> denote two proportions. We can then test the null hypothesis <span class="math inline">\(H_0: p_1=p_2\)</span> against an alternative hypothesis using the test statistic <span class="math display">\[Z = \frac{\hat p_1-\hat p_2}{\sqrt{p_\text{pool}(1-p_\text{pool})(1/n_1+1/n_2)}},\]</span> where <span class="math display">\[p_\text{pool}=\frac{n_1\widehat p_1+n_2\widehat p_2}{n_1+n_2}.\]</span> The test statistic Z is approximately normally distributed.</p>
+<section id="problem-7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-7">Problem 7</h3>
+<p>An insurance company is testing how the way they frame their sales pitch affects customers’ willingness to buy a travel insurance policy. They randomly assign potential customers into two groups:</p>
+<ol type="1">
+<li>Loss-framed message: “If you don’t buy travel insurance, you could lose thousands in unexpected expenses.”</li>
+<li>Gain-framed message: “If you buy travel insurance, you’ll have peace of mind and financial protection.”</li>
+</ol>
+<p>Behavioral economics suggests that loss aversion makes people more sensitive to potential losses than gains, meaning the loss-framed message might lead to higher purchase rates.</p>
+<ol type="a">
+<li><p>Set up the null- and alternative hypothesis.</p></li>
+<li><p>Discuss how the test statistic will behave under the various hypothesis.</p></li>
+</ol>
+<p>The experiment result in the following data:</p>
+<ul>
+<li><em>Loss-framed message</em>: 200 customers surveyed, 45% purchased insurance</li>
+<li><em>Gain-framed message</em>: 200 customers surveyed, 35% purchased insurance</li>
+</ul>
+<ol start="3" type="a">
+<li><p>Calculate the test statistic and the p-value.</p></li>
+<li><p>Conclude the test.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Let <span class="math inline">\(p_L\)</span> denote proportion of purchases receiving a loss-framed message and <span class="math inline">\(p_G\)</span> denote proportion of purchases receiving a gain-framed message. a) <span class="math inline">\(H_0: p_L=p_G\)</span> vs <span class="math inline">\(H_A: p_L&gt;p_G\)</span>.</p>
+<ol start="2" type="a">
+<li><p>We use <span class="math inline">\(p_1=p_L\)</span> and <span class="math inline">\(p_2 =p_G\)</span> in refence to the formula for the test statistic. If the null hypothesis is true, Z is expected to be close to zero since the numerator is expected to be near 0. If the alternative hypothesis is true, we expect <span class="math inline">\(\hat p_L&gt;\hat p_G\)</span>, giving a positive numerator. Thus, large values of Z will favor the alternative hypothesis.</p></li>
+<li></li>
+</ol>
+<div id="655df3a6" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>pL <span class="op">=</span> <span class="fl">0.45</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>pG <span class="op">=</span> <span class="fl">0.35</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>nL <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>nG <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>pPool <span class="op">=</span> (nL<span class="op">*</span>pL <span class="op">+</span> nG<span class="op">*</span>pG)<span class="op">/</span>(nL<span class="op">+</span>nG)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (pL<span class="op">-</span>pG)<span class="op">/</span>np.sqrt(pPool<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>pPool)<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span>nL<span class="op">+</span><span class="dv">1</span><span class="op">/</span>nG))</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Z="</span>,z)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"pvalue="</span>,<span class="dv">1</span><span class="op">-</span>stats.norm.cdf(z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Z= 2.041241452319316
+pvalue= 0.02061341666858174</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li>The p-value is low (around 2%). This indicates that the probability of making a Type I error is low and favor rejecting the null hypothesis. In that sense, the evidence points towards people being willing to pay to avoid loss than they are to potentially gain.</li>
+</ol>
+</details>
+</section>
+<section id="problem-8" class="level3">
+<h3 class="anchored" data-anchor-id="problem-8">Problem 8</h3>
+<p>An online retailer wants to determine whether offering free shipping increases the proportion of customers who complete their purchases. They run an A/B test, where one group of customers sees free shipping on all orders (Group A), while another group sees the standard shipping fees (Group B). After a week, they compare the proportion of customers who completed a purchase in each group. The retailer asks you to use 5% significance level.</p>
+<ol type="a">
+<li>Formulate the hypothesis problem.</li>
+</ol>
+<p>For the two groups, the retailer gathered the following data:</p>
+<p>Group A (Standard shipping):</p>
+<ul>
+<li>Sample size: 469</li>
+<li>Completed purchases: 191</li>
+</ul>
+<p>Group B (Free shipping)</p>
+<ul>
+<li>Sample size: 483</li>
+<li>Completed purchases: 231</li>
+</ul>
+<ol start="2" type="a">
+<li><p>Perform the test: Find Z and the p-value.</p></li>
+<li><p>What is your conclusion?</p></li>
+<li><p>The chief economist in the company has taken a statistics course and learned about the difference between statistical significance and economical significance. How would this distinction influence your recommendation to the company?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0: p_A=p_B\)</span> vs <span class="math inline">\(H_A: p_A&lt;p_B\)</span>.</p></li>
+<li></li>
+</ol>
+<div id="24e7ca4e" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>nA <span class="op">=</span> <span class="dv">469</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>nB <span class="op">=</span> <span class="dv">483</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>pA <span class="op">=</span> <span class="dv">191</span><span class="op">/</span>nA</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>pB <span class="op">=</span> <span class="dv">231</span><span class="op">/</span>nB</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pB<span class="op">-</span>pA)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>pPool <span class="op">=</span> (nA<span class="op">*</span>pA <span class="op">+</span> nB<span class="op">*</span>pB)<span class="op">/</span>(nA<span class="op">+</span>nB)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (pA<span class="op">-</span>pB)<span class="op">/</span>np.sqrt(pPool<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>pPool)<span class="op">*</span>(<span class="dv">1</span><span class="op">/</span>nA<span class="op">+</span><span class="dv">1</span><span class="op">/</span>nB))</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Z="</span>,z)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"pvalue="</span>,stats.norm.cdf(z))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.07101140261425792
+Z= -2.2050192819722274
+pvalue= 0.01372637075205902</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li><p>At a 5% significance level, the free shipping group have a higher completing rate than the standard shipping group.</p></li>
+<li><p>Here the effect size <span class="math inline">\(|\widehat p_A-\widehat p_B| = 7\%\)</span>, that is 7 percentage points higher rate of completing the order if the shipping is free. This increase in completed orders increases the volume, but the free shipping will reduce the margin on each order. We would need more information to assess whether this specific experiment that resulted in a statistically significant increase in volume, also resulted in a economically significant increase of profits.</p></li>
+</ol>
+</details>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->

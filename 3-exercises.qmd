@@ -15,7 +15,7 @@ Suppose the distrution of the diameter is normal.
 
 e) Calculate $P(9.99\le \bar X \le 10.01)$ when $n=16$.
 
-f) How likely is it that the sample mean diameter exceeds 12.01 when $n=25$. 
+f) How likely is it that the sample mean diameter exceeds 10.01 when $n=25$. 
 
 <details>
 <summary>Show solutions</summary>
@@ -54,14 +54,28 @@ The tip percentage at a restaurant has a mean value of 18\% and standard deviati
 
 a) What is the apporixmate probability that the sample mean tip percentage for a random sample of 40 bills is between 16\% and 19\%?
 
-b) If the sample size had been rather 15 than 40, could the probability requrested in part (a) be caculated from the given information?
+b) If the sample size had been rather 15 than 40, could the probability requested in part (a) be calculated from the given information?
 
 
 <details>
 <summary>Show solutions</summary>
 
-a) 0.8366 
-b) No.
+a) With $n=40$ observations, we can approximate the probability using the central limit theorem (CLT). That is $\bar X_{40}\sim N(0.18, 0.06/\sqrt{40})$: 
+$$P(16\%\le \bar X_{40}\le 19\%)=P(\bar X_{40}\le 19\%)-P(\bar X_{40}\le 16\%)=0.8366$$
+
+```{python}
+from scipy import stats
+mean = 0.18
+sd = 0.06/np.sqrt(40)
+print(stats.norm.cdf(0.19, loc=mean, scale =sd)-stats.norm.cdf(0.16, loc=mean, scale = sd))
+```
+b) In (a) we used the Central Limit Theorem (CLT) to approximate the probability using a normal distribution. This relies on a large enough sample size. With only $n=15$ observations, the sample size is likely too low for the CLT. If we use it anyway, we get 0.6423 for the probability. 
+```{python}
+mean = 0.18
+sd = 0.06/np.sqrt(15)
+print(stats.norm.cdf(0.19, loc=mean, scale =sd)-stats.norm.cdf(0.16, loc=mean, scale = sd))
+```
+
 
 </details>
 
@@ -122,7 +136,10 @@ $$\hat{\lambda} = \frac{n}{\sum X_i}.$$
 
 ### Problem 6
 Let $X_1, X_2, \dots, X_n$ be i.i.d. random variables from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2$. That is,
-$$X_i \sim N(\mu, \sigma^2).$$
+$$X_i \sim N(\mu, \sigma^2),$$
+such that the density of the X's is 
+$$f(x,\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( -\frac{(x - \mu)^2}{2\sigma^2}.$$
+
 Find the MLE of $\mu$.
 
 
@@ -193,7 +210,7 @@ $$X = \{4.2, 3.9, 5.1, 4.8, 4.3, 5.0, 3.7, 4.5, 4.9, 4.6\}.$$
 1. Compute the sample variance $s^2$ from the original dataset.
 2. Generate 1000 bootstrap samples and compute $s^2$ for each.
 3. Compute the bootstrap estimate of bias using the formula above.
-4. Interpret the result: If the bias is positive, $s^2$ is underestimating the true variance; if negative, it is overestimating.
+4. Interpret the result: If the bias is positive, $s^2$ is overestimating the true variance; if negative, it is underestimating.
 
 </details>
 

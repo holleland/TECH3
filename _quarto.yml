@@ -103,6 +103,7 @@ website:
                text: "Textbook"
              - 5-videos.qmd
              - 5-exercises.qmd
+             - 5-simpsons-paradox.qmd
     # - title: "Python basics"
     #   contents:
     #     - pythonbasics.qmd
