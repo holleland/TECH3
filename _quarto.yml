@@ -101,9 +101,16 @@ website:
                text: "Introduction"
              - href: 5-textbook.qmd
                text: "Textbook"
-             - 5-videos.qmd
-             - 5-exercises.qmd
+             - 5-categorical-relationships.qmd
+             - 5-contingency-tables.qmd
              - 5-simpsons-paradox.qmd
+             - 5-continuous-relationships-correlation.qmd
+             - 5-correlation-and-causation.qmd
+             # - 5-linear-regression.qmd
+             # - 5-least-squares-estimation.qmd
+             # - 5-correlation-and-regression.qmd
+             - 5-exercises.qmd
+            
     # - title: "Python basics"
     #   contents:
     #     - pythonbasics.qmd

@@ -1,0 +1,23 @@
+# Modeling continuous relationships: Correlation
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1067344770?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Modeling continous relationships: Correlation">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["Modeling continuous relationships: Correlation"](video-pdfs/5/modeling_continuous_relationships_correlation.pdf)
+
+## Control questions:
+
+1.  If an increase in X is associated with an increase in Y, what sign will the correlation coefficient have?
+2.  If an increase in Y is associated with an decrease in X, what sign will the correlation coefficient have?
+3.  What type of dependence is described by correlations?
+4.  What does zero correlation mean for the relationship between X and Y?
+5.  What kind of distribution do we use in a hypothesis test of correlation?

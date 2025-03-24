@@ -1,0 +1,24 @@
+# Correlation and causation
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1068753549?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Correlation and causation">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+Slides for ["Correlation and causation"](video-pdfs/5/correlation_and_causation.pdf)
+
+## Control questions:
+
+1. Is heavier rain correlated with more umbrellas in the street?
+2. What is the causal relationship between heavier rain and proportion of umbrellas in the street?
+3. Why do we use controlled experiments?
+4. Why is randomization important in this context?
+5. What is the difference between an observational study and an experimental one?
+6. What is a confounder?
