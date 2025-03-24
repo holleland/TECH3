@@ -1,10 +1,47 @@
 # Exercises
 
+
+## Contingency tables problems
+
 ### Problem 1 
+[Researchers](https://doi.org/10.1126/science.663611) collected data on the size of their feet for a group of right-handed male and females and counted how many of each sex had a left-foot larger than the right, equal feet or right foot larger than the left. The results are given in the table here:
+
+|Sex | L>R | L=R | L<R|Total|
+|----|-----|-----|----|-----|
+|Men |2|10|28|40|
+|Women|55|18|14|87|
+
+
+
+Does the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the $\chi^2$ test statistic and obtain the p-value. 
+
 
 
 ### Problem 2
+A company wants to assess whether customer response (Yes/No) to a marketing campaign depends on the platform used (Email, SMS, Social Media).
+
+|Response	| Email	| SMS | Social Media|
+|---------|-------|-----|-------------|
+|Yes      |    120|	45  | 80          |
+|No       |  	 180|	105	| 120         |
+
+a) Formulate the null and alternative hypotheses.
+b) Compute the expected frequencies.
+c) Calculate the chi-squared test statistic.
+d) Determine the degrees of freedom.
+f) At a 5% significance level, is there evidence to suggest the response rate depends on the platform?
 
 
-### Problem 3
+<!-- ### Problem 3 -->
+<!-- A café records the preferred payment method (Cash, Card, Mobile Pay) of its customers, categorized by age group (18–35, 36–55, 56+). -->
 
+<!-- |Payment Method|	18–35|	36–55|	56+| -->
+<!-- |--------------|-------|-------|-----| -->
+<!-- |Cash	|40	|35	|60| -->
+<!-- |Card	|70	|80	|55| -->
+<!-- |Mobile Pay|	90|	45|	20| -->
+
+<!-- a) Set up a chi-squared test to assess whether payment method preference depends on age group. -->
+<!-- b) Calculate the expected counts. -->
+<!-- c) Comment on any trends you observe in the data. -->
+<!-- d) Suggest how the café could tailor its services based on the result. -->

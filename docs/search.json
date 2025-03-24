@@ -105,7 +105,19 @@
     "href": "5-exercises.html",
     "title": "Exercises",
     "section": "",
-    "text": "Exercises\n\nProblem 1\n\n\nProblem 2\n\n\nProblem 3",
+    "text": "Researchers collected data on the size of their feet for a group of right-handed male and females and counted how many of each sex had a left-foot larger than the right, equal feet or right foot larger than the left. The results are given in the table here:\n\n\n\nSex\nL&gt;R\nL=R\nL&lt;R\nTotal\n\n\n\n\nMen\n2\n10\n28\n40\n\n\nWomen\n55\n18\n14\n87\n\n\n\nDoes the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the \\(\\chi^2\\) test statistic and obtain the p-value.\n\n\n\nA company wants to assess whether customer response (Yes/No) to a marketing campaign depends on the platform used (Email, SMS, Social Media).\n\n\n\nResponse\nEmail\nSMS\nSocial Media\n\n\n\n\nYes\n120\n45\n80\n\n\nNo\n180\n105\n120\n\n\n\n\nFormulate the null and alternative hypotheses.\nCompute the expected frequencies.\nCalculate the chi-squared test statistic.\nDetermine the degrees of freedom.\nAt a 5% significance level, is there evidence to suggest the response rate depends on the platform?",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Exercises"
+    ]
+  },
+  {
+    "objectID": "5-exercises.html#contingency-tables-problems",
+    "href": "5-exercises.html#contingency-tables-problems",
+    "title": "Exercises",
+    "section": "",
+    "text": "Researchers collected data on the size of their feet for a group of right-handed male and females and counted how many of each sex had a left-foot larger than the right, equal feet or right foot larger than the left. The results are given in the table here:\n\n\n\nSex\nL&gt;R\nL=R\nL&lt;R\nTotal\n\n\n\n\nMen\n2\n10\n28\n40\n\n\nWomen\n55\n18\n14\n87\n\n\n\nDoes the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the \\(\\chi^2\\) test statistic and obtain the p-value.\n\n\n\nA company wants to assess whether customer response (Yes/No) to a marketing campaign depends on the platform used (Email, SMS, Social Media).\n\n\n\nResponse\nEmail\nSMS\nSocial Media\n\n\n\n\nYes\n120\n45\n80\n\n\nNo\n180\n105\n120\n\n\n\n\nFormulate the null and alternative hypotheses.\nCompute the expected frequencies.\nCalculate the chi-squared test statistic.\nDetermine the degrees of freedom.\nAt a 5% significance level, is there evidence to suggest the response rate depends on the platform?",
     "crumbs": [
       "Modules",
       "Module 5: Measuring relationships and fitting models",

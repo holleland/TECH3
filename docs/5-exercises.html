@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -484,9 +513,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
+  <li><a href="#contingency-tables-problems" id="toc-contingency-tables-problems" class="nav-link" data-scroll-target="#contingency-tables-problems">Contingency tables problems</a>
+  <ul class="collapse">
   <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
   <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
-  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -499,16 +530,88 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
+<section id="contingency-tables-problems" class="level2">
+<h2 class="anchored" data-anchor-id="contingency-tables-problems">Contingency tables problems</h2>
 <section id="problem-1" class="level3">
 <h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
+<p><a href="https://doi.org/10.1126/science.663611">Researchers</a> collected data on the size of their feet for a group of right-handed male and females and counted how many of each sex had a left-foot larger than the right, equal feet or right foot larger than the left. The results are given in the table here:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sex</th>
+<th>L&gt;R</th>
+<th>L=R</th>
+<th>L&lt;R</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Men</td>
+<td>2</td>
+<td>10</td>
+<td>28</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td>Women</td>
+<td>55</td>
+<td>18</td>
+<td>14</td>
+<td>87</td>
+</tr>
+</tbody>
+</table>
+<p>Does the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the <span class="math inline">\(\chi^2\)</span> test statistic and obtain the p-value.</p>
 </section>
 <section id="problem-2" class="level3">
 <h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<p>A company wants to assess whether customer response (Yes/No) to a marketing campaign depends on the platform used (Email, SMS, Social Media).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Response</th>
+<th>Email</th>
+<th>SMS</th>
+<th>Social Media</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yes</td>
+<td>120</td>
+<td>45</td>
+<td>80</td>
+</tr>
+<tr class="even">
+<td>No</td>
+<td>180</td>
+<td>105</td>
+<td>120</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li>Formulate the null and alternative hypotheses.</li>
+<li>Compute the expected frequencies.</li>
+<li>Calculate the chi-squared test statistic.</li>
+<li>Determine the degrees of freedom.</li>
+<li>At a 5% significance level, is there evidence to suggest the response rate depends on the platform?</li>
+</ol>
+<!-- ### Problem 3 -->
+<!-- A café records the preferred payment method (Cash, Card, Mobile Pay) of its customers, categorized by age group (18–35, 36–55, 56+). -->
+<!-- |Payment Method|   18–35|  36–55|  56+| -->
+<!-- |--------------|-------|-------|-----| -->
+<!-- |Cash  |40 |35 |60| -->
+<!-- |Card  |70 |80 |55| -->
+<!-- |Mobile Pay|   90| 45| 20| -->
+<!-- a) Set up a chi-squared test to assess whether payment method preference depends on age group. -->
+<!-- b) Calculate the expected counts. -->
+<!-- c) Comment on any trends you observe in the data. -->
+<!-- d) Suggest how the café could tailor its services based on the result. -->
+
+
 </section>
-<section id="problem-3" class="level3">
-<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
-
-
 </section>
 </section>
 
