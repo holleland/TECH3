@@ -106,7 +106,7 @@ website:
              - 5-simpsons-paradox.qmd
              - 5-continuous-relationships-correlation.qmd
              - 5-correlation-and-causation.qmd
-             # - 5-linear-regression.qmd
+             - 5-linear-regression.qmd
              # - 5-least-squares-estimation.qmd
              # - 5-correlation-and-regression.qmd
              - 5-exercises.qmd
