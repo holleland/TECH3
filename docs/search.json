@@ -1199,7 +1199,7 @@
     "href": "5-linear-regression.html",
     "title": "Linear regression",
     "section": "",
-    "text": "“Linear regression”\n“Least squares estimation”\n“Adding covariates”\n“Adding covariates”\n“Adding covariates”\n“Adding more covariates”\n“Adding interactions between variables”\n“Nonlinear linear regression”\n“Goodness of fit”\n“Criticizing the model and checking assumptions”\n“Explain vs predict”\n“Prediction and overfitting”\n“Confidence and prediction intervals”\n“Cross validation”\n“Logistic regression”",
+    "text": "“Linear regression”\n“Least squares estimation”\n“Adding covariates”\n“Least squares estimators”\n“Correlation and regression”\n“Hypothesis testing on regression parameters”\n“Adding more covariates”\n“Adding interactions between variables”\n“Nonlinear linear regression”\n“Goodness of fit”\n“Criticizing the model and checking assumptions”\n“Explain vs predict”\n“Prediction and overfitting”\n“Confidence and prediction intervals”\n“Cross validation”\n“Logistic regression”",
     "crumbs": [
       "Modules",
       "Module 5: Measuring relationships and fitting models",
@@ -1211,7 +1211,7 @@
     "href": "5-linear-regression.html#slides",
     "title": "Linear regression",
     "section": "",
-    "text": "“Linear regression”\n“Least squares estimation”\n“Adding covariates”\n“Adding covariates”\n“Adding covariates”\n“Adding more covariates”\n“Adding interactions between variables”\n“Nonlinear linear regression”\n“Goodness of fit”\n“Criticizing the model and checking assumptions”\n“Explain vs predict”\n“Prediction and overfitting”\n“Confidence and prediction intervals”\n“Cross validation”\n“Logistic regression”",
+    "text": "“Linear regression”\n“Least squares estimation”\n“Adding covariates”\n“Least squares estimators”\n“Correlation and regression”\n“Hypothesis testing on regression parameters”\n“Adding more covariates”\n“Adding interactions between variables”\n“Nonlinear linear regression”\n“Goodness of fit”\n“Criticizing the model and checking assumptions”\n“Explain vs predict”\n“Prediction and overfitting”\n“Confidence and prediction intervals”\n“Cross validation”\n“Logistic regression”",
     "crumbs": [
       "Modules",
       "Module 5: Measuring relationships and fitting models",
