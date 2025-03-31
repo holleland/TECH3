@@ -625,7 +625,7 @@ Show solutions
 <li><p><span class="math inline">\(T=(215-200)/(25/\sqrt{30})=3.29\)</span></p></li>
 <li><p><span class="math inline">\(\text{p-value}=P(T_{29}&gt;3.29)=0.00132\)</span>. The p-value is very low, indicating that we may reject the null hypothesis at (almost) any significance level in (a). The company should continue with the reduced price.</p></li>
 </ol>
-<div id="c08eb2a7" class="cell" data-execution_count="1">
+<div id="94466fc2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">-</span>stats.t.cdf(<span class="fl">3.29</span>, <span class="dv">29</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -655,7 +655,7 @@ Show solutions
 <li><p><span class="math inline">\(T=(270-250)/(90/\sqrt{50})=1.57\)</span></p></li>
 <li><p><span class="math inline">\(\text{p-value}=P(T_{29}&gt;3.29)=0.0613\)</span>. The p-value is higher than 5%, indicating that we may reject not the null hypothesis. The pension payments have not increased due to the change from opting in to opting out.</p></li>
 </ol>
-<div id="eef00c30" class="cell" data-execution_count="2">
+<div id="68446c6c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">-</span>stats.t.cdf(<span class="fl">2.94</span>, <span class="dv">49</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -683,7 +683,7 @@ Show solutions
 <li><p><span class="math display">\[\text{p-value}=P(T_{39}&lt;-2.53)=0.0079\]</span></p></li>
 </ol>
 <p>Since the p-value is lower than the conventional 5% significance level, we reject the null hypothesis, suggesting that the new diet plan significantly reduces daily calorie intake.</p>
-<div id="d9eb9ecb" class="cell" data-execution_count="3">
+<div id="152daa50" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.t.cdf(<span class="op">-</span><span class="fl">2.53</span>, <span class="dv">39</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -710,7 +710,7 @@ Show solutions
 <li><p><span class="math display">\[\text{p-value}=2 \times P(T_{49}&lt;-2.94)=0.0049\]</span></p></li>
 </ol>
 <p>Since the p-value is very small, we reject the null hypothesis, indicating that the battery life is significantly different from 24 hours.</p>
-<div id="7d2abfe7" class="cell" data-execution_count="4">
+<div id="79fe4af4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span><span class="op">*</span>stats.t.cdf(<span class="op">-</span><span class="fl">2.946</span>, <span class="dv">49</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.004914894166068594</code></pre>
@@ -749,7 +749,7 @@ Show solutions
 <li><p>Under the null hypothesis, we expect the numerator of the test statistic to be close to zero, making the test statistic close to zero. Under the alternative hypothesis, we expect <span class="math inline">\(\bar x_1&gt;\bar x_2\)</span> such that the numerator of <span class="math inline">\(T\)</span> will be positive. Higher values will therefore favor the alternative hypothesis.</p></li>
 <li></li>
 </ol>
-<div id="7864138a" class="cell" data-execution_count="5">
+<div id="adacf81c" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> <span class="dv">30</span><span class="op">;</span>  s2 <span class="op">=</span> <span class="dv">28</span><span class="op">;</span> n1 <span class="op">=</span> <span class="dv">40</span><span class="op">;</span> n2 <span class="op">=</span> <span class="dv">40</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="dv">120</span><span class="op">;</span> m2 <span class="op">=</span> <span class="dv">105</span><span class="op">;</span></span>
@@ -766,7 +766,7 @@ T= 2.311799743112827</code></pre>
 <ol start="4" type="a">
 <li><span class="math inline">\(\text{p-value}=P(T_{29}&gt;0.462)=0.32\)</span>. The p-value is lower than 10%, indicating that we may reject the null hypothesis. There is enough evidence to suggest that the reviews increase the sales at a 10% significance level. The company should show reviews of their products to increase sales.</li>
 </ol>
-<div id="47080b3e" class="cell" data-execution_count="6">
+<div id="ef4eb4bc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">-</span>stats.t.cdf(t, df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -806,7 +806,7 @@ Show solutions
 <li><p><span class="math inline">\(T=1.96\)</span> and p-value <span class="math inline">\(=0.0267\)</span>.</p></li>
 <li><p>The p-value is low, indicating evidence for the alternative hypothesis, but we have set a significance level of 1%, for which the p-value exceeds. This would lead us to not recommend implementing the bonus, because it does not improve productivity to a high enough degree at this significance level.</p></li>
 </ol>
-<div id="38e00d24" class="cell" data-execution_count="7">
+<div id="ccbe4ad1" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="dv">52</span><span class="op">;</span> s1 <span class="op">=</span> <span class="dv">8</span><span class="op">;</span> n1 <span class="op">=</span> <span class="dv">35</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>m2 <span class="op">=</span> <span class="dv">48</span><span class="op">;</span> s2 <span class="op">=</span> <span class="dv">9</span><span class="op">;</span> n2 <span class="op">=</span> <span class="dv">35</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>stats.ttest_ind_from_stats(m1,s1,n1,m2,s2,n2,alternative<span class="op">=</span><span class="st">"greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -836,7 +836,7 @@ Show solutions
 <li><p><span class="math inline">\(H_0: \mu_1 = \mu_2\)</span> vs <span class="math inline">\(H_A: \mu_1 &gt; \mu_2\)</span>.</p></li>
 <li></li>
 </ol>
-<div id="81bd8d07" class="cell" data-execution_count="8">
+<div id="40495d18" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> s2 <span class="op">=</span> <span class="dv">12</span><span class="op">;</span> n1 <span class="op">=</span> <span class="dv">30</span><span class="op">;</span> n2 <span class="op">=</span> <span class="dv">35</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="op">=</span> <span class="dv">78</span><span class="op">;</span> m2 <span class="op">=</span> <span class="dv">72</span><span class="op">;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (s1<span class="op">**</span><span class="dv">2</span><span class="op">/</span>n1 <span class="op">+</span> s2<span class="op">**</span><span class="dv">2</span><span class="op">/</span>n2)<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> ((s1<span class="op">**</span><span class="dv">2</span><span class="op">/</span>n1)<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(n1<span class="op">-</span><span class="dv">1</span>) <span class="op">+</span> (s2<span class="op">**</span><span class="dv">2</span><span class="op">/</span>n2)<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(n2<span class="op">-</span><span class="dv">1</span>))</span>
@@ -851,7 +851,7 @@ T= 2.1985812677253573</code></pre>
 <ol start="3" type="a">
 <li>The computed p-value is <span class="math inline">\(P(T_{63}&gt;t)=0.0158\)</span>. The evidence thus points towards the conclusion that attending tutoring improves performance, due to a low p-value.</li>
 </ol>
-<div id="8a5dc83b" class="cell" data-execution_count="9">
+<div id="e5abdf66" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">-</span>stats.t.cdf(t, df))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.01579534729247911</code></pre>
@@ -882,7 +882,7 @@ Show solutions
 <li><p><span class="math inline">\(H_0: p=0.6\)</span> vs <span class="math inline">\(H_A: \mu&gt;0.6\)</span>. The numerator of <span class="math inline">\(Z\)</span> will be expected close to 0 if the null is zero, making Z close to zero. If <span class="math inline">\(H_A\)</span> is true, <span class="math inline">\(\widehat p\)</span> will be expected larger than 0.6, making Z positive. Large values of <span class="math inline">\(Z\)</span> will favor <span class="math inline">\(H_A\)</span>.</p></li>
 <li><p><span class="math inline">\(Z = (0.65-0.6)/\sqrt{0.6\cdot 0.4/400}=2.04\)</span> and p-value<span class="math inline">\(=P(Z&gt;2.04)=0.0206\)</span>.</p></li>
 </ol>
-<div id="c0648b57" class="cell" data-execution_count="10">
+<div id="4cf2ad5a" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>phat <span class="op">=</span> <span class="dv">260</span><span class="op">/</span><span class="dv">400</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (phat<span class="op">-</span><span class="fl">0.6</span>)<span class="op">/</span>np.sqrt(<span class="fl">0.6</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.6</span>)<span class="op">/</span><span class="dv">400</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Z="</span>, z)</span>
@@ -918,7 +918,7 @@ Show solutions
 <li><p><span class="math inline">\(\hat p=166/500= 33.2\%\)</span>, <span class="math inline">\(z=(0.332-0.3)/\sqrt{0.3*0.7/500}=1.56\)</span> and <span class="math inline">\(P(Z&gt;z)=P(Z&gt;1.56)=1-\Phi(1.56)=0.0592\)</span>.</p></li>
 <li><p>At a 10% signifance level, we would reject the null hypothesis, since the p-value of 0.06 is smaller than 0.1. At this significance level, we would recommend the brand to go ahead with the launch of their eco-friendly clothing.</p></li>
 </ol>
-<div id="ba75cfbc" class="cell" data-execution_count="11">
+<div id="2043843f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>phat <span class="op">=</span> <span class="dv">166</span><span class="op">/</span><span class="dv">500</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (phat<span class="op">-</span><span class="fl">0.3</span>)<span class="op">/</span>np.sqrt(<span class="fl">0.3</span><span class="op">*</span>(<span class="dv">1</span><span class="op">-</span><span class="fl">0.3</span>)<span class="op">/</span><span class="dv">500</span>)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Z="</span>, z)</span>
@@ -947,7 +947,7 @@ Show solutions
 <li><p><span class="math display">\[Z=\frac{0.725-0.7}{\sqrt{0.7\cdot 0.3/600}}=1.63\]</span></p></li>
 </ol>
 <p>p-value <span class="math inline">\(=P(Z&gt;1.63)=0.0907\)</span></p>
-<div id="2f2da07e" class="cell" data-execution_count="12">
+<div id="9e693a71" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p_hat <span class="op">=</span> <span class="dv">435</span><span class="op">/</span><span class="dv">600</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (p_hat<span class="op">-</span><span class="fl">0.7</span>) <span class="op">/</span> ( (<span class="fl">0.7</span><span class="op">*</span><span class="fl">0.3</span><span class="op">/</span><span class="dv">600</span>)<span class="op">**</span><span class="fl">0.5</span> )</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Z="</span>, z)</span>
@@ -996,7 +996,7 @@ Show solutions
 <li><p>We use <span class="math inline">\(p_1=p_L\)</span> and <span class="math inline">\(p_2 =p_G\)</span> in refence to the formula for the test statistic. If the null hypothesis is true, Z is expected to be close to zero since the numerator is expected to be near 0. If the alternative hypothesis is true, we expect <span class="math inline">\(\hat p_L&gt;\hat p_G\)</span>, giving a positive numerator. Thus, large values of Z will favor the alternative hypothesis.</p></li>
 <li></li>
 </ol>
-<div id="7d845693" class="cell" data-execution_count="13">
+<div id="d35bb282" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pL <span class="op">=</span> <span class="fl">0.45</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>pG <span class="op">=</span> <span class="fl">0.35</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>nL <span class="op">=</span> <span class="dv">200</span></span>
@@ -1045,7 +1045,7 @@ Show solutions
 <li><p><span class="math inline">\(H_0: p_A=p_B\)</span> vs <span class="math inline">\(H_A: p_A&lt;p_B\)</span>.</p></li>
 <li></li>
 </ol>
-<div id="16e01c26" class="cell" data-execution_count="14">
+<div id="906ff713" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>nA <span class="op">=</span> <span class="dv">469</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>nB <span class="op">=</span> <span class="dv">483</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>pA <span class="op">=</span> <span class="dv">191</span><span class="op">/</span>nA</span>
@@ -1087,7 +1087,7 @@ Show solutions
 <li><p><span class="math inline">\(H_0: p_1 = p_2\)</span> vs <span class="math inline">\(H_A: p_1 &gt; p_2\)</span>.</p></li>
 <li></li>
 </ol>
-<div id="c54c6132" class="cell" data-execution_count="15">
+<div id="bce1ee31" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>n1, n2 <span class="op">=</span> <span class="dv">500</span>, <span class="dv">500</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>p1, p2 <span class="op">=</span> <span class="dv">210</span><span class="op">/</span>n1, <span class="dv">180</span><span class="op">/</span>n2</span>

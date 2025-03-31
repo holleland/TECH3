@@ -1199,7 +1199,19 @@
     "href": "5-linear-regression.html",
     "title": "Linear regression",
     "section": "",
-    "text": "Slides for “Linear regression”",
+    "text": "“Linear regression”\n“Least squares estimation”\n“Adding covariates”\n“Adding covariates”\n“Adding covariates”\n“Adding more covariates”\n“Adding interactions between variables”\n“Nonlinear linear regression”\n“Goodness of fit”\n“Criticizing the model and checking assumptions”\n“Explain vs predict”\n“Prediction and overfitting”\n“Confidence and prediction intervals”\n“Cross validation”\n“Logistic regression”",
+    "crumbs": [
+      "Modules",
+      "Module 5: Measuring relationships and fitting models",
+      "Linear regression"
+    ]
+  },
+  {
+    "objectID": "5-linear-regression.html#slides",
+    "href": "5-linear-regression.html#slides",
+    "title": "Linear regression",
+    "section": "",
+    "text": "“Linear regression”\n“Least squares estimation”\n“Adding covariates”\n“Adding covariates”\n“Adding covariates”\n“Adding more covariates”\n“Adding interactions between variables”\n“Nonlinear linear regression”\n“Goodness of fit”\n“Criticizing the model and checking assumptions”\n“Explain vs predict”\n“Prediction and overfitting”\n“Confidence and prediction intervals”\n“Cross validation”\n“Logistic regression”",
     "crumbs": [
       "Modules",
       "Module 5: Measuring relationships and fitting models",
