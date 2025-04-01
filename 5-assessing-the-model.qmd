@@ -1,0 +1,25 @@
+# Assessing the model
+
+::: {style="padding:75% 0 0 0;position:relative;"}
+<iframe src="https://vimeo.com/showcase/11647428/embed?portrait=0&amp;byline=0" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+
+</iframe>
+:::
+
+## Slides
+
+-   ["Goodness of fit"](video-pdfs/5/goodness_of_fit.pdf)
+-   ["Criticizing the model and checking assumptions"](video-pdfs/5/criticizing_the_model_and_checking_assumptions.pdf)
+
+
+## Control questions:
+
+- What is the interpretation of $R^2=0.80$?
+- If the correlation between $X$ and $Y$ is $0.5$, what is $R^2$ in the regression $Y=\beta_0+\beta_1 X+\epsilon$? 
+- What are the assumptions of a linear regression?
+- How do we assess whether the linearity assumption is fulfilled?
+- How do we assess whether the residuals are homoskedastic (have constant variance)?
+- What is QQ-plot and what do we use it for?
+- Do we need normality of the errors when estimating coefficients?
+- Do we need normality when making prediction intervals?
+

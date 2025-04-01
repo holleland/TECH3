@@ -1,31 +1,31 @@
 # Linear regression
 
 ::: {style="padding:75% 0 0 0;position:relative;"}
-<iframe src='https://vimeo.com/showcase/11645285/embed?portrait=0&amp;byline=0' allowfullscreen frameborder='0' style='position:absolute;top:0;left:0;width:100%;height:100%;'>
+<iframe src="https://vimeo.com/showcase/11645285/embed?portrait=0&amp;byline=0" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+
 </iframe>
 :::
 
 ## Slides
 
-- ["Linear regression"](video-pdfs/5/linear_regression.pdf)
-- ["Least squares estimation"](video-pdfs/5/LSE.pdf)
-- ["Adding covariates"](video-pdfs/5/adding_covariates.pdf)
-- ["Least squares estimators"](video-pdfs/5/least_squares_estimators.pdf)
-- ["Correlation and regression"](video-pdfs/5/correlation_and_regression.pdf)
-- ["Hypothesis testing on regression parameters"](video-pdfs/5/hypothesis_testing_on_regression_parameters.pdf)
-- ["Adding more covariates"](video-pdfs/5/adding_more_covariates.pdf)
-- ["Adding interactions between variables"](video-pdfs/5/adding_interactions_between_variables.pdf)
-- ["Nonlinear linear regression"](video-pdfs/5/nonlinear_linear_regression.pdf)
-- ["Goodness of fit"](video-pdfs/5/goodness_of_fit.pdf)
-- ["Criticizing the model and checking assumptions"](video-pdfs/5/criticizing_the_model_and_checking_assumptions.pdf)
-- ["Explain vs predict"](video-pdfs/5/explain_vs_predict.pdf)
-- ["Prediction and overfitting"](video-pdfs/5/prediction_and_overfitting.pdf)
-- ["Confidence and prediction intervals"](video-pdfs/5/confidence_and_prediction_intervals.pdf)
-- ["Cross validation"](video-pdfs/5/crossvalidation.pdf)
-- ["Logistic regression"](video-pdfs/5/logistic_regression.pdf)
-
+-   ["Linear regression"](video-pdfs/5/linear_regression.pdf)
+-   ["Least squares estimation"](video-pdfs/5/LSE.pdf)
+-   ["Adding covariates"](video-pdfs/5/adding_covariates.pdf)
+-   ["Least squares estimators"](video-pdfs/5/least_squares_estimators.pdf)
+-   ["Correlation and regression"](video-pdfs/5/correlation_and_regression.pdf)
+-   ["Hypothesis testing on regression parameters"](video-pdfs/5/hypothesis_testing_on_regression_parameters.pdf)
+-   ["Adding more covariates"](video-pdfs/5/adding_more_covariates.pdf)
+-   ["Adding interactions between variables"](video-pdfs/5/adding_interactions_between_variables.pdf)
+-   ["Nonlinear linear regression"](video-pdfs/5/nonlinear_linear_regression.pdf)
 
 
 ## Control questions:
 
-
+- What is the interpretation of $\beta_0$ is a simple linear regression $Y=\beta_0+\beta_1 X+\epsilon$?
+- What is the interpretation of $\beta_1$?
+- What are we minimizing when estimating $\beta_0$ and $\beta_1$?
+- When is there a one-to-one relationship between the correlation between $X$ and $Y$ and the regression coefficient for $X$? 
+- What is the null hypothesis when we are looking at the default table from a linear regression in Python?
+- If $\text{Height_i}=\beta_0+\beta_a \text{Age}_i + \beta_m\text{Male}_i+\epsilon_i$, where $\text{Male}_i$ is 1 if the child is male, what is the intercept for male and females?
+- If $\text{Height_i}=\beta_0+\beta_a \text{Age}_i + \beta_m\text{Male}_i+\beta_{a\times m}\text{Age}_i\text{Male}_i+\epsilon_i$, where $\text{Male}_i$ is 1 if the child is male, what is the slope for male and females?
+- How can we implement a nonlinear relations in a linear regression?

@@ -107,8 +107,9 @@ website:
              - 5-continuous-relationships-correlation.qmd
              - 5-correlation-and-causation.qmd
              - 5-linear-regression.qmd
-             # - 5-least-squares-estimation.qmd
-             # - 5-correlation-and-regression.qmd
+             - 5-assessing-the-model.qmd
+             - 5-prediction-models.qmd
+             - 5-logistic-regression.qmd
              - 5-exercises.qmd
             
     # - title: "Python basics"

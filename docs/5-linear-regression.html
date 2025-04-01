@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./5-exercises.html" rel="next">
+<link href="./5-assessing-the-model.html" rel="next">
 <link href="./5-correlation-and-causation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -473,6 +502,24 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./5-assessing-the-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assessing the model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5-prediction-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prediction models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5-logistic-regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistic regression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./5-exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
@@ -521,17 +568,20 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="video-pdfs/5/adding_more_covariates.pdf">“Adding more covariates”</a></li>
 <li><a href="video-pdfs/5/adding_interactions_between_variables.pdf">“Adding interactions between variables”</a></li>
 <li><a href="video-pdfs/5/nonlinear_linear_regression.pdf">“Nonlinear linear regression”</a></li>
-<li><a href="video-pdfs/5/goodness_of_fit.pdf">“Goodness of fit”</a></li>
-<li><a href="video-pdfs/5/criticizing_the_model_and_checking_assumptions.pdf">“Criticizing the model and checking assumptions”</a></li>
-<li><a href="video-pdfs/5/explain_vs_predict.pdf">“Explain vs predict”</a></li>
-<li><a href="video-pdfs/5/prediction_and_overfitting.pdf">“Prediction and overfitting”</a></li>
-<li><a href="video-pdfs/5/confidence_and_prediction_intervals.pdf">“Confidence and prediction intervals”</a></li>
-<li><a href="video-pdfs/5/crossvalidation.pdf">“Cross validation”</a></li>
-<li><a href="video-pdfs/5/logistic_regression.pdf">“Logistic regression”</a></li>
 </ul>
 </section>
 <section id="control-questions" class="level2">
 <h2 class="anchored" data-anchor-id="control-questions">Control questions:</h2>
+<ul>
+<li>What is the interpretation of <span class="math inline">\(\beta_0\)</span> is a simple linear regression <span class="math inline">\(Y=\beta_0+\beta_1 X+\epsilon\)</span>?</li>
+<li>What is the interpretation of <span class="math inline">\(\beta_1\)</span>?</li>
+<li>What are we minimizing when estimating <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>?</li>
+<li>When is there a one-to-one relationship between the correlation between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> and the regression coefficient for <span class="math inline">\(X\)</span>?</li>
+<li>What is the null hypothesis when we are looking at the default table from a linear regression in Python?</li>
+<li>If <span class="math inline">\(\text{Height_i}=\beta_0+\beta_a \text{Age}_i + \beta_m\text{Male}_i+\epsilon_i\)</span>, where <span class="math inline">\(\text{Male}_i\)</span> is 1 if the child is male, what is the intercept for male and females?</li>
+<li>If <span class="math inline">\(\text{Height_i}=\beta_0+\beta_a \text{Age}_i + \beta_m\text{Male}_i+\beta_{a\times m}\text{Age}_i\text{Male}_i+\epsilon_i\)</span>, where <span class="math inline">\(\text{Male}_i\)</span> is 1 if the child is male, what is the slope for male and females?</li>
+<li>How can we implement a nonlinear relations in a linear regression?</li>
+</ul>
 
 
 </section>
@@ -965,8 +1015,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./5-exercises.html" class="pagination-link" aria-label="Exercises">
-        <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./5-assessing-the-model.html" class="pagination-link" aria-label="Assessing the model">
+        <span class="nav-page-text">Assessing the model</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
