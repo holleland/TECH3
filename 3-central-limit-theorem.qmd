@@ -12,7 +12,7 @@
 
 <br>
 
-Slides for ["Central limit theorem"](video-pdfs/3/central_limit_theorem.pdf)
+Slides for ["Central limit theorem"](video-pdfs/3/centrallimittheorem.pdf)
 
 ## Control questions
 
