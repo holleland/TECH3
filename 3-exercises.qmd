@@ -90,9 +90,43 @@ b)  How large a sample size would be required to ensure that the first probabili
 
 <summary>Show solutions</summary>
 
-a)  0.9802 and 0.4802
-b)  
-    32. 
+a) Let $X_i$, $i=1,\ldots, 25$ denote the sugar content of 25 randomly selected fruits. We then have from the CLT that $\overline X_{25}=\frac{1}{25}\sum_{i=1}^{25}X_i$ is approximately $N(\mu,\sigma^2/n)=N(2.65, 0.85^2/25)$.
+
+We can thus find the probabilities by
+
+$$P(\overline X_{25} \le 3) = P\left(\frac{\overline X_{25}-\mu}{\sigma/\sqrt{n}}\le\frac{3-2.65}{0.85/\sqrt{25}}\right)=P(Z\le 2.059)=0.9802,$$
+where the latter equality comes from 
+```{python}
+from scipy.stats import norm
+print(norm.cdf(2.059))
+```
+
+$$P(\overline X_{25} \le 2.65) = P\left(\frac{\overline X_{25}-\mu}{\sigma/\sqrt{n}}\le\frac{2.65-2.65}{0.85/\sqrt{25}}\right)=P(Z\le 0)=0.5,$$
+since Z is N(0,1) and the normal distribution is symmetric around its mean. We thus have that 
+\begin{align*}
+P(2.65\le\overline X_{25}\le 3)&=P(0\le Z\le 2.059)=P(Z\le 2.059)-P(Z\le 0)\\
+&= 0.9802-05=0.4802.
+\end{align*}
+
+We could also find the probabilities without finding the Z-scores: 
+```{python}
+#| echo: true
+import numpy as np
+print("P(Xbar <= 3) = ", norm.cdf(3, loc = 2.65, scale = np.sqrt(0.0289)))
+print("P(Xbar <= 2.65) = ", norm.cdf(3, loc = 2.65, scale = np.sqrt(0.0289)) - norm.cdf(2.65, loc = 2.65, scale = np.sqrt(0.0289)))
+```
+
+
+b)  We then need to find the value of n that satisfies:
+$$P(\overline X_{n} \le 3) = P\left(\frac{\overline X_{n}-\mu}{\sigma/\sqrt{n}}\le\frac{3-2.65}{0.85/\sqrt{n}}\right)=P(Z\le \frac{0.35}{0.85}\sqrt{n})=0.99.$$
+The us then find the z-score that give a probability of 0.99 using the quantile function or percent point function (the inverse of cdf): 
+```{python}
+#| echo: true
+print(norm.ppf(0.99))
+```
+That is $P(Z\le 2.3263) = 0.99$, so to find $n$ we need to solve
+$$\frac{0.35}{0.85}\sqrt n = 2.3263\Leftrightarrow n=2.3263^2\frac{0.85^2}{0.35^2}=31.91\approx 32.$$
+Note that we round off $n$ to an integer and we should here always round up to ensure that the probability is not less than 0.99. 
 
 </details>
 
@@ -136,7 +170,7 @@ Solving for $\lambda$: $$\hat{\lambda} = \frac{n}{\sum X_i}.$$
 
 ### Problem 6
 
-Let $X_1, X_2, \dots, X_n$ be i.i.d. random variables from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2$. That is, $$X_i \sim N(\mu, \sigma^2),$$ such that the density of the X's is $$f(x,\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( -\frac{(x - \mu)^2}{2\sigma^2}.$$
+Let $X_1, X_2, \dots, X_n$ be i.i.d. random variables from a normal distribution with unknown mean $\mu$ and known variance $\sigma^2$. That is, $$X_i \sim N(\mu, \sigma^2),$$ such that the density of the X's is $$f(x,\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( -\frac{(x - \mu)^2}{2\sigma^2}\right).$$
 
 Find the MLE of $\mu$.
 
@@ -209,11 +243,11 @@ When playing the casino game american roulette, there are 38 possible outcomes: 
 
 a)  What is the probability of winning if you bet on a black outcome?
 
-A gambler has \$100 and bets \$1 each time he plays. He plays until he is either out of money or has doubled his money.
+A gambler has \$100 and bets \$1 each time he plays. He plays until he is either out of money or has \$150.
 
 b)  How would you construct a Monte Carlo simulation of a situation where you always bet on black, and want to find the probability of going bankrupt.
 
-c)  What would the probability of the gambler doubling his money?
+c)  What would the probability be of the gambler reaches his goal of \$150?
 
 <details>
 
@@ -221,9 +255,35 @@ c)  What would the probability of the gambler doubling his money?
 
 a)  The probability of winning when betting on black is $18/38=0.474$
 
-b)  It would make sense to use a while loop and continue to simulate unless the gambler is bankrupt or has \$200. For simulate the game, use a Bernoulli distribution for each game with success probability $18/38=0.474$. If the Bernoulli variable is 1, increase the "bank" of the gambler by 1 dollar. If it is 0, decrease it by 1 dollar. Repeat the game 10 000 times and calculate the relative frequency of going bankrupt.
+b)  It would make sense to use a while loop and continue to simulate unless the gambler is bankrupt or has \$200. To simulate the game, use a Bernoulli distribution for each game with success probability $18/38=0.474$. If the Bernoulli variable is 1, increase the "bank" of the gambler by 1 dollar. If it is 0, decrease it by 1 dollar. Repeat the game 10 000 times and calculate the relative frequency of going bankrupt.
 
-c)  In the end, there are only two outcomes of the experiment. Either the gambler goes bankrupt or he doubles his money. The probability of doubling the money, would therefore be 1-the probability of going bankrupt.
+```{python}
+#| echo: true
+import random
+random.seed(123)
+
+def simulate_game_simple(starting_money=100, goal_money=150, bet_amount=1):
+    money = starting_money
+    while 0 < money < goal_money:
+        # Simulate the outcome: +1 with prob 18/38, -1 with prob 20/38
+        outcome = random.choices([-1, 1], weights=[20, 18])[0]
+        money += outcome * bet_amount
+    return money == 0  # True if bankrupt
+
+def monte_carlo_simulation(n_simulations=10000):
+    bankrupt_count = sum(simulate_game_simple() for _ in range(n_simulations))
+    return bankrupt_count / n_simulations
+
+# Run the simplified simulation
+estimated_prob = monte_carlo_simulation(10000)
+print(f"Estimated probability of going bankrupt: {estimated_prob:.4f}")
+
+```
+
+c)  In the end, there are only two outcomes of the experiment. Either the gambler ends up with \$0 (bankrupt) or \$150. The probability achieving \$150 would therefore be 1-the probability of going bankrupt.
+
+From the python simulation above, it would then be
+$$1-P(bankrupt)=1-0.9949=0.0051$$
 
 </details>
 
@@ -235,7 +295,6 @@ Let $X_1,\ldots, X_n$ be a random sample from the probability density function $
 
 <summary>Show solutions</summary>
 
-$$L(\theta)=f(x_1,\ldots, x_n|\theta) = \theta^n \prod_{i=1}^nx_i^{\theta -1}$$ $$\log L = n\log \theta + (\theta-1)\sum_{i=1}^n\log x_i$$ $$\frac{\partial \log L}{\partial \theta} = \frac{n}{\theta} + \sum_{i=1}^n\log x_i=0$$ 
-$$\widehat \theta = \frac{-n}{\sum_{i=1}^n \log x_i}.$$
+$$L(\theta)=f(x_1,\ldots, x_n|\theta) = \theta^n \prod_{i=1}^nx_i^{\theta -1}$$ $$\log L = n\log \theta + (\theta-1)\sum_{i=1}^n\log x_i$$ $$\frac{\partial \log L}{\partial \theta} = \frac{n}{\theta} + \sum_{i=1}^n\log x_i=0$$ $$\widehat \theta = \frac{-n}{\sum_{i=1}^n \log x_i}.$$
 
 </details>

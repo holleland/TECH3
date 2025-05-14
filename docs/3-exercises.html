@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-532d0436926d9e9a58d8ab8ed952f4de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -628,7 +628,7 @@ Show solutions
 <li><p>With less variability, the second sample is more closely centered near 10.</p></li>
 <li><p><span class="math inline">\(P(9.99\le \bar X \le 10.01)=P(\bar X \le 10.01)-P(\bar X \le 9.99) = 0.84-0.16= 0.68\)</span>, getting the numbers from the code below:</p></li>
 </ol>
-<div id="3fbb17f7" class="cell" data-execution_count="1">
+<div id="3ec04be8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
@@ -642,7 +642,7 @@ Show solutions
 <ol start="5" type="a">
 <li><span class="math inline">\(P(\bar X_{25}&gt;10.01)=0.106\)</span>.</li>
 </ol>
-<div id="1dd18d55" class="cell" data-execution_count="2">
+<div id="941e856d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span><span class="op">-</span>stats.norm.cdf(<span class="fl">10.01</span>, loc <span class="op">=</span> <span class="dv">10</span>, scale <span class="op">=</span> <span class="fl">0.04</span><span class="op">/</span>np.sqrt(<span class="dv">25</span>))</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -666,7 +666,7 @@ Show solutions
 <ol type="a">
 <li>With <span class="math inline">\(n=40\)</span> observations, we can approximate the probability using the central limit theorem (CLT). That is <span class="math inline">\(\bar X_{40}\sim N(0.18, 0.06/\sqrt{40})\)</span>: <span class="math display">\[P(16\%\le \bar X_{40}\le 19\%)=P(\bar X_{40}\le 19\%)-P(\bar X_{40}\le 16\%)=0.8366\]</span></li>
 </ol>
-<div id="c83c836e" class="cell" data-execution_count="3">
+<div id="22efc7b1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> <span class="fl">0.18</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sd <span class="op">=</span> <span class="fl">0.06</span><span class="op">/</span>np.sqrt(<span class="dv">40</span>)</span>
@@ -678,7 +678,7 @@ Show solutions
 <ol start="2" type="a">
 <li>In (a) we used the Central Limit Theorem (CLT) to approximate the probability using a normal distribution. This relies on a large enough sample size. With only <span class="math inline">\(n=15\)</span> observations, the sample size is likely too low for the CLT. If we use it anyway, we get 0.6423 for the probability.</li>
 </ol>
-<div id="27edcdf6" class="cell" data-execution_count="4">
+<div id="bdd4355b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> <span class="fl">0.18</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sd <span class="op">=</span> <span class="fl">0.06</span><span class="op">/</span>np.sqrt(<span class="dv">15</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.norm.cdf(<span class="fl">0.19</span>, loc<span class="op">=</span>mean, scale <span class="op">=</span>sd)<span class="op">-</span>stats.norm.cdf(<span class="fl">0.16</span>, loc<span class="op">=</span>mean, scale <span class="op">=</span> sd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -700,11 +700,41 @@ Show solutions
 Show solutions
 </summary>
 <ol type="a">
-<li>0.9802 and 0.4802</li>
-<li><ol start="32" type="1">
-<li></li>
-</ol></li>
+<li>Let <span class="math inline">\(X_i\)</span>, <span class="math inline">\(i=1,\ldots, 25\)</span> denote the sugar content of 25 randomly selected fruits. We then have from the CLT that <span class="math inline">\(\overline X_{25}=\frac{1}{25}\sum_{i=1}^{25}X_i\)</span> is approximately <span class="math inline">\(N(\mu,\sigma^2/n)=N(2.65, 0.85^2/25)\)</span>.</li>
 </ol>
+<p>We can thus find the probabilities by</p>
+<p><span class="math display">\[P(\overline X_{25} \le 3) = P\left(\frac{\overline X_{25}-\mu}{\sigma/\sqrt{n}}\le\frac{3-2.65}{0.85/\sqrt{25}}\right)=P(Z\le 2.059)=0.9802,\]</span> where the latter equality comes from</p>
+<div id="086c2ede" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(norm.cdf(<span class="fl">2.059</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.9802528807563333</code></pre>
+</div>
+</div>
+<p><span class="math display">\[P(\overline X_{25} \le 2.65) = P\left(\frac{\overline X_{25}-\mu}{\sigma/\sqrt{n}}\le\frac{2.65-2.65}{0.85/\sqrt{25}}\right)=P(Z\le 0)=0.5,\]</span> since Z is N(0,1) and the normal distribution is symmetric around its mean. We thus have that <span class="math display">\[\begin{align*}
+P(2.65\le\overline X_{25}\le 3)&amp;=P(0\le Z\le 2.059)=P(Z\le 2.059)-P(Z\le 0)\\
+&amp;= 0.9802-05=0.4802.
+\end{align*}\]</span></p>
+<p>We could also find the probabilities without finding the Z-scores:</p>
+<div id="64a1e844" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(Xbar &lt;= 3) = "</span>, norm.cdf(<span class="dv">3</span>, loc <span class="op">=</span> <span class="fl">2.65</span>, scale <span class="op">=</span> np.sqrt(<span class="fl">0.0289</span>)))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"P(Xbar &lt;= 2.65) = "</span>, norm.cdf(<span class="dv">3</span>, loc <span class="op">=</span> <span class="fl">2.65</span>, scale <span class="op">=</span> np.sqrt(<span class="fl">0.0289</span>)) <span class="op">-</span> norm.cdf(<span class="fl">2.65</span>, loc <span class="op">=</span> <span class="fl">2.65</span>, scale <span class="op">=</span> np.sqrt(<span class="fl">0.0289</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(Xbar &lt;= 3) =  0.980244426611219
+P(Xbar &lt;= 2.65) =  0.480244426611219</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>We then need to find the value of n that satisfies: <span class="math display">\[P(\overline X_{n} \le 3) = P\left(\frac{\overline X_{n}-\mu}{\sigma/\sqrt{n}}\le\frac{3-2.65}{0.85/\sqrt{n}}\right)=P(Z\le \frac{0.35}{0.85}\sqrt{n})=0.99.\]</span> The us then find the z-score that give a probability of 0.99 using the quantile function or percent point function (the inverse of cdf):</li>
+</ol>
+<div id="aa7190ce" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(norm.ppf(<span class="fl">0.99</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2.3263478740408408</code></pre>
+</div>
+</div>
+<p>That is <span class="math inline">\(P(Z\le 2.3263) = 0.99\)</span>, so to find <span class="math inline">\(n\)</span> we need to solve <span class="math display">\[\frac{0.35}{0.85}\sqrt n = 2.3263\Leftrightarrow n=2.3263^2\frac{0.85^2}{0.35^2}=31.91\approx 32.\]</span> Note that we round off <span class="math inline">\(n\)</span> to an integer and we should here always round up to ensure that the probability is not less than 0.99.</p>
 </details>
 </section>
 <section id="problem-4" class="level3">
@@ -736,7 +766,7 @@ Show solutions
 </section>
 <section id="problem-6" class="level3">
 <h3 class="anchored" data-anchor-id="problem-6">Problem 6</h3>
-<p>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be i.i.d. random variables from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and known variance <span class="math inline">\(\sigma^2\)</span>. That is, <span class="math display">\[X_i \sim N(\mu, \sigma^2),\]</span> such that the density of the X’s is <span class="math display">\[f(x,\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( -\frac{(x - \mu)^2}{2\sigma^2}.\]</span></p>
+<p>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be i.i.d. random variables from a normal distribution with unknown mean <span class="math inline">\(\mu\)</span> and known variance <span class="math inline">\(\sigma^2\)</span>. That is, <span class="math display">\[X_i \sim N(\mu, \sigma^2),\]</span> such that the density of the X’s is <span class="math display">\[f(x,\mu,\sigma)=\frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( -\frac{(x - \mu)^2}{2\sigma^2}\right).\]</span></p>
 <p>Find the MLE of <span class="math inline">\(\mu\)</span>.</p>
 <details>
 <summary>
@@ -790,10 +820,10 @@ Show solutions
 <ol type="a">
 <li>What is the probability of winning if you bet on a black outcome?</li>
 </ol>
-<p>A gambler has $100 and bets $1 each time he plays. He plays until he is either out of money or has doubled his money.</p>
+<p>A gambler has $100 and bets $1 each time he plays. He plays until he is either out of money or has $150.</p>
 <ol start="2" type="a">
 <li><p>How would you construct a Monte Carlo simulation of a situation where you always bet on black, and want to find the probability of going bankrupt.</p></li>
-<li><p>What would the probability of the gambler doubling his money?</p></li>
+<li><p>What would the probability be of the gambler reaches his goal of $150?</p></li>
 </ol>
 <details>
 <summary>
@@ -801,9 +831,35 @@ Show solutions
 </summary>
 <ol type="a">
 <li><p>The probability of winning when betting on black is <span class="math inline">\(18/38=0.474\)</span></p></li>
-<li><p>It would make sense to use a while loop and continue to simulate unless the gambler is bankrupt or has $200. For simulate the game, use a Bernoulli distribution for each game with success probability <span class="math inline">\(18/38=0.474\)</span>. If the Bernoulli variable is 1, increase the “bank” of the gambler by 1 dollar. If it is 0, decrease it by 1 dollar. Repeat the game 10 000 times and calculate the relative frequency of going bankrupt.</p></li>
-<li><p>In the end, there are only two outcomes of the experiment. Either the gambler goes bankrupt or he doubles his money. The probability of doubling the money, would therefore be 1-the probability of going bankrupt.</p></li>
+<li><p>It would make sense to use a while loop and continue to simulate unless the gambler is bankrupt or has $200. To simulate the game, use a Bernoulli distribution for each game with success probability <span class="math inline">\(18/38=0.474\)</span>. If the Bernoulli variable is 1, increase the “bank” of the gambler by 1 dollar. If it is 0, decrease it by 1 dollar. Repeat the game 10 000 times and calculate the relative frequency of going bankrupt.</p></li>
 </ol>
+<div id="40748101" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">123</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_game_simple(starting_money<span class="op">=</span><span class="dv">100</span>, goal_money<span class="op">=</span><span class="dv">150</span>, bet_amount<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    money <span class="op">=</span> starting_money</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="dv">0</span> <span class="op">&lt;</span> money <span class="op">&lt;</span> goal_money:</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Simulate the outcome: +1 with prob 18/38, -1 with prob 20/38</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        outcome <span class="op">=</span> random.choices([<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>], weights<span class="op">=</span>[<span class="dv">20</span>, <span class="dv">18</span>])[<span class="dv">0</span>]</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        money <span class="op">+=</span> outcome <span class="op">*</span> bet_amount</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> money <span class="op">==</span> <span class="dv">0</span>  <span class="co"># True if bankrupt</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_simulation(n_simulations<span class="op">=</span><span class="dv">10000</span>):</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    bankrupt_count <span class="op">=</span> <span class="bu">sum</span>(simulate_game_simple() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n_simulations))</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> bankrupt_count <span class="op">/</span> n_simulations</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the simplified simulation</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>estimated_prob <span class="op">=</span> monte_carlo_simulation(<span class="dv">10000</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Estimated probability of going bankrupt: </span><span class="sc">{</span>estimated_prob<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Estimated probability of going bankrupt: 0.9949</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li>In the end, there are only two outcomes of the experiment. Either the gambler ends up with $0 (bankrupt) or $150. The probability achieving $150 would therefore be 1-the probability of going bankrupt.</li>
+</ol>
+<p>From the python simulation above, it would then be <span class="math display">\[1-P(bankrupt)=1-0.9949=0.0051\]</span></p>
 </details>
 </section>
 <section id="problem-10" class="level3">
@@ -902,8 +958,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1014,7 +1068,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
