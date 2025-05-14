@@ -20,9 +20,9 @@ f)  How likely is it that the sample mean diameter exceeds 10.01 when $n=25$.
 
 <summary>Show solutions</summary>
 
-a)  10 and 0.01.
+a)  Centered at 10 with standard deviation $\sigma/\sqrt{n}=0.04/\sqrt{16}= 0.01$.
 
-b)  10 and 0.005
+b)  Centered at 10 with standard deviation $\sigma/\sqrt{n}=0.04/\sqrt{64}= 0.005$.
 
 c)  With less variability, the second sample is more closely centered near 10.
 
