@@ -1,7 +1,5 @@
 # Exercises
 
-
-
 ### Problem 1
 
 A university wants to study the average number of hours students sleep during finals week. They decide to gather data by surveying students.
@@ -269,6 +267,8 @@ b)  According to the **Central Limit Theorem**, the sampling distribution will t
 Have a look at the figures below to see an example of how a sample distribution may look and develop as an experiment is repeated. Note how teh figures approach a bell curve.
 
 ```{r}
+#| echo: false
+#| eval: false
 set.seed(42)
 
 # Population: non-normal to highlight the CLT
@@ -295,6 +295,45 @@ hist(means_100, breaks = 20, main = "100 Samples", col = "orange",
 hist(means_1000, breaks = 30, main = "1000 Samples", col = "seagreen",
      xlim = c(0, 3), xlab = "Sample Mean")
 
+
+```
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Set seed for reproducibility
+np.random.seed(42)
+
+# Population: non-normal (exponential) to highlight the CLT
+population = np.random.exponential(scale=1.0, size=100000)
+n = 30  # Fixed sample size
+
+# Function to simulate means
+def sample_means(num_samples):
+    return [np.mean(np.random.choice(population, n, replace=True)) for _ in range(num_samples)]
+
+# Simulate with increasing number of samples
+means_10 = sample_means(10)
+means_100 = sample_means(100)
+means_1000 = sample_means(1000)
+
+# Plot
+fig, axs = plt.subplots(1, 3, figsize=(15, 4))
+colors = ['skyblue', 'orange', 'seagreen']
+samples = [means_10, means_100, means_1000]
+titles = ["10 Samples", "100 Samples", "1000 Samples"]
+
+for ax, data, color, title in zip(axs, samples, colors, titles):
+    ax.hist(data, bins=10 if title == "10 Samples" else 20 if title == "100 Samples" else 30,
+            color=color, edgecolor='black')
+    ax.set_xlim(0, 3)
+    ax.set_title(title)
+    ax.set_xlabel("Sample Mean")
+    ax.set_ylabel("Frequency")
+
+plt.tight_layout()
+plt.show()
 
 ```
 
@@ -347,6 +386,8 @@ b)  The spread of the sampling distribution — measured by the **standard error
 Take a look at the representation below to get an idea. The red line represents the population mean, and as the sample size increases the distribution of sample means becomes tighter around it, i.e. more observations are relatively close to the true population mean when n increases. This is the idea when we compute the standard error and notice that it **decreases** in n. this is also an effective illustration of the central limit theorem **and** the law of large numbers.
 
 ```{r}
+#| echo: false
+#| eval: false
 set.seed(123)
 
 library(ggplot2)
@@ -388,11 +429,55 @@ ggplot(df, aes(x = sample_mean)) +
 
 ```
 
+```{python}
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Set seed for reproducibility
+np.random.seed(123)
+
+# Skewed population: Exponential
+population = np.random.exponential(scale=1.0, size=100000)
+mu_true = np.mean(population)
+
+# Function to generate sampling distributions
+def simulate_means_by_n(n, reps=1000):
+    sample_means = [np.mean(np.random.choice(population, n, replace=True)) for _ in range(reps)]
+    return pd.DataFrame({
+        'sample_mean': sample_means,
+        'sample_size': f'n = {n}'
+    })
+
+# Generate data
+df = pd.concat([
+    simulate_means_by_n(5),
+    simulate_means_by_n(30),
+    simulate_means_by_n(100)
+])
+
+# Plot sampling distributions
+sns.set(style="whitegrid", font_scale=1.2);
+g = sns.FacetGrid(df, col="sample_size", sharey=False, height=4, aspect=1.2);
+g.map(sns.histplot, "sample_mean", kde=True, stat="density", bins=30, color="lightblue", edgecolor="white");
+
+# Add vertical line for population mean
+for ax in g.axes.flat:
+    ax.axvline(mu_true, color="red", linestyle="--", linewidth=1);
+
+g.set_axis_labels("Sample Mean", "Density");
+g.fig.suptitle("Effect of Sample Size on the Sampling Distribution of the Mean", y=1.05);
+
+plt.tight_layout();
+plt.show();
+```
+
 </details>
 
 ### Problem 16
 
-You simulate the following experiment using software: (You don't **need** to do this in R yourself, but it could be a neat exercise to see it for yourself fully.)
+You simulate the following experiment using software: (You don't **need** to do this in Python yourself, but it could be a neat exercise to see it for yourself fully.)
 
 -   Draw 1,000 random samples of size $n = 30$ from a population with mean $\mu = 100$ and standard deviation $\sigma = 15$.
 -   For each sample, compute the sample mean and store it.
@@ -572,7 +657,7 @@ a)  Our requirements to use CLT are:
 -   We have a random sample of fixed size
 -   The samples are independent and identically distributed
 
-In all cases we have that the distributions have finite means and variances. Since we're simulating from the same distributions, we can be certain they are identical, but we still assume independence (using a random draw with r for example this requirement is met). It's also clear that we have random samples of a fixed size in this case as our simulation is takes the mean of assorted samples of 50.
+In all cases we have that the distributions have finite means and variances. Since we're simulating from the same distributions, we can be certain they are identical, but we still assume independence (using a random draw with Python for example this requirement is met). It's also clear that we have random samples of a fixed size in this case as our simulation is takes the mean of assorted samples of 50.
 
 b)  In all three cases, the distribution of sample means should be approximately normal, centered at the true population mean, with smaller spread as $n$ increases. The exponential is heavily skewed, so its sample mean distribution may look less normal than the others, but should still be roughly bell-shaped.
 
@@ -926,22 +1011,39 @@ d)  Comment on the similarity between the two sample sets and the theoretical di
 a)  Generate using inverse CDF:
 
 ```{r}
+#| echo: false
+#| eval: false
 set.seed(123)
 n <- 10000
 lambda <- 2
 u <- runif(n)
 x_inv <- -log(u) / lambda
 ```
+```{python}
+#| echo: true
+#| eval: true
+import numpy as np
+# Set seed for reproducibility
+np.random.seed(123)
+n = 10000
+lambda_ = 2
+# Generate uniform random numbers
+u = np.random.uniform(0, 1, n)
+# Inverse transform sampling
+x_inv = -np.log(u) / lambda_
+```
 
 b)  Generate using built-in function:
 
-```{r}
-x_builtin <- rexp(n, rate = lambda)
+```{python}
+x_builtin = np.random.exponential(scale=1/lambda_, size=n)
 ```
 
 c)  Plot histo}grams with density curve:
 
 ```{r}
+#| echo: false
+#| eval: false
 hist(x_inv, probability = TRUE, breaks = 50, col = rgb(0, 0, 1, 0.5),
      xlim = c(0, 4), main = "Inverse Transform vs Built-in Sampling",
      xlab = "x", ylim = c(0, 2))
@@ -950,6 +1052,30 @@ curve(dexp(x, rate = lambda), col = "black", lwd = 2, add = TRUE)
 legend("topright", legend = c("Inverse CDF", "Built-in", "Theoretical Density"),
        fill = c(rgb(0,0,1,0.5), rgb(1,0,0,0.5), NA),
        border = c("black", "black", NA), lty = c(NA, NA, 1), col = c(NA, NA, "black"))
+```
+
+```{python}
+# Plot histogram for inverse transform samples
+plt.hist(x_inv, bins=50, density=True, color=(0, 0, 1, 0.5), range=(0, 4),
+         label='Inverse CDF', edgecolor='black');
+
+# Overlay histogram for built-in samples
+plt.hist(x_builtin, bins=50, density=True, color=(1, 0, 0, 0.5), range=(0, 4),
+         label='Built-in', edgecolor='black');
+
+# Theoretical density curve
+x_vals = np.linspace(0, 4, 500)
+y_vals = lambda_ * np.exp(-lambda_ * x_vals)
+plt.plot(x_vals, y_vals, color='black', linewidth=2, label='Theoretical Density');
+
+# Labels and legend
+plt.title("Inverse Transform vs Built-in Sampling");
+plt.xlabel("x");
+plt.ylabel("Density");
+plt.ylim(0, 2);
+plt.legend(loc='upper right');
+plt.tight_layout();
+plt.show();
 ```
 
 d)  The histograms of both sample sets are visually indistinguishable and both closely match the theoretical density curve of the exponential distribution. This illustrates that inverse transform sampling correctly reproduces the distribution, even when sampling is done indirectly via uniform draws.
@@ -1069,9 +1195,9 @@ $$
 \int_0^1 \frac{1}{1 + x^2} dx
 $$
 
-This integral equals $\arctan(1) = \frac{\pi}{4}$. You should use R or an equivalent to approximate this value.
+This integral equals $\arctan(1) = \frac{\pi}{4}$. You should use Python to approximate this value.
 
-a)  Write R code to generate 100,000 samples $X_i \sim \text{Uniform}(0, 1)$, and compute $\frac{1}{100{,}000} \sum \frac{1}{1 + X_i^2}$.
+a)  Write python code to generate 100,000 samples $X_i \sim \text{Uniform}(0, 1)$, and compute $\frac{1}{100{,}000} \sum \frac{1}{1 + X_i^2}$.
 
 b)  Compare your result to the true value $\frac{\pi}{4}$.
 
@@ -1081,9 +1207,11 @@ c)  How would increasing the number of samples affect the estimate?
 
 <summary>Show solutions</summary>
 
-a)  R code:
+a)  Python code:
 
 ```{r}
+#| echo: false
+#| eval: false
 set.seed(123)
 n <- 100000
 x <- runif(n)
@@ -1091,12 +1219,22 @@ estimate <- mean(1 / (1 + x^2))
 estimate
 ```
 
+```{python}
+import numpy as np
+# Set seed for reproducibility
+np.random.seed(123)
+n = 100000
+x = np.random.uniform(0, 1, n)
+# Monte Carlo estimate
+estimate = np.mean(1 / (1 + x**2))
+print(estimate)
+```
 b)  
 
-```{r}
-true_value <- pi / 4
-true_value
-abs(estimate - true_value)
+```{python}
+true_value = np.pi / 4
+abs_error = abs(estimate - true_value)
+print(true_value, abs_error)
 ```
 
 Output is typically very close, e.g., around `0.7854`.
@@ -1233,13 +1371,14 @@ c)  If we believe the data is truly Poisson-distributed, the parametric bootstra
 
 Consider the dataset:
 
-```{r}
-data <- c(2.3, 1.9, 3.1, 2.8, 3.5)
+```{python}
+import numpy as np
+data = np.array([2.3, 1.9, 3.1, 2.8, 3.5])
 ```
 
 You are interested in the **standard error of the median**.
 
-a)  Use R to create 1,000 bootstrap samples of the same size and compute the median for each.
+a)  Use Pyhon to create 1,000 bootstrap samples of the same size and compute the median for each.
 
 b)  Use the bootstrap medians to estimate the standard error.
 
@@ -1249,7 +1388,10 @@ c)  Plot the bootstrap distribution of the median.
 
 <summary>Show solutions</summary>
 
+
 ```{r}
+#| echo: false
+#| eval: false
 set.seed(123)
 data <- c(2.3, 1.9, 3.1, 2.8, 3.5)
 n <- length(data)
@@ -1271,10 +1413,41 @@ hist(boot_medians, probability = TRUE, breaks = 20,
      xlab = "Median")
 ```
 
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Set seed for reproducibility
+np.random.seed(123)
+
+# Original data
+data = np.array([2.3, 1.9, 3.1, 2.8, 3.5])
+n = len(data)
+B = 1000
+boot_medians = np.empty(B)
+
+# Bootstrap loop
+for i in range(B):
+    sample_i = np.random.choice(data, size=n, replace=True)
+    boot_medians[i] = np.median(sample_i)
+
+# Standard error of the median
+se_median = np.std(boot_medians)
+
+# Plot
+plt.hist(boot_medians, bins=20, density=True, color='skyblue', edgecolor='black');
+plt.title("Bootstrap Distribution of Median");
+plt.xlabel("Median");
+plt.ylabel("Density");
+plt.tight_layout();
+plt.show();
+
+print(se_median)
+```
+
 This gives an estimate of the sampling variability of the median using only the observed data.
 
 </details>
-
 
 ### Problem 40
 

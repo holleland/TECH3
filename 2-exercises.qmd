@@ -171,7 +171,7 @@ We know all of the relevant probabilities needed for the computation.
 
 $$ P(A \cup B)=\frac{1}{32}+\frac{31}{32}-0=1 $$
 
-The probability of the union being 1 means that either $A$, $B$ or $A\cap B$ **will** occur. We already know, however that the events are disjoint, and as such there is no intersection. I.e. it's either $A$ or $B$ that **must occur**. Interpreting this, we end up at the quite banal fact that when we do this experiment, we will* either\* end up with 5 heads, or we will not (any other permutation). In fact this situation illustrates a powerful concept concerning complements of events, being that if an event does *not* occur, then the complement *will* occur.
+The probability of the union being 1 means that either $A$, $B$ or $A\cap B$ **will** occur. We already know, however that the events are disjoint, and as such there is no intersection. I.e. it's either $A$ or $B$ that **must occur**. Interpreting this, we end up at the quite banal fact that when we do this experiment, we will\* either\* end up with 5 heads, or we will not (any other permutation). In fact this situation illustrates a powerful concept concerning complements of events, being that if an event does *not* occur, then the complement *will* occur.
 
 </details>
 
@@ -205,13 +205,18 @@ b)  you consider the sum of the two dice?
 
 a)  For every toss, we here have to consider two separate values, and we denote them as $(x,y)$. Each of the two dice can roll from 1 to 6. Adding it all together we can construct the sample space
 
-$$ \begin{align*}S&=\left\{(1,1), (1,2), (1,3), (1,4), (1,5), (1,6), \\
-&(2,1), (2,2), (2,3), (2,4), (2,5), (2,6), \\
-&(3,1), (3,2), (3,3), (3,4), (3,5), (3,6), \\
-&(4,1), (4,2), (4,3), (4,4), (4,5), (4,6), \\
-&(5,1), (5,2), (5,3), (5,4), (5,5), (5,6), \\
-&(6,1), (6,2), (6,3), (6,4), (6,5), (6,6) \right\}
-\end{align*}$$
+$$ 
+S=\left\{
+\begin{array}{cccccc}
+(1,1),& (1,2),& (1,3),& (1,4),& (1,5),& (1,6), \\
+(2,1),& (2,2),& (2,3),& (2,4),& (2,5),& (2,6), \\
+(3,1),& (3,2),& (3,3),& (3,4),& (3,5),& (3,6), \\
+(4,1),& (4,2),& (4,3),& (4,4),& (4,5),& (4,6), \\
+(5,1),& (5,2),& (5,3),& (5,4),& (5,5),& (5,6), \\
+(6,1),& (6,2),& (6,3),& (6,4),& (6,5),& (6,6) 
+\end{array}
+\right\}
+$$
 
 b)  We now consider the sum of the two dice. The lowest value is when both roll 1's, and the highest possible one is when both roll 6's. Every integer value between these two sums are achievable. We now end up with:
 
@@ -516,25 +521,10 @@ $$ P(A)P(B)=\frac{5}{8}\frac{1}{5}=\frac{1}{8}=P(A\cap B) $$ I.e. A and B are in
 
 </details>
 
-### Problem 26
-
-You find that $P(A)=\frac{5}{8}$, $P(B)=\frac{1}{5}$ and $P(A\cap B)=\frac{1}{8}$
-
-Are events $A$ and $B$ independent?
-
-<details>
-
-<summary>Show solution</summary>
-
-We check if the probabilities fulfill the conditions given by the definition.
-
-$$ P(A)P(B)=\frac{5}{8}\frac{1}{5}=\frac{1}{8}=P(A\cap B) $$ I.e. A and B are independent.
-
-</details>
 
 ### Problem 27
 
-You find that $P(A)=1$, $P(B)=0.2$ and $P(A\cap B)=0.125$
+You find that $P(A)=0.8$, $P(B)=0.2$ and $P(A\cap B)=0.125$
 
 Are events $A$ and $B$ independent?
 
@@ -544,7 +534,7 @@ Are events $A$ and $B$ independent?
 
 We check if the probabilities fulfill the conditions given by the definition.
 
-$$ P(A)P(B)=1*0.2=0.2\neq 0.125=P(A\cap B) $$ I.e. A and B are *not* independent.
+$$ P(A)P(B)=0.8*0.2=0.16\neq 0.125=P(A\cap B) $$ I.e. A and B are *not* independent.
 
 </details>
 
@@ -650,7 +640,6 @@ Let's plug this into the definition of a conditional probability.
 
 $$ P(A|B)=\frac{P(A\cap B)}{P(B)}=\frac{0}{P(B)}=0 $$
 
-
 ### Problem 32
 
 In a random draw you can end up with the respective values {3,7,9,11}, each with a respective probability of 0.25. Is this a probability distribution? Why or why not?
@@ -737,12 +726,11 @@ d)  What is the variance and standard deviation ($\text{SD}(X)$) of the number o
 
 <summary>Show solutions</summary>
 
-a)  To find the probability that 18 bulbs pass the check we can simply plug our given information into the probability function. 
-$$
-\begin{align*}
-P(X=18)&=\binom{20}{18}0.95^{18}(1-0.95)^{20-18}\\&=\frac{20!}{2!18!}0.95^{18}0.05^2\\&=\frac{20*19}{2}0.95^{18}0.05^2\\&=
+a)  To find the probability that 18 bulbs pass the check we can simply plug our given information into the probability function. $$
+    \begin{align*}
+    P(X=18)&=\binom{20}{18}0.95^{18}(1-0.95)^{20-18}\\&=\frac{20!}{2!18!}0.95^{18}0.05^2\\&=\frac{20*19}{2}0.95^{18}0.05^2\\&=
     190*0.95^{18}0.05^2\approx1.887
-\end{align*}$$
+    \end{align*}$$
 
 b)  To find the probability $P(X\geq19)$. Since we have only two cases where this is the case $P(X=19)$ and $P(X=20)$, as we only check 20 bulbs, this is a simple task. We need only compute these two seperate probabilities and sum them together.
 
@@ -1004,16 +992,11 @@ a)  $$
     P(X = 4) = \frac{\binom{40}{4} \binom{60}{6}}{\binom{100}{10}}=\frac{\frac{40!}{36!4!}\frac{60}{54!6!}}{\frac{100!}{90!10!}} \approx 0.264
     $$
 
-b)  We compute:
-    $$ 
+b)  We compute: $$ 
     P(X \geq 2) = 1 - P(X = 0) - P(X = 1) 
-    $$
-    Where:
-    $$ 
+    $$ Where: $$ 
     P(X = 0) = \frac{\binom{40}{0} \binom{60}{10}}{\binom{100}{10}}\approx 0.004, \quad P(X = 1) = \frac{\binom{40}{1} \binom{60}{9}}{\binom{100}{10}} \approx 0.034 
-    $$
-    Thus:
-    $$ 
+    $$ Thus: $$ 
     P(X \geq 2) \approx 1 - (0.004 + 0.038) = 0.962
     $$
 
@@ -1023,8 +1006,7 @@ c)  Here we can just compute the expectation with our fomrula $$
 
 d)  The variance and standard deviation are just as easy to compute $$ 
     Var[X] = 10 \cdot \frac{40}{100} \cdot \frac{60}{100} \cdot \frac{90}{99} \approx 2.18 
-    $$
-    $$ 
+    $$ $$ 
     \text{SD}(X) = \sqrt{2.18} \approx 1.48 
     $$
 
