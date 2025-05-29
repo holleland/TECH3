@@ -1,45 +1,638 @@
 # Exercises
 
 
-## Contingency tables problems
+### Chi square test for indepenence
 
-### Problem 1 
-[Researchers](https://doi.org/10.1126/science.663611) collected data on the size of their feet for a group of right-handed male and females and counted how many of each sex had a left-foot larger than the right, equal feet or right foot larger than the left. The results are given in the table here:
+The **Chi-square test for independence** is used to determine whether two categorical variables are independent. Given a contingency table of observed counts $O_{ij}$, compute expected counts under independence:
 
-|Sex | L>R | L=R | L<R|Total|
-|----|-----|-----|----|-----|
-|Men |2|10|28|40|
-|Women|55|18|14|87|
+$$ 
+\begin{align*}
+E\_{ij} &= \frac{\text{(row total)}_i \times\text{(column  total)}_j}{\text{grand total}} \\
+\chi^2& = \sum_{ij} \frac{(O_{ij} - E_{ij})^2}{E_{ij}} 
+\end{align*}
+$$
 
+Where we let $O_{ij}$ denote observed in each cell ij and $E_{ij}$ denote expected. $df = (rows − 1)(columns − 1)$
 
+### Problem 1
 
-Does the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the $\chi^2$ test statistic and obtain the p-value. 
+A survey records whether people prefer coffee or tea in two regions:
 
+|           | Coffee | Tea | Total |
+|-----------|--------|-----|-------|
+| Region A  | 30     | 20  | 50    |
+| Region B  | 40     | 10  | 50    |
+| **Total** | 70     | 30  | 100   |
 
+a)  Set up the hypotheses.
+
+b)  Compute the expected counts.
+
+c)  Compute the chi-square statistic.
+
+d)  Test independence at $\alpha=0.05$
+
+e)  What do you conclude?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  $H_0$: Coffee preference is independent of region. $H_a$: They are dependent.
+
+b)  E.g., $E_{11} = \frac{50*70}{100} = 35$
+
+Expected table:
+
+|          | Coffee | Tea |
+|----------|--------|-----|
+| Region A | 35     | 15  |
+| Region B | 35     | 15  |
+
+c)  Now let's compute the test statistic
+
+$$
+\chi^2 = \frac{(30-35)^2}{35} + \frac{(20-15)^2}{15} + \frac{(40-35)^2}{35} + \frac{(10-15)^2}{15} = 7.62
+$$
+
+d)  $df = (2−1)(2−1) = 1$, critical value is $\chi^2=3.84$. This critical value can be found in any $\chi^2$ table. We can also check in Python.
+
+```{python, "prob1d"}
+from scipy import stats
+print(stats.chi2.ppf(0.95, df = 1))
+```
+
+e)  Since $7.62 > 3.84$, reject $H_0$. We can not say conclude that preferences are independent of region.
+
+</details>
+
+### Chi-square test for proportions
+
+Tests whether observed frequencies match a **specified distribution** (e.g., uniform, Poisson, etc.).
+
+The test statistic is found as below
+
+$$
+\chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}
+$$
+
+$$
+\text{df} = \text{number of categories} - 1
+$$
 
 ### Problem 2
-A company wants to assess whether customer response (Yes/No) to a marketing campaign depends on the platform used (Email, SMS, Social Media).
 
-|Response	| Email	| SMS | Social Media|
-|---------|-------|-----|-------------|
-|Yes      |    120|	45  | 80          |
-|No       |  	 180|	105	| 120         |
+A six-sided die is rolled 60 times. The results:
 
-a) Formulate the null and alternative hypotheses.
-b) Compute the expected frequencies.
-c) Calculate the chi-squared test statistic.
-d) Determine the degrees of freedom.
-f) At a 5% significance level, is there evidence to suggest the response rate depends on the platform?
+```         
+Face:   1  2  3  4  5  6  
+Freq:  10 12 9 11 8 10
+```
+
+We want to find out if these results are consistent with a fair die?
+
+a)  State the hypotheses.
+
+b)  Compute the expected count.
+
+c)  Compute the test statistic and p-value.
+
+d)  Interpret the result.
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  $H_0$: The die is fair. $H_a$: The die is not fair.
+
+b)  Expected = 60/6 = 10 per face
+
+c)  
+
+$$
+\chi^2 = \sum \frac{(O_i - 10)^2}{10} = \frac{(0)^2 + (2)^2 + (-1)^2 + (1)^2 + (-2)^2 + (0)^2}{10} = \frac{0+4+1+1+4+0}{10} = 1
+$$ First we will find the degrees of freedom, such that we can have a proper critical value.
+
+$df = 6 − 1 = 5$, critical value is then $\chi^2=11.07$.
+
+We can find the exact critical value and compute the p-value of the test in Python.
+
+```{python, "prob2"}
+print(stats.chi2.ppf(0.95, df = 5))
+## Note for that chi square test we find the p-value by looking at the right tail
+print(1-stats.chi2.cdf(1, df = 5))
+```
+
+d)  Since $1 < 11.07$, and we have a p-value as high as 96%, we **fail to reject** $H_0$: die could be fair.
+
+</details>
 
 ### Problem 3
-The Norwegian Labour and Welfare Administration (NAV) organizes online job application workshops on Teams. The course responsible has noticed that except for himself, the attendees that have their camera on during the course is mostly the older participants.  He wonders if there is a relationship between participants having camera on and participant's age group? He therefore takes a screenshot of the meeting (that he deletes afterwards, of course) and counts the number of faces he sees for the different ages. The results are given in the table below. Perform a chi-squared test to answer this question, including setting up the hypothesis, finding the p-value and making your conclusion. Remember to settle on a significance level first. 
 
-|Camera on| 18–35|	36–53|	54-70| Total|
-|Yes| 4|	3|	20|	27|
-No	|20|	13|	39|	72|
-Total	|24|	16|	59	|99|
+A survey was conducted to determine if there's an association between gender (Male, Female) and preference for a new product (Like, Dislike).
+
+Data
+
+|           | Like | Dislike | Total |
+|-----------|------|---------|-------|
+| Male      | 30   | 20      | 50    |
+| Female    | 20   | 30      | 50    |
+| **Total** | 50   | 50      | 100   |
+
+a)  State the null and alternative hypotheses.
+
+b)  Calculate the expected frequencies.
+
+c)  Compute the chi-squared test statistic.
+
+d)  Determine the degrees of freedom.
+
+e)  At $\alpha=0.05$, determine the critical value and conclude the test.
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  $H_0$: Gender and product preference are independent.
+
+$H_1$: Gender and product preference are not independent.
+
+b)  Expected frequencies:
+
+-   Male-Like: (50×50)/100 = 25
+
+-   Male-Dislike: (50×50)/100 = 25
+
+-   Female-Like: (50×50)/100 = 25
+
+-   Female-Dislike: (50×50)/100 = 25
+
+c)  Let's find the test statistic first, by usinf the formula for the chi-square test for indepence.
+
+$$
+\chi^2=\sum^n_{ij}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}=\frac{5^2+(-5)^2+5^2+(-5^2)}{25}=\frac{100}{25}=4
+$$
+
+d)  We can now compute the degrees of freedom simply by looking at the table. $df=(rows-1)(columns-1)=(2-1)(2-1)=1$, which nets $\chi_{1,0.05}^2=3.841$
+
+e)  Critical value at $\alpha=0.05$ and df = 1 is 3.841. Since 4 \> 3.841, we reject $H_0$. There is a significant association between gender and product preference.
+
+</details>
+
+### Problem 4
+
+Explain how the chi-squared distribution is related to the standard normal distribution.
+
+a)  Describe the relationship between the standard normal distribution and the chi-squared distribution.
+
+b)  If $Z$ is a standard normal variable, what is the distribution of $Z^2$?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  The chi-squared distribution with k degrees of freedom is the distribution of the sum of the squares of k independent standard normal variables. That is, if $Z_1,\dots,Z_k$ are independent standard normal variables, then
+
+$$
+X=\sum^k_{i=1}Z_i^2\sim\chi^2_k
+$$ I.e. a chi-square distribution with k degrees of freedom.
+
+b)  Consider a standard normal $Z$ Then $$
+    X=\sum_{i=1}^kz_i^2=\sum^1_{i=1}Z_i^2\sim\chi_1^2
+    $$ i.e. teh square of $Z$ will be chi-square distributed with 1 degree of freedom.
+
+</details>
+
+### Problem 5
+
+a)  Explain what a contingency table shows in the context of testing independence.
+
+b)  Why are expected counts calculated, and how do they relate to independence?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  A contingency table displays the frequency distribution of variables and helps test whether two categorical variables are independent.
+
+b)  Expected counts are computed under the assumption of independence. Large deviations between observed and expected suggest dependence.
+
+</details>
+
+### Problem 6
+
+A six-sided die is rolled 120 times. The outcomes are: $1: 10, \ 2: 14, \ 3: 19, \ 4: 24, \ 5: 25, \ 6: 28$
+
+a)  Set up hypotheses.
+
+b)  Compute expected frequencies.
+
+c)  Perform the chi-squared test at $\alpha=0.05$.
+
+d)  Interpret the results of the test. How would changing $\alpha$ change the results of the test?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  $H_0$: Die is fair. $H_1$: Die is not fair.
+
+b)  Expected: $120/6 = 20$ for each face.
+
+c)  We find the test statistic. $$
+    \chi^2 =\frac{100+36+1+16+25+64}{20} =\frac{242}{20}=12.1 
+    $$ We can easily find that $df=6-1=5$
+
+Now we complete the rest of the computation with Python or with a table.
+
+```{python, "prob6"}
+from scipy import stats
+import numpy as np
+## Critical value at alpha=0.05 and df=5
+print("Critical value: ", stats.chi2.ppf(0.95, df = 5))
+## p-value
+print("p-value: ", 1-stats.chi2.cdf(12.1, df = 5))
+## alternatively we can use the chisqtest in r
+data=np.array([10, 14, 19, 24, 25, 28])
+expected = np.ones(6)/6*120
+
+chi2, pvalue = stats.chisquare(f_obs=data, f_exp = expected)
+
+print("Chi-squared statistic:", chi2)
+print("p-value:", pvalue)
+print("Expected frequencies:\n", expected)
+```
+
+With a p-value of about 3%, we can reject $H_0$ at $\alpha=0.05$
+
+d)  Since we reject $H_0$, we can conlcude that the dice is likely unfair. BY looking at our data, the die really seems to favour higher numbers. If $\alpha$ were to be heightened, then we would **more easily** be convinced that teh dice is unfair, i.e., the result would not need to be as skewed as shown above. And vice versa of course.
+
+</details>
+
+### Problem 7
+
+Use Python to simulate a 3x2 table, given by the code below, and conduct a chi-squared test. Interpret the results. Use $\alpha=0.05$ as the significance level.
+
+```{python, "prob7"}
+np.random.seed(1)
+# Create 3x2 matrix of random integers from 1 to 100
+data = np.random.choice(np.arange(1, 101), 
+size=6, replace=False).reshape((3, 2))
+chi2, p, dof, expected = stats.chi2_contingency(data)
+# Output
+print("Data:\n", data)
+print("Chi-squared statistic:", chi2)
+print("Degrees of freedom:", dof)
+print("p-value:", p)
+print("Expected frequencies:\n", expected)
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+Chi-squared test returns statistic, df, and p-value. Interpretation depends on p-value vs alpha. If our p-value is **below** that of 0.05, which is our current significance level, then we can reject the null hypothesis, $H_0$.
+
+</details>
+
+### Problem 8
+
+a)  Describe the distribution of a chi-squared variable with 4 degrees of freedom. (What are the mean and variance, can you find a general rule?)
+
+**Hint**: When $Y\sim\mathcal{N}(\mu, \sigma^2)$, we have that $E[Y^4]=3\sigma^4$
+
+b)  Explain how the chi-squared distribution arises from the standard normal distribution.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Positively skewed distribution, where $E[X]=\mu=k$, and $Var[X]=\sigma^2= 2k$. Let's see how we can reach these. First, recall that if $X\sim\chi^2_k$, then
+
+$$
+X=\sum^k_{i=1}Z^2_i
+$$ Where $Z_i\sim iid \mathcal{N}(0,1)$
+
+Now we can begin computing the expectation:
+
+$$
+E[X]=E\left[\sum^k_{i=1}Z^2_i\right]=\sum^k_{i=1}E[Z_i^2]
+$$ Now, we can be a bit clever here. Since $Z\sim\mathcal{N}(0,1)$, and $Var[Y]=E[Y^2]-(E[Y])^2$, we get
+
+$$
+E[Z^2]=Var[Z]+(E[Z])^2 \quad \Rightarrow \quad E[Z^2]=1+0=1
+$$ This lets us fully compute the expected value for $X$. We use the fact that we have identical distribution to simpify the notation.
+
+$$
+E[X]=\cdots=kE[Z^2]=k*1=k
+$$ Now we can do the same procedure with the Variance. Recall, since $Z_1,...,Z_k$ are independent, we have that the variance of the sum is the sum of the variances.
+
+$$
+Var[X]=Var\left[\sum^k_{i=1}Z^2_i\right]=\sum^k_{i=1}Var[Z_i^2]
+$$ Now, we again use the ralationship that $Var[Y]=E[Y^2]-(E[Y])^2$. We already know that $E[Z^2]=1 \Rightarrow (E[Z^2])^2=1$. Now we need only determine $E[(Z^2)^2]=E[Z^4]$. Using the **hint**, we have that $E[Z^4]=3\sigma^4=3*1^2=3$, and we then get:
+
+$$
+Var[Z^2]=3-1=2
+$$ Now we use that we have k identical distributions to get the variance of $X$ 
+$$
+Var[X]=\cdots=kVar[Z^2]=k*2=2k
+$$
+
+b)  The chi-sqaured distribution, as we've just looked at in depth, comes from the sum of squares of independent standard normal variables.
+
+</details>
+
+### Problem 9
+
+A researcher models expected frequencies of customer types and compares to observed values. Expected: $\{40, 35, 25\}$, Observed: $\{38, 30, 32\}$ Conduct a goodness-of-fit test by hand.
+
+<details>
+
+<summary>Show solutions</summary>
+
+$$
+\chi^2 = \frac{(38-40)^2}{40} + \frac{(30-35)^2}{35} + \frac{(32-25)^2}{25} = 0.1 + 0.714 + 1.96 ≈ 2.53
+$$ $df=3-1=2$
+
+At a significance level of $\alpha=0.05$ we then get a critical value of 5.99, which is higher than the test statistic. I.e. it seems the data fits the distribution well enough.
+
+</details>
+
+### Problem 10
+
+University admits 30% of male applicants and 25% of female applicants overall. In Engineering, 90% of women and 70% of men were accepted. In Arts, 10% of women and 5% of men were accepted.
+
+a)  How could this occur.
+
+b)  Explain how aggregated vs. disaggregated data leads to paradox.
+
+<details>
+
+<summary>Show soltuions</summary>
+
+a)  If way more female students were to apply to arts than to engineering, the total acceptance rate of women would decrease drastically. And if for instance, only 20 men applied to arts, and just one got accepted, then this would hardly have any effect if the engineering department was popular among men.
+
+b)  Aggregation can mask subgroup differences. Simpson's paradox highlights lurking confounders.
+
+</details>
+
+### Problem 11
+
+Use Python to simulate two groups and plot overall vs subgroup relationships. Create a scenario in which Simpson's paradox would apply. The script underneath  gives an idea for two simulated groups where Simpson's paradox could apply.
+
+```{r}
+#| echo: false
+#| eval: false
+library(ggplot2)
+set.seed(42)
+group <- rep(c("A", "B"), each = 100)
+x <- c(rnorm(100, 3), rnorm(100, 7))
+y <- c(2*x[1:100] + rnorm(100), 0.5*x[101:200] + rnorm(100))
+data <- data.frame(x, y, group)
+
+ggplot(data, aes(x, y, color = group)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  geom_smooth(aes(group = 1), method = "lm", color = "black", linetype = "dashed", se = FALSE)
+
+```
+
+```{python, "prob11"}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set seed
+np.random.seed(42)
+
+# Create data
+group = np.repeat(['A', 'B'], 100)
+x = np.concatenate([np.random.normal(3, 1, 100), np.random.normal(7, 1, 100)])
+y = np.concatenate([
+    2 * x[:100] + np.random.normal(size=100),
+    0.5 * x[100:] + np.random.normal(size=100)
+])
+data = pd.DataFrame({'x': x, 'y': y, 'group': group})
+
+# Plot
+plt.figure(figsize=(8, 6));
+sns.scatterplot(data=data, x='x', y='y', hue='group');
+sns.regplot(data=data[data['group'] == 'A'], x='x', y='y', scatter=False, label=None);
+sns.regplot(data=data[data['group'] == 'B'], x='x', y='y', scatter=False, label=None);
+sns.regplot(data=data, x='x', y='y', scatter=False, color='black',  line_kws={"linestyle": "--"});
+
+plt.title('Scatterplot with Group-specific and Pooled Regression Lines');
+plt.grid(True); 
+plt.show();
+
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+Example: Drug Effectiveness Study In a clinical trial, Drug A appears less effective than Drug B overall:
+
+Drug A: 60% recovery
+
+Drug B: 70% recovery
+
+But when you break it down by age group:
+
+Under 50:
+
+Drug A: 90%
+
+Drug B: 80%
+
+Over 50:
+
+Drug A: 30%
+
+Drug B: 20%
+
+Despite being better in both age groups, Drug A looks worse overall because more older, high-risk patients were given Drug A — a classic Simpson’s Paradox.
+
+</details>
+
+### Problem 12
+
+a)  Explain difference between correlation and covariance.
+
+b)  Interpret $r = -0.8$.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Covariance is is not is not constrained by any upper or lower bound, whereas correlation is a normalized version bounded on $[−1,1]$, which show how close two variables are to be "perfectly related".
+
+b)  $r=-0.8$ would indicate a strong negative linear raltionship between two variables. If you were to plot their points in a two-dimensional plain they would be quite close to creating a neat line.
+
+see plot below
+
+```{r}
+#| echo: false
+#| eval: false
+set.seed(123)
+library(MASS)  # for mvrnorm
+library(ggplot2)
+
+# Define mean and covariance
+mu <- c(0, 0)
+Sigma <- matrix(c(1, -0.8, -0.8, 1), ncol = 2)
+
+# Generate data
+data <- as.data.frame(mvrnorm(200, mu = mu, Sigma = Sigma))
+names(data) <- c("x", "y")
+
+# Check correlation
+cor(data$x, data$y)
+
+# Visualize
+ggplot(data, aes(x, y)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", color = "blue") +
+  ggtitle("Scatterplot of Two Variables with Correlation ≈ -0.8") +
+  theme_minimal()
+
+
+```
+
+```{python, "prob12"}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Set seed
+np.random.seed(123)
+
+# Define mean and covariance matrix
+mu = [0, 0]
+Sigma = [[1, -0.8],
+         [-0.8, 1]]
+
+# Generate multivariate normal data
+data = np.random.multivariate_normal(mu, Sigma, size=200)
+df = pd.DataFrame(data, columns=['x', 'y'])
+
+# Check correlation
+print("Correlation:", df['x'].corr(df['y']))
+
+# Plot
+plt.figure(figsize=(8, 6));
+sns.scatterplot(data=df, x='x', y='y', alpha=0.6);
+sns.regplot(data=df, x='x', y='y', scatter=False, color='blue');
+plt.title("Scatterplot of Two Variables with Correlation ≈ -0.8");
+plt.grid(True);
+plt.tight_layout();
+plt.show();
+```
+
+</details>
+
+### Problem 13
+
+Given pairs: (1, 2), (2, 3), (3, 5)
+
+a)  Compute sample means.
+
+b)  Compute covariance and correlation.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  We call our variables $X$ and $Y$ respectively.
+
+$$ \mu_X=\frac{1+2+3}{3}=2, \quad \mu_Y=\frac{2+3+5}{3}=\frac{10}{3} $$
+
+b)  Now to compute covariance ($Cov(X,Y)$) and correlation ($r_{XY}$ or $\rho_{XY}$) We have that $$
+    Cov(X,Y)=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2(y_i-\bar{y})^2, \quad r_{XY}=\frac{Cov(X,Y)}{s_Xs_Y}
+    $$ Where $s$ are respective standard deviations.
+
+$$
+Cov(X,Y)=\frac{(1-2)(2-3)+(2-2)(3-3)+(3-2)(5-3)}{2}=\frac{1+2}{2}=\frac{3}{2}
+$$ Now we need the respective standard deviations, which turn out to be, after not much work
+
+$$
+s_X= 1, \quad s_Y=\sqrt{14/6}=\sqrt{7/3}
+$$ Finally, we can compute $r_{XY}$
+
+$$
+r_{XY}=\frac{3/2}{\sqrt{7/3}}=\approx 0.98
+$$
+
+</details>
+
+### Problem 14
+
+Simulate two variables and visualize correlation. Example below
+
+```{python, "prob14q"}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Simulate data
+np.random.seed(42)  # Optional: for reproducibility
+x = np.random.normal(size=100)
+y = 2 * x + np.random.normal(size=100)
+
+# Plot;
+plt.scatter(x, y);
+plt.title("Scatterplot of x vs y");
+plt.xlabel("x");
+plt.ylabel("y");
+plt.grid(True);
+plt.show();
+```
+
+<details>
+
+<summary>Show solutions</summary>
+
+With the simulation above you should get a very strong positive correlation between X and Y. You can see this visually in that it would be very easy to draw a positive linear relationship between them that seems representative for the points given.
+
+</details>
+
+## Contingency tables problems
+
+### Problem 1
+
+[Researchers](https://doi.org/10.1126/science.663611) collected data on the size of their feet for a group of right-handed male and females and counted how many of each sex had a left-foot larger than the right, equal feet or right foot larger than the left. The results are given in the table here:
+
+| Sex   | L\>R | L=R | L\<R | Total |
+|-------|------|-----|------|-------|
+| Men   | 2    | 10  | 28   | 40    |
+| Women | 55   | 18  | 14   | 87    |
+
+Does the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the $\chi^2$ test statistic and obtain the p-value.
+
+### Problem 2
+
+A company wants to assess whether customer response (Yes/No) to a marketing campaign depends on the platform used (Email, SMS, Social Media).
+
+| Response | Email | SMS | Social Media |
+|----------|-------|-----|--------------|
+| Yes      | 120   | 45  | 80           |
+| No       | 180   | 105 | 120          |
+
+a)  Formulate the null and alternative hypotheses.
+b)  Compute the expected frequencies.
+c)  Calculate the chi-squared test statistic.
+d)  Determine the degrees of freedom.
+e)  At a 5% significance level, is there evidence to suggest the response rate depends on the platform?
+
+### Problem 3
+
+The Norwegian Labour and Welfare Administration (NAV) organizes online job application workshops on Teams. The course responsible has noticed that except for himself, the attendees that have their camera on during the course is mostly the older participants. He wonders if there is a relationship between participants having camera on and participant's age group? He therefore takes a screenshot of the meeting (that he deletes afterwards, of course) and counts the number of faces he sees for the different ages. The results are given in the table below. Perform a chi-squared test to answer this question, including setting up the hypothesis, finding the p-value and making your conclusion. Remember to settle on a significance level first.
+
+\|Camera on\| 18–35\| 36–53\| 54-70\| Total\| \|Yes\| 4\| 3\| 20\| 27\| No \|20\| 13\| 39\| 72\| Total \|24\| 16\| 59 \|99\|
 
 Is there a Simpson's paradox here?
+
 ```{r, echo = FALSE, eval =FALSE}
 tst <- matrix(
   c( 4,	3,	20,
@@ -50,15 +643,23 @@ colSums(tst)/99
 ```
 
 <!-- ### Problem 3 -->
+
 <!-- A café records the preferred payment method (Cash, Card, Mobile Pay) of its customers, categorized by age group (18–35, 36–55, 56+). -->
 
-<!-- |Payment Method|	18–35|	36–55|	56+| -->
+<!-- |Payment Method|   18–35|  36–55|  56+| -->
+
 <!-- |--------------|-------|-------|-----| -->
-<!-- |Cash	|40	|35	|60| -->
-<!-- |Card	|70	|80	|55| -->
-<!-- |Mobile Pay|	90|	45|	20| -->
+
+<!-- |Cash  |40 |35 |60| -->
+
+<!-- |Card  |70 |80 |55| -->
+
+<!-- |Mobile Pay|   90| 45| 20| -->
 
 <!-- a) Set up a chi-squared test to assess whether payment method preference depends on age group. -->
+
 <!-- b) Calculate the expected counts. -->
+
 <!-- c) Comment on any trends you observe in the data. -->
+
 <!-- d) Suggest how the café could tailor its services based on the result. -->

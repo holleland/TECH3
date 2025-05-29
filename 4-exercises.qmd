@@ -1,29 +1,31 @@
 # Exercises
 
 ## One-sample t-test
-For the following exercises, we will use the test statistic for one-sample t-test with null hypothesis $H_0:\mu=\mu_0$:
-$$T=\frac{\bar x-\mu_0}{s/\sqrt{n}},$$
-where $n$ is the sample size, $\bar x$ is the sample mean, $s$ is the sample standard deviation and $\mu_0$ is the expected value under the null hypothesis. 
+
+For the following exercises, we will use the test statistic for one-sample t-test with null hypothesis $H_0:\mu=\mu_0$: $$T=\frac{\bar x-\mu_0}{s/\sqrt{n}},$$ where $n$ is the sample size, $\bar x$ is the sample mean, $s$ is the sample standard deviation and $\mu_0$ is the expected value under the null hypothesis.
 
 ### Problem 1.1
+
 A company selling premium coffee beans wants to determine whether reducing the price of its product leads to a significant increase in the average number of bags sold per day. The marketing team conducted a test by lowering the price for a month in select stores and measuring the sales volume. They want to analyze whether the mean daily sales after the price reduction are significantly higher than before.
 
-a) Set up the null- and alternative hypothesis, and decide on a suitable significance level. 
+a)  Set up the null- and alternative hypothesis, and decide on a suitable significance level.
 
-Before the price reduction, the mean daily sales were 200 bags. After the price reduction, a sample of 30 days of sales data showed a sample mean of 215 bags, with standard deviation 25 bags. 
+Before the price reduction, the mean daily sales were 200 bags. After the price reduction, a sample of 30 days of sales data showed a sample mean of 215 bags, with standard deviation 25 bags.
 
-b) Calculate the test statistic. 
+b)  Calculate the test statistic.
 
-c) Find the p-value. What is the conclusion?
-
+c)  Find the p-value. What is the conclusion?
 
 <details>
+
 <summary>Show solutions</summary>
-a) $H_0: \mu\le 200$ vs $H_1: \mu>200$. We could allow for a relatively high significance level in this context, because rejecting a true null hypothesis (Type I error) will most likely not have large consequences, e.g. $\alpha =0.1$. 
 
-b) $T=(215-200)/(25/\sqrt{30})=3.29$
+a)  $H_0: \mu\le 200$ vs $H_1: \mu>200$. We could allow for a relatively high significance level in this context, because rejecting a true null hypothesis (Type I error) will most likely not have large consequences, e.g. $\alpha =0.1$.
 
-c) $\text{p-value}=P(T_{29}>3.29)=0.00132$. The p-value is very low, indicating that we may reject the null hypothesis at (almost) any significance level in (a). The company should continue with the reduced price.
+b)  $T=(215-200)/(25/\sqrt{30})=3.29$
+
+c)  $\text{p-value}=P(T_{29}>3.29)=0.00132$. The p-value is very low, indicating that we may reject the null hypothesis at (almost) any significance level in (a). The company should continue with the reduced price.
+
 ```{python}
 from scipy import stats
 print(1-stats.t.cdf(3.29, 29))
@@ -32,52 +34,57 @@ print(1-stats.t.cdf(3.29, 29))
 </details>
 
 ### Problem 1.2
+
 A large company is trying to encourage employees to save more for retirement. Previously, employees had to actively sign up for the company's pension savings plan (opt-in system). Recently, the company changed its policy so that employees are automatically enrolled in the plan but can opt out if they wish (opt-out system). Behavioral economists suggest that default options strongly influence decision-making, leading to higher participation rates in savings plans.
 
-The HR department wants to test with a significance level of 5\% whether the average monthly contribution to the retirement plan has increased significantly after implementing the opt-out system.
+The HR department wants to test with a significance level of 5% whether the average monthly contribution to the retirement plan has increased significantly after implementing the opt-out system.
 
-a) Set up the null- and alternative hypothesis.
+a)  Set up the null- and alternative hypothesis.
 
 Before the change, the average monthly contribution was \$250 per employee. After the policy change, a random sample of 50 employees showed: Sample mean of \$270 and standard deviation of \$90.
 
-b) Calculate the test statistic. 
+b)  Calculate the test statistic.
 
-c) Find the p-value. What is the conclusion?
-
+c)  Find the p-value. What is the conclusion?
 
 <details>
+
 <summary>Show solutions</summary>
 
-a) $H_0: \mu\le 250$ vs $H_1: \mu>250$. 
+a)  $H_0: \mu\le 250$ vs $H_1: \mu>250$.
 
-b) $T=(270-250)/(90/\sqrt{50})=1.57$
+b)  $T=(270-250)/(90/\sqrt{50})=1.57$
 
-c) $\text{p-value}=P(T_{29}>3.29)=0.0613$. The p-value is higher than 5\%, indicating that we may reject not the null hypothesis. The pension payments have not increased due to the change from opting in to opting out.
+c)  $\text{p-value}=P(T_{29}>3.29)=0.0613$. The p-value is higher than 5%, indicating that we may reject not the null hypothesis. The pension payments have not increased due to the change from opting in to opting out.
 
 ```{python}
 from scipy import stats
 print(1-stats.t.cdf(2.94, 49))
 ```
+
 </details>
 
 ### Problem 1.3
-A nutritionist wants to test whether a new diet plan leads to a significant reduction in average daily calorie intake. A sample of 40 individuals followed the diet for one month, and their average daily calorie intake was recorded. 
+
+A nutritionist wants to test whether a new diet plan leads to a significant reduction in average daily calorie intake. A sample of 40 individuals followed the diet for one month, and their average daily calorie intake was recorded.
 
 The recommended daily intake before the diet was 2200 kcal. After one month, the sample had a mean intake of 2100 kcal with a standard deviation of 250 kcal.
 
-a) Set up the null- and alternative hypotheses.
+a)  Set up the null- and alternative hypotheses.
 
-b) Calculate the test statistic.
+b)  Calculate the test statistic.
 
-c) Find the p-value and interpret the result.
+c)  Find the p-value and interpret the result.
 
 <details>
+
 <summary>Show solutions</summary>
-a) $H_0: \mu\geq 2200$ vs $H_1: \mu<2200$.
 
-b) $$T=\frac{2100-2200}{250/\sqrt{40}}=-2.53$$
+a)  $H_0: \mu\geq 2200$ vs $H_1: \mu<2200$.
 
-c) $$\text{p-value}=P(T_{39}<-2.53)=0.0079$$
+b)  $$T=\frac{2100-2200}{250/\sqrt{40}}=-2.53$$
+
+c)  $$\text{p-value}=P(T_{39}<-2.53)=0.0079$$
 
 Since the p-value is lower than the conventional 5% significance level, we reject the null hypothesis, suggesting that the new diet plan significantly reduces daily calorie intake.
 
@@ -85,69 +92,168 @@ Since the p-value is lower than the conventional 5% significance level, we rejec
 from scipy import stats
 print(stats.t.cdf(-2.53, 39))
 ```
+
 </details>
 
 ### Problem 1.4
+
 A smartphone manufacturer wants to determine whether the battery life of their new model is significantly different from the advertised 24 hours. A sample of 50 devices was tested, showing a mean battery life of 23.5 hours with a standard deviation of 1.2 hours.
 
-a) Formulate the hypotheses.
+a)  Formulate the hypotheses.
 
-b) Compute the test statistic.
+b)  Compute the test statistic.
 
-c) Determine the p-value and state your conclusion.
+c)  Determine the p-value and state your conclusion.
 
 <details>
+
 <summary>Show solutions</summary>
 
-a) $H_0: \mu=24$ vs $H_1: \mu\neq 24$.
+a)  $H_0: \mu=24$ vs $H_1: \mu\neq 24$.
 
-b) $$T=\frac{23.5-24}{1.2/\sqrt{50}}=-2.946$$
+b)  $$T=\frac{23.5-24}{1.2/\sqrt{50}}=-2.946$$
 
-c) $$\text{p-value}=2 \times P(T_{49}<-2.94)=0.0049$$
+c)  $$\text{p-value}=2 \times P(T_{49}<-2.94)=0.0049$$
 
 Since the p-value is very small, we reject the null hypothesis, indicating that the battery life is significantly different from 24 hours.
 
 ```{python}
 print(2*stats.t.cdf(-2.946, 49))
 ```
+
+</details>
+
+
+### Problem 1.5
+
+A fitness instructor claims that the average resting pulse rate of adults in their program is less than 70 beats per minute. A sample of 10 participants yields:
+
+$$ \text{Pulse Rates:} \ 68, \ 72, \ 69,  \ 71,  \ 67,  \ 65,  \ 70,\ 66,\  68, \ 64 $$
+
+Assume approximate normality.
+
+a)  State the null and alternative hypotheses.
+
+b)  Compute the sample mean and standard deviation.
+
+c)  Conduct a one-sample *t*-test at the 5% significance level.
+
+d)  What do you conclude?
+
+e)  If the sample had been twice as large with the same mean and standard deviation, how would the *p*-value likely change?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  The statement of the instructor is that the mean is **less** than 70 bpm, so that becomes our alternative hypothesis, and the oppsite case becomes the null hypothesis. We use \$H_0: \mu=70 \$ as we are only interested in the edge case when testing.
+
+$H_0: \mu = 70$ $H_1: \mu < 70$
+
+b)  We simply compute using the given data and
+
+$\bar{x} = \frac{1}{10}\sum^{10}_{i=1}x_i=68.0$, $s=\sqrt{\frac{1}{n-1}\sum^{10}_{i=1}\left(x_i-\bar{x}\right)^2} \approx 2.58$
+
+c)  $t = \frac{68 - 70}{2.45/\sqrt{10}} \approx -2.45$
+
+d)  Critical value (df = n-1=9) at $\alpha = 0.05$ is approximately -1.833. This number can easily be found in a t-table, or by running some code to estimate it.
+
+```{python}
+### qt gives the quantile function for the
+# t distribution. We use 0.05 to find the 
+# critical value as this is a one sided test. 
+# 9 is just the degrees of freedom 
+from scipy import stats
+print(stats.t.ppf(-0.05, 9))
+
+### Underneath I am finding the p-value by 
+# looking at the distribution function of 
+# the t-distribution and plugging in the 
+# found t statistic. 
+print(stats.t.cdf(-2.45, 9))
+
+```
+
+Since -2.58 \< -1.833, we reject $H_0$, and thus conclude that the average bpm is less than 70.
+
+e)  With a larger sample, the standard error would decrease, leading to a larger magnitude of the test statistic and a **smaller** p-value. This illustrates the effect of sample size on power.
+
+</details>
+
+### Problem 1.6
+
+Suppose a manufacturer claims their machine fills soda bottles with 500 ml of soda. You suspect it underfills. You collect a sample of 12 bottles and measure:
+
+```{python}
+import numpy as np
+x = np.array([498, 495, 497, 496, 499, 498, 494, 496, 495, 497, 496, 495])
+```
+
+This problem and it's solutions were made in R, but feel free to use an equivalent.
+
+a)  Test if the true mean is less than 500 ml using R.
+
+b)  Provide the *p*-value and interpret the result.
+
+c)  What assumption are you making about the distribution?
+
+<details>
+
+<summary>Show solution</summary>
+
+
+```{python}
+### The t.test command let's you run a t.test by 
+# simply adding the H_0 mean and specifying the
+# variant you'd liek to run. Here we test for 
+# H_1: mu<500 and H_0: mu=500 
+t_result = stats.ttest_1samp(x, popmean=500, alternative='less')
+print(t_result)
+```
+
+
+b)  Output might give $t \approx -8.49$, $p < 0.001$. Strong evidence the machine underfills.
+
+c)  We assume that the population distribution is approximately normal, as required for small-sample *t*-tests.
+
 </details>
 
 
 ## Two-sample t-test
-For the following exercises, we will use the test statistic for two-sample t-test with null hypothesis $H_0:\mu_1=\mu_2+d_0$:
-$$T=\frac{\bar x_1-\bar x_2-d_0}{\sqrt{s_1^2/n_1+s_2^2/n_2}},$$
-where $n_1$ and $n_2$ are the sample sizes of the two samples, $\bar x_1$ and $\bar x_2$ are the sample means, $s_1$ and $s_2$ are the sample standard deviations and $d_0$ is the difference in expected value under the null hypothesis (often $d_0=0$). The test statistic follows a t-distribution with degrees of freedom (df): 
-$$\text{df}=\frac{\big(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\big)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_1^2/n_2)^2}{n_2-1}}$$
+
+For the following exercises, we will use the test statistic for two-sample t-test with null hypothesis $H_0:\mu_1=\mu_2+d_0$: $$T=\frac{\bar x_1-\bar x_2-d_0}{\sqrt{s_1^2/n_1+s_2^2/n_2}},$$ where $n_1$ and $n_2$ are the sample sizes of the two samples, $\bar x_1$ and $\bar x_2$ are the sample means, $s_1$ and $s_2$ are the sample standard deviations and $d_0$ is the difference in expected value under the null hypothesis (often $d_0=0$). The test statistic follows a t-distribution with degrees of freedom (df): $$\text{df}=\frac{\big(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\big)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_1^2/n_2)^2}{n_2-1}}$$
 
 ### Problem 2.1
+
 An e-commerce company wants to test whether showing customer reviews on product pages increases the average number of purchases. Behavioral economics suggests that social proof (i.e., seeing others' positive experiences) influences decision-making and can lead to higher sales.
 
 To test this, the company randomly selected two groups of products: one group displayed customer reviews, and the other did not. They then compared the average daily sales per product between the two groups.
 
-a) Set up the null- and alternative hypothesis. Use 10\% significance level. 
+a)  Set up the null- and alternative hypothesis. Use 10% significance level.
 
-b) Discuss how the test statistic will behave under the various hypothesis. 
+b)  Discuss how the test statistic will behave under the various hypothesis.
 
 The experiment result in the following data:
 
-- *Products with reviews*: Sample mean daily sales = 120 units, Sample standard deviation = 30, Sample size = 40
-- *Products without reviews*: Sample mean daily sales = 105 units, Sample standard deviation = 28, Sample size = 40
+-   *Products with reviews*: Sample mean daily sales = 120 units, Sample standard deviation = 30, Sample size = 40
+-   *Products without reviews*: Sample mean daily sales = 105 units, Sample standard deviation = 28, Sample size = 40
 
-c) Calculate the test statistic and the degrees of freedom.
+c)  Calculate the test statistic and the degrees of freedom.
 
-d) Find the p-value. What is the conclusion?
-
+d)  Find the p-value. What is the conclusion?
 
 <details>
+
 <summary>Show solutions</summary>
 
-Let $\mu_1$ be the expected daily sales with reviews and $\mu_2$ without reviewes. 
+Let $\mu_1$ be the expected daily sales with reviews and $\mu_2$ without reviewes.
 
-a) $H_0: \mu_1\le \mu_2$ vs $H_A: \mu_1>\mu_2$. 
+a)  $H_0: \mu_1\le \mu_2$ vs $H_A: \mu_1>\mu_2$.
 
-b) Under the null hypothesis, we expect the numerator of the test statistic to be close to zero, making the test statistic close to zero. Under the alternative hypothesis, we expect $\bar x_1>\bar x_2$ such that the numerator of $T$ will be positive. Higher values will therefore favor the alternative hypothesis. 
+b)  Under the null hypothesis, we expect the numerator of the test statistic to be close to zero, making the test statistic close to zero. Under the alternative hypothesis, we expect $\bar x_1>\bar x_2$ such that the numerator of $T$ will be positive. Higher values will therefore favor the alternative hypothesis.
 
-c) 
+c)  
+
 ```{python}
 import numpy as np
 s1 = 30;  s2 = 28; n1 = 40; n2 = 40
@@ -158,47 +264,48 @@ print("df=",df)
 print("T=",t)
 ```
 
-$T=(102-105)/\sqrt{30^2/40+28^2/40}=-0.462$
-$$\text{df}=\frac{\big(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\big)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_1^2/n_2)^2}{n_2-1}}$$
+$T=(102-105)/\sqrt{30^2/40+28^2/40}=-0.462$ $$\text{df}=\frac{\big(\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}\big)^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_1^2/n_2)^2}{n_2-1}}$$
 
-
-d) $\text{p-value}=P(T_{29}>0.462)=0.32$. The p-value is lower than 10\%, indicating that we may reject the null hypothesis. There is enough evidence to suggest that the reviews increase the sales at a 10\% significance level. The company should show reviews of their products to increase sales. 
+d)  $\text{p-value}=P(T_{29}>0.462)=0.32$. The p-value is lower than 10%, indicating that we may reject the null hypothesis. There is enough evidence to suggest that the reviews increase the sales at a 10% significance level. The company should show reviews of their products to increase sales.
 
 ```{python}
 from scipy import stats
 print(1-stats.t.cdf(t, df))
 ```
+
 </details>
 
 ### Problem 2.2
+
 A company is testing whether offering a performance-based bonus increases employee productivity. They implement a new bonus system in one office location (Group A), while another office continues without bonuses (Group B). After three months, they measure the average number of completed sales calls per week in both offices. The company wants you to determine if the bonus system leads to higher productivity (mean number of sales calls).
 
-a) Formulate the hypothesis problem including $H_0$, $H_A$ and setting a suitable significance level. 
+a)  Formulate the hypothesis problem including $H_0$, $H_A$ and setting a suitable significance level.
 
 Group A (Bonus group):
 
-- Sample mean: 52 sales calls per week
-- Sample standard deviation: 8
-- Sample size: n = 35
+-   Sample mean: 52 sales calls per week
+-   Sample standard deviation: 8
+-   Sample size: n = 35
 
 Group B (No bonus group):
 
-- Sample mean: 48 sales calls per week
-- Sample standard deviation: 9
-- Sample size: n = 35
+-   Sample mean: 48 sales calls per week
+-   Sample standard deviation: 9
+-   Sample size: n = 35
 
-b) Calculate the test statistic based on this information. Find the p-value. 
+b)  Calculate the test statistic based on this information. Find the p-value.
 
-c) What is your conclusion and your recommendation to the company? 
+c)  What is your conclusion and your recommendation to the company?
 
 <details>
+
 <summary>Show solutions</summary>
 
-a) $H_0: \mu_A =\mu_B$ vs $H_A: \mu_A>\mu_B$. In this case, the bonus scheme might be expensive, so we want to avoid type I errors (rejecting the null, when it is truly no difference in productivity). We use $\alpha = 1\%$. 
+a)  $H_0: \mu_A =\mu_B$ vs $H_A: \mu_A>\mu_B$. In this case, the bonus scheme might be expensive, so we want to avoid type I errors (rejecting the null, when it is truly no difference in productivity). We use $\alpha = 1\%$.
 
-b) $T=1.96$ and p-value $=0.0267$. 
+b)  $T=1.96$ and p-value $=0.0267$.
 
-c) The p-value is low, indicating evidence for the alternative hypothesis, but we have set a significance level of 1\%, for which the p-value exceeds. This would lead us to not recommend implementing the bonus, because it does not improve productivity to a high enough degree at this significance level. 
+c)  The p-value is low, indicating evidence for the alternative hypothesis, but we have set a significance level of 1%, for which the p-value exceeds. This would lead us to not recommend implementing the bonus, because it does not improve productivity to a high enough degree at this significance level.
 
 ```{python}
 m1 = 52; s1 = 8; n1 = 35
@@ -209,22 +316,26 @@ stats.ttest_ind_from_stats(m1,s1,n1,m2,s2,n2,alternative="greater")
 </details>
 
 ### Problem 2.3
+
 A university wants to determine if students who attend tutoring sessions perform better on exams than those who do not. Two independent samples of students were taken:
 
-- *Tutoring group*: Mean score = 78, Standard deviation = 10, Sample size = 30
-- *Non-tutoring group*: Mean score = 72, Standard deviation = 12, Sample size = 35
+-   *Tutoring group*: Mean score = 78, Standard deviation = 10, Sample size = 30
+-   *Non-tutoring group*: Mean score = 72, Standard deviation = 12, Sample size = 35
 
-a) State the hypotheses.
+a)  State the hypotheses.
 
-b) Calculate the test statistic and degrees of freedom.
+b)  Calculate the test statistic and degrees of freedom.
 
-c) Find the p-value and interpret the result.
+c)  Find the p-value and interpret the result.
 
 <details>
-<summary>Show solutions</summary>
-a) $H_0: \mu_1 = \mu_2$ vs $H_A: \mu_1 > \mu_2$.
 
-b) 
+<summary>Show solutions</summary>
+
+a)  $H_0: \mu_1 = \mu_2$ vs $H_A: \mu_1 > \mu_2$.
+
+b)  
+
 ```{python}
 s1 = 10; s2 = 12; n1 = 30; n2 = 35
 m1 = 78; m2 = 72;
@@ -234,39 +345,241 @@ print("df=", df)
 print("T=", t)
 ```
 
-c) The computed p-value is $P(T_{63}>t)=0.0158$. The evidence thus points towards the conclusion that attending tutoring improves performance, due to a low p-value. 
+c)  The computed p-value is $P(T_{63}>t)=0.0158$. The evidence thus points towards the conclusion that attending tutoring improves performance, due to a low p-value.
 
 ```{python}
 print(1-stats.t.cdf(t, df))
 ```
+
+</details>
+
+
+### Problem 2.4
+
+A professor wants to compare exam scores between online and in-person students, as he suspects his students preform systematically better with online exams. The results:
+
+-   Online: 82, 85, 88, 79, 84
+-   In-person: 78, 74, 80, 76, 77
+
+a)  Set up the hypotheses.
+
+b)  Conduct a two-sample *t*-test.
+
+c)  At the 0.05 significance level, what do you conclude?
+
+d)  What might be the impact of unequal variances on this test?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  $H_0: \mu_{\text{online}} = \mu_{\text{in-person}}$ $H_1: \mu_{\text{online}} > \mu_{\text{in-person}}$
+
+b)  Compute sample means and the sample variances. For sample 1, being the online results.
+
+```{python}
+### We use the same methods as always to find the sample mean and variance, but here is a simple way to do it in R. I made this problem have very small datasets so it would be feasible to do by hand, so please make sure you find teh same results. 
+x_1 = np.array([82, 85, 88, 79, 84])
+mean_x1 = np.mean(x_1)
+var_x1 = np.var(x_1,ddof=1)  
+print("Mean:", mean_x1)
+print("Variance:", var_x1)
+```
+
+I.e., we end up with $\bar{x}_1=83.6$ and $s^2_1=11.3$
+
+Now for sample 2, in person.
+
+```{python}
+### Same as above, just new names
+x_2 = np.array([78, 74, 80, 76, 77])
+mean_x2 = np.mean(x_2)
+var_x2 = np.var(x_2,ddof=1)  
+print("Mean:", mean_x2)
+print("Variance:", var_x2)
+```
+
+I.e., we end up with $\bar{x}_1=77$ and $s^2_1=5$
+
+Test statistic:
+
+$$
+t = \frac{83.6 - 77.0}{\sqrt{\left(11.3/5+5/5\right)}} \approx 3.6554
+$$
+
+c)  This is a one sided, and now we only need find the degrees of freedom to determine the proper critical value.
+
+$$ 
+\text{df}=\frac{\left(11.3/5+5/5\right)^2}{\frac{(11.3/5)^2}{4}+\frac{(5/5)^2}{4}}=6.9602\approx7
+$$ Using a table we can find our critical value when we let the df be 7 is 1.895.
+
+With this we reject $H_0$, significant difference.
+
+Being more exact we can use some simple Python code.
+
+```{python}
+### Since we are using a "greater than" test we need to use the 0.95 quantile to find the proper critical value, but since the t-distribution is symmetric, 0.95 and 0.05 will only be separated by a minus sign. 
+print(stats.t.ppf(0.95, df = 6.9602))
+
+### The probability function finds the finds the probability of being under a value, we here take the complement to find the probability of being over 3.6554
+print(1-stats.t.cdf(3.6554, 6.9602))
+
+```
+
+Underneath is an example of python code to do the exact same test.
+
+```{python}
+x_1 = np.array([82, 85, 88, 79, 84])
+x_2 = np.array([78, 74, 80, 76, 77])
+
+# One-sided t-test: H1 is that mean of x_1 > mean of x_2
+result = stats.ttest_ind(x_1, x_2, equal_var=False, alternative='greater')
+
+print("t-statistic:", result.statistic)
+print("p-value:", result.pvalue)
+```
+
+</details>
+
+### Problem 2.5
+
+Suppose a two-sample *t*-test yields a *p*-value of 0.045 for comparing the means of two groups, using a significance level of 0.05.
+
+a)  Can we say the means are “significantly different”?
+
+b)  What if the significance level had been 0.01 instead?
+
+c)  Explain how this relates to Type I error.
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  Yes — at $\alpha = 0.05$, we reject $H_0$.
+
+b)  No — we would not reject at $\alpha = 0.01$.
+
+c)  Significance thresholds control the probability of a Type I error (rejecting a true $H_0$). A lower threshold is more conservative.
+
+</details>
+
+### Problem 2.6
+
+Two teachers use different methods to teach the same material, and they want to test if their methods give different average results. Students are randomly assigned to either class.
+
+-   **Group A** (n = 10): Mean = 78, SD = 6
+-   **Group B** (n = 14): Mean = 73, SD = 10
+
+a)  State the hypotheses.
+
+b)  Calculate the Welch *t*-statistic.
+
+c)  Estimate the degrees of freedom.
+
+d)  Test at the 5% level: is there a significant difference in mean scores?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  We have no indication of directionality for this test. Thus we end up with the following null and alternative hypotheses.\
+    $H_0: \mu_A = \mu_B$ $H_1: \mu_A \ne \mu_B$
+
+b)  We can plug i the means, square the standard deviatons and plug in the numbers in each sample for the test statistic. $$
+    t = \frac{78 - 73}{\sqrt{6^2/10 + 10^2/14}} = \frac{5}{\sqrt{3.6 + 7.14}} = \frac{5}{\sqrt{10.74}} \approx 1.53
+    $$
+
+c)  
+
+$$
+df \approx \frac{(10.74)^2}{(3.6^2/9 + 7.14^2/13)} \approx 21.51
+$$
+
+d)  At $df = 22$, two-tailed 5% critical *t* ≈ ±2.074. (found in table for critical values) Since 1.52 \< 2.08, we **fail to reject** $H_0$.
+
+Using Python code we can also find the exact and approximate df.
+
+```{python}
+## lower and upper bound for approximate df
+stats.t.ppf(0.025, 22)
+stats.t.ppf(0.975, 22)
+
+## for exact df
+stats.t.ppf(0.025, 21.51)
+stats.t.ppf(0.975, 21.51)
+
+## Note that the lower and upper bounds have the same absolute value. This is a consequence of the t-distribution being symmetric. 
+```
+
+</details>
+
+### Problem 2.7
+
+You are given two samples:
+
+```{python}
+A = np.array([85, 87, 83, 84, 89, 91])
+B = np.array([78, 77, 79, 81, 76, 75, 80])
+```
+
+a)  Conduct a two-sample *t*-test assuming unequal variances.
+
+b)  Report the *t*-statistic, degrees of freedom, and *p*-value.
+
+c)  Interpret the result at $\alpha=0.05$.
+
+d)  Does the output indicate anything about equality of variances?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  We can use a simplePythoncommand for this
+
+```{python}
+result = stats.ttest_ind(A, B, equal_var=False)
+print(result)
+```
+
+b)  From, the test summary we can just read
+
+$$
+t=5.6667 \\
+df=8.793 \\
+\text{p-value}=0.0003339
+$$
+
+c)  Strong evidence against $H_0$ in form of such a low p-value, this indicates that the two samples are different at a 5 percent significance level.
+
+d)  Welch’s *t*-test does **not require equal variances** and is safer when variances are not assumed equal.
+
 </details>
 
 
 ## Tests of proportions: One sample
-Let $p$ denote a proportion and $p_0$ be the proportion under the null hypothesis. We can then test the null hypothesis $H_0: p=p_0$ against an alternative hypothesis using the test statistic
-$$Z = \frac{\hat p-p_0}{\sqrt{p_0(1-p_0)/n}},$$ which is approximately normally distributed when $n$ is sufficiently large and the probabilies are not too small (often $np>5$ is used as a rule of thumb). 
+
+Let $p$ denote a proportion and $p_0$ be the proportion under the null hypothesis. We can then test the null hypothesis $H_0: p=p_0$ against an alternative hypothesis using the test statistic $$Z = \frac{\hat p-p_0}{\sqrt{p_0(1-p_0)/n}},$$ which is approximately normally distributed when $n$ is sufficiently large and the probabilies are not too small (often $np>5$ is used as a rule of thumb).
 
 ### Problem 3.1
+
 A retail chain is considering phasing out cash payments in favor of digital transactions. Management wants to determine whether at least 60% of customers are already using mobile payment apps (such as Apple Pay or Google Pay) when shopping. If the proportion is significantly higher than 60%, they may move forward with reducing cash payment options.
 
+a)  Set up the null hypothesis and alternative hypothesis. Discuss how the test statistic will behave under the various hypotheses.
 
+The retail chain conducts a survey where they ask customers whether they used a mobile payment app for their most recent purchase. Out of the 400 customers asked, 260 used mobile payment apps.
 
-a) Set up the null hypothesis and alternative hypothesis. Discuss how the test statistic will behave under the various hypotheses.
+b)  Calculate $Z$ based on this information. What is the p-value?
 
-
-The retail chain conducts a survey where they ask customers whether they used a mobile payment app for their most recent purchase. Out of the 400 customers asked, 260 used mobile payment apps. 
-
-b) Calculate $Z$ based on this information. What is the p-value? 
-
-c) What does the p-value tell you about people's payment preferences?
-
+c)  What does the p-value tell you about people's payment preferences?
 
 <details>
+
 <summary>Show solutions</summary>
 
-a) $H_0: p=0.6$ vs $H_A: \mu>0.6$. The numerator of $Z$ will  be expected close to 0 if the null is zero, making Z close to zero. If $H_A$ is true, $\widehat p$ will be expected larger than 0.6, making Z positive. Large values of $Z$ will favor $H_A$. 
+a)  $H_0: p=0.6$ vs $H_A: \mu>0.6$. The numerator of $Z$ will be expected close to 0 if the null is zero, making Z close to zero. If $H_A$ is true, $\widehat p$ will be expected larger than 0.6, making Z positive. Large values of $Z$ will favor $H_A$.
 
-b) $Z = (0.65-0.6)/\sqrt{0.6\cdot 0.4/400}=2.04$ and p-value$=P(Z>2.04)=0.0206$.
+b)  $Z = (0.65-0.6)/\sqrt{0.6\cdot 0.4/400}=2.04$ and p-value$=P(Z>2.04)=0.0206$.
+
 ```{python}
 phat = 260/400
 z = (phat-0.6)/np.sqrt(0.6*(1-0.6)/400)
@@ -274,33 +587,33 @@ print("Z=", z)
 print("Pvalue: ", 1-stats.norm.cdf(z))
 ```
 
-c) The p-value is low, which indicates evidence against $H_0$. It indicates that the proportion of mobile app payments is above 60\%. 
+c)  The p-value is low, which indicates evidence against $H_0$. It indicates that the proportion of mobile app payments is above 60%.
 
 </details>
 
-
 ### Problem 3.2
-A sustainable fashion brand wants to know whether at least 30% of consumers are willing to pay a premium for eco-friendly clothing. If the proportion is significantly higher than 30% with significance level 10\%, they will launch a new premium-priced, eco-friendly clothing line.
+
+A sustainable fashion brand wants to know whether at least 30% of consumers are willing to pay a premium for eco-friendly clothing. If the proportion is significantly higher than 30% with significance level 10%, they will launch a new premium-priced, eco-friendly clothing line.
 
 They conduct a market survey where respondents indicate whether they would be willing to pay 10% more for sustainably produced clothing.
 
-a) Set up the null- and alternative hypothesis.
+a)  Set up the null- and alternative hypothesis.
 
-The market survey got 500 respondents, and out of those, 166 were willing to pay 10\% more for sustainable clothing. 
+The market survey got 500 respondents, and out of those, 166 were willing to pay 10% more for sustainable clothing.
 
-b) Calculate $Z$ based on this information. What is the p-value? 
+b)  Calculate $Z$ based on this information. What is the p-value?
 
-c) What would your recommendation to the fashion brand be?
+c)  What would your recommendation to the fashion brand be?
 
 <details>
+
 <summary>Show solutions</summary>
 
-a) $H_0: p\le 30\%$ vs $H_A: p>30\%$. 
+a)  $H_0: p\le 30\%$ vs $H_A: p>30\%$.
 
-b) $\hat p=166/500= 33.2\%$, $z=(0.332-0.3)/\sqrt{0.3*0.7/500}=1.56$ and
-$P(Z>z)=P(Z>1.56)=1-\Phi(1.56)=0.0592$. 
+b)  $\hat p=166/500= 33.2\%$, $z=(0.332-0.3)/\sqrt{0.3*0.7/500}=1.56$ and $P(Z>z)=P(Z>1.56)=1-\Phi(1.56)=0.0592$.
 
-c) At a 10\% signifance level, we would reject the null hypothesis, since the p-value of 0.06 is smaller than 0.1. At this significance level, we would recommend the brand to go ahead with the launch of their eco-friendly clothing. 
+c)  At a 10% signifance level, we would reject the null hypothesis, since the p-value of 0.06 is smaller than 0.1. At this significance level, we would recommend the brand to go ahead with the launch of their eco-friendly clothing.
 
 ```{python}
 phat = 166/500
@@ -312,19 +625,22 @@ print("Pvalue: ", 1-stats.norm.cdf(z))
 </details>
 
 ### Problem 3.3
+
 A public transportation agency wants to determine whether at least 70% of residents support a new subway line expansion. A survey of 600 residents finds that 435 support the expansion.
 
-a) Formulate the hypotheses.
+a)  Formulate the hypotheses.
 
-b) Compute the test statistic and p-value.
+b)  Compute the test statistic and p-value.
 
-c) What is the conclusion?
+c)  What is the conclusion?
 
 <details>
-<summary>Show solutions</summary>
-a) $H_0: p = 0.7$ vs $H_A: p > 0.7$.
 
-b) $$Z=\frac{0.725-0.7}{\sqrt{0.7\cdot 0.3/600}}=1.63$$
+<summary>Show solutions</summary>
+
+a)  $H_0: p = 0.7$ vs $H_A: p > 0.7$.
+
+b)  $$Z=\frac{0.725-0.7}{\sqrt{0.7\cdot 0.3/600}}=1.63$$
 
 p-value $=P(Z>1.63)=0.0907$
 
@@ -335,49 +651,91 @@ print("Z=", z)
 print("p-value=", 1-stats.norm.cdf(z))
 ```
 
-c) A p-value of 9\% indicates that the evidence against the null hypothesis is not very strong, and at a 5\% significance level, we would not reject the null hypothesis. 
+c)  A p-value of 9% indicates that the evidence against the null hypothesis is not very strong, and at a 5% significance level, we would not reject the null hypothesis.
+
+</details>
+
+
+
+### Problem 3.4
+
+A factory claims that at most 5% of products are defective. In a random sample of 80 products, 7 were defective.
+
+a)  Test whether the true defect rate is higher than claimed at the 5% level.
+
+b)  Compute the test statistic and p-value.
+
+c)  Conclude and interpret.
+
+d)  Should we consider this test trustworthy
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  Since we want to explore if the proportion of defectives is **higher** than 5%, let's make that our alternative hypothesis.\
+    $H_0: p = 0.05$,
+
+$H_1: p > 0.05$
+
+b)  
+
+$$
+\hat{p} = \frac{7}{80} = 0.0875,\quad z = \frac{0.0875 - 0.05}{\sqrt{0.05(0.95)/80}} \approx 1.54
+$$
+
+c)  
+
+Since our alternative hypothesis is that that $p>0.05$ we would need z to be **higher** than some critical value at the 5% level. Since we are using a one-sided test here, we find in a table that the critical value is given by $z\approx 1.645$. We can clearly tell that our test-statistic is not hihgh enough and this we won't discard $H_0$ in this case. Underneath I have done some computation giving a more exact critical value and finding the p-value is about 6 percent.
+
+```{python}
+print(stats.norm.ppf(0.95))
+print(1-stats.norm.cdf(1.54))
+```
+
+d)  
+
+The common rule of thumb is $np>5$, and since $n\hat{p}=7$ in this case, we find little reason for doubt in this case.
 
 </details>
 
 
 ## Tests of proportions: Two samples
-Let $p_1$ and $p_2$ denote two proportions. We can then test the null hypothesis $H_0: p_1=p_2$ against an alternative hypothesis using the test statistic
-$$Z = \frac{\hat p_1-\hat p_2}{\sqrt{p_\text{pool}(1-p_\text{pool})(1/n_1+1/n_2)}},$$
-where $$p_\text{pool}=\frac{n_1\widehat p_1+n_2\widehat p_2}{n_1+n_2}.$$
-The test statistic Z is approximately normally distributed. 
+
+Let $p_1$ and $p_2$ denote two proportions. We can then test the null hypothesis $H_0: p_1=p_2$ against an alternative hypothesis using the test statistic $$Z = \frac{\hat p_1-\hat p_2}{\sqrt{p_\text{pool}(1-p_\text{pool})(1/n_1+1/n_2)}},$$ where $$p_\text{pool}=\frac{n_1\widehat p_1+n_2\widehat p_2}{n_1+n_2}.$$ The test statistic Z is approximately normally distributed.
 
 ### Problem 4.1
 
 An insurance company is testing how the way they frame their sales pitch affects customers' willingness to buy a travel insurance policy. They randomly assign potential customers into two groups:
 
-1. Loss-framed message: "If you don’t buy travel insurance, you could lose thousands in unexpected expenses."
-2. Gain-framed message: "If you buy travel insurance, you’ll have peace of mind and financial protection."
+1.  Loss-framed message: "If you don’t buy travel insurance, you could lose thousands in unexpected expenses."
+2.  Gain-framed message: "If you buy travel insurance, you’ll have peace of mind and financial protection."
 
-Behavioral economics suggests that loss aversion makes people more sensitive to potential losses than gains, meaning the loss-framed message might lead to higher purchase rates. 
+Behavioral economics suggests that loss aversion makes people more sensitive to potential losses than gains, meaning the loss-framed message might lead to higher purchase rates.
 
-a) Set up the null- and alternative hypothesis.  
+a)  Set up the null- and alternative hypothesis.
 
-b) Discuss how the test statistic will behave under the various hypothesis. 
+b)  Discuss how the test statistic will behave under the various hypothesis.
 
 The experiment result in the following data:
 
-- *Loss-framed message*: 200 customers surveyed, 45% purchased insurance
-- *Gain-framed message*: 200 customers surveyed, 35% purchased insurance
+-   *Loss-framed message*: 200 customers surveyed, 45% purchased insurance
+-   *Gain-framed message*: 200 customers surveyed, 35% purchased insurance
 
-c) Calculate the test statistic and the p-value.
+c)  Calculate the test statistic and the p-value.
 
-d) Conclude the test. 
-
+d)  Conclude the test.
 
 <details>
+
 <summary>Show solutions</summary>
- 
-Let $p_L$ denote proportion of purchases receiving a loss-framed message and $p_G$ denote proportion of purchases receiving a gain-framed message.
-a) $H_0: p_L=p_G$ vs $H_A: p_L>p_G$. 
 
-b) We use $p_1=p_L$ and $p_2 =p_G$ in refence to the formula for the test statistic. If the null hypothesis is true, Z is expected to be close to zero since the numerator is expected to be near 0. If the alternative hypothesis is true, we expect $\hat p_L>\hat p_G$, giving a positive numerator. Thus, large values of Z will favor the alternative hypothesis. 
+Let $p_L$ denote proportion of purchases receiving a loss-framed message and $p_G$ denote proportion of purchases receiving a gain-framed message. a) $H_0: p_L=p_G$ vs $H_A: p_L>p_G$.
 
-c) 
+b)  We use $p_1=p_L$ and $p_2 =p_G$ in refence to the formula for the test statistic. If the null hypothesis is true, Z is expected to be close to zero since the numerator is expected to be near 0. If the alternative hypothesis is true, we expect $\hat p_L>\hat p_G$, giving a positive numerator. Thus, large values of Z will favor the alternative hypothesis.
+
+c)  
+
 ```{python}
 pL = 0.45
 pG = 0.35
@@ -389,42 +747,42 @@ print("Z=",z)
 print("pvalue=",1-stats.norm.cdf(z))
 ```
 
-d) The p-value is low (around 2\%). This indicates that the probability of making a Type I error is low and favor rejecting the null hypothesis. In that sense, the evidence points towards people being willing to pay to avoid loss than they are to potentially gain. 
+d)  The p-value is low (around 2%). This indicates that the probability of making a Type I error is low and favor rejecting the null hypothesis. In that sense, the evidence points towards people being willing to pay to avoid loss than they are to potentially gain.
 
 </details>
 
-
 ### Problem 4.2
-An online retailer wants to determine whether offering free shipping increases the proportion of customers who complete their purchases. They run an A/B test, where one group of customers sees free shipping on all orders (Group A), while another group sees the standard shipping fees (Group B). After a week, they compare the proportion of customers who completed a purchase in each group. The retailer asks you to use 5\% significance level. 
 
+An online retailer wants to determine whether offering free shipping increases the proportion of customers who complete their purchases. They run an A/B test, where one group of customers sees free shipping on all orders (Group A), while another group sees the standard shipping fees (Group B). After a week, they compare the proportion of customers who completed a purchase in each group. The retailer asks you to use 5% significance level.
 
-a) Formulate the hypothesis problem. 
+a)  Formulate the hypothesis problem.
 
-For the two groups, the retailer gathered the following data: 
+For the two groups, the retailer gathered the following data:
 
 Group A (Standard shipping):
 
-- Sample size: 469
-- Completed purchases: 191
+-   Sample size: 469
+-   Completed purchases: 191
 
 Group B (Free shipping)
 
-- Sample size: 483
-- Completed purchases: 231
+-   Sample size: 483
+-   Completed purchases: 231
 
+b)  Perform the test: Find Z and the p-value.
 
-b) Perform the test: Find Z and the p-value. 
+c)  What is your conclusion?
 
-c) What is your conclusion? 
-
-d) The chief economist in the company has taken a statistics course and learned about the difference between statistical significance and economical significance. How would this distinction influence your recommendation to the company? 
+d)  The chief economist in the company has taken a statistics course and learned about the difference between statistical significance and economical significance. How would this distinction influence your recommendation to the company?
 
 <details>
+
 <summary>Show solutions</summary>
 
-a) $H_0: p_A=p_B$ vs $H_A: p_A<p_B$. 
+a)  $H_0: p_A=p_B$ vs $H_A: p_A<p_B$.
 
-b) 
+b)  
+
 ```{python}
 nA = 469
 nB = 483
@@ -436,29 +794,34 @@ z = (pA-pB)/np.sqrt(pPool*(1-pPool)*(1/nA+1/nB))
 print("Z=",z)
 print("pvalue=",stats.norm.cdf(z))
 ```
-c) At a 5\% significance level, the free shipping group have a higher completing rate than the standard shipping group. 
 
-d) Here the effect size $|\widehat p_A-\widehat p_B| = 7\%$, that is 7 percentage points higher rate of completing the order if the shipping is free. This increase in completed orders increases the volume, but the free shipping will reduce the margin on each order. We would need more information to assess whether this specific experiment that resulted in a statistically significant increase in volume, also resulted in a economically significant increase of profits. 
+c)  At a 5% significance level, the free shipping group have a higher completing rate than the standard shipping group.
+
+d)  Here the effect size $|\widehat p_A-\widehat p_B| = 7\%$, that is 7 percentage points higher rate of completing the order if the shipping is free. This increase in completed orders increases the volume, but the free shipping will reduce the margin on each order. We would need more information to assess whether this specific experiment that resulted in a statistically significant increase in volume, also resulted in a economically significant increase of profits.
 
 </details>
 
 ### Problem 4.3
+
 A company is testing whether a new website layout increases the proportion of users who complete a purchase. They conduct an A/B test with the following results:
 
-- *New layout*: 500 users, 210 completed a purchase
-- *Old layout*: 500 users, 180 completed a purchase
+-   *New layout*: 500 users, 210 completed a purchase
+-   *Old layout*: 500 users, 180 completed a purchase
 
-a) Formulate the hypotheses.
+a)  Formulate the hypotheses.
 
-b) Compute the test statistic and p-value.
+b)  Compute the test statistic and p-value.
 
-c) Interpret the result.
+c)  Interpret the result.
 
 <details>
-<summary>Show solutions</summary>
-a) $H_0: p_1 = p_2$ vs $H_A: p_1 > p_2$. 
 
-b) 
+<summary>Show solutions</summary>
+
+a)  $H_0: p_1 = p_2$ vs $H_A: p_1 > p_2$.
+
+b)  
+
 ```{python}
 from scipy import stats
 n1, n2 = 500, 500
@@ -469,6 +832,665 @@ print("Z=", z)
 print("p-value=", 1-stats.norm.cdf(z))
 ```
 
-c) Since the p-value is low, this gives reason to doubt the null hypothesis and indicates that the new layout do increase the proportion of customers placing an order. 
+c)  Since the p-value is low, this gives reason to doubt the null hypothesis and indicates that the new layout do increase the proportion of customers placing an order.
 
 </details>
+
+
+### Problem 4.4
+
+In a clinical trial, 35 of 50 patients in group A responded to a vaccine. In group B, 40 of 60 patients responded.
+
+a)  State the hypotheses
+
+b)  Compute the test statistic
+
+c)  Conclude on the test
+
+d)  Interpret the result.
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  $H_0: p_A = p_B$, $H_a: p_A \ne p_B$
+
+b)  
+
+$$
+\hat{p}_1 =\frac{35}{50}= 0.70,\quad \hat{p}_2=\frac{40}{60} = 0.6667,\quad \hat{p}_{\text{pooled}} = \frac{35+40}{110} = 0.6818
+$$
+
+$$
+z = \frac{0.70 - 0.6667}{\sqrt{0.6818(1 - 0.6818)(1/50 + 1/60)}} \approx 0.373
+$$
+
+c)  We know that test statistic should be normally distributed in this case. To reject the two sided test we would need $|z|>1.96$, which we clearly see isn't the case, and we thus fail to reject $H_0$.
+
+Let's find the p-value with Python to show this clearly.
+
+```{python}
+## Upper and lower bounds
+print(stats.norm.ppf(0.025))
+print(stats.norm.ppf(0.975))
+
+## Computing p value
+print(1-stats.norm.cdf(0.373)+stats.norm.cdf(-0.373))
+```
+
+$p \approx 0.70$, not significant.
+
+d)  There is no evidence to suggest a difference in proportions.
+
+</details>
+
+
+
+## Normal distribution and student t dsitribution
+
+### Problem 1
+
+a)  What are the two parameters that define a normal distribution?
+
+b)  What does the empirical rule (68-95-99.7 rule) state about the normal distribution?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  A normal distribution is fully defined by its **mean (μ)** and **standard deviation (σ)**.
+
+b)  The normal distribution is a symmetric distribution around its mean, $\mu$. The rule gives an approximate measure of what proportion of the data that lies within a certain range of the mean.
+
+-   \~68% of data lie within 1σ of the mean
+-   \~95% within 2σ
+-   \~99.7% within 3σ
+
+This helps assess spread and typicality.
+
+</details>
+
+### Problem 2
+
+Given that $X \sim \mathcal{N}(100, 15^2)$ (i.e. $X$ is normally distributed with mean $\mu=100$ and standard deviation $\sigma=15$), calculate:
+
+a)  The probability of $X < 100$. Why do we not need to consider the standard deviation when calculating this?
+
+b)  The approximate probability that $X < 115$
+
+c)  Use a z-transformation to b) to standard normal, and compute using a calculator. Let $Z\sim \matchal{N}(0,1)$, we call that a standard normal distribution. We also have that
+
+$$
+Z=\frac{X-\mu}{\sigma}
+$$
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  We know that the normal distribution is symmetric around the mean, i.e. we have a 50-50 chance of finding an $X$ above or below the mean. The mean here is 100, and was such we get
+
+$$
+P(X>100)=\frac{1}{2}=0.5
+$$
+
+b)  We can use the 68-95-99.7 rule to find the approximate probability. 115 is one standard deviation greater than the mean. That means we have to account for **half** of the 68% from the rule. I.e.
+
+$$
+P(X\in(100,115))=\frac{0.68}{2}\approx0.34
+$$ Now let's also account for the cases where $X\leq 100$
+
+$$
+P(X<115)=P(X\leq100)+P(X\in(100,115))\approx0.5+0.34=0.84
+$$ Note: Since the normal distribution is **continuous** $P(X<x)=P(X\leq x)$
+
+c)  $$
+    P(X<115)=P\left(\frac{Z-100}{15}<\frac{115-100}{15}\right)=P(Z<1)=0.8413
+    $$
+
+**Interpretation**: There’s about an 84.13% chance that $X$ will be below 115, which is equivalent to $Z$ being below 1.
+
+</details>
+
+### Problem 3
+
+Suppose a random variable $X \sim \mathcal{N}(\mu, \sigma^2)$. Show that:
+
+$$
+P(a < X < b) = P\left( \frac{a - \mu}{\sigma} < Z < \frac{b - \mu}{\sigma} \right)
+$$
+
+<details>
+
+<summary>Show solution</summary>
+
+This transformation uses the **standardization**:
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+By applying this, we shift any normal distribution to the standard normal. We need only substitute and solve like a regular inequality, and the equivalence becomes clear.
+
+$$
+P(a < X < b) = P\left( \frac{a - \mu}{\sigma} < Z < \frac{b - \mu}{\sigma} \right)
+$$
+
+</details>
+
+### Problem 4
+
+a)  Use the symmetry of the standard normal distribution to explain why:
+
+$$
+P(Z > 1.96) = P(Z < -1.96)
+$$
+
+b)  Calculate $P(|Z| > 1.96)$
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  The standard normal is symmetric about 0, so:
+
+$$
+P(Z > c) = P(Z < -c)
+$$ This equality comes from the logical fact of us a random varabiable being just as unlikely to take a value beyond a certain distance from the mean, no matter if the distance is in a positive of a negative directoion.
+
+b)  
+
+$$
+P(|Z| > 1.96) =P(Z<-1.96))+P(Z>1.96)=2P(Z<-1.96)\approx 2*0.025=0.05
+$$
+
+</details>
+
+### Problem 5
+
+a)  Sketch or describe how the *t*-distribution changes as degrees of freedom increase.
+
+b)  What does the *t*-distribution converge to?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  With low degrees of freedom, the *t*-distribution is flatter and has fatter tails. As df increases, it becomes more peaked. The t-distribution also always has a mean of 0, and is symmetric around 0.
+
+b)  As df → ∞, the *t*-distribution approaches the **standard normal distribution**.
+
+We can illustrate this quite simply without going into the ideas fully.
+
+Let first $X_1,\dots,X_n\sim i.i.d. \mathcal{N}(\mu, \sigma^2)$, and then let
+
+\$\$ \bar{X}=\frac{1}{n}\sum\^n\_{i=1}X_i, \quad S^2=^\frac{1}{n-1}\sumn\_{i=1}(X_i-\bar{X})\^2
+
+$$
+It can then be shown that 
+$$ \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim\mathcal{N}(0,1), \quad \frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t\_{n-1} \$\$ Where $t_{n-1}$ indicates a t-distribution with $df=n-1$. Clearly these are very similar statements. All we need to recall now is that $S^2$ is and unbiased and consistent estimator of $\sigma^2$. I.e.
+
+\$\$ \lim*{n*\rightarrow\infty}S^2=^\sigma2 \quad  \Rightarrow \quad  \frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t{n-1} \rightarrow \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim\mathcal{N}(0,1)
+
+\$\$
+
+</details>
+
+### Problem 6
+
+A population has a skewed distribution with mean 10 and SD 5. Suppose we take samples of size 50. You can assume the samples are iid.
+
+a)  What is the expected distribution of the sample mean?
+
+b)  Use CLT to approximate $P(\bar{X} > 11)$
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  CLT tells us that $\bar{X} \sim \mathcal{N}\left(10, \frac{5}{\sqrt{50}}\right)$
+
+b)  
+
+$$
+Z = \frac{11 - 10}{5/\sqrt{50}} \approx \frac{1}{0.707} \approx 1.41
+\Rightarrow P(Z > 1.41) \approx 0.079
+$$
+
+</details>
+
+### Problem 7
+
+Explain when you should use the standard normal vs. the *t*-distribution in practice.
+
+<details>
+
+<summary>Show solution</summary>
+
+Use the **t-distribution** if:
+
+-   Population standard deviation is unknown
+-   Sample size is small (typically n \< 30)
+
+Use **standard normal** if:
+
+-   Population SD is known, or n is large, such that CLT becomes viable.
+
+</details>
+
+### Problem 8
+
+a)  Why does the *t*-distribution have wider tails than the normal?
+
+<!-- -->
+
+B)  What implication does this have on statistical testing?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  Because of the extra uncertainty in estimating the population SD from the sample.
+
+b)  Wider tails mean **larger critical values**, so you're **less likely to reject** $H_0$ with small samples.
+
+</details>
+
+### Problem 9
+
+Use Python (or something similar) to plot the density curves of $t_3, t_{10}, t_{30}$, and standard normal.
+
+a)  What do you observe as df increases?
+
+b)  Which distribution has the heaviest tails?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import t, norm
+
+# x-values for plotting
+x = np.linspace(-4, 4, 500)
+
+# Plot t-distributions
+plt.plot(x, t.pdf(x, df=3), label="t3", linewidth=2);
+plt.plot(x, t.pdf(x, df=10), label="t10");
+plt.plot(x, t.pdf(x, df=30), label="t30");
+
+# Plot standard normal
+plt.plot(x, norm.pdf(x), 'r--', label="N(0,1)");
+
+# Legend and labels
+plt.legend(loc="upper right");
+plt.ylabel("Density");
+plt.title("t-distributions vs. Normal distribution");
+plt.grid(True);
+plt.show()
+```
+
+
+b)  Heavier tails for small df. As df increases, the t-distribution converges to standard normal. This is just like we have discussed in the previous problems.
+
+</details>
+
+### Problem 10
+
+Let $Z\sim\mathcal{N}(0,1)$ Use Python to compute:
+
+a)  $P(Z > 1.96)$
+
+b)  $P(-1.64 < Z < 1.64)$
+
+c)  $P(X > 120)$, if $X \sim \mathcal{N}(100, 15^2)$
+
+<details>
+
+<summary>Show solution</summary>
+
+```{python}
+print("a) ", 1-stats.norm.cdf(1.96))
+print("b) ", stats.norm.cdf(1.64) - stats.norm.cdf(-1.64))
+print("c) ", 1-stats.norm.cdf(120, loc = 100, scale = 15))
+```
+
+</details>
+
+### Problem 11
+
+Simulate the sample mean of 1000 samples of size 5, 30, and 100 from an exponential distribution.
+
+a)  Plot the histograms.
+
+b)  Comment on convergence to normality.
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  
+```{python}
+np.random.seed(42)
+
+# Function to generate 1000 sample means of size n
+def sample_means(n):
+    return [np.mean(np.random.exponential(scale=1, size=n)) for _ in range(1000)]
+
+# Sample sizes
+sample_sizes = [5, 30, 100]
+
+# Plot histograms
+for i, n in enumerate(sample_sizes, 1):
+    plt.figure();
+    plt.hist(sample_means(n), bins=30, range=(0, 5), color='skyblue', edgecolor='black');
+    plt.title(f'n = {n}');
+    plt.xlabel('Sample Mean');
+    plt.ylabel('Frequency');
+    plt.grid(True);
+    plt.show();
+```
+```{r}
+#| echo: false
+#| eval: false
+set.seed(42)
+samples <- function(n) replicate(1000, mean(rexp(n, rate=1)))
+hist(samples(5), main="n=5", xlim=c(0,5))
+hist(samples(30), main="n=30", xlim=c(0,5))
+hist(samples(100), main="n=100", xlim=c(0,5))
+```
+
+b)  As sample size increases, the distribution of the sample mean approaches a normal shape, even though the exponential is skewed.
+
+</details>
+
+### Problem 12
+
+Generate t-statistics using normal data and see how the distribution changes.
+
+a)  Generate 10,000 t-statistics from n = 5, 10, 30
+
+b)  Plot and compare to standard normal
+
+<details>
+
+<summary>Show solution</summary>
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+# Function to generate 10,000 t-statistics from samples of size n
+def gen_t(n):
+    t_stats = []
+    for _ in range(10000):
+        x = np.random.normal(loc=0, scale=1, size=n)
+        t_stat = np.mean(x) / (np.std(x, ddof=1) / np.sqrt(n))
+        t_stats.append(t_stat)
+    return np.array(t_stats)
+
+# Sample sizes to try
+sample_sizes = [5, 20, 80, 320, 1280]
+bins = [30, 30, 20, 50, 100]
+
+# Plot histograms and overlay standard normal density
+x = np.linspace(-4, 4, 500)
+normal_density = norm.pdf(x)
+
+for n, b in zip(sample_sizes, bins):
+    t_vals = gen_t(n);
+    plt.figure();
+    plt.hist(t_vals, bins=b, density=True, color='lightblue', edgecolor='black');
+    plt.plot(x, normal_density, 'r--', label='Standard Normal');
+    plt.title(f"Sampling Distribution of t-stat (n={n})");
+    plt.xlabel("t-statistic");
+    plt.ylabel("Density");
+    plt.xlim(-4, 4);
+    plt.legend();
+    plt.grid(True);
+    plt.show();
+
+```
+
+
+```{r}
+#| echo: false
+#| eval: false
+gen_t <- function(n) {
+  replicate(10000, {
+    x <- rnorm(n)
+    t_stat <- mean(x) / (sd(x) / sqrt(n))
+    t_stat
+  })
+}
+hist(gen_t(5), main="n=5", freq=FALSE, col="lightblue", xlim=c(-4,4))
+curve(dnorm(x), add=TRUE, col="red", lty=2)
+
+hist(gen_t(20), main="n=20", freq=FALSE, col="lightblue", xlim=c(-4,4))
+curve(dnorm(x), add=TRUE, col="red", lty=2)
+
+hist(gen_t(80), breaks = 20,  main="n=80", freq=FALSE, col="lightblue", xlim=c(-4,4))
+curve(dnorm(x), add=TRUE, col="red", lty=2)
+
+hist(gen_t(320), breaks = 50, main="n=320", freq=FALSE, col="lightblue", xlim=c(-4,4))
+curve(dnorm(x), add=TRUE, col="red", lty=2)
+
+hist(gen_t(1280), breaks=100,  main="n=1280", freq=FALSE, col="lightblue", xlim=c(-4,4))
+curve(dnorm(x), add=TRUE, col="red", lty=2)
+```
+
+b)  
+
+The distribution of the *t*-statistic becomes more like the normal as n increases.
+
+</details>
+
+### Problem 13
+
+Compute using R:
+
+a)  $P(T_5 > 2.015)$
+
+b)  $P(|T_{10}| > 2.228)$
+
+c)  Interpret the meaning of the second probability in a test setting.
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  We use the compliment to compute this case $$
+    P(T_5>2.015)01-P(T_5\leq2.015)
+    $$
+
+```{python}
+print("a)", 1-stats.t.cdf(2.015, df=5))
+```
+
+b)  Let's simplify the expression to see qhat we're really looking for $$
+    P(|T_{10}|>2.228)=P(T_{10}<-2.228)+P(T_{10}>2.228)
+    $$ Recall that like the normal distribution, the t distribution is symmetrical around its mean, which is always 0. This makes it so $$
+    P(T<-t)=P(T>t)
+    $$
+
+And as such our expression becomes
+
+$$ P(|T_{10}| > 2.228) = 2\cdot P(T_{10}<-2.228) $$
+
+```{python}
+print("b) ", 2 * stats.t.cdf(-2.228, df=10))
+```
+
+c)  For a two-sided *t*-test at $\alpha=0.05$, this checks if test statistic is significant at 5% level for df = 10.
+
+</details>
+
+### Problem 14
+
+a)  Find the z-value such that $P(Z < z) = 0.975$
+
+b)  Find the z-value such that $P(|Z| > z) = 0.01$
+
+c)  What is the 10th percentile of the standard normal distribution?
+
+<details>
+
+<summary>Show solution</summary>
+
+We can find these qauntile values by using the inverse of the cumulative distribution function for the normal distribution. In practice we can often get adequaet results by using tables or use tools such as Python to calculate.
+
+a)  $z \approx 1.96$
+
+b)  The first implication arrow comes as a consequence of the normal distribtuion being symmetric.\
+    $P(|Z| > z) = 0.01 \Rightarrow P(Z > z) = 0.005 \Rightarrow z \approx 2.576$
+
+c)  $z_{0.10} \approx -1.28$
+
+Can be verified in Python:
+
+
+
+```{python}
+print("a) ", stats.norm.ppf(0.975))
+print("b) ", stats.norm.ppf(1-0.005))
+print("c) ", stats.norm.ppf(0.1))
+```
+
+</details>
+
+### Problem 15
+
+Let $X \sim \mathcal{N}(200, 30^2)$. Compute:
+
+a)  $P(X > 240)$
+
+b)  $P(160 < X < 220)$
+
+c)  What value of $X$ cuts off the top 5%? (What would the 95%th percentile be?)
+
+<details>
+
+<summary>Show solution</summary>
+
+Standardize:
+
+a)  $Z = \frac{240 - 200}{30} = 1.33 \Rightarrow P(Z > 1.33)=1-P(Z\leq 1.33) \approx 0.0918$
+
+b)  Standardize both: $Z_1 = \frac{160 - 200}{30} = -1.33$, $Z_2 = \frac{220 - 200}{30} = 0.67$ ⇒ $P(160<X<240)= P(X<240)-P(X<160)=P(Z<0.67)-P(Z<-1.33) \approx 0.7486 - 0.0918 = 0.6568$
+
+c)  Find $z$ for 95th percentile. Here it's easiest to start with the 95th percentile of the standard normal distribution, $z=1.645$. $z = 1.645 \Rightarrow X = 200 + 1.645 \times 30 = 249.35$
+
+Confirming with an Python script
+
+```{python}
+print("a)", 1-stats.norm.cdf(240, loc=200, scale=30))
+## Gives 0.0912 due to different approximation than above
+
+print("b)", (stats.norm.cdf(220, loc=200, scale=30) - 
+stats.norm.cdf(160, loc=200, scale=30)))
+
+## c) First compute the quantile, then double check
+quant=200+1.645*30
+print("c)", stats.norm.cdf(quant, loc=200, scale=30))
+## Finding the quantile can also do this more directly:
+print("quant = ", stats.norm.ppf(0.95, loc=200, scale=30))
+
+```
+
+</details>
+
+### Problem 16
+
+Let $T \sim t_{12}$. Feel free to use either a script or table to do this. Compute:
+
+a)  $P(T < 2.18)$
+
+b)  $P(|T| > 2.18)$
+
+c)  The 97.5th percentile of the distribution
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  
+
+```{python}
+print("a)", stats.t.cdf(2.18, df = 12))
+```
+
+b)  Two-tailed:
+
+$$
+P(|T| > 2.18) =\cdots= 2 P(T > 2.18) \approx 2  (1 - 0.975) = 0.05
+$$ We double check with R:
+
+```{python}
+print("b)", 2*(1-stats.t.cdf(2.18, df=12)))
+```
+
+c)  It's obvious that we're really close from a) and b), but let's still use Python to approximate even more exactly.
+
+```{python}
+stats.t.ppf(0.975, df = 12)
+```
+
+</details>
+
+### Problem 17
+
+Let $Z \sim \mathcal{N}(0,1)$. Compute:
+
+a)  $P(Z > -0.5)$
+
+b)  $P(Z < 0.84)$
+
+c)  What percentile corresponds to $Z = 1.28$?
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  $P(Z > -0.5) = 1 - P(Z < -0.5) = 1 - 0.3085 = 0.6915$
+
+b)  $P(Z < 0.84) = 0.7995$
+
+c)  90th percentile (verify: `pnorm(1.28) ≈ 0.8997`)
+
+We use Python to verify:
+
+```{python}
+print("a)", 1-stats.norm.cdf(-0.5))
+print("b)", stats.norm.cdf(0.84))
+## c) We have the z value, and we want to know what percentle it is. I.e. whats P(Z<1.28)
+print("c)", stats.norm.cdf(1.28))
+```
+
+</details>
+
+### Problem 18
+
+Let $Z \sim \mathcal{N}(0,1)$ and $T \sim t_5$
+
+a)  Compute the density $f_Z(1)$
+
+b)  Compute the density $f_T(1)$
+
+c)  Compare and interpret
+
+<details>
+
+<summary>Show solution</summary>
+
+a), b) For densitiy functions in Python we use stats.norm.pdf and stats.t.pdf to compute their values. Since the df is pretty low here, we can expect some difference between the standard normal and the t distribution.
+
+```{python}
+print("a) Normal:", stats.norm.pdf(1))
+print("b) T with 5 degrees of freedom:", stats.t.pdf(1, df=5))
+```
+
+c)  The t-distribution has heavier tails, so at z = 1, its peak is slightly lower than that of the standard normal. The tails decay more slowly.

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -537,11 +571,27 @@ window.Quarto = {
   <ul>
   <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
-  <li><a href="#contingency-tables-problems" id="toc-contingency-tables-problems" class="nav-link" data-scroll-target="#contingency-tables-problems">Contingency tables problems</a>
-  <ul class="collapse">
+  <li><a href="#chi-square-test-for-indepenence" id="toc-chi-square-test-for-indepenence" class="nav-link" data-scroll-target="#chi-square-test-for-indepenence">Chi square test for indepenence</a></li>
   <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#chi-square-test-for-proportions" id="toc-chi-square-test-for-proportions" class="nav-link" data-scroll-target="#chi-square-test-for-proportions">Chi-square test for proportions</a></li>
   <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
   <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  <li><a href="#problem-5" id="toc-problem-5" class="nav-link" data-scroll-target="#problem-5">Problem 5</a></li>
+  <li><a href="#problem-6" id="toc-problem-6" class="nav-link" data-scroll-target="#problem-6">Problem 6</a></li>
+  <li><a href="#problem-7" id="toc-problem-7" class="nav-link" data-scroll-target="#problem-7">Problem 7</a></li>
+  <li><a href="#problem-8" id="toc-problem-8" class="nav-link" data-scroll-target="#problem-8">Problem 8</a></li>
+  <li><a href="#problem-9" id="toc-problem-9" class="nav-link" data-scroll-target="#problem-9">Problem 9</a></li>
+  <li><a href="#problem-10" id="toc-problem-10" class="nav-link" data-scroll-target="#problem-10">Problem 10</a></li>
+  <li><a href="#problem-11" id="toc-problem-11" class="nav-link" data-scroll-target="#problem-11">Problem 11</a></li>
+  <li><a href="#problem-12" id="toc-problem-12" class="nav-link" data-scroll-target="#problem-12">Problem 12</a></li>
+  <li><a href="#problem-13" id="toc-problem-13" class="nav-link" data-scroll-target="#problem-13">Problem 13</a></li>
+  <li><a href="#problem-14" id="toc-problem-14" class="nav-link" data-scroll-target="#problem-14">Problem 14</a></li>
+  <li><a href="#contingency-tables-problems" id="toc-contingency-tables-problems" class="nav-link" data-scroll-target="#contingency-tables-problems">Contingency tables problems</a>
+  <ul class="collapse">
+  <li><a href="#problem-1-1" id="toc-problem-1-1" class="nav-link" data-scroll-target="#problem-1-1">Problem 1</a></li>
+  <li><a href="#problem-2-1" id="toc-problem-2-1" class="nav-link" data-scroll-target="#problem-2-1">Problem 2</a></li>
+  <li><a href="#problem-3-1" id="toc-problem-3-1" class="nav-link" data-scroll-target="#problem-3-1">Problem 3</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -555,10 +605,628 @@ window.Quarto = {
 
 <section id="exercises" class="level1">
 <h1>Exercises</h1>
-<section id="contingency-tables-problems" class="level2">
-<h2 class="anchored" data-anchor-id="contingency-tables-problems">Contingency tables problems</h2>
+<section id="chi-square-test-for-indepenence" class="level3">
+<h3 class="anchored" data-anchor-id="chi-square-test-for-indepenence">Chi square test for indepenence</h3>
+<p>The <strong>Chi-square test for independence</strong> is used to determine whether two categorical variables are independent. Given a contingency table of observed counts <span class="math inline">\(O_{ij}\)</span>, compute expected counts under independence:</p>
+<p><span class="math display">\[
+\begin{align*}
+E\_{ij} &amp;= \frac{\text{(row total)}_i \times\text{(column  total)}_j}{\text{grand total}} \\
+\chi^2&amp; = \sum_{ij} \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+\end{align*}
+\]</span></p>
+<p>Where we let <span class="math inline">\(O_{ij}\)</span> denote observed in each cell ij and <span class="math inline">\(E_{ij}\)</span> denote expected. <span class="math inline">\(df = (rows − 1)(columns − 1)\)</span></p>
+</section>
 <section id="problem-1" class="level3">
 <h3 class="anchored" data-anchor-id="problem-1">Problem 1</h3>
+<p>A survey records whether people prefer coffee or tea in two regions:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Coffee</th>
+<th>Tea</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Region A</td>
+<td>30</td>
+<td>20</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>Region B</td>
+<td>40</td>
+<td>10</td>
+<td>50</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td>70</td>
+<td>30</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Set up the hypotheses.</p></li>
+<li><p>Compute the expected counts.</p></li>
+<li><p>Compute the chi-square statistic.</p></li>
+<li><p>Test independence at <span class="math inline">\(\alpha=0.05\)</span></p></li>
+<li><p>What do you conclude?</p></li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0\)</span>: Coffee preference is independent of region. <span class="math inline">\(H_a\)</span>: They are dependent.</p></li>
+<li><p>E.g., <span class="math inline">\(E_{11} = \frac{50*70}{100} = 35\)</span></p></li>
+</ol>
+<p>Expected table:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Coffee</th>
+<th>Tea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Region A</td>
+<td>35</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>Region B</td>
+<td>35</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="a">
+<li>Now let’s compute the test statistic</li>
+</ol>
+<p><span class="math display">\[
+\chi^2 = \frac{(30-35)^2}{35} + \frac{(20-15)^2}{15} + \frac{(40-35)^2}{35} + \frac{(10-15)^2}{15} = 7.62
+\]</span></p>
+<ol start="4" type="a">
+<li><span class="math inline">\(df = (2−1)(2−1) = 1\)</span>, critical value is <span class="math inline">\(\chi^2=3.84\)</span>. This critical value can be found in any <span class="math inline">\(\chi^2\)</span> table. We can also check in Python.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.chi2.ppf(<span class="fl">0.95</span>, df <span class="op">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.841458820694124</code></pre>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Since <span class="math inline">\(7.62 &gt; 3.84\)</span>, reject <span class="math inline">\(H_0\)</span>. We can not say conclude that preferences are independent of region.</li>
+</ol>
+</details>
+</section>
+<section id="chi-square-test-for-proportions" class="level3">
+<h3 class="anchored" data-anchor-id="chi-square-test-for-proportions">Chi-square test for proportions</h3>
+<p>Tests whether observed frequencies match a <strong>specified distribution</strong> (e.g., uniform, Poisson, etc.).</p>
+<p>The test statistic is found as below</p>
+<p><span class="math display">\[
+\chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}
+\]</span></p>
+<p><span class="math display">\[
+\text{df} = \text{number of categories} - 1
+\]</span></p>
+</section>
+<section id="problem-2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<p>A six-sided die is rolled 60 times. The results:</p>
+<pre><code>Face:   1  2  3  4  5  6  
+Freq:  10 12 9 11 8 10</code></pre>
+<p>We want to find out if these results are consistent with a fair die?</p>
+<ol type="a">
+<li><p>State the hypotheses.</p></li>
+<li><p>Compute the expected count.</p></li>
+<li><p>Compute the test statistic and p-value.</p></li>
+<li><p>Interpret the result.</p></li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0\)</span>: The die is fair. <span class="math inline">\(H_a\)</span>: The die is not fair.</p></li>
+<li><p>Expected = 60/6 = 10 per face</p></li>
+<li></li>
+</ol>
+<p><span class="math display">\[
+\chi^2 = \sum \frac{(O_i - 10)^2}{10} = \frac{(0)^2 + (2)^2 + (-1)^2 + (1)^2 + (-2)^2 + (0)^2}{10} = \frac{0+4+1+1+4+0}{10} = 1
+\]</span> First we will find the degrees of freedom, such that we can have a proper critical value.</p>
+<p><span class="math inline">\(df = 6 − 1 = 5\)</span>, critical value is then <span class="math inline">\(\chi^2=11.07\)</span>.</p>
+<p>We can find the exact critical value and compute the p-value of the test in Python.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.chi2.ppf(<span class="fl">0.95</span>, df <span class="op">=</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>11.070497693516351</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Note for that chi square test we find the p-value by looking at the right tail</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">1</span><span class="op">-</span>stats.chi2.cdf(<span class="dv">1</span>, df <span class="op">=</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.9625657732472964</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li>Since <span class="math inline">\(1 &lt; 11.07\)</span>, and we have a p-value as high as 96%, we <strong>fail to reject</strong> <span class="math inline">\(H_0\)</span>: die could be fair.</li>
+</ol>
+</details>
+</section>
+<section id="problem-3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
+<p>A survey was conducted to determine if there’s an association between gender (Male, Female) and preference for a new product (Like, Dislike).</p>
+<p>Data</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Like</th>
+<th>Dislike</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Male</td>
+<td>30</td>
+<td>20</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>Female</td>
+<td>20</td>
+<td>30</td>
+<td>50</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td>50</td>
+<td>50</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>State the null and alternative hypotheses.</p></li>
+<li><p>Calculate the expected frequencies.</p></li>
+<li><p>Compute the chi-squared test statistic.</p></li>
+<li><p>Determine the degrees of freedom.</p></li>
+<li><p>At <span class="math inline">\(\alpha=0.05\)</span>, determine the critical value and conclude the test.</p></li>
+</ol>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li><span class="math inline">\(H_0\)</span>: Gender and product preference are independent.</li>
+</ol>
+<p><span class="math inline">\(H_1\)</span>: Gender and product preference are not independent.</p>
+<ol start="2" type="a">
+<li>Expected frequencies:</li>
+</ol>
+<ul>
+<li><p>Male-Like: (50×50)/100 = 25</p></li>
+<li><p>Male-Dislike: (50×50)/100 = 25</p></li>
+<li><p>Female-Like: (50×50)/100 = 25</p></li>
+<li><p>Female-Dislike: (50×50)/100 = 25</p></li>
+</ul>
+<ol start="3" type="a">
+<li>Let’s find the test statistic first, by usinf the formula for the chi-square test for indepence.</li>
+</ol>
+<p><span class="math display">\[
+\chi^2=\sum^n_{ij}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}=\frac{5^2+(-5)^2+5^2+(-5^2)}{25}=\frac{100}{25}=4
+\]</span></p>
+<ol start="4" type="a">
+<li><p>We can now compute the degrees of freedom simply by looking at the table. <span class="math inline">\(df=(rows-1)(columns-1)=(2-1)(2-1)=1\)</span>, which nets <span class="math inline">\(\chi_{1,0.05}^2=3.841\)</span></p></li>
+<li><p>Critical value at <span class="math inline">\(\alpha=0.05\)</span> and df = 1 is 3.841. Since 4 &gt; 3.841, we reject <span class="math inline">\(H_0\)</span>. There is a significant association between gender and product preference.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-4" class="level3">
+<h3 class="anchored" data-anchor-id="problem-4">Problem 4</h3>
+<p>Explain how the chi-squared distribution is related to the standard normal distribution.</p>
+<ol type="a">
+<li><p>Describe the relationship between the standard normal distribution and the chi-squared distribution.</p></li>
+<li><p>If <span class="math inline">\(Z\)</span> is a standard normal variable, what is the distribution of <span class="math inline">\(Z^2\)</span>?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li>The chi-squared distribution with k degrees of freedom is the distribution of the sum of the squares of k independent standard normal variables. That is, if <span class="math inline">\(Z_1,\dots,Z_k\)</span> are independent standard normal variables, then</li>
+</ol>
+<p><span class="math display">\[
+X=\sum^k_{i=1}Z_i^2\sim\chi^2_k
+\]</span> I.e. a chi-square distribution with k degrees of freedom.</p>
+<ol start="2" type="a">
+<li>Consider a standard normal <span class="math inline">\(Z\)</span> Then <span class="math display">\[
+X=\sum_{i=1}^kz_i^2=\sum^1_{i=1}Z_i^2\sim\chi_1^2
+\]</span> i.e.&nbsp;teh square of <span class="math inline">\(Z\)</span> will be chi-square distributed with 1 degree of freedom.</li>
+</ol>
+</details>
+</section>
+<section id="problem-5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-5">Problem 5</h3>
+<ol type="a">
+<li><p>Explain what a contingency table shows in the context of testing independence.</p></li>
+<li><p>Why are expected counts calculated, and how do they relate to independence?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>A contingency table displays the frequency distribution of variables and helps test whether two categorical variables are independent.</p></li>
+<li><p>Expected counts are computed under the assumption of independence. Large deviations between observed and expected suggest dependence.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-6">Problem 6</h3>
+<p>A six-sided die is rolled 120 times. The outcomes are: <span class="math inline">\(1: 10, \ 2: 14, \ 3: 19, \ 4: 24, \ 5: 25, \ 6: 28\)</span></p>
+<ol type="a">
+<li><p>Set up hypotheses.</p></li>
+<li><p>Compute expected frequencies.</p></li>
+<li><p>Perform the chi-squared test at <span class="math inline">\(\alpha=0.05\)</span>.</p></li>
+<li><p>Interpret the results of the test. How would changing <span class="math inline">\(\alpha\)</span> change the results of the test?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p><span class="math inline">\(H_0\)</span>: Die is fair. <span class="math inline">\(H_1\)</span>: Die is not fair.</p></li>
+<li><p>Expected: <span class="math inline">\(120/6 = 20\)</span> for each face.</p></li>
+<li><p>We find the test statistic. <span class="math display">\[
+\chi^2 =\frac{100+36+1+16+25+64}{20} =\frac{242}{20}=12.1
+\]</span> We can easily find that <span class="math inline">\(df=6-1=5\)</span></p></li>
+</ol>
+<p>Now we complete the rest of the computation with Python or with a table.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Critical value at alpha=0.05 and df=5</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Critical value: "</span>, stats.chi2.ppf(<span class="fl">0.95</span>, df <span class="op">=</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Critical value:  11.070497693516351</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## p-value</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"p-value: "</span>, <span class="dv">1</span><span class="op">-</span>stats.chi2.cdf(<span class="fl">12.1</span>, df <span class="op">=</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>p-value:  0.033442946211414415</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## alternatively we can use the chisqtest in r</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>data<span class="op">=</span>np.array([<span class="dv">10</span>, <span class="dv">14</span>, <span class="dv">19</span>, <span class="dv">24</span>, <span class="dv">25</span>, <span class="dv">28</span>])</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>expected <span class="op">=</span> np.ones(<span class="dv">6</span>)<span class="op">/</span><span class="dv">6</span><span class="op">*</span><span class="dv">120</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>chi2, pvalue <span class="op">=</span> stats.chisquare(f_obs<span class="op">=</span>data, f_exp <span class="op">=</span> expected)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Chi-squared statistic:"</span>, chi2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chi-squared statistic: 12.099999999999998</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"p-value:"</span>, pvalue)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>p-value: 0.033442946211414415</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Expected frequencies:</span><span class="ch">\n</span><span class="st">"</span>, expected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected frequencies:
+ [20. 20. 20. 20. 20. 20.]</code></pre>
+</div>
+</div>
+<p>With a p-value of about 3%, we can reject <span class="math inline">\(H_0\)</span> at <span class="math inline">\(\alpha=0.05\)</span></p>
+<ol start="4" type="a">
+<li>Since we reject <span class="math inline">\(H_0\)</span>, we can conlcude that the dice is likely unfair. BY looking at our data, the die really seems to favour higher numbers. If <span class="math inline">\(\alpha\)</span> were to be heightened, then we would <strong>more easily</strong> be convinced that teh dice is unfair, i.e., the result would not need to be as skewed as shown above. And vice versa of course.</li>
+</ol>
+</details>
+</section>
+<section id="problem-7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-7">Problem 7</h3>
+<p>Use Python to simulate a 3x2 table, given by the code below, and conduct a chi-squared test. Interpret the results. Use <span class="math inline">\(\alpha=0.05\)</span> as the significance level.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create 3x2 matrix of random integers from 1 to 100</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.choice(np.arange(<span class="dv">1</span>, <span class="dv">101</span>), </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>size<span class="op">=</span><span class="dv">6</span>, replace<span class="op">=</span><span class="va">False</span>).reshape((<span class="dv">3</span>, <span class="dv">2</span>))</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>chi2, p, dof, expected <span class="op">=</span> stats.chi2_contingency(data)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Output</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Data:</span><span class="ch">\n</span><span class="st">"</span>, data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Data:
+ [[81 85]
+ [34 82]
+ [94 18]]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Chi-squared statistic:"</span>, chi2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chi-squared statistic: 70.32890811890222</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Degrees of freedom:"</span>, dof)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Degrees of freedom: 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"p-value:"</span>, p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>p-value: 5.348988237051145e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Expected frequencies:</span><span class="ch">\n</span><span class="st">"</span>, expected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected frequencies:
+ [[88.05583756 77.94416244]
+ [61.53299492 54.46700508]
+ [59.41116751 52.58883249]]</code></pre>
+</div>
+</div>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Chi-squared test returns statistic, df, and p-value. Interpretation depends on p-value vs alpha. If our p-value is <strong>below</strong> that of 0.05, which is our current significance level, then we can reject the null hypothesis, <span class="math inline">\(H_0\)</span>.</p>
+</details>
+</section>
+<section id="problem-8" class="level3">
+<h3 class="anchored" data-anchor-id="problem-8">Problem 8</h3>
+<ol type="a">
+<li>Describe the distribution of a chi-squared variable with 4 degrees of freedom. (What are the mean and variance, can you find a general rule?)</li>
+</ol>
+<p><strong>Hint</strong>: When <span class="math inline">\(Y\sim\mathcal{N}(\mu, \sigma^2)\)</span>, we have that <span class="math inline">\(E[Y^4]=3\sigma^4\)</span></p>
+<ol start="2" type="a">
+<li>Explain how the chi-squared distribution arises from the standard normal distribution.</li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li>Positively skewed distribution, where <span class="math inline">\(E[X]=\mu=k\)</span>, and <span class="math inline">\(Var[X]=\sigma^2= 2k\)</span>. Let’s see how we can reach these. First, recall that if <span class="math inline">\(X\sim\chi^2_k\)</span>, then</li>
+</ol>
+<p><span class="math display">\[
+X=\sum^k_{i=1}Z^2_i
+\]</span> Where <span class="math inline">\(Z_i\sim iid \mathcal{N}(0,1)\)</span></p>
+<p>Now we can begin computing the expectation:</p>
+<p><span class="math display">\[
+E[X]=E\left[\sum^k_{i=1}Z^2_i\right]=\sum^k_{i=1}E[Z_i^2]
+\]</span> Now, we can be a bit clever here. Since <span class="math inline">\(Z\sim\mathcal{N}(0,1)\)</span>, and <span class="math inline">\(Var[Y]=E[Y^2]-(E[Y])^2\)</span>, we get</p>
+<p><span class="math display">\[
+E[Z^2]=Var[Z]+(E[Z])^2 \quad \Rightarrow \quad E[Z^2]=1+0=1
+\]</span> This lets us fully compute the expected value for <span class="math inline">\(X\)</span>. We use the fact that we have identical distribution to simpify the notation.</p>
+<p><span class="math display">\[
+E[X]=\cdots=kE[Z^2]=k*1=k
+\]</span> Now we can do the same procedure with the Variance. Recall, since <span class="math inline">\(Z_1,...,Z_k\)</span> are independent, we have that the variance of the sum is the sum of the variances.</p>
+<p><span class="math display">\[
+Var[X]=Var\left[\sum^k_{i=1}Z^2_i\right]=\sum^k_{i=1}Var[Z_i^2]
+\]</span> Now, we again use the ralationship that <span class="math inline">\(Var[Y]=E[Y^2]-(E[Y])^2\)</span>. We already know that <span class="math inline">\(E[Z^2]=1 \Rightarrow (E[Z^2])^2=1\)</span>. Now we need only determine <span class="math inline">\(E[(Z^2)^2]=E[Z^4]\)</span>. Using the <strong>hint</strong>, we have that <span class="math inline">\(E[Z^4]=3\sigma^4=3*1^2=3\)</span>, and we then get:</p>
+<p><span class="math display">\[
+Var[Z^2]=3-1=2
+\]</span> Now we use that we have k identical distributions to get the variance of <span class="math inline">\(X\)</span> <span class="math display">\[
+Var[X]=\cdots=kVar[Z^2]=k*2=2k
+\]</span></p>
+<ol start="2" type="a">
+<li>The chi-sqaured distribution, as we’ve just looked at in depth, comes from the sum of squares of independent standard normal variables.</li>
+</ol>
+</details>
+</section>
+<section id="problem-9" class="level3">
+<h3 class="anchored" data-anchor-id="problem-9">Problem 9</h3>
+<p>A researcher models expected frequencies of customer types and compares to observed values. Expected: <span class="math inline">\(\{40, 35, 25\}\)</span>, Observed: <span class="math inline">\(\{38, 30, 32\}\)</span> Conduct a goodness-of-fit test by hand.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p><span class="math display">\[
+\chi^2 = \frac{(38-40)^2}{40} + \frac{(30-35)^2}{35} + \frac{(32-25)^2}{25} = 0.1 + 0.714 + 1.96 ≈ 2.53
+\]</span> <span class="math inline">\(df=3-1=2\)</span></p>
+<p>At a significance level of <span class="math inline">\(\alpha=0.05\)</span> we then get a critical value of 5.99, which is higher than the test statistic. I.e. it seems the data fits the distribution well enough.</p>
+</details>
+</section>
+<section id="problem-10" class="level3">
+<h3 class="anchored" data-anchor-id="problem-10">Problem 10</h3>
+<p>University admits 30% of male applicants and 25% of female applicants overall. In Engineering, 90% of women and 70% of men were accepted. In Arts, 10% of women and 5% of men were accepted.</p>
+<ol type="a">
+<li><p>How could this occur.</p></li>
+<li><p>Explain how aggregated vs.&nbsp;disaggregated data leads to paradox.</p></li>
+</ol>
+<details>
+<summary>
+Show soltuions
+</summary>
+<ol type="a">
+<li><p>If way more female students were to apply to arts than to engineering, the total acceptance rate of women would decrease drastically. And if for instance, only 20 men applied to arts, and just one got accepted, then this would hardly have any effect if the engineering department was popular among men.</p></li>
+<li><p>Aggregation can mask subgroup differences. Simpson’s paradox highlights lurking confounders.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-11" class="level3">
+<h3 class="anchored" data-anchor-id="problem-11">Problem 11</h3>
+<p>Use Python to simulate two groups and plot overall vs subgroup relationships. Create a scenario in which Simpson’s paradox would apply. The script underneath gives an idea for two simulated groups where Simpson’s paradox could apply.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Create data</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>group <span class="op">=</span> np.repeat([<span class="st">'A'</span>, <span class="st">'B'</span>], <span class="dv">100</span>)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.concatenate([np.random.normal(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">100</span>), np.random.normal(<span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">100</span>)])</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.concatenate([</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span> <span class="op">*</span> x[:<span class="dv">100</span>] <span class="op">+</span> np.random.normal(size<span class="op">=</span><span class="dv">100</span>),</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="fl">0.5</span> <span class="op">*</span> x[<span class="dv">100</span>:] <span class="op">+</span> np.random.normal(size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'x'</span>: x, <span class="st">'y'</span>: y, <span class="st">'group'</span>: group})</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))<span class="op">;</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>data, x<span class="op">=</span><span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, hue<span class="op">=</span><span class="st">'group'</span>)<span class="op">;</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>data[data[<span class="st">'group'</span>] <span class="op">==</span> <span class="st">'A'</span>], x<span class="op">=</span><span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, scatter<span class="op">=</span><span class="va">False</span>, label<span class="op">=</span><span class="va">None</span>)<span class="op">;</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>data[data[<span class="st">'group'</span>] <span class="op">==</span> <span class="st">'B'</span>], x<span class="op">=</span><span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, scatter<span class="op">=</span><span class="va">False</span>, label<span class="op">=</span><span class="va">None</span>)<span class="op">;</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>data, x<span class="op">=</span><span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, scatter<span class="op">=</span><span class="va">False</span>, color<span class="op">=</span><span class="st">'black'</span>,  line_kws<span class="op">=</span>{<span class="st">"linestyle"</span>: <span class="st">"--"</span>})<span class="op">;</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Scatterplot with Group-specific and Pooled Regression Lines'</span>)<span class="op">;</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span> </span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/prob11-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Example: Drug Effectiveness Study In a clinical trial, Drug A appears less effective than Drug B overall:</p>
+<p>Drug A: 60% recovery</p>
+<p>Drug B: 70% recovery</p>
+<p>But when you break it down by age group:</p>
+<p>Under 50:</p>
+<p>Drug A: 90%</p>
+<p>Drug B: 80%</p>
+<p>Over 50:</p>
+<p>Drug A: 30%</p>
+<p>Drug B: 20%</p>
+<p>Despite being better in both age groups, Drug A looks worse overall because more older, high-risk patients were given Drug A — a classic Simpson’s Paradox.</p>
+</details>
+</section>
+<section id="problem-12" class="level3">
+<h3 class="anchored" data-anchor-id="problem-12">Problem 12</h3>
+<ol type="a">
+<li><p>Explain difference between correlation and covariance.</p></li>
+<li><p>Interpret <span class="math inline">\(r = -0.8\)</span>.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>Covariance is is not is not constrained by any upper or lower bound, whereas correlation is a normalized version bounded on <span class="math inline">\([−1,1]\)</span>, which show how close two variables are to be “perfectly related”.</p></li>
+<li><p><span class="math inline">\(r=-0.8\)</span> would indicate a strong negative linear raltionship between two variables. If you were to plot their points in a two-dimensional plain they would be quite close to creating a neat line.</p></li>
+</ol>
+<p>see plot below</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Define mean and covariance matrix</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>]</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>Sigma <span class="op">=</span> [[<span class="dv">1</span>, <span class="op">-</span><span class="fl">0.8</span>],</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>         [<span class="op">-</span><span class="fl">0.8</span>, <span class="dv">1</span>]]</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate multivariate normal data</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.multivariate_normal(mu, Sigma, size<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">'x'</span>, <span class="st">'y'</span>])</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Check correlation</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Correlation:"</span>, df[<span class="st">'x'</span>].corr(df[<span class="st">'y'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Correlation: -0.7974792951296004</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))<span class="op">;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)<span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>sns.regplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'x'</span>, y<span class="op">=</span><span class="st">'y'</span>, scatter<span class="op">=</span><span class="va">False</span>, color<span class="op">=</span><span class="st">'blue'</span>)<span class="op">;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Scatterplot of Two Variables with Correlation ≈ -0.8"</span>)<span class="op">;</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()<span class="op">;</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/prob12-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+</section>
+<section id="problem-13" class="level3">
+<h3 class="anchored" data-anchor-id="problem-13">Problem 13</h3>
+<p>Given pairs: (1, 2), (2, 3), (3, 5)</p>
+<ol type="a">
+<li><p>Compute sample means.</p></li>
+<li><p>Compute covariance and correlation.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li>We call our variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> respectively.</li>
+</ol>
+<p><span class="math display">\[ \mu_X=\frac{1+2+3}{3}=2, \quad \mu_Y=\frac{2+3+5}{3}=\frac{10}{3} \]</span></p>
+<ol start="2" type="a">
+<li>Now to compute covariance (<span class="math inline">\(Cov(X,Y)\)</span>) and correlation (<span class="math inline">\(r_{XY}\)</span> or <span class="math inline">\(\rho_{XY}\)</span>) We have that <span class="math display">\[
+Cov(X,Y)=\frac{1}{n-1}\sum_{i=1}^n(x_i-\bar{x})^2(y_i-\bar{y})^2, \quad r_{XY}=\frac{Cov(X,Y)}{s_Xs_Y}
+\]</span> Where <span class="math inline">\(s\)</span> are respective standard deviations.</li>
+</ol>
+<p><span class="math display">\[
+Cov(X,Y)=\frac{(1-2)(2-3)+(2-2)(3-3)+(3-2)(5-3)}{2}=\frac{1+2}{2}=\frac{3}{2}
+\]</span> Now we need the respective standard deviations, which turn out to be, after not much work</p>
+<p><span class="math display">\[
+s_X= 1, \quad s_Y=\sqrt{14/6}=\sqrt{7/3}
+\]</span> Finally, we can compute <span class="math inline">\(r_{XY}\)</span></p>
+<p><span class="math display">\[
+r_{XY}=\frac{3/2}{\sqrt{7/3}}=\approx 0.98
+\]</span></p>
+</details>
+</section>
+<section id="problem-14" class="level3">
+<h3 class="anchored" data-anchor-id="problem-14">Problem 14</h3>
+<p>Simulate two variables and visualize correlation. Example below</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)  <span class="co"># Optional: for reproducibility</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.normal(size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> x <span class="op">+</span> np.random.normal(size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot;</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y)<span class="op">;</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Scatterplot of x vs y"</span>)<span class="op">;</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)<span class="op">;</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y"</span>)<span class="op">;</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/prob14q-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>With the simulation above you should get a very strong positive correlation between X and Y. You can see this visually in that it would be very easy to draw a positive linear relationship between them that seems representative for the points given.</p>
+</details>
+</section>
+<section id="contingency-tables-problems" class="level2">
+<h2 class="anchored" data-anchor-id="contingency-tables-problems">Contingency tables problems</h2>
+<section id="problem-1-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1-1">Problem 1</h3>
 <p><a href="https://doi.org/10.1126/science.663611">Researchers</a> collected data on the size of their feet for a group of right-handed male and females and counted how many of each sex had a left-foot larger than the right, equal feet or right foot larger than the left. The results are given in the table here:</p>
 <table class="caption-top table">
 <thead>
@@ -589,8 +1257,8 @@ window.Quarto = {
 </table>
 <p>Does the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the <span class="math inline">\(\chi^2\)</span> test statistic and obtain the p-value.</p>
 </section>
-<section id="problem-2" class="level3">
-<h3 class="anchored" data-anchor-id="problem-2">Problem 2</h3>
+<section id="problem-2-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2-1">Problem 2</h3>
 <p>A company wants to assess whether customer response (Yes/No) to a marketing campaign depends on the platform used (Email, SMS, Social Media).</p>
 <table class="caption-top table">
 <thead>
@@ -624,8 +1292,8 @@ window.Quarto = {
 <li>At a 5% significance level, is there evidence to suggest the response rate depends on the platform?</li>
 </ol>
 </section>
-<section id="problem-3" class="level3">
-<h3 class="anchored" data-anchor-id="problem-3">Problem 3</h3>
+<section id="problem-3-1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-3-1">Problem 3</h3>
 <p>The Norwegian Labour and Welfare Administration (NAV) organizes online job application workshops on Teams. The course responsible has noticed that except for himself, the attendees that have their camera on during the course is mostly the older participants. He wonders if there is a relationship between participants having camera on and participant’s age group? He therefore takes a screenshot of the meeting (that he deletes afterwards, of course) and counts the number of faces he sees for the different ages. The results are given in the table below. Perform a chi-squared test to answer this question, including setting up the hypothesis, finding the p-value and making your conclusion. Remember to settle on a significance level first.</p>
 <p>|Camera on| 18–35| 36–53| 54-70| Total| |Yes| 4| 3| 20| 27| No |20| 13| 39| 72| Total |24| 16| 59 |99|</p>
 <p>Is there a Simpson’s paradox here?</p>
