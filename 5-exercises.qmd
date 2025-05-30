@@ -111,7 +111,8 @@ c)
 
 $$
 \chi^2 = \sum \frac{(O_i - 10)^2}{10} = \frac{(0)^2 + (2)^2 + (-1)^2 + (1)^2 + (-2)^2 + (0)^2}{10} = \frac{0+4+1+1+4+0}{10} = 1
-$$ First we will find the degrees of freedom, such that we can have a proper critical value.
+$$ 
+First we will find the degrees of freedom, such that we can have a proper critical value.
 
 $df = 6 − 1 = 5$, critical value is then $\chi^2=11.07$.
 
@@ -167,7 +168,7 @@ b)  Expected frequencies:
 
 -   Female-Dislike: (50×50)/100 = 25
 
-c)  Let's find the test statistic first, by usinf the formula for the chi-square test for indepence.
+c)  Let's find the test statistic first, by using the formula for the chi-square test for independence.
 
 $$
 \chi^2=\sum^n_{ij}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}=\frac{5^2+(-5)^2+5^2+(-5^2)}{25}=\frac{100}{25}=4
@@ -199,7 +200,7 @@ $$ I.e. a chi-square distribution with k degrees of freedom.
 
 b)  Consider a standard normal $Z$ Then $$
     X=\sum_{i=1}^kz_i^2=\sum^1_{i=1}Z_i^2\sim\chi_1^2
-    $$ i.e. teh square of $Z$ will be chi-square distributed with 1 degree of freedom.
+    $$ i.e. the square of $Z$ will be chi-square distributed with 1 degree of freedom.
 
 </details>
 
@@ -794,13 +795,6 @@ augmented['residuals'] = model.resid
 
 # Print the model summary
 print(model.summary())
-# library(ggplot2)
-# library(broom)
-# 
-# data(mtcars)
-# model <- lm(mpg ~ wt, data = mtcars)
-# augmented <- augment(model)
-# summary(model)
 ```
 
 a)  Create the following diagnostic plots using Python. Underneath I have done so using ggplot.
@@ -826,21 +820,21 @@ plt.show();
 
 # QQ-plot
 plt.figure()
-stats.probplot(augmented['residuals'], dist="norm", plot=plt)
-plt.title('Normal Q-Q Plot')
-plt.xlabel('Theoretical Quantiles')
-plt.ylabel('Standardized Residuals')
-plt.grid(True)
-plt.show()
+stats.probplot(augmented['residuals'], dist="norm", plot=plt);
+plt.title('Normal Q-Q Plot');
+plt.xlabel('Theoretical Quantiles');
+plt.ylabel('Standardized Residuals');
+plt.grid(True);
+plt.show();
 
 # histogram:
 plt.figure()
-sns.histplot(augmented['residuals'], bins=10, kde=False, color='steelblue', edgecolor='white')
-plt.title('Histogram of Residuals')
-plt.xlabel('Residuals')
-plt.ylabel('Count')
-plt.grid(True)
-plt.show()
+sns.histplot(augmented['residuals'], bins=10, kde=False, color='steelblue', edgecolor='white');
+plt.title('Histogram of Residuals');
+plt.xlabel('Residuals');
+plt.ylabel('Count');
+plt.grid(True);
+plt.show();
 ```
 ```{r}
 #| echo: false
@@ -1128,18 +1122,7 @@ plt.ylabel('Probability of Purchase');
 plt.grid(True);
 plt.show();
 ```
-```{r}
-#| echo: false
-#| eval: false
-library(ggplot2)
-ggplot(df, aes(x = price, y = buy)) +
-  geom_point(alpha = 0.5) +
-  stat_smooth(method = "glm", method.args = list(family = "binomial"),
-              se = FALSE, color = "red", linewidth = 1.2) +
-  labs(title = "Logistic Regression: Purchase vs Price",
-       x = "Price", y = "Probability of Purchase") +
-  theme_minimal()
-```
+
 
 Interpretation:
 
@@ -1288,36 +1271,6 @@ $$ This is clearly a maximum when you consider that the squre term s negative.
 c)  $\text{demand} = 10 + 4(5) - 0.2(25) = 10 + 20 - 5 = 25$
 
 d)  Quadratic is better if diminishing returns are evident in data (verified via residual plots or model comparison).
-
-```{r}
-#| echo: false
-#| eval: false
-# Simulate data
-set.seed(123)
-budget <- seq(0, 20, by = 0.5)
-demand <- 10 + 4 * budget - 0.2 * budget^2 + rnorm(length(budget), 0, 1)
-data <- data.frame(budget, demand)
-
-# Fit linear model
-model0 <- lm(demand ~ budget, data=data)
-summary(model0)
-
-# Fit quadratic model
-model1 <- lm(demand ~ budget + I(budget^2), data = data)
-summary(model1)
-
-# Visualize both
-ggplot(data, aes(x = budget, y = demand)) +
-  geom_point() +
-  stat_smooth(method = "lm", formula = y ~ x, se = FALSE) +
-  labs(x = "Budget", y = "Demand")
-
-ggplot(data, aes(x = budget, y = demand)) +
-  geom_point() +
-  stat_smooth(method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
-  labs(x = "Budget", y = "Demand")
-
-```
 
 ```{python}
 # Simulate data
@@ -1475,7 +1428,7 @@ a)  Model B may have overfit noise in training data; simpler model generalizes b
 
 b)  Overfitting: model captures noise rather than signal, reducing generalizability. The danger here is that if you can perfectly explain a sample, you may have been unlucky, and found effects that aren't necessarily present in the entire population, no matter how rpresentative the sample.
 
-c)  Cross-validation assesses performance on unseen data, discouraging overfitting.I.e., you validate a model by using ity on more than just the data it was built on.
+c)  Cross-validation assesses performance on unseen data, discouraging overfitting.I.e., you validate a model by using it on more than just the data it was built on.
 
 
 
@@ -1505,7 +1458,7 @@ c)  Causation requires random assignment or strong quasi-experimental design to 
 
 ### Problem 33
 
-Given: $\text{score} = 50 + 2 \cdot \text{study_hours}$ You calculate:
+Given: $\text{score} = 50 + 2 \cdot \text{study\_hours}$ You calculate:
 
 -   95% confidence interval for mean score at 6 hours: (60, 64)
 -   95% prediction interval for individual score: (55, 69)
@@ -1694,24 +1647,3 @@ rowSums(tst)/99
 colSums(tst)/99
 ```
 
-<!-- ### Problem 3 -->
-
-<!-- A café records the preferred payment method (Cash, Card, Mobile Pay) of its customers, categorized by age group (18–35, 36–55, 56+). -->
-
-<!-- |Payment Method|   18–35|  36–55|  56+| -->
-
-<!-- |--------------|-------|-------|-----| -->
-
-<!-- |Cash  |40 |35 |60| -->
-
-<!-- |Card  |70 |80 |55| -->
-
-<!-- |Mobile Pay|   90| 45| 20| -->
-
-<!-- a) Set up a chi-squared test to assess whether payment method preference depends on age group. -->
-
-<!-- b) Calculate the expected counts. -->
-
-<!-- c) Comment on any trends you observe in the data. -->
-
-<!-- d) Suggest how the café could tailor its services based on the result. -->

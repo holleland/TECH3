@@ -844,7 +844,7 @@ Show solution
 <li><p>Female-Dislike: (50×50)/100 = 25</p></li>
 </ul>
 <ol start="3" type="a">
-<li>Let’s find the test statistic first, by usinf the formula for the chi-square test for indepence.</li>
+<li>Let’s find the test statistic first, by using the formula for the chi-square test for independence.</li>
 </ol>
 <p><span class="math display">\[
 \chi^2=\sum^n_{ij}\frac{(O_{ij}-E_{ij})^2}{E_{ij}}=\frac{5^2+(-5)^2+5^2+(-5^2)}{25}=\frac{100}{25}=4
@@ -875,7 +875,7 @@ X=\sum^k_{i=1}Z_i^2\sim\chi^2_k
 <ol start="2" type="a">
 <li>Consider a standard normal <span class="math inline">\(Z\)</span> Then <span class="math display">\[
 X=\sum_{i=1}^kz_i^2=\sum^1_{i=1}Z_i^2\sim\chi_1^2
-\]</span> i.e.&nbsp;teh square of <span class="math inline">\(Z\)</span> will be chi-square distributed with 1 degree of freedom.</li>
+\]</span> i.e.&nbsp;the square of <span class="math inline">\(Z\)</span> will be chi-square distributed with 1 degree of freedom.</li>
 </ol>
 </details>
 </section>
@@ -1481,7 +1481,7 @@ Dep. Variable:                    mpg   R-squared:                       0.753
 Model:                            OLS   Adj. R-squared:                  0.745
 Method:                 Least Squares   F-statistic:                     91.38
 Date:                Fri, 30 May 2025   Prob (F-statistic):           1.29e-10
-Time:                        07:53:46   Log-Likelihood:                -80.015
+Time:                        08:14:48   Log-Likelihood:                -80.015
 No. Observations:                  32   AIC:                             164.0
 Df Residuals:                      30   BIC:                             167.0
 Df Model:                           1                                         
@@ -1501,13 +1501,6 @@ Kurtosis:                       2.877   Cond. No.                         12.7
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># library(broom)</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># data(mtcars)</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co"># model &lt;- lm(mpg ~ wt, data = mtcars)</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># augmented &lt;- augment(model)</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(model)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li>Create the following diagnostic plots using Python. Underneath I have done so using ggplot.</li>
@@ -1518,19 +1511,19 @@ Notes:
 <li>Histogram of Residuals</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Residuals vs fitted:</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>plt.figure()<span class="op">;</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'fitted'</span>, y<span class="op">=</span><span class="st">'residuals'</span>, data<span class="op">=</span>augmented)<span class="op">;</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span>)<span class="op">;</span></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Residuals vs Fitted'</span>)<span class="op">;</span></span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Fitted Values'</span>)<span class="op">;</span></span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Residuals'</span>)<span class="op">;</span></span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
-<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Residuals vs fitted:</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>plt.figure()<span class="op">;</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'fitted'</span>, y<span class="op">=</span><span class="st">'residuals'</span>, data<span class="op">=</span>augmented)<span class="op">;</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span>)<span class="op">;</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Residuals vs Fitted'</span>)<span class="op">;</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Fitted Values'</span>)<span class="op">;</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Residuals'</span>)<span class="op">;</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1538,29 +1531,14 @@ Notes:
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># QQ-plot</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>stats.probplot(augmented[<span class="st">'residuals'</span>], dist<span class="op">=</span><span class="st">"norm"</span>, plot<span class="op">=</span>plt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>((array([-2.02511189, -1.62590278, -1.38593914, -1.20666642, -1.05953591,
-       -0.93235918, -0.81872017, -0.71478609, -0.6180591 , -0.52680137,
-       -0.43973827, -0.35589149, -0.27447843, -0.19484777, -0.11643566,
-       -0.03873405,  0.03873405,  0.11643566,  0.19484777,  0.27447843,
-        0.35589149,  0.43973827,  0.52680137,  0.6180591 ,  0.71478609,
-        0.81872017,  0.93235918,  1.05953591,  1.20666642,  1.38593914,
-        1.62590278,  2.02511189]), array([-4.54315128, -3.90536265, -3.72686632, -3.46235533, -3.20536265,
-       -2.97258623, -2.78093991, -2.61100374, -2.28261065, -2.08595212,
-       -1.88302362, -1.10014396, -1.0274952 , -0.9197704 , -0.69325453,
-       -0.20014396, -0.0502472 ,  0.152043  ,  0.29985604,  0.35642633,
-        0.86687313,  1.17334959,  1.20105932,  1.29734994,  1.74619542,
-        2.10328764,  2.34995929,  2.46436703,  4.16373815,  5.98107439,
-        6.42197917,  6.87271129])), (np.float64(3.0327797489458974), np.float64(-1.5068548096884913e-14), np.float64(0.975667445179132)))</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Normal Q-Q Plot'</span>)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Theoretical Quantiles'</span>)</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Standardized Residuals'</span>)</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># QQ-plot</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>stats.probplot(augmented[<span class="st">'residuals'</span>], dist<span class="op">=</span><span class="st">"norm"</span>, plot<span class="op">=</span>plt)<span class="op">;</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Normal Q-Q Plot'</span>)<span class="op">;</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Theoretical Quantiles'</span>)<span class="op">;</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Standardized Residuals'</span>)<span class="op">;</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1568,14 +1546,14 @@ Notes:
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># histogram:</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(augmented[<span class="st">'residuals'</span>], bins<span class="op">=</span><span class="dv">10</span>, kde<span class="op">=</span><span class="va">False</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>)</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Residuals'</span>)</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Residuals'</span>)</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># histogram:</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(augmented[<span class="st">'residuals'</span>], bins<span class="op">=</span><span class="dv">10</span>, kde<span class="op">=</span><span class="va">False</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>)<span class="op">;</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Residuals'</span>)<span class="op">;</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Residuals'</span>)<span class="op">;</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)<span class="op">;</span></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1621,31 +1599,31 @@ Show solutions
 <h3 class="anchored" data-anchor-id="problem-21">Problem 21</h3>
 <p>Simulate and fit the following model in R:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">sd =</span> x<span class="sc">/</span><span class="dv">5</span>)</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">sd =</span> x<span class="sc">/</span><span class="dv">5</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = y ~ x)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--31.2220  -4.8361  -0.0631   7.2425  27.5263 
+    Min      1Q  Median      3Q     Max 
+-36.000  -5.319   0.286   4.973  46.221 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  1.02867    2.11055   0.487    0.627    
-x            2.95333    0.03628  81.395   &lt;2e-16 ***
+(Intercept) -0.95471    2.49489  -0.383    0.703    
+x            3.03908    0.04289  70.856   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 10.47 on 98 degrees of freedom
-Multiple R-squared:  0.9854,    Adjusted R-squared:  0.9853 
-F-statistic:  6625 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 12.38 on 98 degrees of freedom
+Multiple R-squared:  0.9809,    Adjusted R-squared:  0.9807 
+F-statistic:  5021 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model<span class="sc">$</span>fitted.values, model<span class="sc">$</span>residuals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model<span class="sc">$</span>fitted.values, model<span class="sc">$</span>residuals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1674,21 +1652,21 @@ Show solutions
 <h3 class="anchored" data-anchor-id="problem-22">Problem 22</h3>
 <p>You model test scores using study hours and gender:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the DataFrame</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'score'</span>: [<span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">90</span>],</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'hours'</span>: [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>],</span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'female'</span>: pd.Categorical([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>])  <span class="co"># treated as a categorical variable</span></span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the linear model</span></span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'score ~ hours + C(female)'</span>, data<span class="op">=</span>df).fit()</span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the model summary</span></span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the DataFrame</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'score'</span>: [<span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">90</span>],</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'hours'</span>: [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>],</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'female'</span>: pd.Categorical([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>])  <span class="co"># treated as a categorical variable</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the linear model</span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'score ~ hours + C(female)'</span>, data<span class="op">=</span>df).fit()</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the model summary</span></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>C:\Users\s15052\ONEDRI~3\DOKUME~1\VIRTUA~1\R-RETI~1\Lib\site-packages\statsmodels\stats\stattools.py:74: ValueWarning: omni_normtest is not valid with less than 8 observations; 4 samples were given.
   warn("omni_normtest is not valid with less than 8 observations; %i "
@@ -1698,7 +1676,7 @@ Dep. Variable:                  score   R-squared:                       0.971
 Model:                            OLS   Adj. R-squared:                  0.914
 Method:                 Least Squares   F-statistic:                     17.00
 Date:                Fri, 30 May 2025   Prob (F-statistic):              0.169
-Time:                        07:53:49   Log-Likelihood:                -6.5683
+Time:                        08:14:50   Log-Likelihood:                -6.5683
 No. Observations:                   4   AIC:                             19.14
 Df Residuals:                       1   BIC:                             17.30
 Df Model:                           2                                         
@@ -1722,11 +1700,11 @@ Notes:
 </div>
 <p>Note that with so few observations, Python will not calculate the Omnibus test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">score =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">90</span>),</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">hours =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>),</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">female =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> hours <span class="sc">+</span> female, <span class="at">data =</span> df)</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">score =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">90</span>),</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">hours =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>),</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">female =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> hours <span class="sc">+</span> female, <span class="at">data =</span> df)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1833,20 +1811,20 @@ Show solutions
 <li>Fit a logistic regression model using <span class="math inline">\(buy ~ price\)</span>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data</span></span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> np.random.uniform(<span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">100</span>)</span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>log_odds <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> price <span class="op">+</span> <span class="dv">3</span></span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>prob_buy <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> np.exp(<span class="op">-</span>log_odds))</span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>buy <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, prob_buy)</span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataFrame</span></span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'price'</span>: price, <span class="st">'buy'</span>: buy})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> np.random.uniform(<span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">100</span>)</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>log_odds <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> price <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>prob_buy <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> np.exp(<span class="op">-</span>log_odds))</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>buy <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, prob_buy)</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataFrame</span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'price'</span>: price, <span class="st">'buy'</span>: buy})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="a">
 <li><p>Predict the probability of purchase when the price is $10.</p></li>
@@ -1859,11 +1837,11 @@ Show solutions
 <li></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit logistic regression model</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.glm(formula<span class="op">=</span><span class="st">'buy ~ price'</span>, data<span class="op">=</span>df,</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>                family<span class="op">=</span>sm.families.Binomial()).fit()</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit logistic regression model</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.glm(formula<span class="op">=</span><span class="st">'buy ~ price'</span>, data<span class="op">=</span>df,</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>                family<span class="op">=</span>sm.families.Binomial()).fit()</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Generalized Linear Model Regression Results                  
 ==============================================================================
@@ -1873,7 +1851,7 @@ Model Family:                Binomial   Df Model:                            1
 Link Function:                  Logit   Scale:                          1.0000
 Method:                          IRLS   Log-Likelihood:                -35.867
 Date:                Fri, 30 May 2025   Deviance:                       71.734
-Time:                        07:53:50   Pearson chi2:                     72.1
+Time:                        08:14:51   Pearson chi2:                     72.1
 No. Iterations:                     6   Pseudo R-squ. (CS):             0.4151
 Covariance Type:            nonrobust                                         
 ==============================================================================
@@ -1888,9 +1866,9 @@ price         -0.4299      0.087     -4.922      0.000      -0.601      -0.259
 <li></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict probability of purchase at price = 10</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>prediction <span class="op">=</span> model.predict(pd.DataFrame({<span class="st">'price'</span>: [<span class="dv">10</span>]}))</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prediction[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict probability of purchase at price = 10</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>prediction <span class="op">=</span> model.predict(pd.DataFrame({<span class="st">'price'</span>: [<span class="dv">10</span>]}))</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prediction[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0.15873234194196</code></pre>
 </div>
@@ -1899,23 +1877,23 @@ price         -0.4299      0.087     -4.922      0.000      -0.601      -0.259
 <li></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot points and logistic regression curve</span></span>
-<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'price'</span>, y<span class="op">=</span><span class="st">'buy'</span>, data<span class="op">=</span>df, alpha<span class="op">=</span><span class="fl">0.5</span>)<span class="op">;</span></span>
-<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a smooth curve for predicted probabilities</span></span>
-<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>price_range <span class="op">=</span> np.linspace(df[<span class="st">'price'</span>].<span class="bu">min</span>(), df[<span class="st">'price'</span>].<span class="bu">max</span>(), <span class="dv">300</span>)<span class="op">;</span></span>
-<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>prob_curve <span class="op">=</span> model.predict(pd.DataFrame({<span class="st">'price'</span>: price_range}))<span class="op">;</span></span>
-<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>plt.plot(price_range, prob_curve, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="fl">1.2</span>)<span class="op">;</span></span>
-<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Logistic Regression: Purchase vs Price'</span>)<span class="op">;</span></span>
-<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)<span class="op">;</span></span>
-<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Probability of Purchase'</span>)<span class="op">;</span></span>
-<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
-<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot points and logistic regression curve</span></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'price'</span>, y<span class="op">=</span><span class="st">'buy'</span>, data<span class="op">=</span>df, alpha<span class="op">=</span><span class="fl">0.5</span>)<span class="op">;</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a smooth curve for predicted probabilities</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>price_range <span class="op">=</span> np.linspace(df[<span class="st">'price'</span>].<span class="bu">min</span>(), df[<span class="st">'price'</span>].<span class="bu">max</span>(), <span class="dv">300</span>)<span class="op">;</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>prob_curve <span class="op">=</span> model.predict(pd.DataFrame({<span class="st">'price'</span>: price_range}))<span class="op">;</span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>plt.plot(price_range, prob_curve, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="fl">1.2</span>)<span class="op">;</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Logistic Regression: Purchase vs Price'</span>)<span class="op">;</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)<span class="op">;</span></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Probability of Purchase'</span>)<span class="op">;</span></span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -2050,24 +2028,24 @@ demand'=4-0.4\cdot budget=0 \quad \Rightarrow \quad budget=10
 <li><p>Quadratic is better if diminishing returns are evident in data (verified via residual plots or model comparison).</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>budget <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="fl">20.5</span>, <span class="fl">0.5</span>)</span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> <span class="dv">10</span> <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> budget <span class="op">-</span> <span class="fl">0.2</span> <span class="op">*</span> budget<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="bu">len</span>(budget))</span>
-<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'budget'</span>: budget, <span class="st">'demand'</span>: demand})</span>
-<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
-<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear model</span></span>
-<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>model0 <span class="op">=</span> smf.ols(<span class="st">'demand ~ budget'</span>, data<span class="op">=</span>data).fit()</span>
-<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Linear Model Summary:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>budget <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="fl">20.5</span>, <span class="fl">0.5</span>)</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> <span class="dv">10</span> <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> budget <span class="op">-</span> <span class="fl">0.2</span> <span class="op">*</span> budget<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="bu">len</span>(budget))</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'budget'</span>: budget, <span class="st">'demand'</span>: demand})</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear model</span></span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a>model0 <span class="op">=</span> smf.ols(<span class="st">'demand ~ budget'</span>, data<span class="op">=</span>data).fit()</span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Linear Model Summary:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear Model Summary:</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model0.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model0.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
@@ -2075,7 +2053,7 @@ Dep. Variable:                 demand   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                 -0.025
 Method:                 Least Squares   F-statistic:                   0.01279
 Date:                Fri, 30 May 2025   Prob (F-statistic):              0.911
-Time:                        07:53:52   Log-Likelihood:                -135.36
+Time:                        08:14:53   Log-Likelihood:                -135.36
 No. Observations:                  41   AIC:                             274.7
 Df Residuals:                      39   BIC:                             278.1
 Df Model:                           1                                         
@@ -2095,14 +2073,14 @@ Kurtosis:                       2.128   Cond. No.                         22.9
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quadratic model</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>model1 <span class="op">=</span> smf.ols(<span class="st">'demand ~ budget + I(budget**2)'</span>, data<span class="op">=</span>data).fit()</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Quadratic Model Summary:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quadratic model</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>model1 <span class="op">=</span> smf.ols(<span class="st">'demand ~ budget + I(budget**2)'</span>, data<span class="op">=</span>data).fit()</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Quadratic Model Summary:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Quadratic Model Summary:</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model1.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model1.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
@@ -2110,7 +2088,7 @@ Dep. Variable:                 demand   R-squared:                       0.970
 Model:                            OLS   Adj. R-squared:                  0.969
 Method:                 Least Squares   F-statistic:                     622.6
 Date:                Fri, 30 May 2025   Prob (F-statistic):           9.08e-30
-Time:                        07:53:52   Log-Likelihood:                -63.211
+Time:                        08:14:53   Log-Likelihood:                -63.211
 No. Observations:                  41   AIC:                             132.4
 Df Residuals:                      38   BIC:                             137.6
 Df Model:                           2                                         
@@ -2131,43 +2109,43 @@ Kurtosis:                       2.432   Cond. No.                         532.
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize both models</span></span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear model plot</span></span>
-<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">'budget'</span>, y<span class="op">=</span><span class="st">'demand'</span>, data<span class="op">=</span>data,</span>
-<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>           line_kws<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"blue"</span>},</span>
-<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>           scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">40</span>, <span class="st">"alpha"</span>: <span class="fl">0.6</span>},</span>
-<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>           ci<span class="op">=</span><span class="va">None</span>)<span class="op">;</span></span>
-<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Linear Model: Demand vs Budget'</span>)<span class="op">;</span></span>
-<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Budget'</span>)<span class="op">;</span></span>
-<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Demand'</span>)<span class="op">;</span></span>
-<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize both models</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear model plot</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">'budget'</span>, y<span class="op">=</span><span class="st">'demand'</span>, data<span class="op">=</span>data,</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>           line_kws<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"blue"</span>},</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>           scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">40</span>, <span class="st">"alpha"</span>: <span class="fl">0.6</span>},</span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>           ci<span class="op">=</span><span class="va">None</span>)<span class="op">;</span></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Linear Model: Demand vs Budget'</span>)<span class="op">;</span></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Budget'</span>)<span class="op">;</span></span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Demand'</span>)<span class="op">;</span></span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="5-exercises_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="480"></p>
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-16-3.png" class="img-fluid figure-img" width="480"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quadratic model plot</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Need to manually generate the fitted curve</span></span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'budget_squared'</span>] <span class="op">=</span> data[<span class="st">'budget'</span>] <span class="op">**</span> <span class="dv">2</span></span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'fitted_quad'</span>] <span class="op">=</span> model1.predict(data[[<span class="st">'budget'</span>, <span class="st">'budget_squared'</span>]])</span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>plt.figure()<span class="op">;</span></span>
-<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[<span class="st">'budget'</span>], data[<span class="st">'demand'</span>], alpha<span class="op">=</span><span class="fl">0.6</span>)<span class="op">;</span></span>
-<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>plt.plot(data[<span class="st">'budget'</span>], data[<span class="st">'fitted_quad'</span>], color<span class="op">=</span><span class="st">'red'</span>)<span class="op">;</span></span>
-<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Quadratic Model: Demand vs Budget'</span>)<span class="op">;</span></span>
-<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Budget'</span>)<span class="op">;</span></span>
-<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Demand'</span>)<span class="op">;</span></span>
-<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
-<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quadratic model plot</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Need to manually generate the fitted curve</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'budget_squared'</span>] <span class="op">=</span> data[<span class="st">'budget'</span>] <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'fitted_quad'</span>] <span class="op">=</span> model1.predict(data[[<span class="st">'budget'</span>, <span class="st">'budget_squared'</span>]])</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>plt.figure()<span class="op">;</span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[<span class="st">'budget'</span>], data[<span class="st">'demand'</span>], alpha<span class="op">=</span><span class="fl">0.6</span>)<span class="op">;</span></span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>plt.plot(data[<span class="st">'budget'</span>], data[<span class="st">'fitted_quad'</span>], color<span class="op">=</span><span class="st">'red'</span>)<span class="op">;</span></span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Quadratic Model: Demand vs Budget'</span>)<span class="op">;</span></span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Budget'</span>)<span class="op">;</span></span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Demand'</span>)<span class="op">;</span></span>
+<span id="cb66-12"><a href="#cb66-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb66-13"><a href="#cb66-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="5-exercises_files/figure-html/unnamed-chunk-18-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-16-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -2202,25 +2180,25 @@ Show solutions
 <h3 class="anchored" data-anchor-id="problem-31">Problem 31</h3>
 <p>You build two models:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
-<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
-<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.normal(size<span class="op">=</span>n)</span>
-<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> np.random.normal(size<span class="op">=</span>n)</span>
-<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'x'</span>: x, <span class="st">'y'</span>: y})</span>
-<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
-<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple linear model A</span></span>
-<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>model_a <span class="op">=</span> smf.ols(<span class="st">'y ~ x'</span>, data<span class="op">=</span>data).fit()</span>
-<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Model A: Simple Linear Regression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.normal(size<span class="op">=</span>n)</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> np.random.normal(size<span class="op">=</span>n)</span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'x'</span>: x, <span class="st">'y'</span>: y})</span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple linear model A</span></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a>model_a <span class="op">=</span> smf.ols(<span class="st">'y ~ x'</span>, data<span class="op">=</span>data).fit()</span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Model A: Simple Linear Regression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Model A: Simple Linear Regression</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model_a.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model_a.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
@@ -2228,7 +2206,7 @@ Dep. Variable:                      y   R-squared:                       0.923
 Model:                            OLS   Adj. R-squared:                  0.923
 Method:                 Least Squares   F-statistic:                     1180.
 Date:                Fri, 30 May 2025   Prob (F-statistic):           1.84e-56
-Time:                        07:53:54   Log-Likelihood:                -138.83
+Time:                        08:14:55   Log-Likelihood:                -138.83
 No. Observations:                 100   AIC:                             281.7
 Df Residuals:                      98   BIC:                             286.9
 Df Model:                           1                                         
@@ -2248,20 +2226,20 @@ Kurtosis:                       3.924   Cond. No.                         1.13
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model B: </span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually add polynomial terms up to degree 10</span></span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> degree <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">11</span>):</span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>    data[<span class="ss">f'x^</span><span class="sc">{</span>degree<span class="sc">}</span><span class="ss">'</span>] <span class="op">=</span> data[<span class="st">'x'</span>] <span class="op">**</span> degree</span>
-<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Define predictor variables (x, x^2, ..., x^10)</span></span>
-<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[[<span class="st">'x'</span>] <span class="op">+</span> [<span class="ss">f'x^</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">11</span>)]]</span>
-<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)  <span class="co"># add intercept</span></span>
-<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model</span></span>
-<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(data[<span class="st">'y'</span>], X).fit()</span>
-<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary</span></span>
-<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model B: </span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually add polynomial terms up to degree 10</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> degree <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">11</span>):</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    data[<span class="ss">f'x^</span><span class="sc">{</span>degree<span class="sc">}</span><span class="ss">'</span>] <span class="op">=</span> data[<span class="st">'x'</span>] <span class="op">**</span> degree</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Define predictor variables (x, x^2, ..., x^10)</span></span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[[<span class="st">'x'</span>] <span class="op">+</span> [<span class="ss">f'x^</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">11</span>)]]</span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)  <span class="co"># add intercept</span></span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model</span></span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(data[<span class="st">'y'</span>], X).fit()</span>
+<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary</span></span>
+<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
@@ -2269,7 +2247,7 @@ Dep. Variable:                      y   R-squared:                       0.927
 Model:                            OLS   Adj. R-squared:                  0.919
 Method:                 Least Squares   F-statistic:                     113.8
 Date:                Fri, 30 May 2025   Prob (F-statistic):           2.94e-46
-Time:                        07:53:54   Log-Likelihood:                -136.05
+Time:                        08:14:55   Log-Likelihood:                -136.05
 No. Observations:                 100   AIC:                             294.1
 Df Residuals:                      89   BIC:                             322.8
 Df Model:                          10                                         
@@ -2314,7 +2292,7 @@ Show solutions
 <ol type="a">
 <li><p>Model B may have overfit noise in training data; simpler model generalizes better. Model A also has an innate advantage in that we prefer simpler models. By studyin R-squared and adjusted R-squared in both A and B we can tell that teh additional vairables don’t really help explain the realtionship.</p></li>
 <li><p>Overfitting: model captures noise rather than signal, reducing generalizability. The danger here is that if you can perfectly explain a sample, you may have been unlucky, and found effects that aren’t necessarily present in the entire population, no matter how rpresentative the sample.</p></li>
-<li><p>Cross-validation assesses performance on unseen data, discouraging overfitting.I.e., you validate a model by using ity on more than just teh data it was built on.</p></li>
+<li><p>Cross-validation assesses performance on unseen data, discouraging overfitting.I.e., you validate a model by using it on more than just the data it was built on.</p></li>
 </ol>
 </details>
 </section>
@@ -2339,7 +2317,7 @@ Show solutions
 </section>
 <section id="problem-33" class="level3">
 <h3 class="anchored" data-anchor-id="problem-33">Problem 33</h3>
-<p>Given: <span class="math inline">\(\text{score} = 50 + 2 \cdot \text{study_hours}\)</span> You calculate:</p>
+<p>Given: <span class="math inline">\(\text{score} = 50 + 2 \cdot \text{study\_hours}\)</span> You calculate:</p>
 <ul>
 <li>95% confidence interval for mean score at 6 hours: (60, 64)</li>
 <li>95% prediction interval for individual score: (55, 69)</li>
@@ -2543,17 +2521,6 @@ Show solutions
 <p>The Norwegian Labour and Welfare Administration (NAV) organizes online job application workshops on Teams. The course responsible has noticed that except for himself, the attendees that have their camera on during the course is mostly the older participants. He wonders if there is a relationship between participants having camera on and participant’s age group? He therefore takes a screenshot of the meeting (that he deletes afterwards, of course) and counts the number of faces he sees for the different ages. The results are given in the table below. Perform a chi-squared test to answer this question, including setting up the hypothesis, finding the p-value and making your conclusion. Remember to settle on a significance level first.</p>
 <p>|Camera on| 18–35| 36–53| 54-70| Total| |Yes| 4| 3| 20| 27| No |20| 13| 39| 72| Total |24| 16| 59 |99|</p>
 <p>Is there a Simpson’s paradox here?</p>
-<!-- ### Problem 3 -->
-<!-- A café records the preferred payment method (Cash, Card, Mobile Pay) of its customers, categorized by age group (18–35, 36–55, 56+). -->
-<!-- |Payment Method|   18–35|  36–55|  56+| -->
-<!-- |--------------|-------|-------|-----| -->
-<!-- |Cash  |40 |35 |60| -->
-<!-- |Card  |70 |80 |55| -->
-<!-- |Mobile Pay|   90| 45| 20| -->
-<!-- a) Set up a chi-squared test to assess whether payment method preference depends on age group. -->
-<!-- b) Calculate the expected counts. -->
-<!-- c) Comment on any trends you observe in the data. -->
-<!-- d) Suggest how the café could tailor its services based on the result. -->
 
 
 </section>
