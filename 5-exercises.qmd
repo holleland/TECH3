@@ -597,6 +597,1058 @@ With the simulation above you should get a very strong positive correlation betw
 
 </details>
 
+
+
+### T-test for correlation
+
+**Assuming** we have two normally distributed random variables $X$ and $Y$, we can use a variant of a t-test to test for their correlation. The test statistic is given by:
+
+$$
+T_r=\frac{r\sqrt{n-2}}{\sqrt{1-r^2}}
+$$ Our null hypothesis is given by $H_0: \ r=0$. The test statistic will follow a t-distribution with $df=n-2$
+
+### Problem 15
+
+A professor collects data on 12 students to investigate whether time spent studying is correlated with their exam scores. The data are:
+
+| Study Hours (X) | Exam Score (Y) |
+|-----------------|----------------|
+| 2               | 65             |
+| 4               | 70             |
+| 3               | 68             |
+| 5               | 75             |
+| 1               | 60             |
+| 6               | 80             |
+| 4               | 72             |
+| 2               | 66             |
+| 5               | 78             |
+| 3               | 67             |
+| 6               | 82             |
+| 7               | 85             |
+
+a)  Compute the sample correlation coefficient $r$.
+
+b)  Test the null hypothesis $H_0: \rho = 0$ at the 5% significance level.
+
+c)  Interpret the result.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  
+
+You can use Python, or work by hand similarly to problem 13:
+
+```{python}
+import numpy as np
+x = np.array([2,4,3,5,1,6,4,2,5,3,6,7])
+y = np.array([65,70,68,75,60,80,72,66,78,67,82,85])
+r = np.corrcoef(x, y)[0, 1]
+print(r)
+```
+
+This yields $r \approx 0.986$
+
+b)  
+
+Use the test statistic:
+
+$$
+T_r = \frac{r \sqrt{n - 2}}{\sqrt{1 - r^2}}
+$$
+
+$$
+t = \frac{0.986 \sqrt{12 - 2}}{\sqrt{1 - 0.986^2}} = \frac{0.986 \cdot \sqrt{10}}{\sqrt{1 - 0.972}} \approx \frac{0.986 \cdot 3.162}{\sqrt{0.028}} \approx \frac{3.118}{0.167} \approx 18.67
+$$
+
+Degrees of freedom = $n - 2 = 10$
+
+Look up the critical value for $t_{0.025, 10} \approx 2.228$
+
+Since $t = 15.9 \gg 2.228$, we **reject the null hypothesis**.
+
+For good measure, lets double check the critical and p-values in R.
+
+```{python}
+## crtical value (this test is two sided, so at a 5 percent significance level we look at the quantiles for 0.025 and 0.975)
+print("critical value: ", stats.t.ppf(0.975, df=10))
+print("p-value: ", 1-stats.t.cdf(18.67, df=10))
+```
+
+We **VERY** clearly reject the null hypothesis here. This should not be surprising, as a) gave us a VERY strong positive correlation.
+
+c)  
+
+There is a statistically significant and strong positive correlation between study hours and exam score. The data support the hypothesis that more study time is associated with higher performance.
+
+</details>
+
+### Problem 16
+
+a)  Give two examples where correlation does not imply causation.
+
+b)  Why are randomized experiments used?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Reasonable examples:\
+b)  Ice cream sales and drowning could very easily seem positively correlated. When ice cream sales go up we see more drowning, but does that mean ice cream sales lead to drowning? Seems unlikely. Let's consider, **when**, both are at their peak. In the summer more people go swimming, and as such more accidents can happen, and this also happens to be the exact time of year when ice cream sales peak as well, due to heat. The scorching sun leads to higher ice cream sales **and** far more bathing (and consequently accidents).
+
+<!-- -->
+
+ii) Shoe size and reading ability, is probably positively correlated. This may not seem obvious, but consider the lower extreme. The ones that have the smallest shoes would be infants, who don't yet have the ability to read, and at the other end you will have full grown adults that more than likely can read well. It seems far fetched to think that the size of your feet would determine your reading ability, but your age determining both your shoe size and your reading ability could veyr well be the case.
+
+These effects on both the exposure and the outcome, we call **confounders**.
+
+b)  Randomization eliminates selection bias and confounding.
+
+</details>
+
+### Problem 17
+
+Describe a scenario where a confounding variable could lead to misleading correlation.
+
+<details>
+
+<summary>Show solutions</summary>
+
+Example: You may find yourself regressing prevalence of heart disease on coffee consumption, and seem to get a very strong connection. You, however, haven't controlled for smoking habits. Without controlling for smoking, all the effects of smoking would be attempted explained by coffee-consumption, which could lead to it seeming like a far more serious contributor than what we see in practice.
+
+</details>
+
+### Problem 18
+
+Explain the importance of random assignment in identifying causal relationships.
+
+<details>
+
+<summary>Show solution</summary>
+
+Random assignment in experiments let's us account for both the confounders we are aware of and those we aren't. When we randomly select enough data points we will find that known and unknown confounders will distribute more evenly across groups. Essentially we can more effectively **isolate** the relationship between the dependent and the independent variable in a regression.
+
+</summary>
+
+### Problem 19
+
+Given: X = (1, 2, 3), Y = (2, 2.5, 4)
+
+a)  Estimate intercept and slope.
+
+b)  Predict Y when X = 4.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  We essentially treat the best fit line in a linear regression like we would any linear function, where we have a set formula for the slope, $hat{\beta_1}=\frac{\hat{Cov(X,Y)}}{S^2_X}$, and $\hat{\beta_0}=\bar{Y}-\beta_1\bar{X}$, and gives the intercept.
+
+We can start by finding the averages and for $X$ and $Y$, before we compute variance and covariacne.
+
+$$
+\begin{align*}
+\bar{X}=\frac{1+2+3}{3}=2, \quad \bar{Y}=\frac{2+5/2+4}{3}=\frac{17}{6} \\
+S^2_X=\frac{1}{2}\left((1-2)^2+(2-2)^2+(3-2)^2\right)=1 \\
+\hat{Cov(X,Y)}=\frac{1}{2}(1*\frac{5}{6}+0+1*\frac{7}{6})=\frac{1}{2}\frac{12}{6}=1
+\end{align*}
+$$ Now we can compute $\hat{\beta_1}$ and $\hat{\beta_0}$
+
+$$
+\hat{\beta_1}=\frac{1}{1}=1, \quad \hat{\beta_0}=\frac{17}{6}-1*2=\frac{5}{6}
+$$ And with that we have estimates for the intercept, 5/6, and slope, 1.
+
+b)  Given our estimated model we have
+
+$$
+Y_i=\frac{5}{6}+X_i+\varepsilon
+$$ What we would like now is the conditional expected value of $Y$ when $X=4$. Recall recall that $E[\varepsilon]=0$, and $\varepislon$ is also independent of $X$, meaning $E[\varepsilon|X]=E[\varepsilon]$
+
+We then get
+
+$$
+E[Y|X=4]=E\left[\frac{5}{6}+X_i+\varepsilon|X=4\right]=\frac{5}{6}+E[X_i|X=4]+E[\varepsilon]=\frac{5}{6}+4=\frac{29}{6}
+$$
+
+</details>
+
+### Problem 20
+
+You fit a linear model (it doesn't really matter in this case what you are looking at, just think of it as a simple linear regression):
+
+```{python}
+import pandas as pd
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+# Load the mtcars dataset
+mtcars = sm.datasets.get_rdataset("mtcars", "datasets").data
+# Fit the linear model
+model = smf.ols('mpg ~ wt', data=mtcars).fit()
+
+# Augment the model with predictions and residuals
+augmented = mtcars.copy()
+augmented['fitted'] = model.fittedvalues
+augmented['residuals'] = model.resid
+
+# Print the model summary
+print(model.summary())
+# library(ggplot2)
+# library(broom)
+# 
+# data(mtcars)
+# model <- lm(mpg ~ wt, data = mtcars)
+# augmented <- augment(model)
+# summary(model)
+```
+
+a)  Create the following diagnostic plots using Python. Underneath I have done so using ggplot.
+
+-   Residuals vs Fitted Values
+-   Normal Q-Q Plot
+-   Histogram of Residuals
+
+```{python}
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+
+# Residuals vs fitted:
+plt.figure();
+sns.scatterplot(x='fitted', y='residuals', data=augmented);
+plt.axhline(0, color='red', linestyle='dashed');
+plt.title('Residuals vs Fitted');
+plt.xlabel('Fitted Values');
+plt.ylabel('Residuals');
+plt.grid(True);
+plt.show();
+
+# QQ-plot
+plt.figure()
+stats.probplot(augmented['residuals'], dist="norm", plot=plt)
+plt.title('Normal Q-Q Plot')
+plt.xlabel('Theoretical Quantiles')
+plt.ylabel('Standardized Residuals')
+plt.grid(True)
+plt.show()
+
+# histogram:
+plt.figure()
+sns.histplot(augmented['residuals'], bins=10, kde=False, color='steelblue', edgecolor='white')
+plt.title('Histogram of Residuals')
+plt.xlabel('Residuals')
+plt.ylabel('Count')
+plt.grid(True)
+plt.show()
+```
+```{r}
+#| echo: false
+#| eval: false
+# Residuals vs Fitted
+ggplot(augmented, aes(.fitted, .resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  labs(title = "Residuals vs Fitted", x = "Fitted Values", y = "Residuals") +
+  theme_minimal()
+
+# Q-Q Plot
+ggplot(augmented, aes(sample = .std.resid)) +
+  stat_qq() +
+  stat_qq_line(color = "red") +
+  labs(title = "Normal Q-Q Plot", x = "Theoretical Quantiles", y = "Standardized Residuals") +
+  theme_minimal()
+
+# Histogram
+ggplot(augmented, aes(.resid)) +
+  geom_histogram(bins = 10, fill = "steelblue", color = "white") +
+  labs(title = "Histogram of Residuals", x = "Residuals", y = "Count") +
+  theme_minimal()
+```
+
+b)  For each plot, describe which regression assumption it assesses, and what pattern would indicate the assumption holds.
+
+c)  Based on the plots, assess whether the assumptions of linear regression are likely satisfied in this model.
+
+d)  Give your thoughts on the model.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  do as above
+
+b)  
+
+-   **Residuals vs Fitted**: Tests for *linearity* and *equal variance*. You should see no clear pattern --- just a random scatter.
+-   **Normal Q-Q Plot**: Assesses *normality of residuals*. Points should lie along the diagonal line if residuals are normal.
+-   **Histogram**: Another way to check *residual normality*. A roughly bell-shaped, symmetric distribution supports the assumption.
+
+c)  
+
+-   The residuals in plot (1) are randomly scattered around 0 without fan shape → linearity and homoscedasticity are likely met.
+-   Q-Q plot in (2) shows points close to the line → residuals are approximately normal, though it seems that the tails may a be abbit heavy.
+-   Histogram in (3) is roughly symmetric and bell-shaped → supports normality assumption, but we also see the same indication asnin teh QQ plot, that there are heavy tail tendencies.
+
+We don't have **that** many points that are used in our regression, but they stil give some idea.
+
+If any of these show clear violations (e.g., funnel shape, skewed histogram), mention the likely issue and suggest remedies like transformation or robust methods.
+
+d)  From the summary it seems very clear that the intercept and slope are statistcally significant, whihc is cause to suspect a high correlation between the X and Y variables. We also find an R-squared of about 75%, which indicated that the variation in X explaines 75% of teh variation in Y. Generally, this seems pretty alrigth at this point, especially after looking at the residuals and finding that they seem to indicate our assumptions of linearity homoskedasticity and normality being fulfilled.
+
+</details>
+
+### Problem 21
+
+Simulate and fit the following model in R:
+
+```{r}
+x <- 1:100
+y <- 3*x + rnorm(100, sd = x/5)
+model <- lm(y ~ x)
+summary(model)
+plot(model$fitted.values, model$residuals)
+```
+
+a)What does the residual plot suggest about the assumptions?
+
+b)  Why is this a problem for inference?
+
+c)  Suggest a fix.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Residual variance clearly increases with fitted values, which is a classic sign of heteroskedasticity.
+
+b)  Standard errors may be incorrect, leading to misleading confidence intervals and p-values, which again can lead a researcher to wild or misleading conclusions.
+
+c)  Use log(y), square-root(y), or weighted least squares to stabilize variance.
+
+</details>
+
+### Problem 22
+
+You model test scores using study hours and gender:
+
+```{python}
+import pandas as pd
+import statsmodels.formula.api as smf
+
+# Create the DataFrame
+df = pd.DataFrame({
+    'score': [80, 85, 70, 90],
+    'hours': [4, 5, 3, 6],
+    'female': pd.Categorical([0, 1, 0, 1])  # treated as a categorical variable
+})
+
+# Fit the linear model
+model = smf.ols('score ~ hours + C(female)', data=df).fit()
+
+# Print the model summary
+print(model.summary())
+```
+
+Note that with so few observations, Python will not calculate the Omnibus test.
+```{r}
+df <- data.frame(score = c(80, 85, 70, 90),
+                 hours = c(4,5,3,6),
+                 female = factor(c(0, 1, 0, 1)))
+model <- lm(score ~ hours + female, data = df)
+summary(model)
+```
+
+a)  Explain the meaning of each coefficient.
+
+b)  What is the baseline category for gender, and how is the effect of gender represented?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  
+
+-   Intercept: Estimated score for a male who studied 0 hours.
+-   hours: Change in score per additional hour studied.
+-   female: Difference in score between females and males, controlling for hours.
+
+b)  The baseline is male. Female is the additional effect for females compared to males, controlling also for the amount of hours spent.
+
+If we were to interpret this model, it would seem being a female had a negative effect, but if we look closer at the data we may see why. Notice that the females did better than the males, but that they also spent more hours studying. The regression tells us that we dont have very conclusive data here, but one could suspect that the first few hours of studying would grant you more of a point increase than the next few, i.e. a diminishing return.
+
+</details>
+
+### Problem 23
+
+You have a fitted model: $y = 10 + 2x$ with residual standard error of 3.
+
+a)  What is the difference between a 95% confidence interval and a 95% prediction interval for a given x-value?
+
+b)  Which interval is wider and why?
+
+c)  Write expressions for both intervals at x = 5.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  CI estimates the *mean* value of $y$ at a given $x$, at some range of values. PI estimates the value of *a new individual* at that $x$.
+
+b)  The PI is wider because it includes variability both from the estimate of the mean and from individual variation.
+
+c)  
+
+-   CI: $\hat{y} \pm t \cdot SE_{\text{mean}}$
+-   PI: $\hat{y} \pm t \cdot \sqrt{SE_{\text{mean}}^2 + \sigma^2}$
+
+Assuming $x = 5$: $\hat{y} = 10 + 2(5) = 20$
+
+Now we could theoretically use estimated SE and residual error to calculate intervals.
+
+</details>
+
+### Problem 24
+
+A company fits a logistic regression model to understand how the price of a product affects the likelihood that a customer will purchase it. The model output is:
+
+$$
+\log\left(\frac{p}{1 - p}\right) = 3 - 0.5 \times \text{price}
+$$
+
+where $p$ is the probability that a customer buys the product.
+
+a)  Interpret the coefficient of $price$ in context.
+
+b)  What is the odds ratio associated with a 1-unit increase in price?
+
+c)  Calculate the predicted probability that a customer will buy the product when the price is \$10.
+
+d)  Sketch (or describe) what the logistic curve would look like based on this model.
+
+e)  Based on the model, what would happen to the predicted probability of purchase as the price increases toward \$20?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  The coefficient of -0.5 means that for every 1-unit increase in price, the log-odds of purchase decreases by 0.5. In other words, as price increases, the probability of purchase decreases.
+
+b)  The odds ratio is $e^{-0.5} \approx 0.61$. This means the odds of purchasing are multiplied by 0.61 for each \$1 increase in price.
+
+c)  At price = 10:
+
+$$
+\log\left(\frac{p}{1 - p}\right) = 3 - 0.5 \times 10 = -2 \Rightarrow p = \frac{1}{1 + e^{2}} \approx 0.12
+$$
+
+d)  The logistic curve is an S-shaped curve that starts near 1 when price is low (e.g., close to \$0), and decreases smoothly toward 0 as price increases.
+
+e)  As the price increases toward 20 USD, the exponent in the model becomes more negative, and the probability $p$ approaches 0. Customers are highly unlikely to purchase at very high prices under this model.
+
+</details>
+
+### Problem 25
+
+A company wants to understand how the price of a product affects the probability that a customer will purchase it. The following dataset shows simulated purchase behavior for 100 customers, where $buy = 1$ means the customer made a purchase and $buy = 0$ otherwise.
+
+a)  Fit a logistic regression model using $buy ~ price$.
+
+
+```{python}
+import numpy as np
+import pandas as pd
+
+# Set seed for reproducibility
+np.random.seed(42)
+
+# Generate data
+price = np.random.uniform(1, 20, 100)
+log_odds = -0.5 * price + 3
+prob_buy = 1 / (1 + np.exp(-log_odds))
+buy = np.random.binomial(1, prob_buy)
+
+# Create DataFrame
+df = pd.DataFrame({'price': price, 'buy': buy})
+```
+```{r}
+#| eval: false
+#| echo: false
+## Use this to generate the necessary data
+set.seed(42)
+price <- runif(100, 1, 20)
+log_odds <- -0.5 * price + 3
+prob_buy <- 1 / (1 + exp(-log_odds))
+buy <- rbinom(100, 1, prob_buy)
+df <- data.frame(price, buy)
+```
+
+b)  Predict the probability of purchase when the price is \$10.
+
+c)  Plot the logistic regression curve and observed data points.
+
+<details>
+
+<summary>
+
+Show solutions</summmary>
+
+a) 
+```{python}
+import statsmodels.formula.api as smf
+# Fit logistic regression model
+model = smf.glm(formula='buy ~ price', data=df,
+                family=sm.families.Binomial()).fit()
+print(model.summary())
+```
+b)
+```{python}
+# Predict probability of purchase at price = 10
+prediction = model.predict(pd.DataFrame({'price': [10]}))
+print(prediction[0])
+```
+
+c)
+```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Plot points and logistic regression curve
+sns.scatterplot(x='price', y='buy', data=df, alpha=0.5);
+
+# Generate a smooth curve for predicted probabilities
+price_range = np.linspace(df['price'].min(), df['price'].max(), 300);
+prob_curve = model.predict(pd.DataFrame({'price': price_range}));
+
+plt.plot(price_range, prob_curve, color='red', linewidth=1.2);
+plt.title('Logistic Regression: Purchase vs Price');
+plt.xlabel('Price');
+plt.ylabel('Probability of Purchase');
+plt.grid(True);
+plt.show();
+```
+```{r}
+#| echo: false
+#| eval: false
+library(ggplot2)
+ggplot(df, aes(x = price, y = buy)) +
+  geom_point(alpha = 0.5) +
+  stat_smooth(method = "glm", method.args = list(family = "binomial"),
+              se = FALSE, color = "red", linewidth = 1.2) +
+  labs(title = "Logistic Regression: Purchase vs Price",
+       x = "Price", y = "Probability of Purchase") +
+  theme_minimal()
+```
+
+Interpretation:
+
+-   The negative coefficient for price implies that as price increases, the likelihood of purchase decreases.
+-   At price = 10, the predicted probability of purchase is around 0.05 (depending on fit). The red curve shows how this probability changes with price.
+
+</details>
+
+### Problem 26
+
+A researcher is studying how the number of hours a student studies and whether they attend a prep course affect their exam score. They collect data from 10 students and fit the following model:
+
+$$
+\text{score} = 55 + 5 \cdot \text{hours} + 8 \cdot \text{prep}
+$$
+
+Where:
+
+-   hours = number of hours studied
+-   prep = 1 if the student attended a prep course, 0 otherwise
+-   score = predicted exam score
+
+a)  Interpret the coefficient for hours.
+
+b)  Interpret the coefficient for prep.
+
+c)  Predict the score of a student who studied for 4 hours and attended the prep course.
+
+d)  Predict the score of a student who studied for 4 hours and did not attend the prep course.
+
+<details>
+
+<summary>Show results</summary>
+
+a)  For every additional hour studied, the expected exam score increases by 5 points, holding prep course attendance constant.
+
+b)  Students who attended the prep course are predicted to score 8 points higher than those who did not, for the same number of study hours.
+
+c)  For a student with 4 hours and prep = 1:
+
+$$
+\text{score} = 55 + 5 \cdot 4 + 8 \cdot 1 = 55 + 20 + 8 = 83
+$$
+
+d)  For a student with 4 hours and prep = 0:
+
+$$
+\text{score} = 55 + 5 \cdot 4 + 8 \cdot 0 = 55 + 20 = 75
+$$
+
+</details>
+
+### Problem 27
+
+A marketing analyst builds the following regression model to predict weekly sales (in \$1000s) based on the amount spent on online ads and whether the store is in an urban location:
+
+$$
+\text{sales} = 20 + 3.5 \cdot \text{ad-spend} + 7 \cdot \text{urban}
+$$
+
+Where:
+
+-   ad-spend = amount spent on online advertising in \$1000s
+-   urban = 1 if the store is in an urban location, 0 otherwise
+
+a)  Interpret the coefficient for ad_spend.
+
+b)  Interpret the coefficient for urban.
+
+c)  Predict sales for a store that spends \$2000 on ads and is in an urban location.
+
+d)  Predict sales for a store with the same ad spend but in a non-urban location.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Each additional \$1000 in ad spending increases expected weekly sales by \$3,500.
+
+b)  Urban stores are expected to generate \$7,000 more in sales, all else equal.
+
+c)  $\text{sales} = 20 + 3.5 \cdot 2 + 7 \cdot 1 = 20 + 7 + 7 = 34$ → \$34,000
+
+d)  $\text{sales} = 20 + 7 = 27$ → \$27,000
+
+</details>
+
+### Problem 28
+
+You are given a fitted model:
+
+$$
+\text{income} = 15000 + 2500 \cdot \text{education}
+$$
+
+Where `education` is years of schooling.
+
+You receive student-generated residual plots: a histogram of residuals, a QQ plot, and a scatterplot of residuals vs fitted values.
+
+a)  The histogram is left-skewed. What might this indicate?
+
+b)  The residual vs fitted plot shows a funnel shape. What does that imply?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Left-skewed histogram suggests residuals are not normally distributed, which in and of itself may not be a huge problem, but it at a certain magnitude a left skew also makes the distribution of residuals vary far from being symmetrical. Major left skewness can significantly affect the estimation by leading to a positive bias.
+
+b)  Funnel shape implies heteroskedasticity; variance increases with predicted values.
+
+</details>
+
+### Problem 29
+
+A model is fit to assess how advertising budget affects product demand:
+
+$$
+\text{demand} = 10 + 4 \cdot \text{budget} - 0.2 \cdot \text{budget}^2
+$$
+
+a)  Interpret the model.
+
+b)  At what budget is demand maximized?
+
+c)  Compute expected demand when budget = 5.
+
+d)  Should a linear or quadratic model be preferred here, and why?
+
+Underneath is some r code for visualisation help
+
+<details>
+
+<summary>Show solution</summary>
+
+a)  Initial increases in budget raise demand, but at higher levels the negative squared term causes diminishing returns.
+
+b)  Vertex of the parabola: $x = \frac{-b}{2a} = \frac{-4}{2(-0.2)} = 10$
+
+We treat this like any parabola.
+
+$$
+demand'=4-0.4\cdot budget=0 \quad \Rightarrow \quad budget=10
+$$ This is clearly a maximum when you consider that the squre term s negative.
+
+c)  $\text{demand} = 10 + 4(5) - 0.2(25) = 10 + 20 - 5 = 25$
+
+d)  Quadratic is better if diminishing returns are evident in data (verified via residual plots or model comparison).
+
+```{r}
+#| echo: false
+#| eval: false
+# Simulate data
+set.seed(123)
+budget <- seq(0, 20, by = 0.5)
+demand <- 10 + 4 * budget - 0.2 * budget^2 + rnorm(length(budget), 0, 1)
+data <- data.frame(budget, demand)
+
+# Fit linear model
+model0 <- lm(demand ~ budget, data=data)
+summary(model0)
+
+# Fit quadratic model
+model1 <- lm(demand ~ budget + I(budget^2), data = data)
+summary(model1)
+
+# Visualize both
+ggplot(data, aes(x = budget, y = demand)) +
+  geom_point() +
+  stat_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  labs(x = "Budget", y = "Demand")
+
+ggplot(data, aes(x = budget, y = demand)) +
+  geom_point() +
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), se = FALSE) +
+  labs(x = "Budget", y = "Demand")
+
+```
+
+```{python}
+# Simulate data
+import numpy as np
+import pandas as pd
+
+np.random.seed(123)
+budget = np.arange(0, 20.5, 0.5)
+demand = 10 + 4 * budget - 0.2 * budget**2 + np.random.normal(0, 1, len(budget))
+data = pd.DataFrame({'budget': budget, 'demand': demand})
+
+import statsmodels.formula.api as smf
+
+# Linear model
+model0 = smf.ols('demand ~ budget', data=data).fit()
+print("Linear Model Summary:")
+print(model0.summary())
+
+# Quadratic model
+model1 = smf.ols('demand ~ budget + I(budget**2)', data=data).fit()
+print("\nQuadratic Model Summary:")
+print(model1.summary())
+
+# Visualize both models
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Linear model plot
+sns.lmplot(x='budget', y='demand', data=data,
+           line_kws={"color": "blue"},
+           scatter_kws={"s": 40, "alpha": 0.6},
+           ci=None);
+plt.title('Linear Model: Demand vs Budget');
+plt.xlabel('Budget');
+plt.ylabel('Demand');
+plt.show();
+
+# Quadratic model plot
+# Need to manually generate the fitted curve
+data['budget_squared'] = data['budget'] ** 2
+data['fitted_quad'] = model1.predict(data[['budget', 'budget_squared']])
+
+plt.figure();
+plt.scatter(data['budget'], data['demand'], alpha=0.6);
+plt.plot(data['budget'], data['fitted_quad'], color='red');
+plt.title('Quadratic Model: Demand vs Budget');
+plt.xlabel('Budget');
+plt.ylabel('Demand');
+plt.grid(True);
+plt.show();
+
+```
+</details>
+
+### Problem 30
+
+You fit a model and check these diagnostics:
+
+-   Residuals show non-linear pattern in residuals vs fitted plot.
+-   Histogram of residuals is roughly normal.
+-   Residuals increase in spread with fitted values.
+
+a)  Which regression assumptions are violated?
+
+b)  What could be done to address these?
+
+c)  Would transforming variables help? Explain.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Linearity and homoscedasticity assumptions are violated.
+
+b)  Consider polynomial terms for non-linearity, and weighted least squares or transformations for heteroskedasticity.
+
+c)  Yes log-transforming the response or predictors can stabilize variance or linearize relationships.
+
+</details>
+
+### Problem 31
+
+You build two models:
+
+```{r}
+#| echo: false
+#| eval: false
+# Simulate data
+set.seed(123)
+n <- 100
+x <- rnorm(n)
+y <- 3 * x + rnorm(n)
+data <- data.frame(x, y)
+
+# Model A: Simple linear
+model_a <- lm(y ~ x, data = data)
+summary(model_a)
+
+
+# Model B: Polynomial (y=x+x^2+...+x^10)
+model_b <- lm(y ~ poly(x, 10), data = data)
+summary(model_b)
+```
+
+
+```{python}
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+# Simulate data
+np.random.seed(123)
+n = 100
+x = np.random.normal(size=n)
+y = 3 * x + np.random.normal(size=n)
+data = pd.DataFrame({'x': x, 'y': y})
+
+import statsmodels.formula.api as smf
+
+# Simple linear model A
+model_a = smf.ols('y ~ x', data=data).fit()
+print("Model A: Simple Linear Regression")
+print(model_a.summary())
+
+
+# Model B: 
+# Manually add polynomial terms up to degree 10
+for degree in range(2, 11):
+    data[f'x^{degree}'] = data['x'] ** degree
+
+# Define predictor variables (x, x^2, ..., x^10)
+X = data[['x'] + [f'x^{i}' for i in range(2, 11)]]
+X = sm.add_constant(X)  # add intercept
+
+# Fit model
+model = sm.OLS(data['y'], X).fit()
+
+# Print summary
+print(model.summary())
+
+```
+
+You test both on new data and Model A performs better.
+
+a)  Why might Model A outperform B despite having fewer predictors?
+
+b)  What is overfitting?
+
+c)  How does cross-validation help avoid it?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Model B may have overfit noise in training data; simpler model generalizes better. Model A also has an innate advantage in that we prefer simpler models. By studyin R-squared and adjusted R-squared in both A and B we can tell that teh additional vairables don't really help explain the realtionship.
+
+b)  Overfitting: model captures noise rather than signal, reducing generalizability. The danger here is that if you can perfectly explain a sample, you may have been unlucky, and found effects that aren't necessarily present in the entire population, no matter how rpresentative the sample.
+
+c)  Cross-validation assesses performance on unseen data, discouraging overfitting.I.e., you validate a model by using ity on more than just the data it was built on.
+
+
+
+</details>
+
+### Problem 32
+
+A model is developed to predict house prices. Another researcher claims, "This model proves that number of bedrooms causes higher prices."
+
+a)  Is this a valid conclusion?
+
+b)  What's the difference between prediction and causal inference?
+
+c)  Under what conditions could we argue causation?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  No, correlation is not causation. Though the model sees that more bedrooms tend to be associated with higher prices, the model itself it is made as a forecast, it is not capable of making inferences on a causal relationship.
+
+b)  Prediction focuses on accurate forecasts; explanation seeks underlying causal mechanisms.
+
+c)  Causation requires random assignment or strong quasi-experimental design to eliminate confounding.
+
+</details>
+
+### Problem 33
+
+Given: $\text{score} = 50 + 2 \cdot \text{study_hours}$ You calculate:
+
+-   95% confidence interval for mean score at 6 hours: (60, 64)
+-   95% prediction interval for individual score: (55, 69)
+
+a)  What do these intervals represent?
+
+b)  Why is the prediction interval wider?
+
+c)  If we wanted to reduce the width of both, what could help?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  CI gives a range for mean score of all students studying 6 hours; PI gives range for a new individual's score.
+
+b)  PI includes both model uncertainty and residual variability.
+
+c)  Increasing sample size reduces standard errors, narrowing both intervals.
+
+</details>
+
+### Problem 34
+
+You compare two models:
+
+-   Model 1: $R^2=0.72$
+-   Model 2: $R^2=0.76$
+
+a)  Can we conclude Model 2 is better?
+
+b)  What's a limitation of using R² alone?
+
+c)  Suggest a better metric.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Not necessarily; depends on context and number of predictors. The R-squared is quite similar, so that on it's own can't really tel the whole story.
+
+b)  $R^2$ can never decrease when adding more predictors, and this can be misleading. In theory, one could add a thousand predictors, all of whom barely increase the $R^2$, but will in the end only help to overfit the model.
+
+c)  There are different measures, like adjusted R-squared and AIC, both of whom punish adding explanatory variables that dont contribute.
+
+</details>
+
+### Problem 35
+
+You include dummy variables for 4 regions: North, South, East, West.
+
+a)  What problem arises if all 4 are included in the regression model?
+
+b)  How should this be handled?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  The model will have what we call perfect colinearity, which leads to the model not being able to estimate parameters due to linear dependence.
+
+b)  Omit one region as reference category; remaining coefficients are interpreted relative to it. E.g. we take North as the base region, now all other dummies will display coefficients that indicate a score relative to north as a basis. (This is not common practice, but one can also omit the intercept $\beta_0$, instead of a category)
+
+</details>
+
+### Problem 36
+
+A regression includes both "income" and "wealth", which are highly correlated.
+
+a)  What is multicollinearity and how does it affect regression?
+
+b)  How can it be detected?
+
+c)  What might you do to resolve it?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  Multicollinearity inflates standard errors, making estimates unstable, and it comes from high correlation between several explanatory variables. Perfect multicolinearity comes into play when we have two or more perfectly correlated explanatory variables (height in feet and height in cm for instance)
+
+b)  Check variance inflation factors (VIF) or the correlation matirx.
+
+c)  Dropping one variable or combining both into one are common fixes.
+
+</details>
+
+### Problem 37
+
+A regression of $Y$ on $X$ shows curvature. You try $log(X)$:
+
+$$
+Y = \beta_0 + \beta_1 \log(X)
+$$
+
+a)  Why use this transformation?
+
+b)  What does $\beta_1$ now represent?
+
+c)  When might a log-log model be preferable?
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  To linearise exponential-like relationships. In essence, we can create a line best-fit line that much more clearly fits our data.
+
+b)  For our model a roughly 1% positive change in $X$ will be reflected as a $\b_1$ cahnge in $Y$
+
+c)  When both $X$ and $Y$ span many orders of magnitude or show multiplicative effects, a log-log model may be appropriate.
+
+</details>
+
+### Problem 38
+
+A model:
+
+$$
+\text{score} = 40 + 5 \cdot \text{study} + 10 \cdot \text{prep} + 4 \cdot \text{study} \cdot \text{prep}
+$$
+
+Where prep is 0 or 1.
+
+a)  What does the interaction term mean?
+
+b)  Compute predicted scores for 4 hours of study with and without prep.
+
+c)  Interpret the effect of study hours with and without prep.
+
+<details>
+
+<summary>Show solutions</summary>
+
+a)  The Interaction term tells us that the effect study hours will have on the score, will also be affected by whether or not the students chooses to participate in the prep course.
+
+b)  
+
+-   With prep: $40 + 5*4 + 10*1 + 4*4 = 40 + 20 + 10 + 16 = 86$
+-   Without prep: $40 + 5*4 = 60$
+
+c)  Prep amplifies study's effect, each hour contributes 9 points instead of 5, meaning that the prep has a much greater effect on further studying in this model.
+
+
 ## Contingency tables problems
 
 ### Problem 1

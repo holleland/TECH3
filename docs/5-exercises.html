@@ -587,6 +587,31 @@ window.Quarto = {
   <li><a href="#problem-12" id="toc-problem-12" class="nav-link" data-scroll-target="#problem-12">Problem 12</a></li>
   <li><a href="#problem-13" id="toc-problem-13" class="nav-link" data-scroll-target="#problem-13">Problem 13</a></li>
   <li><a href="#problem-14" id="toc-problem-14" class="nav-link" data-scroll-target="#problem-14">Problem 14</a></li>
+  <li><a href="#t-test-for-correlation" id="toc-t-test-for-correlation" class="nav-link" data-scroll-target="#t-test-for-correlation">T-test for correlation</a></li>
+  <li><a href="#problem-15" id="toc-problem-15" class="nav-link" data-scroll-target="#problem-15">Problem 15</a></li>
+  <li><a href="#problem-16" id="toc-problem-16" class="nav-link" data-scroll-target="#problem-16">Problem 16</a></li>
+  <li><a href="#problem-17" id="toc-problem-17" class="nav-link" data-scroll-target="#problem-17">Problem 17</a></li>
+  <li><a href="#problem-18" id="toc-problem-18" class="nav-link" data-scroll-target="#problem-18">Problem 18</a></li>
+  <li><a href="#problem-19" id="toc-problem-19" class="nav-link" data-scroll-target="#problem-19">Problem 19</a></li>
+  <li><a href="#problem-20" id="toc-problem-20" class="nav-link" data-scroll-target="#problem-20">Problem 20</a></li>
+  <li><a href="#problem-21" id="toc-problem-21" class="nav-link" data-scroll-target="#problem-21">Problem 21</a></li>
+  <li><a href="#problem-22" id="toc-problem-22" class="nav-link" data-scroll-target="#problem-22">Problem 22</a></li>
+  <li><a href="#problem-23" id="toc-problem-23" class="nav-link" data-scroll-target="#problem-23">Problem 23</a></li>
+  <li><a href="#problem-24" id="toc-problem-24" class="nav-link" data-scroll-target="#problem-24">Problem 24</a></li>
+  <li><a href="#problem-25" id="toc-problem-25" class="nav-link" data-scroll-target="#problem-25">Problem 25</a></li>
+  <li><a href="#problem-26" id="toc-problem-26" class="nav-link" data-scroll-target="#problem-26">Problem 26</a></li>
+  <li><a href="#problem-27" id="toc-problem-27" class="nav-link" data-scroll-target="#problem-27">Problem 27</a></li>
+  <li><a href="#problem-28" id="toc-problem-28" class="nav-link" data-scroll-target="#problem-28">Problem 28</a></li>
+  <li><a href="#problem-29" id="toc-problem-29" class="nav-link" data-scroll-target="#problem-29">Problem 29</a></li>
+  <li><a href="#problem-30" id="toc-problem-30" class="nav-link" data-scroll-target="#problem-30">Problem 30</a></li>
+  <li><a href="#problem-31" id="toc-problem-31" class="nav-link" data-scroll-target="#problem-31">Problem 31</a></li>
+  <li><a href="#problem-32" id="toc-problem-32" class="nav-link" data-scroll-target="#problem-32">Problem 32</a></li>
+  <li><a href="#problem-33" id="toc-problem-33" class="nav-link" data-scroll-target="#problem-33">Problem 33</a></li>
+  <li><a href="#problem-34" id="toc-problem-34" class="nav-link" data-scroll-target="#problem-34">Problem 34</a></li>
+  <li><a href="#problem-35" id="toc-problem-35" class="nav-link" data-scroll-target="#problem-35">Problem 35</a></li>
+  <li><a href="#problem-36" id="toc-problem-36" class="nav-link" data-scroll-target="#problem-36">Problem 36</a></li>
+  <li><a href="#problem-37" id="toc-problem-37" class="nav-link" data-scroll-target="#problem-37">Problem 37</a></li>
+  <li><a href="#problem-38" id="toc-problem-38" class="nav-link" data-scroll-target="#problem-38">Problem 38</a></li>
   <li><a href="#contingency-tables-problems" id="toc-contingency-tables-problems" class="nav-link" data-scroll-target="#contingency-tables-problems">Contingency tables problems</a>
   <ul class="collapse">
   <li><a href="#problem-1-1" id="toc-problem-1-1" class="nav-link" data-scroll-target="#problem-1-1">Problem 1</a></li>
@@ -1223,6 +1248,1227 @@ Show solutions
 <p>With the simulation above you should get a very strong positive correlation between X and Y. You can see this visually in that it would be very easy to draw a positive linear relationship between them that seems representative for the points given.</p>
 </details>
 </section>
+<section id="t-test-for-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="t-test-for-correlation">T-test for correlation</h3>
+<p><strong>Assuming</strong> we have two normally distributed random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we can use a variant of a t-test to test for their correlation. The test statistic is given by:</p>
+<p><span class="math display">\[
+T_r=\frac{r\sqrt{n-2}}{\sqrt{1-r^2}}
+\]</span> Our null hypothesis is given by <span class="math inline">\(H_0: \ r=0\)</span>. The test statistic will follow a t-distribution with <span class="math inline">\(df=n-2\)</span></p>
+</section>
+<section id="problem-15" class="level3">
+<h3 class="anchored" data-anchor-id="problem-15">Problem 15</h3>
+<p>A professor collects data on 12 students to investigate whether time spent studying is correlated with their exam scores. The data are:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Study Hours (X)</th>
+<th>Exam Score (Y)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>65</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>70</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>68</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>75</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>72</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>66</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>78</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>67</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>82</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>85</td>
+</tr>
+</tbody>
+</table>
+<ol type="a">
+<li><p>Compute the sample correlation coefficient <span class="math inline">\(r\)</span>.</p></li>
+<li><p>Test the null hypothesis <span class="math inline">\(H_0: \rho = 0\)</span> at the 5% significance level.</p></li>
+<li><p>Interpret the result.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li></li>
+</ol>
+<p>You can use Python, or work by hand similarly to problem 13:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">7</span>])</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">65</span>,<span class="dv">70</span>,<span class="dv">68</span>,<span class="dv">75</span>,<span class="dv">60</span>,<span class="dv">80</span>,<span class="dv">72</span>,<span class="dv">66</span>,<span class="dv">78</span>,<span class="dv">67</span>,<span class="dv">82</span>,<span class="dv">85</span>])</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.corrcoef(x, y)[<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.9857360065184915</code></pre>
+</div>
+</div>
+<p>This yields <span class="math inline">\(r \approx 0.986\)</span></p>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<p>Use the test statistic:</p>
+<p><span class="math display">\[
+T_r = \frac{r \sqrt{n - 2}}{\sqrt{1 - r^2}}
+\]</span></p>
+<p><span class="math display">\[
+t = \frac{0.986 \sqrt{12 - 2}}{\sqrt{1 - 0.986^2}} = \frac{0.986 \cdot \sqrt{10}}{\sqrt{1 - 0.972}} \approx \frac{0.986 \cdot 3.162}{\sqrt{0.028}} \approx \frac{3.118}{0.167} \approx 18.67
+\]</span></p>
+<p>Degrees of freedom = <span class="math inline">\(n - 2 = 10\)</span></p>
+<p>Look up the critical value for <span class="math inline">\(t_{0.025, 10} \approx 2.228\)</span></p>
+<p>Since <span class="math inline">\(t = 15.9 \gg 2.228\)</span>, we <strong>reject the null hypothesis</strong>.</p>
+<p>For good measure, lets double check the critical and p-values in R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">## crtical value (this test is two sided, so at a 5 percent significance level we look at the quantiles for 0.025 and 0.975)</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"critical value: "</span>, stats.t.ppf(<span class="fl">0.975</span>, df<span class="op">=</span><span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>critical value:  2.2281388519649385</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"p-value: "</span>, <span class="dv">1</span><span class="op">-</span>stats.t.cdf(<span class="fl">18.67</span>, df<span class="op">=</span><span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>p-value:  2.1004691319603808e-09</code></pre>
+</div>
+</div>
+<p>We <strong>VERY</strong> clearly reject the null hypothesis here. This should not be surprising, as a) gave us a VERY strong positive correlation.</p>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<p>There is a statistically significant and strong positive correlation between study hours and exam score. The data support the hypothesis that more study time is associated with higher performance.</p>
+</details>
+</section>
+<section id="problem-16" class="level3">
+<h3 class="anchored" data-anchor-id="problem-16">Problem 16</h3>
+<ol type="a">
+<li><p>Give two examples where correlation does not imply causation.</p></li>
+<li><p>Why are randomized experiments used?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li>Reasonable examples:<br>
+</li>
+<li>Ice cream sales and drowning could very easily seem positively correlated. When ice cream sales go up we see more drowning, but does that mean ice cream sales lead to drowning? Seems unlikely. Let’s consider, <strong>when</strong>, both are at their peak. In the summer more people go swimming, and as such more accidents can happen, and this also happens to be the exact time of year when ice cream sales peak as well, due to heat. The scorching sun leads to higher ice cream sales <strong>and</strong> far more bathing (and consequently accidents).</li>
+</ol>
+<!-- -->
+<ol start="2" type="i">
+<li>Shoe size and reading ability, is probably positively correlated. This may not seem obvious, but consider the lower extreme. The ones that have the smallest shoes would be infants, who don’t yet have the ability to read, and at the other end you will have full grown adults that more than likely can read well. It seems far fetched to think that the size of your feet would determine your reading ability, but your age determining both your shoe size and your reading ability could veyr well be the case.</li>
+</ol>
+<p>These effects on both the exposure and the outcome, we call <strong>confounders</strong>.</p>
+<ol start="2" type="a">
+<li>Randomization eliminates selection bias and confounding.</li>
+</ol>
+</details>
+</section>
+<section id="problem-17" class="level3">
+<h3 class="anchored" data-anchor-id="problem-17">Problem 17</h3>
+<p>Describe a scenario where a confounding variable could lead to misleading correlation.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>Example: You may find yourself regressing prevalence of heart disease on coffee consumption, and seem to get a very strong connection. You, however, haven’t controlled for smoking habits. Without controlling for smoking, all the effects of smoking would be attempted explained by coffee-consumption, which could lead to it seeming like a far more serious contributor than what we see in practice.</p>
+</details>
+</section>
+<section id="problem-18" class="level3">
+<h3 class="anchored" data-anchor-id="problem-18">Problem 18</h3>
+<p>Explain the importance of random assignment in identifying causal relationships.</p>
+<details>
+<summary>
+Show solution
+</summary>
+<p>Random assignment in experiments let’s us account for both the confounders we are aware of and those we aren’t. When we randomly select enough data points we will find that known and unknown confounders will distribute more evenly across groups. Essentially we can more effectively <strong>isolate</strong> the relationship between the dependent and the independent variable in a regression.</p>
+
+</details></section>
+<section id="problem-19" class="level3">
+<h3 class="anchored" data-anchor-id="problem-19">Problem 19</h3>
+<p>Given: X = (1, 2, 3), Y = (2, 2.5, 4)</p>
+<ol type="a">
+<li><p>Estimate intercept and slope.</p></li>
+<li><p>Predict Y when X = 4.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li>We essentially treat the best fit line in a linear regression like we would any linear function, where we have a set formula for the slope, <span class="math inline">\(hat{\beta_1}=\frac{\hat{Cov(X,Y)}}{S^2_X}\)</span>, and <span class="math inline">\(\hat{\beta_0}=\bar{Y}-\beta_1\bar{X}\)</span>, and gives the intercept.</li>
+</ol>
+<p>We can start by finding the averages and for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, before we compute variance and covariacne.</p>
+<p><span class="math display">\[
+\begin{align*}
+\bar{X}=\frac{1+2+3}{3}=2, \quad \bar{Y}=\frac{2+5/2+4}{3}=\frac{17}{6} \\
+S^2_X=\frac{1}{2}\left((1-2)^2+(2-2)^2+(3-2)^2\right)=1 \\
+\hat{Cov(X,Y)}=\frac{1}{2}(1*\frac{5}{6}+0+1*\frac{7}{6})=\frac{1}{2}\frac{12}{6}=1
+\end{align*}
+\]</span> Now we can compute <span class="math inline">\(\hat{\beta_1}\)</span> and <span class="math inline">\(\hat{\beta_0}\)</span></p>
+<p><span class="math display">\[
+\hat{\beta_1}=\frac{1}{1}=1, \quad \hat{\beta_0}=\frac{17}{6}-1*2=\frac{5}{6}
+\]</span> And with that we have estimates for the intercept, 5/6, and slope, 1.</p>
+<ol start="2" type="a">
+<li>Given our estimated model we have</li>
+</ol>
+<p><span class="math display">\[
+Y_i=\frac{5}{6}+X_i+\varepsilon
+\]</span> What we would like now is the conditional expected value of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X=4\)</span>. Recall recall that <span class="math inline">\(E[\varepsilon]=0\)</span>, and <span class="math inline">\(\varepislon\)</span> is also independent of <span class="math inline">\(X\)</span>, meaning <span class="math inline">\(E[\varepsilon|X]=E[\varepsilon]\)</span></p>
+<p>We then get</p>
+<p><span class="math display">\[
+E[Y|X=4]=E\left[\frac{5}{6}+X_i+\varepsilon|X=4\right]=\frac{5}{6}+E[X_i|X=4]+E[\varepsilon]=\frac{5}{6}+4=\frac{29}{6}
+\]</span></p>
+</details>
+</section>
+<section id="problem-20" class="level3">
+<h3 class="anchored" data-anchor-id="problem-20">Problem 20</h3>
+<p>You fit a linear model (it doesn’t really matter in this case what you are looking at, just think of it as a simple linear regression):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the mtcars dataset</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>mtcars <span class="op">=</span> sm.datasets.get_rdataset(<span class="st">"mtcars"</span>, <span class="st">"datasets"</span>).data</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the linear model</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'mpg ~ wt'</span>, data<span class="op">=</span>mtcars).fit()</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Augment the model with predictions and residuals</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>augmented <span class="op">=</span> mtcars.copy()</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>augmented[<span class="st">'fitted'</span>] <span class="op">=</span> model.fittedvalues</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>augmented[<span class="st">'residuals'</span>] <span class="op">=</span> model.resid</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the model summary</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    mpg   R-squared:                       0.753
+Model:                            OLS   Adj. R-squared:                  0.745
+Method:                 Least Squares   F-statistic:                     91.38
+Date:                Fri, 30 May 2025   Prob (F-statistic):           1.29e-10
+Time:                        07:53:46   Log-Likelihood:                -80.015
+No. Observations:                  32   AIC:                             164.0
+Df Residuals:                      30   BIC:                             167.0
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     37.2851      1.878     19.858      0.000      33.450      41.120
+wt            -5.3445      0.559     -9.559      0.000      -6.486      -4.203
+==============================================================================
+Omnibus:                        2.988   Durbin-Watson:                   1.252
+Prob(Omnibus):                  0.225   Jarque-Bera (JB):                2.399
+Skew:                           0.668   Prob(JB):                        0.301
+Kurtosis:                       2.877   Cond. No.                         12.7
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library(ggplot2)</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># library(broom)</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co"># data(mtcars)</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co"># model &lt;- lm(mpg ~ wt, data = mtcars)</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># augmented &lt;- augment(model)</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(model)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li>Create the following diagnostic plots using Python. Underneath I have done so using ggplot.</li>
+</ol>
+<ul>
+<li>Residuals vs Fitted Values</li>
+<li>Normal Q-Q Plot</li>
+<li>Histogram of Residuals</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Residuals vs fitted:</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>plt.figure()<span class="op">;</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'fitted'</span>, y<span class="op">=</span><span class="st">'residuals'</span>, data<span class="op">=</span>augmented)<span class="op">;</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'dashed'</span>)<span class="op">;</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Residuals vs Fitted'</span>)<span class="op">;</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Fitted Values'</span>)<span class="op">;</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Residuals'</span>)<span class="op">;</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-6-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># QQ-plot</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>stats.probplot(augmented[<span class="st">'residuals'</span>], dist<span class="op">=</span><span class="st">"norm"</span>, plot<span class="op">=</span>plt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>((array([-2.02511189, -1.62590278, -1.38593914, -1.20666642, -1.05953591,
+       -0.93235918, -0.81872017, -0.71478609, -0.6180591 , -0.52680137,
+       -0.43973827, -0.35589149, -0.27447843, -0.19484777, -0.11643566,
+       -0.03873405,  0.03873405,  0.11643566,  0.19484777,  0.27447843,
+        0.35589149,  0.43973827,  0.52680137,  0.6180591 ,  0.71478609,
+        0.81872017,  0.93235918,  1.05953591,  1.20666642,  1.38593914,
+        1.62590278,  2.02511189]), array([-4.54315128, -3.90536265, -3.72686632, -3.46235533, -3.20536265,
+       -2.97258623, -2.78093991, -2.61100374, -2.28261065, -2.08595212,
+       -1.88302362, -1.10014396, -1.0274952 , -0.9197704 , -0.69325453,
+       -0.20014396, -0.0502472 ,  0.152043  ,  0.29985604,  0.35642633,
+        0.86687313,  1.17334959,  1.20105932,  1.29734994,  1.74619542,
+        2.10328764,  2.34995929,  2.46436703,  4.16373815,  5.98107439,
+        6.42197917,  6.87271129])), (np.float64(3.0327797489458974), np.float64(-1.5068548096884913e-14), np.float64(0.975667445179132)))</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Normal Q-Q Plot'</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Theoretical Quantiles'</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Standardized Residuals'</span>)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-6-6.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># histogram:</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(augmented[<span class="st">'residuals'</span>], bins<span class="op">=</span><span class="dv">10</span>, kde<span class="op">=</span><span class="va">False</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Residuals'</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Residuals'</span>)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-6-7.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><p>For each plot, describe which regression assumption it assesses, and what pattern would indicate the assumption holds.</p></li>
+<li><p>Based on the plots, assess whether the assumptions of linear regression are likely satisfied in this model.</p></li>
+<li><p>Give your thoughts on the model.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>do as above</p></li>
+<li></li>
+</ol>
+<ul>
+<li><strong>Residuals vs Fitted</strong>: Tests for <em>linearity</em> and <em>equal variance</em>. You should see no clear pattern — just a random scatter.</li>
+<li><strong>Normal Q-Q Plot</strong>: Assesses <em>normality of residuals</em>. Points should lie along the diagonal line if residuals are normal.</li>
+<li><strong>Histogram</strong>: Another way to check <em>residual normality</em>. A roughly bell-shaped, symmetric distribution supports the assumption.</li>
+</ul>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<ul>
+<li>The residuals in plot (1) are randomly scattered around 0 without fan shape → linearity and homoscedasticity are likely met.</li>
+<li>Q-Q plot in (2) shows points close to the line → residuals are approximately normal, though it seems that the tails may a be abbit heavy.</li>
+<li>Histogram in (3) is roughly symmetric and bell-shaped → supports normality assumption, but we also see the same indication asnin teh QQ plot, that there are heavy tail tendencies.</li>
+</ul>
+<p>We don’t have <strong>that</strong> many points that are used in our regression, but they stil give some idea.</p>
+<p>If any of these show clear violations (e.g., funnel shape, skewed histogram), mention the likely issue and suggest remedies like transformation or robust methods.</p>
+<ol start="4" type="a">
+<li>From the summary it seems very clear that the intercept and slope are statistcally significant, whihc is cause to suspect a high correlation between the X and Y variables. We also find an R-squared of about 75%, which indicated that the variation in X explaines 75% of teh variation in Y. Generally, this seems pretty alrigth at this point, especially after looking at the residuals and finding that they seem to indicate our assumptions of linearity homoskedasticity and normality being fulfilled.</li>
+</ol>
+</details>
+</section>
+<section id="problem-21" class="level3">
+<h3 class="anchored" data-anchor-id="problem-21">Problem 21</h3>
+<p>Simulate and fit the following model in R:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">3</span><span class="sc">*</span>x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">sd =</span> x<span class="sc">/</span><span class="dv">5</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-31.2220  -4.8361  -0.0631   7.2425  27.5263 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.02867    2.11055   0.487    0.627    
+x            2.95333    0.03628  81.395   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 10.47 on 98 degrees of freedom
+Multiple R-squared:  0.9854,    Adjusted R-squared:  0.9853 
+F-statistic:  6625 on 1 and 98 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model<span class="sc">$</span>fitted.values, model<span class="sc">$</span>residuals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>a)What does the residual plot suggest about the assumptions?</p>
+<ol start="2" type="a">
+<li><p>Why is this a problem for inference?</p></li>
+<li><p>Suggest a fix.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>Residual variance clearly increases with fitted values, which is a classic sign of heteroskedasticity.</p></li>
+<li><p>Standard errors may be incorrect, leading to misleading confidence intervals and p-values, which again can lead a researcher to wild or misleading conclusions.</p></li>
+<li><p>Use log(y), square-root(y), or weighted least squares to stabilize variance.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-22" class="level3">
+<h3 class="anchored" data-anchor-id="problem-22">Problem 22</h3>
+<p>You model test scores using study hours and gender:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the DataFrame</span></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'score'</span>: [<span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">90</span>],</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'hours'</span>: [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>],</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'female'</span>: pd.Categorical([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>])  <span class="co"># treated as a categorical variable</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the linear model</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">'score ~ hours + C(female)'</span>, data<span class="op">=</span>df).fit()</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the model summary</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>C:\Users\s15052\ONEDRI~3\DOKUME~1\VIRTUA~1\R-RETI~1\Lib\site-packages\statsmodels\stats\stattools.py:74: ValueWarning: omni_normtest is not valid with less than 8 observations; 4 samples were given.
+  warn("omni_normtest is not valid with less than 8 observations; %i "
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                  score   R-squared:                       0.971
+Model:                            OLS   Adj. R-squared:                  0.914
+Method:                 Least Squares   F-statistic:                     17.00
+Date:                Fri, 30 May 2025   Prob (F-statistic):              0.169
+Time:                        07:53:49   Log-Likelihood:                -6.5683
+No. Observations:                   4   AIC:                             19.14
+Df Residuals:                       1   BIC:                             17.30
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P&gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept         48.7500      8.927      5.461      0.115     -64.676     162.176
+C(female)[T.1]    -2.5000      5.590     -0.447      0.732     -73.530      68.530
+hours              7.5000      2.500      3.000      0.205     -24.266      39.266
+==============================================================================
+Omnibus:                          nan   Durbin-Watson:                   1.000
+Prob(Omnibus):                    nan   Jarque-Bera (JB):                0.667
+Skew:                           0.000   Prob(JB):                        0.717
+Kurtosis:                       1.000   Cond. No.                         39.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+</div>
+<p>Note that with so few observations, Python will not calculate the Omnibus test.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">score =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">70</span>, <span class="dv">90</span>),</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">hours =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>),</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">female =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(score <span class="sc">~</span> hours <span class="sc">+</span> female, <span class="at">data =</span> df)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = score ~ hours + female, data = df)
+
+Residuals:
+    1     2     3     4 
+ 1.25  1.25 -1.25 -1.25 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)   48.750      8.927   5.461    0.115
+hours          7.500      2.500   3.000    0.205
+female1       -2.500      5.590  -0.447    0.732
+
+Residual standard error: 2.5 on 1 degrees of freedom
+Multiple R-squared:  0.9714,    Adjusted R-squared:  0.9143 
+F-statistic:    17 on 2 and 1 DF,  p-value: 0.169</code></pre>
+</div>
+</div>
+<ol type="a">
+<li><p>Explain the meaning of each coefficient.</p></li>
+<li><p>What is the baseline category for gender, and how is the effect of gender represented?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li></li>
+</ol>
+<ul>
+<li>Intercept: Estimated score for a male who studied 0 hours.</li>
+<li>hours: Change in score per additional hour studied.</li>
+<li>female: Difference in score between females and males, controlling for hours.</li>
+</ul>
+<ol start="2" type="a">
+<li>The baseline is male. Female is the additional effect for females compared to males, controlling also for the amount of hours spent.</li>
+</ol>
+<p>If we were to interpret this model, it would seem being a female had a negative effect, but if we look closer at the data we may see why. Notice that the females did better than the males, but that they also spent more hours studying. The regression tells us that we dont have very conclusive data here, but one could suspect that the first few hours of studying would grant you more of a point increase than the next few, i.e.&nbsp;a diminishing return.</p>
+</details>
+</section>
+<section id="problem-23" class="level3">
+<h3 class="anchored" data-anchor-id="problem-23">Problem 23</h3>
+<p>You have a fitted model: <span class="math inline">\(y = 10 + 2x\)</span> with residual standard error of 3.</p>
+<ol type="a">
+<li><p>What is the difference between a 95% confidence interval and a 95% prediction interval for a given x-value?</p></li>
+<li><p>Which interval is wider and why?</p></li>
+<li><p>Write expressions for both intervals at x = 5.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>CI estimates the <em>mean</em> value of <span class="math inline">\(y\)</span> at a given <span class="math inline">\(x\)</span>, at some range of values. PI estimates the value of <em>a new individual</em> at that <span class="math inline">\(x\)</span>.</p></li>
+<li><p>The PI is wider because it includes variability both from the estimate of the mean and from individual variation.</p></li>
+<li></li>
+</ol>
+<ul>
+<li>CI: <span class="math inline">\(\hat{y} \pm t \cdot SE_{\text{mean}}\)</span></li>
+<li>PI: <span class="math inline">\(\hat{y} \pm t \cdot \sqrt{SE_{\text{mean}}^2 + \sigma^2}\)</span></li>
+</ul>
+<p>Assuming <span class="math inline">\(x = 5\)</span>: <span class="math inline">\(\hat{y} = 10 + 2(5) = 20\)</span></p>
+<p>Now we could theoretically use estimated SE and residual error to calculate intervals.</p>
+</details>
+</section>
+<section id="problem-24" class="level3">
+<h3 class="anchored" data-anchor-id="problem-24">Problem 24</h3>
+<p>A company fits a logistic regression model to understand how the price of a product affects the likelihood that a customer will purchase it. The model output is:</p>
+<p><span class="math display">\[
+\log\left(\frac{p}{1 - p}\right) = 3 - 0.5 \times \text{price}
+\]</span></p>
+<p>where <span class="math inline">\(p\)</span> is the probability that a customer buys the product.</p>
+<ol type="a">
+<li><p>Interpret the coefficient of <span class="math inline">\(price\)</span> in context.</p></li>
+<li><p>What is the odds ratio associated with a 1-unit increase in price?</p></li>
+<li><p>Calculate the predicted probability that a customer will buy the product when the price is $10.</p></li>
+<li><p>Sketch (or describe) what the logistic curve would look like based on this model.</p></li>
+<li><p>Based on the model, what would happen to the predicted probability of purchase as the price increases toward $20?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>The coefficient of -0.5 means that for every 1-unit increase in price, the log-odds of purchase decreases by 0.5. In other words, as price increases, the probability of purchase decreases.</p></li>
+<li><p>The odds ratio is <span class="math inline">\(e^{-0.5} \approx 0.61\)</span>. This means the odds of purchasing are multiplied by 0.61 for each $1 increase in price.</p></li>
+<li><p>At price = 10:</p></li>
+</ol>
+<p><span class="math display">\[
+\log\left(\frac{p}{1 - p}\right) = 3 - 0.5 \times 10 = -2 \Rightarrow p = \frac{1}{1 + e^{2}} \approx 0.12
+\]</span></p>
+<ol start="4" type="a">
+<li><p>The logistic curve is an S-shaped curve that starts near 1 when price is low (e.g., close to $0), and decreases smoothly toward 0 as price increases.</p></li>
+<li><p>As the price increases toward 20 USD, the exponent in the model becomes more negative, and the probability <span class="math inline">\(p\)</span> approaches 0. Customers are highly unlikely to purchase at very high prices under this model.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-25" class="level3">
+<h3 class="anchored" data-anchor-id="problem-25">Problem 25</h3>
+<p>A company wants to understand how the price of a product affects the probability that a customer will purchase it. The following dataset shows simulated purchase behavior for 100 customers, where <span class="math inline">\(buy = 1\)</span> means the customer made a purchase and <span class="math inline">\(buy = 0\)</span> otherwise.</p>
+<ol type="a">
+<li>Fit a logistic regression model using <span class="math inline">\(buy ~ price\)</span>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>price <span class="op">=</span> np.random.uniform(<span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">100</span>)</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>log_odds <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> price <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>prob_buy <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> np.exp(<span class="op">-</span>log_odds))</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>buy <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, prob_buy)</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create DataFrame</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'price'</span>: price, <span class="st">'buy'</span>: buy})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="a">
+<li><p>Predict the probability of purchase when the price is $10.</p></li>
+<li><p>Plot the logistic regression curve and observed data points.</p></li>
+</ol>
+<details>
+<summary>
+<p>Show solutions</p>
+<ol type="a">
+<li></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit logistic regression model</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.glm(formula<span class="op">=</span><span class="st">'buy ~ price'</span>, data<span class="op">=</span>df,</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>                family<span class="op">=</span>sm.families.Binomial()).fit()</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:                    buy   No. Observations:                  100
+Model:                            GLM   Df Residuals:                       98
+Model Family:                Binomial   Df Model:                            1
+Link Function:                  Logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -35.867
+Date:                Fri, 30 May 2025   Deviance:                       71.734
+Time:                        07:53:50   Pearson chi2:                     72.1
+No. Iterations:                     6   Pseudo R-squ. (CS):             0.4151
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          z      P&gt;|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      2.6312      0.640      4.111      0.000       1.377       3.886
+price         -0.4299      0.087     -4.922      0.000      -0.601      -0.259
+==============================================================================</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict probability of purchase at price = 10</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>prediction <span class="op">=</span> model.predict(pd.DataFrame({<span class="st">'price'</span>: [<span class="dv">10</span>]}))</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prediction[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.15873234194196</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot points and logistic regression curve</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">'price'</span>, y<span class="op">=</span><span class="st">'buy'</span>, data<span class="op">=</span>df, alpha<span class="op">=</span><span class="fl">0.5</span>)<span class="op">;</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a smooth curve for predicted probabilities</span></span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>price_range <span class="op">=</span> np.linspace(df[<span class="st">'price'</span>].<span class="bu">min</span>(), df[<span class="st">'price'</span>].<span class="bu">max</span>(), <span class="dv">300</span>)<span class="op">;</span></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>prob_curve <span class="op">=</span> model.predict(pd.DataFrame({<span class="st">'price'</span>: price_range}))<span class="op">;</span></span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>plt.plot(price_range, prob_curve, color<span class="op">=</span><span class="st">'red'</span>, linewidth<span class="op">=</span><span class="fl">1.2</span>)<span class="op">;</span></span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Logistic Regression: Purchase vs Price'</span>)<span class="op">;</span></span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)<span class="op">;</span></span>
+<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Probability of Purchase'</span>)<span class="op">;</span></span>
+<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Interpretation:</p>
+<ul>
+<li>The negative coefficient for price implies that as price increases, the likelihood of purchase decreases.</li>
+<li>At price = 10, the predicted probability of purchase is around 0.05 (depending on fit). The red curve shows how this probability changes with price.</li>
+</ul>
+</summary></details>
+</section>
+<section id="problem-26" class="level3">
+<h3 class="anchored" data-anchor-id="problem-26">Problem 26</h3>
+<p>A researcher is studying how the number of hours a student studies and whether they attend a prep course affect their exam score. They collect data from 10 students and fit the following model:</p>
+<p><span class="math display">\[
+\text{score} = 55 + 5 \cdot \text{hours} + 8 \cdot \text{prep}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li>hours = number of hours studied</li>
+<li>prep = 1 if the student attended a prep course, 0 otherwise</li>
+<li>score = predicted exam score</li>
+</ul>
+<ol type="a">
+<li><p>Interpret the coefficient for hours.</p></li>
+<li><p>Interpret the coefficient for prep.</p></li>
+<li><p>Predict the score of a student who studied for 4 hours and attended the prep course.</p></li>
+<li><p>Predict the score of a student who studied for 4 hours and did not attend the prep course.</p></li>
+</ol>
+<details>
+<summary>
+Show results
+</summary>
+<ol type="a">
+<li><p>For every additional hour studied, the expected exam score increases by 5 points, holding prep course attendance constant.</p></li>
+<li><p>Students who attended the prep course are predicted to score 8 points higher than those who did not, for the same number of study hours.</p></li>
+<li><p>For a student with 4 hours and prep = 1:</p></li>
+</ol>
+<p><span class="math display">\[
+\text{score} = 55 + 5 \cdot 4 + 8 \cdot 1 = 55 + 20 + 8 = 83
+\]</span></p>
+<ol start="4" type="a">
+<li>For a student with 4 hours and prep = 0:</li>
+</ol>
+<p><span class="math display">\[
+\text{score} = 55 + 5 \cdot 4 + 8 \cdot 0 = 55 + 20 = 75
+\]</span></p>
+</details>
+</section>
+<section id="problem-27" class="level3">
+<h3 class="anchored" data-anchor-id="problem-27">Problem 27</h3>
+<p>A marketing analyst builds the following regression model to predict weekly sales (in $1000s) based on the amount spent on online ads and whether the store is in an urban location:</p>
+<p><span class="math display">\[
+\text{sales} = 20 + 3.5 \cdot \text{ad-spend} + 7 \cdot \text{urban}
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li>ad-spend = amount spent on online advertising in $1000s</li>
+<li>urban = 1 if the store is in an urban location, 0 otherwise</li>
+</ul>
+<ol type="a">
+<li><p>Interpret the coefficient for ad_spend.</p></li>
+<li><p>Interpret the coefficient for urban.</p></li>
+<li><p>Predict sales for a store that spends $2000 on ads and is in an urban location.</p></li>
+<li><p>Predict sales for a store with the same ad spend but in a non-urban location.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>Each additional $1000 in ad spending increases expected weekly sales by $3,500.</p></li>
+<li><p>Urban stores are expected to generate $7,000 more in sales, all else equal.</p></li>
+<li><p><span class="math inline">\(\text{sales} = 20 + 3.5 \cdot 2 + 7 \cdot 1 = 20 + 7 + 7 = 34\)</span> → $34,000</p></li>
+<li><p><span class="math inline">\(\text{sales} = 20 + 7 = 27\)</span> → $27,000</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-28" class="level3">
+<h3 class="anchored" data-anchor-id="problem-28">Problem 28</h3>
+<p>You are given a fitted model:</p>
+<p><span class="math display">\[
+\text{income} = 15000 + 2500 \cdot \text{education}
+\]</span></p>
+<p>Where <code>education</code> is years of schooling.</p>
+<p>You receive student-generated residual plots: a histogram of residuals, a QQ plot, and a scatterplot of residuals vs fitted values.</p>
+<ol type="a">
+<li><p>The histogram is left-skewed. What might this indicate?</p></li>
+<li><p>The residual vs fitted plot shows a funnel shape. What does that imply?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>Left-skewed histogram suggests residuals are not normally distributed, which in and of itself may not be a huge problem, but it at a certain magnitude a left skew also makes the distribution of residuals vary far from being symmetrical. Major left skewness can significantly affect the estimation by leading to a positive bias.</p></li>
+<li><p>Funnel shape implies heteroskedasticity; variance increases with predicted values.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-29" class="level3">
+<h3 class="anchored" data-anchor-id="problem-29">Problem 29</h3>
+<p>A model is fit to assess how advertising budget affects product demand:</p>
+<p><span class="math display">\[
+\text{demand} = 10 + 4 \cdot \text{budget} - 0.2 \cdot \text{budget}^2
+\]</span></p>
+<ol type="a">
+<li><p>Interpret the model.</p></li>
+<li><p>At what budget is demand maximized?</p></li>
+<li><p>Compute expected demand when budget = 5.</p></li>
+<li><p>Should a linear or quadratic model be preferred here, and why?</p></li>
+</ol>
+<p>Underneath is some r code for visualisation help</p>
+<details>
+<summary>
+Show solution
+</summary>
+<ol type="a">
+<li><p>Initial increases in budget raise demand, but at higher levels the negative squared term causes diminishing returns.</p></li>
+<li><p>Vertex of the parabola: <span class="math inline">\(x = \frac{-b}{2a} = \frac{-4}{2(-0.2)} = 10\)</span></p></li>
+</ol>
+<p>We treat this like any parabola.</p>
+<p><span class="math display">\[
+demand'=4-0.4\cdot budget=0 \quad \Rightarrow \quad budget=10
+\]</span> This is clearly a maximum when you consider that the squre term s negative.</p>
+<ol start="3" type="a">
+<li><p><span class="math inline">\(\text{demand} = 10 + 4(5) - 0.2(25) = 10 + 20 - 5 = 25\)</span></p></li>
+<li><p>Quadratic is better if diminishing returns are evident in data (verified via residual plots or model comparison).</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>budget <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="fl">20.5</span>, <span class="fl">0.5</span>)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>demand <span class="op">=</span> <span class="dv">10</span> <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> budget <span class="op">-</span> <span class="fl">0.2</span> <span class="op">*</span> budget<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="bu">len</span>(budget))</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'budget'</span>: budget, <span class="st">'demand'</span>: demand})</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear model</span></span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>model0 <span class="op">=</span> smf.ols(<span class="st">'demand ~ budget'</span>, data<span class="op">=</span>data).fit()</span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Linear Model Summary:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear Model Summary:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model0.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 demand   R-squared:                       0.000
+Model:                            OLS   Adj. R-squared:                 -0.025
+Method:                 Least Squares   F-statistic:                   0.01279
+Date:                Fri, 30 May 2025   Prob (F-statistic):              0.911
+Time:                        07:53:52   Log-Likelihood:                -135.36
+No. Observations:                  41   AIC:                             274.7
+Df Residuals:                      39   BIC:                             278.1
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     23.1001      2.066     11.181      0.000      18.921      27.279
+budget        -0.0201      0.178     -0.113      0.911      -0.380       0.340
+==============================================================================
+Omnibus:                        4.299   Durbin-Watson:                   0.093
+Prob(Omnibus):                  0.117   Jarque-Bera (JB):                2.974
+Skew:                          -0.495   Prob(JB):                        0.226
+Kurtosis:                       2.128   Cond. No.                         22.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quadratic model</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>model1 <span class="op">=</span> smf.ols(<span class="st">'demand ~ budget + I(budget**2)'</span>, data<span class="op">=</span>data).fit()</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Quadratic Model Summary:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Quadratic Model Summary:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model1.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 demand   R-squared:                       0.970
+Model:                            OLS   Adj. R-squared:                  0.969
+Method:                 Least Squares   F-statistic:                     622.6
+Date:                Fri, 30 May 2025   Prob (F-statistic):           9.08e-30
+Time:                        07:53:52   Log-Likelihood:                -63.211
+No. Observations:                  41   AIC:                             132.4
+Df Residuals:                      38   BIC:                             137.6
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==================================================================================
+                     coef    std err          t      P&gt;|t|      [0.025      0.975]
+----------------------------------------------------------------------------------
+Intercept          9.6512      0.524     18.402      0.000       8.589      10.713
+budget             4.1180      0.121     33.945      0.000       3.872       4.364
+I(budget ** 2)    -0.2069      0.006    -35.282      0.000      -0.219      -0.195
+==============================================================================
+Omnibus:                        0.548   Durbin-Watson:                   1.979
+Prob(Omnibus):                  0.760   Jarque-Bera (JB):                0.663
+Skew:                          -0.129   Prob(JB):                        0.718
+Kurtosis:                       2.432   Cond. No.                         532.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualize both models</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear model plot</span></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">'budget'</span>, y<span class="op">=</span><span class="st">'demand'</span>, data<span class="op">=</span>data,</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>           line_kws<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"blue"</span>},</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>           scatter_kws<span class="op">=</span>{<span class="st">"s"</span>: <span class="dv">40</span>, <span class="st">"alpha"</span>: <span class="fl">0.6</span>},</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>           ci<span class="op">=</span><span class="va">None</span>)<span class="op">;</span></span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Linear Model: Demand vs Budget'</span>)<span class="op">;</span></span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Budget'</span>)<span class="op">;</span></span>
+<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Demand'</span>)<span class="op">;</span></span>
+<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Quadratic model plot</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Need to manually generate the fitted curve</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'budget_squared'</span>] <span class="op">=</span> data[<span class="st">'budget'</span>] <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'fitted_quad'</span>] <span class="op">=</span> model1.predict(data[[<span class="st">'budget'</span>, <span class="st">'budget_squared'</span>]])</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>plt.figure()<span class="op">;</span></span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[<span class="st">'budget'</span>], data[<span class="st">'demand'</span>], alpha<span class="op">=</span><span class="fl">0.6</span>)<span class="op">;</span></span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>plt.plot(data[<span class="st">'budget'</span>], data[<span class="st">'fitted_quad'</span>], color<span class="op">=</span><span class="st">'red'</span>)<span class="op">;</span></span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Quadratic Model: Demand vs Budget'</span>)<span class="op">;</span></span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Budget'</span>)<span class="op">;</span></span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Demand'</span>)<span class="op">;</span></span>
+<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="5-exercises_files/figure-html/unnamed-chunk-18-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+</section>
+<section id="problem-30" class="level3">
+<h3 class="anchored" data-anchor-id="problem-30">Problem 30</h3>
+<p>You fit a model and check these diagnostics:</p>
+<ul>
+<li>Residuals show non-linear pattern in residuals vs fitted plot.</li>
+<li>Histogram of residuals is roughly normal.</li>
+<li>Residuals increase in spread with fitted values.</li>
+</ul>
+<ol type="a">
+<li><p>Which regression assumptions are violated?</p></li>
+<li><p>What could be done to address these?</p></li>
+<li><p>Would transforming variables help? Explain.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>Linearity and homoscedasticity assumptions are violated.</p></li>
+<li><p>Consider polynomial terms for non-linearity, and weighted least squares or transformations for heteroskedasticity.</p></li>
+<li><p>Yes log-transforming the response or predictors can stabilize variance or linearize relationships.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-31" class="level3">
+<h3 class="anchored" data-anchor-id="problem-31">Problem 31</h3>
+<p>You build two models:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate data</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.normal(size<span class="op">=</span>n)</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> np.random.normal(size<span class="op">=</span>n)</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.DataFrame({<span class="st">'x'</span>: x, <span class="st">'y'</span>: y})</span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-13"><a href="#cb70-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple linear model A</span></span>
+<span id="cb70-14"><a href="#cb70-14" aria-hidden="true" tabindex="-1"></a>model_a <span class="op">=</span> smf.ols(<span class="st">'y ~ x'</span>, data<span class="op">=</span>data).fit()</span>
+<span id="cb70-15"><a href="#cb70-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Model A: Simple Linear Regression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model A: Simple Linear Regression</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model_a.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.923
+Model:                            OLS   Adj. R-squared:                  0.923
+Method:                 Least Squares   F-statistic:                     1180.
+Date:                Fri, 30 May 2025   Prob (F-statistic):           1.84e-56
+Time:                        07:53:54   Log-Likelihood:                -138.83
+No. Observations:                 100   AIC:                             281.7
+Df Residuals:                      98   BIC:                             286.9
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     -0.0191      0.098     -0.195      0.846      -0.214       0.175
+x              2.9834      0.087     34.357      0.000       2.811       3.156
+==============================================================================
+Omnibus:                        5.027   Durbin-Watson:                   1.860
+Prob(Omnibus):                  0.081   Jarque-Bera (JB):                5.131
+Skew:                          -0.308   Prob(JB):                       0.0769
+Kurtosis:                       3.924   Cond. No.                         1.13
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model B: </span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually add polynomial terms up to degree 10</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> degree <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">11</span>):</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>    data[<span class="ss">f'x^</span><span class="sc">{</span>degree<span class="sc">}</span><span class="ss">'</span>] <span class="op">=</span> data[<span class="st">'x'</span>] <span class="op">**</span> degree</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Define predictor variables (x, x^2, ..., x^10)</span></span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data[[<span class="st">'x'</span>] <span class="op">+</span> [<span class="ss">f'x^</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">11</span>)]]</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)  <span class="co"># add intercept</span></span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model</span></span>
+<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.OLS(data[<span class="st">'y'</span>], X).fit()</span>
+<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary</span></span>
+<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.927
+Model:                            OLS   Adj. R-squared:                  0.919
+Method:                 Least Squares   F-statistic:                     113.8
+Date:                Fri, 30 May 2025   Prob (F-statistic):           2.94e-46
+Time:                        07:53:54   Log-Likelihood:                -136.05
+No. Observations:                 100   AIC:                             294.1
+Df Residuals:                      89   BIC:                             322.8
+Df Model:                          10                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.1046      0.233      0.448      0.655      -0.359       0.568
+x              3.1152      0.609      5.112      0.000       1.904       4.326
+x^2           -1.1750      1.118     -1.051      0.296      -3.396       1.046
+x^3            0.0469      1.210      0.039      0.969      -2.357       2.451
+x^4            1.5973      1.410      1.133      0.260      -1.204       4.398
+x^5           -0.1238      0.752     -0.165      0.870      -1.619       1.371
+x^6           -0.6898      0.655     -1.053      0.295      -1.991       0.612
+x^7            0.0312      0.178      0.175      0.861      -0.323       0.385
+x^8            0.1156      0.125      0.927      0.356      -0.132       0.363
+x^9           -0.0020      0.014     -0.139      0.890      -0.030       0.026
+x^10          -0.0065      0.008     -0.783      0.435      -0.023       0.010
+==============================================================================
+Omnibus:                        6.530   Durbin-Watson:                   1.946
+Prob(Omnibus):                  0.038   Jarque-Bera (JB):                7.138
+Skew:                          -0.382   Prob(JB):                       0.0282
+Kurtosis:                       4.062   Cond. No.                     6.89e+04
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 6.89e+04. This might indicate that there are
+strong multicollinearity or other numerical problems.</code></pre>
+</div>
+</div>
+<p>You test both on new data and Model A performs better.</p>
+<ol type="a">
+<li><p>Why might Model A outperform B despite having fewer predictors?</p></li>
+<li><p>What is overfitting?</p></li>
+<li><p>How does cross-validation help avoid it?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>Model B may have overfit noise in training data; simpler model generalizes better. Model A also has an innate advantage in that we prefer simpler models. By studyin R-squared and adjusted R-squared in both A and B we can tell that teh additional vairables don’t really help explain the realtionship.</p></li>
+<li><p>Overfitting: model captures noise rather than signal, reducing generalizability. The danger here is that if you can perfectly explain a sample, you may have been unlucky, and found effects that aren’t necessarily present in the entire population, no matter how rpresentative the sample.</p></li>
+<li><p>Cross-validation assesses performance on unseen data, discouraging overfitting.I.e., you validate a model by using ity on more than just teh data it was built on.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-32" class="level3">
+<h3 class="anchored" data-anchor-id="problem-32">Problem 32</h3>
+<p>A model is developed to predict house prices. Another researcher claims, “This model proves that number of bedrooms causes higher prices.”</p>
+<ol type="a">
+<li><p>Is this a valid conclusion?</p></li>
+<li><p>What’s the difference between prediction and causal inference?</p></li>
+<li><p>Under what conditions could we argue causation?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>No, correlation is not causation. Though the model sees that more bedrooms tend to be associated with higher prices, the model itself it is made as a forecast, it is not capable of making inferences on a causal relationship.</p></li>
+<li><p>Prediction focuses on accurate forecasts; explanation seeks underlying causal mechanisms.</p></li>
+<li><p>Causation requires random assignment or strong quasi-experimental design to eliminate confounding.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-33" class="level3">
+<h3 class="anchored" data-anchor-id="problem-33">Problem 33</h3>
+<p>Given: <span class="math inline">\(\text{score} = 50 + 2 \cdot \text{study_hours}\)</span> You calculate:</p>
+<ul>
+<li>95% confidence interval for mean score at 6 hours: (60, 64)</li>
+<li>95% prediction interval for individual score: (55, 69)</li>
+</ul>
+<ol type="a">
+<li><p>What do these intervals represent?</p></li>
+<li><p>Why is the prediction interval wider?</p></li>
+<li><p>If we wanted to reduce the width of both, what could help?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>CI gives a range for mean score of all students studying 6 hours; PI gives range for a new individual’s score.</p></li>
+<li><p>PI includes both model uncertainty and residual variability.</p></li>
+<li><p>Increasing sample size reduces standard errors, narrowing both intervals.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-34" class="level3">
+<h3 class="anchored" data-anchor-id="problem-34">Problem 34</h3>
+<p>You compare two models:</p>
+<ul>
+<li>Model 1: <span class="math inline">\(R^2=0.72\)</span></li>
+<li>Model 2: <span class="math inline">\(R^2=0.76\)</span></li>
+</ul>
+<ol type="a">
+<li><p>Can we conclude Model 2 is better?</p></li>
+<li><p>What’s a limitation of using R² alone?</p></li>
+<li><p>Suggest a better metric.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>Not necessarily; depends on context and number of predictors. The R-squared is quite similar, so that on it’s own can’t really tel the whole story.</p></li>
+<li><p><span class="math inline">\(R^2\)</span> can never decrease when adding more predictors, and this can be misleading. In theory, one could add a thousand predictors, all of whom barely increase the <span class="math inline">\(R^2\)</span>, but will in the end only help to overfit the model.</p></li>
+<li><p>There are different measures, like adjusted R-squared and AIC, both of whom punish adding explanatory variables that dont contribute.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-35" class="level3">
+<h3 class="anchored" data-anchor-id="problem-35">Problem 35</h3>
+<p>You include dummy variables for 4 regions: North, South, East, West.</p>
+<ol type="a">
+<li><p>What problem arises if all 4 are included in the regression model?</p></li>
+<li><p>How should this be handled?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>The model will have what we call perfect colinearity, which leads to the model not being able to estimate parameters due to linear dependence.</p></li>
+<li><p>Omit one region as reference category; remaining coefficients are interpreted relative to it. E.g. we take North as the base region, now all other dummies will display coefficients that indicate a score relative to north as a basis. (This is not common practice, but one can also omit the intercept <span class="math inline">\(\beta_0\)</span>, instead of a category)</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-36" class="level3">
+<h3 class="anchored" data-anchor-id="problem-36">Problem 36</h3>
+<p>A regression includes both “income” and “wealth”, which are highly correlated.</p>
+<ol type="a">
+<li><p>What is multicollinearity and how does it affect regression?</p></li>
+<li><p>How can it be detected?</p></li>
+<li><p>What might you do to resolve it?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>Multicollinearity inflates standard errors, making estimates unstable, and it comes from high correlation between several explanatory variables. Perfect multicolinearity comes into play when we have two or more perfectly correlated explanatory variables (height in feet and height in cm for instance)</p></li>
+<li><p>Check variance inflation factors (VIF) or the correlation matirx.</p></li>
+<li><p>Dropping one variable or combining both into one are common fixes.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-37" class="level3">
+<h3 class="anchored" data-anchor-id="problem-37">Problem 37</h3>
+<p>A regression of <span class="math inline">\(Y\)</span> on <span class="math inline">\(X\)</span> shows curvature. You try <span class="math inline">\(log(X)\)</span>:</p>
+<p><span class="math display">\[
+Y = \beta_0 + \beta_1 \log(X)
+\]</span></p>
+<ol type="a">
+<li><p>Why use this transformation?</p></li>
+<li><p>What does <span class="math inline">\(\beta_1\)</span> now represent?</p></li>
+<li><p>When might a log-log model be preferable?</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>To linearise exponential-like relationships. In essence, we can create a line best-fit line that much more clearly fits our data.</p></li>
+<li><p>For our model a roughly 1% positive change in <span class="math inline">\(X\)</span> will be reflected as a <span class="math inline">\(\b_1\)</span> cahnge in <span class="math inline">\(Y\)</span></p></li>
+<li><p>When both <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> span many orders of magnitude or show multiplicative effects, a log-log model may be appropriate.</p></li>
+</ol>
+</details>
+</section>
+<section id="problem-38" class="level3">
+<h3 class="anchored" data-anchor-id="problem-38">Problem 38</h3>
+<p>A model:</p>
+<p><span class="math display">\[
+\text{score} = 40 + 5 \cdot \text{study} + 10 \cdot \text{prep} + 4 \cdot \text{study} \cdot \text{prep}
+\]</span></p>
+<p>Where prep is 0 or 1.</p>
+<ol type="a">
+<li><p>What does the interaction term mean?</p></li>
+<li><p>Compute predicted scores for 4 hours of study with and without prep.</p></li>
+<li><p>Interpret the effect of study hours with and without prep.</p></li>
+</ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li><p>The Interaction term tells us that the effect study hours will have on the score, will also be affected by whether or not the students chooses to participate in the prep course.</p></li>
+<li></li>
+</ol>
+<ul>
+<li>With prep: <span class="math inline">\(40 + 5*4 + 10*1 + 4*4 = 40 + 20 + 10 + 16 = 86\)</span></li>
+<li>Without prep: <span class="math inline">\(40 + 5*4 = 60\)</span></li>
+</ul>
+<ol start="3" type="a">
+<li>Prep amplifies study’s effect, each hour contributes 9 points instead of 5, meaning that the prep has a much greater effect on further studying in this model.</li>
+</ol>
+</details></section>
 <section id="contingency-tables-problems" class="level2">
 <h2 class="anchored" data-anchor-id="contingency-tables-problems">Contingency tables problems</h2>
 <section id="problem-1-1" class="level3">
