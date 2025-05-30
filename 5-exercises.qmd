@@ -836,29 +836,6 @@ plt.ylabel('Count');
 plt.grid(True);
 plt.show();
 ```
-```{r}
-#| echo: false
-#| eval: false
-# Residuals vs Fitted
-ggplot(augmented, aes(.fitted, .resid)) +
-  geom_point() +
-  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
-  labs(title = "Residuals vs Fitted", x = "Fitted Values", y = "Residuals") +
-  theme_minimal()
-
-# Q-Q Plot
-ggplot(augmented, aes(sample = .std.resid)) +
-  stat_qq() +
-  stat_qq_line(color = "red") +
-  labs(title = "Normal Q-Q Plot", x = "Theoretical Quantiles", y = "Standardized Residuals") +
-  theme_minimal()
-
-# Histogram
-ggplot(augmented, aes(.resid)) +
-  geom_histogram(bins = 10, fill = "steelblue", color = "white") +
-  labs(title = "Histogram of Residuals", x = "Residuals", y = "Count") +
-  theme_minimal()
-```
 
 b)  For each plot, describe which regression assumption it assesses, and what pattern would indicate the assumption holds.
 
@@ -896,15 +873,41 @@ d)  From the summary it seems very clear that the intercept and slope are statis
 
 Simulate and fit the following model in R:
 
-```{r}
-x <- 1:100
-y <- 3*x + rnorm(100, sd = x/5)
-model <- lm(y ~ x)
-summary(model)
-plot(model$fitted.values, model$residuals)
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+
+# Simulate data
+np.random.seed(0)
+x = np.arange(1, 101)
+y = 3 * x + np.random.normal(scale=x / 5, size=100)
+
+# Create DataFrame
+df = pd.DataFrame({'x': x, 'y': y})
+
+# Fit linear model
+X = sm.add_constant(df['x'])  # Add intercept
+model = sm.OLS(df['y'], X).fit()
+
+# Print summary
+print(model.summary())
+
+# Residuals vs Fitted plot
+fitted = model.fittedvalues
+residuals = model.resid
+
+plt.scatter(fitted, residuals);
+plt.axhline(0, color='red', linestyle='dashed');
+plt.xlabel('Fitted Values');
+plt.ylabel('Residuals');
+plt.title('Residuals vs Fitted');
+plt.grid(True);
+plt.show();
 ```
 
-a)What does the residual plot suggest about the assumptions?
+a) What does the residual plot suggest about the assumptions?
 
 b)  Why is this a problem for inference?
 
@@ -945,13 +948,7 @@ print(model.summary())
 ```
 
 Note that with so few observations, Python will not calculate the Omnibus test.
-```{r}
-df <- data.frame(score = c(80, 85, 70, 90),
-                 hours = c(4,5,3,6),
-                 female = factor(c(0, 1, 0, 1)))
-model <- lm(score ~ hours + female, data = df)
-summary(model)
-```
+
 
 a)  Explain the meaning of each coefficient.
 
@@ -1065,17 +1062,7 @@ buy = np.random.binomial(1, prob_buy)
 # Create DataFrame
 df = pd.DataFrame({'price': price, 'buy': buy})
 ```
-```{r}
-#| eval: false
-#| echo: false
-## Use this to generate the necessary data
-set.seed(42)
-price <- runif(100, 1, 20)
-log_odds <- -0.5 * price + 3
-prob_buy <- 1 / (1 + exp(-log_odds))
-buy <- rbinom(100, 1, prob_buy)
-df <- data.frame(price, buy)
-```
+
 
 b)  Predict the probability of purchase when the price is \$10.
 
@@ -1355,25 +1342,7 @@ c)  Yes log-transforming the response or predictors can stabilize variance or li
 
 You build two models:
 
-```{r}
-#| echo: false
-#| eval: false
-# Simulate data
-set.seed(123)
-n <- 100
-x <- rnorm(n)
-y <- 3 * x + rnorm(n)
-data <- data.frame(x, y)
 
-# Model A: Simple linear
-model_a <- lm(y ~ x, data = data)
-summary(model_a)
-
-
-# Model B: Polynomial (y=x+x^2+...+x^10)
-model_b <- lm(y ~ poly(x, 10), data = data)
-summary(model_b)
-```
 
 
 ```{python}
