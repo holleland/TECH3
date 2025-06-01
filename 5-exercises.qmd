@@ -52,7 +52,7 @@ Expected table:
 c)  Now let's compute the test statistic
 
 $$
-\chi^2 = \frac{(30-35)^2}{35} + \frac{(20-15)^2}{15} + \frac{(40-35)^2}{35} + \frac{(10-15)^2}{15} = 7.62
+\chi^2 = \frac{(30-35)^2}{35} + \frac{(20-15)^2}{15} + \frac{(40-35)^2}{35} + \frac{(10-15)^2}{15} = 4.76
 $$
 
 d)  $df = (2−1)(2−1) = 1$, critical value is $\chi^2=3.84$. This critical value can be found in any $\chi^2$ table. We can also check in Python.
@@ -298,7 +298,7 @@ Chi-squared test returns statistic, df, and p-value. Interpretation depends on p
 
 ### Problem 8
 
-a)  Describe the distribution of a chi-squared variable with 4 degrees of freedom. (What are the mean and variance, can you find a general rule?)
+a)  Describe the distribution of a chi-squared variable with 4 degrees of freedom. (What are the mean and variance, can you find a general rule?).
 
 **Hint**: When $Y\sim\mathcal{N}(\mu, \sigma^2)$, we have that $E[Y^4]=3\sigma^4$
 
@@ -338,6 +338,11 @@ $$ Now we use that we have k identical distributions to get the variance of $X$
 $$
 Var[X]=\cdots=kVar[Z^2]=k*2=2k
 $$
+Since we know that $k=4$, we can then conclude on the expected value and variance of $X$
+
+$$
+E[X]=k=4, \quad Var[X]=2*k=2*4=8
+$$"
 
 b)  The chi-sqaured distribution, as we've just looked at in depth, comes from the sum of squares of independent standard normal variables.
 
@@ -570,7 +575,8 @@ $$
 
 ### Problem 14
 
-Simulate two variables and visualize correlation. Example below
+Simulate two variables and visualize correlation. What kind of correlation do you see? (e.g. Weak negative, strong positive).
+Example below.
 
 ```{python, "prob14q"}
 import numpy as np
@@ -696,7 +702,8 @@ b)  Why are randomized experiments used?
 <summary>Show solutions</summary>
 
 a)  Reasonable examples:\
-b)  Ice cream sales and drowning could very easily seem positively correlated. When ice cream sales go up we see more drowning, but does that mean ice cream sales lead to drowning? Seems unlikely. Let's consider, **when**, both are at their peak. In the summer more people go swimming, and as such more accidents can happen, and this also happens to be the exact time of year when ice cream sales peak as well, due to heat. The scorching sun leads to higher ice cream sales **and** far more bathing (and consequently accidents).
+
+i)  Ice cream sales and drowning could very easily seem positively correlated. When ice cream sales go up we see more drowning, but does that mean ice cream sales lead to drowning? Seems unlikely. Let's consider, **when**, both are at their peak. In the summer more people go swimming, and as such more accidents can happen, and this also happens to be the exact time of year when ice cream sales peak as well, due to heat. The scorching sun leads to higher ice cream sales **and** far more bathing (and consequently accidents).
 
 <!-- -->
 
@@ -734,7 +741,7 @@ Random assignment in experiments let's us account for both the confounders we ar
 
 ### Problem 19
 
-Given: X = (1, 2, 3), Y = (2, 2.5, 4)
+Given: $X = (1, 2, 3)$ and $Y = (2, 2.5, 4).$
 
 a)  Estimate intercept and slope.
 
@@ -744,7 +751,7 @@ b)  Predict Y when X = 4.
 
 <summary>Show solutions</summary>
 
-a)  We essentially treat the best fit line in a linear regression like we would any linear function, where we have a set formula for the slope, $hat{\beta_1}=\frac{\hat{Cov(X,Y)}}{S^2_X}$, and $\hat{\beta_0}=\bar{Y}-\beta_1\bar{X}$, and gives the intercept.
+a)  We essentially treat the best fit line in a linear regression like we would any linear function, where we have a set formula for the slope, $\hat{\beta}_1=\frac{\hat{Cov(X,Y)}}{S^2_X}$, and $\hat{\beta}_0=\bar{Y}-\hat{\beta}_1\bar{X}$, and gives the intercept.
 
 We can start by finding the averages and for $X$ and $Y$, before we compute variance and covariacne.
 
@@ -752,7 +759,7 @@ $$
 \begin{align*}
 \bar{X}=\frac{1+2+3}{3}=2, \quad \bar{Y}=\frac{2+5/2+4}{3}=\frac{17}{6} \\
 S^2_X=\frac{1}{2}\left((1-2)^2+(2-2)^2+(3-2)^2\right)=1 \\
-\hat{Cov(X,Y)}=\frac{1}{2}(1*\frac{5}{6}+0+1*\frac{7}{6})=\frac{1}{2}\frac{12}{6}=1
+\widehat{Cov}(X,Y)=\frac{1}{2}(1*\frac{5}{6}+0+1*\frac{7}{6})=\frac{1}{2}\frac{12}{6}=1
 \end{align*}
 $$ Now we can compute $\hat{\beta_1}$ and $\hat{\beta_0}$
 
@@ -764,7 +771,7 @@ b)  Given our estimated model we have
 
 $$
 Y_i=\frac{5}{6}+X_i+\varepsilon
-$$ What we would like now is the conditional expected value of $Y$ when $X=4$. Recall recall that $E[\varepsilon]=0$, and $\varepislon$ is also independent of $X$, meaning $E[\varepsilon|X]=E[\varepsilon]$
+$$ What we would like now is the conditional expected value of $Y$ when $X=4$. Recall recall that $E[\varepsilon]=0$, and $\varepsilon$ is also independent of $X$, meaning $E[\varepsilon|X]=E[\varepsilon]$
 
 We then get
 
@@ -1071,8 +1078,7 @@ c)  Plot the logistic regression curve and observed data points.
 <details>
 
 <summary>
-
-Show solutions</summmary>
+Show solutions</summary>
 
 a) 
 ```{python}
@@ -1111,10 +1117,7 @@ plt.show();
 ```
 
 
-Interpretation:
-
--   The negative coefficient for price implies that as price increases, the likelihood of purchase decreases.
--   At price = 10, the predicted probability of purchase is around 0.05 (depending on fit). The red curve shows how this probability changes with price.
+The negative coefficient for price implies that as price increases, the likelihood of purchase decreases.
 
 </details>
 
@@ -1584,6 +1587,67 @@ c)  Prep amplifies study's effect, each hour contributes 9 points instead of 5, 
 
 Does the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the $\chi^2$ test statistic and obtain the p-value.
 
+<details>
+
+<summary>Show solutions</summary>
+
+$H_0: $ Gender and foot asymmetry are independent. 
+
+$H_A: $ Gender and foot asymmetry are dependent. 
+
+| Sex   | L\>R | L=R | L\<R | Total |
+|-------|------|-----|------|-------|
+| Men   | 2    | 10  | 28   | 40    |
+| Women | 55   | 18  | 14   | 87    |
+| Total | 57   | 28  | 42   | 127   |
+
+Expected values under the null hypothesis:
+
+$e_{ij} = \frac{o_{\cdot j}o_{i\cdot}}{n}$, 
+e.g. $e_{22}= \frac{28\cdot 87}{127}=19.18$.
+
+| Sex   | L\>R | L=R | L\<R | Total |
+|-------|------|-----|------|-------|
+| Men   | 17.95| 8.82| 13.23| 40    |
+| Women | 39.05|19.18| 28.77| 87    |
+| Total | 57   | 28  | 42   | 127   |
+
+Test statistic: 
+$$\chi^2 = \sum_{i=1}^2\sum_{j=1}^3 \frac{(o_{ij}-e_{ij})^2}{e_{ij}}=\frac{(2-17.95)^2}{17.95}+\cdots + \frac{(14-28.77)^2}{28.77}=45.00$$
+
+p-value: 
+```{python}
+from scipy import stats
+p = 1-stats.chi2.cdf(45.00, df = (3-1)*(2-1))
+print(f"P-value: {p:.4f}")
+```
+p-value is zero. This indicates strong evidence against the null hypothesis. We would conclude that foot asymmetry depends on gender. 
+
+
+```{python}
+import numpy as np
+from scipy.stats import chi2_contingency
+
+# Construct the contingency table
+# Rows: Men, Women
+# Columns: L > R, L = R, L < R
+table = np.array([
+    [2, 10, 28],
+    [55, 18, 14]
+])
+
+# Perform the chi-square test of independence
+chi2, p, dof, expected = chi2_contingency(table, correction = False)
+
+# Display results
+print(f"Chi-square statistic: {chi2:.4f}")
+print(f"Degrees of freedom: {dof}")
+print(f"P-value: {p:.4f}")
+print("Expected frequencies:")
+print(expected)
+```
+</details>
+
 ### Problem 2
 
 A company wants to assess whether customer response (Yes/No) to a marketing campaign depends on the platform used (Email, SMS, Social Media).
@@ -1599,11 +1663,81 @@ c)  Calculate the chi-squared test statistic.
 d)  Determine the degrees of freedom.
 e)  At a 5% significance level, is there evidence to suggest the response rate depends on the platform?
 
+<details>
+<summary>Show solutions</summary>
+a) 
+
+$H_0$: Platform used and response are independent.
+
+$H_0$: Platform used and response are dependent.
+
+b) Calculating row and columns sums
+| Response | Email | SMS | Social Media | Total |
+|----------|-------|-----|--------------|-------|
+| Yes      | 120   | 45  | 80           |245    |
+| No       | 180   | 105 | 120          |405    |
+|Total     | 300   | 150 | 200          |650    |
+
+Expected values under the null hypothesis:
+
+$e_{ij} = \frac{o_{\cdot j}o_{i\cdot}}{n}$, 
+e.g. $e_{22}= \frac{150\cdot 405}{650}=19.18$.
+
+| Response | Email | SMS | Social Media | Total |
+|----------|-------|-----|--------------|-------|
+| Yes      |113.08 |56.54|  75.38       |245    |
+| No       | 186.92|93.46| 124.62       |405    |
+|Total     | 300   | 150 | 200          |650    |
+
+
+c) Test statistic: 
+$$\chi^2 = \sum_{i=1}^2\sum_{j=1}^3 \frac{(o_{ij}-e_{ij})^2}{e_{ij}}=\frac{(120-113.08)^2}{113.08}+\cdots + \frac{(120-124.62)^2}{124.62}=4.91$$
+
+d) Degrees of freedom is $$(\text{number of rows} -1)\times(\text{number of columns} -1) = (2-1)\cdot (3-1)=2.$$
+
+e) We find the p-value: 
+```{python}
+from scipy.stats import chi2
+p = 1-chi2.cdf(4.91, df = 2)
+print(f"P-value: {p:.4f}")
+```
+Since p-value > 5\%, we do not reject the null hypothesis. There is not sufficient evidence to suggest that response is dependent on platform used. 
+
+```{python}
+import numpy as np
+from scipy.stats import chi2_contingency
+
+# Construct the contingency table
+# Rows: Yes, No
+# Columns: Email, SMS, Social Media
+table = np.array([
+    [120, 45, 80],
+    [180, 105, 120]
+])
+
+# Perform the chi-square test of independence
+chi2, p, dof, expected = chi2_contingency(table, correction = False)
+
+# Display results
+print(f"Chi-square statistic: {chi2:.4f}")
+print(f"Degrees of freedom: {dof}")
+print(f"P-value: {p:.4f}")
+print("Expected frequencies:")
+print(expected)
+
+```
+
+</details>
+
 ### Problem 3
 
 The Norwegian Labour and Welfare Administration (NAV) organizes online job application workshops on Teams. The course responsible has noticed that except for himself, the attendees that have their camera on during the course is mostly the older participants. He wonders if there is a relationship between participants having camera on and participant's age group? He therefore takes a screenshot of the meeting (that he deletes afterwards, of course) and counts the number of faces he sees for the different ages. The results are given in the table below. Perform a chi-squared test to answer this question, including setting up the hypothesis, finding the p-value and making your conclusion. Remember to settle on a significance level first.
 
-\|Camera on\| 18–35\| 36–53\| 54-70\| Total\| \|Yes\| 4\| 3\| 20\| 27\| No \|20\| 13\| 39\| 72\| Total \|24\| 16\| 59 \|99\|
+|Camera on| 18–35| 36–53| 54-70| Total| 
+|---------|------|------|------|------|
+|Yes      |     4|     3|    20|    27| 
+|No       |    20|    13|    39|    72| 
+|Total    |    24|    16|   59 |    99|
 
 Is there a Simpson's paradox here?
 
@@ -1616,3 +1750,68 @@ rowSums(tst)/99
 colSums(tst)/99
 ```
 
+<details>
+<summary>Show solutions</summary>
+
+The course responsible just wants to test out a curiousity, and can set a relatively high significance level. Let's say $\alpha = 10\%$. 
+
+$H_0:$ Age group and whether a person has their camera on are independent variables.
+
+$H_A:$ Age group and whether a person has their camera on are dependent variables.
+
+
+Expected values under the null hypothesis:
+
+$e_{ij} = \frac{o_{\cdot j}o_{i\cdot}}{n}$, 
+e.g. $e_{11}= \frac{24\cdot 27}{99}=6.54$.
+
+|Camera on| 18–35| 36–53| 54-70| Total| 
+|---------|------|------|------|------|
+|Yes      | 6.54 |  4.36| 16.1 |    27| 
+|No       | 17.5 |  11.6| 42.9 |    72| 
+|Total    |    24|    16|   59 |    99|
+
+Calculate test statistic: 
+
+$$\chi^2 = \sum_{i=1}^2\sum_{j=1}^3 \frac{(o_{ij}-e_{ij})^2}{e_{ij}}=\frac{(4-6.54)^2}{6.54}+\cdots + \frac{(39-42.9)^2}{42.9}=3.25$$
+P-value: $P(\chi^2 > 3.25)=1-P(\chi^2 \le3.25 )= 0.197$
+```{python}
+from scipy.stats import chi2
+p = 1-chi2.cdf(3.25, df = 2)
+print(f"p-value: {p:.3f}")
+```
+Since the p-value is above $\alpha = 0.1$, we fail to reject the null hypothesis. There is not sufficient evidence to suggest that age group and whether they have their camera on is dependent variables. 
+
+```{python}
+import numpy as np
+from scipy.stats import chi2_contingency
+
+# Contingency table: Rows = Camera on (Yes/No), Columns = Age groups
+table = np.array([
+    [4, 3, 20],
+    [20, 13, 39]
+])
+
+# Perform the chi-square test of independence
+chi2, p, dof, expected = chi2_contingency(table, correction = False)
+
+# Display results
+print(f"Chi-square statistic: {chi2:.4f}")
+print(f"Degrees of freedom: {dof}")
+print(f"P-value: {p:.4f}")
+print("Expected frequencies:")
+print(expected)
+
+```
+
+Is there a Simpson's paradox here? For that, we calculate the rates of "camera on" for each age group:
+
+
+|Age group| 18–35| 36–53| 54-70| Total| 
+|---------|------|------|------|------|
+|Rate of camera on    |    16.7\%|    18.8\%|   33.9\% |    27.3\%|
+|Observations| 24|    16|   59 |    99|
+
+The rate of camera on increases with age group. For the number of observations, we also see that more participants are in the elder group. The proportion of age group 54-70 among camera users is 20/27 = 74.1\%, and for the "No" group 39/72=54.2\%. Hence, the "Yes" group has disproportionately more older people, who are more likely to use the camera. There is no reversal of trends between the subgroups and the aggregate — rather, the aggregate reflects the within-group pattern (camera usage increases with age). Therefore, there is **no Simpson's paradox** here. 
+
+</details>

@@ -715,7 +715,7 @@ Show solution
 <li>Now let’s compute the test statistic</li>
 </ol>
 <p><span class="math display">\[
-\chi^2 = \frac{(30-35)^2}{35} + \frac{(20-15)^2}{15} + \frac{(40-35)^2}{35} + \frac{(10-15)^2}{15} = 7.62
+\chi^2 = \frac{(30-35)^2}{35} + \frac{(20-15)^2}{15} + \frac{(40-35)^2}{35} + \frac{(10-15)^2}{15} = 4.76
 \]</span></p>
 <ol start="4" type="a">
 <li><span class="math inline">\(df = (2−1)(2−1) = 1\)</span>, critical value is <span class="math inline">\(\chi^2=3.84\)</span>. This critical value can be found in any <span class="math inline">\(\chi^2\)</span> table. We can also check in Python.</li>
@@ -1002,7 +1002,7 @@ Show solutions
 <section id="problem-8" class="level3">
 <h3 class="anchored" data-anchor-id="problem-8">Problem 8</h3>
 <ol type="a">
-<li>Describe the distribution of a chi-squared variable with 4 degrees of freedom. (What are the mean and variance, can you find a general rule?)</li>
+<li>Describe the distribution of a chi-squared variable with 4 degrees of freedom. (What are the mean and variance, can you find a general rule?).</li>
 </ol>
 <p><strong>Hint</strong>: When <span class="math inline">\(Y\sim\mathcal{N}(\mu, \sigma^2)\)</span>, we have that <span class="math inline">\(E[Y^4]=3\sigma^4\)</span></p>
 <ol start="2" type="a">
@@ -1035,7 +1035,10 @@ Var[X]=Var\left[\sum^k_{i=1}Z^2_i\right]=\sum^k_{i=1}Var[Z_i^2]
 Var[Z^2]=3-1=2
 \]</span> Now we use that we have k identical distributions to get the variance of <span class="math inline">\(X\)</span> <span class="math display">\[
 Var[X]=\cdots=kVar[Z^2]=k*2=2k
-\]</span></p>
+\]</span> Since we know that <span class="math inline">\(k=4\)</span>, we can then conclude on the expected value and variance of <span class="math inline">\(X\)</span></p>
+<p><span class="math display">\[
+E[X]=k=4, \quad Var[X]=2*k=2*4=8
+\]</span>”</p>
 <ol start="2" type="a">
 <li>The chi-sqaured distribution, as we’ve just looked at in depth, comes from the sum of squares of independent standard normal variables.</li>
 </ol>
@@ -1216,7 +1219,7 @@ r_{XY}=\frac{3/2}{\sqrt{7/3}}=\approx 0.98
 </section>
 <section id="problem-14" class="level3">
 <h3 class="anchored" data-anchor-id="problem-14">Problem 14</h3>
-<p>Simulate two variables and visualize correlation. Example below</p>
+<p>Simulate two variables and visualize correlation. What kind of correlation do you see? (e.g.&nbsp;Weak negative, strong positive). Example below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1383,9 +1386,9 @@ t = \frac{0.986 \sqrt{12 - 2}}{\sqrt{1 - 0.986^2}} = \frac{0.986 \cdot \sqrt{10}
 Show solutions
 </summary>
 <ol type="a">
-<li>Reasonable examples:<br>
-</li>
-<li>Ice cream sales and drowning could very easily seem positively correlated. When ice cream sales go up we see more drowning, but does that mean ice cream sales lead to drowning? Seems unlikely. Let’s consider, <strong>when</strong>, both are at their peak. In the summer more people go swimming, and as such more accidents can happen, and this also happens to be the exact time of year when ice cream sales peak as well, due to heat. The scorching sun leads to higher ice cream sales <strong>and</strong> far more bathing (and consequently accidents).</li>
+<li><p>Reasonable examples:<br>
+</p></li>
+<li><p>Ice cream sales and drowning could very easily seem positively correlated. When ice cream sales go up we see more drowning, but does that mean ice cream sales lead to drowning? Seems unlikely. Let’s consider, <strong>when</strong>, both are at their peak. In the summer more people go swimming, and as such more accidents can happen, and this also happens to be the exact time of year when ice cream sales peak as well, due to heat. The scorching sun leads to higher ice cream sales <strong>and</strong> far more bathing (and consequently accidents).</p></li>
 </ol>
 <!-- -->
 <ol start="2" type="i">
@@ -1419,7 +1422,7 @@ Show solution
 </details></section>
 <section id="problem-19" class="level3">
 <h3 class="anchored" data-anchor-id="problem-19">Problem 19</h3>
-<p>Given: X = (1, 2, 3), Y = (2, 2.5, 4)</p>
+<p>Given: <span class="math inline">\(X = (1, 2, 3)\)</span> and <span class="math inline">\(Y = (2, 2.5, 4).\)</span></p>
 <ol type="a">
 <li><p>Estimate intercept and slope.</p></li>
 <li><p>Predict Y when X = 4.</p></li>
@@ -1429,14 +1432,14 @@ Show solution
 Show solutions
 </summary>
 <ol type="a">
-<li>We essentially treat the best fit line in a linear regression like we would any linear function, where we have a set formula for the slope, <span class="math inline">\(hat{\beta_1}=\frac{\hat{Cov(X,Y)}}{S^2_X}\)</span>, and <span class="math inline">\(\hat{\beta_0}=\bar{Y}-\beta_1\bar{X}\)</span>, and gives the intercept.</li>
+<li>We essentially treat the best fit line in a linear regression like we would any linear function, where we have a set formula for the slope, <span class="math inline">\(\hat{\beta}_1=\frac{\hat{Cov(X,Y)}}{S^2_X}\)</span>, and <span class="math inline">\(\hat{\beta}_0=\bar{Y}-\hat{\beta}_1\bar{X}\)</span>, and gives the intercept.</li>
 </ol>
 <p>We can start by finding the averages and for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, before we compute variance and covariacne.</p>
 <p><span class="math display">\[
 \begin{align*}
 \bar{X}=\frac{1+2+3}{3}=2, \quad \bar{Y}=\frac{2+5/2+4}{3}=\frac{17}{6} \\
 S^2_X=\frac{1}{2}\left((1-2)^2+(2-2)^2+(3-2)^2\right)=1 \\
-\hat{Cov(X,Y)}=\frac{1}{2}(1*\frac{5}{6}+0+1*\frac{7}{6})=\frac{1}{2}\frac{12}{6}=1
+\widehat{Cov}(X,Y)=\frac{1}{2}(1*\frac{5}{6}+0+1*\frac{7}{6})=\frac{1}{2}\frac{12}{6}=1
 \end{align*}
 \]</span> Now we can compute <span class="math inline">\(\hat{\beta_1}\)</span> and <span class="math inline">\(\hat{\beta_0}\)</span></p>
 <p><span class="math display">\[
@@ -1447,7 +1450,7 @@ S^2_X=\frac{1}{2}\left((1-2)^2+(2-2)^2+(3-2)^2\right)=1 \\
 </ol>
 <p><span class="math display">\[
 Y_i=\frac{5}{6}+X_i+\varepsilon
-\]</span> What we would like now is the conditional expected value of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X=4\)</span>. Recall recall that <span class="math inline">\(E[\varepsilon]=0\)</span>, and <span class="math inline">\(\varepislon\)</span> is also independent of <span class="math inline">\(X\)</span>, meaning <span class="math inline">\(E[\varepsilon|X]=E[\varepsilon]\)</span></p>
+\]</span> What we would like now is the conditional expected value of <span class="math inline">\(Y\)</span> when <span class="math inline">\(X=4\)</span>. Recall recall that <span class="math inline">\(E[\varepsilon]=0\)</span>, and <span class="math inline">\(\varepsilon\)</span> is also independent of <span class="math inline">\(X\)</span>, meaning <span class="math inline">\(E[\varepsilon|X]=E[\varepsilon]\)</span></p>
 <p>We then get</p>
 <p><span class="math display">\[
 E[Y|X=4]=E\left[\frac{5}{6}+X_i+\varepsilon|X=4\right]=\frac{5}{6}+E[X_i|X=4]+E[\varepsilon]=\frac{5}{6}+4=\frac{29}{6}
@@ -1480,8 +1483,8 @@ E[Y|X=4]=E\left[\frac{5}{6}+X_i+\varepsilon|X=4\right]=\frac{5}{6}+E[X_i|X=4]+E[
 Dep. Variable:                    mpg   R-squared:                       0.753
 Model:                            OLS   Adj. R-squared:                  0.745
 Method:                 Least Squares   F-statistic:                     91.38
-Date:                Fri, 30 May 2025   Prob (F-statistic):           1.29e-10
-Time:                        08:46:53   Log-Likelihood:                -80.015
+Date:                Sun, 01 Jun 2025   Prob (F-statistic):           1.29e-10
+Time:                        12:22:36   Log-Likelihood:                -80.015
 No. Observations:                  32   AIC:                             164.0
 Df Residuals:                      30   BIC:                             167.0
 Df Model:                           1                                         
@@ -1624,8 +1627,8 @@ Show solutions
 Dep. Variable:                      y   R-squared:                       0.985
 Model:                            OLS   Adj. R-squared:                  0.985
 Method:                 Least Squares   F-statistic:                     6614.
-Date:                Fri, 30 May 2025   Prob (F-statistic):           9.19e-92
-Time:                        08:46:56   Log-Likelihood:                -379.15
+Date:                Sun, 01 Jun 2025   Prob (F-statistic):           9.19e-92
+Time:                        12:22:38   Log-Likelihood:                -379.15
 No. Observations:                 100   AIC:                             762.3
 Df Residuals:                      98   BIC:                             767.5
 Df Model:                           1                                         
@@ -1707,8 +1710,8 @@ Show solutions
 Dep. Variable:                  score   R-squared:                       0.971
 Model:                            OLS   Adj. R-squared:                  0.914
 Method:                 Least Squares   F-statistic:                     17.00
-Date:                Fri, 30 May 2025   Prob (F-statistic):              0.169
-Time:                        08:46:58   Log-Likelihood:                -6.5683
+Date:                Sun, 01 Jun 2025   Prob (F-statistic):              0.169
+Time:                        12:22:39   Log-Likelihood:                -6.5683
 No. Observations:                   4   AIC:                             19.14
 Df Residuals:                       1   BIC:                             17.30
 Df Model:                           2                                         
@@ -1838,7 +1841,8 @@ Show solutions
 </ol>
 <details>
 <summary>
-<p>Show solutions</p>
+Show solutions
+</summary>
 <ol type="a">
 <li></li>
 </ol>
@@ -1856,8 +1860,8 @@ Model:                            GLM   Df Residuals:                       98
 Model Family:                Binomial   Df Model:                            1
 Link Function:                  Logit   Scale:                          1.0000
 Method:                          IRLS   Log-Likelihood:                -35.867
-Date:                Fri, 30 May 2025   Deviance:                       71.734
-Time:                        08:46:59   Pearson chi2:                     72.1
+Date:                Sun, 01 Jun 2025   Deviance:                       71.734
+Time:                        12:22:40   Pearson chi2:                     72.1
 No. Iterations:                     6   Pseudo R-squ. (CS):             0.4151
 Covariance Type:            nonrobust                                         
 ==============================================================================
@@ -1908,12 +1912,8 @@ price         -0.4299      0.087     -4.922      0.000      -0.601      -0.259
 </div>
 </div>
 </div>
-<p>Interpretation:</p>
-<ul>
-<li>The negative coefficient for price implies that as price increases, the likelihood of purchase decreases.</li>
-<li>At price = 10, the predicted probability of purchase is around 0.05 (depending on fit). The red curve shows how this probability changes with price.</li>
-</ul>
-</summary></details>
+<p>The negative coefficient for price implies that as price increases, the likelihood of purchase decreases.</p>
+</details>
 </section>
 <section id="problem-26" class="level3">
 <h3 class="anchored" data-anchor-id="problem-26">Problem 26</h3>
@@ -2058,8 +2058,8 @@ demand'=4-0.4\cdot budget=0 \quad \Rightarrow \quad budget=10
 Dep. Variable:                 demand   R-squared:                       0.000
 Model:                            OLS   Adj. R-squared:                 -0.025
 Method:                 Least Squares   F-statistic:                   0.01279
-Date:                Fri, 30 May 2025   Prob (F-statistic):              0.911
-Time:                        08:47:02   Log-Likelihood:                -135.36
+Date:                Sun, 01 Jun 2025   Prob (F-statistic):              0.911
+Time:                        12:22:43   Log-Likelihood:                -135.36
 No. Observations:                  41   AIC:                             274.7
 Df Residuals:                      39   BIC:                             278.1
 Df Model:                           1                                         
@@ -2093,8 +2093,8 @@ Quadratic Model Summary:</code></pre>
 Dep. Variable:                 demand   R-squared:                       0.970
 Model:                            OLS   Adj. R-squared:                  0.969
 Method:                 Least Squares   F-statistic:                     622.6
-Date:                Fri, 30 May 2025   Prob (F-statistic):           9.08e-30
-Time:                        08:47:02   Log-Likelihood:                -63.211
+Date:                Sun, 01 Jun 2025   Prob (F-statistic):           9.08e-30
+Time:                        12:22:43   Log-Likelihood:                -63.211
 No. Observations:                  41   AIC:                             132.4
 Df Residuals:                      38   BIC:                             137.6
 Df Model:                           2                                         
@@ -2211,8 +2211,8 @@ Show solutions
 Dep. Variable:                      y   R-squared:                       0.923
 Model:                            OLS   Adj. R-squared:                  0.923
 Method:                 Least Squares   F-statistic:                     1180.
-Date:                Fri, 30 May 2025   Prob (F-statistic):           1.84e-56
-Time:                        08:47:04   Log-Likelihood:                -138.83
+Date:                Sun, 01 Jun 2025   Prob (F-statistic):           1.84e-56
+Time:                        12:22:45   Log-Likelihood:                -138.83
 No. Observations:                 100   AIC:                             281.7
 Df Residuals:                      98   BIC:                             286.9
 Df Model:                           1                                         
@@ -2252,8 +2252,8 @@ Notes:
 Dep. Variable:                      y   R-squared:                       0.927
 Model:                            OLS   Adj. R-squared:                  0.919
 Method:                 Least Squares   F-statistic:                     113.8
-Date:                Fri, 30 May 2025   Prob (F-statistic):           2.94e-46
-Time:                        08:47:04   Log-Likelihood:                -136.05
+Date:                Sun, 01 Jun 2025   Prob (F-statistic):           2.94e-46
+Time:                        12:22:45   Log-Likelihood:                -136.05
 No. Observations:                 100   AIC:                             294.1
 Df Residuals:                      89   BIC:                             322.8
 Df Model:                          10                                         
@@ -2486,6 +2486,132 @@ Show solutions
 </tbody>
 </table>
 <p>Does the data indicate that gender has a strong effect on the development of foot asymmetry? Specify the null- and alternative hypothesis, compute the <span class="math inline">\(\chi^2\)</span> test statistic and obtain the p-value.</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>$H_0: $ Gender and foot asymmetry are independent.</p>
+<p>$H_A: $ Gender and foot asymmetry are dependent.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sex</th>
+<th>L&gt;R</th>
+<th>L=R</th>
+<th>L&lt;R</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Men</td>
+<td>2</td>
+<td>10</td>
+<td>28</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td>Women</td>
+<td>55</td>
+<td>18</td>
+<td>14</td>
+<td>87</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>57</td>
+<td>28</td>
+<td>42</td>
+<td>127</td>
+</tr>
+</tbody>
+</table>
+<p>Expected values under the null hypothesis:</p>
+<p><span class="math inline">\(e_{ij} = \frac{o_{\cdot j}o_{i\cdot}}{n}\)</span>, e.g.&nbsp;<span class="math inline">\(e_{22}= \frac{28\cdot 87}{127}=19.18\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Sex</th>
+<th>L&gt;R</th>
+<th>L=R</th>
+<th>L&lt;R</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Men</td>
+<td>17.95</td>
+<td>8.82</td>
+<td>13.23</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td>Women</td>
+<td>39.05</td>
+<td>19.18</td>
+<td>28.77</td>
+<td>87</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>57</td>
+<td>28</td>
+<td>42</td>
+<td>127</td>
+</tr>
+</tbody>
+</table>
+<p>Test statistic: <span class="math display">\[\chi^2 = \sum_{i=1}^2\sum_{j=1}^3 \frac{(o_{ij}-e_{ij})^2}{e_{ij}}=\frac{(2-17.95)^2}{17.95}+\cdots + \frac{(14-28.77)^2}{28.77}=45.00\]</span></p>
+<p>p-value:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>stats.chi2.cdf(<span class="fl">45.00</span>, df <span class="op">=</span> (<span class="dv">3</span><span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="dv">2</span><span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>p<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value: 0.0000</code></pre>
+</div>
+</div>
+<p>p-value is zero. This indicates strong evidence against the null hypothesis. We would conclude that foot asymmetry depends on gender.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2_contingency</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct the contingency table</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Rows: Men, Women</span></span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Columns: L &gt; R, L = R, L &lt; R</span></span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> np.array([</span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">28</span>],</span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">55</span>, <span class="dv">18</span>, <span class="dv">14</span>]</span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the chi-square test of independence</span></span>
+<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>chi2, p, dof, expected <span class="op">=</span> chi2_contingency(table, correction <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb73-16"><a href="#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Chi-square statistic: </span><span class="sc">{</span>chi2<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chi-square statistic: 45.0029</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Degrees of freedom: </span><span class="sc">{</span>dof<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Degrees of freedom: 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>p<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value: 0.0000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Expected frequencies:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected frequencies:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[17.95275591  8.81889764 13.22834646]
+ [39.04724409 19.18110236 28.77165354]]</code></pre>
+</div>
+</div>
+</details>
 </section>
 <section id="problem-2-1" class="level3">
 <h3 class="anchored" data-anchor-id="problem-2-1">Problem 2</h3>
@@ -2521,12 +2647,266 @@ Show solutions
 <li>Determine the degrees of freedom.</li>
 <li>At a 5% significance level, is there evidence to suggest the response rate depends on the platform?</li>
 </ol>
+<details>
+<summary>
+Show solutions
+</summary>
+<ol type="a">
+<li></li>
+</ol>
+<p><span class="math inline">\(H_0\)</span>: Platform used and response are independent.</p>
+<p><span class="math inline">\(H_0\)</span>: Platform used and response are dependent.</p>
+<ol start="2" type="a">
+<li>Calculating row and columns sums | Response | Email | SMS | Social Media | Total | |———-|——-|—–|————–|——-| | Yes | 120 | 45 | 80 |245 | | No | 180 | 105 | 120 |405 | |Total | 300 | 150 | 200 |650 |</li>
+</ol>
+<p>Expected values under the null hypothesis:</p>
+<p><span class="math inline">\(e_{ij} = \frac{o_{\cdot j}o_{i\cdot}}{n}\)</span>, e.g.&nbsp;<span class="math inline">\(e_{22}= \frac{150\cdot 405}{650}=19.18\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Response</th>
+<th>Email</th>
+<th>SMS</th>
+<th>Social Media</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yes</td>
+<td>113.08</td>
+<td>56.54</td>
+<td>75.38</td>
+<td>245</td>
+</tr>
+<tr class="even">
+<td>No</td>
+<td>186.92</td>
+<td>93.46</td>
+<td>124.62</td>
+<td>405</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>300</td>
+<td>150</td>
+<td>200</td>
+<td>650</td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="a">
+<li><p>Test statistic: <span class="math display">\[\chi^2 = \sum_{i=1}^2\sum_{j=1}^3 \frac{(o_{ij}-e_{ij})^2}{e_{ij}}=\frac{(120-113.08)^2}{113.08}+\cdots + \frac{(120-124.62)^2}{124.62}=4.91\]</span></p></li>
+<li><p>Degrees of freedom is <span class="math display">\[(\text{number of rows} -1)\times(\text{number of columns} -1) = (2-1)\cdot (3-1)=2.\]</span></p></li>
+<li><p>We find the p-value:</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>chi2.cdf(<span class="fl">4.91</span>, df <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>p<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value: 0.0859</code></pre>
+</div>
+</div>
+<p>Since p-value &gt; 5%, we do not reject the null hypothesis. There is not sufficient evidence to suggest that response is dependent on platform used.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2_contingency</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct the contingency table</span></span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Rows: Yes, No</span></span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Columns: Email, SMS, Social Media</span></span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> np.array([</span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">120</span>, <span class="dv">45</span>, <span class="dv">80</span>],</span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">180</span>, <span class="dv">105</span>, <span class="dv">120</span>]</span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the chi-square test of independence</span></span>
+<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>chi2, p, dof, expected <span class="op">=</span> chi2_contingency(table, correction <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Chi-square statistic: </span><span class="sc">{</span>chi2<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chi-square statistic: 4.9131</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Degrees of freedom: </span><span class="sc">{</span>dof<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Degrees of freedom: 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>p<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value: 0.0857</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Expected frequencies:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected frequencies:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[113.07692308  56.53846154  75.38461538]
+ [186.92307692  93.46153846 124.61538462]]</code></pre>
+</div>
+</div>
+</details>
 </section>
 <section id="problem-3-1" class="level3">
 <h3 class="anchored" data-anchor-id="problem-3-1">Problem 3</h3>
 <p>The Norwegian Labour and Welfare Administration (NAV) organizes online job application workshops on Teams. The course responsible has noticed that except for himself, the attendees that have their camera on during the course is mostly the older participants. He wonders if there is a relationship between participants having camera on and participant’s age group? He therefore takes a screenshot of the meeting (that he deletes afterwards, of course) and counts the number of faces he sees for the different ages. The results are given in the table below. Perform a chi-squared test to answer this question, including setting up the hypothesis, finding the p-value and making your conclusion. Remember to settle on a significance level first.</p>
-<p>|Camera on| 18–35| 36–53| 54-70| Total| |Yes| 4| 3| 20| 27| No |20| 13| 39| 72| Total |24| 16| 59 |99|</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Camera on</th>
+<th>18–35</th>
+<th>36–53</th>
+<th>54-70</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yes</td>
+<td>4</td>
+<td>3</td>
+<td>20</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td>No</td>
+<td>20</td>
+<td>13</td>
+<td>39</td>
+<td>72</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>24</td>
+<td>16</td>
+<td>59</td>
+<td>99</td>
+</tr>
+</tbody>
+</table>
 <p>Is there a Simpson’s paradox here?</p>
+<details>
+<summary>
+Show solutions
+</summary>
+<p>The course responsible just wants to test out a curiousity, and can set a relatively high significance level. Let’s say <span class="math inline">\(\alpha = 10\%\)</span>.</p>
+<p><span class="math inline">\(H_0:\)</span> Age group and whether a person has their camera on are independent variables.</p>
+<p><span class="math inline">\(H_A:\)</span> Age group and whether a person has their camera on are dependent variables.</p>
+<p>Expected values under the null hypothesis:</p>
+<p><span class="math inline">\(e_{ij} = \frac{o_{\cdot j}o_{i\cdot}}{n}\)</span>, e.g.&nbsp;<span class="math inline">\(e_{11}= \frac{24\cdot 27}{99}=6.54\)</span>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Camera on</th>
+<th>18–35</th>
+<th>36–53</th>
+<th>54-70</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Yes</td>
+<td>6.54</td>
+<td>4.36</td>
+<td>16.1</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td>No</td>
+<td>17.5</td>
+<td>11.6</td>
+<td>42.9</td>
+<td>72</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>24</td>
+<td>16</td>
+<td>59</td>
+<td>99</td>
+</tr>
+</tbody>
+</table>
+<p>Calculate test statistic:</p>
+<p><span class="math display">\[\chi^2 = \sum_{i=1}^2\sum_{j=1}^3 \frac{(o_{ij}-e_{ij})^2}{e_{ij}}=\frac{(4-6.54)^2}{6.54}+\cdots + \frac{(39-42.9)^2}{42.9}=3.25\]</span> P-value: <span class="math inline">\(P(\chi^2 &gt; 3.25)=1-P(\chi^2 \le3.25 )= 0.197\)</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>chi2.cdf(<span class="fl">3.25</span>, df <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"p-value: </span><span class="sc">{</span>p<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>p-value: 0.197</code></pre>
+</div>
+</div>
+<p>Since the p-value is above <span class="math inline">\(\alpha = 0.1\)</span>, we fail to reject the null hypothesis. There is not sufficient evidence to suggest that age group and whether they have their camera on is dependent variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2_contingency</span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Contingency table: Rows = Camera on (Yes/No), Columns = Age groups</span></span>
+<span id="cb97-5"><a href="#cb97-5" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> np.array([</span>
+<span id="cb97-6"><a href="#cb97-6" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">20</span>],</span>
+<span id="cb97-7"><a href="#cb97-7" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">20</span>, <span class="dv">13</span>, <span class="dv">39</span>]</span>
+<span id="cb97-8"><a href="#cb97-8" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb97-9"><a href="#cb97-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-10"><a href="#cb97-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the chi-square test of independence</span></span>
+<span id="cb97-11"><a href="#cb97-11" aria-hidden="true" tabindex="-1"></a>chi2, p, dof, expected <span class="op">=</span> chi2_contingency(table, correction <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb97-12"><a href="#cb97-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb97-13"><a href="#cb97-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb97-14"><a href="#cb97-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Chi-square statistic: </span><span class="sc">{</span>chi2<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chi-square statistic: 3.2528</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Degrees of freedom: </span><span class="sc">{</span>dof<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Degrees of freedom: 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"P-value: </span><span class="sc">{</span>p<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P-value: 0.1966</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Expected frequencies:"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Expected frequencies:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(expected)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 6.54545455  4.36363636 16.09090909]
+ [17.45454545 11.63636364 42.90909091]]</code></pre>
+</div>
+</div>
+<p>Is there a Simpson’s paradox here? For that, we calculate the rates of “camera on” for each age group:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Age group</th>
+<th>18–35</th>
+<th>36–53</th>
+<th>54-70</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rate of camera on</td>
+<td>16.7%</td>
+<td>18.8%</td>
+<td>33.9%</td>
+<td>27.3%</td>
+</tr>
+<tr class="even">
+<td>Observations</td>
+<td>24</td>
+<td>16</td>
+<td>59</td>
+<td>99</td>
+</tr>
+</tbody>
+</table>
+<p>The rate of camera on increases with age group. For the number of observations, we also see that more participants are in the elder group. The proportion of age group 54-70 among camera users is 20/27 = 74.1%, and for the “No” group 39/72=54.2%. Hence, the “Yes” group has disproportionately more older people, who are more likely to use the camera. There is no reversal of trends between the subgroups and the aggregate — rather, the aggregate reflects the within-group pattern (camera usage increases with age). Therefore, there is <strong>no Simpson’s paradox</strong> here.</p>
+</details>
 
 
 </section>

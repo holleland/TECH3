@@ -123,7 +123,6 @@ print(2*stats.t.cdf(-2.946, 49))
 
 </details>
 
-
 ### Problem 1.5
 
 A fitness instructor claims that the average resting pulse rate of adults in their program is less than 70 beats per minute. A sample of 10 participants yields:
@@ -146,7 +145,7 @@ e)  If the sample had been twice as large with the same mean and standard deviat
 
 <summary>Show solution</summary>
 
-a)  The statement of the instructor is that the mean is **less** than 70 bpm, so that becomes our alternative hypothesis, and the oppsite case becomes the null hypothesis. We use \$H_0: \mu=70 \$ as we are only interested in the edge case when testing.
+a)  The statement of the instructor is that the mean is **less** than 70 bpm, so that becomes our alternative hypothesis, and the opposite case becomes the null hypothesis. We use $H_0: \mu=70$ as we are only interested in the edge case when testing.
 
 $H_0: \mu = 70$ $H_1: \mu < 70$
 
@@ -154,7 +153,7 @@ b)  We simply compute using the given data and
 
 $\bar{x} = \frac{1}{10}\sum^{10}_{i=1}x_i=68.0$, $s=\sqrt{\frac{1}{n-1}\sum^{10}_{i=1}\left(x_i-\bar{x}\right)^2} \approx 2.58$
 
-c)  $t = \frac{68 - 70}{2.45/\sqrt{10}} \approx -2.45$
+c)  $t = \frac{68 - 70}{2.58/\sqrt{10}} \approx -2.45$
 
 d)  Critical value (df = n-1=9) at $\alpha = 0.05$ is approximately -1.833. This number can easily be found in a t-table, or by running some code to estimate it.
 
@@ -201,7 +200,6 @@ c)  What assumption are you making about the distribution?
 
 <summary>Show solution</summary>
 
-
 ```{python}
 ### The t.test command let's you run a t.test by 
 # simply adding the H_0 mean and specifying the
@@ -211,13 +209,11 @@ t_result = stats.ttest_1samp(x, popmean=500, alternative='less')
 print(t_result)
 ```
 
-
 b)  Output might give $t \approx -8.49$, $p < 0.001$. Strong evidence the machine underfills.
 
 c)  We assume that the population distribution is approximately normal, as required for small-sample *t*-tests.
 
 </details>
-
 
 ## Two-sample t-test
 
@@ -353,7 +349,6 @@ print(1-stats.t.cdf(t, df))
 
 </details>
 
-
 ### Problem 2.4
 
 A professor wants to compare exam scores between online and in-person students, as he suspects his students preform systematically better with online exams. The results:
@@ -367,7 +362,7 @@ b)  Conduct a two-sample *t*-test.
 
 c)  At the 0.05 significance level, what do you conclude?
 
-d)  What might be the impact of unequal variances on this test?
+<!-- d)  What might be the impact of unequal variances on this test? -->
 
 <details>
 
@@ -438,6 +433,8 @@ result = stats.ttest_ind(x_1, x_2, equal_var=False, alternative='greater')
 print("t-statistic:", result.statistic)
 print("p-value:", result.pvalue)
 ```
+
+
 
 </details>
 
@@ -544,8 +541,8 @@ print(result)
 b)  From, the test summary we can just read
 
 $$
-t=5.6667 \\
-df=8.793 \\
+t=5.6667 \quad
+df=8.793 \quad
 \text{p-value}=0.0003339
 $$
 
@@ -554,7 +551,6 @@ c)  Strong evidence against $H_0$ in form of such a low p-value, this indicates 
 d)  Welch’s *t*-test does **not require equal variances** and is safer when variances are not assumed equal.
 
 </details>
-
 
 ## Tests of proportions: One sample
 
@@ -655,15 +651,13 @@ c)  A p-value of 9% indicates that the evidence against the null hypothesis is n
 
 </details>
 
-
-
 ### Problem 3.4
 
 A factory claims that at most 5% of products are defective. In a random sample of 80 products, 7 were defective.
 
 a)  Test whether the true defect rate is higher than claimed at the 5% level.
 
-b)  Compute the test statistic and p-value.
+b)  Compute the test statistic.
 
 c)  Conclude and interpret.
 
@@ -698,7 +692,6 @@ d)
 The common rule of thumb is $np>5$, and since $n\hat{p}=7$ in this case, we find little reason for doubt in this case.
 
 </details>
-
 
 ## Tests of proportions: Two samples
 
@@ -836,7 +829,6 @@ c)  Since the p-value is low, this gives reason to doubt the null hypothesis and
 
 </details>
 
-
 ### Problem 4.4
 
 In a clinical trial, 35 of 50 patients in group A responded to a vaccine. In group B, 40 of 60 patients responded.
@@ -884,8 +876,6 @@ d)  There is no evidence to suggest a difference in proportions.
 
 </details>
 
-
-
 ## Normal distribution and student t dsitribution
 
 ### Problem 1
@@ -918,7 +908,7 @@ a)  The probability of $X < 100$. Why do we not need to consider the standard de
 
 b)  The approximate probability that $X < 115$
 
-c)  Use a z-transformation to b) to standard normal, and compute using a calculator. Let $Z\sim \matchal{N}(0,1)$, we call that a standard normal distribution. We also have that
+c)  Use a z-transformation to b) to standard normal, and compute using a calculator. Let $Z\sim \mathcal{N}(0,1)$, we call that a standard normal distribution. We also have that
 
 $$
 Z=\frac{X-\mu}{\sigma}
@@ -1024,15 +1014,14 @@ We can illustrate this quite simply without going into the ideas fully.
 
 Let first $X_1,\dots,X_n\sim i.i.d. \mathcal{N}(\mu, \sigma^2)$, and then let
 
-\$\$ \bar{X}=\frac{1}{n}\sum\^n\_{i=1}X_i, \quad S^2=^\frac{1}{n-1}\sumn\_{i=1}(X_i-\bar{X})\^2
-
+$$ \bar{X}=\frac{1}{n}\sum^n_{i=1}X_i, \quad S^2=\frac{1}{n-1}\sum^n_{i=1}(X_i-\bar{X})^2
 $$
 It can then be shown that 
-$$ \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim\mathcal{N}(0,1), \quad \frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t\_{n-1} \$\$ Where $t_{n-1}$ indicates a t-distribution with $df=n-1$. Clearly these are very similar statements. All we need to recall now is that $S^2$ is and unbiased and consistent estimator of $\sigma^2$. I.e.
+$$ \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim\mathcal{N}(0,1), \quad \frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t\_{n-1} $$ where $t_{n-1}$ indicates a t-distribution with $df=n-1$. Clearly these are very similar statements. All we need to recall now is that $S^2$ is and unbiased and consistent estimator of $\sigma^2$. I.e.
 
-\$\$ \lim*{n*\rightarrow\infty}S^2=^\sigma2 \quad  \Rightarrow \quad  \frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t{n-1} \rightarrow \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim\mathcal{N}(0,1)
-
-\$\$
+$$ 
+\lim_{n\rightarrow\infty}S^2=\sigma^2 \quad  \Rightarrow \quad  \frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t_{n-1} \rightarrow \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim\mathcal{N}(0,1).
+$$
 
 </details>
 
@@ -1048,7 +1037,8 @@ b)  Use CLT to approximate $P(\bar{X} > 11)$
 
 <summary>Show solution</summary>
 
-a)  CLT tells us that $\bar{X} \sim \mathcal{N}\left(10, \frac{5}{\sqrt{50}}\right)$
+a)  CLT tells us that 
+$\bar{X} \sim \mathcal{N}\left(10, \frac{5}{\sqrt{50}}\right)$
 
 b)  
 
@@ -1134,7 +1124,6 @@ plt.grid(True);
 plt.show()
 ```
 
-
 b)  Heavier tails for small df. As df increases, the t-distribution converges to standard normal. This is just like we have discussed in the previous problems.
 
 </details>
@@ -1174,6 +1163,7 @@ b)  Comment on convergence to normality.
 <summary>Show solution</summary>
 
 a)  
+
 ```{python}
 np.random.seed(42)
 
@@ -1194,6 +1184,7 @@ for i, n in enumerate(sample_sizes, 1):
     plt.grid(True);
     plt.show();
 ```
+
 ```{r}
 #| echo: false
 #| eval: false
@@ -1219,6 +1210,7 @@ b)  Plot and compare to standard normal
 <details>
 
 <summary>Show solution</summary>
+
 ```{python}
 import numpy as np
 import matplotlib.pyplot as plt
@@ -1234,8 +1226,8 @@ def gen_t(n):
     return np.array(t_stats)
 
 # Sample sizes to try
-sample_sizes = [5, 20, 80, 320, 1280]
-bins = [30, 30, 20, 50, 100]
+sample_sizes = [5, 10, 30]
+bins = [30, 30, 20]
 
 # Plot histograms and overlay standard normal density
 x = np.linspace(-4, 4, 500)
@@ -1255,7 +1247,6 @@ for n, b in zip(sample_sizes, bins):
     plt.show();
 
 ```
-
 
 ```{r}
 #| echo: false
@@ -1304,7 +1295,7 @@ c)  Interpret the meaning of the second probability in a test setting.
 <summary>Show solution</summary>
 
 a)  We use the compliment to compute this case $$
-    P(T_5>2.015)01-P(T_5\leq2.015)
+    P(T_5>2.015)=1-P(T_5\leq2.015)
     $$
 
 ```{python}
@@ -1325,7 +1316,7 @@ $$ P(|T_{10}| > 2.228) = 2\cdot P(T_{10}<-2.228) $$
 print("b) ", 2 * stats.t.cdf(-2.228, df=10))
 ```
 
-c)  For a two-sided *t*-test at $\alpha=0.05$, this checks if test statistic is significant at 5% level for df = 10.
+c)  Since the probability is 5\%, we can interpret the value 2.228 as the threshold (critical value) for a two-sided t-test statistic with 10 degrees of freedom for rejecting the null hypothesis. Alternatively, if we observe a test statistic of value 2.228, the p-value of the test is 5\%. 
 
 </details>
 
@@ -1351,8 +1342,6 @@ b)  The first implication arrow comes as a consequence of the normal distribtuio
 c)  $z_{0.10} \approx -1.28$
 
 Can be verified in Python:
-
-
 
 ```{python}
 print("a) ", stats.norm.ppf(0.975))

@@ -771,7 +771,7 @@ Show solutions
 Show solution
 </summary>
 <ol type="a">
-<li>The statement of the instructor is that the mean is <strong>less</strong> than 70 bpm, so that becomes our alternative hypothesis, and the oppsite case becomes the null hypothesis. We use $H_0: $ as we are only interested in the edge case when testing.</li>
+<li>The statement of the instructor is that the mean is <strong>less</strong> than 70 bpm, so that becomes our alternative hypothesis, and the opposite case becomes the null hypothesis. We use <span class="math inline">\(H_0: \mu=70\)</span> as we are only interested in the edge case when testing.</li>
 </ol>
 <p><span class="math inline">\(H_0: \mu = 70\)</span> <span class="math inline">\(H_1: \mu &lt; 70\)</span></p>
 <ol start="2" type="a">
@@ -779,7 +779,7 @@ Show solution
 </ol>
 <p><span class="math inline">\(\bar{x} = \frac{1}{10}\sum^{10}_{i=1}x_i=68.0\)</span>, <span class="math inline">\(s=\sqrt{\frac{1}{n-1}\sum^{10}_{i=1}\left(x_i-\bar{x}\right)^2} \approx 2.58\)</span></p>
 <ol start="3" type="a">
-<li><p><span class="math inline">\(t = \frac{68 - 70}{2.45/\sqrt{10}} \approx -2.45\)</span></p></li>
+<li><p><span class="math inline">\(t = \frac{68 - 70}{2.58/\sqrt{10}} \approx -2.45\)</span></p></li>
 <li><p>Critical value (df = n-1=9) at <span class="math inline">\(\alpha = 0.05\)</span> is approximately -1.833. This number can easily be found in a t-table, or by running some code to estimate it.</p></li>
 </ol>
 <div class="cell">
@@ -997,8 +997,8 @@ Show solutions
 <li><p>Set up the hypotheses.</p></li>
 <li><p>Conduct a two-sample <em>t</em>-test.</p></li>
 <li><p>At the 0.05 significance level, what do you conclude?</p></li>
-<li><p>What might be the impact of unequal variances on this test?</p></li>
 </ol>
+<!-- d)  What might be the impact of unequal variances on this test? -->
 <details>
 <summary>
 Show solution
@@ -1187,8 +1187,8 @@ Show solution
 <li>From, the test summary we can just read</li>
 </ol>
 <p><span class="math display">\[
-t=5.6667 \\
-df=8.793 \\
+t=5.6667 \quad
+df=8.793 \quad
 \text{p-value}=0.0003339
 \]</span></p>
 <ol start="3" type="a">
@@ -1311,7 +1311,7 @@ Show solutions
 <p>A factory claims that at most 5% of products are defective. In a random sample of 80 products, 7 were defective.</p>
 <ol type="a">
 <li><p>Test whether the true defect rate is higher than claimed at the 5% level.</p></li>
-<li><p>Compute the test statistic and p-value.</p></li>
+<li><p>Compute the test statistic.</p></li>
 <li><p>Conclude and interpret.</p></li>
 <li><p>Should we consider this test trustworthy</p></li>
 </ol>
@@ -1581,7 +1581,7 @@ Show solution
 <ol type="a">
 <li><p>The probability of <span class="math inline">\(X &lt; 100\)</span>. Why do we not need to consider the standard deviation when calculating this?</p></li>
 <li><p>The approximate probability that <span class="math inline">\(X &lt; 115\)</span></p></li>
-<li><p>Use a z-transformation to b) to standard normal, and compute using a calculator. Let <span class="math inline">\(Z\sim \matchal{N}(0,1)\)</span>, we call that a standard normal distribution. We also have that</p></li>
+<li><p>Use a z-transformation to b) to standard normal, and compute using a calculator. Let <span class="math inline">\(Z\sim \mathcal{N}(0,1)\)</span>, we call that a standard normal distribution. We also have that</p></li>
 </ol>
 <p><span class="math display">\[
 Z=\frac{X-\mu}{\sigma}
@@ -1678,12 +1678,11 @@ Show solution
 </ol>
 <p>We can illustrate this quite simply without going into the ideas fully.</p>
 <p>Let first <span class="math inline">\(X_1,\dots,X_n\sim i.i.d. \mathcal{N}(\mu, \sigma^2)\)</span>, and then let</p>
-<p>$$ {X}=^n_{i=1}X_i, S<sup>2=</sup>_{i=1}(X_i-{X})^2</p>
+<p><span class="math display">\[ \bar{X}=\frac{1}{n}\sum^n_{i=1}X_i, \quad S^2=\frac{1}{n-1}\sum^n_{i=1}(X_i-\bar{X})^2
+\]</span> It can then be shown that <span class="math display">\[ \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim\mathcal{N}(0,1), \quad \frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t\_{n-1} \]</span> where <span class="math inline">\(t_{n-1}\)</span> indicates a t-distribution with <span class="math inline">\(df=n-1\)</span>. Clearly these are very similar statements. All we need to recall now is that <span class="math inline">\(S^2\)</span> is and unbiased and consistent estimator of <span class="math inline">\(\sigma^2\)</span>. I.e.</p>
 <p><span class="math display">\[
-It can then be shown that
-\]</span> (0,1), t_{n-1} $$ Where <span class="math inline">\(t_{n-1}\)</span> indicates a t-distribution with <span class="math inline">\(df=n-1\)</span>. Clearly these are very similar statements. All we need to recall now is that <span class="math inline">\(S^2\)</span> is and unbiased and consistent estimator of <span class="math inline">\(\sigma^2\)</span>. I.e.</p>
-<p>$$ S<sup>2=</sup> t{n-1} (0,1)</p>
-<p>$$</p>
+\lim_{n\rightarrow\infty}S^2=\sigma^2 \quad  \Rightarrow \quad  \frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t_{n-1} \rightarrow \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim\mathcal{N}(0,1).
+\]</span></p>
 </details>
 </section>
 <section id="problem-6" class="level3">
@@ -1907,8 +1906,8 @@ Show solution
 <span id="cb102-12"><a href="#cb102-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(t_stats)</span>
 <span id="cb102-13"><a href="#cb102-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb102-14"><a href="#cb102-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample sizes to try</span></span>
-<span id="cb102-15"><a href="#cb102-15" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">80</span>, <span class="dv">320</span>, <span class="dv">1280</span>]</span>
-<span id="cb102-16"><a href="#cb102-16" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">100</span>]</span>
+<span id="cb102-15"><a href="#cb102-15" aria-hidden="true" tabindex="-1"></a>sample_sizes <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">30</span>]</span>
+<span id="cb102-16"><a href="#cb102-16" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">20</span>]</span>
 <span id="cb102-17"><a href="#cb102-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb102-18"><a href="#cb102-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot histograms and overlay standard normal density</span></span>
 <span id="cb102-19"><a href="#cb102-19" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">500</span>)</span>
@@ -1947,20 +1946,6 @@ Show solution
 </figure>
 </div>
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="4-exercises_files/figure-html/unnamed-chunk-32-4.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="4-exercises_files/figure-html/unnamed-chunk-32-5.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
 </div>
 <ol start="2" type="a">
 <li></li>
@@ -1982,7 +1967,7 @@ Show solution
 </summary>
 <ol type="a">
 <li>We use the compliment to compute this case <span class="math display">\[
-P(T_5&gt;2.015)01-P(T_5\leq2.015)
+P(T_5&gt;2.015)=1-P(T_5\leq2.015)
 \]</span></li>
 </ol>
 <div class="cell">
@@ -2007,7 +1992,7 @@ P(T&lt;-t)=P(T&gt;t)
 </div>
 </div>
 <ol start="3" type="a">
-<li>For a two-sided <em>t</em>-test at <span class="math inline">\(\alpha=0.05\)</span>, this checks if test statistic is significant at 5% level for df = 10.</li>
+<li>Since the probability is 5%, we can interpret the value 2.228 as the threshold (critical value) for a two-sided t-test statistic with 10 degrees of freedom for rejecting the null hypothesis. Alternatively, if we observe a test statistic of value 2.228, the p-value of the test is 5%.</li>
 </ol>
 </details>
 </section>
