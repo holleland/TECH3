@@ -1672,6 +1672,7 @@ $H_0$: Platform used and response are independent.
 $H_0$: Platform used and response are dependent.
 
 b) Calculating row and columns sums
+
 | Response | Email | SMS | Social Media | Total |
 |----------|-------|-----|--------------|-------|
 | Yes      | 120   | 45  | 80           |245    |
@@ -1809,7 +1810,7 @@ Is there a Simpson's paradox here? For that, we calculate the rates of "camera o
 
 |Age group| 18–35| 36–53| 54-70| Total| 
 |---------|------|------|------|------|
-|Rate of camera on    |    16.7\%|    18.8\%|   33.9\% |    27.3\%|
+|Rate of camera on|    16.7\%|    18.8\%|   33.9\% |    27.3\%|
 |Observations| 24|    16|   59 |    99|
 
 The rate of camera on increases with age group. For the number of observations, we also see that more participants are in the elder group. The proportion of age group 54-70 among camera users is 20/27 = 74.1\%, and for the "No" group 39/72=54.2\%. Hence, the "Yes" group has disproportionately more older people, who are more likely to use the camera. There is no reversal of trends between the subgroups and the aggregate — rather, the aggregate reflects the within-group pattern (camera usage increases with age). Therefore, there is **no Simpson's paradox** here. 
