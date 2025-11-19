@@ -18,14 +18,9 @@ website:
         href: calender.qmd
       - text: "Modules"
         href: 1-intro.qmd
-      # - text: "Cases"
-      #   href: case-1.qmd
-      # - text: "Python basics"
-      #   href: pythonbasics.qmd
       - text: "Old exams"
         href: oldexams.qmd
-      - text: "Reference"
-        href: reference.qmd
+
 
   sidebar:
     # - title: "Cases"
@@ -122,9 +117,6 @@ website:
         - oldexams.qmd
         # navigation items
 
-    # - title: "Reference"
-    #   contents:
-    #     - reference.qmd
         
 
 editor: visual

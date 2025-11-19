@@ -1,3 +1,66 @@
 # Old exams
 
-Old exams will be made avaiable here. 
+In the table below, you find links to PDFs of old exams. The first semester TECH3 was introduced was Spring 2025. The assessment form was then a 4-hour school exam, and we made three exams: One trial exam that students got to train for the exam (getting familiarized with the format), one ordinary school exam and one retake exam for those who did not pass. 
+
+From the Spring 2026, we have moved over to a 6-hour digital school exam after feedback from the students. 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| error: false
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(knitr)
+
+# Folder with PDFs
+folder <- "oldexams"
+
+# List all pdfs
+files <- list.files(folder, pattern = "\\.pdf$", full.names = FALSE)
+
+# Separate problems and solutions
+problems <- files[!str_detect(files, "-sol\\.pdf$")]
+solutions <- files[str_detect(files, "-sol\\.pdf$")]
+
+# Create a tibble with basename (without -sol)
+df <- tibble(
+  base = str_remove(problems, "\\.pdf$")
+) %>%
+  mutate(
+    problem_file = paste0(folder, "/", base, ".pdf"),
+    solution_file = paste0(folder, "/", base, "-sol.pdf"),
+    Name = base,  # you can manually edit this column later
+    Problems = sprintf("[PDF](%s)", problem_file),
+    Solutions = ifelse(file.exists(solution_file),
+                       sprintf("[PDF](%s)", solution_file),
+                       "—")
+  ) 
+df <- df %>%
+  mutate(
+    # Remove TECH3- prefix
+    raw = str_remove(Name, "^TECH3-"),
+
+    # Split into parts
+    Semester = str_extract(raw, "^[^-]+"),   # e.g. V25
+    Type = str_remove(raw, "^[^-]+-"),       # e.g. retake / trialexam / raw value
+    Type = ifelse(Type == raw, "", Type),    # If no "-", it's an ordinary exam
+
+    Course = "TECH3"
+  ) %>%
+  select(Course, Semester, Type, Problems, Solutions)
+df <- df %>%
+  mutate(
+    
+    Type = factor(recode(Type,
+                  "retake" = "Retake",
+                  "trialexam" = "Trial Exam",
+                  .default = "Ordinary"),
+    levels = c("Trial Exam", "Ordinary", "Retake")))
+df$Semester <- str_replace(df$Semester, "V", "Spring 20")
+df <- df %>% arrange(Type)
+# Show table
+kable(df, escape = FALSE)
+
+```

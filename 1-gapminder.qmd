@@ -1,6 +1,6 @@
 # Gapminder example of good visualization
 
-Hans Rosling (deceased) is a legend when it comes data visualization. He was a professor of International Health at Karolinska Insitute and well-known for his visualizations of global data related to international heath. The youtube video below is made by BBC in collaboration with Hans Rosling and can (hopefully) be inspirational for your own visualizatios. The data in the video is up to 2010, but for updated data, see [gapminder.org](https://www.gapminder.org/tools/#\$chart-type=bubbles&url=v2).
+Hans Rosling (deceased) is a legend when it comes data visualization. He was a professor of International Health at Karolinska Insitute and well-known for his visualizations of global data related to international health. The youtube video below is made by BBC in collaboration with Hans Rosling and can (hopefully) be inspirational for your own visualizatios. The data in the video is up to 2010, but for updated data, see [gapminder.org](https://www.gapminder.org/tools/#$chart-type=bubbles&url=v2).
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jbkSRLYSojo?si=7h2iaA9NzdQFqzn_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 
