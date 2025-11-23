@@ -1,0 +1,33 @@
+# Power analysis
+
+**video**
+
+
+## Control questions
+
+
+## Power analysis in Python
+Statistical power is the probability of detecting an effect if one truly exists, and it is defined as $\text{Power} = 1-\beta$, where $\beta$ is the probability of a Type II error (false negative): Failing to reject $H_0$ when $H_A$ is true. High power means we are less likely to miss real effects. 
+
+Statistical power is mainly affected by the following three factors:
+
+1. Sample size
+2. Effect size
+3. Significance level
+
+We can only control 1 and 3. Imagine that we know the effect size is 0.75 and set the significance level to 5\%. We can the calculate how big the sample needs to be for our test to have a power of 0.8. 
+
+This is how we do it in Python: 
+
+```{python}
+import statsmodels.stats.power as smp
+from scipy import stats
+power_analysis = smp.TTestIndPower()
+sample_size = power_analysis.solve_power(effect_size=0.75, 
+                                         power=0.8, 
+                                         alpha=0.05)
+print("Sample size: ", round(sample_size,2))
+```
+
+Play with the inputs to the function. How does increasing the effect size, power or significance level influence the necessary sample size?
+
