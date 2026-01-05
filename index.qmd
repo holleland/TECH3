@@ -1,6 +1,6 @@
 # Introduction {.unnumbered}
 
-Welcome to the website for TECH3 Applied Statistics. We will use this website as a supplement to lectures. The website is ongoing development, so not all subjects will have content yet. Below you will find a detailed (preliminary) lecture plan, link to the textbook and curriculum. The course description can be found [here](https://www.nhh.no/en/courses/applied-statistics/).
+Welcome to the website for TECH3 Applied Statistics. We will use this website as a supplement to lectures. The website is ongoing development, so not all subjects will have content yet. Below you will find a detailed (preliminary) lecture plan for the Spring semester of 2026, link to the textbook and curriculum. The course description can be found [here](https://www.nhh.no/en/courses/applied-statistics/).
 
 ## Lecture plan
 
@@ -9,13 +9,13 @@ library(tidyverse)
 options(knitr.kable.NA = '')
 library(dplyr)
 library(kableExtra)
-readxl::read_excel("div/lectureplan-V25.xlsx", sheet = "Sheet1",
+readxl::read_excel("div/lectureplan-V26.xlsx", sheet = "Sheet1",
                            col_types= rep("text",4)) %>% 
   kbl(escape = FALSE) %>%
   kable_styling(bootstrap_options = c("condensed", "hover"),
                 fixed_thead = T) %>%
-    row_spec(row = c(1:2,6:8,12:14), background = "#B5983B", color = "white") %>%
-  row_spec(row = c(3:5, 9:11, 15:16), 
+    row_spec(row = c(1:2,6:7,10:11,13:14), background = "#B5983B", color = "white") %>%
+  row_spec(row = c(3:5, 8:9,12), 
            background = "black", color ="white" )
     #row_spec(28, bold = T, background = "DarkRed", color = "white")
 

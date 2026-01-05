@@ -1,18 +1,17 @@
 # Calender
 
-
 ```{r lecturePlanCal,eval=TRUE, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 options(knitr.kable.NA = '')
 library(dplyr)
 library(kableExtra)
-readxl::read_excel("div/lectureplan-V25.xlsx", sheet = "Sheet1",
+readxl::read_excel("div/lectureplan-V26.xlsx", sheet = "Sheet1",
                            col_types= rep("text",4)) %>% 
   kbl(escape = FALSE) %>%
   kable_styling(bootstrap_options = c("condensed", "hover"),
                 fixed_thead = T) %>%
-    row_spec(row = c(1:2,6:8,12:14), background = "#B5983B", color = "white") %>%
-  row_spec(row = c(3:5, 9:11, 15:16), 
+    row_spec(row = c(1:2,6:7,10:11,13:14), background = "#B5983B", color = "white") %>%
+  row_spec(row = c(3:5, 8:9,12), 
            background = "black", color ="white" )
     #row_spec(28, bold = T, background = "DarkRed", color = "white")
 

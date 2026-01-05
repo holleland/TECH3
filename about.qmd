@@ -2,7 +2,7 @@
   title: "About"
 ---
 
-::: columns
+::::: columns
 ::: {.column width="30%"}
 ![Sondre Hølleland, <br> Assistant professor](bilder/sondreholleland.jpg){width="70%"}
 
@@ -10,6 +10,6 @@
 :::
 
 ::: {.column width="70%"}
-This course and website has been developed by Sondre Hølleland, assistant professor, and Geir Drage Berentsen, associate professor, both at Norwegian School of Economics, Department of Business and Management Science. More about us will be added.
+This course and website have been developed by Sondre Hølleland, assistant professor, and Geir Drage Berentsen, professor, both at Norwegian School of Economics, Department of Business and Management Science. More about us will be added.
 :::
-:::
+:::::
