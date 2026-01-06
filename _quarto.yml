@@ -18,6 +18,8 @@ website:
         href: calender.qmd
       - text: "Modules"
         href: 1-intro.qmd
+      - text: "Seminars"
+        href: seminar1.qmd
       - text: "Old exams"
         href: oldexams.qmd
 
@@ -118,6 +120,14 @@ website:
     - title: "Old exams"
       contents:
         - oldexams.qmd
+    - title: "Seminars"
+      contents:
+        - href: seminar1.qmd
+          title: "Seminar 1"
+        - href: seminar2.qmd
+          title: "Seminar 2"
+        - href: seminar3.qmd
+          title: "Seminar 3"
         # navigation items
 
         

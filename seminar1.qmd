@@ -1,0 +1,83 @@
+# Seminar 1
+
+### Exercise 1 (Exam spring 2025, problem 1)
+
+You are presented two graphs. Figure 1a) is an illustration that was published on Twitter by the official White House account for the Obama administration showing an increase in high school graduation rate under Obama's presidency (2009-2017). The second graph was presented on Fox News during the 2012 Republican nomination. For each of the graphs, (a) and (b), discuss in **a few sentences** whether you think these are good graphics? Justify your answer.
+
+![a) Graduation rate under President Obama, posted on Twitter (now X), by the White House. b) Fox News presenting support for various Republican nominees for the 2012 US election.](images/V25prob1.png){width="100%"}
+
+
+### Exercise 2 (Exam spring 2025 retake, problem 1)
+
+A company, called *MetaZen Pharma*, is selling a dietary supplement called **VitaBoost365+**. The first graphic (a) below was used in a nationwide campaign, where they claimed that their product lead to a large improvement in energy score compared to a placebo supplement. 
+
+The second graphic (b) was shown at the general assembly of share holders. Discuss how these graphics have been manipulated for pushing the agenda of the company. What is the company trying to achieve here?
+
+```{r}
+#| echo: false
+#| warnings: false
+#| message: false
+#| fig-width: 10
+#| fig-height: 4
+library(tidyverse)
+plot1 <- tibble(
+  "Supplement" = c("Placebo", "VitaBoost365+"),
+  "Energy score" = c(98,104)
+) %>% 
+  ggplot(aes(x=`Supplement`, y = `Energy score`, color = `Supplement`))+geom_segment(aes(xend=`Supplement`, yend = 97),
+                                                               linewidth = 20)+
+  scale_y_continuous(limits =c(97,105),expand = c(0,0))+
+  theme(legend.position = "none",
+        axis.title.x = element_blank())+
+  scale_color_manual(values = c("grey","orange"))+
+  ggtitle("a)")
+set.seed(1253)
+sales <- tibble(
+
+  Sales =10 + c(-3, 10, -2, -10, 3, 1,4, -4,-8, 5, -5,-6,13,15, 0,24,-5,-4)) %>% 
+  mutate(
+  k = 1:n(),
+  Year = 2000+k
+) 
+keep <- c(2001, 2003, 2006, 2010,2013,2014,2016 )
+#sales <- sales %>% 
+  #mutate(col = Year %in% keep) 
+plot2 <- sales %>% 
+  filter(Year %in% keep) %>% 
+  ggplot(aes(x=Year, y = Sales)) + geom_point(size =5)+
+  geom_line(lty = 2)+
+  scale_x_continuous(breaks = keep)+
+  scale_y_continuous(name = "Sales (in millions)")+
+  ggtitle("b)")+
+  ggtext::geom_richtext(x=2003, y = 12, size = 7, hjust = 0,
+            label = "**Sales are \nROCKETING!**", color = "blue", angle = 45)+
+  theme(axis.title.x = element_blank())
+
+ggpubr::ggarrange(plot1,plot2,nrow = 1, ncol = 2)
+```
+
+### Exercise 3 (Trial exam, Spring 2025, problem 2a)
+Roulette is a game of chance where a roulette wheel has 37 numbered pockets where a ball can land. 18 of these pockets are red, 18 are black, and 1 is green (at least in Europe).
+
+If, for example, you bet 1\euro\, on red, and red occurs, then you win your bet back plus 1\euro\, (i.e., a gain of 1\euro). But if black or green occurs, you lose the bet (a gain of -1\euro).
+
+You bet 1\euro\, on red. Answer the following: 
+
+a) What is the expected gain?
+b) What is the variance of this gain?
+c) What is the probability of a positive gain?
+
+### Exercise 4 (Exam spring 2025, problem 3a-b)
+
+A startup offering hands-on craft beer brewing workshops is piloting a weekend course format. Each session runs on Saturdays only and is limited to 4 participants due to space and brewing setup constraints. Based on early demand, the number of participants **X** per Saturday follows this discrete distribution:
+
+| Participants (X)   | 0    | 1    | 2    | 3    | 4    |
+|--------------------|------|------|------|------|------|
+| Probability P(X=x) | 0.10 | 0.25 | 0.30 | 0.20 | 0.15 |
+
+Each participant pays **NOK 2,200**, and costs the company **NOK 250** in materials. There is also a fixed cost of **NOK 4,200** per workshop. The company starts with **NOK 50,000 in capital** and plans to run the workshop every Saturday for one year (**52 weeks**).
+
+ a) What is the probability that a single workshop has at least one participant? What is the probability that the workshop has at least one participant every Saturday for five consecutive weeks?
+
+
+ b) Show that the expected number of participants per week is $2.05$ and that the standard deviation is $1.20$.
