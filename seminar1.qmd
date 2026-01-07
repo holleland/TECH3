@@ -1,13 +1,33 @@
 # Seminar 1
 
-### Exercise 1 (Exam spring 2025, problem 1)
+### Exercise 1
+```{r}
+#| echo: false
+set.seed(1)
+x <- round(rnorm(11, mean = 5),1)
+print(x)
+```
+
+a) For the given set of data, find the
+
+i) Mean
+ii) Median
+iii) Standard deviation
+iv) 1st and 3rd quartile
+v) Interquartile range
+vi) Min and Max
+
+b) Use the information from (a) to draw a box plot of the data points. 
+
+
+### Exercise 2 (Exam spring 2025, problem 1)
 
 You are presented two graphs. Figure 1a) is an illustration that was published on Twitter by the official White House account for the Obama administration showing an increase in high school graduation rate under Obama's presidency (2009-2017). The second graph was presented on Fox News during the 2012 Republican nomination. For each of the graphs, (a) and (b), discuss in **a few sentences** whether you think these are good graphics? Justify your answer.
 
 ![a) Graduation rate under President Obama, posted on Twitter (now X), by the White House. b) Fox News presenting support for various Republican nominees for the 2012 US election.](images/V25prob1.png){width="100%"}
 
 
-### Exercise 2 (Exam spring 2025 retake, problem 1)
+### Exercise 3 (Exam spring 2025 retake, problem 1)
 
 A company, called *MetaZen Pharma*, is selling a dietary supplement called **VitaBoost365+**. The first graphic (a) below was used in a nationwide campaign, where they claimed that their product lead to a large improvement in energy score compared to a placebo supplement. 
 
@@ -56,7 +76,7 @@ plot2 <- sales %>%
 ggpubr::ggarrange(plot1,plot2,nrow = 1, ncol = 2)
 ```
 
-### Exercise 3 (Trial exam, Spring 2025, problem 2a)
+### Exercise 4 (Trial exam, Spring 2025, problem 2a)
 Roulette is a game of chance where a roulette wheel has 37 numbered pockets where a ball can land. 18 of these pockets are red, 18 are black, and 1 is green (at least in Europe).
 
 If, for example, you bet 1\euro\, on red, and red occurs, then you win your bet back plus 1\euro\, (i.e., a gain of 1\euro). But if black or green occurs, you lose the bet (a gain of -1\euro).
@@ -67,7 +87,7 @@ a) What is the expected gain?
 b) What is the variance of this gain?
 c) What is the probability of a positive gain?
 
-### Exercise 4 (Exam spring 2025, problem 3a-b)
+### Exercise 5 (Exam spring 2025, problem 3a-b)
 
 A startup offering hands-on craft beer brewing workshops is piloting a weekend course format. Each session runs on Saturdays only and is limited to 4 participants due to space and brewing setup constraints. Based on early demand, the number of participants **X** per Saturday follows this discrete distribution:
 
@@ -81,3 +101,28 @@ Each participant pays **NOK 2,200**, and costs the company **NOK 250** in materi
 
 
  b) Show that the expected number of participants per week is $2.05$ and that the standard deviation is $1.20$.
+ 
+ 
+### Exercise 6 (Trial exam Spring 2025, Problem 3a-b)
+
+:::: {.columns}
+::: {.column width="20%"}
+
+![](images/milkjug.png){width=90%}
+
+:::
+::: {.column width="75%"}
+
+Old MacDonald had an organic farm and on that farm he had a cow. He was worried that the cow was producing too little milk, and started to count how many milk jugs the cow filled each day. After a few months, he has estimated the following probabilities:
+
+| Milk Jugs | 0    | 1    | 2    | 3    | 4    | 5    | 6    |
+|-----------|------|------|------|------|------|------|------|
+| Probability | 0.05 | 0.15 | 0.30 | 0.25 | 0.15 | 0.07 | 0.03 |
+
+:::
+::::
+
+a) What is the probability that the cow fills any milk jugs tomorrow? What is the probability that she fills any milk jugs every day for a week?
+
+b) Show that the expectation and standard deviation of the number of milk jugs produced by the cow are respectively, **2.63** and **1.38**.
+

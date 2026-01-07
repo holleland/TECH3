@@ -615,7 +615,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="visualization-in-python" class="level2">
 <h2 class="anchored" data-anchor-id="visualization-in-python">Visualization in Python</h2>
 <p>We continue using the default dataset:</p>
-<div id="d974c13e" class="cell" data-execution_count="1">
+<div id="cd635cc0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -627,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="histogram" class="level3">
 <h3 class="anchored" data-anchor-id="histogram">Histogram</h3>
 <p>A histogram can be plotted using the matplotlib:</p>
-<div id="9d635072" class="cell" data-execution_count="2">
+<div id="870a83bb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.hist(default[<span class="st">"income"</span>])<span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span> <span class="co"># print figure</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -639,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>When making a histogram, the most relevant element to tweak is perhaps the bins. This can be done by either changing the number of bins or the bin width.</p>
-<div id="bd04ccfb" class="cell" data-execution_count="3">
+<div id="9b3220c3" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.hist(default[<span class="st">"income"</span>], bins <span class="op">=</span> <span class="dv">20</span>)<span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span> <span class="co"># print figure</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -651,7 +651,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>By increasing the number of bins to 20, we now see clearer the two tops in the income distribution. We can also specify the bins as a vector if we want the splits to occur at specfic locations, e.g.&nbsp;every 2000 dollars, by the following code.</p>
-<div id="0106e6bb" class="cell" data-execution_count="4">
+<div id="1e175df8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> np.arange(start<span class="op">=</span><span class="dv">0</span>, stop<span class="op">=</span><span class="dv">80000</span>, step<span class="op">=</span><span class="dv">2000</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.hist(default[<span class="st">"income"</span>], bins<span class="op">=</span>bins)<span class="op">;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -664,7 +664,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Note that the y-axis here shows the frequency of observations in each bin. It is often relevant to change this to a relative frequency instead:</p>
-<div id="37ac8121" class="cell" data-execution_count="5">
+<div id="a21b56fa" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.hist(default[<span class="st">"income"</span>], bins <span class="op">=</span> bins, density <span class="op">=</span> <span class="va">True</span>)<span class="op">;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span> <span class="co"># print figure</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -676,7 +676,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We can do this similarly using seaborn:</p>
-<div id="5b7f7ce6" class="cell" data-execution_count="6">
+<div id="60c9f701" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(x <span class="op">=</span> <span class="st">"income"</span>, </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>             data <span class="op">=</span> default, </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>             bins <span class="op">=</span> bins,</span>
@@ -691,7 +691,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Some may prefer this syntax of feeding the function a data object and specifying which column to use for the plot. We can also add a kernel density estimate (smoothed version of a histogram) on top of the histogram by the kde argument.</p>
-<div id="568ed41d" class="cell" data-execution_count="7">
+<div id="f88176af" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(x <span class="op">=</span> <span class="st">"income"</span>, </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>             data <span class="op">=</span> default, </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>             bins <span class="op">=</span> bins,</span>
@@ -710,7 +710,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="boxplot-and-violin-plot" class="level3">
 <h3 class="anchored" data-anchor-id="boxplot-and-violin-plot">Boxplot and violin plot</h3>
 <p>Boxplot is a useful way of visualizing data.</p>
-<div id="6104f7ba" class="cell" data-execution_count="8">
+<div id="2575870b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -722,7 +722,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Especially, if you are going to compare a continuous variable (income) for different groups (students vs nonstudents):</p>
-<div id="9f32630f" class="cell" data-execution_count="9">
+<div id="b2e5e453" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x <span class="op">=</span> <span class="st">"student"</span>, y <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -734,7 +734,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Alternatively, we can achieve the same thing using a violin plot:</p>
-<div id="c96b57ca" class="cell" data-execution_count="10">
+<div id="1a0cf262" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.violinplot(x <span class="op">=</span> <span class="st">"student"</span>, y <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -749,7 +749,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="scatterplot" class="level3">
 <h3 class="anchored" data-anchor-id="scatterplot">Scatterplot</h3>
 <p>Scatterplots are useful when you want to visualize the dependence structure of two continous variables, say balance and income in the default dataset.</p>
-<div id="b70812f2" class="cell" data-execution_count="11">
+<div id="e6fd5225" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"balance"</span>, y <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -765,7 +765,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="barcount-plot" class="level3">
 <h3 class="anchored" data-anchor-id="barcount-plot">Bar/count plot</h3>
 <p>Bar plots is a very useful way of visualizing counts or frequencies. Most graphical functions also allow you to split the plots by some grouping variable using different colors. This is done using the hue argument. In this case, we want to show the frequency of people that defaulted (default = “Yes”) or not (“No”), coloring the bars by their student status (“Yes” = student, “No” = nonstudent).</p>
-<div id="3cca64d6" class="cell" data-execution_count="12">
+<div id="1e3bbffc" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span> <span class="st">"default"</span>, </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>              data <span class="op">=</span>default, </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>              stat<span class="op">=</span><span class="st">"proportion"</span>, </span>
@@ -784,7 +784,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="personalize-your-figures">Personalize your figures!</h3>
 <p>It is important to make your graphics look good, informative and professional. The basic figure you get by using default options can be quite good, but often you may want to personalize it further. This can mean e.g.&nbsp;changing axis labels, adding a title, changing how the markers look, changing line widths or size of points, etc. There are lots of options you can bend and tweak when making these kinds of figures to make them look pretty and informative.</p>
 <p>Let us use the scatterplot from above as an example. Say I want to change the axis titles:</p>
-<div id="e7e17feb" class="cell" data-execution_count="13">
+<div id="48f631b0" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"balance"</span>, y <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Balance (in USD)"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Yearly gross income (USD)"</span>)</span>
@@ -798,7 +798,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>I may also want to change how the points of the scatterplot is presented:</p>
-<div id="52f7246b" class="cell" data-execution_count="14">
+<div id="870333c0" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"balance"</span>,</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">"income"</span>, </span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                data <span class="op">=</span> default,</span>
@@ -817,7 +817,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>or perhaps I would like to color the points by their student status:</p>
-<div id="d9a4bc5f" class="cell" data-execution_count="15">
+<div id="cbb6ff95" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"balance"</span>,</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">"income"</span>, </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                data <span class="op">=</span> default,</span>
