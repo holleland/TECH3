@@ -175,6 +175,10 @@ window.Quarto = {
 <span class="menu-text">Seminars</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./datalabs.html"> 
+<span class="menu-text">Datalabs</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./oldexams.html"> 
 <span class="menu-text">Old exams</span></a>
   </li>  
@@ -272,6 +276,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./1-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./1-exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
@@ -349,8 +359,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-distribution-functions-in-python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Distribution functions in Python</span></a>
+  <a href="./2-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -438,6 +448,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./3-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./3-exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
@@ -487,6 +503,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./4-videos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Videos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -574,6 +596,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./5-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./5-exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
@@ -632,7 +660,7 @@ window.Quarto = {
 </ol>
 <p>We can only control 1 and 3. Imagine that we know the effect size is 0.75 and set the significance level to 5%. We can the calculate how big the sample needs to be for our test to have a power of 0.8.</p>
 <p>This is how we do it in Python:</p>
-<div id="76b61b92" class="cell" data-execution_count="1">
+<div id="c5ee2a5e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.stats.power <span class="im">as</span> smp</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>power_analysis <span class="op">=</span> smp.TTestIndPower()</span>

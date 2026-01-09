@@ -1,0 +1,7 @@
+# Practicalities 
+
+Here you will find practical information about the datalabs. The data labs are meant to help you learn to do relevant tasks in Python by doing them by yourself. They will help you get started by providing some example code and then task you to solve some tasks yourself. The solutions will also be available, but please only use this if you get stuck.
+
+Since you have learned to use git and github in TECH2, we want to facilitate you to continue using these tools. The datalabs are therefore published on github. You can choose to clone or fork the repositories using git bash and commands. Using git is not a learning goal of TECH3, so you may also just download the notebooks from github using your web browser.
+
+In TECH2 you used anaconda and environments. We have therefore made a *environment.yml* file that you can use to create a conda environment with the necessary python packages for TECH3 (see Datalab 1). This can be used for all python activities in the course and during the exam.

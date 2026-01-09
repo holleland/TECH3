@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>distribution-functions-in-python – TECH3 Applied statistics</title>
+<title>python – TECH3 Applied statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2-exercises.html" rel="next">
-<link href="./2-exp-var-discrete.html" rel="prev">
+<link href="./4-exercises.html" rel="next">
+<link href="./4-videos.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -105,35 +70,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -175,6 +111,10 @@ window.Quarto = {
 <span class="menu-text">Seminars</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./datalabs.html"> 
+<span class="menu-text">Datalabs</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./oldexams.html"> 
 <span class="menu-text">Old exams</span></a>
   </li>  
@@ -189,7 +129,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-intro.html">Module 2: Probability, random variables, probability distributions and simulations.</a></li><li class="breadcrumb-item"><a href="./2-distribution-functions-in-python.html">Distribution functions in Python</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4-intro.html">Module 4: Designing studies, hypothesis testing, and quantifying effects</a></li><li class="breadcrumb-item"><a href="./4-python.html">Python</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -272,6 +212,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./1-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./1-exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
@@ -349,8 +295,8 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-distribution-functions-in-python.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Distribution functions in Python</span></a>
+  <a href="./2-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -438,6 +384,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./3-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./3-exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
@@ -487,6 +439,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./4-videos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Videos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-python.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Python</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -574,6 +532,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./5-python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./5-exercises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Exercises</span></a>
   </div>
@@ -590,399 +554,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#continuous-uniform-distribution" id="toc-continuous-uniform-distribution" class="nav-link active" data-scroll-target="#continuous-uniform-distribution">Continuous: Uniform distribution</a></li>
-  <li><a href="#continuous-normal-distribution" id="toc-continuous-normal-distribution" class="nav-link" data-scroll-target="#continuous-normal-distribution">Continuous: Normal distribution</a></li>
-  <li><a href="#discrete-binomial-distribution" id="toc-discrete-binomial-distribution" class="nav-link" data-scroll-target="#discrete-binomial-distribution">Discrete: Binomial distribution</a></li>
-  <li><a href="#discrete-poisson-distribution" id="toc-discrete-poisson-distribution" class="nav-link" data-scroll-target="#discrete-poisson-distribution">Discrete: Poisson distribution</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link active" data-scroll-target="#python">Python</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-intro.html">Module 2: Probability, random variables, probability distributions and simulations.</a></li><li class="breadcrumb-item"><a href="./2-distribution-functions-in-python.html">Distribution functions in Python</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Distribution functions in Python</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./4-intro.html">Module 4: Designing studies, hypothesis testing, and quantifying effects</a></li><li class="breadcrumb-item"><a href="./4-python.html">Python</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>The list of probability distributions is extensive. We will only scratch the surface in TECH3, consider some very commonly used distributions. An important distinction is between <strong>discrete</strong> and <strong>continuous</strong> distributions.</p>
-<p>A <strong>discrete distribution</strong> describes outcomes that take on distinct, countable values. Typical examples include the number of successes in a series of trials or the number of arrivals in a queue. These distributions are characterized by probability mass functions (PMFs), which assign a probability to each possible outcome.</p>
-<p>A <strong>continuous distribution</strong>, on the other hand, models outcomes that can take on any value within an interval of real numbers. Instead of individual probabilities, they use probability density functions (PDFs), where probabilities are obtained by integrating over an interval. Examples include measurements such as time, distance, prices, or temperature.</p>
-<p>A <strong>probability mass function</strong> (PMF) is used for discrete distributions and gives the probability of each specific outcome. In contrast, a probability density function (PDF) is used for continuous distributions and does not give probabilities directly; instead, probabilities are obtained by integrating the density over an interval. Both types of distributions share two related functions: <strong>the cumulative distribution function</strong> (CDF), which gives the probability that a random variable is less than or equal to a given value, and the <strong>percentage point (quantile) function</strong>, which is the inverse of the CDF and returns the value corresponding to a specified cumulative probability.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 36%">
-<col style="width: 40%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Function</strong></th>
-<th><strong>Discrete distribution</strong></th>
-<th><strong>Continuous distribution</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Probability mass / density</strong></td>
-<td>PMF: <span class="math inline">\(p(x) = P(X = x)\)</span>, 0p(x)</td>
-<td>PDF: <span class="math inline">\(f(x) \ge 0\)</span>, <span class="math inline">\(P(a \le X \le b) = \int_a^b f(x)\,dx\)</span></td>
-</tr>
-<tr class="even">
-<td><strong>Cumulative distribution function (CDF)</strong></td>
-<td><span class="math inline">\(F(x) = P(X \le x) = \sum_{t \le x} p(t)\)</span></td>
-<td><span class="math inline">\(F(x) = P(X \le x) = \int_{-\infty}^{x} f(t)\,dt\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Quantile / Percentage point function</strong></td>
-<td><span class="math inline">\(Q(p) = \inf\{ x : F(x) \ge p\}\)</span></td>
-<td><span class="math inline">\(Q(p) = \inf\{x : F(x) \ge p\}\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>In Python we find relevant function for (almost) all distributions you can think of in the library (complete list <a href="https://docs.scipy.org/doc/scipy/reference/stats.html">here</a>).</p>
-<div id="5af89923" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Below is a table of distributions, classified as either discrete or contiuous, and the name of the respective scipy.stats distribution name or class.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th><strong>Type</strong></th>
-<th><strong>Distribution</strong></th>
-<th><strong>scipy.stats name</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Continuous</strong></td>
-<td>Normal</td>
-<td><code>norm</code></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Uniform</td>
-<td><code>uniform</code></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Exponential</td>
-<td><code>expon</code></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Chi-squared</td>
-<td><code>chi2</code></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Gamma</td>
-<td><code>gamma</code></td>
-</tr>
-<tr class="even">
-<td><strong>Discrete</strong></td>
-<td>Bernoulli</td>
-<td><code>bernoulli</code></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Binomial</td>
-<td><code>binom</code></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Poisson</td>
-<td><code>poisson</code></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td>Geometric</td>
-<td><code>geom</code></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Negative binomial</td>
-<td><code>nbinom</code></td>
-</tr>
-</tbody>
-</table>
-<section id="continuous-uniform-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-uniform-distribution">Continuous: Uniform distribution</h2>
-<p>The uniform distribution is characterized by having a constant density and being defined one a closed interval. That is, if <span class="math inline">\(X\sim U(a,b)\)</span>, the density is <span class="math display">\[f(x) = \frac{1}{b-a},\quad a\le x\le b,\, a&lt;b.\]</span> The corresponding cumulative distribution function is <span class="math display">\[
-F(X) = \int_a^x f(k)\, dk = \int_a^x \frac{1}{b-a} dk = \frac{k}{b-a}\bigg|_a^x = \frac{x-a}{b-a},\quad a\le x \le b.
-\]</span> The CDF of a uniform distribution function is the inverse of <span class="math inline">\(F(x)\)</span>, which we can actually express explicitly. We need to solve <span class="math inline">\(p=F(x)\)</span> for x. <span class="math display">\[
-p= F(x) = \frac{x-a}{b-a}\quad \Leftrightarrow \quad
-x = a+(b-a)p=Q(p), \quad 0\le p\le1.
-\]</span> Hence, the quantile function of a uniform distribution is linear in <span class="math inline">\(p\)</span>.</p>
-<p>We plot the three functions for a U(0,1) distribution, i.e.&nbsp;<span class="math inline">\(a=0\)</span> and <span class="math inline">\(b=1\)</span>. This would mean: <span class="math inline">\(f(x) = 1/(1-0)=1\)</span>, <span class="math inline">\(F(x) = x\)</span> and <span class="math inline">\(Q(p)=p\)</span>.</p>
-<div id="977e0115" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2000</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ppts <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2000</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> stats.uniform.pdf(x)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>cdf <span class="op">=</span> stats.uniform.cdf(x)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ppf <span class="op">=</span> stats.uniform.ppf(ppts)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot density</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x,pdf)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Uniform(0,1) density"</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"f(x)"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot cumulative distribution function</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.plot(x,cdf)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"P(X ≤ x)"</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Uniform(0,1) CDF"</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot percentage point function (quantile function):</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.plot(ppts,ppf)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"p"</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Q(p)"</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Uniform(0,1) quantile function (PPF)"</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-3-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-3-output-3.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="continuous-normal-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-normal-distribution">Continuous: Normal distribution</h2>
-<p>The normal density function is given by <span class="math display">\[
-f(x) = \frac{1}{\sqrt{2\pi}\,\sigma}
-\exp\!\left( -\frac{(x - \mu)^2}{2\sigma^2} \right),\quad  x\in\mathcal R,\, \mu\in\mathcal R,\, \sigma &gt;0.
-\]</span> Here <span class="math inline">\(\mu\)</span> is the expected value of <span class="math inline">\(X\)</span> and <span class="math inline">\(\sigma^2\)</span> is the variance. The CDF is then given by the integral: <span class="math display">\[
-F(x)=P(X\le x)
-= \frac{1}{\sqrt{2\pi}\,\sigma}
-\int_{-\infty}^{x}
-\exp\!\left( -\frac{(t-\mu)^2}{2\sigma^2} \right)\, dt.
-\]</span> The quantile function is then the inverse of <span class="math inline">\(F\)</span>, i.e. <span class="math display">\[
-Q(p) = \inf\{ x \in \mathbb{R} : F(x) \ge p \}.
-\]</span> While the CDF tells you how likely <span class="math inline">\(X\)</span> is to be below a value, the quantile function tells you which value of <span class="math inline">\(X\)</span> corresponds to a chosen probability.</p>
-<p>Below we plot the three function for a standard normal distribution. That is, a normal distribution with expectation <span class="math inline">\(\mu=0\)</span> and variance <span class="math inline">\(\sigma^2=1\)</span>.</p>
-<div id="2b5ab1cf" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ppts <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1000</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2000</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> stats.norm.pdf(x)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>cdf <span class="op">=</span> stats.norm.cdf(x)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ppf <span class="op">=</span> stats.norm.ppf(ppts)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot density</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x, pdf)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Standard Normal density"</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"f(x)"</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot cumulative distribution function</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.plot(x, cdf)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Standard Normal CDF"</span>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"P(X ≤ x)"</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot percentage point function (quantile function):</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.plot(ppts, ppf)</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Standard Normal quantile function (PPF)"</span>)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"p"</span>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Q(p)"</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-4-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-4-output-3.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="discrete-binomial-distribution" class="level1">
-<h1>Discrete: Binomial distribution</h1>
-<p>The PMF of a Possion distributed variable X is given by <span class="math display">\[
-p(x)= P(X = x) = \binom{n}{x} p^{x} (1-p)^{\,n-x}, \qquad x = 0,1,\ldots,n,
-\]</span> where <span class="math inline">\(\binom{n}{k}\)</span> is the binomial coefficient, defined by <span class="math display">\[
-\binom{n}{k}
-= \frac{n!}{k!\,(n-k)!}.
-\]</span> Hence, the cumulative distribution function is</p>
-<p><span class="math display">\[
-F(x) = P(X\le x)=\sum_{k=0}^{\lfloor x \rfloor} \binom{n}{k} p^{k} (1-p)^{\,n-k}, \quad 0\le x\le n.
-\]</span> Note the use of <span class="math inline">\(\lfloor x \rfloor\)</span>, which means rounding <span class="math inline">\(x\)</span> to nearest integer. This allows us to define the CDF for a contious <span class="math inline">\(x\)</span>, even though the PMF only is defined for integer values. This makes the CDF a step function.</p>
-<p>There is no closed form expression for the quantile function, but we can compute it using Python. In the code below, we calculate the three functions and plot them, for a binomial distribution with number of trials <span class="math inline">\(n=20\)</span> and probability of success <span class="math inline">\(p=0.3\)</span>.</p>
-<div id="cb8568a5" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for the binomial distribution</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">20</span>       <span class="co"># number of trials</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.3</span>      <span class="co"># success probability</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># x-values must be integers from 0 to n</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">0</span>, n<span class="op">+</span><span class="dv">1</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Probability mass, cumulative, and quantile values</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>pmf <span class="op">=</span> stats.binom.pmf(x, n, p)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>cdf <span class="op">=</span> stats.binom.cdf(x, n, p)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># For the quantile (percentage point function), we use ppts in [0,1]</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>ppts <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000</span>)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>ppf <span class="op">=</span> stats.binom.ppf(ppts, n, p)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot probability mass function</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>plt.bar(x, pmf)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Binomial(n=20,p=0.3) PMF"</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"p(x)"</span>)</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot cumulative distribution function</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>plt.step(x, cdf, where<span class="op">=</span><span class="st">'post'</span>)</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Binomial(n=20,p=0.3) CDF"</span>)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"P(X ≤ x)"</span>)</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot quantile (percentage point) function</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>plt.plot(ppts, ppf)</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Binomial(n=20,p=0.3) Quantile Function (PPF)"</span>)</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"p"</span>)</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Q(p)"</span>)</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-5-output-3.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="discrete-poisson-distribution" class="level1">
-<h1>Discrete: Poisson distribution</h1>
-<p>The PMF of a Possion distributed variable X is given by <span class="math display">\[
-p(x)=P(X = x) = \frac{\lambda^{x} e^{-\lambda}}{x!}, \quad x = 0,1,2,\ldots,
-\]</span> where parameter <span class="math inline">\(\lambda\)</span> is both the expectation and variance of <span class="math inline">\(X\)</span> (this is a characteristic of the Poisson distribution). The CDF is given by: <span class="math display">\[F(x) = P(X\le x) = \sum_{k=0}^{\lfloor x \rfloor}\frac{\lambda^{k} e^{-\lambda}}{k!}, \quad x\ge0.\]</span> Note also here that we use a rounding down for the <span class="math inline">\(x\)</span> in the summation to define it for a continuous non-negative <span class="math inline">\(x\)</span>, even though <span class="math inline">\(X\)</span> is discrete.</p>
-<p>Also for the Poisson distribution, the quantile there is also no closed form expression.</p>
-<p>We repeat the exercise of plotting the three functions, this time for Poisson distribution with <span class="math inline">\(\lambda = 4\)</span>.</p>
-<div id="ba1f212c" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameter for the Poisson distribution</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="dv">4</span>  <span class="co"># intensity parameter λ</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Reasonable x-range (e.g., up to λ + 4√λ)</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>x_max <span class="op">=</span> <span class="bu">int</span>(lam <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> np.sqrt(lam))</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">0</span>, x_max <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Probability mass, cumulative distribution, and quantile values</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>pmf <span class="op">=</span> stats.poisson.pmf(x, lam)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>cdf <span class="op">=</span> stats.poisson.cdf(x, lam)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># For the quantile (percentage point function)</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>ppts <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1000</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>ppf <span class="op">=</span> stats.poisson.ppf(ppts, lam)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot PMF</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.bar(x, pmf)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Poisson(4) PMF"</span>)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"p(x)"</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot CDF</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>plt.step(x, cdf, where<span class="op">=</span><span class="st">'post'</span>)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Poisson(4) CDF"</span>)</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"P(X ≤ x)"</span>)</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot quantile (PPF) function</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>plt.plot(ppts, ppf)</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Poisson(4) Quantile Function (PPF)"</span>)</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"p"</span>)</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Q(p)"</span>)</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-6-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="2-distribution-functions-in-python_files/figure-html/cell-6-output-3.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="python" class="level1">
+<h1>Python</h1>
+<p>Here we will present some useful python commands relevant for what we want to do in Module 4.</p>
 
 
 </section>
@@ -1389,12 +973,12 @@ p(x)=P(X = x) = \frac{\lambda^{x} e^{-\lambda}}{x!}, \quad x = 0,1,2,\ldots,
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./2-exp-var-discrete.html" class="pagination-link" aria-label="Expectation and variance of discrete random variables">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Expectation and variance of discrete random variables</span>
+      <a href="./4-videos.html" class="pagination-link" aria-label="Videos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Videos</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2-exercises.html" class="pagination-link" aria-label="Exercises">
+      <a href="./4-exercises.html" class="pagination-link" aria-label="Exercises">
         <span class="nav-page-text">Exercises</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

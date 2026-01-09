@@ -20,6 +20,8 @@ website:
         href: 1-intro.qmd
       - text: "Seminars"
         href: seminar1.qmd
+      - text: "Datalabs"
+        href: datalabs.qmd
       - text: "Old exams"
         href: oldexams.qmd
 
@@ -50,6 +52,7 @@ website:
              - 1-plotting-tools.qmd
              - 1-idealised_representations.qmd
              - 1-gapminder.qmd
+             - 1-python.qmd
              - 1-exercises.qmd
          - section: "Module 2: Probability, random variables, probability distributions and simulations."
            contents: 
@@ -65,7 +68,7 @@ website:
              - 2-bayes-rule.qmd
              - 2-discrete-random-variables-and-distributions.qmd
              - 2-exp-var-discrete.qmd
-             - 2-distribution-functions-in-python.qmd
+             - 2-python.qmd
              - 2-exercises.qmd
          - section: "Module 3: Estimation, sampling distributions and resampling"
            contents: 
@@ -82,6 +85,7 @@ website:
              - 3-random-number-generation.qmd
              - 3-monte-carlo-simulation.qmd
              - 3-bootstrap.qmd
+             - 3-python.qmd
              - 3-exercises.qmd
              # - 3-python.qmd
          - section: "Module 4: Designing studies, hypothesis testing, and quantifying effects"
@@ -94,6 +98,7 @@ website:
              - 4-hypothesis-testing-in-python.qmd
              - 4-power-analysis.qmd
              - 4-videos.qmd
+             - 4-python.qmd
              - 4-exercises.qmd
          - section: "Module 5: Measuring relationships and fitting models"
            contents: 
@@ -110,6 +115,7 @@ website:
              - 5-assessing-the-model.qmd
              - 5-prediction-models.qmd
              - 5-logistic-regression.qmd
+             - 5-python.qmd
              - 5-exercises.qmd
             
     # - title: "Python basics"
@@ -128,6 +134,20 @@ website:
           title: "Seminar 2"
         - href: seminar3.qmd
           title: "Seminar 3"
+    - title: "Datalabs"
+      contents:
+        - href: datalabs.qmd
+          title: "Practicalities"
+        - href: datalab1.qmd
+          title: "Datalab 1"
+        - href: datalab2.qmd
+          title: "Datalab 2"
+        - href: datalab3.qmd
+          title: "Datalab 3"
+        - href: datalab4.qmd
+          title: "Datalab 4"
+        - href: datalab5.qmd
+          title: "Datalab 5"
         # navigation items
 
         

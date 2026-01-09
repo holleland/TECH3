@@ -1,0 +1,3 @@
+# Python
+
+Here we will present some useful python commands relevant for what we want to do in Module 5.

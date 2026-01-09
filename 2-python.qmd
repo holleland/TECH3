@@ -1,6 +1,6 @@
-# Distribution functions in Python
+# Python
 
-The list of probability distributions is extensive. We will only scratch the surface in TECH3, consider some very commonly used distributions. An important distinction is between **discrete** and **continuous** distributions.
+For module 2, the relevant Python functions are the probability distributions functions. The list of probability distributions is extensive. We will only scratch the surface in TECH3 and consider some very commonly used distributions. An important distinction is between **discrete** and **continuous** distributions.
 
 A **discrete distribution** describes outcomes that take on distinct, countable values. Typical examples include the number of successes in a series of trials or the number of arrivals in a queue. These distributions are characterized by probability mass functions (PMFs), which assign a probability to each possible outcome.
 
