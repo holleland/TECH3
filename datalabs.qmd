@@ -1,4 +1,4 @@
-# Practicalities 
+# Practicalities
 
 Here you will find practical information about the datalabs. The data labs are meant to help you learn to do relevant tasks in Python by doing them by yourself. They will help you get started by providing some example code and then task you to solve some tasks yourself. The solutions will also be available, but please only use this if you get stuck.
 

@@ -50,7 +50,7 @@ print("\nMedian:")
 print(x.median())
 ```
 
-The median is middle observation. To find 1st and 3rd quartiles (25% and 75% percentiles), we find the observation that has 25% and 75% of the data smaller than itself. With 12 observations, this is sorted observation number $(12-1)*25\%+1 = 3.75$ and $(12-1)*75\% = 9.25$. The 25th percentile is thus between sorted observations 3 and 4, and we find it by a weighted average of the two. Since 3.75 is closer to 4, the third observation gets a higher weight. $$\text{1st quartile}=\text{25th percentile}=0.25 \cdot x_{(3)}+0.75 \cdot x_{(4)}=0.25\cdot 6.6+0.75\cdot 7.0 = 6.9.$$ Likewise, $$\text{3rd quartile}=\text{75th percentile}=0.75 \cdot x_{(9)}+0.25 \cdot x_{(10)}=0.75\cdot 12.3+0.25\cdot 13.2 = 12.525$$
+The median is middle observation. To find 1st and 3rd quartiles (25% and 75% percentiles), we find the observation that has 25% and 75% of the data smaller than itself. With 12 observations, this is sorted observation number $(12-1)*25\%+1 = 3.75$ and $(12-1)*75\% +1= 9.25$. The 25th percentile is thus between sorted observations 3 and 4, and we find it by a weighted average of the two. Since 3.75 is closer to 4, the third observation gets a higher weight. $$\text{1st quartile}=\text{25th percentile}=0.25 \cdot x_{(3)}+0.75 \cdot x_{(4)}=0.25\cdot 6.6+0.75\cdot 7.0 = 6.9.$$ Likewise, $$\text{3rd quartile}=\text{75th percentile}=0.75 \cdot x_{(9)}+0.25 \cdot x_{(10)}=0.75\cdot 12.3+0.25\cdot 13.2 = 12.525$$
 
 In Python, we find these quantities by
 
