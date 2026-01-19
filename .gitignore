@@ -3,3 +3,4 @@
 .Rhistory
 *.quarto_ipynb
 Images/ACR Poster.png
+**/*.quarto_ipynb

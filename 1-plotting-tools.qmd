@@ -21,4 +21,3 @@ Slides for ["Plotting tools"](video-pdfs/1/plotting_tools.pdf)
 -   What do we call the height of the box in a boxplot?
 -   What plot would you use for illustrating dependence between two continuous (numeric) variables?
 -   What is a time plot?
-
