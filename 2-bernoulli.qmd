@@ -6,7 +6,7 @@
 </iframe>
 :::
 
-Slides for ["Bernoulli"](video-pdfs/2/Bernoulli.pdf)
+Slides for ["The Bernoulli distribution"](video-pdfs/2/Bernoulli.pdf)
 
 
 

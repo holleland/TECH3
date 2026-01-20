@@ -1,24 +1,29 @@
 # Seminar 1
 
 ### Exercise 1
+
 ```{r}
 #| echo: false
+#| eval: false
 set.seed(1)
 x <- round(rnorm(11, mean = 5),1)
-print(x)
+print(sort(x))
 ```
 
-a) For the given set of data, find the
+Consider these 11 sorted numbers: 
+$$4.2, 4.2, 4.4, 4.7, 5.2, 5.3, 5.5, 5.6, 5.7, 6.5, 6.6.$$
 
-i) Mean
+a)  For the given set of data, find the
+
+i)  Mean
 ii) Median
 iii) Standard deviation
 iv) 1st and 3rd quartile
-v) Interquartile range
+v)  Interquartile range
 vi) Min and Max
 
-b) Use the information from (a) to draw a box plot of the data points. 
 
+b)  Use the information from (a) to draw a box plot of the data points.
 
 ### Exercise 2 (Exam spring 2025, problem 1)
 
@@ -26,10 +31,9 @@ You are presented two graphs. Figure 1a) is an illustration that was published o
 
 ![a) Graduation rate under President Obama, posted on Twitter (now X), by the White House. b) Fox News presenting support for various Republican nominees for the 2012 US election.](images/V25prob1.png){width="100%"}
 
-
 ### Exercise 3 (Exam spring 2025 retake, problem 1)
 
-A company, called *MetaZen Pharma*, is selling a dietary supplement called **VitaBoost365+**. The first graphic (a) below was used in a nationwide campaign, where they claimed that their product lead to a large improvement in energy score compared to a placebo supplement. 
+A company, called *MetaZen Pharma*, is selling a dietary supplement called **VitaBoost365+**. The first graphic (a) below was used in a nationwide campaign, where they claimed that their product lead to a large improvement in energy score compared to a placebo supplement.
 
 The second graphic (b) was shown at the general assembly of share holders. Discuss how these graphics have been manipulated for pushing the agenda of the company. What is the company trying to achieve here?
 
@@ -77,15 +81,16 @@ ggpubr::ggarrange(plot1,plot2,nrow = 1, ncol = 2)
 ```
 
 ### Exercise 4 (Trial exam, Spring 2025, problem 2a)
+
 Roulette is a game of chance where a roulette wheel has 37 numbered pockets where a ball can land. 18 of these pockets are red, 18 are black, and 1 is green (at least in Europe).
 
-If, for example, you bet 1\euro\, on red, and red occurs, then you win your bet back plus 1\euro\, (i.e., a gain of 1\euro). But if black or green occurs, you lose the bet (a gain of -1\euro).
+If, for example, you bet 1\euro, on red, and red occurs, then you win your bet back plus 1\euro, (i.e., a gain of 1\euro). But if black or green occurs, you lose the bet (a gain of -1\euro).
 
-You bet 1\euro\, on red. Answer the following: 
+You bet 1\euro, on red. Answer the following:
 
-a) What is the expected gain?
-b) What is the variance of this gain?
-c) What is the probability of a positive gain?
+a)  What is the expected gain?
+b)  What is the variance of this gain?
+c)  What is the probability of a positive gain?
 
 ### Exercise 5 (Exam spring 2025, problem 3a-b)
 
@@ -97,32 +102,40 @@ A startup offering hands-on craft beer brewing workshops is piloting a weekend c
 
 Each participant pays **NOK 2,200**, and costs the company **NOK 250** in materials. There is also a fixed cost of **NOK 4,200** per workshop. The company starts with **NOK 50,000 in capital** and plans to run the workshop every Saturday for one year (**52 weeks**).
 
- a) What is the probability that a single workshop has at least one participant? What is the probability that the workshop has at least one participant every Saturday for five consecutive weeks?
+a)  What is the probability that a single workshop has at least one participant? What is the probability that the workshop has at least one participant every Saturday for five consecutive weeks?
 
+b)  Show that the expected number of participants per week is $2.05$ and that the standard deviation is $1.20$.
 
- b) Show that the expected number of participants per week is $2.05$ and that the standard deviation is $1.20$.
- 
- 
-### Exercise 6 (Trial exam Spring 2025, Problem 3a-b)
+### Exercise 6
 
-:::: {.columns}
-::: {.column width="20%"}
+Let $X$ be a continuous random variable with density function
+$$f(x) = \lambda e^{-2x}, \quad x\ge 0.$$
 
-![](images/milkjug.png){width=90%}
+a) Find $\lambda$ for $f$ to fulfill the requirements of being a density. 
 
-:::
-::: {.column width="75%"}
+b) Find an expression for the cumulative distribution function $F(x)=P(X\le x)$. 
 
-Old MacDonald had an organic farm and on that farm he had a cow. He was worried that the cow was producing too little milk, and started to count how many milk jugs the cow filled each day. After a few months, he has estimated the following probabilities:
+b) What is the probability that X is larger than 2?
 
-| Milk Jugs | 0    | 1    | 2    | 3    | 4    | 5    | 6    |
-|-----------|------|------|------|------|------|------|------|
-| Probability | 0.05 | 0.15 | 0.30 | 0.25 | 0.15 | 0.07 | 0.03 |
+c) Show that the distribution of X fulfills the memoryless property, i.e. that 
+$$P(X>s+t|X>s)=P(X>t).$$ 
 
-:::
-::::
+<!-- ### Exercise 6 (Trial exam Spring 2025, Problem 3a-b) -->
 
-a) What is the probability that the cow fills any milk jugs tomorrow? What is the probability that she fills any milk jugs every day for a week?
+<!-- ::::: columns -->
+<!-- ::: {.column width="20%"} -->
+<!-- ![](images/milkjug.png){width="90%"} -->
+<!-- ::: -->
 
-b) Show that the expectation and standard deviation of the number of milk jugs produced by the cow are respectively, **2.63** and **1.38**.
+<!-- ::: {.column width="75%"} -->
+<!-- Old MacDonald had an organic farm and on that farm he had a cow. He was worried that the cow was producing too little milk, and started to count how many milk jugs the cow filled each day. After a few months, he has estimated the following probabilities: -->
 
+<!-- | Milk Jugs   | 0    | 1    | 2    | 3    | 4    | 5    | 6    | -->
+<!-- |-------------|------|------|------|------|------|------|------| -->
+<!-- | Probability | 0.05 | 0.15 | 0.30 | 0.25 | 0.15 | 0.07 | 0.03 | -->
+<!-- ::: -->
+<!-- ::::: -->
+
+<!-- a)  What is the probability that the cow fills any milk jugs tomorrow? What is the probability that she fills any milk jugs every day for a week? -->
+
+<!-- b)  Show that the expectation and standard deviation of the number of milk jugs produced by the cow are respectively, **2.63** and **1.38**. -->

@@ -6,7 +6,7 @@
 </iframe>
 :::
 
-Slides for ["Binomial"](video-pdfs/2/Binomial.pdf)
+Slides for ["The Binomial distribution"](video-pdfs/2/Binomial.pdf)
 
 
 ## Controll questions
