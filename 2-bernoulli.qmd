@@ -6,6 +6,10 @@
 </iframe>
 :::
 
+Slides for ["Bernoulli"](video-pdfs/2/Bernoulli.pdf)
+
+
+
 ## Controll questions
 
 1.  What is a Bernoulli trial?

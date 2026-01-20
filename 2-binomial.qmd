@@ -6,6 +6,8 @@
 </iframe>
 :::
 
+Slides for ["Binomial"](video-pdfs/2/Binomial.pdf)
+
 
 ## Controll questions
 
