@@ -13,14 +13,7 @@ print(sort(x))
 Consider these 11 sorted numbers: 
 $$4.2, 4.2, 4.4, 4.7, 5.2, 5.3, 5.5, 5.6, 5.7, 6.5, 6.6.$$
 
-a)  For the given set of data, find the
-
-i)  Mean
-ii) Median
-iii) Standard deviation
-iv) 1st and 3rd quartile
-v)  Interquartile range
-vi) Min and Max
+a) For the given set of data, find the i) Median, ii) 1st and 3rd quartile, iii)  Interquartile range, iv) Min and Max.
 
 
 b)  Use the information from (a) to draw a box plot of the data points.
@@ -100,7 +93,7 @@ A startup offering hands-on craft beer brewing workshops is piloting a weekend c
 |--------------------|------|------|------|------|------|
 | Probability P(X=x) | 0.10 | 0.25 | 0.30 | 0.20 | 0.15 |
 
-Each participant pays **NOK 2,200**, and costs the company **NOK 250** in materials. There is also a fixed cost of **NOK 4,200** per workshop. The company starts with **NOK 50,000 in capital** and plans to run the workshop every Saturday for one year (**52 weeks**).
+<!-- Each participant pays **NOK 2,200**, and costs the company **NOK 250** in materials. There is also a fixed cost of **NOK 4,200** per workshop. The company starts with **NOK 50,000 in capital** and plans to run the workshop every Saturday for one year (**52 weeks**). -->
 
 a)  What is the probability that a single workshop has at least one participant? What is the probability that the workshop has at least one participant every Saturday for five consecutive weeks?
 
@@ -115,10 +108,12 @@ a) Find $\lambda$ for $f$ to fulfill the requirements of being a density.
 
 b) Find an expression for the cumulative distribution function $F(x)=P(X\le x)$. 
 
-b) What is the probability that X is larger than 2?
+c) What is the probability that X is larger than 2?
 
-c) Show that the distribution of X fulfills the memoryless property, i.e. that 
+d) Show that the distribution of X fulfills the memoryless property, i.e. that 
 $$P(X>s+t|X>s)=P(X>t).$$ 
+
+e) X is exponentially distributed, which in general, has the memoryless property. This distribution is often used for waiting times. Can you give an intuitive interpretation of the memoryless property if X for example is the waiting time for the next arriving bus and you condition on already having waited $s$ minutes?
 
 <!-- ### Exercise 6 (Trial exam Spring 2025, Problem 3a-b) -->
 
