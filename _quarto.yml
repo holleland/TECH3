@@ -70,6 +70,7 @@ website:
              - 2-exp-var-discrete.qmd
              - 2-bernoulli.qmd
              - 2-binomial.qmd
+             - 2-continuous-random-variables.qmd
              - 2-python.qmd
              - 2-exercises.qmd
          - section: "Module 3: Estimation, sampling distributions and resampling"

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>data-visualization – TECH3 Applied statistics</title>
+<title>continuous-random-variables – TECH3 Applied statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./1-plotting-tools.html" rel="next">
-<link href="./1-summary-statistics.html" rel="prev">
+<link href="./2-python.html" rel="next">
+<link href="./2-binomial.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -131,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1-intro.html">Module 1: Summarizing and visualizing data</a></li><li class="breadcrumb-item"><a href="./1-data-visualization.html">Data visualization principles</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-intro.html">Module 2: Probability, random variables, probability distributions and simulations.</a></li><li class="breadcrumb-item"><a href="./2-continuous-random-variables.html">Continuous random variables and distributions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -194,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-data-visualization.html" class="sidebar-item-text sidebar-link active">
+  <a href="./1-data-visualization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualization principles</span></a>
   </div>
 </li>
@@ -313,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-continuous-random-variables.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-continuous-random-variables.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Continuous random variables and distributions</span></a>
   </div>
 </li>
@@ -578,7 +607,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-visualization-principles" id="toc-data-visualization-principles" class="nav-link active" data-scroll-target="#data-visualization-principles">Data visualization principles</a>
+  <li><a href="#continuous-random-variables-and-distributions" id="toc-continuous-random-variables-and-distributions" class="nav-link active" data-scroll-target="#continuous-random-variables-and-distributions">Continuous random variables and distributions</a>
   <ul class="collapse">
   <li><a href="#controll-questions" id="toc-controll-questions" class="nav-link" data-scroll-target="#controll-questions">Controll questions</a></li>
   </ul></li>
@@ -586,32 +615,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1-intro.html">Module 1: Summarizing and visualizing data</a></li><li class="breadcrumb-item"><a href="./1-data-visualization.html">Data visualization principles</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-intro.html">Module 2: Probability, random variables, probability distributions and simulations.</a></li><li class="breadcrumb-item"><a href="./2-continuous-random-variables.html">Continuous random variables and distributions</a></li></ol></nav></header>
 
 
 
 
-<section id="data-visualization-principles" class="level1">
-<h1>Data visualization principles</h1>
-<div style="padding:75% 0 0 0;position:relative;">
-<iframe src="https://vimeo.com/showcase/11484032/embed?portrait=0&amp;byline=0" allowfullscreen="" frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+<section id="continuous-random-variables-and-distributions" class="level1">
+<h1>Continuous random variables and distributions</h1>
+<div style="padding:56.25% 0 0 0;position:relative;">
+<iframe src="https://player.vimeo.com/video/1158303389?badge=0&amp;autopause=0&amp;player_id=0&amp;portrait=0&amp;byline=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="TECH3: Continuous random variables and distributions">
 </iframe>
 </div>
-<p><br></p>
-<p>Slides for <a href="video-pdfs/1/principles_of_good_visualization.pdf">“Principles of good visualization”</a></p>
-<p>Slides for <a href="video-pdfs/1/accommodating_human_limitations.pdf">“Accommodating human limitations”</a></p>
+<p>Slides for <a href="video-pdfs/2/continuous_rvs_and_distributions.pdf">“Continuous random variables and distributions”</a></p>
 <section id="controll-questions" class="level2">
 <h2 class="anchored" data-anchor-id="controll-questions">Controll questions</h2>
-<ul>
-<li>Why should you always show the data?</li>
-<li>What does it mean to maximize the data/ink ratio?</li>
-<li>You may think that bar plots in 3D looks cool. Why should we not use that?</li>
-<li>What is distorting the data?</li>
-<li>If you want to compared Gross Domestic Product (GDP) between the US and Norway, how should you adjust the data?</li>
-<li>What does it mean to be “kind to the colorblind”?</li>
-<li>Why should you never use a pie chart? Ever.</li>
-<li>What would be a good alternative to a pie chart?</li>
-</ul>
+<ol type="1">
+<li>What is a continuous random variable?</li>
+<li>How do we interpret a probability density function (pdf)?</li>
+<li>What is the probability that a continuous random variable takes an exact value?</li>
+<li>How do you compute the probability that <span class="math inline">\(a&lt;X&lt;b\)</span>?</li>
+<li>What properties must a probability density function satisfy?</li>
+</ol>
 
 
 </section>
@@ -1020,13 +1044,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./1-summary-statistics.html" class="pagination-link" aria-label="Summary statistics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Summary statistics</span>
+      <a href="./2-binomial.html" class="pagination-link" aria-label="Binomial distribution">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Binomial distribution</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./1-plotting-tools.html" class="pagination-link" aria-label="Plotting tools">
-        <span class="nav-page-text">Plotting tools</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2-python.html" class="pagination-link" aria-label="Python">
+        <span class="nav-page-text">Python</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
