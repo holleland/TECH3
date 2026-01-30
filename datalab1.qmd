@@ -1,31 +1,30 @@
 # Datalab 1
 
-The first datalab is about summarizing and visualizing data. The content of the datalab can be forked or cloned using the following line in git bash: 
+The first datalab is about summarizing and visualizing data. The content of the datalab can be forked or cloned using the following line in git bash:
 
-
-```bash
+``` bash
 git clone https://github.com/holleland/TECH3_datalab1
 ```
 
-This will make a local copy of the files on the github repository at the current location of the git bash terminal. 
+This will make a local copy of the files on the github repository at the current location of the git bash terminal.
 
-If you dont want to use git bash, you can also open the github [link](https://github.com/holleland/TECH3_datalab1) in your browser and download the files "manually". 
+If you dont want to use git bash, you can also open the github [link](https://github.com/holleland/TECH3_datalab1) in your browser and download the files "manually".
 
-The repository consists of three files: 
+The repository consists of three files:
 
-- **datalab1.ipynb**: The file for you to be working with. 
-- **datalab1_solutions.ipynb**: Suggestive solutions.
-- **environment.yml**: Conda environment file. 
+-   **datalab1.ipynb**: The file for you to be working with.
+-   **datalab1_solutions.ipynb**: Suggestive solutions.
+-   **environment.yml**: Conda environment file.
 
-To create the conda environment **TECH3_student** from the environment file, you can open an anaconda prompt and write: 
+To create the conda environment **TECH3_student** from the environment file, you can open an anaconda prompt and write:
 
-```bash
+``` bash
 conda env create --file environment.yml
 ```
 
 After the environment has been set up, you can activate the conda environment and open Jupyter Notebbok using
 
-```bash
+``` bash
 conda activate TECH3_student
 jupyter notebook
 ```
@@ -33,4 +32,3 @@ jupyter notebook
 For further details on how to set up the conda environment, see the guides on the repository for [TECH2](https://github.com/richardfoltyn/TECH2-H25)
 
 Open the file **datalab1.ipynb**, and go through the document. Write your own code where this is indicated. Try to solve the problems yourself before consulting the solutions notebook.
-
