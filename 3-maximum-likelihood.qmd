@@ -1,8 +1,8 @@
 # Maximum likelihood
 
-
 ::: {style="padding:75% 0 0 0;position:relative;"}
-<iframe src='https://vimeo.com/showcase/11569380/embed?portrait=0&amp;byline=0' allowfullscreen frameborder='0' style='position:absolute;top:0;left:0;width:100%;height:100%;'>
+<iframe src="https://vimeo.com/showcase/11569380/embed?portrait=0&amp;byline=0" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+
 </iframe>
 :::
 
@@ -10,10 +10,14 @@ Slides for ["Maximum Likelihood Estimation"](video-pdfs/3/ML_estimation.pdf)
 
 Slides for ["Maximum Likelihood Estimator of mu"](video-pdfs/3/MLE_mu.pdf)
 
+Slides for ["Maximum Likelihood Estimator for Bernoulli distribution"](video-pdfs/3/MLE_bernoulli.pdf)
+
+
 ## Control questions
 
-1. What is the likelihood?
-2. Why do we use the log-likelihood?
-3. What are the assumptions for MLE?
-4. What is the Maximum Likelihood Estimator of the mean in a normal distribution?
+1.  What is the likelihood?
+2.  Why do we use the log-likelihood?
+3.  What are the assumptions for MLE?
+4.  What is the Maximum Likelihood Estimator of the mean in a normal distribution?
+5. What is the Maximum Likelihood Estimator of the success probability in a Bernoulli distribution?
 
