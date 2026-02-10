@@ -35,3 +35,108 @@ np.random.seed(124)
 x = stats.uniform.rvs(size = 5)
 print(x)
 ```
+
+
+## Monte Carlo simulation: Yatzi
+
+Here we will implement the Yatzi bonus example used in the video [here](https://holleland.github.io/TECH3/3-monte-carlo-simulation.html). First, we need a way to simulate the roll of 5 dice and count the number of ones, twos, etc. We could simulate the actual dice, sampling numbers from 1-6 with equal probability. This can be done by the following code:
+
+```{python}
+import numpy as np
+np.random.seed(123)
+# roll 5 dice:
+x1 = np.random.randint(1, 7, size = 5)
+print(x1)
+```
+
+We could then count the number of 1 ones and roll the remaining dice.
+
+```{python}
+# Count number of ones:
+count_ones1 = np.sum(x1 == 1) 
+ # Roll remaining dice:
+x2 = np.random.randint(1, 7, size = 5-count_ones1)
+print(x2) # Print the outcome
+# Count ones in second roll: 
+count_ones2 = np.sum(x2 == 1) 
+# Roll the remaining dice: 
+x3 = np.random.randint(1, 7, size = 5-count_ones1-count_ones2)
+print(x3) # Print the outcome
+count_ones3 = np.sum(x3 == 1) # count the number of ones
+# Calculate the total score: 
+score = count_ones1+count_ones2+count_ones3
+print(score)
+```
+
+This is a bit cumbersome, but it illustrates how one can simulate dice rolls. Since the actual number is not so important for the game, we can rather (as is done in the video), simulate directly the number of ones in the dice roll by simulating from a binomial distribution with sucess probability $p=1/6$ and $n=5$ in the first roll, $n-X_1$ in the second and $n-X_1-X_2$ in the third.
+
+
+```{python}
+np.random.seed(321)
+from scipy.stats import binom
+x1 = binom.rvs(n=5, p=1/6, size = 1) # First roll
+x2 = binom.rvs(n=5-x1, p=1/6, size = 1) # Second roll 
+x3 = binom.rvs(n=5-x1-x2, p=1/6, size = 1) # Second roll 
+print("After first roll:",   x1)
+print("After second roll:",  x1+x2)
+print("Score of the round:", x1+x2+x3)
+```
+This was one round of Yatzi, where the score is just the number of equal dice rolls or you could think of it as the round where we collect ones. Let's make this a function. We also add the argument number, which is the number we are collect in the specific round. 
+
+```{python}
+from scipy.stats import binom
+
+def play_round(number, n=5, p=1/6):
+    x1 = binom.rvs(n=n, p=p, size=1)[0]          # First roll
+    x2 = binom.rvs(n=n - x1, p=p, size=1)[0]     # Second roll
+    x3 = binom.rvs(n=n - x1 - x2, p=p, size=1)[0]  # Third roll
+    return (x1 + x2 + x3)*number
+  
+# Play round collecting ones:
+print(play_round(1))
+```
+
+and use it to play a full game:
+
+```{python}
+def play_game():
+    total_score = 0
+    for i in range(1, 7):
+        total_score += play_round(i) # add the next round to total score
+    return total_score
+print("Game score:", play_game())
+# No bonus this round.
+```
+
+We can now run many-many games. That is, we are ready to do a Monte Carlo simulation of the game.
+
+```{python}
+# Play 10,000 games: 
+scores = np.array([play_game() for _ in range(10_000)])
+```
+
+Having played 10,000 games, we can estimate the expected score: 
+
+```{python}
+m = scores.mean() 
+print("Expected score: ", m)
+```
+
+The probability of achieving the bonus requirement (total score $\le 63$):
+
+```{python}
+bonus_prob = np.mean(scores>=63)
+print("Expected score: ", bonus_prob)
+```
+
+Or plot the distribution of the scores:
+
+```{python}
+sns.histplot(scores, bins = 15, stat = "density")
+plt.axvline(63, color = "red")
+plt.show()
+```
+
+## Bootstrap
+
+Will come. 
