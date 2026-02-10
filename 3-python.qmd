@@ -138,5 +138,92 @@ plt.show()
 ```
 
 ## Bootstrap
+We consider the same height measurements of ten 20-year old male athletes as used in the video on the bootstrap. 
+We can first confirm that the sample mean is 179.6 and the standard deviation is 2.41. This the standard error of the sample mean estimator being $\approx \sigma/\sqrt{n}= 2.41/\sqrt{10}=0.76$. 
+```{python}
+import pandas as pd
+import math
+numbers = [183, 179, 179, 183, 178, 176, 182, 177, 180, 179]
+vector = pd.Series(numbers)
+print(vector.mean())
+print(vector.std())
+print(vector.std()/math.sqrt(10))
+```
 
-Will come. 
+To sample randomly from this vector of observations, we can use the following code:
+
+```{python}
+np.random.seed(1234)
+newsample = vector.sample(3, replace = False)
+print(newsample)
+```
+As you can see from the output, I have sampled 3 heights from the vector. Here I have sampled without replacement, so I know that these are three different observations selected at random. I set a seed to get the same three each time I run the code. 
+
+Now, say we want to use the bootstrap method to find the sampling distribution of the sample mean estimator from just this one sample of ten observations. We then pretend that the data we have (the ten observations) is our population, and we repeatedly sample from the vector with replacement. For each new sample we calculate the average value and the vector containing many such mean value (*boot\_means*) is treated as observations of the sample mean estimators for multiple samples. We can summarize the sampling distribution by e.g. considering the standard deviation of the boot\_means. This should be close to the $\sigma/\sqrt{n}$ value that we found above, 
+due to the central limit theorem and the fact that we are considering a mean estimator here. 
+
+```{python}
+np.random.seed(123)
+bootstrap_samples = 2000
+boot_means = np.zeros(bootstrap_samples)
+for b in range(0, bootstrap_samples) : 
+    boot_sample = vector.sample(len(vector), replace = True)
+    boot_means[b] = boot_sample.mean()
+print(boot_means.std())
+```
+
+We can also plot the sampling distribution:
+
+```{python}
+from scipy.stats import norm
+# Histogram of sampling distribution
+sns.histplot(boot_means, stat = "density", binwidth = .2)
+plt.axvline(x=vector.mean(), color = "red")
+
+# Add normal density curve: 
+x = np.linspace(min(boot_means), max(boot_means), 500)
+mu = np.mean(vector)
+sigma = np.std(vector, ddof=1)/np.sqrt(10)
+
+plt.plot(x, norm.pdf(x, mu, sigma), color="black", linewidth=2)
+
+plt.show()
+```
+Note that the black curve is based on the normal approximation (central limit theorem). Quite a good fit!
+
+Now, let us consider a slightly larger dataset. This example is from [the python supplement to the textbook](https://statsthinking21.github.io/statsthinking21-python/07-ResamplingAndSimulation.html#the-bootstrap).
+Here we imagine that the full NHANES dataset is our population. We pull out a sample of size 100 as our "original sample". We then bootstrap the sampling distribution of the mean height. Here, we are not interested in the mean or the standard deviation, but the 2.5 and 97.5 percentiles. This gives the central interval containing 95\% of the population. 
+
+```{python}
+from nhanes.load import load_NHANES_data
+import pandas as pd
+nhanes_data = load_NHANES_data()
+adult_nhanes_data = nhanes_data.query('AgeInYearsAtScreening > 17')
+adult_nhanes_data = adult_nhanes_data.dropna(subset=['StandingHeightCm']).rename(columns={'StandingHeightCm': 'Height'})
+
+num_runs = 5000
+sample_size = 100
+
+# Take a sample for which we will perform the bootstrap
+
+nhanes_sample = adult_nhanes_data.sample(sample_size)
+
+# Perform the resampling
+
+bootstrap_df = pd.DataFrame({'mean': np.zeros(num_runs)})
+for sampling_run in range(num_runs):
+    bootstrap_sample = nhanes_sample.sample(sample_size, replace=True)
+    bootstrap_df.loc[sampling_run, 'mean'] = bootstrap_sample['Height'].mean()
+
+# Compute the 2.5% and 97.5% percentiles of the distribution
+bootstrap_ci = np.percentile(bootstrap_df['mean'], [2.5, 97.5])
+print("Bootstrap 95% CI:", bootstrap_ci)
+
+# Normal approximation:
+sample_mean = nhanes_sample["Height"].mean()
+sample_std = nhanes_sample["Height"].std()/np.sqrt(sample_size)
+CLT_ci = norm.ppf([0.025,0.975], sample_mean, sample_std)
+print("Normal approximation 95% CI:", CLT_ci)
+```
+
+In this case, we expect the two approaches to give similar results, and this is also what we get here.
