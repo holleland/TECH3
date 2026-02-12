@@ -18,14 +18,13 @@
 -   ["Adding interactions between variables"](video-pdfs/5/adding_interactions_between_variables.pdf)
 -   ["Nonlinear linear regression"](video-pdfs/5/nonlinear_linear_regression.pdf)
 
-
 ## Control questions:
 
-- What is the interpretation of $\beta_0$ is a simple linear regression $Y=\beta_0+\beta_1 X+\epsilon$?
-- What is the interpretation of $\beta_1$?
-- What are we minimizing when estimating $\beta_0$ and $\beta_1$?
-- When is there a one-to-one relationship between the correlation between $X$ and $Y$ and the regression coefficient for $X$? 
-- What is the null hypothesis when we are looking at the default table from a linear regression in Python?
-- If $\text{Height_i}=\beta_0+\beta_a \text{Age}_i + \beta_m\text{Male}_i+\epsilon_i$, where $\text{Male}_i$ is 1 if the child is male, what is the intercept for male and females?
-- If $\text{Height_i}=\beta_0+\beta_a \text{Age}_i + \beta_m\text{Male}_i+\beta_{a\times m}\text{Age}_i\text{Male}_i+\epsilon_i$, where $\text{Male}_i$ is 1 if the child is male, what is the slope for male and females?
-- How can we implement a nonlinear relations in a linear regression?
+-   What is the interpretation of $\beta_0$ is a simple linear regression $Y=\beta_0+\beta_1 X+\epsilon$?
+-   What is the interpretation of $\beta_1$?
+-   What are we minimizing when estimating $\beta_0$ and $\beta_1$?
+-   When is there a one-to-one relationship between the correlation between $X$ and $Y$ and the regression coefficient for $X$?
+-   What is the null hypothesis when we are looking at the default table from a linear regression in Python?
+-   If $\text{Height}_i=\beta_0+\beta_a \text{Age}_i + \beta_m\text{Male}_i+\epsilon_i$, where $\text{Male}_i$ is 1 if the child is male, what is the intercept for male and females?
+-   If $\text{Height}_i=\beta_0+\beta_a \text{Age}_i + \beta_m\text{Male}_i+\beta_{a\times m}\text{Age}_i\text{Male}_i+\epsilon_i$, where $\text{Male}_i$ is 1 if the child is male, what is the slope for male and females?
+-   How can we implement a nonlinear relations in a linear regression?

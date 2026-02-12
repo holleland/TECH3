@@ -707,7 +707,7 @@ window.Quarto = {
 </tbody>
 </table>
 <p>In Python we find relevant function for (almost) all distributions you can think of in the library (complete list <a href="https://docs.scipy.org/doc/scipy/reference/stats.html">here</a>).</p>
-<div id="8cbf2a67" class="cell" data-execution_count="1">
+<div id="6ccad03d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Below is a table of distributions, classified as either discrete or contiuous, and the name of the respective scipy.stats distribution name or class.</p>
@@ -781,7 +781,7 @@ p= F(x) = \frac{x-a}{b-a}\quad \Leftrightarrow \quad
 x = a+(b-a)p=Q(p), \quad 0\le p\le1.
 \]</span> Hence, the quantile function of a uniform distribution is linear in <span class="math inline">\(p\)</span>.</p>
 <p>We plot the three functions for a U(0,1) distribution, i.e.&nbsp;<span class="math inline">\(a=0\)</span> and <span class="math inline">\(b=1\)</span>. This would mean: <span class="math inline">\(f(x) = 1/(1-0)=1\)</span>, <span class="math inline">\(F(x) = x\)</span> and <span class="math inline">\(Q(p)=p\)</span>.</p>
-<div id="7a040c94" class="cell" data-execution_count="2">
+<div id="c1a625cb" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -847,7 +847,7 @@ F(x)=P(X\le x)
 Q(p) = \inf\{ x \in \mathbb{R} : F(x) \ge p \}.
 \]</span> While the CDF tells you how likely <span class="math inline">\(X\)</span> is to be below a value, the quantile function tells you which value of <span class="math inline">\(X\)</span> corresponds to a chosen probability.</p>
 <p>Below we plot the three function for a standard normal distribution. That is, a normal distribution with expectation <span class="math inline">\(\mu=0\)</span> and variance <span class="math inline">\(\sigma^2=1\)</span>.</p>
-<div id="f0161f01" class="cell" data-execution_count="3">
+<div id="7996ff4e" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ppts <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1000</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2000</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> stats.norm.pdf(x)</span>
@@ -907,7 +907,7 @@ p(x)= P(X = x) = \binom{n}{x} p^{x} (1-p)^{\,n-x}, \qquad x = 0,1,\ldots,n,
 F(x) = P(X\le x)=\sum_{k=0}^{\lfloor x \rfloor} \binom{n}{k} p^{k} (1-p)^{\,n-k}, \quad 0\le x\le n.
 \]</span> Note the use of <span class="math inline">\(\lfloor x \rfloor\)</span>, which means rounding <span class="math inline">\(x\)</span> to nearest integer. This allows us to define the CDF for a contious <span class="math inline">\(x\)</span>, even though the PMF only is defined for integer values. This makes the CDF a step function.</p>
 <p>There is no closed form expression for the quantile function, but we can compute it using Python. In the code below, we calculate the three functions and plot them, for a binomial distribution with number of trials <span class="math inline">\(n=20\)</span> and probability of success <span class="math inline">\(p=0.3\)</span>.</p>
-<div id="7328aa74" class="cell" data-execution_count="4">
+<div id="89813f4a" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
@@ -977,7 +977,7 @@ p(x)=P(X = x) = \frac{\lambda^{x} e^{-\lambda}}{x!}, \quad x = 0,1,2,\ldots,
 \]</span> where parameter <span class="math inline">\(\lambda\)</span> is both the expectation and variance of <span class="math inline">\(X\)</span> (this is a characteristic of the Poisson distribution). The CDF is given by: <span class="math display">\[F(x) = P(X\le x) = \sum_{k=0}^{\lfloor x \rfloor}\frac{\lambda^{k} e^{-\lambda}}{k!}, \quad x\ge0.\]</span> Note also here that we use a rounding down for the <span class="math inline">\(x\)</span> in the summation to define it for a continuous non-negative <span class="math inline">\(x\)</span>, even though <span class="math inline">\(X\)</span> is discrete.</p>
 <p>Also for the Poisson distribution, the quantile there is also no closed form expression.</p>
 <p>We repeat the exercise of plotting the three functions, this time for Poisson distribution with <span class="math inline">\(\lambda = 4\)</span>.</p>
-<div id="0e0e2f0a" class="cell" data-execution_count="5">
+<div id="7b7a2fa6" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameter for the Poisson distribution</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="dv">4</span>  <span class="co"># intensity parameter λ</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
