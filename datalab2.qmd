@@ -22,13 +22,13 @@ To create the conda environment **TECH3_student** from the environment file, you
 conda env create --file environment.yml
 ```
 
-After the environment has been set up, you can activate the conda environment and open Jupyter Notebbok using
+After the environment has been set up, you can activate the conda environment and open Jupyter Notebook using
 
 ``` bash
 conda activate TECH3_student
 jupyter notebook
 ```
 
-For further details on how to set up the conda environment, see the guides on the repository for [TECH2](https://github.com/richardfoltyn/TECH2-H25)
+For further details on how to set up the conda environment, see the guides on the repository for [TECH2](https://github.com/richardfoltyn/TECH2-H25).
 
 Open the file **datalab2.ipynb**, and go through the document. Write your own code and try to solve the problems yourself before consulting the solutions notebook.
