@@ -12,6 +12,9 @@
 
 <br>
 
+
+Slides for ["The logic of null hypothesis statistical testing"](video-pdf/NHSTsteps.pdf)
+
 ## Control questions
 1. How do you translate a research question into a testable hypothesis?
 2. How do you translate a hypothesis into null and alternative hypotheses?

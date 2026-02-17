@@ -673,7 +673,7 @@ window.Quarto = {
 <p>Here we will present some useful python commands relevant for what we want to do in Module 3.</p>
 <section id="generate-random-numbers-from-a-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="generate-random-numbers-from-a-distribution">Generate random numbers from a distribution</h2>
-<div id="9abc6227" class="cell" data-execution_count="1">
+<div id="0aba89a0" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -705,7 +705,7 @@ window.Quarto = {
 </div>
 </div>
 <p>It is often a good idea to set a seed when generating random numbers. This has the benefit that every time you rerun your code, the same random random are generated. If you want a new draw from the distribution, you change the seed and you will get a new set of numbers. Test this out your self using the code below:</p>
-<div id="6dc82677" class="cell" data-execution_count="2">
+<div id="2f6378dd" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> stats.uniform.rvs(size <span class="op">=</span> <span class="dv">5</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
@@ -725,7 +725,7 @@ window.Quarto = {
 <section id="monte-carlo-simulation-yatzi" class="level2">
 <h2 class="anchored" data-anchor-id="monte-carlo-simulation-yatzi">Monte Carlo simulation: Yatzi</h2>
 <p>Here we will implement the Yatzi bonus example used in the video <a href="https://holleland.github.io/TECH3/3-monte-carlo-simulation.html">here</a>. First, we need a way to simulate the roll of 5 dice and count the number of ones, twos, etc. We could simulate the actual dice, sampling numbers from 1-6 with equal probability. This can be done by the following code:</p>
-<div id="7fc6bf80" class="cell" data-execution_count="3">
+<div id="a464312d" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># roll 5 dice:</span></span>
@@ -736,7 +736,7 @@ window.Quarto = {
 </div>
 </div>
 <p>We could then count the number of 1 ones and roll the remaining dice.</p>
-<div id="e58fa646" class="cell" data-execution_count="4">
+<div id="6a9e7827" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count number of ones:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>count_ones1 <span class="op">=</span> np.<span class="bu">sum</span>(x1 <span class="op">==</span> <span class="dv">1</span>) </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a> <span class="co"># Roll remaining dice:</span></span>
@@ -758,7 +758,7 @@ window.Quarto = {
 </div>
 </div>
 <p>This is a bit cumbersome, but it illustrates how one can simulate dice rolls. Since the actual number is not so important for the game, we can rather (as is done in the video), simulate directly the number of ones in the dice roll by simulating from a binomial distribution with sucess probability <span class="math inline">\(p=1/6\)</span> and <span class="math inline">\(n=5\)</span> in the first roll, <span class="math inline">\(n-X_1\)</span> in the second and <span class="math inline">\(n-X_1-X_2\)</span> in the third.</p>
-<div id="42159fa2" class="cell" data-execution_count="5">
+<div id="ca726c3b" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">321</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> binom.rvs(n<span class="op">=</span><span class="dv">5</span>, p<span class="op">=</span><span class="dv">1</span><span class="op">/</span><span class="dv">6</span>, size <span class="op">=</span> <span class="dv">1</span>) <span class="co"># First roll</span></span>
@@ -774,7 +774,7 @@ Score of the round: [4]</code></pre>
 </div>
 </div>
 <p>This was one round of Yatzi, where the score is just the number of equal dice rolls or you could think of it as the round where we collect ones. Let’s make this a function. We also add the argument number, which is the number we are collect in the specific round.</p>
-<div id="7bdb9341" class="cell" data-execution_count="6">
+<div id="e8989908" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> play_round(number, n<span class="op">=</span><span class="dv">5</span>, p<span class="op">=</span><span class="dv">1</span><span class="op">/</span><span class="dv">6</span>):</span>
@@ -790,7 +790,7 @@ Score of the round: [4]</code></pre>
 </div>
 </div>
 <p>and use it to play a full game:</p>
-<div id="ca51eb21" class="cell" data-execution_count="7">
+<div id="d2b2c11d" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> play_game():</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    total_score <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
@@ -803,12 +803,12 @@ Score of the round: [4]</code></pre>
 </div>
 </div>
 <p>We can now run many-many games. That is, we are ready to do a Monte Carlo simulation of the game.</p>
-<div id="8062a7f4" class="cell" data-execution_count="8">
+<div id="425cd430" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Play 10,000 games: </span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> np.array([play_game() <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10_000</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Having played 10,000 games, we can estimate the expected score:</p>
-<div id="8c6576b2" class="cell" data-execution_count="9">
+<div id="ec6ac141" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> scores.mean() </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Expected score: "</span>, m)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -816,7 +816,7 @@ Score of the round: [4]</code></pre>
 </div>
 </div>
 <p>The probability of achieving the bonus requirement (total score <span class="math inline">\(\le 63\)</span>):</p>
-<div id="7b737308" class="cell" data-execution_count="10">
+<div id="993ac7f4" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bonus_prob <span class="op">=</span> np.mean(scores<span class="op">&gt;=</span><span class="dv">63</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Expected score: "</span>, bonus_prob)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -824,7 +824,7 @@ Score of the round: [4]</code></pre>
 </div>
 </div>
 <p>Or plot the distribution of the scores:</p>
-<div id="3ca2f61f" class="cell" data-execution_count="11">
+<div id="b00830ad" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(scores, bins <span class="op">=</span> <span class="dv">15</span>, stat <span class="op">=</span> <span class="st">"density"</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">63</span>, color <span class="op">=</span> <span class="st">"red"</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -840,7 +840,7 @@ Score of the round: [4]</code></pre>
 <section id="bootstrap" class="level2">
 <h2 class="anchored" data-anchor-id="bootstrap">Bootstrap</h2>
 <p>We consider the same height measurements of ten 20-year old male athletes as used in the video on the bootstrap. We can first confirm that the sample mean is 179.6 and the standard deviation is 2.41. This the standard error of the sample mean estimator being <span class="math inline">\(\approx \sigma/\sqrt{n}= 2.41/\sqrt{10}=0.76\)</span>.</p>
-<div id="6897a1a9" class="cell" data-execution_count="12">
+<div id="c67f6909" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">183</span>, <span class="dv">179</span>, <span class="dv">179</span>, <span class="dv">183</span>, <span class="dv">178</span>, <span class="dv">176</span>, <span class="dv">182</span>, <span class="dv">177</span>, <span class="dv">180</span>, <span class="dv">179</span>]</span>
@@ -855,7 +855,7 @@ Score of the round: [4]</code></pre>
 </div>
 </div>
 <p>To sample randomly from this vector of observations, we can use the following code:</p>
-<div id="41fbe7ba" class="cell" data-execution_count="13">
+<div id="44d9baf7" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1234</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>newsample <span class="op">=</span> vector.sample(<span class="dv">3</span>, replace <span class="op">=</span> <span class="va">False</span>)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(newsample)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -868,7 +868,7 @@ dtype: int64</code></pre>
 </div>
 <p>As you can see from the output, I have sampled 3 heights from the vector. Here I have sampled without replacement, so I know that these are three different observations selected at random. I set a seed to get the same three each time I run the code.</p>
 <p>Now, say we want to use the bootstrap method to find the sampling distribution of the sample mean estimator from just this one sample of ten observations. We then pretend that the data we have (the ten observations) is our population, and we repeatedly sample from the vector with replacement. For each new sample we calculate the average value and the vector containing many such mean value (<em>boot_means</em>) is treated as observations of the sample mean estimators for multiple samples. We can summarize the sampling distribution by e.g.&nbsp;considering the standard deviation of the boot_means. This should be close to the <span class="math inline">\(\sigma/\sqrt{n}\)</span> value that we found above, due to the central limit theorem and the fact that we are considering a mean estimator here.</p>
-<div id="039080c9" class="cell" data-execution_count="14">
+<div id="d32dc90a" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>bootstrap_samples <span class="op">=</span> <span class="dv">2000</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>boot_means <span class="op">=</span> np.zeros(bootstrap_samples)</span>
@@ -881,7 +881,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>We can also plot the sampling distribution:</p>
-<div id="97e5508f" class="cell" data-execution_count="15">
+<div id="ca3724d7" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogram of sampling distribution</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(boot_means, stat <span class="op">=</span> <span class="st">"density"</span>, binwidth <span class="op">=</span> <span class="fl">.2</span>)</span>
@@ -905,7 +905,7 @@ dtype: int64</code></pre>
 </div>
 <p>Note that the black curve is based on the normal approximation (central limit theorem). Quite a good fit!</p>
 <p>Now, let us consider a slightly larger dataset. This example is from <a href="https://statsthinking21.github.io/statsthinking21-python/07-ResamplingAndSimulation.html#the-bootstrap">the python supplement to the textbook</a>. Here we imagine that the full NHANES dataset is our population. We pull out a sample of size 100 as our “original sample”. We then bootstrap the sampling distribution of the mean height. Here, we are not interested in the mean or the standard deviation, but the 2.5 and 97.5 percentiles. This gives the central interval containing 95% of the population.</p>
-<div id="6a6fd033" class="cell" data-execution_count="16">
+<div id="c28f4c62" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nhanes.load <span class="im">import</span> load_NHANES_data</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>nhanes_data <span class="op">=</span> load_NHANES_data()</span>

@@ -684,7 +684,7 @@ window.Quarto = {
 </ol>
 <p>We can only control 1 and 3. Imagine that we know the effect size is 0.75 and set the significance level to 5%. We can the calculate how big the sample needs to be for our test to have a power of 0.8.</p>
 <p>This is how we do it in Python:</p>
-<div id="9a48ef57" class="cell" data-execution_count="1">
+<div id="17953bfa" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.stats.power <span class="im">as</span> smp</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>power_analysis <span class="op">=</span> smp.TTestIndPower()</span>
