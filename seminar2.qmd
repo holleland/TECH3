@@ -1,10 +1,112 @@
 # Seminar 2
 
+
 ### Exercise 1
+Let $X$ follow a power distribution, with density 
+$$f(x) = \alpha x^{\alpha-1}, \quad 0<x<1,\quad \alpha>0.$$
 
-### Exercise 2
+a) What is the expectation of $X$?
+b) What is the variance of $X$?
+c) Derive the maximum likelihood estimator of $\alpha$ for an independent and identically distributed sample of $X:$ $$X_1,\ldots, X_n.$$
+d) Find the point estimate of $\alpha$, given the following sample: 
 
-### Exercise 3
+```{r}
+#| echo: false
+#| eval: false
+set.seed(123)
+x <- round(rbeta(10, 2, 1), 3)
+knitr::kable(
+  matrix(x, nrow = 1)
+)
+``` 
+```{python}
+#| echo: true
+#| eval: true
+import numpy as np
+x = np.array((0.794, 0.884, 0.774, 0.559, 0.240, 
+              0.754, 0.705, 0.639, 0.614, 0.897))
+print(x)
+```
+
+e) Use a bootstrap routine to estimate the 5th and 95th percentile of the estimator using 
+
+    i) The sample only.
+    ii) The parametric distribution of $X$ stated at the top.
+    iii) Normal approximation.
+
+Hint: The stated distribution is a special case of a beta distribution with $b=1$ and $a=\alpha$. We can simulate from it using the following code, provided a value for *alpha*. 
+
+```{python}
+#| eval: false
+from scipy.stats import beta
+x = beta.rvs(a=alpha, b=1, size=10)
+print(x)
+```
+
+f) Elaborate on the differences between the approaches. 
+
+g) Do a Monte Carlo simulation experiment to check if the MLE fulfills the consistency requirements.
+
+
+
+### Exercise 2 (Adapted from Exam 2025, Problem 3 c-d)
+
+A startup offering hands-on craft beer brewing workshops is piloting a weekend course format. Each session runs on Saturdays only and is limited to 4 participants due to space and brewing setup constraints. Based on early demand, the number of participants **X** per Saturday follows this discrete distribution:
+
+| Participants (X)   | 0    | 1    | 2    | 3    | 4    |
+|--------------------|------|------|------|------|------|
+| Probability P(X=x) | 0.10 | 0.25 | 0.30 | 0.20 | 0.15 |
+
+Each participant pays **NOK 2,200**, and costs the company **NOK 250** in materials. There is also a fixed cost of **NOK 4,200** per workshop. The company starts with **NOK 50,000 in capital** and plans to run the workshop every Saturday for one year (**52 weeks**).
+
+The expected number of participants per week is $2.05$ and that the standard deviation is $1.20$. [See Seminar 1, Exercise 5](https://holleland.github.io/TECH3/seminar1.html).
+
+c) Assuming the number of participants each week is independent, use the **Central Limit Theorem** to estimate the probability that after 52 weeks, the company's ending capital is negative(i.e. their initial capital of **NOK 50,000** has been spent).
+
+:::{.callout-tip title="The Central Limit Theorem for a sum"}
+Let $X_1, X_2,...,X_n$ be a sequence of independent and identically
+distributed random variables having a distribution with expectation
+$E(X)=\mu_X$ and finite variance $Var(X)=\sigma^2$. Then the sum $\sum_{i=1}^n X_i$ is approximately normally distributed with expectation $n\cdot\mu$ and variance $n\cdot\sigma^2$, i.e. $N(n\cdot\mu, n\cdot\sigma^2)$.
+::: 
+
+<!-- Use the following pre-calculated values if needed: -->
+
+<!-- ```{python} -->
+<!-- #| echo: true -->
+<!-- #| results: hold -->
+<!-- from scipy import stats -->
+<!-- print("i)",   stats.norm.cdf(-50000, loc = -10530, scale = 16874)) -->
+<!-- print("ii)",  stats.norm.cdf(-50000, loc = -567, scale = 19568)) -->
+<!-- print("iii)", stats.norm.cdf(-50000, loc = -8240, scale = 17785)) -->
+<!-- ``` -->
+
+d) Write a Monte Carlo simulation routine in Python to estimate the probability in part (c).
+
+
+### Exercise 3 (Inspired by trial exam, Problem 2)
+Roulette is a game of chance where a roulette wheel has 37 numbered pockets where a ball can land. 18 of these pockets are red, 18 are black, and 1 is green (at least in Europe).
+
+If, for example, you bet 1\euro\, on red, and red occurs, then you win your bet back plus 1\euro\, (i.e., a gain of 1\euro). But if black or green occurs, you lose the bet (a gain of -1\euro).
+
+You bet 1\euro\, on red. In Seminar 1 you found the following: 
+
+    i) What is the expected gain? -1/37
+    ii) What is the variance of this gain? 0.99
+    iii) What is the probability of a positive gain? 18/37
+  
+a) You continue this strategy for $n=50$ times. Use the Central Limit Theorem to answer the questions in part (a) for the average gain.
+
+b) Solve (a) using simulation techniques in Python. Explain what method you use and why. Compare the value to the central limit theorem approximation.
+
+c) A common strategy is to double the bet if you loose (to win back the loss). Say you start out with 100 euros. Simulate one such game and plot the status of your wallet after for each spin of the roulette. 
+
+d) What is the expected number of games before you are bankrupt? 
+
+e) Say you have a stopping rule: If your balance reaches 200 euros, you will stop playing. What is the probably that you will leave richer? What is the probability that you go bankrupt with this stopping rule?
+
+f) What is the problem with this strategy in the long run? How much money will you need to cover your bets if the roulette outcomes are 10 consecutive blacks?
+
+### Exercise 3 
 
 ### Exercise 4
 
