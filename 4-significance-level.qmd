@@ -1,0 +1,26 @@
+# The significance level as a long-run error rate
+
+::: {style="padding:56.25% 0 0 0;position:relative;"}
+<iframe src="https://player.vimeo.com/video/1166803226?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="The significance level as a long-run error rate ">
+
+</iframe>
+:::
+
+```{=html}
+<script src="https://player.vimeo.com/api/player.js"></script>
+```
+
+<br>
+
+
+Slides for ["The significance level as a long-run error rate"](video-pdf/4/Significance_level_and_error_rates.pdf)
+
+## Control questions
+
+1. What is the decision rule in hypothesis testing?
+2. What is a Type I error?
+3. What is the interpretation of the significance level in the Neyman-Pearson framework?
+4. In what types of situations is this interpretation particularly useful?
+5. If $\alpha = 0.05$, does that mean that 5\% of significant results are false?
+
+

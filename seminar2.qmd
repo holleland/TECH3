@@ -106,8 +106,4 @@ e) Say you have a stopping rule: If your balance reaches 200 euros, you will sto
 
 f) What is the problem with this strategy in the long run? How much money will you need to cover your bets if the roulette outcomes are 10 consecutive blacks?
 
-### Exercise 3 
 
-### Exercise 4
-
-### Exercise 5

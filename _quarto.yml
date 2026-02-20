@@ -98,6 +98,7 @@ website:
              - href: 4-textbook.qmd
                text: "Textbook"
              - 4-hypothesis-testing.qmd
+             - 4-significance-level.qmd
              - 4-hypothesis-testing-in-python.qmd
              - 4-power-analysis.qmd
              - 4-videos.qmd

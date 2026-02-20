@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./4-power-analysis.html" rel="next">
-<link href="./4-hypothesis-testing.html" rel="prev">
+<link href="./4-significance-level.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -508,7 +508,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4-hypothesis-testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hypothesis testing</span></a>
+ <span class="menu-text">The logic of null hypothesis statistical testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-significance-level.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The significance level as a long-run error rate</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -790,7 +796,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="paired-t-test">Paired t-test</h2>
 <p>We have measured the weight of five people before and after a diet.</p>
 <p><span class="math display">\[H_0: \mu_\text{before}=\mu_\text{after}\quad \text{vs}\quad H_A: \mu_\text{before} &gt;\mu_\text{after}.\]</span></p>
-<div id="e3353e49" class="cell" data-execution_count="1">
+<div id="f079941d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>before <span class="op">=</span> np.array((<span class="dv">85</span>, <span class="dv">76</span>, <span class="dv">72</span>, <span class="dv">92</span>, <span class="dv">79</span>)) <span class="co"># weight in kg</span></span>
@@ -802,7 +808,7 @@ window.Quarto = {
 </div>
 </div>
 <p>As you can see, the default print of the test object is not very pretty. Let us format the printout a bit nicer:</p>
-<div id="2c52776f" class="cell" data-execution_count="2">
+<div id="07fe5627" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Paired t-test (one-sided)</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"-------------------------</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"t-statistic : </span><span class="sc">{</span>paired_test<span class="sc">.</span>statistic<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">"</span></span>
@@ -816,7 +822,7 @@ p-value     : 0.2943
 </div>
 </div>
 <p>This test is equivalent to doing a one-sample t-test on the weight difference. <span class="math display">\[H_0: \mu_d=0\quad \text{vs}\quad H_A: \mu_d &gt;0.\]</span></p>
-<div id="a825e0bd" class="cell" data-execution_count="3">
+<div id="ff163c93" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>diff <span class="op">=</span> before<span class="op">-</span>after</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>onesample_test <span class="op">=</span> stats.ttest_1samp(diff, popmean <span class="op">=</span> <span class="dv">0</span>, </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                   alternative <span class="op">=</span> <span class="st">"greater"</span>)</span>
@@ -841,7 +847,7 @@ p-value     : 0.2943
 <p>To evaluate whether an observed proportion differs from a specified benchmark, we can carry out a one-sample test of proportions in Python.</p>
 <p>As an example, let’s say <span class="math inline">\(p\)</span> is the probability of heads for a given coin. We want to test if the coin is fair, i.e.</p>
 <p><span class="math display">\[H_0: p = 0.5\quad \text{vs}\quad H_A:p\neq 0.5\]</span> with a significance level of 5%. We toss the coin ten times and observe 4 heads.</p>
-<div id="ca72fb1e" class="cell" data-execution_count="4">
+<div id="43357b75" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.stats.proportion <span class="im">import</span> proportions_ztest</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>prop_test <span class="op">=</span> proportions_ztest(count <span class="op">=</span> <span class="dv">4</span>,</span>
@@ -854,7 +860,7 @@ p-value     : 0.2943
 </div>
 </div>
 <p>This test is based on a normal approximation of the binomial distribution. We could do the corresponding exact test, using a binomial test:</p>
-<div id="43642bd5" class="cell" data-execution_count="5">
+<div id="3b2f73f7" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stats.binomtest(<span class="dv">4</span>, <span class="dv">10</span>, <span class="fl">0.5</span>, alternative <span class="op">=</span> <span class="st">"two-sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>BinomTestResult(k=4, n=10, alternative='two-sided', statistic=0.4, pvalue=0.75390625)</code></pre>
@@ -862,7 +868,7 @@ p-value     : 0.2943
 </div>
 <p>A common rule of thumb is that when <span class="math inline">\(np&gt;5\)</span>, the approximation is good. In this case we are exactly on this common threshold.</p>
 <p>Another alternative is to use a bootstrap approach for testing.</p>
-<div id="e413ef30" class="cell" data-execution_count="6">
+<div id="6f73f958" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">12345</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -921,7 +927,7 @@ Percentage:  62.61 %</code></pre>
 </tbody>
 </table>
 <p>The observed rate is higher for green button, but lets perform the test in Python:</p>
-<div id="19a4b460" class="cell" data-execution_count="7">
+<div id="817bbcf1" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.stats.proportion <span class="im">import</span> test_proportions_2indep</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> test_proportions_2indep(count1<span class="op">=</span><span class="dv">543</span>, </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                               nobs1<span class="op">=</span><span class="dv">2359</span>,</span>
@@ -953,7 +959,7 @@ tuple = (np.float64(-0.8241828933434447), np.float64(0.2049178227694594))</code>
 Z = \frac{0.23-0.24}{0.01216}=-0.82
 \]</span> Note that, if the alternative hypothesis is true, <span class="math inline">\(p_A\)</span> is smaller than <span class="math inline">\(p_B\)</span>, making <span class="math inline">\(Z\)</span> negative. So we reject the null hypothesis for small values of Z (i.e.&nbsp;large negative values). To find the p-value,</p>
 <p><span class="math display">\[P(Z\le z)=P(Z\le -0.82) = 0.2061\]</span> based on</p>
-<div id="03be6689" class="cell" data-execution_count="8">
+<div id="9c38e594" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">round</span>(norm.cdf(<span class="op">-</span><span class="fl">0.82</span>),<span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1368,8 +1374,8 @@ Z = \frac{0.23-0.24}{0.01216}=-0.82
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./4-hypothesis-testing.html" class="pagination-link" aria-label="Hypothesis testing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Hypothesis testing</span>
+      <a href="./4-significance-level.html" class="pagination-link" aria-label="The significance level as a long-run error rate">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The significance level as a long-run error rate</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
