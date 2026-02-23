@@ -69,16 +69,6 @@ distributed random variables having a distribution with expectation
 $E(X)=\mu_X$ and finite variance $Var(X)=\sigma^2$. Then the sum $\sum_{i=1}^n X_i$ is approximately normally distributed with expectation $n\cdot\mu$ and variance $n\cdot\sigma^2$, i.e. $N(n\cdot\mu, n\cdot\sigma^2)$.
 ::: 
 
-<!-- Use the following pre-calculated values if needed: -->
-
-<!-- ```{python} -->
-<!-- #| echo: true -->
-<!-- #| results: hold -->
-<!-- from scipy import stats -->
-<!-- print("i)",   stats.norm.cdf(-50000, loc = -10530, scale = 16874)) -->
-<!-- print("ii)",  stats.norm.cdf(-50000, loc = -567, scale = 19568)) -->
-<!-- print("iii)", stats.norm.cdf(-50000, loc = -8240, scale = 17785)) -->
-<!-- ``` -->
 
 d) Write a Monte Carlo simulation routine in Python to estimate the probability in part (c).
 
@@ -102,8 +92,12 @@ c) A common strategy is to double the bet if you loose (to win back the loss). S
 
 d) What is the expected number of games before you are bankrupt? 
 
-e) Say you have a stopping rule: If your balance reaches 200 euros, you will stop playing. What is the probably that you will leave richer? What is the probability that you go bankrupt with this stopping rule?
+e) What is the problem with this strategy in the long run? How much money will you need to cover your bets if the roulette outcomes are 10 consecutive blacks?
 
-f) What is the problem with this strategy in the long run? How much money will you need to cover your bets if the roulette outcomes are 10 consecutive blacks?
+f) Say you have a stopping rule: If your balance reaches 200 euros, you will stop playing. What is the probably that you will leave richer? What is the probability that you go bankrupt with this stopping rule?
+
+g) What if you set an upper limit for the bets in addition to the stopping rule? With this strategy, you will not increase the bet to more than $2^5$. Does this increase the probability of reaching 200 euros instead of going bankrupt?
+
+
 
 

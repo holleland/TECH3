@@ -336,15 +336,6 @@ window.Quarto = {
 <p>Let <span class="math inline">\(X_1, X_2,...,X_n\)</span> be a sequence of independent and identically distributed random variables having a distribution with expectation <span class="math inline">\(E(X)=\mu_X\)</span> and finite variance <span class="math inline">\(Var(X)=\sigma^2\)</span>. Then the sum <span class="math inline">\(\sum_{i=1}^n X_i\)</span> is approximately normally distributed with expectation <span class="math inline">\(n\cdot\mu\)</span> and variance <span class="math inline">\(n\cdot\sigma^2\)</span>, i.e.&nbsp;<span class="math inline">\(N(n\cdot\mu, n\cdot\sigma^2)\)</span>.</p>
 </div>
 </div>
-<!-- Use the following pre-calculated values if needed: -->
-<!-- ```{python} -->
-<!-- #| echo: true -->
-<!-- #| results: hold -->
-<!-- from scipy import stats -->
-<!-- print("i)",   stats.norm.cdf(-50000, loc = -10530, scale = 16874)) -->
-<!-- print("ii)",  stats.norm.cdf(-50000, loc = -567, scale = 19568)) -->
-<!-- print("iii)", stats.norm.cdf(-50000, loc = -8240, scale = 17785)) -->
-<!-- ``` -->
 <ol start="4" type="a">
 <li>Write a Monte Carlo simulation routine in Python to estimate the probability in part (c).</li>
 </ol>
@@ -362,8 +353,9 @@ iii) What is the probability of a positive gain? 18/37</code></pre>
 <li><p>Solve (a) using simulation techniques in Python. Explain what method you use and why. Compare the value to the central limit theorem approximation.</p></li>
 <li><p>A common strategy is to double the bet if you loose (to win back the loss). Say you start out with 100 euros. Simulate one such game and plot the status of your wallet after for each spin of the roulette.</p></li>
 <li><p>What is the expected number of games before you are bankrupt?</p></li>
-<li><p>Say you have a stopping rule: If your balance reaches 200 euros, you will stop playing. What is the probably that you will leave richer? What is the probability that you go bankrupt with this stopping rule?</p></li>
 <li><p>What is the problem with this strategy in the long run? How much money will you need to cover your bets if the roulette outcomes are 10 consecutive blacks?</p></li>
+<li><p>Say you have a stopping rule: If your balance reaches 200 euros, you will stop playing. What is the probably that you will leave richer? What is the probability that you go bankrupt with this stopping rule?</p></li>
+<li><p>What if you set an upper limit for the bets in addition to the stopping rule? With this strategy, you will not increase the bet to more than <span class="math inline">\(2^5\)</span>. Does this increase the probability of reaching 200 euros instead of going bankrupt?</p></li>
 </ol>
 
 
