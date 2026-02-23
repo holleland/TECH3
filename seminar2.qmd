@@ -88,9 +88,52 @@ a) You continue this strategy for $n=50$ times. Use the Central Limit Theorem to
 
 b) Solve (a) using simulation techniques in Python. Explain what method you use and why. Compare the value to the central limit theorem approximation.
 
-c) A common strategy is to double the bet if you loose (to win back the loss). Say you start out with 100 euros. Simulate one such game and plot the status of your wallet after for each spin of the roulette. 
+c) A common strategy is to double the bet if you loose (to win back the loss). Say you start out with 100 euros. Simulate one such game and plot the status of your wallet (*balances* in the code below) after for each spin of the roulette. The code below can be used as a starting point. 
 
-d) What is the expected number of games before you are bankrupt? 
+```{python}
+#| echo: true
+#| eval: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+# --- Parameters ---
+p_win = 18 / 37
+initial_balance = 100
+max_spins = 5000  # safety cap to avoid infinite loops
+
+# --- Initialization ---
+balance = initial_balance
+bet = 1
+balances = [balance]
+
+for spin in range(max_spins):
+
+    # Check if you can afford the bet
+    if bet > balance:
+        print("Bankrupt!")
+        break
+
+    # Place bet
+    balance -= bet
+
+    # Simulate outcome
+    win = np.random.binomial(size=1, p=p_win, n = 1) == 1
+
+    if win:
+        # Win: receive 2*bet (stake + winnings)
+        balance += 2 * bet
+        bet = 1  # reset bet after win
+    else:
+        # Loss: double the bet
+        bet *= 2
+
+    balances.append(balance)
+else:
+    print("Maximum spins reached")
+print("Bankrupt after round ", spin)
+```
+
+d) Adapt the code from (c) to a python function and run a Monte Carlo simulation to find the expected number of games before you are bankrupt with this strategy. 
 
 e) What is the problem with this strategy in the long run? How much money will you need to cover your bets if the roulette outcomes are 10 consecutive blacks?
 

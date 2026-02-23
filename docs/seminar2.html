@@ -351,8 +351,50 @@ iii) What is the probability of a positive gain? 18/37</code></pre>
 <ol type="a">
 <li><p>You continue this strategy for <span class="math inline">\(n=50\)</span> times. Use the Central Limit Theorem to answer the questions in part (a) for the average gain.</p></li>
 <li><p>Solve (a) using simulation techniques in Python. Explain what method you use and why. Compare the value to the central limit theorem approximation.</p></li>
-<li><p>A common strategy is to double the bet if you loose (to win back the loss). Say you start out with 100 euros. Simulate one such game and plot the status of your wallet after for each spin of the roulette.</p></li>
-<li><p>What is the expected number of games before you are bankrupt?</p></li>
+<li><p>A common strategy is to double the bet if you loose (to win back the loss). Say you start out with 100 euros. Simulate one such game and plot the status of your wallet (<em>balances</em> in the code below) after for each spin of the roulette. The code below can be used as a starting point.</p></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Parameters ---</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>p_win <span class="op">=</span> <span class="dv">18</span> <span class="op">/</span> <span class="dv">37</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>initial_balance <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>max_spins <span class="op">=</span> <span class="dv">5000</span>  <span class="co"># safety cap to avoid infinite loops</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Initialization ---</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>balance <span class="op">=</span> initial_balance</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>bet <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>balances <span class="op">=</span> [balance]</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> spin <span class="kw">in</span> <span class="bu">range</span>(max_spins):</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if you can afford the bet</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> bet <span class="op">&gt;</span> balance:</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Bankrupt!"</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Place bet</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    balance <span class="op">-=</span> bet</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Simulate outcome</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    win <span class="op">=</span> np.random.binomial(size<span class="op">=</span><span class="dv">1</span>, p<span class="op">=</span>p_win, n <span class="op">=</span> <span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> win:</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Win: receive 2*bet (stake + winnings)</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        balance <span class="op">+=</span> <span class="dv">2</span> <span class="op">*</span> bet</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>        bet <span class="op">=</span> <span class="dv">1</span>  <span class="co"># reset bet after win</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Loss: double the bet</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>        bet <span class="op">*=</span> <span class="dv">2</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    balances.append(balance)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Maximum spins reached"</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bankrupt after round "</span>, spin)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="4" type="a">
+<li><p>Adapt the code from (c) to a python function and run a Monte Carlo simulation to find the expected number of games before you are bankrupt with this strategy.</p></li>
 <li><p>What is the problem with this strategy in the long run? How much money will you need to cover your bets if the roulette outcomes are 10 consecutive blacks?</p></li>
 <li><p>Say you have a stopping rule: If your balance reaches 200 euros, you will stop playing. What is the probably that you will leave richer? What is the probability that you go bankrupt with this stopping rule?</p></li>
 <li><p>What if you set an upper limit for the bets in addition to the stopping rule? With this strategy, you will not increase the bet to more than <span class="math inline">\(2^5\)</span>. Does this increase the probability of reaching 200 euros instead of going bankrupt?</p></li>
