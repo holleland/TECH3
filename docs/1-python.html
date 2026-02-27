@@ -522,24 +522,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./4-hypothesis-testing-in-python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hypothesis testing in Python</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./4-power-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Power analysis</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./4-videos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Videos</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./4-python.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python</span></a>
   </div>
@@ -695,7 +677,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="summarizing-data-in-python">Summarizing data in Python</h2>
 <p>In this section, we will look closer at how we can calculate these summary statistics in Python, both for a single vector of numbers and for a dataset.</p>
 <p>A small startup tracks how many new users signed up each day (in hundreds) during a 12-day promotional campaign. The daily numbers are: <span class="math display">\[9.0, 5.4, 12.3, 6.6, 15.5, 7.0, 11.3, 6.6, 8.4, 14.4, 10.3, 13.2\]</span> We start by reading the data into Python:</p>
-<div id="5ec8dc29" class="cell" data-execution_count="1">
+<div id="b0a54774" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Import numbers as vector: </span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.Series((<span class="fl">9.0</span>, <span class="fl">5.4</span>, <span class="fl">12.3</span>, <span class="fl">6.6</span>, <span class="fl">15.5</span>, <span class="fl">7.0</span>, <span class="fl">11.3</span>, <span class="fl">6.6</span>, <span class="fl">8.4</span>, <span class="fl">14.4</span>, <span class="fl">10.3</span>, <span class="fl">13.2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -703,14 +685,14 @@ window.Quarto = {
 <p>We can find the mean by doing the calculations</p>
 <p><span class="math display">\[\bar x = \frac{1}n \sum_{i=1}^n x_i = \frac1{10}(9.0+5.4+12.3+\cdots +13.2) = \frac{120}{12}=10.0.\]</span></p>
 <p>or use Python:</p>
-<div id="b57de8f2" class="cell" data-execution_count="2">
+<div id="6cb2550a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x.mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>np.float64(10.0)</code></pre>
 </div>
 </div>
 <p>The mode is the most frequent observation. This is mostly relevant for discrete observations, but in this particular example we have two observations with value 6.6, and therefore this is the mode. In Python, we would generate a frequency table and the most frequent value is the mode:</p>
-<div id="f2765f28" class="cell" data-execution_count="3">
+<div id="77d68e01" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x.value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>6.6     2
@@ -729,7 +711,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Hence, the mode is 6.6.</p>
 <p>To find the minimum, maximum and median, we sort the numbers:</p>
-<div id="b2668aed" class="cell" data-execution_count="4">
+<div id="2f4e8b3f" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x.sort_values()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>1      5.4
@@ -748,7 +730,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <p>and find the minimum value, maximum value and middle observation. The minimum is 5.4 and the maximum is 15.5. In this case, we have two observations in the middle (9.0 and 10.3). There are several ways of calculating the median in such cases. One way is to find the middle point of these two middle observations: <span class="math display">\[\text{Median} = \frac{9.0+10.3}2 = 9.65.\]</span> In Python, we find it by:</p>
-<div id="166ca2e2" class="cell" data-execution_count="5">
+<div id="c8de70ca" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Minimum:"</span>) </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.<span class="bu">min</span>())</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Maximum:"</span>)</span>
@@ -768,7 +750,7 @@ Median:
 </div>
 <p>The median is middle observation. To find 1st and 3rd quartiles (25% and 75% percentiles), we find the observation that has 25% and 75% of the data smaller than itself. With 12 observations, this is sorted observation number <span class="math inline">\((12-1)*25\%+1 = 3.75\)</span> and <span class="math inline">\((12-1)*75\% +1= 9.25\)</span>. The 25th percentile is thus between sorted observations 3 and 4, and we find it by a weighted average of the two. Since 3.75 is closer to 4, the third observation gets a higher weight. <span class="math display">\[\text{1st quartile}=\text{25th percentile}=0.25 \cdot x_{(3)}+0.75 \cdot x_{(4)}=0.25\cdot 6.6+0.75\cdot 7.0 = 6.9.\]</span> Likewise, <span class="math display">\[\text{3rd quartile}=\text{75th percentile}=0.75 \cdot x_{(9)}+0.25 \cdot x_{(10)}=0.75\cdot 12.3+0.25\cdot 13.2 = 12.525\]</span></p>
 <p>In Python, we find these quantities by</p>
-<div id="e45acf4b" class="cell" data-execution_count="6">
+<div id="c2fcef7c" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1st quartile:"</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.quantile(<span class="fl">.25</span>))</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">3rd quartile:"</span>)</span>
@@ -782,7 +764,7 @@ Median:
 </div>
 </div>
 <p>A very central measure of variability in the data is the standard deviation and variance. We can find the variance of the data by <span class="math display">\[s^2 = \frac{1}{n-1}\sum_{i=1}^n (x_i-\bar x)^2 = \frac1{11}((9.0-10.0)^2+ (5.4-10.0)^2+\cdots +(13.2-10.0)^2)=\frac{123.76}{11}=11.25\]</span> and then find the standard deviation <span class="math inline">\(s\)</span> by taking the square root of the variance: <span class="math display">\[s=\sqrt{s^2}=\sqrt{15.61}=3.35.\]</span> In Python, we find this by</p>
-<div id="649ebddc" class="cell" data-execution_count="7">
+<div id="0ac82d50" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Variance:"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.var())</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Standard deviation:"</span>)</span>
@@ -796,7 +778,7 @@ Standard deviation:
 </div>
 </div>
 <p>The inter quartile range is simply the difference between the 75th and 25th percentile of the data, which we found above. Thus <span class="math display">\[\text{IQR}=\text{75th percentile}-\text{25th percentile} = 12.525 -6.9 = 5.625\]</span> In Python:</p>
-<div id="363882d3" class="cell" data-execution_count="8">
+<div id="a4802b20" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># interquartile range</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>IQR <span class="op">=</span> x.quantile(<span class="fl">.75</span>)<span class="op">-</span>x.quantile(<span class="fl">.25</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(IQR)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -814,7 +796,7 @@ Standard deviation:
 <li>income: Numeric. Income of customer.</li>
 </ul>
 <p>The data is from the book <strong>Introduction to statistical learning</strong>. We can load the data by:</p>
-<div id="f1158243" class="cell" data-execution_count="9">
+<div id="0d09eb1a" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load the data: </span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>default <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/holleland/TECH3/refs/heads/main/data/Default.csv"</span>, </span>
@@ -884,7 +866,7 @@ Standard deviation:
 </div>
 </div>
 <p>We can then find summary statistics for the income variable similarly to what we did above:</p>
-<div id="561da33d" class="cell" data-execution_count="10">
+<div id="5e87d8eb" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean income:"</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(default[<span class="st">"income"</span>].mean())</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Median income:"</span>)</span>
@@ -902,7 +884,7 @@ Standard deviation of income:
 </div>
 </div>
 <p>We could also find the mode of the variable default (binary) by making a frequency table:</p>
-<div id="9fbd1a01" class="cell" data-execution_count="11">
+<div id="0422ebb7" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Frequency of defaults</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>default[<span class="st">"default"</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -917,7 +899,7 @@ Name: count, dtype: int64</code></pre>
 <section id="group-by" class="level3">
 <h3 class="anchored" data-anchor-id="group-by">Group by</h3>
 <p>Sometimes, we want to calculate summary statistics for different groups of data. For instance, in the dataset above, say we wanted to calculate the average income of students and non-students. In the Pandas library, there is functionality for this:</p>
-<div id="9289f018" class="cell" data-execution_count="12">
+<div id="9a0e9ecc" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean grouped by student status: </span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(default.groupby(<span class="st">"student"</span>)[<span class="st">"income"</span>].mean())</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Standard deviation grouped by student status: </span><span class="ch">\n</span><span class="st">"</span>)</span>
@@ -942,7 +924,7 @@ Name: income, dtype: float64</code></pre>
 <section id="loc" class="level3">
 <h3 class="anchored" data-anchor-id="loc">loc</h3>
 <p>It is also useful to filter the data, meaning that we select just a specific set of observations (rows). Say for instance, that we did not want to calculate the mean and standard deviation of income for both students and nonstudents, but only do it for the students. We can do this by first making a new data object that we call students, which only contains rows where the variable student is “Yes”, and the calculate the summary statistics for this new dataset. We do this, using the loc functionality:</p>
-<div id="a1306578" class="cell" data-execution_count="13">
+<div id="da2e4ad0" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> default.loc[default[<span class="st">"student"</span>] <span class="op">==</span> <span class="st">"Yes"</span>]</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mean income of students: "</span>)</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(students[<span class="st">"income"</span>].mean())</span>
@@ -957,7 +939,7 @@ Standard deviation of student income:
 </div>
 </div>
 <p>This was filtering based on a discrete (binary) variable, but we could also filter based on numerical comparisons. Say we wanted to find the average and standard deviation of income for students with a balances above 1900, and how many students have a balance above 1900? What is the maximum balance that students have in the dataset?</p>
-<div id="9e6beff0" class="cell" data-execution_count="14">
+<div id="52f9ce1d" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select students with balance above 1900:</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>students1900 <span class="op">=</span> default.loc[</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>   (default[<span class="st">"student"</span>] <span class="op">==</span> <span class="st">"Yes"</span>) <span class="op">&amp;</span> (default[<span class="st">"balance"</span>] <span class="op">&gt;</span> <span class="dv">1900</span>)</span>
@@ -989,7 +971,7 @@ What is the maximum balance of a student in the data?
 <section id="visualization-in-python" class="level2">
 <h2 class="anchored" data-anchor-id="visualization-in-python">Visualization in Python</h2>
 <p>We continue using the default dataset and load the plotting libraries matplotlib and seaborn. We also need numpy.</p>
-<div id="caa2cdb5" class="cell" data-execution_count="15">
+<div id="2138f82a" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -998,7 +980,7 @@ What is the maximum balance of a student in the data?
 <section id="histogram" class="level3">
 <h3 class="anchored" data-anchor-id="histogram">Histogram</h3>
 <p>A histogram can be plotted using the matplotlib:</p>
-<div id="e765a6aa" class="cell" data-execution_count="16">
+<div id="4aece175" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plt.hist(default[<span class="st">"income"</span>])<span class="op">;</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span> <span class="co"># print figure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1010,7 +992,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>When making a histogram, the most relevant element to tweak is perhaps the bins. This can be done by either changing the number of bins or the bin width.</p>
-<div id="076f0add" class="cell" data-execution_count="17">
+<div id="b1617ec6" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>plt.hist(default[<span class="st">"income"</span>], bins <span class="op">=</span> <span class="dv">20</span>)<span class="op">;</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span> <span class="co"># print figure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1022,7 +1004,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>By increasing the number of bins to 20, we now see clearer the two tops in the income distribution. We can also specify the bins as a vector if we want the splits to occur at specfic locations, e.g.&nbsp;every 2000 dollars, by the following code.</p>
-<div id="31b05b5c" class="cell" data-execution_count="18">
+<div id="addd2f5c" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> np.arange(start<span class="op">=</span><span class="dv">0</span>, stop<span class="op">=</span><span class="dv">80000</span>, step<span class="op">=</span><span class="dv">2000</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plt.hist(default[<span class="st">"income"</span>], bins<span class="op">=</span>bins)<span class="op">;</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1035,7 +1017,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>Note that the y-axis here shows the frequency of observations in each bin. It is often relevant to change this to a relative frequency instead:</p>
-<div id="45c4d383" class="cell" data-execution_count="19">
+<div id="c0868a18" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plt.hist(default[<span class="st">"income"</span>], bins <span class="op">=</span> bins, density <span class="op">=</span> <span class="va">True</span>)<span class="op">;</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span> <span class="co"># print figure</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1047,7 +1029,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>We can do this similarly using seaborn:</p>
-<div id="022cfe1f" class="cell" data-execution_count="20">
+<div id="e8c61f2f" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(x <span class="op">=</span> <span class="st">"income"</span>, </span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>             data <span class="op">=</span> default, </span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>             bins <span class="op">=</span> bins,</span>
@@ -1062,7 +1044,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>Some may prefer this syntax of feeding the function a data object and specifying which column to use for the plot. We can also add a kernel density estimate (smoothed version of a histogram) on top of the histogram by the kde argument.</p>
-<div id="4ba84118" class="cell" data-execution_count="21">
+<div id="9c25bd73" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(x <span class="op">=</span> <span class="st">"income"</span>, </span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>             data <span class="op">=</span> default, </span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>             bins <span class="op">=</span> bins,</span>
@@ -1081,7 +1063,7 @@ What is the maximum balance of a student in the data?
 <section id="boxplot-and-violin-plot" class="level3">
 <h3 class="anchored" data-anchor-id="boxplot-and-violin-plot">Boxplot and violin plot</h3>
 <p>Boxplot is a useful way of visualizing data.</p>
-<div id="339674a3" class="cell" data-execution_count="22">
+<div id="ade6cb39" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1093,7 +1075,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>Especially, if you are going to compare a continuous variable (income) for different groups (students vs nonstudents):</p>
-<div id="922a2409" class="cell" data-execution_count="23">
+<div id="0f18a47c" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x <span class="op">=</span> <span class="st">"student"</span>, y <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1105,7 +1087,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>Alternatively, we can achieve the same thing using a violin plot:</p>
-<div id="1fb55f2d" class="cell" data-execution_count="24">
+<div id="9d3c4bd4" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sns.violinplot(x <span class="op">=</span> <span class="st">"student"</span>, y <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1120,7 +1102,7 @@ What is the maximum balance of a student in the data?
 <section id="scatterplot" class="level3">
 <h3 class="anchored" data-anchor-id="scatterplot">Scatterplot</h3>
 <p>Scatterplots are useful when you want to visualize the dependence structure of two continous variables, say balance and income in the default dataset.</p>
-<div id="02d7aa43" class="cell" data-execution_count="25">
+<div id="5ee34bab" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"balance"</span>, y <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.show()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1136,7 +1118,7 @@ What is the maximum balance of a student in the data?
 <section id="barcount-plot" class="level3">
 <h3 class="anchored" data-anchor-id="barcount-plot">Bar/count plot</h3>
 <p>Bar plots is a very useful way of visualizing counts or frequencies. Most graphical functions also allow you to split the plots by some grouping variable using different colors. This is done using the hue argument. In this case, we want to show the frequency of people that defaulted (default = “Yes”) or not (“No”), coloring the bars by their student status (“Yes” = student, “No” = nonstudent).</p>
-<div id="9bbfc89a" class="cell" data-execution_count="26">
+<div id="f9a07eef" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span> <span class="st">"default"</span>, </span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>              data <span class="op">=</span>default, </span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>              stat<span class="op">=</span><span class="st">"proportion"</span>, </span>
@@ -1155,7 +1137,7 @@ What is the maximum balance of a student in the data?
 <h3 class="anchored" data-anchor-id="personalize-your-figures">Personalize your figures!</h3>
 <p>It is important to make your graphics look good, informative and professional. The basic figure you get by using default options can be quite good, but often you may want to personalize it further. This can mean e.g.&nbsp;changing axis labels, adding a title, changing how the markers look, changing line widths or size of points, etc. There are lots of options you can bend and tweak when making these kinds of figures to make them look pretty and informative.</p>
 <p>Let us use the scatterplot from above as an example. Say I want to change the axis titles:</p>
-<div id="40aa70cb" class="cell" data-execution_count="27">
+<div id="332a4d61" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"balance"</span>, y <span class="op">=</span> <span class="st">"income"</span>, data <span class="op">=</span> default)<span class="op">;</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Balance (in USD)"</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Yearly gross income (USD)"</span>)</span>
@@ -1169,7 +1151,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>I may also want to change how the points of the scatterplot is presented:</p>
-<div id="2e864916" class="cell" data-execution_count="28">
+<div id="bcd30745" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"balance"</span>,</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">"income"</span>, </span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                data <span class="op">=</span> default,</span>
@@ -1188,7 +1170,7 @@ What is the maximum balance of a student in the data?
 </div>
 </div>
 <p>or perhaps I would like to color the points by their student status:</p>
-<div id="f5d3b265" class="cell" data-execution_count="29">
+<div id="36fb3d18" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"balance"</span>,</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">"income"</span>, </span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                data <span class="op">=</span> default,</span>

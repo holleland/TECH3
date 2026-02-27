@@ -99,9 +99,6 @@ website:
                text: "Textbook"
              - 4-hypothesis-testing.qmd
              - 4-significance-level.qmd
-             - 4-hypothesis-testing-in-python.qmd
-             - 4-power-analysis.qmd
-             - 4-videos.qmd
              - 4-python.qmd
              - 4-exercises.qmd
          - section: "Module 5: Measuring relationships and fitting models"
