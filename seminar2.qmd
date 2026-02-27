@@ -45,7 +45,7 @@ print(x)
 
 f) Elaborate on the differences between the approaches. 
 
-g) Do a Monte Carlo simulation experiment to check if the MLE fulfills the consistency requirements.
+<!-- g) Do a Monte Carlo simulation experiment to check if the MLE fulfills the consistency requirements. -->
 
 
 
