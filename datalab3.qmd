@@ -8,7 +8,7 @@ git clone https://github.com/holleland/TECH3_datalab3
 
 This will make a local copy of the files on the github repository at the current location of the git bash terminal.
 
-If you dont want to use git bash, you can also open the github [link](https://github.com/holleland/TECH3_datalab2) in your browser and download the files "manually".
+If you dont want to use git bash, you can also open the github [link](https://github.com/holleland/TECH3_datalab3) in your browser and download the files "manually".
 
 The repository consists of three files:
 

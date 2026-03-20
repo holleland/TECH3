@@ -687,7 +687,7 @@ H_A&amp;: \text{The four categories are not equally likely.}
 <p>This can be tested with a chi-square goodness of fit test. The test statistic is <span class="math display">\[\chi^2 = \sum_{i\in\{A,B,C,D\}} \frac{(\text{observed}_i-\text{expected}_i)^2}{\text{expected}_i},\]</span> where <span class="math inline">\(\text{observed}_i\)</span> is the observed frequency of each category and <span class="math inline">\(\text{expected}_i\)</span> is the expected under the null hypothesis.</p>
 <p>Say we have observed the following frequencies:</p>
 <p><span class="math display">\[A: 55,\, B: 45,\,C:47,\, D:60.\]</span> The total sample size is <span class="math inline">\(n=207\)</span>. The expected frequencies, under the null hypothesis, for each category is then <span class="math inline">\(207/4=51.75\)</span>, or the mean of the observed frequencies. We run the test using the <strong>scipy.stats.chisquare</strong> function.</p>
-<div id="84987388" class="cell" data-execution_count="1">
+<div id="fc6bd868" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>]</span>
@@ -734,7 +734,7 @@ p-value: 0.41764878964686203</code></pre>
 </table>
 <p>Let us test this using the chi-square independence test:</p>
 <p><span class="math display">\[\chi^2 = \sum_{i=1}^2\sum_{j=1}^3\frac{(\text{obs}_{ij}-\text{exp}_{ij})^2}{\text{exp}_{ij}}\sim\chi_{(2-1)\cdot(3-1)}^2=\chi_{2}^2,\]</span> where <span class="math display">\[\text{exp}_{ij}= \frac{\text{obs}_{i\cdot}\cdot \text{obs}_{\cdot j}}{n},\quad \text{where } \text{obs}_{i\cdot}=\sum_{j=1}^3\text{obs}_{ij}\quad\text{and}\quad \text{obs}_{\cdot j}=\sum_{i=1}^2\text{obs}_{ij}.\]</span> Now, we do not need to do these calculcations, since we can simply use the python function <em>scipy.stats.chi2_contingency</em> for this test.</p>
-<div id="2ab3a538" class="cell" data-execution_count="2">
+<div id="ed3b6718" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the contingency table</span></span>
@@ -766,7 +766,7 @@ Female     25.0     17.5     17.5</code></pre>
 <section id="correlation-test" class="level2">
 <h2 class="anchored" data-anchor-id="correlation-test">Correlation test</h2>
 <p>We start by loading the ISLR data and plotting the relationship between sales and money spent on TV ads as a scatterplot:</p>
-<div id="06472aa7" class="cell" data-execution_count="3">
+<div id="428f9fa0" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.formula.api <span class="im">import</span> ols</span>
@@ -791,7 +791,7 @@ Female     25.0     17.5     17.5</code></pre>
 </div>
 </div>
 <p>We want to test if the two variables are correlated. Let <span class="math inline">\(\rho\)</span> be correlation between sales and TV ad spending. We want to test if the two are positively correlated, implying that higher TV ad spending is associated with higher sales numbers. Then our hypotheses are <span class="math display">\[H_0: \rho=0\quad \text{vs}\quad  H_A: \rho&gt; 0.\]</span></p>
-<div id="8a489924" class="cell" data-execution_count="4">
+<div id="e09d2b53" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> pearsonr</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>corr, p_value <span class="op">=</span> pearsonr(ad[<span class="st">"TV"</span>],  ad[<span class="st">"Sales"</span>],</span>
@@ -811,7 +811,7 @@ p-value: 7.336948500973124e-43</code></pre>
 <p>Here we will demonstrate how we can fit a simple linear regression model using the ISLR data set trying to explain sales (the dependent variable) using predictors/covariates from money spent on advertising trough Newspaper, Radio and TV.</p>
 <p>Let us now fit a linear regression model using the <strong>ols</strong> function from <em>statsmodels.formula.ap</em>. The model can be written as</p>
 <p><span class="math display">\[\text{Sales}_i = \beta_0+\beta_1\text{TV}_i +\epsilon_i,\]</span> where <span class="math inline">\(\epsilon_i\)</span> is the error, <span class="math inline">\(\text{Sales}_i\)</span> is the sales and <span class="math inline">\(\text{TV}_i\)</span> is the money spent on TV ads for observation <span class="math inline">\(i=1,\ldots, n\)</span>. The parameters are <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>.</p>
-<div id="0bd83aa8" class="cell" data-execution_count="5">
+<div id="2768eb9b" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ols_model <span class="op">=</span> ols(formula<span class="op">=</span><span class="st">'Sales ~ TV'</span>, data<span class="op">=</span>ad)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ols_result <span class="op">=</span> ols_model.fit()</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols_result.summary())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -821,8 +821,8 @@ p-value: 7.336948500973124e-43</code></pre>
 Dep. Variable:                  Sales   R-squared:                       0.612
 Model:                            OLS   Adj. R-squared:                  0.610
 Method:                 Least Squares   F-statistic:                     312.1
-Date:                Mon, 16 Mar 2026   Prob (F-statistic):           1.47e-42
-Time:                        13:19:59   Log-Likelihood:                -519.05
+Date:                Fri, 20 Mar 2026   Prob (F-statistic):           1.47e-42
+Time:                        13:34:22   Log-Likelihood:                -519.05
 No. Observations:                 200   AIC:                             1042.
 Df Residuals:                     198   BIC:                             1049.
 Df Model:                           1                                         
@@ -848,7 +848,7 @@ Notes:
 <h3 class="anchored" data-anchor-id="add-more-explanatory-variablespredictorscovariates">Add more explanatory variables/predictors/covariates</h3>
 <p>Say we wanted to add another predictor variable, namely the advisement on Radio. The model would then be <span class="math display">\[\text{Sales}_i = \beta_0+\beta_1\text{TV}_i+\beta_2\text{Radio}_i +\epsilon_i,\]</span> with similar definitions of the elements as above.</p>
 <p>We fit this models also:</p>
-<div id="5a2ddfc9" class="cell" data-execution_count="6">
+<div id="4ecf39e2" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ols_model_radio <span class="op">=</span> ols(formula<span class="op">=</span><span class="st">'Sales ~ TV+Radio'</span>, data<span class="op">=</span>ad)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ols_result_radio <span class="op">=</span> ols_model_radio.fit()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ols_result_radio.summary())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -858,8 +858,8 @@ Notes:
 Dep. Variable:                  Sales   R-squared:                       0.897
 Model:                            OLS   Adj. R-squared:                  0.896
 Method:                 Least Squares   F-statistic:                     859.6
-Date:                Mon, 16 Mar 2026   Prob (F-statistic):           4.83e-98
-Time:                        13:19:59   Log-Likelihood:                -386.20
+Date:                Fri, 20 Mar 2026   Prob (F-statistic):           4.83e-98
+Time:                        13:34:22   Log-Likelihood:                -386.20
 No. Observations:                 200   AIC:                             778.4
 Df Residuals:                     197   BIC:                             788.3
 Df Model:                           2                                         
@@ -895,7 +895,7 @@ Notes:
 </ul>
 <p>Linearity: There needs to be a linear relationship between the dependent variable (y) and the covariates of the models (the x’s). With just one predictor, this can be check by plotting x against y and see if a straight line would be a suitable description of the relationship. With more than one covariate, this becomes less straight forward.</p>
 <p>One way to check it, is to look at the scatterplot of the fitted values (<span class="math inline">\(\hat y_i\)</span>) against the residuals <span class="math inline">\(\epsilon_i\)</span>. If there is a clear pattern in the scatterplot, this may be an indication of violation of the linearity assumption. We can also use this plot to check the constant variance/homoskedastiticty assumption. If the residuals spread out more as fitted values increase, this is an indication of a violation of the constant variance assumption.</p>
-<div id="8e6b6a8f" class="cell" data-execution_count="7">
+<div id="537db370" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(ols_result.fittedvalues, ols_result.resid)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Fitted value'</span>)</span>
@@ -911,7 +911,7 @@ Notes:
 </div>
 <p>The residuals versus fitted plot shows clear signs of hetereskedasticity (non-constant variance). The spread of the residuals is increasing with the fitted value (<span class="math inline">\(\hat{ \text{sales}}\)</span>). There also seem to be a systematic pattern here that is not accounted for by the model (upswing and then down again for larger fitted values), indicating the relationship is more complex than what a linear representation can explain.</p>
 <p>We can also check the normality assumption by plotting a histogram:</p>
-<div id="7c59da14" class="cell" data-execution_count="8">
+<div id="5145a403" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(ols_result.resid, kde<span class="op">=</span><span class="va">False</span>, stat<span class="op">=</span><span class="st">'density'</span>,</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot normal distribution curve</span></span>
@@ -935,7 +935,7 @@ Notes:
 </div>
 <p>Ideally, the histogram should match the red line representing the normal distribution. It is not a perfect match, but this may be hard to assess, since the histogram depends heavily on the bins.</p>
 <p>An alternative is to use a qq-normality plot. This plots the quantiles of the residuals to the quantiles of normal distribution. If the residuals are normally distributed, the points should lie close the straight line.</p>
-<div id="c87a837b" class="cell" data-execution_count="9">
+<div id="7cb73915" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>_<span class="op">=</span>stats.probplot(ols_result.resid, plot<span class="op">=</span>sns.mpl.pyplot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -946,7 +946,7 @@ Notes:
 </div>
 </div>
 <p>We can also check for correlation in the residuals. That is, we plot the correlation with the residual <span class="math inline">\(\epsilon_j\)</span> and lagged residuals <span class="math inline">\(\epsilon_{j-h}\)</span>, at different lags <span class="math inline">\(h=0,1,2,\ldots\)</span>. This makes most sense if the data is organized as a time series, where each observation is associated with a different point in time. Ideally, there should be now correlation in the residuals, since we assume they are independent. The plot gives 95% confidence intervals for the correlation coefficients, and ideally all estimated correlations except for lag zero should be inside this 95% confidence band.</p>
-<div id="30ce7158" class="cell" data-execution_count="10">
+<div id="28ca21fd" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.graphics.tsaplots <span class="im">import</span> plot_acf</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plot_acf(ols_result.resid, lags<span class="op">=</span><span class="dv">15</span>)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -963,7 +963,7 @@ Notes:
 <section id="plotting-the-regression-line" class="level3">
 <h3 class="anchored" data-anchor-id="plotting-the-regression-line">Plotting the regression line</h3>
 <p>We can plot the linear regression (when we have only one predictor) using the sns.lmplot function. This estimated a simple linear regression between x and y and plot it together with a 95% confidence interval (shaded area). Note that this is a confidence interval for the expected sales.</p>
-<div id="cee293ac" class="cell" data-execution_count="11">
+<div id="1d19eb34" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"TV"</span>, y<span class="op">=</span><span class="st">"Sales"</span>, data<span class="op">=</span>ad,</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>line_kws<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"red"</span>})</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Sales vs. TV with Regression Line"</span>)</span>
@@ -977,7 +977,7 @@ Notes:
 </div>
 </div>
 <p>We can also plot the fitted values against the specific covariate:</p>
-<div id="ecdec3f4" class="cell" data-execution_count="12">
+<div id="18cfdd66" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"TV"</span>, y <span class="op">=</span> <span class="st">"Sales"</span>, data<span class="op">=</span>ad)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(x<span class="op">=</span>ad[<span class="st">"TV"</span>], y <span class="op">=</span> ols_result.fittedvalues)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -993,7 +993,7 @@ Notes:
 <section id="prediction" class="level3">
 <h3 class="anchored" data-anchor-id="prediction">Prediction</h3>
 <p>One thing is to understand the relationship between money spent on advertisement. Another is to use the model for prediction. Say we want to predict what our sales will be, if we spend 100 or 200 units on TV ads. We could do this with scenarioes for the Radio ads and Newspaper ads also, but our model only use TV here.</p>
-<div id="961e41f0" class="cell" data-execution_count="13">
+<div id="034bb278" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicting</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="st">'TV'</span>: [<span class="dv">100</span>, <span class="dv">200</span>],</span>
@@ -1028,7 +1028,7 @@ dtype: float64
 <p>Logistic regression is a type of extension of the linear regression. We use it whenever we have a binary <span class="math inline">\(Y\in\{0,1\}\)</span>, and want to the model the probability of <span class="math inline">\(Y=1\)</span>. This is achieved by using a logit-transformation of a linear function of the covariates.</p>
 <p><span class="math display">\[P(Y=1|X=x) = \frac{e^{\beta_0+\beta_1 x}}{1+e^{\beta_0+\beta_1 x}}=\frac1{1+e^{-\beta_0-\beta_1 x}}.\]</span> As is shown in the video on logistic regression, this model is equivalent to modelling the log odds of Y as a linear function of x.</p>
 <p><span class="math display">\[\log \frac{P(Y=1|X=x)}{1-P(Y=1|X=x)}=\beta_0+\beta_1x.\]</span> Let us simulate the same data using this relationship:</p>
-<div id="1b7afc19" class="cell" data-execution_count="14">
+<div id="5af75d83" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm, binom</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1053,7 +1053,7 @@ dtype: float64
 </div>
 </div>
 </div>
-<div id="60fd05b9" class="cell" data-execution_count="15">
+<div id="1d0d0aee" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit logistic regression:</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> sm</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> sm.logit(<span class="st">'y ~ x'</span>, data<span class="op">=</span>df)</span>
@@ -1068,8 +1068,8 @@ dtype: float64
 Dep. Variable:                      y   No. Observations:                  100
 Model:                          Logit   Df Residuals:                       98
 Method:                           MLE   Df Model:                            1
-Date:                Mon, 16 Mar 2026   Pseudo R-squ.:                  0.5700
-Time:                        13:20:00   Log-Likelihood:                -29.494
+Date:                Fri, 20 Mar 2026   Pseudo R-squ.:                  0.5700
+Time:                        13:34:23   Log-Likelihood:                -29.494
 converged:                       True   LL-Null:                       -68.593
 Covariance Type:            nonrobust   LLR p-value:                 9.323e-19
 ==============================================================================
@@ -1082,7 +1082,7 @@ x              4.4227      0.922      4.799      0.000       2.616       6.229
 </div>
 <p>Here the interpretation is that a unit increase of x, is associated with a 4.42 unit increase in the log-odds of <span class="math inline">\(Y\)</span>. Another way of saying the same thing, is that a unit increase of x multiplies the odds of Y being 1 with <span class="math inline">\(e^{4.42}\)</span>.</p>
 <p>Since <span class="math inline">\(Y\)</span> can take values 0 and 1 and the predicted probability is in <span class="math inline">\([0,1]\)</span> we can plot them together as function of <span class="math inline">\(x\)</span>. The red line below is the predicted probability of <span class="math inline">\(Y=1\)</span> as a function of <span class="math inline">\(x\)</span>. We see that the probability is zero for low values and in the middle of the interval it start to increase. For high values, the probability is predicted to 1.</p>
-<div id="7f24f6a3" class="cell" data-execution_count="16">
+<div id="9e49a221" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"x"</span>, y<span class="op">=</span><span class="st">"y"</span>, data<span class="op">=</span>df)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>xmin, xmax <span class="op">=</span> plt.xlim()</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>pred_df <span class="op">=</span> pd.DataFrame({<span class="st">'x'</span>: np.linspace(xmin, xmax, <span class="dv">100</span>)})</span>
